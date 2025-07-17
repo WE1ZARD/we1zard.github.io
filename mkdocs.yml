@@ -1,0 +1,38 @@
+site_name: WE1ZARD
+
+site_url: https://we1zard.github.io
+
+site_author: WE1ZARD
+
+site_description: nSwitch 分享站
+
+copyright: Copyright &copy; 2025 WE1ZARD 保留所有权利.
+
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+
+  features:
+    # 加载提速
+    - navigation.instant
+    - navigation.instant.prefetch
+    # 标签栏
+    - navigation.tabs
+    - navigation.sections
+
+  palette:
+    primary: black
+    accent: teal
+    # Palette toggle for light mode
+    scheme: slate
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  homepage: https://we1zard.github.io
+
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/WE1ZARD
