@@ -1,6 +1,6 @@
 site_name: WE1ZARD
 
-site_url: https://we1zard.github.io
+site_url: https://we1zard.qzz.io
 
 site_author: WE1ZARD
 
@@ -31,7 +31,7 @@ extra_css:
   - stylesheets/extra.css
 
 extra:
-  homepage: https://we1zard.github.io
+  homepage: https://we1zard.qzz.io
 
   social:
     - icon: fontawesome/brands/github
