@@ -3,99 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WE1ZARD - 电压计算器</title>
+    <title>WE1ZARD - Switch 超频电压计算器</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/images/favicon.png">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-    <style>
-        /* 设置文字颜色 */
-        body {
-            background-color: #051427;
-        }
-        h1, h2, h3 {
-            color: #e5e7eb;
-        }
+    <link rel="stylesheet" href="/css/styles.css">
 
-        th, td {
-            color: #051427;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #3b82f6;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #3b82f6;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-            color: #3b82f6;
-        }
-
-        /* 添加样式使按钮并列 */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        /* 紧凑表格样式 */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            background-color: #051427; /* 与页面背景色一致 */
-        }
-
-        th, td {
-            padding: 2px 4px; /* 进一步减少内边距以减小行距 */
-            border: none; /* 隐藏所有边框 */
-            font-size: 12px; /* 改小字体大小 */
-            color: #9ca3af; /* 与输入框提示文字颜色一致 */
-        }
-
-        thead th {
-            background-color: #051427; /* 与页面背景色一致 */
-            border-bottom: 1px solid #3b82f6; /* 仅保留表头的下划线 */
-        }
-
-        /* 免责声明样式 */
-        body .disclaimer {
-            background-color: #051427;
-            color: #9ca3af;
-            font-size: 80%;
-        }
-
-        /* 按钮悬浮效果 */
-        button {
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-            transform: translateY(-2px);
-        }
-    </style>
 </head>
 <body>
-
+    <!-- 悬浮球 -->
+    <a href="/" class="floating-ball">
+        <img src="https://avatars.githubusercontent.com/u/111175406?v=4" alt="Home">
+    </a>
+    
     <div id="banner" class="max-w-md mx-auto mt-4 p-2">
         <h1>Switch 超频电压计算器</h1>
             <div class="max-w-md mx-auto p-4 rounded-md shadow-md mt-2 disclaimer">
                 <ol class="list-decimal list-inside">
                     <li>请自行承担任何由于使用导致的风险和后果.</li>
                     <li>计算结果仅供参考, 请谨慎使用 800+ 电压.</li>
-                    <li>以下内容非 nVidia 官方数据, 只是基于 HOC 推算的数据, </li>
+                    <li>以下内容非 nVidia 官方数据, 只是基于 HOC 推算的数据.</li>
                 </ol>
             </div>
     </div>
@@ -103,19 +32,19 @@
         <div class="input-section grid grid-cols-2 gap-2">
             
             <input type="number" id="speedo" 
-                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                class="cal-input" 
                 placeholder="GPU Speedo: 1600">
             
             <input type="number" id="table" min="0" max="2" 
-                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                class="cal-input" 
                 placeholder="GPU UV: 2">
             
             <input type="number" id="vmin" 
-                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                class="cal-input" 
                 placeholder="GPU Vmin: 610 mV">
             
             <input type="number" id="offset" 
-                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                class="cal-input" 
                 placeholder="GPU Volt Offset: 0 mV">
             
         </div>
@@ -123,18 +52,18 @@
         <!-- 内存电压计算器 -->
         <div class="input-section grid grid-cols-2 gap-2 mt-4">
             <input type="number" id="mem_emcMaxClock" 
-                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                class="cal-input" 
                 placeholder="RAM: 2133 MHz">
             
             <input type="number" id="mem_emcDvbShift" 
-                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                class="cal-input" 
                 placeholder="DVB: 0">
         </div>
         
         <!-- 合并计算按钮 -->
         <div class="input-section grid grid-cols-2 gap-2 mt-4">
             <button onclick="calculateAllVoltages()" 
-                class="col-span-2 w-full mx-auto py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">计算电压</button>
+                class="col-span-2 w-full mx-auto cal-button">计算电压</button>
         </div>
         
         <div class="result-section mt-14">
