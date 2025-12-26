@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - HOC Voltage Calculator</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 设置文字颜色 */
+        body {
+            background-color: #051427;
+        }
+
+        h1, th, td {
+            color: #051427;
+        }
+
+        /* 添加样式使按钮并列 */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* 紧凑表格样式 */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #051427; /* 与页面背景色一致 */
+        }
+
+        th, td {
+            padding: 2px 4px; /* 进一步减少内边距以减小行距 */
+            border: none; /* 隐藏所有边框 */
+            font-size: 12px; /* 改小字体大小 */
+            color: #9ca3af; /* 与输入框提示文字颜色一致 */
+        }
+
+        thead th {
+            background-color: #051427; /* 与页面背景色一致 */
+            border-bottom: 1px solid #3b82f6; /* 仅保留表头的下划线 */
+        }
+
+        /* 免责声明样式 */
+        body .disclaimer {
+            background-color: #051427;
+            color: #9ca3af;
+            font-size: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner" class="max-w-md mx-auto mt-4 p-2">
+        <center>
+            <img alt="we1zard" src="https://img2024.cnblogs.com/blog/3533742/202501/3533742-20250112143242536-1701559505.gif">
+            <div class="text-center text-gray-500 mt-2">v1.0.2</div>
+        </center>
+            <div class="max-w-md mx-auto p-4 rounded-md shadow-md mt-2 disclaimer">
+                <ol class="list-decimal list-inside">
+                    <li>请自行承担任何由于使用导致的风险和后果.</li>
+                    <li>计算结果仅供参考, 请谨慎使用 800+ 电压.</li>
+                    <li>以下内容非 nVidia 官方数据, 只是基于 HOC 推算的数据, </li>
+                </ol>
+            </div>
+        </center>
+    </div>
+    <div class="max-w-md mx-auto bg-[#051427] p-4 rounded-md shadow-md">
+        <div class="input-section grid grid-cols-2 gap-2">
+            
+            <input type="number" id="speedo" 
+                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                placeholder="GPU Speedo: 1600">
+            
+            <input type="number" id="table" min="0" max="2" 
+                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                placeholder="GPU UV: 2">
+            
+            <input type="number" id="vmin" 
+                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                placeholder="GPU Vmin: 610 mV">
+            
+            <input type="number" id="offset" 
+                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                placeholder="GPU Volt Offset: 0 mV">
+            
+        </div>
+        
+        <!-- 内存电压计算器 -->
+        <div class="input-section grid grid-cols-2 gap-2 mt-4">
+            <input type="number" id="mem_emcMaxClock" 
+                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                placeholder="RAM: 2133 MHz">
+            
+            <input type="number" id="mem_emcDvbShift" 
+                class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white placeholder-gray-400" 
+                placeholder="DVB: 0">
+        </div>
+        
+        <!-- 合并计算按钮 -->
+        <div class="input-section grid grid-cols-2 gap-2 mt-4">
+            <button onclick="calculateAllVoltages()" 
+                class="col-span-2 w-full mx-auto py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">计算电压</button>
+        </div>
+        
+        <div class="result-section mt-14">
+            <div id="gpu_result"></div>
+            <div id="mem_result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Memory DVB DVFS Tables (from pcv.hpp and pcv_mariko.cpp)
+        const EmcDvbTableDefault = [
+            { freq: 204000, volts: [637, 637, 637] },    // 204000 Hz
+            { freq: 408000, volts: [637, 637, 637] },    // 408000 Hz
+            { freq: 800000, volts: [637, 637, 637] },    // 800000 Hz
+            { freq: 1065600, volts: [637, 637, 637] },   // 1065600 Hz
+            { freq: 1331200, volts: [650, 637, 637] },   // 1331200 Hz
+            { freq: 1600000, volts: [675, 650, 637] },   // 1600000 Hz
+        ];
+
+        const EmcClkOSLimit = 1600000; // 从代码中推断的默认限制
+
+        // Helper function to calculate DVB voltage with shift
+        function calculateDvbVolt(zero, one, two, voltAdd) {
+            return [
+                Math.min(zero + voltAdd, 1050),
+                Math.min(one + voltAdd, 1025),
+                Math.min(two + voltAdd, 1000)
+            ];
+        }
+        
+        // 合并计算GPU和内存电压的函数
+        function calculateAllVoltages() {
+            calculateVoltages();
+            calculateMemVoltages();
+        }
+
+        function calculateMemVoltages() {
+            // 清除之前的内存结果
+            document.getElementById('mem_result').innerHTML = '';
+            
+            // Get input values with defaults
+            let userInputFreq = parseInt(document.getElementById('mem_emcMaxClock').value) || 2133000;
+            const emcDvbShift = parseInt(document.getElementById('mem_emcDvbShift').value) || 0;
+            
+            // 如果输入值小于100000，自动乘以1000转换为Hz
+            if (userInputFreq < 100000) {
+                userInputFreq *= 1000;
+            }
+
+            // Calculate voltage offset
+            const voltAdd = 25 * emcDvbShift;
+
+            // Determine the appropriate voltage configuration based on user input
+            let selectedVolts = [725, 700, 675]; // Default to 2131200 Hz voltages
+            
+            // Find the appropriate voltage configuration for the user's frequency
+            if (userInputFreq >= 3200000) {
+                selectedVolts = calculateDvbVolt(800, 800, 775, voltAdd);
+            } else if (userInputFreq >= 2931200) {
+                selectedVolts = calculateDvbVolt(800, 775, 750, voltAdd);
+            } else if (userInputFreq >= 2665600) {
+                selectedVolts = calculateDvbVolt(775, 750, 725, voltAdd);
+            } else if (userInputFreq >= 2400000) {
+                selectedVolts = calculateDvbVolt(750, 725, 700, voltAdd);
+            } else if (userInputFreq >= 2131200) {
+                selectedVolts = [725, 700, 675];
+            }
+
+            // Create a single table with only the user's frequency and appropriate voltages
+            let result = '<div class="flex justify-center w-full mx-auto mt-4">';
+            
+            // Memory Voltage Table
+            result += '<table class="min-w-0">';
+            result += '<thead>';
+            result += '<tr>';
+            result += '<th scope="col" class="text-right text-xs font-medium text-gray-500 uppercase tracking-wider">RAM</th>';
+            result += '<th scope="col" class="text-center text-xs font-medium text-gray-500 tracking-wider">Bracket 0</th>';
+            result += '<th scope="col" class="text-center text-xs font-medium text-gray-500 tracking-wider">Bracket 1</th>';
+            result += '<th scope="col" class="text-center text-xs font-medium text-gray-500 tracking-wider">Bracket 2</th>';
+            result += '</tr>';
+            result += '</thead>';
+            result += '<tbody>';
+            
+            // Display only the user's frequency with the appropriate voltage configuration
+            result += '<tr>';
+            result += `<td class="text-right whitespace-nowrap">${(userInputFreq / 1000).toFixed(1)}</td>`;
+            result += `<td class="text-center whitespace-nowrap">${selectedVolts[0]}</td>`;
+            result += `<td class="text-center whitespace-nowrap">${selectedVolts[1]}</td>`;
+            result += `<td class="text-center whitespace-nowrap">${selectedVolts[2]}</td>`;
+            result += '</tr>';
+            
+            result += '</tbody>';
+            result += '</table>';
+            
+            result += '</div>';
+            
+            // Display memory result
+            document.getElementById('mem_result').innerHTML = result;
+            
+            // Show action buttons after table is generated
+            document.getElementById('action-buttons').style.display = 'flex';
+        }
+
+        // GPU DVFS Tables (converted from Python)
+        const gpu_dvfs_table_0 = [
+            [ 480000, 0, 0, 0, 0, 0 ],    // 76800 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 153600 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 230400 Hz
+            [ 738712, -7304, -552, 119, -3750, -2 ],    // 307200 Hz
+            [ 758712, -7304, -552, 119, -3750, -2 ],    // 384000 Hz
+            [ 778712, -7304, -552, 119, -3750, -2 ],    // 460800 Hz
+            [ 798712, -7304, -552, 119, -3750, -2 ],    // 537600 Hz
+            [ 818712, -7304, -552, 119, -3750, -2 ],    // 614400 Hz
+            [ 838712, -7304, -552, 119, -3750, -2 ],    // 691200 Hz
+            [ 880210, -7955, -584, 0, -2849, 39 ],    // 768000 Hz
+            [ 926398, -8892, -602, -60, -384, -93 ],    // 844800 Hz
+            [ 970060, -10108, -614, -179, 1508, -13 ],    // 921600 Hz
+            [ 1065665, -16075, -497, -179, 3213, 9 ],    // 998400 Hz
+            [ 1132576, -16093, -648, 0, 1077, 40 ],    // 1075200 Hz
+            [ 1180029, -14534, -830, 0, 1469, 110 ],    // 1152000 Hz
+            [ 1248293, -16383, -859, 0, 3722, 313 ],    // 1228800 Hz
+            [ 1286399, -17475, -867, 0, 3681, 559 ]    // 1267200 Hz
+        ];
+
+        const gpu_dvfs_table_1 = [
+            [ 480000, 0, 0, 0, 0, 0 ],    // 76800 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 153600 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 230400 Hz
+            [ 738712, -7304, -552, 119, -3750, -2 ],    // 307200 Hz
+            [ 758712, -7304, -552, 119, -3750, -2 ],    // 384000 Hz
+            [ 778712, -7304, -552, 119, -3750, -2 ],    // 460800 Hz
+            [ 798712, -7304, -552, 119, -3750, -2 ],    // 537600 Hz
+            [ 818712, -7304, -552, 119, -3750, -2 ],    // 614400 Hz
+            [ 838712, -7304, -552, 119, -3750, -2 ],    // 691200 Hz
+            [ 880210, -7955, -584, 0, -2849, 39 ],    // 768000 Hz
+            [ 926398, -8892, -602, -60, -384, -93 ],    // 844800 Hz
+            [ 970060, -10108, -614, -179, 1508, -13 ],    // 921600 Hz
+            [ 1065665, -16075, -497, -179, 3213, 9 ],    // 998400 Hz
+            [ 1132576, -16093, -648, 0, 1077, 40 ],    // 1075200 Hz
+            [ 1180029, -14534, -830, 0, 1469, 110 ],    // 1152000 Hz
+            [ 1248293, -16383, -859, 0, 3722, 313 ],    // 1228800 Hz
+            [ 1286399, -17475, -867, 0, 3681, 559 ]    // 1267200 Hz
+        ];
+
+        const gpu_dvfs_table_2 = [
+            [ 480000, 0, 0, 0, 0, 0 ],    // 76800 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 153600 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 230400 Hz
+            [ 738712, -7304, -552, 119, -3750, -2 ],    // 307200 Hz
+            [ 758712, -7304, -552, 119, -3750, -2 ],    // 384000 Hz
+            [ 778712, -7304, -552, 119, -3750, -2 ],    // 460800 Hz
+            [ 798712, -7304, -552, 119, -3750, -2 ],    // 537600 Hz
+            [ 818712, -7304, -552, 119, -3750, -2 ],    // 614400 Hz
+            [ 838712, -7304, -552, 119, -3750, -2 ],    // 691200 Hz
+            [ 880210, -7955, -584, 0, -2849, 39 ],    // 768000 Hz
+            [ 926398, -8892, -602, -60, -384, -93 ],    // 844800 Hz
+            [ 970060, -10108, -614, -179, 1508, -13 ],    // 921600 Hz
+            [ 1060665, -16075, -497, -179, 3213, 9 ],    // 998400 Hz
+            [ 1061475, -12688, -648, 0, 1077, 40 ],    // 1075200 Hz
+            [ 1094475, -12688, -648, 0, 1077, 40 ],    // 1152000 Hz
+            [ 1124475, -12688, -648, 0, 1077, 40 ],    // 1228800 Hz
+            [ 1142060, -12688, -648, 0, 1077, 40 ],    // 1267200 Hz
+            [ 1163644, -12688, -648, 0, 1077, 40 ],    // 1305600 Hz
+            [ 1183644, -12688, -648, 0, 1077, 40 ],    // 1344000 Hz
+            [ 1201644, -12688, -648, 0, 1077, 40 ],    // 1382400 Hz
+            [ 1217644, -12688, -648, 0, 1077, 40 ],    // 1420800 Hz
+            [ 1231644, -12688, -648, 0, 1077, 40 ],    // 1459200 Hz
+            [ 1243644, -12688, -648, 0, 1077, 40 ],    // 1497600 Hz
+            [ 1253644, -12688, -648, 0, 1077, 40 ]     // 1536000 Hz
+        ];
+
+        const gpu_freq_table = [76800, 153600, 230400, 307200, 384000, 460800, 537600, 614400, 691200, 768000, 844800, 921600, 998400, 1075200, 1152000, 1228800, 1267200, 1305600, 1344000, 1382400, 1420800, 1459200, 1497600, 1536000];
+
+        // Helper functions - Exact match to Python implementation
+        function round_closest(value, scale) {
+            if (value > 0) {
+                return ((value) + ((scale) / 2)) / (scale);
+            } else {
+                return ((value) - ((scale) / 2)) / (scale);
+            }
+        }
+
+        function round5(number) {
+            return Math.ceil(number / 5.0) * 5;
+        }
+
+        // 根据用户需求实现GPU Vmin自动计算：按25位一档取整，以1600speedo+2400MHz内存时610mV为基准
+        function calculateAutoGpuVmin() {
+            // 获取内存频率，转换为Hz
+            const mem_freq_mhz = parseInt(document.getElementById('mem_emcMaxClock').value) || 2133;
+            const mem_freq_hz = mem_freq_mhz * 1000;
+            
+            // GPU Speedo值处理：按5为一档向下取整
+            let speedo = parseInt(document.getElementById('speedo').value) || 1600;
+            // 实现向下取整到最近的5的倍数（如1798 → 1795）
+            const remainder = speedo % 5;
+            if (remainder > 0) {
+                speedo = speedo - remainder;
+            }
+            
+            const voltage_offset = parseInt(document.getElementById('offset').value) || 0;
+            
+            // 基础Vmin计算：以1600speedo、2400MHz内存时的610mV为基准
+            // 每增加25点speedo，vmin减少5mV；每减少25点speedo，vmin增加5mV
+            const base_speedo = 1600;
+            const base_vmin = 610;
+            
+            // 计算基础Vmin值
+            let vmin = base_vmin - Math.floor((speedo - base_speedo) / 25) * 5;
+            
+            // 确保Vmin在合理范围内
+            vmin = Math.max(vmin, 530); // 最小值
+            vmin = Math.min(vmin, 650); // 最大值
+            
+            // 根据内存频率调整Vmin (以2400MHz为基准)
+            let final_vmin = vmin;
+            
+            // 只在内存频率高于2400MHz时进行额外调整
+            if (mem_freq_mhz > 2400) {
+                // 内存频率高于2400MHz时，每增加约33MHz，Vmin增加5mV
+                const freq_diff = mem_freq_mhz - 2400;
+                const freq_adj = Math.floor(freq_diff / 33) * 5;
+                final_vmin += freq_adj;
+            }
+            
+            // 应用用户电压偏移
+            final_vmin += voltage_offset;
+            
+            // 再次确保Vmin在合理范围内
+            final_vmin = Math.max(final_vmin, 530);
+            final_vmin = Math.min(final_vmin, 650);
+            
+            // 确保结果是5的倍数
+            return Math.ceil(final_vmin / 5) * 5;
+        }
+
+        function calculateVoltages() {
+            // 清除之前的结果
+            document.getElementById('gpu_result').innerHTML = '';
+            
+            // Get input values with defaults
+            const speedo = parseInt(document.getElementById('speedo').value) || 1600;
+            const table = parseInt(document.getElementById('table').value) || 2;
+            const offset = parseInt(document.getElementById('offset').value) || 0;
+            
+            // 如果没有手动输入vmin值，则自动计算
+            let vmin = parseInt(document.getElementById('vmin').value);
+            if (isNaN(vmin)) {
+                vmin = calculateAutoGpuVmin();
+            }
+
+            // Select the appropriate table
+            let gpu_dvfs_table;
+            if (table === 0) {
+                gpu_dvfs_table = JSON.parse(JSON.stringify(gpu_dvfs_table_0));
+            } else if (table === 1) {
+                gpu_dvfs_table = JSON.parse(JSON.stringify(gpu_dvfs_table_1));
+            } else {
+                gpu_dvfs_table = JSON.parse(JSON.stringify(gpu_dvfs_table_2));
+            }
+
+            // Determine the number of entries
+            const num_entries = (table === 2) ? 24 : 17;
+
+            // Apply offset
+            for (let i = 0; i < num_entries; i++) {
+                gpu_dvfs_table[i][0] -= offset * 1000;
+            }
+
+            // Calculate the split point for two columns
+            const split_point = Math.ceil(num_entries / 2);
+
+            // Calculate voltages for all entries first
+            const entries = [];
+            const temp = 60;
+            
+            for (let entry = 0; entry < num_entries; entry++) {
+                const freq = gpu_freq_table[entry] / 1000;
+                const c0 = gpu_dvfs_table[entry][0];
+                const c1 = gpu_dvfs_table[entry][1];
+                const c2 = gpu_dvfs_table[entry][2];
+                const c3 = gpu_dvfs_table[entry][3];
+                const c4 = gpu_dvfs_table[entry][4];
+                const c5 = gpu_dvfs_table[entry][5];
+                
+                let mv = round_closest(c2 * speedo, 100);
+                mv = round_closest((mv + c1) * speedo, 100);
+                mv += c0;
+                
+                let mvt = round_closest(c3 * speedo, 100);
+                mvt += c4;
+                mvt += round_closest(c5 * temp, 10);
+                mvt *= temp;
+                mvt = round_closest(mvt, 10);
+                
+                let final_volt = Math.ceil((mv + mvt) / 1000);
+                
+              
+                // 对所有频率范围应用Vmin限制
+                final_volt = Math.max(final_volt, vmin);
+
+                // 补偿
+                if (entry == 11 && speedo >= 1775) { //921
+                    final_volt += 5;
+                }
+                if (entry == 12 && speedo >= 1775) { //998.4
+                    final_volt += 15;
+                }
+                if (entry == 13 && speedo >= 1775) { //1075.2
+                    final_volt += 5;
+                }
+                if (entry == 22 && speedo >= 1700) { //1497.6
+                    final_volt += 15;
+                }
+                if (entry == 23 && speedo >= 1700) { //1536.0
+                    final_volt += 50;
+                }
+
+                // 确保结果是5的倍数
+                final_volt = round5(final_volt);
+                
+                entries.push({ freq, final_volt });
+            }
+
+            // Create two independent tables with flex layout
+            let result = '<div class="flex justify-between space-x-4 w-full mx-auto">';
+            
+            // First table (left column)
+            result += '<table class="min-w-0 flex-1">';
+            result += '<thead>';
+            result += '<tr>';
+            result += '<th scope="col" class="text-right text-xs font-medium text-gray-500 uppercase tracking-wider">GPU</th>';
+            result += '<th scope="col" class="text-left text-xs font-medium text-gray-500 tracking-wider">mV</th>';
+            result += '</tr>';
+            result += '</thead>';
+            result += '<tbody>';
+            
+            for (let i = 0; i < split_point; i++) {
+                const entry = entries[i];
+                result += '<tr>';
+                result += `<td class="text-right whitespace-nowrap">${entry.freq.toFixed(1)}</td>`;
+                result += `<td class="text-left whitespace-nowrap">${entry.final_volt}</td>`;
+                result += '</tr>';
+            }
+            
+            result += '</tbody>';
+            result += '</table>';
+            
+            // Second table (right column)
+            result += '<table class="min-w-0 flex-1">';
+            result += '<thead>';
+            result += '<tr>';
+            result += '<th scope="col" class="text-right text-xs font-medium text-gray-500 uppercase tracking-wider">GPU</th>';
+            result += '<th scope="col" class="text-left text-xs font-medium text-gray-500 tracking-wider">mV</th>';
+            result += '</tr>';
+            result += '</thead>';
+            result += '<tbody>';
+            
+            for (let i = split_point; i < entries.length; i++) {
+                const entry = entries[i];
+                result += '<tr>';
+                result += `<td class="text-right whitespace-nowrap">${entry.freq.toFixed(1)}</td>`;
+                result += `<td class="text-left whitespace-nowrap">${entry.final_volt}</td>`;
+                result += '</tr>';
+            }
+            
+            result += '</tbody>';
+            result += '</table>';
+            
+            result += '</div>';
+            
+            // Display result
+            document.getElementById('gpu_result').innerHTML = result;
+            
+            // Show action buttons after table is generated
+            document.getElementById('action-buttons').style.display = 'flex';
+        }
+
+        // 为所有输入框添加键盘事件监听器，按Enter键同时计算GPU和内存电压
+        document.getElementById('speedo').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                calculateAllVoltages();
+            }
+        });
+
+        document.getElementById('table').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                calculateAllVoltages();
+            }
+        });
+
+        document.getElementById('offset').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                calculateAllVoltages();
+            }
+        });
+
+        document.getElementById('vmin').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                calculateAllVoltages();
+            }
+        });
+        
+        // 为内存计算器输入框添加键盘事件监听器
+        document.getElementById('mem_emcMaxClock').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                calculateAllVoltages();
+            }
+        });
+
+        document.getElementById('mem_emcDvbShift').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                calculateAllVoltages();
+            }
+        });
+    </script>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-2 p-2">
+            <!-- 添加到页脚的按钮 -->
+            <div id="action-buttons" class="button-container grid grid-cols-2 gap-3" style="display: none;">
+                <a href="https://qm.qq.com/q/TzIMB20la2" 
+                    class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">加入Q群</a>
+                <a href="https://afdian.com/a/weizard/plan" 
+                    class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">请我喝咖啡</a>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-2">
+            &copy; 2025 WE1ZARD 保留所有权利.
+        </div><br><br>
+    </footer>
+</body>
+</html>
