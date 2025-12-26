@@ -11,9 +11,32 @@
         body {
             background-color: #051427;
         }
+        h1, h2, h3 {
+            color: #e5e7eb;
+        }
 
-        h1, th, td {
+        th, td {
             color: #051427;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #3b82f6;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #3b82f6;
         }
 
         /* 添加样式使按钮并列 */
@@ -49,14 +72,22 @@
             color: #9ca3af;
             font-size: 80%;
         }
+
+        /* 按钮悬浮效果 */
+        button {
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
+
     <div id="banner" class="max-w-md mx-auto mt-4 p-2">
-        <center>
-            <img alt="we1zard" src="https://avatars.githubusercontent.com/u/111175406?v=4">
-            <div class="text-center text-gray-500 mt-2">v1.0.2</div>
-        </center>
+        <h1>Switch 超频电压计算器</h1>
             <div class="max-w-md mx-auto p-4 rounded-md shadow-md mt-2 disclaimer">
                 <ol class="list-decimal list-inside">
                     <li>请自行承担任何由于使用导致的风险和后果.</li>
@@ -64,7 +95,6 @@
                     <li>以下内容非 nVidia 官方数据, 只是基于 HOC 推算的数据, </li>
                 </ol>
             </div>
-        </center>
     </div>
     <div class="max-w-md mx-auto bg-[#051427] p-4 rounded-md shadow-md">
         <div class="input-section grid grid-cols-2 gap-2">

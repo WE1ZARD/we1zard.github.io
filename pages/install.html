@@ -94,16 +94,22 @@
             margin: 0 auto;
             padding: 2rem;
         }
+
+        /* 按钮悬浮效果 */
+        #action-buttons a {
+            transition: all 0.3s ease;
+        }
+
+        #action-buttons a:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
     <div id="banner" class="max-w-md mx-auto mt-4 p-2">
-        <center>
-            <img alt="we1zard" src="https://avatars.githubusercontent.com/u/111175406?v=4">
-            <div class="text-center text-gray-500 mt-2">用户指南</div>
-        </center>
     </div>
-    
     <div class="content-container bg-[#051427] p-6 rounded-md shadow-md">
         <h1>换包操作流程</h1>
 
