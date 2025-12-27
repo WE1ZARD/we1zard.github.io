@@ -35,22 +35,26 @@
         <ul>
             <blockquote>
                 <div id="action-buttons" class="button-container gap-3">
-                    <a href="https://gitea.com/we1zard/OTA/releases/download/latest/AIO-pre.zip" class="block w-1/4 px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">AIO.zip</a>
+                    <a href="https://gitea.com/we1zard/OTA/releases/download/latest/AIO-pre.zip" class="block w-1/4 px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">下载解压 AIO.zip</a>
                 </div><br>
-                下载 <strong>AIO.zip</strong> 解压<br>
-                复制 <strong>bootloader</strong>, <strong>Magic-Suite</strong> 覆盖到 <strong>内存卡中</strong><br>
-                将内存卡插入 switch<br>
-                按电源键开机, 之后程序处理完之后会自动进入系统, 操作完成!
-            </blockquote>
-        </ul><br>
 
-        <h2 id="设置启动项">设置启动项</h2>
-        <ul>
-            <blockquote>
-                用文本编辑工具打开 <strong>/Magic-Suite/bootloader/hekate_ipl.ini</strong><br>
-                搜索 <code>autoboot=1</code> 并替换成 <code>autoboot=2</code><br><br>
-                <code>autoboot=1</code> 虚拟系统<br>
-                <code>autoboot=2</code> 真实系统<br>
+                <li><strong>升级换包</strong></li>
+                    <block>复制 <strong>bootloader</strong>, <strong>Magic-Suite</strong> 覆盖到 <strong>内存卡中</strong></block><br>
+                    <block>将内存卡插入 switch</block><br>
+                    <block>开机之后, 稍等片刻程序自动处理完成, 自动进入系统, 操作完成!</block><br><br>
+
+                    <block>如果你之前<strong>没有制作虚拟系统</strong>, 自动重启之后会报错,</block><br>
+                    <block>按照 <a href="#制作虚拟系统">制作虚拟系统</a> 操作即可.</block><br><br>
+
+                <li><strong>全新换卡</strong></li>
+                    <block>打开 <strong>Magic-Suite</strong> 文件夹, 复制所有文件到 <strong>内存卡中</strong>,</block><br>
+                    <block>不要管外面单个的 <strong>bootloader</strong> 文件夹!!!</block><br>
+                    <block>复制完成之后, 开始 <a href="#制作虚拟系统">制作虚拟系统</a></block><br><br>
+
+                <div id="action-buttons" class="button-container gap-3">
+                    <a href="https://wj.qq.com/s2/25361346/8d1f/" target="_blank" class="block w-1/4 px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">我要反馈</a>
+                </div>
+
             </blockquote>
         </ul><br>
 
@@ -67,8 +71,9 @@
         
         <ul>
             <blockquote>
-            
-            <li><strong>Hekate &gt; Tools &gt; Partition SD Card &gt; OK</strong></li><br>
+                重启按住 <strong>音量键减号</strong> 进入 Hekate<br><br>
+
+            <li><strong>Hekate &gt; Tools &gt; Partition SD Card &gt; OK</strong></li>
                 <block>此操作会导致内存卡格式化</block><br>
                 <block>总文件大小不超过100mb会自动备份</block><br>
                 <block>不满足条件的需要手动备份</block><br><br>
@@ -93,12 +98,24 @@
         
         <ul>
             <blockquote>
+                重启按住 <strong>音量键减号</strong> 进入 Hekate<br><br>
+
                 <li><strong>Hekate &gt; Create emuMMC &gt; SD File</strong></li>
                     <block>此操作将创建一个官方系统的镜像到内存卡</block>
             </blockquote>
         </ul><br>
+
+        <h2 id="设置启动项">设置启动项</h2>
+        <ul>
+            <blockquote>
+                用文本编辑工具打开 <strong>/Magic-Suite/bootloader/hekate_ipl.ini</strong><br>
+                搜索 <code>autoboot=1</code> 并替换成 <code>autoboot=2</code><br><br>
+                <code>autoboot=1</code> 虚拟系统<br>
+                <code>autoboot=2</code> 真实系统<br>
+            </blockquote>
+        </ul><br>
     </div>
-    
+
     <footer>
         <div class="max-w-md mx-auto mt-2 p-2">
             <!-- 添加到页脚的按钮 -->
