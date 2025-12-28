@@ -7,11 +7,15 @@
     <link rel="apple-touch-icon" href="/images/favicon.png">
     <script async src="https://tally.so/widgets/embed.js"></script>
     <style type="text/css">
-      html { margin: 0; height: 100%; overflow: hidden; }
-      iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0; }
+      html, body { margin: 0; height: 100%; overflow: hidden; }
+      iframe { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 0; z-index: 1; }
+      /* 确保悬浮球在最上层 */
+      .floating-ball {
+          z-index: 9999 !important;
+      }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/home/we1zard/Documents/WE1ZARD/we1zard.github.io/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
     <!-- 悬浮球 -->
