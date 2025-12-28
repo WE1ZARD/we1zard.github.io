@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - DBI 使用技巧</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- 悬浮球 -->
+    <a href="/" class="floating-ball">
+        <img src="https://avatars.githubusercontent.com/u/111175406?v=4" alt="Home">
+    </a>
+
+    <div id="banner" class="max-w-md mx-auto mt-4 p-2">
+    </div>
+    <div class="content-container bg-[#051427] p-6 rounded-md shadow-md">
+        <h1>DBI 使用技巧</h1>
+
+        <h2 id="操作快捷键">主界面快捷键</h2>
+        <ul>
+            <blockquote>
+                <li><strong>X 键</strong></li>
+                    <block>连接 MTP 外接设备</block><br>
+                    <block>可用于安装, 管理内存卡上的内容资料</block><br>
+                    <block>5号盘用于安装游戏</block><br><br>
+                <li><strong>Y 键</strong></li>
+                    <block>连接 USB 外接设备</block><br>
+                    <block>可用于安装外接设备上的内容资料</block><br><br>
+                <li><strong>L 键</strong></li>
+                    <block>浏览 已安装的程序</block><br><br>
+                <li><strong>R 键</strong></li>
+                    <block>浏览 已安装的自制软件</block>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="NTP 同步系统时间">NTP 同步系统时间</h2>
+        <block>用于联网服务</block>
+        <ul>
+            <blockquote>
+                <li><strong>主页面 > 工具 > NTP 时间同步</strong></li>
+                    <block>看到绿色 OK 表示完成</block>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="密钥弹窗提示">密钥弹窗提示</h2>
+        <block>功能受限, 缺少prod.keys, 并且每次打开都会提示</block>
+        <ul>
+            <blockquote>
+                <li><strong>导出密钥</strong></li>
+                    <block>重启 switch, 按住 音量减号键 进入 hekate 主菜单</block><br>
+                    <block>打开 <code>Payloads > Lockpick_RCM.bin</code> 进入密钥提取工具</block><br>
+                    <block>用音量键控制上下, 用电源键打开选中项</block><br>
+                        <bl><strong>Dump from SysNAND</strong> -> 导出 真实系统密钥</bl><br>
+                        <bl><strong>Dump from EmuNAND</strong> -> 导出 虚拟系统密钥</bl><br><br>
+
+                    <block>完成后打开 <strong>Reboot to hekate</strong> 重启</block><br>
+                    <block>这时候再打开 DBI 主页面就不会再弹窗提示, 并且支持导出功能.</block><br><br>
+                <li><strong>密钥保存路径</strong></li>
+                        <block>/switch/prod.keys</block><br>
+                        <block>/switch/title.keys</block><br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="SDK 导出与替换">SDK 导出与替换</h2>
+        <block>用于强行将游戏要求的系统版本进行降级</block><br>
+        <block>但无法超过游戏功能要求的最低版本</block>
+        <ul>
+            <blockquote>
+            <li><strong>注意: </strong></li>
+            <block>需要提前准备 <a href="#密钥弹窗提示">密钥<a></block><br><br>
+                <li><strong>导出 SDK</strong></li>
+                    <block>主页面按 <strong>L 键</strong> 打开已安装的程序列表</block><br>
+                    <block>选中需要 SDK 版本的游戏按 <strong>+ 键</strong> 导出SDK</block><br>
+                    <block>导出的 SDK 将按照版本号保存到路径 <code>/switch/DBI/dumps/SDK/</code></block><br><br>
+                <li><strong>替换 SDK</strong></li>
+                    <block>主页面按 <strong>L 键</strong> 打开已安装的程序列表</block><br>
+                    <block>选中需要替换 SDK 版本的游戏按 <strong>+ 键</strong> 替换SDK</block><br>
+                    <block>替换前需将替换用的 SDK 保存到路径 <code>/switch/DBI/dumps/SDK/</code></block>
+            </blockquote>
+        </ul><br>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-2 p-2">
+            <!-- 添加到页脚的按钮 -->
+            <div id="action-buttons" class="button-container grid grid-cols-2 gap-3">
+                <a href="https://qm.qq.com/q/TzIMB20la2" 
+                    class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">加入Q群</a>
+                <a href="https://afdian.com/a/weizard/plan" 
+                    class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">请我喝咖啡</a>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-2">
+            &copy; 2025 WE1ZARD 保留所有权利.
+        </div><br><br>
+    </footer>
+</html>
