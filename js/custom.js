@@ -152,6 +152,26 @@ window.addEventListener('load', function() {
     floatingButtons.style.maxWidth = '90%'; // 使用百分比最大宽度，适应不同屏幕
     floatingButtons.style.boxSizing = 'border-box'; // 确保padding不影响宽度
     
+    // 添加媒体查询，在移动端缩小悬浮按钮框为50%
+    const mediaQuery = window.matchMedia('(max-width: 768px)'); // 移动设备断点
+    
+    // 定义处理函数
+    function handleMediaQueryChange(e) {
+        if (e.matches) {
+            // 移动端：缩小为原来的50%
+            floatingButtons.style.transform = 'translate(-50%, -50%) scale(0.5)';
+        } else {
+            // 电脑端：保持原始大小
+            floatingButtons.style.transform = 'translate(-50%, -50%)';
+        }
+    }
+    
+    // 初始执行一次
+    handleMediaQueryChange(mediaQuery);
+    
+    // 添加事件监听
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+    
     // 创建关闭按钮
     const closeButton = document.createElement('button');
     closeButton.innerHTML = '×';
