@@ -152,43 +152,24 @@ window.addEventListener('load', function() {
     floatingButtons.style.maxWidth = '90%'; // 使用百分比最大宽度，适应不同屏幕
     floatingButtons.style.boxSizing = 'border-box'; // 确保padding不影响宽度
     
-    // 添加媒体查询，在移动端缩小悬浮按钮框为50%
-    const mediaQuery = window.matchMedia('(max-width: 768px)'); // 移动设备断点
-    
-    // 定义处理函数
-    function handleMediaQueryChange(e) {
-        if (e.matches) {
-            // 移动端：缩小为原来的50%
-            floatingButtons.style.transform = 'translate(-50%, -50%) scale(0.5)';
-        } else {
-            // 电脑端：保持原始大小
-            floatingButtons.style.transform = 'translate(-50%, -50%)';
-        }
-    }
-    
-    // 初始执行一次
-    handleMediaQueryChange(mediaQuery);
-    
-    // 添加事件监听
-    mediaQuery.addEventListener('change', handleMediaQueryChange);
-    
     // 创建关闭按钮
     const closeButton = document.createElement('button');
     closeButton.innerHTML = '×';
     closeButton.style.position = 'absolute';
-    closeButton.style.top = '5px'; // 调整到内框右上角
-    closeButton.style.right = '5px';
-    closeButton.style.width = '28px'; // 略微增大关闭按钮
-    closeButton.style.height = '28px';
+    closeButton.style.top = '-48px'; // 调整到框外右上角
+    closeButton.style.right = '-48px';
+    closeButton.style.width = '64px'; // 增大关闭按钮，避免误触
+    closeButton.style.height = '64px';
     closeButton.style.borderRadius = '50%';
-    closeButton.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
-    closeButton.style.color = '#9CA3AF';
-    closeButton.style.border = '1px solid rgba(59, 130, 246, 0.5)';
-    closeButton.style.fontSize = '20px';
-    closeButton.style.lineHeight = '26px'; // 调整行高使×居中
+    closeButton.style.backgroundColor = 'rgba(59, 130, 246, 0.8)';
+    closeButton.style.color = '#FFFFFF';
+    closeButton.style.border = '2px solid rgba(255, 255, 255, 0.8)';
+    closeButton.style.fontSize = '32px';
+    closeButton.style.lineHeight = '32px'; // 调整行高使×居中
     closeButton.style.cursor = 'pointer';
     closeButton.style.transition = 'all 0.3s ease';
     closeButton.style.zIndex = '9999';
+    closeButton.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.3)'; // 添加阴影，提高可见度
     
     // 添加关闭按钮悬停效果
     closeButton.addEventListener('mouseenter', function() {
@@ -346,6 +327,38 @@ window.addEventListener('load', function() {
     
     console.log('成功创建并添加了悬浮按钮和QRCode');
     
+    // 添加媒体查询，在移动端只放大关闭按钮
+    const mediaQuery = window.matchMedia('(max-width: 768px)'); // 移动设备断点
+    
+    // 定义处理函数
+    function handleMediaQueryChange(e) {
+        if (e.matches) {
+            // 移动端：整个悬浮按钮框保持50%大小，关闭按钮放大
+            floatingButtons.style.transform = 'translate(-50%, -50%) scale(0.5)';
+            closeButton.style.width = '40px'; // 放大关闭按钮
+            closeButton.style.height = '40px';
+            closeButton.style.fontSize = '28px';
+            closeButton.style.lineHeight = '36px';
+            closeButton.style.top = '-20px'; // 调整位置以适应放大后的关闭按钮
+            closeButton.style.right = '-20px';
+        } else {
+            // 电脑端：恢复原始大小
+            floatingButtons.style.transform = 'translate(-50%, -50%)';
+            closeButton.style.width = '32px'; // 恢复原始关闭按钮大小
+            closeButton.style.height = '32px';
+            closeButton.style.fontSize = '22px';
+            closeButton.style.lineHeight = '28px';
+            closeButton.style.top = '-14px'; // 恢复原始位置
+            closeButton.style.right = '-14px';
+        }
+    }
+    
+    // 初始执行一次
+    handleMediaQueryChange(mediaQuery);
+    
+    // 添加事件监听
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+    
     // 检查是否在error.html页面
     const isErrorPage = window.location.pathname.endsWith('/error.html') || window.location.pathname.endsWith('/p/error.html');
     
@@ -358,9 +371,9 @@ window.addEventListener('load', function() {
     // 记录页面初始加载时的窗口高度（用于检测虚拟键盘是否打开）
     const initialWindowHeight = window.innerHeight;
     
-    // 只有在非index.html、非feedback.html且非error.html页面添加滚动事件监听器
-    // error.html页面不再自动弹窗
-    if (!isIndexPage && !isFeedbackPage && !isErrorPage) {
+    // 只有在非index.html和非feedback.html页面添加滚动事件监听器
+    // error.html页面也添加滚动事件监听
+    if (!isIndexPage && !isFeedbackPage) {
         // 创建统一的滚动处理函数
         const handleScroll = function() {
             // 判断是否滚动到底部
