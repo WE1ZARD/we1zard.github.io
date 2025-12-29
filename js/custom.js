@@ -133,11 +133,10 @@ window.addEventListener('load', function() {
     const floatingButtons = document.createElement('div');
     floatingButtons.id = 'floating-action-buttons';
     floatingButtons.style.position = 'fixed'; // 保持固定定位
-    floatingButtons.style.top = '50%'; // 垂直居中基准
+    floatingButtons.style.top = '70%'; // 整体下移到屏幕下方
     floatingButtons.style.left = '50%';
-    // 计算移动距离：按钮文本高度(14px) + 二维码底部外边距(10px) + 二维码高度(150px) + 按钮底部内边距(12px) = 186px
-    // 将弹出框往上移动186px，从垂直居中位置调整到新位置
-    floatingButtons.style.transform = 'translate(-50%, calc(-50% - 93px))';
+    // 仅水平居中，不再向上移动
+    floatingButtons.style.transform = 'translate(-50%, -50%)';
     floatingButtons.style.zIndex = '9998';
     floatingButtons.style.display = 'none'; // 默认隐藏
     floatingButtons.style.opacity = '0';
@@ -339,8 +338,9 @@ window.addEventListener('load', function() {
     // 记录页面初始加载时的窗口高度（用于检测虚拟键盘是否打开）
     const initialWindowHeight = window.innerHeight;
     
-    // 只有在非index.html且非feedback.html页面添加滚动事件监听器，控制悬浮按钮的显示和隐藏
-    if (!isIndexPage && !isFeedbackPage) {
+    // 只有在非index.html、非feedback.html且非error.html页面添加滚动事件监听器
+    // error.html页面不再自动弹窗
+    if (!isIndexPage && !isFeedbackPage && !isErrorPage) {
         // 创建统一的滚动处理函数
         const handleScroll = function() {
             // 判断是否滚动到底部
@@ -376,15 +376,11 @@ window.addEventListener('load', function() {
             }
         };
         
-        if (isErrorPage) {
-            // error.html页面特殊处理：监听window的滚动
-            window.addEventListener('scroll', handleScroll);
-        } else {
-            // 其他非index页面：监听window的滚动
-            window.addEventListener('scroll', handleScroll);
-        }
+        // 为非error.html页面添加滚动监听
+        window.addEventListener('scroll', handleScroll);
     } else {
-        console.log('在index.html页面，不显示悬浮按钮');
+        // 在index.html、feedback.html或error.html页面，不添加滚动事件监听器
+        console.log(`在${isIndexPage ? 'index.html' : isFeedbackPage ? 'feedback.html' : 'error.html'}页面，不自动显示悬浮按钮`);
     }
     
     // Error page specific JavaScript code from error.html
