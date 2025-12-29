@@ -133,7 +133,7 @@ window.addEventListener('load', function() {
     const floatingButtons = document.createElement('div');
     floatingButtons.id = 'floating-action-buttons';
     floatingButtons.style.position = 'fixed'; // 保持固定定位
-    floatingButtons.style.top = '60%'; // 整体下移到屏幕下方
+    floatingButtons.style.top = '20%'; // 整体下移到屏幕下方
     floatingButtons.style.left = '50%';
     // 仅水平居中，不再向上移动
     floatingButtons.style.transform = 'translate(-50%, -50%)';
