@@ -199,10 +199,10 @@ window.addEventListener('load', function() {
     
     // 创建按钮容器
     const buttonContainer = document.createElement('div');
-    buttonContainer.className = 'grid grid-cols-2 gap-8';
+    buttonContainer.className = 'grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8';
     buttonContainer.style.width = 'auto';
     buttonContainer.style.maxWidth = '360px';
-    buttonContainer.style.justifyContent = 'space-between';
+    buttonContainer.style.justifyContent = 'center';
     buttonContainer.style.margin = '0 auto'; // 确保容器居中
     
     // 创建加入Q群按钮（合并QRCode和文本）
@@ -212,7 +212,9 @@ window.addEventListener('load', function() {
     qqButton.style.display = 'flex';
     qqButton.style.flexDirection = 'column';
     qqButton.style.alignItems = 'center';
-    qqButton.style.width = '150px';
+    qqButton.style.width = 'auto';
+    qqButton.style.minWidth = '150px';
+    qqButton.style.maxWidth = '250px';
     qqButton.style.padding = '12px';
     qqButton.style.backgroundColor = '#051427';
     qqButton.style.border = '1px solid rgba(59, 130, 246, 0.5)';
@@ -222,7 +224,7 @@ window.addEventListener('load', function() {
     qqButton.style.textAlign = 'center';
     qqButton.style.textDecoration = 'none';
     qqButton.style.transition = 'all 0.3s ease';
-    qqButton.style.margin = '0'; // 确保没有额外的外边距
+    qqButton.style.margin = '0 auto'; // 确保按钮居中
     
     // QQ群QRCode图片
     const qqQrCode = document.createElement('img');
@@ -230,6 +232,7 @@ window.addEventListener('load', function() {
     qqQrCode.alt = 'QQ\u7fa4\u4e8c\u7ef4\u7801';
     qqQrCode.style.width = '100%';
     qqQrCode.style.height = 'auto';
+    qqQrCode.style.maxHeight = '180px';
     qqQrCode.style.marginBottom = '10px';
     qqQrCode.style.borderRadius = '4px';
     // 移除QRCode图片的边框
@@ -264,7 +267,9 @@ window.addEventListener('load', function() {
     coffeeButton.style.display = 'flex';
     coffeeButton.style.flexDirection = 'column';
     coffeeButton.style.alignItems = 'center';
-    coffeeButton.style.width = '150px';
+    coffeeButton.style.width = 'auto';
+    coffeeButton.style.minWidth = '150px';
+    coffeeButton.style.maxWidth = '250px';
     coffeeButton.style.padding = '12px';
     coffeeButton.style.backgroundColor = '#051427';
     coffeeButton.style.border = '1px solid rgba(59, 130, 246, 0.5)';
@@ -274,7 +279,7 @@ window.addEventListener('load', function() {
     coffeeButton.style.textAlign = 'center';
     coffeeButton.style.textDecoration = 'none';
     coffeeButton.style.transition = 'all 0.3s ease';
-    coffeeButton.style.margin = '0'; // 确保没有额外的外边距
+    coffeeButton.style.margin = '0 auto'; // 确保按钮居中
     
     // 请我喝咖啡QRCode图片
     const coffeeQrCode = document.createElement('img');
@@ -282,6 +287,7 @@ window.addEventListener('load', function() {
     coffeeQrCode.alt = '\u8bf7\u6211\u559d\u5496\u5561\u4e8c\u7ef4\u7801';
     coffeeQrCode.style.width = '100%';
     coffeeQrCode.style.height = 'auto';
+    coffeeQrCode.style.maxHeight = '180px';
     coffeeQrCode.style.marginBottom = '10px';
     coffeeQrCode.style.borderRadius = '4px';
     // 移除QRCode图片的边框
