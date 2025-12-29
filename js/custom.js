@@ -321,69 +321,79 @@ window.addEventListener('load', function() {
     console.log('成功创建并添加了悬浮按钮和QRCode');
     
     // 检查是否在error.html页面
-    const isErrorPage = window.location.pathname.endsWith('/error.html') || window.location.pathname.endsWith('/p/error.html');
+    const isErrorPage = window.location.pathname.endsWith('/p/error.html');
     
-    // 添加滚动事件监听器，控制悬浮按钮的显示和隐藏
-    if (isErrorPage) {
-        // error.html页面特殊处理：监听window的滚动
-        window.addEventListener('scroll', function() {
-            // 判断是否滚动到底部
-            const scrollHeight = document.documentElement.scrollHeight;
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const clientHeight = document.documentElement.clientHeight;
-            
-            // 检查是否有隐藏标志，如果有则不显示按钮
-            if (floatingButtons.dataset.hide === 'true') {
-                return;
-            }
-            
-            // 当滚动到距离底部100px以内时显示悬浮按钮
-            if (scrollHeight - scrollTop - clientHeight < 100) {
-                floatingButtons.style.display = 'block';
-                // 使用setTimeout确保display属性已生效，然后再修改opacity
-                setTimeout(() => {
-                    floatingButtons.style.opacity = '1';
-                }, 10);
-            } else {
-                floatingButtons.style.opacity = '0';
-                // 当透明度动画结束后隐藏元素
-                setTimeout(() => {
-                    if (floatingButtons.style.opacity === '0') {
-                        floatingButtons.style.display = 'none';
-                    }
-                }, 300);
-            }
-        });
+    // 检查是否在index.html页面
+    const isIndexPage = window.location.pathname.endsWith('/index.html') || window.location.pathname === '/';
+    
+    // 检查是否在feedback.html页面
+    const isFeedbackPage = window.location.pathname.endsWith('/feedback.html');
+    
+    // 只有在非index.html且非feedback.html页面添加滚动事件监听器，控制悬浮按钮的显示和隐藏
+    if (!isIndexPage && !isFeedbackPage) {
+        if (isErrorPage) {
+            // error.html页面特殊处理：监听window的滚动
+            window.addEventListener('scroll', function() {
+                // 判断是否滚动到底部
+                const scrollHeight = document.documentElement.scrollHeight;
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const clientHeight = document.documentElement.clientHeight;
+                
+                // 检查是否有隐藏标志，如果有则不显示按钮
+                if (floatingButtons.dataset.hide === 'true') {
+                    return;
+                }
+                
+                // 当滚动到距离底部100px以内时显示悬浮按钮
+                if (scrollHeight - scrollTop - clientHeight < 100) {
+                    floatingButtons.style.display = 'block';
+                    // 使用setTimeout确保display属性已生效，然后再修改opacity
+                    setTimeout(() => {
+                        floatingButtons.style.opacity = '1';
+                    }, 10);
+                } else {
+                    floatingButtons.style.opacity = '0';
+                    // 当透明度动画结束后隐藏元素
+                    setTimeout(() => {
+                        if (floatingButtons.style.opacity === '0') {
+                            floatingButtons.style.display = 'none';
+                        }
+                    }, 300);
+                }
+            });
+        } else {
+            // 其他非index页面：监听window的滚动
+            window.addEventListener('scroll', function() {
+                // 判断是否滚动到底部
+                const scrollHeight = document.documentElement.scrollHeight;
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const clientHeight = document.documentElement.clientHeight;
+                
+                // 检查是否有隐藏标志，如果有则不显示按钮
+                if (floatingButtons.dataset.hide === 'true') {
+                    return;
+                }
+                
+                // 当滚动到距离底部100px以内时显示悬浮按钮
+                if (scrollHeight - scrollTop - clientHeight < 100) {
+                    floatingButtons.style.display = 'block';
+                    // 使用setTimeout确保display属性已生效，然后再修改opacity
+                    setTimeout(() => {
+                        floatingButtons.style.opacity = '1';
+                    }, 10);
+                } else {
+                    floatingButtons.style.opacity = '0';
+                    // 当透明度动画结束后隐藏元素
+                    setTimeout(() => {
+                        if (floatingButtons.style.opacity === '0') {
+                            floatingButtons.style.display = 'none';
+                        }
+                    }, 300);
+                }
+            });
+        }
     } else {
-        // 其他页面：监听window的滚动
-        window.addEventListener('scroll', function() {
-            // 判断是否滚动到底部
-            const scrollHeight = document.documentElement.scrollHeight;
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const clientHeight = document.documentElement.clientHeight;
-            
-            // 检查是否有隐藏标志，如果有则不显示按钮
-            if (floatingButtons.dataset.hide === 'true') {
-                return;
-            }
-            
-            // 当滚动到距离底部100px以内时显示悬浮按钮
-            if (scrollHeight - scrollTop - clientHeight < 100) {
-                floatingButtons.style.display = 'block';
-                // 使用setTimeout确保display属性已生效，然后再修改opacity
-                setTimeout(() => {
-                    floatingButtons.style.opacity = '1';
-                }, 10);
-            } else {
-                floatingButtons.style.opacity = '0';
-                // 当透明度动画结束后隐藏元素
-                setTimeout(() => {
-                    if (floatingButtons.style.opacity === '0') {
-                        floatingButtons.style.display = 'none';
-                    }
-                }, 300);
-            }
-        });
+        console.log('在index.html页面，不显示悬浮按钮');
     }
     
     // Error page specific JavaScript code from error.html
