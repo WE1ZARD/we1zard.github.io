@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 创建图片元素
         const img = document.createElement('img');
-        img.src = '/images/avatar.png';
+        img.src = '/img/avatar.png';
         img.alt = 'Home';
         
         // 将图片添加到悬浮球中
