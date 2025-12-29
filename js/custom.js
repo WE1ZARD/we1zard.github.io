@@ -145,28 +145,28 @@ window.addEventListener('load', function() {
     floatingButtons.style.backgroundColor = '#051427';
     floatingButtons.style.border = '1px solid rgba(59, 130, 246, 0.2)';
     floatingButtons.style.borderRadius = '8px';
-    floatingButtons.style.padding = '20px';
+    floatingButtons.style.padding = '20px 20px 15px 20px'; // 调整内边距
     floatingButtons.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.3)';
     floatingButtons.style.textAlign = 'center';
     // 注意：这里不需要再设置position: relative，因为关闭按钮的定位会相对于fixed容器
-    floatingButtons.style.minWidth = '380px'; // 设置最小宽度
-    floatingButtons.style.maxWidth = '400px'; // 设置最大宽度
+    floatingButtons.style.minWidth = '280px'; // 减小最小宽度，适应移动设备
+    floatingButtons.style.maxWidth = '90%'; // 使用百分比最大宽度，适应不同屏幕
     floatingButtons.style.boxSizing = 'border-box'; // 确保padding不影响宽度
     
     // 创建关闭按钮
     const closeButton = document.createElement('button');
     closeButton.innerHTML = '×';
     closeButton.style.position = 'absolute';
-    closeButton.style.top = '-12px'; // 调整到外框右上角
-    closeButton.style.right = '-12px';
-    closeButton.style.width = '25px';
-    closeButton.style.height = '25px';
+    closeButton.style.top = '5px'; // 调整到内框右上角
+    closeButton.style.right = '5px';
+    closeButton.style.width = '28px'; // 略微增大关闭按钮
+    closeButton.style.height = '28px';
     closeButton.style.borderRadius = '50%';
     closeButton.style.backgroundColor = 'rgba(59, 130, 246, 0.2)';
     closeButton.style.color = '#9CA3AF';
     closeButton.style.border = '1px solid rgba(59, 130, 246, 0.5)';
-    closeButton.style.fontSize = '18px';
-    closeButton.style.lineHeight = '23px'; // 调整行高使×居中
+    closeButton.style.fontSize = '20px';
+    closeButton.style.lineHeight = '26px'; // 调整行高使×居中
     closeButton.style.cursor = 'pointer';
     closeButton.style.transition = 'all 0.3s ease';
     closeButton.style.zIndex = '9999';
@@ -199,8 +199,9 @@ window.addEventListener('load', function() {
     
     // 创建按钮容器
     const buttonContainer = document.createElement('div');
-    buttonContainer.className = 'grid grid-cols-2 gap-12';
-    buttonContainer.style.width = '380px';
+    buttonContainer.className = 'grid grid-cols-2 gap-8';
+    buttonContainer.style.width = 'auto';
+    buttonContainer.style.maxWidth = '360px';
     buttonContainer.style.justifyContent = 'space-between';
     buttonContainer.style.margin = '0 auto'; // 确保容器居中
     
@@ -321,7 +322,7 @@ window.addEventListener('load', function() {
     console.log('成功创建并添加了悬浮按钮和QRCode');
     
     // 检查是否在error.html页面
-    const isErrorPage = window.location.pathname.endsWith('/p/error.html');
+    const isErrorPage = window.location.pathname.endsWith('/error.html') || window.location.pathname.endsWith('/p/error.html');
     
     // 检查是否在index.html页面
     const isIndexPage = window.location.pathname.endsWith('/index.html') || window.location.pathname === '/';
