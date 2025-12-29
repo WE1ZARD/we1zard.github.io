@@ -23,7 +23,7 @@
                 <block>配置文件路径 <code>/bootloader/ini/*.ini</code></block><br>
         </div>
 
-        <div class="relative p-4 rounded-md shadow-md w-full md:w-1/2 ">
+        <div class="relative p-4 rounded-md shadow-md w-full">
             <h2 id="dvfs-setting">使用方法</h2>
             <blockquote>
                 <block>下框会自动根据设置生成的配置参数,</block><br>
@@ -115,7 +115,7 @@ ram_oc_opt=0</pre>
 
                 <bold>tRTW</bold> 和 <bold>tWTR</bold> 大多数时候取决于内存频率, 在低频上通常可以多拉紧一点.<br>
                 以上时序开启之后不再受 DVFS设置 中的核心时序影响, 以上未列出的时序仍受影响.
-            </blockquote>
+            </blockquote><br>
         </div>
     </div>
 
@@ -305,19 +305,7 @@ ram_oc_opt=0</pre>
         updateOptConfig();
         updateConfigCode();
     </script>
+
+
 </body>
-    <footer>
-        <div class="max-w-md mx-auto mt-2 p-2">
-            <!-- 添加到页脚的按钮 -->
-            <div id="action-buttons" class="button-container grid grid-cols-2 gap-3">
-                <a href="https://qm.qq.com/q/TzIMB20la2" 
-                    class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">加入Q群</a>
-                <a href="https://afdian.com/a/weizard/plan" 
-                    class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">请我喝咖啡</a>
-            </div>
-        </div>
-        <div class="text-center text-gray-500 mt-2">
-            &copy; 2025 WE1ZARD 保留所有权利.
-        </div><br><br>
-    </footer>
 </html>

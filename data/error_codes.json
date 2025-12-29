@@ -1,0 +1,3698 @@
+[
+  {
+    "code": "0100000000001000",
+    "description": "",
+    "section": "大气层系统",
+    "subsection": "自定义主题",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001007",
+    "description": "",
+    "section": "大气层系统",
+    "subsection": "自定义主题",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001013",
+    "description": "",
+    "section": "大气层系统",
+    "subsection": "自定义主题",
+    "subsubsection": ""
+  },
+  {
+    "code": "/atmosphere/contents/id",
+    "description": "",
+    "section": "大气层系统",
+    "subsection": "自定义主题",
+    "subsubsection": ""
+  },
+  {
+    "code": "2000-0000",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "系统/游戏版本错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-0007",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "系统/游戏版本错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-0008",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "系统/游戏版本错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2122-0082",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "系统/游戏版本错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2124-3000",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "系统/游戏版本错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2162-0101",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "系统/游戏版本错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2164-0020",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "系统/游戏版本错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-0001",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "屏幕卡机错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-4301",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "屏幕卡机错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "4463",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "屏幕卡机错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-3005",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "屏幕卡机错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2005-0005",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "屏幕卡机错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-4501",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "4535",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-4641",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "4660",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-4683",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-4690",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-4741",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "4760",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2002-6201",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2005-0003",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2016-0601",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "储存错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2124-3080",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "Switch Online 所在地区无服务错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2153-0321",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "无法自主排查错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2162-0002",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "手柄配件故障",
+    "subsubsection": ""
+  },
+  {
+    "code": "2168-0002",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "系统主题错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2306-0820",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "试玩游戏未解锁错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2618-0542",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "多人在线游戏房间错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2801-7002",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "Twitter 连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2801-7199",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "Facebook 连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2810-1500",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "Facebook 连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2813-1400",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "eShop 维护错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2813-0055",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "eShop 游戏未上架错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2813-6838",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "eShop 兑换码错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2110-1xxx",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2110-3xxx",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2110-2003",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2110-2004",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2110-2091",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2110-2200",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2110-2201",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2110-2214",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2110-3127",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2110-3400",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2124-8006",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2124-8007",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2124-8028",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2137-0240",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2137-8006",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2160-0103",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2160-0202",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2306-0501",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2306-0502",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2306-0520",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2306-0819",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2618-0006",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2618-0201",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2618-0203",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2618-0501",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2618-0502",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2618-0513",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2618-0516",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2618-2003",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2810-1224",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2811-5001",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "网络连接错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2124-5002",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "服务器错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2124-5200",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "服务器错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2124-5249",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "服务器错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2811-7503",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "服务器错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2811-7504",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "服务器错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2816-0700",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "服务器错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "2817-0700",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "服务器错误",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000000",
+    "description": "Filesystem_services: fs",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000001",
+    "description": "Loader_services: ldr (Loader)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000002",
+    "description": "NCM_services: ncm",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000003",
+    "description": "Process_Manager_services: pm (ProcessMana)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000004",
+    "description": "Services_API: sm",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000005",
+    "description": "boot",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000006",
+    "description": "USB_services: usb",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000007",
+    "description": "TMA_services: tma (debug)\nTMA_services: tma.stub (retail pre-11.0.0)\nTMA_services: htc.stub (retail [11.0.0+])",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000008",
+    "description": "Boot2: boot2 (debug)\nBoot2: boot2.SafeMode (safe)\nBoot2: boot2.FromHost (develop)\nBoot2: boot2.prodBoot (retail)\nBoot2: boot2.manuBoot (factory)\nBoot2: boot2.Manu1st (factory)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000009",
+    "description": "Settings_services: settings\nSettings_services: settings_hoag (8.1.1)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000000A",
+    "description": "Bus_services: Bus\nBus_services: Bus_hoag (8.1.1)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000000B",
+    "description": "Bluetooth_Driver_services: bluetooth (1.0.0-19.0.1)\nBluetooth_Driver_services: bluetooth.autog ([20.0.0+])",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000000C",
+    "description": "BCAT_services: bcat",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000000D",
+    "description": "dmnt (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000000E",
+    "description": "Friend_services: friends",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000000F",
+    "description": "Network_Interface_services: nifm",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000010",
+    "description": "PTM_services: ptm",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000011",
+    "description": "shell (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000012",
+    "description": "Sockets_services: bsdsocket",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000013",
+    "description": "HID_services: hid\nHID_services: hid_EdevLogEnab (factory)\nHID_services: hid_hoag (8.1.1)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000014",
+    "description": "Audio_services: audio\nAudio_services: audio_hoag (8.1.1)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000015",
+    "description": "Log_services: LogManager (debug)\nLog_services: LogManager.Prod (retail)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000016",
+    "description": "WLAN_services: wlan",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000017",
+    "description": "cs (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000018",
+    "description": "LDN_services: ldn",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000019",
+    "description": "NV_services: nvservices",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000001A",
+    "description": "PCV_services: pcv",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000001B",
+    "description": "PPC_services: ppc (1.0.0-7.0.1)\nCapmtp_services: capmtp ([11.0.0+])",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000001C",
+    "description": "Nvnflinger_services: nvnflinger",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000001D",
+    "description": "PCIe_services: pcie (debug, and retail with [10.0.0+])\nPCIe_services: pcie.withoutHb (retail)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000001E",
+    "description": "Account_services: account",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000001F",
+    "description": "NS_Services: ns",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000020",
+    "description": "NFC_services: nfc\nNFC_services: nfc_Hoag (8.1.1)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000021",
+    "description": "PSC_services: psc",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000022",
+    "description": "Capture_services: capsrv",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000023",
+    "description": "AM_services: am\nAM_services: am.withoutPscWa (factory)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000024",
+    "description": "SSL_services: ssl",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000025",
+    "description": "NIM_services: nim",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000026",
+    "description": "cec (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000027",
+    "description": "tspm (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000028",
+    "description": "SPL_services: spl",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000029",
+    "description": "Backlight_services: lbl",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000002A",
+    "description": "BTM_services: btm",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000002B",
+    "description": "Error_Report_services: erpt",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000002C",
+    "description": "time (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000002D",
+    "description": "Display_services: vi",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000002E",
+    "description": "Parental_Control_services: pctl",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000002F",
+    "description": "NPNS_services: npns",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000030",
+    "description": "Error_Upload_services: eupld",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000031",
+    "description": "arp\nGlue_services: glue",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000032",
+    "description": "eclct",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000033",
+    "description": "ETicket_services: es",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000034",
+    "description": "Fatal_services: fatal",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000035",
+    "description": "GRC_services: grc",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000036",
+    "description": "creport",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000037",
+    "description": "Loader_services#ldr:ro: ro",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000038",
+    "description": "Profiler services: profiler (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000039",
+    "description": "Shared_Database_services: sdb",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000003A",
+    "description": "Migration_services: migration",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000003B",
+    "description": "JIT_services: jit (retail [10.0.0+])",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000003C",
+    "description": "Jpegdec_services: jpegdec",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000003D",
+    "description": "safemode",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000003E",
+    "description": "OLSC_services: olsc",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000003F",
+    "description": "dt (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000040",
+    "description": "nd (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000041",
+    "description": "NGCT_services: ngct",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000042",
+    "description": "PGL_services: pgl",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000043",
+    "description": "(currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000044",
+    "description": "(currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000045",
+    "description": "OMM_services: omm",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000046",
+    "description": "Ethernet_services: eth",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000047",
+    "description": "(currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000048",
+    "description": "(currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000049",
+    "description": "(currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000004A",
+    "description": "(currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000004B",
+    "description": "(currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000004C",
+    "description": "netTc (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000004D",
+    "description": "(currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000004E",
+    "description": "(currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000004F",
+    "description": "(currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000050",
+    "description": "ngc",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000051",
+    "description": "dmgr (currently not present on retail devices)",
+    "section": "任天堂系统",
+    "subsection": "系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000800",
+    "description": "SSL_services#CertStore: CertStore: SSL trusted certificates.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000801",
+    "description": "ErrorMessage: Stores the message strings for Support Error Codes.\nThere's \"/DatabaseInfo\" at FS root, then the rest is stored at \"/{first 4 error digits}/{last 4 error digits}/\".",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000802",
+    "description": "MiiModel",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000803",
+    "description": "BrowserDll: Mounted as \"shareddata:/\". Contains various browser data: emojis, OSS NROs, \"buildinfo/buildinfo.dat\", ...",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000804",
+    "description": "Help: HTML resources: Open-source licenses\n(\"Intellectual Property Notices\") and seizure warnings(\"Health & Safety Information\").\nThe former is stored at FS \"/legallines.htdocs/\"\nwhile the latter is at \"/safe.htdocs/\".",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000805",
+    "description": "SharedFont: Chinese and Korean dictionaries.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000806",
+    "description": "NgWord: Bad words.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000807",
+    "description": "SsidList: Hotspot List.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000808",
+    "description": "Dictionary: European, English, and Japanese dictionaries.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000809",
+    "description": "SystemVersion: System Version Title.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000080A",
+    "description": "AvatarImage: Background and Character images for user avatars (RGBA format & Yaz0 compression).",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000080B",
+    "description": "LocalNews: Tutorial images and strings. Used for the offline news by the News applet.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000080C",
+    "description": "Eula (Eura): Accessed by NS_Services: NS.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000080D",
+    "description": "UrlBlackList",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000080E",
+    "description": "TimeZoneBinary",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000080F",
+    "description": "CertStoreCruiser (BrowserCertStore): Currently not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000810",
+    "description": "FontNintendoExtension",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000811",
+    "description": "FontStandard",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000812",
+    "description": "FontKorean",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000813",
+    "description": "FontChineseTraditional",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000814",
+    "description": "FontChineseSimple",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000815",
+    "description": "FontBfcpx: Currently not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000816",
+    "description": "SystemUpdate: Contains the title-listing for the associated sysupdate in the NCA-type0 .cnmt.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000818",
+    "description": "FirmwareDebugSettings: System Settings: System config.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000819",
+    "description": "BootImagePackage: Firmware Package A: Normal Firmware.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000081A",
+    "description": "BootImagePackageSafe: Firmware Package B: SafeMode Firmware. See Boot_Modes#Safe_Mode: Safe Mode.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000081B",
+    "description": "BootImagePackageExFat: Firmware Package C: Normal Firmware (exFAT variant). Identical to 0100000000000819 with different FS sysmodule. Requires a device ID to download from CDN.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000081C",
+    "description": "BootImagePackageExFatSafe: Firmware Package D: SafeMode Firmware (exFAT variant). Identical to 010000000000081A with different FS sysmodule. Requires a device ID to download from CDN.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000081D",
+    "description": "FatalMessage: Errdisp strings.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000081E",
+    "description": "ControllerIcon: Controller gfx/icon data + dummy file.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000081F",
+    "description": "PlatformConfigIcosa: Icosa system config.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000820",
+    "description": "PlatformConfigCopper: Copper system config.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000821",
+    "description": "PlatformConfigHoag: Hoag system config.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000822",
+    "description": "ControllerFirmware: Firmware binaries for peripherals (hardware within Joy-Cons/etc).",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000823",
+    "description": "NgWord2: Contains version.dat and ac_*_nx files. All of the *_nx files stored under here are compressed with gzip.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000824",
+    "description": "PlatformConfigIcosaMariko: IcosaMariko system config.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000825",
+    "description": "ApplicationBlackList: Used by NS_Services: NS for restricting application installation and updates.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000826",
+    "description": "RebootlessSystemUpdateVersion: Rebootless system update version file.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000827",
+    "description": "ContentActionTable: Used by AM_services: AM.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000828",
+    "description": "FunctionBlackList: Used for restricting specific features in applications.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000829",
+    "description": "PlatformConfigCalcio: Calcio system config. Currently not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000830",
+    "description": "NgWordT: Bad words for China region (Tencent).",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000831",
+    "description": "PlatformConfigAula: Aula system config.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000832",
+    "description": "Firmware binaries for Aula's dock.",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000835",
+    "description": "New ErrorMessage: [16.0.0+] Currently not present on NX retail devices. Used by <code>nn::err::detail::MountErrorMessageSystemData</code> when the input <code>nn::err::ErrorMessageDatabaseType</code> is non-zero (retail NX Error_Applet: LibraryAppletError passes hard-coded value 0).",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000859",
+    "description": "[20.0.0+]",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000085C",
+    "description": "[20.0.0+]",
+    "section": "任天堂系统",
+    "subsection": "系统数据存档",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001000",
+    "description": "qlaunch (SystemAppletMenu): qlaunch system applet. Launched by NS_Services#LaunchSystemApplet: ns.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001001",
+    "description": "Auth_Applet: auth (LibraryAppletAuth)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001002",
+    "description": "cabinet (LibraryAppletCabinet)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001003",
+    "description": "Controller_Applet: controller (LibraryAppletController)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001004",
+    "description": "dataErase (LibraryAppletDataErase)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001005",
+    "description": "error (LibraryAppletError)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001006",
+    "description": "netConnect (LibraryAppletNetConnect)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001007",
+    "description": "Profile Selector: playerSelect (LibraryAppletPlayerSelect)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001008",
+    "description": "Software Keyboard: swkbd (LibraryAppletSwkbd)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001009",
+    "description": "miiEdit (LibraryAppletMiiEdit)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000100A",
+    "description": "LibAppletWeb (LibraryAppletWeb): Internet_Browser: WebApplet.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000100B",
+    "description": "LibAppletShop (LibraryAppletShop): Internet_Browser: ShopN applet.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000100C",
+    "description": "overlayDisp (OverlayApplet): ProgramId is loaded by NS_Services: ns from system-config-title.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000100D",
+    "description": "Album_Applet: photoViewer (LibraryAppletPhotoViewer)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000100E",
+    "description": "set (LibraryAppletSet): Not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000100F",
+    "description": "LibAppletOff (LibraryAppletOfflineWeb): Internet_Browser: Offline web-applet.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001010",
+    "description": "LibAppletLns (LibraryAppletLoginShare): Internet_Browser: Whitelisted applet. (LoginApplet+ShareApplet+LobbyApplet)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001011",
+    "description": "LibAppletAuth (LibraryAppletWifiWebAuth): Internet_Browser: WifiWebAuth applet.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001012",
+    "description": "starter (DummyStarter)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001013",
+    "description": "MyPage_Applet: myPage (LibraryAppletMyPage)",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001014",
+    "description": "PlayReport: Not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001015",
+    "description": "maintenance (MaintenanceMenu): Initial applet displayed when booting into Recovery_Mode: recovery mode. Launched by NS_Services#LaunchSystemApplet: ns.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001016",
+    "description": "NS_Services: ns when a certain flag is non-zero, in multiple places including around code using the string \"application_install\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001017",
+    "description": "Applet_Manager_services: am for the \"nn.am.SystemReportTask\" thread.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001018",
+    "description": "NS_Services: ns when saving a SystemPlayReport with EventId \"systemupdate_dl_throughput\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001019",
+    "description": "NS_Services: ns when saving a SystemPlayReport with EventId \"volume_update\" or \"output_target_update\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000101A",
+    "description": "gift (LibraryAppletGift): Not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000101B",
+    "description": "DummyECApplet (LibraryAppletDummyShop): Not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000101C",
+    "description": "userMigration (LibraryAppletUserMigration): Not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000101D",
+    "description": "EncounterSys (LibraryAppletPreomiaSys): Not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000101E",
+    "description": "NIM_services : nim when it accesses the Network#pearljam: pearljam server.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000101F",
+    "description": "NIM_services : nim and [9.0.0+] Glue_services: glue. The program itself doesn'",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001020",
+    "description": "story (LibraryAppletStory): Not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001021",
+    "description": "NS_Services: ns when saving a SystemPlayReport with EventId \"systemupdate_pass\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001023",
+    "description": "BCAT_services: bcat around code using the string \"statistics\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001024",
+    "description": "PSC_services: psc around code using the string \"syslog\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001025",
+    "description": "Applet_Manager_services: am.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001026",
+    "description": "OLSC_services: olsc.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001027",
+    "description": "Account_services: account.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001028",
+    "description": "NS_Services: ns.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001029",
+    "description": "Network_Interface_services: nifm around code using the string \"request_count\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000102A",
+    "description": "Applet_Manager_services: am.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000102B",
+    "description": "Glue_services: glue.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000102C",
+    "description": "Applet_Manager_services: am.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000102E",
+    "description": "Shared_Database_services: sdb around code using the string \"blacklist\". The program itself doesn'",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000102F",
+    "description": "NS_Services: ns around code using the string \"content_delivery\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001030",
+    "description": "Parental_Control_services: pctl around code using the string \"npns_create_token\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001031",
+    "description": "NS_Services: ns.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001032",
+    "description": "Glue_services: glue.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001033",
+    "description": "NS_Services: ns and [8.0.0+] BCAT_services: bcat around code using the string \"promotion\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001034",
+    "description": "NGCT_services: ngct and [9.0.0+] BCAT_services: bcat.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001037",
+    "description": "NIM_services: nim.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001038",
+    "description": "sample (LibraryAppletSample): Not present on retail devices.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000103C",
+    "description": "BCAT_services: bcat around code using the string \"mnpp\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000103D",
+    "description": "Sockets_services: bsdsocket around code using the string \"setting\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000103E",
+    "description": "BCAT_services: bcat around code using the strings \"recv_push_ntf_mission_completed\" and \"send_ovl_ntf_mission_completed\".",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001042",
+    "description": "Applet_Manager_services: am.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001043",
+    "description": "Applet_Manager_services: am.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001048",
+    "description": "Splay_Applet: splay",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000001FFF",
+    "description": "EndOceanProgramId: Placeholder for the last valid applet ID.",
+    "section": "任天堂系统",
+    "subsection": "系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002000",
+    "description": "A2BoardFunction",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002001",
+    "description": "A3Wireless",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002002",
+    "description": "C1LcdAndKey (LcdAndKey): LCD/Keyboard testing.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002003",
+    "description": "C2UsbHpmic (UsbAndHPMicTest): USB and audio testing.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002004",
+    "description": "C3Aging (Aging): Graphics/Framerate testing.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002005",
+    "description": "C4SixAxis (6axisTest): Sixaxis (controller peripheral) testing.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002006",
+    "description": "C5Wireless (AssembledWireless): Wireless testing.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002007",
+    "description": "C7FinalCheck (FinalCheck)",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000203F",
+    "description": "AutoCapture",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002040",
+    "description": "DevMenuCommandSystem",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002041",
+    "description": "recovery",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002042",
+    "description": "DevMenuSystem",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002044",
+    "description": "HB-TBIntegrationTest",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000204D",
+    "description": "BackupSaveData",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000204E",
+    "description": "A4BoardCalWriti (BoardCalWriting): Writes calibration data to NAND.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002054",
+    "description": "RepairSslCertificate",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002055",
+    "description": "GameCardWriter",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002056",
+    "description": "UsbPdTestTool",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002057",
+    "description": "RepairDeletePctl",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002058",
+    "description": "RepairBackup",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002059",
+    "description": "RepairRestore",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000205A",
+    "description": "RepairAccountTransfer",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000205B",
+    "description": "RepairAutoNetworkUpdater",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000205C",
+    "description": "RefurbishReset",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000205D",
+    "description": "RepairAssistCup",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000205E",
+    "description": "RepairPairingCutter",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002064",
+    "description": "DevMenu",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002065",
+    "description": "DevMenuApp",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002066",
+    "description": "GetGameCardAsicInfo",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002068",
+    "description": "NfpDebugToolSystem",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002069",
+    "description": "AlbumSynchronizer",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002071",
+    "description": "SnapShotDumper: Used by NS_Services: NS.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002073",
+    "description": "DevMenuSystemApp",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002099",
+    "description": "DevOverlayDisp",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000209A",
+    "description": "NandVerifier",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000209B",
+    "description": "GpuCoreDumper: Used by AM_services: AM.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000209C",
+    "description": "TestApplication (TestApplicationLauncher): Factory qlaunch replacement, used to launch other tests.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000209E",
+    "description": "HelloWorld",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020A0",
+    "description": "XcieWriter",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020A1",
+    "description": "GpuOverrunNotifier",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020C8",
+    "description": "NfpDebugTool",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020CA",
+    "description": "NoftWriter",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020D0",
+    "description": "BcatSystemDebugTool",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020D1",
+    "description": "DevSafeModeUpdater",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020D3",
+    "description": "ControllerConnectionAnalyzer",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020D4",
+    "description": "DevKitUpdater",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020D6",
+    "description": "RepairTimeReviser",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020D7",
+    "description": "RepairReinitializeFuelGauge",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020DA",
+    "description": "RepairAbortMigration",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020DC",
+    "description": "RepairShowDeviceId",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020DD",
+    "description": "RepairSetCycleCountReliability",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020E0",
+    "description": "Interface",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020E1",
+    "description": "AlbumDownloader",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020E3",
+    "description": "FuelGaugeDumper",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020E4",
+    "description": "UnsafeExtract",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020E5",
+    "description": "UnsafeEngrave",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020EE",
+    "description": "BluetoothSettingTool",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000000020F0",
+    "description": "ApplicationInstallerRomfs (devmenuapp_installer): Launched by Boot2: boot2.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002100",
+    "description": "DevMenuLotcheckDownloader",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002101",
+    "description": "DevMenuCommand",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002102",
+    "description": "ExportPartition",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002103",
+    "description": "Factory Setup: SystemInitializer (SystemInitializ)",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002104",
+    "description": "SystemUpdaterHostFs",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002105",
+    "description": "WriteToStorage",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002106",
+    "description": "Factory Setup: CalWriter (CalWriterManu)",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002107",
+    "description": "SettingsManager",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002109",
+    "description": "testBuildSystemIris",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000210A",
+    "description": "SystemUpdater",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000210B",
+    "description": "nvnflinger_util",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000210C",
+    "description": "ControllerFirmwareUpdater",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000210D",
+    "description": "testBuildSystemNintendoWare (Test)",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002110",
+    "description": "TestSaveDataCreator",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002111",
+    "description": "C9LcdSpker",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002114",
+    "description": "RankTurn",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002116",
+    "description": "BleTestTool",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000211A",
+    "description": "PreinstallAppWriter",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000211C",
+    "description": "ControllerSerialFlashTool",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000211D",
+    "description": "ControllerFlashWriter",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000211E",
+    "description": "C13Handling",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000211F",
+    "description": "HidTest",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002120",
+    "description": "ControllerTestApp",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002121",
+    "description": "HidInspectionTool",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002124",
+    "description": "BatteryCyclesEditor",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002125",
+    "description": "UsbFirmwareUpdater",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002126",
+    "description": "PalmaSerialCodeTool",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002127",
+    "description": "renderdoccmd",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002128",
+    "description": "HidInspectionToolProd",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000212C",
+    "description": "ExhibitionMenu",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000212F",
+    "description": "ExhibitionSaveData",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002130",
+    "description": "LuciaConverter",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002133",
+    "description": "CalDumper",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002134",
+    "description": "AnalogStickEvaluationTool",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000216A",
+    "description": "ButtonTest",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000216D",
+    "description": "ExhibitionSaveDataSnapshot: Unofficial name.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000216E",
+    "description": "HandlingA",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002178",
+    "description": "SecureStartupSettings: Unofficial name.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000217A",
+    "description": "WirelessInterference",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000217D",
+    "description": "CradleFirmwareUpdater",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002184",
+    "description": "HttpInstallSettings: Unofficial name.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002187",
+    "description": "ExhibitionMovieAssetData: Unofficial name.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000002191",
+    "description": "ExhibitionPlayData: Unofficial name.",
+    "section": "任天堂系统",
+    "subsection": "开发系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000003002",
+    "description": "DummyProcess",
+    "section": "任天堂系统",
+    "subsection": "调试系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000003003",
+    "description": "DebugMonitor0",
+    "section": "任天堂系统",
+    "subsection": "调试系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000003004",
+    "description": "SystemHelloWorld",
+    "section": "任天堂系统",
+    "subsection": "调试系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B120",
+    "description": "nvdbgsvc: Launched by maintenance mode Boot2: boot2. : manuBoot, but not present in retail or Factory Setup: factory firmware.",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B123",
+    "description": "acc:CORNX",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B14A",
+    "description": "Manu Services: manu: Installed in Factory Setup: factory firmware.",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B14B",
+    "description": "ManuUsbLoopBack",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B1B8",
+    "description": "DevFwdbgHbPackage",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B1B9",
+    "description": "DevFwdbgUsbPackage",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B1BA",
+    "description": "ProdFwdbgPackage",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B22A",
+    "description": "scs",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B22B",
+    "description": "ControllerFirmwareDebug",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B23D",
+    "description": "dt0",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000B240",
+    "description": "htc",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000C600",
+    "description": "BdkSample01",
+    "section": "任天堂系统",
+    "subsection": "BDK 系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000C601",
+    "description": "BdkSample02",
+    "section": "任天堂系统",
+    "subsection": "BDK 系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000C602",
+    "description": "BdkSample03",
+    "section": "任天堂系统",
+    "subsection": "BDK 系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000C603",
+    "description": "BdkSample04",
+    "section": "任天堂系统",
+    "subsection": "BDK 系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D609",
+    "description": "dmnt : gen2",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D60A",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D60B",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D60C",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D60D",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D60E",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D610",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D611",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D612",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D613",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D614",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D615",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D616",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D617",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D619",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D621",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D623",
+    "description": "DevServer",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D633",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D640",
+    "description": "htcnet",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D65A",
+    "description": "netTcDev",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D65B",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000D65C",
+    "description": "",
+    "section": "任天堂系统",
+    "subsection": "开发系统服务",
+    "subsubsection": ""
+  },
+  {
+    "code": "01008BB00013C000",
+    "description": "Application: NES emulator.",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100069000078000",
+    "description": "RetailInteractiveDisplayMenu (DevQuestMenu)\nThis program can be launched by qlaunch, but is not normally installed on retail systems.",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000B003486000",
+    "description": "AudioUsbMicDebugTool",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100458001E04000",
+    "description": "BcatTestApp01",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100F910020F8000",
+    "description": "BcatTestApp02",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100B7D0020FC000",
+    "description": "BcatTestApp03",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100132002100000",
+    "description": "BcatTestApp04",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100935002116000",
+    "description": "BcatTestApp05",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100DA4002130000",
+    "description": "BcatTestApp06",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100B0F002104000",
+    "description": "BcatTestApp07",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "010051E002132000",
+    "description": "BcatTestApp08",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "01004CB0015C8000",
+    "description": "BcatTestApp09",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "01009720015CA000",
+    "description": "BcatTestApp10",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "01002F20015C6000",
+    "description": "BcatTestApp11",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100204001F90000",
+    "description": "BcatTestApp12",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100060001F92000",
+    "description": "BcatTestApp13",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100C26001F94000",
+    "description": "BcatTestApp14",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100462001F96000",
+    "description": "BcatTestApp15",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "01005C6001F98000",
+    "description": "BcatTestApp16",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "010070000E3C0000",
+    "description": "EncounterUsr (LibraryAppletPreomiaUsr)",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "010086000E49C000",
+    "description": "EncounterUsrDummy (LibraryAppletPreomiaUsrDummy)",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100810002D5A000",
+    "description": "ShopMonitaringTool",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "010023D002B98000",
+    "description": "DeltaStress",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "010099F00D810000",
+    "description": "BCAT_services: bcat",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100E6C01163C000",
+    "description": "OLSC_services: olsc",
+    "section": "任天堂系统",
+    "subsection": "系统应用",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000001",
+    "description": "Factory Setup: SystemInitializer (SystemInitializ)",
+    "section": "任天堂系统",
+    "subsection": "先行系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000004",
+    "description": "Factory Setup: CalWriter (CalWriterManu)",
+    "section": "任天堂系统",
+    "subsection": "先行系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000005",
+    "description": "DevMenuCommand",
+    "section": "任天堂系统",
+    "subsection": "先行系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000006",
+    "description": "SettingsManager",
+    "section": "任天堂系统",
+    "subsection": "先行系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000007",
+    "description": "DevMenu (debug)\nTestApplication (factory)",
+    "section": "任天堂系统",
+    "subsection": "先行系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000000B",
+    "description": "SnapShotDumper",
+    "section": "任天堂系统",
+    "subsection": "先行系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000000C",
+    "description": "SystemUpdater",
+    "section": "任天堂系统",
+    "subsection": "先行系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000000E",
+    "description": "ControllerFirmwareUpdater",
+    "section": "任天堂系统",
+    "subsection": "先行系统小程序",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000201",
+    "description": "usb",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000202",
+    "description": "tma",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000203",
+    "description": "boot2",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000204",
+    "description": "settings",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000205",
+    "description": "Bus",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000206",
+    "description": "bluetooth",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000208",
+    "description": "DebugMonitor0",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000209",
+    "description": "dmnt",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000020B",
+    "description": "nifm",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000020C",
+    "description": "ptm",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000020E",
+    "description": "bsdsocket",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000020F",
+    "description": "hid",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000210",
+    "description": "audio",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000212",
+    "description": "LogManager",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000213",
+    "description": "wlan",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000214",
+    "description": "cs",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000215",
+    "description": "ldn",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000216",
+    "description": "nvservices",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000217",
+    "description": "pcv",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000218",
+    "description": "ppc",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000021A",
+    "description": "lbl0",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000021B",
+    "description": "nvnflinger",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000021C",
+    "description": "pcie",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000021D",
+    "description": "account",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000021E",
+    "description": "ns",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "100000000000021F",
+    "description": "nfc",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000220",
+    "description": "psc",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000221",
+    "description": "capsrv",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000222",
+    "description": "am",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000223",
+    "description": "ssl",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "1000000000000224",
+    "description": "nim",
+    "section": "任天堂系统",
+    "subsection": "先行系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0000000000534C56",
+    "description": "SaltyNX",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "00FF0000000002AA",
+    "description": "BootSoundNX",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "00FF0000636C6BF2",
+    "description": "nx-reader",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "00FF0000636C6BFF",
+    "description": "sys-clk",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "00FF00006D7470FF",
+    "description": "mtp-server-nx",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "00FF0000A53BB665",
+    "description": "SysDVR",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "00FF747765616BFF",
+    "description": "switch-sys-tweak",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000052",
+    "description": "switch-nfp-mitm",
+    "section": "大气层系统",
+    "subsection": "任天堂系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000081",
+    "description": "nx-btred",
+    "section": "大气层系统",
+    "subsection": "任天堂系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000352",
+    "description": "emuiibo",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000464",
+    "description": "SwitchPresence",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000523",
+    "description": "aoc-mitm",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000901",
+    "description": "OJDS-NX",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000BED",
+    "description": "vax",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000BEF",
+    "description": "fsp-usb",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000DAD",
+    "description": "nx_overlay",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000F12",
+    "description": "Fizeau",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000000FAF",
+    "description": "hid-mitm/hid-mitm-plus",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000006480",
+    "description": "twili",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000007200",
+    "description": "ilia",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000BD00",
+    "description": "MissionControl",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000C235",
+    "description": "Freebird",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000F00F",
+    "description": "dvdnx",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "010000000000FFAB",
+    "description": "usb-mitm",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "01000000001ED1ED",
+    "description": "maydel",
+    "section": "大气层系统",
+    "subsection": "其他",
+    "subsubsection": ""
+  },
+  {
+    "code": "010041544d530000",
+    "description": "ams.mitm",
+    "section": "大气层系统",
+    "subsection": "其他",
+    "subsubsection": ""
+  },
+  {
+    "code": "0107330726762000",
+    "description": "sys-rgb",
+    "section": "大气层系统",
+    "subsection": "其他",
+    "subsubsection": ""
+  },
+  {
+    "code": "0532232232232000",
+    "description": "NX-input-recorder",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "054e4f4558454000",
+    "description": "noexs",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "2200000000000100",
+    "description": "SplitNX",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4100000000000324",
+    "description": "sys-http",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200000000000000",
+    "description": "sys-tune/sys-audioplayer",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "420000000000000B",
+    "description": "sys-patch",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "420000000000000E",
+    "description": "sys-ftpd/sys-ftpd-light",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "420000000000000F",
+    "description": "SlideNX",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200000000000010",
+    "description": "ldn_mitm",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "420000000000011B",
+    "description": "ftpsrv",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200000000000666",
+    "description": "network_mitm",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200000000000811",
+    "description": "bitmap-printer",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200000000000BA6",
+    "description": "BTSounds",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200000000000BAC",
+    "description": "SwiTAS",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200000000000FFF",
+    "description": "sys-triplayer",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "420000000005C09E",
+    "description": "sys-scope",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "420000000007E51A",
+    "description": "nx-ovlloader",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200000000474442",
+    "description": "sys-gdbstub",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200000000696969",
+    "description": "sys-logger",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200000AF1E8DA89",
+    "description": "ControllerSaver",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "42000062616B6101",
+    "description": "sys-screenuploader",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4200736372697074",
+    "description": "sys-script",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4206900000000012",
+    "description": "sfdnsres_mitm",
+    "section": "大气层系统",
+    "subsection": "其他",
+    "subsubsection": ""
+  },
+  {
+    "code": "430000000000000A",
+    "description": "sys-netcheat",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "430000000000000B",
+    "description": "sys-botbase",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "430000000000000C",
+    "description": "sys-botbaseplus",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "43000000000000FF",
+    "description": "nxsh",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4300000000000909",
+    "description": "NXGallery",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "5600000000000000",
+    "description": "NXCord",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "690000000000000D",
+    "description": "sys-con",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  }
+]

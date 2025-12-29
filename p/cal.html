@@ -9,23 +9,19 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/custom.js"></script>
-    <script src="/script/cal.js"></script>
+    <!-- 移除不存在的脚本引用，JavaScript代码已嵌入HTML -->
 </head>
-<body>
-
     
-    <div id="banner" class="max-w-md mx-auto mt-4 p-2">
-        <h1>Switch 超频电压计算器</h1>
-            <div class="max-w-md mx-auto p-4 rounded-md shadow-md mt-2 disclaimer">
-                <ol class="list-decimal list-inside">
-                    <li>请自行承担任何由于使用导致的风险和后果.</li>
-                    <li>计算结果仅供参考, 请谨慎使用 800+ 电压.</li>
-                    <li>以下内容非 nVidia 官方数据, 只是基于 HOC 推算的数据.</li>
-                </ol>
+    <div id="banner" class="max-w-2xl mx-auto mt-4 pt-7">
+        <h1 class="text-center">Switch 超频电压计算器</h1>
+            <div class="max-w-2xl mx-auto p-4 rounded-md shadow-md mt-2 disclaimer">
+                1. 请自行承担任何由于使用导致的风险和后果.<br>
+                2. 计算结果仅供参考, 请谨慎使用 800+ 电压.<br>
+                3. 以下内容非 nVidia 官方数据, 只是基于 HOC 推算的数据.
             </div>
     </div>
-    <div class="max-w-md mx-auto bg-[#051427] p-4 rounded-md shadow-md">
-        <div class="input-section grid grid-cols-2 gap-2">
+    <div class="content-container bg-[#051427] p-4 rounded-md shadow-md max-w-2xl mx-auto">
+        <div class="input-section grid grid-cols-2 gap-3 mt-2 max-w-[24rem] mx-auto">
             
             <input type="number" id="speedo" 
                 class="cal-input" 
@@ -46,7 +42,7 @@
         </div>
         
         <!-- 内存电压计算器 -->
-        <div class="input-section grid grid-cols-2 gap-2 mt-4">
+        <div class="input-section grid grid-cols-2 gap-3 mt-4 max-w-[24rem] mx-auto">
             <input type="number" id="mem_emcMaxClock" 
                 class="cal-input" 
                 placeholder="RAM: 2133 MHz">
@@ -57,12 +53,12 @@
         </div>
         
         <!-- 合并计算按钮 -->
-        <div class="input-section grid grid-cols-2 gap-2 mt-4">
+        <div class="input-section grid grid-cols-2 gap-3 mt-4 max-w-[24rem] mx-auto">
             <button onclick="calculateAllVoltages()" 
                 class="col-span-2 w-full mx-auto cal-button">计算电压</button>
         </div>
-        
-        <div class="result-section mt-14">
+
+        <div class="result-section mt-6">
             <div id="gpu_result"></div>
             <div id="mem_result"></div>
         </div>
@@ -129,10 +125,10 @@
             }
 
             // Create a single table with only the user's frequency and appropriate voltages
-            let result = '<div class="flex justify-center w-full mx-auto mt-4">';
+            let result = '<div class="overflow-x-auto mt-8 mb-2 max-w-[24rem] mx-auto">';
             
             // Memory Voltage Table
-            result += '<table class="min-w-0">';
+            result += '<table class="w-full text-xs sm:text-sm">';
             result += '<thead>';
             result += '<tr>';
             result += '<th scope="col" class="text-right text-xs font-medium text-gray-500 uppercase tracking-wider">RAM</th>';
@@ -159,8 +155,11 @@
             // Display memory result
             document.getElementById('mem_result').innerHTML = result;
             
-            // Show action buttons after table is generated
-            document.getElementById('action-buttons').style.display = 'flex';
+            // Show action buttons after table is generated (if exists)
+            const actionButtons = document.getElementById('action-buttons');
+            if (actionButtons) {
+                actionButtons.style.display = 'flex';
+            }
         }
 
         // GPU DVFS Tables (converted from Python)
@@ -385,10 +384,10 @@
             }
 
             // Create two independent tables with flex layout
-            let result = '<div class="flex justify-between space-x-4 w-full mx-auto">';
+            let result = '<div class="grid grid-cols-2 gap-2 max-w-[24rem] mx-auto mt-2">';
             
             // First table (left column)
-            result += '<table class="min-w-0 flex-1">';
+            result += '<table class="w-full text-xs">';
             result += '<thead>';
             result += '<tr>';
             result += '<th scope="col" class="text-right text-xs font-medium text-gray-500 uppercase tracking-wider">GPU</th>';
@@ -409,7 +408,7 @@
             result += '</table>';
             
             // Second table (right column)
-            result += '<table class="min-w-0 flex-1">';
+            result += '<table class="w-full text-xs">';
             result += '<thead>';
             result += '<tr>';
             result += '<th scope="col" class="text-right text-xs font-medium text-gray-500 uppercase tracking-wider">GPU</th>';
@@ -432,10 +431,13 @@
             result += '</div>';
             
             // Display result
-            document.getElementById('gpu_result').innerHTML = result;
+            document.getElementById('gpu_result').innerHTML = '<div class="overflow-x-auto">' + result + '</div>';
             
-            // Show action buttons after table is generated
-            document.getElementById('action-buttons').style.display = 'flex';
+            // Show action buttons after table is generated (if exists)
+            const actionButtons = document.getElementById('action-buttons');
+            if (actionButtons) {
+                actionButtons.style.display = 'flex';
+            }
         }
 
         // 为所有输入框添加键盘事件监听器，按Enter键同时计算GPU和内存电压
@@ -477,19 +479,6 @@
         });
     </script>
 
-    <footer>
-        <div class="max-w-md mx-auto mt-2 p-2">
-            <!-- 添加到页脚的按钮 -->
-            <div id="action-buttons" class="button-container grid grid-cols-2 gap-3" style="display: none;">
-                <a href="https://qm.qq.com/q/TzIMB20la2" 
-                    class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">加入Q群</a>
-                <a href="https://afdian.com/a/weizard/plan" 
-                    class="block justify-center w-full px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500">请我喝咖啡</a>
-            </div>
-        </div>
-        <div class="text-center text-gray-500 mt-2">
-            &copy; 2025 WE1ZARD 保留所有权利.
-        </div><br><br>
-    </footer>
+
 </body>
 </html>

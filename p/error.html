@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - 报错查询</title>
+    
+    <!-- 使用与其他页面相同的依赖 -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/custom.js"></script>
+    
+
+</head>
+<body class="error-page">
+    
+    <div class="main-container">
+        <!-- 垂直居中容器 -->
+        <div class="centered-container">
+            <!-- 搜索区域 -->
+            <div class="search-container">
+                <h1 class="text-3xl font-bold text-blue-500 mb-8 text-center">报错查询</h1>
+                
+                <!-- 使用Tailwind类实现搜索区域 -->
+                <div class="mb-6">
+                    <input type="text" id="search-input" 
+                           placeholder="输入 <错误码> 或 <关键词>" 
+                           class="w-full max-w-2xl px-6 py-4 rounded-full border-2 border-blue-500 bg-[#051427] text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg mx-auto block transition-none relative z-10">
+                </div>
+                
+                <!-- 结果统计 -->
+                <div class="text-center text-gray-500 mb-4">
+                    <span>共 <span id="total-count" class="text-blue-400">0</span> 条记录</span>
+                    <span>，当前显示 <span id="current-count" class="text-blue-400">0</span> 条结果</span>
+                </div>
+            </div>
+            
+            <!-- 结果区域 -->
+            <div class="results-container">
+                <!-- 无结果提示 -->
+                <div id="no-results" class="text-center text-gray-500 p-8 text-lg" style="display: none;">
+                    <i class="fas fa-search text-4xl mb-4 text-blue-500"></i>
+                    <p>未找到相关错误代码</p>
+                </div>
+                
+                <!-- 错误代码列表 -->
+                <div class="error-code-list" id="error-code-list"></div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+</body>
+</html>
