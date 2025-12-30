@@ -368,52 +368,52 @@ window.addEventListener('load', function() {
     // 检查是否在feedback.html页面
     const isFeedbackPage = window.location.pathname.endsWith('/feedback.html');
     
-    // 记录页面初始加载时的窗口高度（用于检测虚拟键盘是否打开）
-    const initialWindowHeight = window.innerHeight;
-    
-    // 只有在非index.html和非feedback.html页面添加滚动事件监听器
-    // error.html页面也添加滚动事件监听
+    // 只有在非index.html和非feedback.html页面添加弹窗机制
     if (!isIndexPage && !isFeedbackPage) {
-        // 创建统一的滚动处理函数
-        const handleScroll = function() {
-            // 判断是否滚动到底部
-            const scrollHeight = document.documentElement.scrollHeight;
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const clientHeight = document.documentElement.clientHeight;
-            
-            // 检查是否有隐藏标志，如果有则不显示按钮
-            if (floatingButtons.dataset.hide === 'true') {
-                return;
-            }
-            
-            // 检查虚拟键盘是否打开：比较当前窗口高度与初始高度
-            // 如果高度差超过200px，认为键盘已打开，不显示悬浮按钮
-            const currentWindowHeight = window.innerHeight;
-            const isKeyboardOpen = initialWindowHeight - currentWindowHeight > 200;
-            
-            // 当滚动到距离底部100px以内且键盘未打开时显示悬浮按钮
-            if (scrollHeight - scrollTop - clientHeight < 100 && !isKeyboardOpen) {
-                floatingButtons.style.display = 'block';
-                // 使用setTimeout确保display属性已生效，然后再修改opacity
-                setTimeout(() => {
-                    floatingButtons.style.opacity = '1';
-                }, 10);
-            } else {
-                floatingButtons.style.opacity = '0';
-                // 当透明度动画结束后隐藏元素
-                setTimeout(() => {
-                    if (floatingButtons.style.opacity === '0') {
-                        floatingButtons.style.display = 'none';
-                    }
-                }, 300);
-            }
-        };
+        // 获取当前页面的唯一标识（使用路径作为标识）
+        const pageKey = 'floatingButtonShown_' + window.location.pathname;
         
-        // 为非error.html页面添加滚动监听
-        window.addEventListener('scroll', handleScroll);
+        // 检查localStorage，判断当前页面是否已经弹过窗
+        const hasShownOnThisPage = localStorage.getItem(pageKey) === 'true';
+        
+        // 如果页面已经弹过窗，不再重复弹窗
+        if (!hasShownOnThisPage) {
+            // 设置30秒计时器，页面停留时间超过30秒后显示悬浮按钮
+            const popupTimer = setTimeout(() => {
+                // 检查是否有隐藏标志，如果有则不显示按钮
+                if (floatingButtons.dataset.hide !== 'true') {
+                    // 检查虚拟键盘是否打开：比较当前窗口高度与初始高度
+                    const currentWindowHeight = window.innerHeight;
+                    const initialWindowHeight = window.innerHeight;
+                    const isKeyboardOpen = initialWindowHeight - currentWindowHeight > 200;
+                    
+                    if (!isKeyboardOpen) {
+                        floatingButtons.style.display = 'block';
+                        // 使用setTimeout确保display属性已生效，然后再修改opacity
+                        setTimeout(() => {
+                            floatingButtons.style.opacity = '1';
+                        }, 10);
+                        
+                        // 记录当前页面已经弹过窗
+                        localStorage.setItem(pageKey, 'true');
+                    }
+                }
+            }, 30000); // 30秒后显示
+            
+            // 清除计时器的清理函数
+            const cleanup = () => {
+                clearTimeout(popupTimer);
+            };
+            
+            // 当用户离开页面时清除计时器
+            window.addEventListener('beforeunload', cleanup);
+            window.addEventListener('unload', cleanup);
+        } else {
+            console.log('当前页面已经显示过悬浮按钮，不再重复显示');
+        }
     } else {
-        // 在index.html、feedback.html或error.html页面，不添加滚动事件监听器
-        console.log(`在${isIndexPage ? 'index.html' : isFeedbackPage ? 'feedback.html' : 'error.html'}页面，不自动显示悬浮按钮`);
+        // 在index.html或feedback.html页面，不自动显示悬浮按钮
+        console.log(`在${isIndexPage ? 'index.html' : 'feedback.html'}页面，不自动显示悬浮按钮`);
     }
     
     // Error page specific JavaScript code from error.html
