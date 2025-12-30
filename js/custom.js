@@ -164,8 +164,9 @@ window.addEventListener('load', function() {
     closeButton.style.backgroundColor = 'rgba(59, 130, 246, 0.8)';
     closeButton.style.color = '#FFFFFF';
     closeButton.style.border = '2px solid rgba(255, 255, 255, 0.8)';
-    closeButton.style.fontSize = '48px';
-    closeButton.style.lineHeight = '48px'; // 调整行高使×居中
+    closeButton.style.fontSize = '36px'; // 调整字体大小，使×更居中
+    closeButton.style.lineHeight = '44px'; // 调整行高，略小于高度，使×垂直居中
+    closeButton.style.textAlign = 'center'; // 确保水平居中
     closeButton.style.cursor = 'pointer';
     closeButton.style.transition = 'all 0.3s ease';
     closeButton.style.zIndex = '9999';
@@ -339,6 +340,7 @@ window.addEventListener('load', function() {
             closeButton.style.height = '40px';
             closeButton.style.fontSize = '28px';
             closeButton.style.lineHeight = '36px';
+            closeButton.style.textAlign = 'center'; // 确保水平居中
             closeButton.style.top = '-20px'; // 调整位置以适应放大后的关闭按钮
             closeButton.style.right = '-20px';
         } else {
@@ -348,6 +350,7 @@ window.addEventListener('load', function() {
             closeButton.style.height = '32px';
             closeButton.style.fontSize = '22px';
             closeButton.style.lineHeight = '28px';
+            closeButton.style.textAlign = 'center'; // 确保水平居中
             closeButton.style.top = '-14px'; // 恢复原始位置
             closeButton.style.right = '-14px';
         }
