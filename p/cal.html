@@ -79,10 +79,12 @@
 
         // Helper function to calculate DVB voltage with shift
         function calculateDvbVolt(zero, one, two, voltAdd) {
+            // 添加电压最小值限制，确保电压不会过低
+            const minVolt = 600;
             return [
-                Math.min(zero + voltAdd, 1050),
-                Math.min(one + voltAdd, 1025),
-                Math.min(two + voltAdd, 1000)
+                Math.max(Math.min(zero + voltAdd, 1050), minVolt),
+                Math.max(Math.min(one + voltAdd, 1025), minVolt),
+                Math.max(Math.min(two + voltAdd, 1000), minVolt)
             ];
         }
         
@@ -121,7 +123,7 @@
             } else if (userInputFreq >= 2400000) {
                 selectedVolts = calculateDvbVolt(750, 725, 700, voltAdd);
             } else if (userInputFreq >= 2131200) {
-                selectedVolts = [725, 700, 675];
+                selectedVolts = calculateDvbVolt(725, 700, 675, voltAdd);
             }
 
             // Create a single table with only the user's frequency and appropriate voltages
