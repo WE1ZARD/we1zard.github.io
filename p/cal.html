@@ -33,7 +33,7 @@
             
             <input type="number" id="vmin" 
                 class="cal-input" 
-                placeholder="GPU Vmin: 610 mV">
+                placeholder="GPU Vmin: Auto">
             
             <input type="number" id="offset" 
                 class="cal-input" 
@@ -246,53 +246,67 @@
         }
 
         // 根据用户需求实现GPU Vmin自动计算：按25位一档取整，以1600speedo+2400MHz内存时610mV为基准
-        function calculateAutoGpuVmin() {
-            // 获取内存频率，转换为Hz
-            const mem_freq_mhz = parseInt(document.getElementById('mem_emcMaxClock').value) || 2133;
-            const mem_freq_hz = mem_freq_mhz * 1000;
-            
-            // GPU Speedo值处理：按5为一档向下取整
-            let speedo = parseInt(document.getElementById('speedo').value) || 1600;
-            // 实现向下取整到最近的5的倍数（如1798 → 1795）
-            const remainder = speedo % 5;
-            if (remainder > 0) {
-                speedo = speedo - remainder;
+        // 从 new.html 转换而来的算法
+        const ramBrackets = [
+            [2133, 2200, 2266, 2300, 2366, 2400, 2433, 2466, 2533, 2566, 2600, 2633, 2700, 2733, 2766, 2833, 2866, 2900, 2933, 3033, 3066, 3100],
+            [2300, 2366, 2433, 2466, 2533, 2566, 2633, 2700, 2733, 2800, 2833, 2900, 2933, 2966, 3033, 3066, 3100, 3133, 3166, 3200, 3233, 3266],
+            [2433, 2466, 2533, 2600, 2666, 2733, 2766, 2800, 2833, 2866, 2933, 2966, 3033, 3066, 3100, 3133, 3166, 3200, 3233, 3300, 3333, 3366],
+            [2500, 2533, 2600, 2633, 2666, 2733, 2800, 2866, 2900, 2966, 3033, 3100, 3166, 3200, 3233, 3266, 3300, 3333, 3366, 3400, 3400, 3400]
+        ];
+
+        const gpuDvfsArray = [590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800];
+
+        function GetSpeedoBracket(speedo) {
+            let speedoBracket = 3;
+            if (speedo < 1754) {
+                speedoBracket = 2;
+                if (speedo < 1690) {
+                    speedoBracket = (1625 < speedo) ? 1 : 0;
+                }
             }
+            return speedoBracket;
+        }
+
+        function GetGpuVoltage(freq, bracket) {
+            if (freq < 1601) {
+                return 0;
+            }
+
+            for (let i = 0; i < 22; i++) {
+                if (freq <= ramBrackets[bracket][i]) {
+                    return gpuDvfsArray[i];
+                }
+            }
+
+            return 800;
+        }
+
+        function calculateAutoGpuVmin() {
+            // 获取内存频率
+            const mem_freq_mhz = parseInt(document.getElementById('mem_emcMaxClock').value) || 2133;
+            
+            // 获取GPU Speedo值
+            let speedo = parseInt(document.getElementById('speedo').value) || 1600;
             
             const voltage_offset = parseInt(document.getElementById('offset').value) || 0;
             
-            // 基础Vmin计算：以1600speedo、2400MHz内存时的610mV为基准
-            // 每增加25点speedo，vmin减少5mV；每减少25点speedo，vmin增加5mV
-            const base_speedo = 1600;
-            const base_vmin = 610;
+            // 计算bracket
+            const bracket = GetSpeedoBracket(speedo);
             
-            // 计算基础Vmin值
-            let vmin = base_vmin - Math.floor((speedo - base_speedo) / 25) * 5;
+            // 获取对应的GPU电压
+            let vmin = GetGpuVoltage(mem_freq_mhz, bracket);
+            
+            // 应用用户电压偏移
+            vmin += voltage_offset;
+            
+            // 确保结果是5的倍数
+            vmin = Math.round(vmin / 5) * 5;
             
             // 确保Vmin在合理范围内
             vmin = Math.max(vmin, 530); // 最小值
             vmin = Math.min(vmin, 650); // 最大值
             
-            // 根据内存频率调整Vmin (以2400MHz为基准)
-            let final_vmin = vmin;
-            
-            // 只在内存频率高于2400MHz时进行额外调整
-            if (mem_freq_mhz > 2400) {
-                // 内存频率高于2400MHz时，每增加约33MHz，Vmin增加5mV
-                const freq_diff = mem_freq_mhz - 2400;
-                const freq_adj = Math.floor(freq_diff / 33) * 5;
-                final_vmin += freq_adj;
-            }
-            
-            // 应用用户电压偏移
-            final_vmin += voltage_offset;
-            
-            // 再次确保Vmin在合理范围内
-            final_vmin = Math.max(final_vmin, 530);
-            final_vmin = Math.min(final_vmin, 650);
-            
-            // 确保结果是5的倍数
-            return Math.ceil(final_vmin / 5) * 5;
+            return vmin;
         }
 
         function calculateVoltages() {
