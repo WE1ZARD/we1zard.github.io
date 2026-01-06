@@ -1,2 +1,4 @@
 qr_venv
 *.py
+run.sh
+*.cpp
