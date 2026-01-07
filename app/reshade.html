@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - ReShade 使用教程</title>
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/custom.js"></script>
+    
+    <!-- Nintendo Switch Buttons SVG Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <!-- LS Button (Left Stick) -->
+        <symbol id="switch-btn-ls" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="#6B7280" />
+            <circle cx="12" cy="12" r="6" fill="#9CA3AF" />
+            <text x="12" y="16" font-size="10" font-weight="bold" text-anchor="middle" fill="white">LS</text>
+        </symbol>
+        
+        <!-- RS Button (Right Stick) -->
+        <symbol id="switch-btn-rs" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="#6B7280" />
+            <circle cx="12" cy="12" r="6" fill="#9CA3AF" />
+            <text x="12" y="16" font-size="10" font-weight="bold" text-anchor="middle" fill="white">RS</text>
+        </symbol>
+    </svg>
+</head>
+<body>
+    <div class="flex justify-center my-6">
+        <object data="/img/aurora.svg" type="image/svg+xml" width="184" height="40"></object>
+    </div>
+
+    <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
+
+        <h2 id="ReShade">ReShade</h2>
+        <block>这是一款游戏滤镜插件</block><br>
+        <block>提供两种水平和垂直的扫描线滤镜</block><br>
+        <block>主要为像素风游戏提供更好的视觉效果</block><br>
+
+        <h2 id="使用方法">使用方法</h2>
+        <ul>
+            <blockquote>
+                <div id="action-buttons" class="flex-button-container gap-3">
+                    <a href="https://gitea.com/we1zard/OTA/releases/download/latest/ReShade.zip" target="_blank" class="btn-download">
+                        <i class="fas fa-download mr-2"></i>下载解压<br>ReShade.zip</a>
+                </div><br>
+            将 <bold>swtich</bold> 复制到内存卡上<br>
+            通过特斯拉菜单打开即可<br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="退出快捷键">退出快捷键</h2>
+        <ul>
+            <blockquote>
+                长按 <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="#switch-btn-ls"></use></svg> + <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="#switch-btn-rs"></use></svg><br>
+            </blockquote>
+        </ul><br>
+</body>
+</html>

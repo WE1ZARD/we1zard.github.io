@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - autoSAVE 使用教程</title>
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/custom.js"></script>
+</head>
+<body>
+    <div class="flex justify-center my-6">
+        <object data="/img/aurora.svg" type="image/svg+xml" width="184" height="40"></object>
+    </div>
+
+    <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
+
+        <h2 id="autoSAVE">autoSAVE</h2>
+        <block>这是一个后台系统模块</block><br>
+        <block>开启后将自动在退出游戏后备份游戏存档到内存卡上</block><br>
+        <block>采用JKSV一样的路径, 不影响从JKSV导出的存档, 并使用crc进行校验</block>
+
+        <h2 id="使用方法">使用方法</h2>
+        <ul>
+            <blockquote>
+                <div id="action-buttons" class="flex-button-container gap-3">
+                    <a href="https://gitea.com/we1zard/OTA/releases/download/latest/autoSAVE.zip" target="_blank" class="btn-download">
+                        <i class="fas fa-download mr-2"></i>下载解压<br>autoSAVE.zip</a>
+                </div><br>
+            将 <bold>atmosphere</bold> 复制到内存卡上, 开启系统模块即可<br><br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="LED 指示">LED 指示</h2>
+        <ul>
+            <blockquote>
+                正常: 呼吸灯慢闪, 完成后灭灯<br>
+                报错: 快速闪烁并灭灯<br>
+            </blockquote>
+        </ul><br>
+</body>
+</html>

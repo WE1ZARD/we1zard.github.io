@@ -9,11 +9,47 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/js/custom.js"></script>
+    
+    <!-- Nintendo Switch Buttons SVG Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <!-- L Button -->
+        <symbol id="switch-btn-l" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="#6B7280" />
+            <text x="12" y="16" font-size="12" font-weight="bold" text-anchor="middle" fill="white">L</text>
+        </symbol>
+        
+        <!-- R Button -->
+        <symbol id="switch-btn-r" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="#6B7280" />
+            <text x="12" y="16" font-size="12" font-weight="bold" text-anchor="middle" fill="white">R</text>
+        </symbol>
+        
+        <!-- Plus Button -->
+        <symbol id="switch-btn-plus" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="#6B7280" />
+            <rect x="11" y="8" width="2" height="8" fill="white" />
+            <rect x="8" y="11" width="8" height="2" fill="white" />
+        </symbol>
+
+        <!-- LS Button (Left Stick) -->
+        <symbol id="switch-btn-ls" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="#6B7280" />
+            <circle cx="12" cy="12" r="6" fill="#9CA3AF" />
+            <text x="12" y="16" font-size="10" font-weight="bold" text-anchor="middle" fill="white">LS</text>
+        </symbol>
+        
+        <!-- RS Button (Right Stick) -->
+        <symbol id="switch-btn-rs" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="#6B7280" />
+            <circle cx="12" cy="12" r="6" fill="#9CA3AF" />
+            <text x="12" y="16" font-size="10" font-weight="bold" text-anchor="middle" fill="white">RS</text>
+        </symbol>
+    </svg>
 </head>
 <body>
 
     <div class="flex justify-center my-6">
-        <object data="/img/aurora.svg" type="image/svg+xml" width="184" height="40""></object>
+        <object data="/img/aurora.svg" type="image/svg+xml" width="184" height="40"></object>
     </div>
 
     <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
@@ -32,7 +68,7 @@
         <ul>
             <blockquote>
                 <div id="action-buttons" class="flex-button-container gap-3">
-                    <a href="https://gitea.com/we1zard/OTA/releases/download/latest/AIO-pre.zip" target="_blank" class="block w-1/4 px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500"><i class="fas fa-download mr-2"></i>下载解压<br>AIO.zip</a>
+                    <a href="https://gitea.com/we1zard/OTA/releases/download/latest/AIO-pre.zip" target="_blank" class="btn-download"><i class="fas fa-download mr-2"></i>下载解压<br>AIO.zip</a>
                 </div><br>
 
                 <li><strong>升级换包</strong></li>
@@ -49,7 +85,7 @@
                     <block>复制完成之后, 开始 <a href="#制作虚拟系统">制作虚拟系统</a></block><br><br>
 
                 <div id="action-buttons" class="flex-button-container gap-3">
-                    <a href="https://wj.qq.com/s2/25361346/8d1f/" target="_blank" class="block w-1/4 px-3 py-2 bg-[#051427] border border-blue-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-[#9ca3af] text-center hover:text-blue-500"><i class="fas fa-comment-dots mr-2"></i>我要反馈</a>
+                    <a href="https://wj.qq.com/s2/25361346/8d1f/" target="_blank" class="btn-download"><i class="fas fa-comment-dots mr-2"></i>我要反馈</a>
                 </div>
 
             </blockquote>
@@ -99,6 +135,15 @@
 
                 <li><strong>Hekate &gt; Create emuMMC &gt; SD File</strong></li>
                     <block>此操作将创建一个官方系统的镜像到内存卡</block>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="快捷键">快捷键</h2>
+        <ul>
+            <blockquote>
+                特斯拉菜单: <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="#switch-btn-l"></use></svg> + <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="#switch-btn-plus"></use></svg><br>
+                系统监控: <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="#switch-btn-ls"></use></svg> + <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="#switch-btn-rs"></use></svg><br><br>
+                可通过 <code>Settings > KeyCombo</code> 修改快捷键
             </blockquote>
         </ul><br>
 

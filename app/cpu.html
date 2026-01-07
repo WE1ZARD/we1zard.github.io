@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - CPU Monitor 使用教程</title>
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/custom.js"></script>
+
+    <!-- Nintendo Switch Buttons SVG Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <!-- B -->
+    <symbol id="switch-btn-b" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" fill="#6B7280" />
+        <text x="12" y="16" font-size="12" font-weight="bold" text-anchor="middle" fill="white">B</text>
+    </symbol>
+    </svg>
+
+</head>
+<body>
+    <div class="flex justify-center my-6">
+        <object data="/img/aurora.svg" type="image/svg+xml" width="184" height="40"></object>
+    </div>
+
+    <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
+
+        <h2 id="CPU Monitor">CPU Monitor</h2>
+        <block>这是一款 CPU 监控状态工具</block><br>
+        <block>显示 CPU 超频参数 (仅支持 HOC)</block><br>
+        <block>实时显示频率变化以及电压变化</block><br>
+
+        <h2 id="使用方法">使用方法</h2>
+        <ul>
+            <blockquote>
+                <div id="action-buttons" class="flex-button-container gap-3">
+                    <a href="https://gitea.com/we1zard/OTA/releases/download/latest/CPU.zip" target="_blank" class="btn-download">
+                        <i class="fas fa-download mr-2"></i>下载解压<br>CPU.zip</a>
+                </div><br>
+            将 <bold>swtich</bold> 复制到内存卡上<br>
+            通过自制软件菜单打开之后<br>
+            自动输出实时信息<br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="退出快捷键">退出快捷键</h2>
+        <ul>
+            <blockquote>
+                长按 <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="#switch-btn-b"></use></svg><br>
+            </blockquote>
+        </ul><br>
+
+
+</body>
+</html>
