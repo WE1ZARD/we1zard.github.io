@@ -363,7 +363,7 @@ window.addEventListener('load', function() {
     mediaQuery.addEventListener('change', handleMediaQueryChange);
     
     // 检查是否在error.html页面
-    const isErrorPage = window.location.pathname.endsWith('/error.html') || window.location.pathname.endsWith('/p/error.html');
+    const isErrorPage = window.location.pathname.endsWith('/error.html') || window.location.pathname.endsWith('/guides/error.html');
     
     // 检查是否在index.html页面
     const isIndexPage = window.location.pathname.endsWith('/index.html') || window.location.pathname === '/';

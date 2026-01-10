@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - 超频教程</title>
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/custom.js"></script>
+</head>
+<body>
+
+    <div class="flex justify-center my-6">
+        <object data="/img/aurora.svg" type="image/svg+xml" width="184" height="40"></object>
+    </div>
+
+    <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
+        <!--<h1>超频教程</h1>-->
+
+        <h2 id="免责声明">免责声明</h2>
+        <ul>
+            <blockquote style="background-color: #0c2140;padding: 16px 16px;">
+                请自行承担任何由超频带来的风险与后果!!!<br>
+                超频可能导致包括但不限于异常耗电, 发热, 不稳定, 资料丢失, 系统及硬件损坏等等问题.<br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="注意事项">注意事项</h2>
+        <ul>
+            <blockquote style="background-color: #0c2140;padding: 16px 16px;">
+                请先行做好备份, 避免重要资料丢失.<br>
+                尽量避免 使用 exFAT格式的内存卡 进行折腾, 可以参考 <a href="/aio.html#%E9%9A%90%E8%97%8F%E5%88%86%E5%8C%BA%E7%B3%BB%E7%BB%9F" target="_blank"><b>教程</b></a><br>
+                尽量避免 SysMMC真实系统 折腾!!!</a><br><br>
+
+                暂时不支持 8G 内存.</a><br>
+                跨版本使用不对应版本的 kip 会导致无法进入系统.</a><br>
+                跨版本导入旧超频配置可能导致 kip 文件污染, 系统崩溃等问题.</a><br><br>
+
+                有条件情况下, 使用副卡折腾测试, 再将稳定参数应用到主卡.</a>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="准备工作">准备工作</h2>
+        <ul>
+            <blockquote>
+                启动到 Hekate, 已设置自动启动虚拟系统, 可以开机<strong> 长按音量减进入</strong><br>
+                打开 <strong>Hekate > Console Info > HW & Fuses</strong><br>
+                记下 <strong>DRAM ID</strong>, <strong>CPU/GPU/SoC Speedo</strong> 的值,<br>
+                也可以按截图键保存截图, 保存路径在 <code>/bootloader/screenshots/</code><br>
+                确保已经安装了对应系统版本 kip 以及配套的超频编辑管理工具, 并在添加了对应的引导文件.<br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="参考资料">参考资料</h2>
+        <ul>
+            <table class="w-full">
+
+                <tr style="background-color: #184280;">
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>颗粒型号</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>通用频率</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>极限频率</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>VDD2/VDDQ</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>通用时序</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>极限时序</b></td>
+                </tr>
+
+                <tr>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>NEI, NEE, X267</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3100 Mhz</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3133 Mhz</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>1175/600 mV</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                </tr>
+
+                <tr style="background-color: #0c2140;">
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>WTB</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3066 Mhz</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3100 Mhz</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>1175/600 mV</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                </tr>
+
+                <tr>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>AA</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3033 Mhz</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3133 Mhz</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>1175/600 mV</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>(4-4-9)-5-5-6-6-6</b></td>
+                </tr>
+
+                <tr style="background-color: #0c2140;">
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>WTF</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                </tr>
+
+                <tr>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>AM, WTE</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                </tr>
+
+                <tr style="background-color: #0c2140;">
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>AB, NME</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>2500 Mhz</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>1175/600 mV</b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
+                </tr>
+            </table>
+        </ul><br>
+
+        <h2 id="RAM 内存">RAM 内存</h2>
+        <ul>
+            <blockquote>
+
+                <div id="action-buttons" class="flex-button-container gap-3">
+                    <a href="https://we1zard.qzz.io/guides/cal.html" target="_blank" class="btn-download"><i class="fas fa-calculator mr-2"></i>电压计算器</a>
+                </div><br>
+                待完善...<br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="TIMINGS 时序">TIMINGS 时序</h2>
+        <ul>
+            <blockquote>
+                如果你是从 EOS 转过来, 可以先尝试在 EOS 的基础上, T4,T6,T7 各减去1, 测试稳定性, 不稳定的再松时序.<br>
+                待完善...<br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="GPU">GPU</h2>
+        <ul>
+            <blockquote>
+                待完善...<br>
+                内存频率越高, 相对需要的 Vmin 就越高<br><br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="CPU">CPU</h2>
+        <ul>
+            <blockquote>
+                待完善...<br>
+                Table 选择 1581<br>
+                内存频率越高, 相对需要的 Vmin 就越高<br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="致谢">致谢</h2>
+        <ul>
+            <blockquote style="background-color: #0c2140;padding: 16px 16px;">
+                感谢 <b>Horizon-OC</b> 开发团队为 NS 超频圈带来第二春,<br>
+                以及所有中文圈, 英文圈为测试提供的所有数据.<br><br>
+                开源地址: <a href="https://github.com/Horizon-OC/Horizon-OC.git" target="_blank">https://github.com/Horizon-OC/Horizon-OC.git</a>
+            </blockquote>
+        </ul><br>
+    </div>
+</body>
+</html>
