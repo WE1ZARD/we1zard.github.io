@@ -310,20 +310,29 @@ code {
 
 /* 主按钮样式 */
 .main-button {
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 1.5rem 2rem;
+    padding: 1rem;
     background-color: #051427;
     border: 1px solid #3b82f6;
-    border-radius: 0.375rem;
+    border-radius: 1.5rem;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    font-size: 1.125rem;
+    font-size: 15px;
+    font-weight: 900;
     color: #9ca3af;
     text-align: center;
     transition: all 0.3s ease;
+    aspect-ratio: 1;
+    gap: 0.75rem;
 }
 
+/* 主按钮内的强调文字样式 */
+.main-button strong {
+    font-weight: 800;
+}
 .main-button:hover {
     color: #3b82f6;
     background-color: rgba(59, 130, 246, 0.1);
