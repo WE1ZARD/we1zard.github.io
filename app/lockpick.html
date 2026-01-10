@@ -138,8 +138,8 @@
                     <block>重启 switch, 按住 音量减号键 进入 hekate 主菜单</block><br>
                     <block>打开 <code>Payloads > Lockpick_RCM.bin</code> 进入密钥提取工具</block><br>
                     <block>用音量键控制上下, 用电源键打开选中项</block><br>
-                        <bl><strong>Dump from SysNAND</strong> -> 导出 真实系统密钥</bl><br>
-                        <bl><strong>Dump from EmuNAND</strong> -> 导出 虚拟系统密钥</bl><br><br>
+                        <bl><strong>Dump from SysNAND</strong> -> 提取 真实系统密钥</bl><br>
+                        <bl><strong>Dump from EmuNAND</strong> -> 提取 虚拟系统密钥</bl><br><br>
 
                     <block>完成后打开 <strong>Reboot to hekate</strong> 重启</block><br><br>
                 <li><strong>密钥保存路径</strong></li>
@@ -147,5 +147,172 @@
                         <block>/switch/title.keys</block><br>
             </blockquote>
         </ul><br>
+
+        <h3 id="步骤演示">步骤演示</h3>
+        <div class="content-container bg-[#051427] p-4 rounded-md mt-4">
+            <div class="text-left">
+                <!-- 主图片 -->
+                <div class="relative inline-block max-w-full">
+                    <!-- 提示文字 -->
+                    <p class="text-sm text-gray-300 mb-2" id="mainCaption">1. 重启按住音量键减号, 进入Hekate主菜单</p>
+                    
+                    <!-- 图片容器 -->
+                    <div class="relative inline-block">
+                        <!-- 左半部分点击区域 -->
+                        <div class="absolute left-0 top-0 w-1/2 h-full z-10" onclick="prevMainImage()"></div>
+                        
+                        <!-- 上一张箭头按钮 -->
+                        <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white rounded-full p-3 z-20 opacity-70 hover:opacity-100" onclick="prevMainImage()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <!-- 图片 -->
+                        <img src="/app/lockpick/0.hekate-1.png" alt="Hekate主菜单-1" id="mainImage" class="max-w-full h-auto rounded border border-gray-700 cursor-pointer" onclick="openModal(currentIndex)">
+                        
+                        <!-- 右半部分点击区域 -->
+                        <div class="absolute right-0 top-0 w-1/2 h-full z-10" onclick="nextMainImage()"></div>
+                        
+                        <!-- 下一张箭头按钮 -->
+                        <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white rounded-full p-3 z-20 opacity-70 hover:opacity-100" onclick="nextMainImage()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- 图片导航指示器 -->
+                    <div class="flex justify-center mt-4 gap-1">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full" id="navDot0"></span>
+                        <span class="w-2 h-2 bg-gray-600 rounded-full" id="navDot1"></span>
+                        <span class="w-2 h-2 bg-gray-600 rounded-full" id="navDot2"></span>
+                        <span class="w-2 h-2 bg-gray-600 rounded-full" id="navDot3"></span>
+                        <span class="w-2 h-2 bg-gray-600 rounded-full" id="navDot4"></span>
+                        <span class="w-2 h-2 bg-gray-600 rounded-full" id="navDot5"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 图片查看模态框 -->
+        <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+            <div class="relative max-w-4xl max-h-[90vh] w-full">
+                <!-- 关闭按钮 -->
+                <button class="absolute top-4 right-4 bg-gray-800 hover:bg-gray-700 text-white rounded-full p-2 z-10" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <!-- 上一张按钮 -->
+                <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white rounded-full p-3 z-10" onclick="prevImage()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <!-- 图片容器 -->
+                <div class="overflow-hidden max-h-[85vh]">
+                    <img id="modalImage" src="" alt="" class="w-full h-auto object-contain">
+                </div>
+                
+                <!-- 下一张按钮 -->
+                <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 hover:bg-gray-700 text-white rounded-full p-3 z-10" onclick="nextImage()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- 图片标题 -->
+                <div class="absolute bottom-4 left-0 text-white bg-black bg-opacity-50 py-2 px-4 w-full text-left">
+                    <span id="modalCaption"></span>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // 图片数据
+            const images = [
+                { src: '/app/lockpick/0.hekate-1.png', caption: '1. 重启按住音量键减号, 进入Hekate主菜单' },
+                { src: '/app/lockpick/0.hekate-2.png', caption: '2. 选中 Payloads > Lockpick_RCM.bin' },
+                { src: '/app/lockpick/1.sysmmc.png',   caption: '3. 音量键控制上下, 选中 Dump from SysNAND 按电源键, 提取"真实系统"密钥' },
+                { src: '/app/lockpick/2.emummc.png',   caption: '4. 音量键控制上下, 选中 Dump from EmuNAND 按电源键, 提取"虚拟系统"密钥' },
+                { src: '/app/lockpick/3.reboot.png',   caption: '5. 选中 Reboot to Hekate 按电源键, 重启' },
+                { src: '/app/lockpick/4.poweroff.png', caption: '6. 选中 Power off 按电源键, 关机' }
+            ];
+            
+            let currentIndex = 0;
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const mainImage = document.getElementById('mainImage');
+            const mainCaption = document.getElementById('mainCaption');
+            
+            // 初始化导航点
+            function updateNavDots() {
+                for (let i = 0; i < images.length; i++) {
+                    const dot = document.getElementById(`navDot${i}`);
+                    if (dot) {
+                        dot.className = i === currentIndex ? 'w-2 h-2 bg-blue-500 rounded-full' : 'w-2 h-2 bg-gray-600 rounded-full';
+                    }
+                }
+            }
+            
+            // 打开模态框
+            function openModal(index) {
+                currentIndex = index;
+                modalImage.src = images[index].src;
+                modalCaption.textContent = images[index].caption;
+                modal.classList.remove('hidden');
+            }
+            
+            // 关闭模态框
+            function closeModal() {
+                modal.classList.add('hidden');
+            }
+            
+            // 上一张图片（模态框）
+            function prevImage() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                modalImage.src = images[currentIndex].src;
+                modalCaption.textContent = images[currentIndex].caption;
+            }
+            
+            // 下一张图片（模态框）
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                modalImage.src = images[currentIndex].src;
+                modalCaption.textContent = images[currentIndex].caption;
+            }
+            
+            // 上一张图片（主图片）
+            function prevMainImage() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                mainImage.src = images[currentIndex].src;
+                mainImage.alt = images[currentIndex].caption;
+                mainCaption.textContent = images[currentIndex].caption;
+                updateNavDots();
+            }
+            
+            // 下一张图片（主图片）
+            function nextMainImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                mainImage.src = images[currentIndex].src;
+                mainImage.alt = images[currentIndex].caption;
+                mainCaption.textContent = images[currentIndex].caption;
+                updateNavDots();
+            }
+            
+            // 点击模态框外部关闭
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    closeModal();
+                }
+            }
+            
+            // 键盘快捷键
+            document.addEventListener('keydown', function(event) {
+                if (!modal.classList.contains('hidden')) {
+                    if (event.key === 'Escape') {
+                        closeModal();
+                    } else if (event.key === 'ArrowLeft') {
+                        prevImage();
+                    } else if (event.key === 'ArrowRight') {
+                        nextImage();
+                    }
+                }
+            });
+        </script>
 </body>
 </html>
