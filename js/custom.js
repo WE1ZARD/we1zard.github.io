@@ -24,19 +24,18 @@ window.addEventListener('load', function() {
         // 创建favicon链接
         const favicon = document.createElement('link');
         favicon.rel = 'icon';
-        favicon.href = getImagePath('/img/favicon.ico');
-        favicon.type = 'image/x-icon';
+        favicon.href = getImagePath('/img/favicon.png');
+        favicon.type = 'image/png';
         head.appendChild(favicon);
         console.log('添加了favicon');
     }
-    
     // 检查是否已经存在shortcut icon
     if (!document.querySelector('link[rel="shortcut icon"]')) {
         // 创建shortcut icon链接
         const shortcutIcon = document.createElement('link');
         shortcutIcon.rel = 'shortcut icon';
-        shortcutIcon.href = getImagePath('/img/favicon.ico');
-        shortcutIcon.type = 'image/x-icon';
+        shortcutIcon.href = getImagePath('/img/favicon.png');
+        shortcutIcon.type = 'image/png';
         head.appendChild(shortcutIcon);
         console.log('添加了shortcut icon');
     }
@@ -445,14 +444,32 @@ window.addEventListener('load', function() {
         // 加载错误代码数据
         async function loadErrorCodes() {
             try {
-                // 使用绝对路径加载数据，确保无论页面位置如何都能正确访问
-                const response = await fetch('/data/error_codes.json');
+                // 尝试从Gist获取最新数据
+                const gistUrl = 'https://api.github.com/gists/a4b8c01bb453028cd0008f282098f696';
+                const response = await fetch(gistUrl);
                 
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`Failed to fetch Gist data: ${response.status}`);
                 }
                 
-                allErrorCodes = await response.json();
+                const gistData = await response.json();
+                
+                // 从Gist中获取错误代码文本
+                const fileContent = gistData.files['homebrew_sysmodules.txt'].content;
+                
+                // 解析Gist内容并转换为系统需要的格式
+                const parsedCodes = parseGistContent(fileContent);
+                
+                // 也加载本地JSON数据作为补充
+                const localResponse = await fetch('/data/error_codes.json');
+                if (localResponse.ok) {
+                    const localCodes = await localResponse.json();
+                    // 合并数据，优先使用Gist数据
+                    allErrorCodes = mergeErrorCodes(parsedCodes, localCodes);
+                } else {
+                    // 如果本地数据加载失败，只使用Gist数据
+                    allErrorCodes = parsedCodes;
+                }
                 
                 // 更新总数
                 const totalCount = document.getElementById('total-count');
@@ -469,13 +486,92 @@ window.addEventListener('load', function() {
                 if (noResults) noResults.style.display = 'none';
                 if (currentCount) currentCount.textContent = '0';
             } catch (error) {
-                const noResults = document.getElementById('no-results');
-                
-                if (noResults) {
-                    noResults.style.display = 'block';
-                    noResults.innerHTML = `<p>加载错误代码数据失败: ${error.message}</p>`;
+                // 如果从Gist获取数据失败，回退到本地数据
+                try {
+                    const response = await fetch('/data/error_codes.json');
+                    
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch local data: ${response.status}`);
+                    }
+                    
+                    allErrorCodes = await response.json();
+                    
+                    // 更新总数
+                    const totalCount = document.getElementById('total-count');
+                    if (totalCount) {
+                        totalCount.textContent = allErrorCodes.length;
+                    }
+                    
+                    // 初始不显示任何内容，包括未找到提示
+                    const listContainer = document.getElementById('error-code-list');
+                    const noResults = document.getElementById('no-results');
+                    const currentCount = document.getElementById('current-count');
+                    
+                    if (listContainer) listContainer.innerHTML = '';
+                    if (noResults) noResults.style.display = 'none';
+                    if (currentCount) currentCount.textContent = '0';
+                } catch (localError) {
+                    const noResults = document.getElementById('no-results');
+                    
+                    if (noResults) {
+                        noResults.style.display = 'block';
+                        noResults.innerHTML = `<p>加载错误代码数据失败: ${localError.message}</p>`;
+                    }
                 }
             }
+        }
+        
+        // 解析Gist内容
+        function parseGistContent(content) {
+            const lines = content.split('\n');
+            const codes = [];
+            
+            // 跳过注释和空行
+            for (const line of lines) {
+                const trimmedLine = line.trim();
+                if (trimmedLine === '' || trimmedLine.startsWith('/*') || trimmedLine.startsWith('*/')) {
+                    continue;
+                }
+                
+                // 格式：CODE	NAME
+                const parts = trimmedLine.split('\t');
+                if (parts.length >= 2) {
+                    codes.push({
+                        code: parts[0],
+                        description: parts[1],
+                        section: 'Homebrew系统模块',
+                        subsection: '错误代码',
+                        subsubsection: ''
+                    });
+                }
+            }
+            
+            return codes;
+        }
+        
+        // 合并错误代码数据
+        function mergeErrorCodes(gistCodes, localCodes) {
+            const mergedMap = new Map();
+            
+            // 先添加本地数据
+            for (const code of localCodes) {
+                mergedMap.set(code.code, code);
+            }
+            
+            // 再添加Gist数据，覆盖本地数据
+            for (const code of gistCodes) {
+                // 如果本地有相同的代码，但没有描述，则使用Gist的描述
+                if (mergedMap.has(code.code) && !mergedMap.get(code.code).description) {
+                    mergedMap.set(code.code, {
+                        ...mergedMap.get(code.code),
+                        description: code.description
+                    });
+                } else {
+                    mergedMap.set(code.code, code);
+                }
+            }
+            
+            return Array.from(mergedMap.values());
         }
         
         // 搜索错误代码

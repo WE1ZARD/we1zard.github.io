@@ -1,33 +1,5 @@
 [
   {
-    "code": "0100000000001000",
-    "description": "",
-    "section": "大气层系统",
-    "subsection": "自定义主题",
-    "subsubsection": ""
-  },
-  {
-    "code": "0100000000001007",
-    "description": "",
-    "section": "大气层系统",
-    "subsection": "自定义主题",
-    "subsubsection": ""
-  },
-  {
-    "code": "0100000000001013",
-    "description": "",
-    "section": "大气层系统",
-    "subsection": "自定义主题",
-    "subsubsection": ""
-  },
-  {
-    "code": "/atmosphere/contents/id",
-    "description": "",
-    "section": "大气层系统",
-    "subsection": "自定义主题",
-    "subsubsection": ""
-  },
-  {
     "code": "2000-0000",
     "description": "",
     "section": "任天堂系统",
@@ -1444,7 +1416,7 @@
   {
     "code": "0100000000001000",
     "description": "qlaunch (SystemAppletMenu): qlaunch system applet. Launched by NS_Services#LaunchSystemApplet: ns.",
-    "section": "任天堂系统",
+    "section": "任天堂系统 (主题相关)",
     "subsection": "系统小程序",
     "subsubsection": ""
   },
@@ -1493,7 +1465,7 @@
   {
     "code": "0100000000001007",
     "description": "Profile Selector: playerSelect (LibraryAppletPlayerSelect)",
-    "section": "任天堂系统",
+    "section": "任天堂系统 (主题相关)",
     "subsection": "系统小程序",
     "subsubsection": ""
   },
@@ -1577,7 +1549,7 @@
   {
     "code": "0100000000001013",
     "description": "MyPage_Applet: myPage (LibraryAppletMyPage)",
-    "section": "任天堂系统",
+    "section": "任天堂系统 (主题相关)",
     "subsection": "系统小程序",
     "subsubsection": ""
   },
@@ -3691,6 +3663,69 @@
   {
     "code": "690000000000000D",
     "description": "sys-con",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "00FF0000B378D640",
+    "description": "SysFanControl",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "420000000007E51B",
+    "description": "nx-ovlreloader",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "420000000000000D",
+    "description": "sys-ftpd-freeze",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "420000000000012B",
+    "description": "sys-ftpd-freeze",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000C0FFEE",
+    "description": "pad-macro",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "524850534F53454D",
+    "description": "kernel",
+    "section": "大气层系统",
+    "subsection": "内核",
+    "subsubsection": ""
+  },
+  {
+    "code": "6900000000000420",
+    "description": "fs-patch",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "0100000000251020",
+    "description": "sys-Notification",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
+    "code": "4100000002025924",
+    "description": "sys-KeyX",
     "section": "大气层系统",
     "subsection": "自制系统模块",
     "subsubsection": ""
