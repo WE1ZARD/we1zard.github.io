@@ -372,47 +372,33 @@ window.addEventListener('load', function() {
     
     // 只有在非index.html和非feedback.html页面添加弹窗机制
     if (!isIndexPage && !isFeedbackPage) {
-        // 获取当前页面的唯一标识（使用路径作为标识）
-        const pageKey = 'floatingButtonShown_' + window.location.pathname;
-        
-        // 检查localStorage，判断当前页面是否已经弹过窗
-        const hasShownOnThisPage = localStorage.getItem(pageKey) === 'true';
-        
-        // 如果页面已经弹过窗，不再重复弹窗
-        if (!hasShownOnThisPage) {
-            // 设置30秒计时器，页面停留时间超过30秒后显示悬浮按钮
-            const popupTimer = setTimeout(() => {
-                // 检查是否有隐藏标志，如果有则不显示按钮
-                if (floatingButtons.dataset.hide !== 'true') {
-                    // 检查虚拟键盘是否打开：比较当前窗口高度与初始高度
-                    const currentWindowHeight = window.innerHeight;
-                    const initialWindowHeight = window.innerHeight;
-                    const isKeyboardOpen = initialWindowHeight - currentWindowHeight > 200;
-                    
-                    if (!isKeyboardOpen) {
-                        floatingButtons.style.display = 'block';
-                        // 使用setTimeout确保display属性已生效，然后再修改opacity
-                        setTimeout(() => {
-                            floatingButtons.style.opacity = '1';
-                        }, 10);
-                        
-                        // 记录当前页面已经弹过窗
-                        localStorage.setItem(pageKey, 'true');
-                    }
+        // 设置30秒计时器，页面停留时间超过30秒后显示悬浮按钮
+        const popupTimer = setTimeout(() => {
+            // 检查是否有隐藏标志，如果有则不显示按钮
+            if (floatingButtons.dataset.hide !== 'true') {
+                // 检查虚拟键盘是否打开：比较当前窗口高度与初始高度
+                const initialWindowHeight = window.innerHeight;
+                const currentWindowHeight = window.innerHeight;
+                const isKeyboardOpen = initialWindowHeight - currentWindowHeight > 200;
+                
+                if (!isKeyboardOpen) {
+                    floatingButtons.style.display = 'block';
+                    // 使用setTimeout确保display属性已生效，然后再修改opacity
+                    setTimeout(() => {
+                        floatingButtons.style.opacity = '1';
+                    }, 10);
                 }
-            }, 30000); // 30秒后显示
-            
-            // 清除计时器的清理函数
-            const cleanup = () => {
-                clearTimeout(popupTimer);
-            };
-            
-            // 当用户离开页面时清除计时器
-            window.addEventListener('beforeunload', cleanup);
-            window.addEventListener('unload', cleanup);
-        } else {
-            console.log('当前页面已经显示过悬浮按钮，不再重复显示');
-        }
+            }
+        }, 30000); // 30秒后显示
+        
+        // 清除计时器的清理函数
+        const cleanup = () => {
+            clearTimeout(popupTimer);
+        };
+        
+        // 当用户离开页面时清除计时器
+        window.addEventListener('beforeunload', cleanup);
+        window.addEventListener('unload', cleanup);
     } else {
         // 在index.html或feedback.html页面，不自动显示悬浮按钮
         console.log(`在${isIndexPage ? 'index.html' : 'feedback.html'}页面，不自动显示悬浮按钮`);
