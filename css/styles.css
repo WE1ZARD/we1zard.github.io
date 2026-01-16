@@ -411,6 +411,8 @@ input[type="range"] {
     outline: none;
     border: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 /* 移除range输入框的focus高亮边框 */
@@ -594,12 +596,56 @@ block {
 
 /* 表格相间行背景色 */
 .content-container table tbody tr:nth-child(even) {
-    background-color: rgba(10, 30, 55, 0.7);
+    background-color: rgba(59, 130, 246, 0.1);
 }
 
-/* 表格hover效果 */
-.content-container table tbody tr:hover {
-    background-color: rgba(59, 130, 246, 0.1);
+/* 表格hover效果 - 提高优先级以覆盖Tailwind CSS */
+.content-container table tbody tr:hover td,
+.content-container table tbody tr:hover th {
+    background-color: #3b82f6;
+    color: white !important;
+    font-weight: inherit;
+}
+
+/* 确保标题字体加粗 */
+.content-container th {
+    font-weight: bold !important;
+}
+
+/* 表格容器样式 - 用于hoc.html */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.content-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #0c2140;
+}
+
+.content-table th {
+    background-color: #184280;
+    font-weight: bold;
+}
+
+.content-table tr:nth-child(even) {
+    background-color: #184280;
+}
+
+/* content-table表格hover效果 */
+.content-table tbody tr:hover {
+    background-color: #184280;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 /* 确保文本颜色在各种情况下都正确 */

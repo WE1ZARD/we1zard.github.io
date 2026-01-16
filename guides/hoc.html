@@ -13,7 +13,7 @@
 <body>
 
     <div class="flex justify-center my-6">
-        <object data="/img/aurora.svg" type="image/svg+xml" width="184" height="40"></object>
+        <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
     </div>
 
     <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
@@ -54,73 +54,75 @@
         </ul><br>
 
         <h2 id="参考资料">参考资料</h2>
-        <ul>
-            <table class="w-full">
+        <div class="overflow-x-auto mt-4 mb-2">
+            <table class="w-full text-xs sm:text-sm">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-left font-medium text-gray-500 uppercase tracking-wider">颗粒型号</th>
+                        <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">通用频率</th>
+                        <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">极限频率</th>
+                        <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">VDD2/VDDQ</th>
+                        <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">通用时序</th>
+                        <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">极限时序</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left whitespace-nowrap"><b>NEI, NEE, X267</b></td>
+                        <td class="text-center whitespace-nowrap"><b>3100 Mhz</b></td>
+                        <td class="text-center whitespace-nowrap"><b>3133 Mhz</b></td>
+                        <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                    </tr>
 
-                <tr style="background-color: #184280;">
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>颗粒型号</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>通用频率</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>极限频率</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>VDD2/VDDQ</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>通用时序</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>极限时序</b></td>
-                </tr>
+                    <tr>
+                        <td class="text-left whitespace-nowrap"><b>WTB</b></td>
+                        <td class="text-center whitespace-nowrap"><b>3066 Mhz</b></td>
+                        <td class="text-center whitespace-nowrap"><b>3100 Mhz</b></td>
+                        <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                    </tr>
 
-                <tr>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>NEI, NEE, X267</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3100 Mhz</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3133 Mhz</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>1175/600 mV</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                </tr>
+                    <tr>
+                        <td class="text-left whitespace-nowrap"><b>AA</b></td>
+                        <td class="text-center whitespace-nowrap"><b>2933 Mhz</b></td>
+                        <td class="text-center whitespace-nowrap"><b>3133 Mhz</b></td>
+                        <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                        <td class="text-center whitespace-nowrap"><b>(4-4-9)-5-5-6-6-6</b></td>
+                    </tr>
 
-                <tr style="background-color: #0c2140;">
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>WTB</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3066 Mhz</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3100 Mhz</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>1175/600 mV</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                </tr>
+                    <tr>
+                        <td class="text-left whitespace-nowrap"><b>WTF</b></td>
+                        <td class="text-center whitespace-nowrap"><b>2633 Mhz</b></td>
+                        <td class="text-center whitespace-nowrap"><b>2800 Mhz</b></td>
+                        <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                    </tr>
 
-                <tr>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>AA</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3033 Mhz</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>3133 Mhz</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>1175/600 mV</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>(4-4-9)-5-5-6-6-6</b></td>
-                </tr>
+                    <tr>
+                        <td class="text-left whitespace-nowrap"><b>AM, WTE</b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                    </tr>
 
-                <tr style="background-color: #0c2140;">
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>WTF</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>2800 Mhz</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>1175/600 mV</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                </tr>
-
-                <tr>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>AM, WTE</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                </tr>
-
-                <tr style="background-color: #0c2140;">
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>AB, NME</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>2500 Mhz</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b>1175/600 mV</b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                    <td class="p-5 text-left" style="padding: 8px 10px;"><b></b></td>
-                </tr>
+                    <tr>
+                        <td class="text-left whitespace-nowrap"><b>AB, NME</b></td>
+                        <td class="text-center whitespace-nowrap"><b>2500 Mhz</b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                        <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                        <td class="text-center whitespace-nowrap"><b></b></td>
+                    </tr>
+                </tbody>
             </table>
-        </ul><br>
+        </div><br>
 
         <h2 id="RAM 内存">RAM 内存</h2>
         <ul>
