@@ -5,43 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WE1ZARD - 教程</title>
 
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/custom.js"></script>
+    <script src="/js/common.js"></script>
 </head>
 <body>
 
-    <div class="flex justify-center my-6">
-        <object data="/img/aurora.svg" type="image/svg+xml" width="184" height="40"></object>
-    </div>
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
 
     <div class="content-container bg-[#051427] p-6 rounded-md shadow-md">
 
         <div class="mt-8">
-            <h2>应用相关</h2>
-            <ul class="space-y-4">
+            <h2 class="text-2xl mb-4">超频相关</h2>
+            <ul class="space-y-2 pl-4">
+                <li>
+                    <a href="/guide/hoc.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                        <i class="fas fa-file-alt mr-2"></i>使用教程 - HOC 极限超频
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mt-8">
+            <h2 class="text-2xl mb-4">应用相关</h2>
+            <ul class="space-y-2 pl-4">
 
                 <li>
-                    <a href="/app/autosave.html" target="_blank" class="text-blue-500 hover:text-blue-400 text-lg font-medium">
+                    <a href="/app/autosave.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
                         <i class="fas fa-file-alt mr-2"></i>使用教程 - autoSAVE
                     </a>
                 </li>
 
                 <li>
-                    <a href="/app/cpu.html" target="_blank" class="text-blue-500 hover:text-blue-400 text-lg font-medium">
+                    <a href="/app/cpu.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
                         <i class="fas fa-file-alt mr-2"></i>使用教程 - CPU Monitor
                     </a>
                 </li>
 
                 <li>
-                    <a href="/app/dbi.html" target="_blank" class="text-blue-500 hover:text-blue-400 text-lg font-medium">
+                    <a href="/app/dbi.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
                         <i class="fas fa-file-alt mr-2"></i>使用教程 - DBI
                     </a>
                 </li>
 
                 <li>
-                    <a href="/app/reshade.html" target="_blank" class="text-blue-500 hover:text-blue-400 text-lg font-medium">
+                    <a href="/app/reshade.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
                         <i class="fas fa-file-alt mr-2"></i>使用教程 - Reshade
                     </a>
                 </li>
@@ -50,25 +66,25 @@
         </div>
 
         <div class="mt-8">
-            <h2>系统相关</h2>
-            <ul class="space-y-4">
+            <h2 class="text-2xl mb-4">系统相关</h2>
+            <ul class="space-y-2 pl-4">
                 <li>
-                    <a href="/guides/fw.html" target="_blank" class="text-blue-500 hover:text-blue-400 text-lg font-medium">
+                    <a href="/guide/fw.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
                         <i class="fas fa-file-alt mr-2"></i>HOS - 升降级系统
                     </a>
                 </li>
 
                 <li>
-                    <a href="/app/lockpick.html" target="_blank" class="text-blue-500 hover:text-blue-400 text-lg font-medium">
+                    <a href="/app/lockpick.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
                         <i class="fas fa-unlock mr-2"></i>Payloads - Lockpick 提取密钥
                     </a>
                 </li>
 
-                <!--<li>
-                    <a href="/guides/wifi.html" target="_blank" class="text-blue-500 hover:text-blue-400 text-lg font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>Wifi 5G 信道修改
+                <li>
+                    <a href="/app/te.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                        <i class="fas fa-file-alt mr-2"></i>Payloads - TegraExplorer 系统工具
                     </a>
-                </li>-->
+                </li>
 
             </ul>
         </div>
@@ -77,7 +93,7 @@
             <h2>超频相关</h2>
             <ul class="space-y-4">
                 <li>
-                    <a href="/guides/hoc.html" target="_blank" class="text-blue-500 hover:text-blue-400 text-lg font-medium">
+                    <a href="/guide/hoc.html" target="_blank" class="text-grey hover:text-hover text-lg font-medium">
                         <i class="fas fa-file-alt mr-2"></i>超频教程 - HOC
                     </a>
                 </li>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - CVB 计算器</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Custom JS -->
+    <script src="/js/common.js"></script>
+<script src="/js/cvb.js"></script>
+</head>
+<body class="bg-gray-900 text-gray-300">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Content Box -->
+        <div class="bg-gray-800/50 rounded-xl p-6 shadow-lg text-sm">
+
+            <!-- Risk Disclaimer -->
+            <div class="disclaimer">
+                <ol>
+                    <li>请自行承担任何由于使用导致的风险和后果.</li>
+                    <li>计算结果仅供参考, 基于 HOC 数据推算.</li>
+                </ol>
+            </div>
+            
+
+            <!-- Frequency Selection Slider -->
+            <div class="flex flex-col items-center mb-6 w-full">
+                <div class="flex items-center w-full max-w-4xl">
+                    <span class="text-gray-400 mr-2 min-w-[60px]">CPU:</span>
+                    <input type="range" id="frequencySlider" class="flex-grow slider">
+                    <span id="currentFrequency" class="text-gray-300 ml-2 min-w-[80px] text-right">1020 MHz</span>
+                </div>
+            </div>
+
+            <!-- Input Fields -->
+            <div class="input-section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-3 mb-6 max-w-[24rem] mx-auto">
+                <input type="text" id="c0" placeholder="c0: 853926" oninput="calcCVB()" 
+                       class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input">
+                <input type="text" id="c1" placeholder="c1: -20775" oninput="calcCVB()" 
+                       class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input">
+                <input type="text" id="c2" placeholder="c2: 113" oninput="calcCVB()" 
+                       class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input">
+                <input type="text" id="speedo" placeholder="cpu speedo: 1600" oninput="calcCVB()" 
+                       class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input">
+                <input type="text" id="Scale" placeholder="scale: 102.4" oninput="calcCVB()" 
+                       class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input">
+                <input type="text" id="cvb_mv" placeholder="cvb: nil" oninput="calcCVB()" 
+                       class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input">
+                
+                <!-- Table Selection -->
+                <div id="tableSelectContainer">
+                    <select id="tableSelect" onchange="switchTable()" class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input">
+                        <!-- 表格选项将在数据加载时动态添加 -->
+                    </select>
+                </div>
+                
+                <!-- Result Box -->
+                <div>
+                    <div id="resultBox" class="w-full h-full cvb-control-item cvb-result-box hidden" style="display: none;">
+                        <div id="resultVal"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Batch Results Box -->
+            <div id="batchResultBox" class="mt-2 max-w-[24rem] mx-auto hidden overflow-x-auto" style="display: none;">
+                <div id="batchResults"></div>
+            </div>
+            
+
+        </div>
+    </div>
+
+    <style>
+        /* Make batch results table responsive */
+        #batchResults table {
+            width: 100%;
+        }
+    </style>
+</body>
+</html>

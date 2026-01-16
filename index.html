@@ -4,77 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WE1ZARD - 主页</title>
-
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/custom.js"></script>
-    
+    <script src="/js/common.js"></script>
 </head>
-<body>
-    <div class="flex justify-center my-6">
-        <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
-    </div>
-
-    <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
-        <h2>快捷入口</h2>
-
-        <div id="main-buttons" class="button-container grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-8 justify-items-center">
-
-            <a href="/aio.html" target="_blank" class="main-button">
-                <i class="fas fa-download text-4xl text-blue-500"></i>
-                <strong>安装升级</strong>
-            </a>
-
-            <a href="/guides/fw.html" target="_blank" class="main-button">
-                <i class="fas fa-circle-down text-4xl text-blue-500"></i>
-                <strong>系统固件</strong>
-            </a>
-
-            <a href="https://www.jianguoyun.com/p/DZgWte4Q2s_tDBiHhOsFIAA" target="_blank" class="main-button">
-                <i class="fas fa-history text-4xl text-blue-500"></i>
-                <strong>更新日志</strong>
-            </a>
-
-            <a href="/guides.html" target="_blank" class="main-button">
-                <i class="fas fa-book-open text-4xl text-blue-500"></i>
-                <strong>文字教程</strong>
-            </a>
-
-            <a href="https://space.bilibili.com/3595105/lists/4599095?type=series" target="_blank" class="main-button">
-                <i class="fab fa-bilibili text-4xl text-blue-500"></i>
-                <strong>视频教程</strong>
-            </a>
-
-            <a href="/feedback.html" target="_blank" class="main-button">
-                <i class="fas fa-envelope-open-text text-4xl text-blue-500"></i>
-                <strong>我要反馈</strong>
-            </a>
-
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
         </div>
-    </div>
-    <div class="content-container bg-[#051427] p-0 rounded-md shadow-md" style="margin-top: -2rem;">
-        <h2>常用工具</h2>
+    </header>
 
-        <div id="main-buttons" class="button-container grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-8 justify-items-center">
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <!-- 快捷入口区域 -->
+            <section class="mb-8">
+                <div class="content-container p-4">
+                    <h2 class="text-xl font-bold text-blue-500 mb-6 text-left w-3/4 mx-auto">快捷入口</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 justify-items-center w-3/4 mx-auto">
+                        <a href="/aio.html" target="_blank" class="main-button">
+                            <i class="fas fa-download text-2xl text-blue-500"></i>
+                            <strong>安装升级</strong>
+                        </a>
+                        <a href="/guide/fw.html" target="_blank" class="main-button">
+                            <i class="fas fa-circle-down text-2xl text-blue-500"></i>
+                            <strong>系统固件</strong>
+                        </a>
+                        <a href="https://www.jianguoyun.com/p/DZgWte4Q2s_tDBiHhOsFIAA" target="_blank" class="main-button">
+                            <i class="fas fa-history text-2xl text-blue-500"></i>
+                            <strong>更新日志</strong>
+                        </a>
+                        <a href="/feedback.html" target="_blank" class="main-button">
+                            <i class="fas fa-envelope-open-text text-2xl text-blue-500"></i>
+                            <strong>我要反馈</strong>
+                        </a>
+                        <a href="/guides.html" target="_blank" class="main-button">
+                            <i class="fas fa-book-open text-2xl text-blue-500"></i>
+                            <strong>文字教程</strong>
+                        </a>
+                        <a href="https://space.bilibili.com/3595105/lists/4599095?type=series" target="_blank" class="main-button">
+                            <i class="fab fa-bilibili text-2xl text-blue-500"></i>
+                            <strong>视频教程</strong>
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-            <a href="/tools/error.html" target="_blank" class="main-button">
-                <i class="fas fa-search text-4xl text-blue-500"></i>
-                <strong>错误查询</strong>
-            </a>
-
-            <a href="/tools/cal.html" target="_blank" class="main-button">
-                <i class="fas fa-calculator text-4xl text-blue-500"></i>
-                <strong>电压计算</strong>
-            </a>
-
-            <a href="/tools/l4s.html" target="_blank" class="main-button">
-                <i class="fas fa-diagram-next text-4xl text-blue-500"></i>
-                <strong>L4S 超频</strong>
-            </a>
-
+            <!-- 常用工具区域 -->
+            <section>
+                <div class="content-container p-4">
+                    <h2 class="text-xl font-bold text-blue-500 mb-6 text-left w-3/4 mx-auto">常用工具</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 justify-items-center w-3/4 mx-auto">
+                        <a href="/tool/error.html" target="_blank" class="main-button">
+                            <i class="fas fa-search text-2xl text-blue-500"></i>
+                            <strong>错误查询</strong>
+                        </a>
+                        <a href="/tool/cal.html" target="_blank" class="main-button">
+                            <i class="fas fa-calculator text-2xl text-blue-500"></i>
+                            <strong>电压计算</strong>
+                        </a>
+                        <a href="/tool/l4s.html" target="_blank" class="main-button">
+                            <i class="fas fa-diagram-next text-2xl text-blue-500"></i>
+                            <strong>L4S 超频</strong>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
-
+    </main>
 </body>
 </html>

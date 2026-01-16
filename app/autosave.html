@@ -5,31 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WE1ZARD - autoSAVE 使用教程</title>
 
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/custom.js"></script>
+    <script src="/js/common.js"></script>
 </head>
 <body>
-    <div class="flex justify-center my-6">
-        <object data="/img/aurora.svg" type="image/svg+xml" width="184" height="40"></object>
-    </div>
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
 
     <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
 
         <h2 id="autoSAVE">autoSAVE</h2>
-        <block>这是一个后台系统模块</block><br>
-        <block>开启后将自动在退出游戏后备份游戏存档到内存卡上</block><br>
-        <block>采用JKSV一样的路径, 不影响从JKSV导出的存档, 并使用crc进行校验</block>
+        <blockquote>
+            这是一个后台系统模块<br>
+            开启后将自动在退出游戏后备份游戏存档到内存卡上<br>
+            采用JKSV一样的路径, 不影响从JKSV导出的存档, 并使用crc进行校验<br>
+        </blockquote>
 
         <h2 id="使用方法">使用方法</h2>
         <ul>
             <blockquote>
                 <div id="action-buttons" class="flex-button-container gap-3">
                     <a href="https://gitea.com/we1zard/OTA/releases/download/latest/autoSAVE.zip" target="_blank" class="btn-download">
-                        <i class="fas fa-download mr-2"></i>下载解压<br>autoSAVE.zip</a>
-                </div><br>
-            将 <bold>atmosphere</bold> 复制到内存卡上, 开启系统模块即可<br><br>
+                        <i class="fas fa-download mr-2"></i>autoSAVE.zip</a>
+                </div>
+            下载解压后, 将 <bold>atmosphere</bold> 复制到内存卡上, 开启系统模块即可<br>
             </blockquote>
         </ul><br>
 

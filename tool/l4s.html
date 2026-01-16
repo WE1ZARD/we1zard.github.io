@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WE1ZARD - L4S 超频设置</title>
 
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/custom.js"></script>
+    <script src="/js/common.js"></script>
 </head>
 <body>
-    <div class="flex justify-center my-6">
-        <object data="/img/aurora.svg" type="image/svg+xml" width="184" height="40"></object>
-    </div>
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
 
     <div id="banner" class="max-w-md mx-auto mt-4 p-2">
     </div>
@@ -21,8 +26,9 @@
         <!-- 页面标题和说明 -->
         <div class="mb-6">
             <!-- <h1>L4T 超频设置</h1> -->
-                <block>适用于 <bold>Switch</bold> 上的 <bold>Linux</bold>, <bold>Lakka</bold> 和 <bold>Android</bold> 超频参数设置</block><br>
-                <block>配置文件路径 <code>/bootloader/ini/*.ini</code></block><br>
+            <blockquote>适用于 <bold>Switch</bold> 上的 <bold>Linux</bold>, <bold>Lakka</bold> 和 <bold>Android</bold> 超频参数设置<br>
+                配置文件路径 <code>/bootloader/ini/*.ini</code>
+            </blockquote><br>
         </div>
 
         <!-- <div class="relative p-4 rounded-md shadow-md w-full"> -->
@@ -31,18 +37,14 @@
                 下框会自动根据设置生成的配置参数,<br>
                 请根据个人情况做相应的调整,<br>
                 完成后将参数添加进对应的配置文件.<br>
-            </blockquote>
+            </blockquote><br>
 
         
         <!-- 代码复制框 -->
 
             <!-- 为代码框添加相对定位的容器 -->
-            <div class="relative w-1/2">
-                <!-- 悬浮复制按钮 - 相对于容器定位 -->
-                <button id="copy-btn" class="absolute top-3 right-3 bg-[#3b82f6] hover:bg-[#2563eb] text-white px-3 py-1 rounded-md text-sm transition-colors z-10"><i class="fas fa-copy"></i>
-                    复制
-                </button>
-                <pre id="config-code" class="border-1 border-[#3b82f6] whitespace-pre-wrap text-[#9ca3af] font-mono text-sm max-h-60 overflow-y-auto p-4 bg-[#051427] rounded-md">
+            <div class="relative w-full">
+                <pre id="config-code" class="border border-[#60a5fa] hover:border-[#3b82f6] hover:shadow-[0_0_12px_rgba(96,165,250,0.6)] cursor-pointer whitespace-pre-wrap text-[#9ca3af] font-mono text-sm max-h-60 overflow-y-auto p-4 bg-[#051427] rounded-md transition-all duration-200">
 ram_oc=0000000
 ram_oc_opt=0</pre>
                 <p id="copy-status" class="text-xs text-[#9ca3af] mt-2"></p>
@@ -132,7 +134,6 @@ ram_oc_opt=0</pre>
         const gpu_dvfsc = document.querySelector("#gpu_dvfsc");
         const limit_gpu_clk = document.querySelector("#limit_gpu_clk");
         const configCode = document.querySelector("#config-code");
-        const copyBtn = document.querySelector("#copy-btn");
         const copyStatus = document.querySelector("#copy-status");
         
         // 获取所有需要处理的输入元素
@@ -289,14 +290,14 @@ ram_oc_opt=0</pre>
         inputs.ram_oc_vddq_txt.textContent = inputs.ram_oc_vddq.value;
         
         // 复制功能实现
-        copyBtn.addEventListener("click", () => {
+        configCode.addEventListener("click", () => {
             navigator.clipboard.writeText(configCode.textContent)
                 .then(() => {
                     copyStatus.textContent = "已复制到剪贴板!";
-                    copyStatus.style.color = "#3b82f6";
+                    copyStatus.style.color = "#10b981";
                     setTimeout(() => {
                         copyStatus.textContent = "";
-                    }, 2000);
+                    }, 60000);
                 })
                 .catch(err => {
                     copyStatus.textContent = "复制失败: " + err;

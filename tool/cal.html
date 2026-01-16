@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - 电压计算</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+<script src="/js/cal.js"></script>
+    
+    <!-- Nintendo Switch Buttons SVG Sprite -->
+    <object data="/img/switch-buttons.svg" type="image/svg+xml" style="display: none;"></object>
+    <!-- 移除不存在的脚本引用，JavaScript代码已嵌入HTML -->
+</head>
+<body class="bg-gray-900 text-gray-300">
+    <div class="flex justify-center mt-4">
+        <img src="/img/aurora.svg" alt="Aurora Logo" class="h-12 w-auto">
+    </div>
+    <!-- Main Container -->
+    <div class="max-w-4xl mx-auto px-4 py-8">
+
+        <!-- Content Box -->
+        <div class="bg-gray-800/50 rounded-xl p-6 shadow-lg">
+            <!-- Risk Disclaimer -->
+            <div class="disclaimer">
+                <ol>
+                    <li>请自行承担任何由于使用导致的风险和后果.</li>
+                    <li>计算结果仅供参考, 基于 HOC 数据推算.</li>
+                </ol>
+            </div>
+
+        <!-- 内存电压计算器 -->
+        <div class="input-section grid grid-cols-2 gap-3 mt-3 max-w-[24rem] mx-auto text-sm">
+            <input type="number" id="mem_emcMaxClock" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                placeholder="RAM: 2133 MHz">
+            
+            <input type="number" id="mem_emcDvbShift" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                placeholder="DVB: 0">
+            
+            <input type="number" id="speedo" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                placeholder="GPU Speedo: 1600">
+            
+            <input type="number" id="table" min="0" max="2" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                placeholder="GPU UV: 2">
+            
+            <input type="number" id="vmin" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                placeholder="GPU Vmin: Auto">
+            
+            <input type="number" id="offset" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                placeholder="GPU Volt Offset: 0 mV">
+            
+            <input type="number" id="soc_speedo" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                placeholder="SOC Speedo: 1600">
+            
+            <!-- SOC 电压要求显示 -->
+            <div id="soc_vmin_card" class="w-full px-4 py-2 bg-blue-700/30 rounded-lg text-blue-300 flex items-center justify-start">
+                <div class="text-sm font-bold">
+                    SOC: <span id="soc_vmin_value">—</span> mV
+                </div>
+            </div>
+        </div>
+
+        <div class="result-section mt-2 max-w-[24rem] mx-auto hidden" id="result-section">
+            <div id="gpu_result"></div>
+            <div id="mem_result"></div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
