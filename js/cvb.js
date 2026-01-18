@@ -142,17 +142,16 @@ function switchTable() {
     updateFrequencyDisplay(frequencySlider.value);
     
     // 清空输入框中的值，这样会使用新table中的默认值
+    // 保留用户已填写的speedo值
     const c0Input = document.getElementById('c0');
     const c1Input = document.getElementById('c1');
     const c2Input = document.getElementById('c2');
-    const speedoInput = document.getElementById('speedo');
     const scaleInput = document.getElementById('Scale');
     const cvb_mvInput = document.getElementById('cvb_mv');
     
     c0Input.value = '';
     c1Input.value = '';
     c2Input.value = '';
-    speedoInput.value = '';
     scaleInput.value = '';
     cvb_mvInput.value = '';
     
