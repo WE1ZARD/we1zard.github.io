@@ -83,6 +83,10 @@
                 <div id="batchResults"></div>
             </div>
             
+            <!-- Voltage Curve Chart -->
+            <div id="chartBox" class="mt-6 max-w-[40rem] mx-auto hidden">
+                <canvas id="voltageChart" width="400" height="200"></canvas>
+            </div>
 
         </div>
     </div>
@@ -92,6 +96,16 @@
         #batchResults table {
             width: 100%;
         }
+        
+        /* Chart styles */
+        #chartBox {
+            padding: 1rem;
+            background-color: rgba(75, 85, 99, 0.2);
+            border-radius: 0.5rem;
+        }
     </style>
+    
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

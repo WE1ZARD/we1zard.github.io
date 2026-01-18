@@ -482,6 +482,53 @@ function calculateAllFrequencies(vals, calculationType) {
     // 获取唯一的频率列表
     const uniqueFrequencies = [...new Set(cvbData.map(item => item.freq))].sort((a, b) => a - b);
     
+    // 收集计算结果数据用于绘制图表
+    const calculationResults = [];
+    
+    // 向上取整到5的倍数的辅助函数
+    function roundUpTo5(value) {
+        return Math.ceil(value / 5) * 5;
+    }
+    
+    // 计算每个频率的结果用于图表
+    uniqueFrequencies.forEach(freq => {
+        const freqData = cvbData.find(item => item.freq == freq);
+        if (freqData) {
+            let resultValue = null;
+            
+            // 根据计算类型进行计算
+            if (calculationType === 'cvb_mv') {
+                // 计算电压
+                const ratio = speedo / scale;
+                const innerSum = freqData.c0 + freqData.c1 * ratio + freqData.c2 * ratio * ratio;
+                resultValue = (innerSum / CVB_BASE) * 1000; // 转换为毫伏
+                // 向上取整到5的倍数
+                resultValue = roundUpTo5(resultValue);
+            } else if (calculationType === 'scale') {
+                // 计算Scale
+                const A = freqData.c2;
+                const B = freqData.c1;
+                const C = freqData.c0 - (cvb_mv * CVB_BASE);
+                const delta = B * B - 4 * A * C;
+                
+                if (delta >= 0) {
+                    const sqrtDelta = Math.sqrt(delta);
+                    const x1 = (-B + sqrtDelta) / (2 * A);
+                    const x2 = (-B - sqrtDelta) / (2 * A);
+                    const validX = x1 > 0 ? x1 : (x2 > 0 ? x2 : null);
+                    
+                    if (validX) {
+                        resultValue = speedo / validX;
+                    }
+                }
+            }
+            
+            calculationResults.push(resultValue);
+        } else {
+            calculationResults.push(null);
+        }
+    });
+    
     // 分割频率列表
     const lowFrequencies = uniqueFrequencies.filter(freq => freq < splitFrequency);
     const highFrequencies = uniqueFrequencies.filter(freq => freq >= splitFrequency);
@@ -501,6 +548,103 @@ function calculateAllFrequencies(vals, calculationType) {
     batchResultBox.className = 'mt-2 max-w-[24rem] mx-auto overflow-x-auto';
     batchResultBox.classList.remove('hidden');
     batchResultBox.scrollIntoView({ behavior: 'smooth' });
+    
+    // 绘制电压曲线图表
+    drawVoltageChart(uniqueFrequencies, calculationResults, calculationType);
+}
+
+// 绘制电压曲线图表
+function drawVoltageChart(frequencies, calculationResults, calculationType) {
+    const ctx = document.getElementById('voltageChart').getContext('2d');
+    const chartBox = document.getElementById('chartBox');
+    
+    // 过滤掉无效数据
+    const validData = frequencies.map((freq, index) => {
+        return {
+            freq: freq,
+            value: calculationResults[index]
+        };
+    }).filter(item => item.value !== null && !isNaN(item.value));
+    
+    // 准备图表数据
+    const chartData = {
+        labels: validData.map(item => `${(item.freq / 1000).toFixed(0)} MHz`),
+        datasets: [{
+            label: calculationType === 'cvb_mv' ? '电压 (mV)' : '缩放比例',
+            data: validData.map(item => item.value),
+            borderColor: '#60a5fa',
+            backgroundColor: 'rgba(96, 165, 250, 0.1)',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.2,
+            pointBackgroundColor: '#60a5fa',
+            pointRadius: 3,
+            pointHoverRadius: 5
+        }]
+    };
+    
+    // 配置图表
+    const chartConfig = {
+        type: 'line',
+        data: chartData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'CPU 频率'
+                    },
+                    ticks: {
+                        maxRotation: 45,
+                        minRotation: 45
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: calculationType === 'cvb_mv' ? '电压 (mV)' : '缩放比例'
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                }
+            },
+            interaction: {
+                mode: 'nearest',
+                axis: 'x',
+                intersect: false
+            },
+            backgroundColor: 'rgba(30, 41, 59, 0.8)'
+        }
+    };
+    
+    // 销毁之前的图表实例（如果存在且有destroy方法）
+    if (window.voltageChart && typeof window.voltageChart.destroy === 'function') {
+        window.voltageChart.destroy();
+    }
+    
+    // 创建新图表
+    window.voltageChart = new Chart(ctx, chartConfig);
+    
+    // 显示图表
+    chartBox.classList.remove('hidden');
+    chartBox.style.display = 'block';
+    chartBox.scrollIntoView({ behavior: 'smooth' });
 }
 
 // 创建频率表格的辅助函数
@@ -601,4 +745,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const batchResultBox = document.getElementById('batchResultBox');
     batchResultBox.classList.add('hidden');
     batchResultBox.style.display = 'none'; // 确保初始状态完全不占据空间
+    
+    // 确保图表容器初始时也被隐藏
+    const chartBox = document.getElementById('chartBox');
+    chartBox.classList.add('hidden');
+    chartBox.style.display = 'none'; // 确保初始状态完全不占据空间
 });
