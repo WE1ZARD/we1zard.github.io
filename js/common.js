@@ -370,7 +370,7 @@ window.addEventListener('load', function() {
     
     // 只有在非index.html和非feedback.html页面添加弹窗机制
     if (!isIndexPage && !isFeedbackPage) {
-        // 设置30秒计时器，页面停留时间超过30秒后显示悬浮按钮
+        // 设置60秒计时器，页面停留时间超过60秒后显示悬浮按钮
         const popupTimer = setTimeout(() => {
             // 检查是否有隐藏标志，如果有则不显示按钮
             if (floatingButtons.dataset.hide !== 'true') {
@@ -387,7 +387,7 @@ window.addEventListener('load', function() {
                     }, 10);
                 }
             }
-        }, 30000); // 30秒后显示
+        }, 60000); // 60秒后显示
         
         // 清除计时器的清理函数
         const cleanup = () => {
