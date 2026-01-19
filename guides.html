@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WE1ZARD - 教程</title>
+    <title>教程</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
 
     <!-- 页面头部 -->
-    <header class="py-8">
+    <header class="py-2">
         <div class="max-w-3xl mx-auto px-4">
             <div class="flex justify-center">
                 <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
@@ -22,90 +22,152 @@
     </header>
 
     <div class="content-container bg-[#051427] p-6 rounded-md shadow-md">
+        <div class="grid md:grid-cols-2 gap-8">
 
-        <div class="mt-8">
-            <h2 class="text-2xl mb-4">超频相关</h2>
-            <ul class="space-y-2 pl-4">
-                <li>
-                    <a href="/guide/hoc.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>使用教程 - HOC 极限超频
-                    </a>
-                </li>
-            </ul>
+            <div class="mt-4">
+                <h2 class="text-2xl mb-4">应用相关</h2>
+                <ul class="space-y-2 pl-4 bg-gray-700/50 rounded-lg p-4">
+
+                    <li>
+                        <a href="/app/autosave.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-file-alt mr-2"></i>Apps - autoSAVE 自动备份存档
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/app/cpu.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-file-alt mr-2"></i>Apps - CPU Monitor 实时监控
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/app/dbi.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-file-alt mr-2"></i>Apps - DBI 万能工具
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/app/reshade.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-file-alt mr-2"></i>Apps - Reshade 滤镜插件
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/app/te.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-tools mr-2"></i>Payloads - TegraExplorer 系统工具
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/app/lockpick.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-tools mr-2"></i>Payloads - Lockpick 提取密钥工具
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="mt-4">
+                <h2 class="text-2xl mb-4">超频相关</h2>
+                <ul class="space-y-2 pl-4 bg-gray-700/50 rounded-lg p-4">
+                    <li>
+                        <a href="/oc/hoc.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-file-alt mr-2"></i>使用说明 - HOC 极限超频
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/oc/sysclk.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-file-alt mr-2"></i>Apps - Sysclk 超频管理
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/oc/sm.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-file-alt mr-2"></i>Apps - Status Monitor 状态监控
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/oc/fps.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-file-alt mr-2"></i>Apps - FPSLocker 帧数解锁
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mt-4">
+                <h2 class="text-2xl mb-4">系统相关</h2>
+                <ul class="space-y-2 pl-4 bg-gray-700/50 rounded-lg p-4">
+                    <li>
+                        <a href="/guide/fw.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-file-alt mr-2"></i>HOS - 升降级系统
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/guide/emmc.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-tools mr-2"></i>Hekate - 备份与恢复
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/guide/partition.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-tools mr-2"></i>Hekate - 分区工具
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/guide/android.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fab fa-android mr-2"></i>系统安装 - Android 安卓
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/guide/lakka.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fas fa-gamepad mr-2"></i>系统安装 - Lakka 模拟器
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/guide/ubuntu.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fab fa-ubuntu mr-2"></i>系统安装 - Ubuntu 乌班图
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="mt-4">
+                <h2 class="text-2xl mb-4">套件相关</h2>
+                <ul class="space-y-2 pl-4 bg-gray-700/50 rounded-lg p-4">
+                    <li>
+                        <a href="/pkg/aurora.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fa fa-file-circle-minus mr-2"></i>Pkgs - Aurora 调频工具
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/pkg/updater.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fa fa-file-circle-minus mr-2"></i>Pkgs - Updater 在线更新
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/pkg/updater.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fa fa-file-circle-minus mr-2"></i>Pkgs - Settings 快捷设置
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/pkg/r2config.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
+                            <i class="fa fa-file-circle-minus mr-2"></i>Pkgs - R2Config 快捷设置
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
         </div>
-
-        <div class="mt-8">
-            <h2 class="text-2xl mb-4">应用相关</h2>
-            <ul class="space-y-2 pl-4">
-
-                <li>
-                    <a href="/app/autosave.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>使用教程 - autoSAVE
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/app/cpu.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>使用教程 - CPU Monitor
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/app/dbi.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>使用教程 - DBI
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/app/reshade.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>使用教程 - Reshade
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-
-        <div class="mt-8">
-            <h2 class="text-2xl mb-4">系统相关</h2>
-            <ul class="space-y-2 pl-4">
-                <li>
-                    <a href="/guide/fw.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>HOS - 升降级系统
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/guide/emmc.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>Hekate - 系统备份与恢复
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/app/lockpick.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
-                        <i class="fas fa-unlock mr-2"></i>Payloads - Lockpick 提取密钥
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/app/te.html" target="_blank" class="text-gray-400 hover:text-blue-400 text-lg font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>Payloads - TegraExplorer 系统工具
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-
-        <!--<div class="mt-8">
-            <h2>超频相关</h2>
-            <ul class="space-y-4">
-                <li>
-                    <a href="/guide/hoc.html" target="_blank" class="text-grey hover:text-hover text-lg font-medium">
-                        <i class="fas fa-file-alt mr-2"></i>超频教程 - HOC
-                    </a>
-                </li>
-            </ul>
-        </div>-->
-
     </div>
 
 </body>

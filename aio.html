@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WE1ZARD - 换包流程</title>
+    <title>换包流程</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
@@ -57,7 +57,7 @@
                     <block>复制完成之后, 开始 <a href="#制作虚拟系统">制作虚拟系统</a></block><br><br>
 
                 <div id="action-buttons" class="flex-button-container gap-3">
-                    <a href="https://we1zard.github.io/feedback.html" target="_blank" class="btn-download"><i class="fas fa-comment-dots mr-2"></i>我要反馈</a>
+                    <a href="feedback.html" target="_blank" class="btn-download"><i class="fas fa-comment-dots mr-2"></i>我要反馈</a>
                 </div>
             </blockquote>
         </ul>
@@ -76,28 +76,14 @@
         <ul>
             <blockquote>
                 重启按住 <strong>音量键减号</strong> 进入 Hekate<br><br>
-
-            <li><strong>Hekate &gt; Tools &gt; Partition SD Card &gt; OK</strong></li>
-                <block>此操作会导致内存卡格式化</block><br>
-                <block>总文件大小不超过100mb会自动备份</block><br>
-                <block>不满足条件的需要手动备份</block><br><br>
-                
-            <li><strong>Next Step</strong></li>
-                <block>点击之后, 开始格式化, 完成之后, 设置</block><br><br>
-                    <block><strong>emuMMC (RAW)</strong></block><br>
-                        <bl>虚拟系统分区大小, 系统会占用3g</bl><br>
-                        <bl>剩余的空间将用于存档数据和游戏数据, 请根据自己情况做调整.</bl><br>
-                        <bl>请保证分区系统大于官方系统已用机身内存</bl><br>
-                    <block><strong>Linux (EXT4)</strong></block><br>
-                        <bl>Linux 系统分区大小, 最低要求: 16g</bl><br>
-                    <block><strong>Android (USER)</strong></block><br>
-                        <bl>安卓系统分区大小, 最低要求: 16g</bl><br><br>
-                    <strong>Next Step</strong><br>
-                        <block>点击之后, 重新格式化并分区</block><br><br>
+                <div id="action-buttons" class="flex-button-container gap-3">
+                    <a href="guide/partition.html" target="_blank" class="btn-download"><i class="fas fa-tools mr-2"></i>分区工具</a>
+                </div>
+                分区创建完成之后, 返回 Hekate 主菜单<br><br>
             <li><strong>Hekate &gt; Create emuMMC &gt; SD Partition</strong></li>
                 <block>此操作将创建一个官方系统的镜像到内存卡隐藏分区</block>
         </ul><br>
-        
+
         <h3 id="文件格式系统">文件格式系统</h3>
         
         <ul>
@@ -113,8 +99,19 @@
         <ul>
             <blockquote>
                 <div id="action-buttons" class="flex-button-container gap-3">
-                    <a href="https://we1zard.github.io/guide/fw.html" target="_blank" class="btn-download"><i class="fas fa-circle-down mr-2"></i>系统固件</a>
+                    <a href="guide/fw.html" target="_blank" class="btn-download"><i class="fas fa-circle-down mr-2"></i>系统固件</a>
                 </div>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="在线更新">在线更新</h2>
+        <ul>
+            <blockquote>
+                连接 WiFi, <a href="/app/dbi.html#NTP-同步系统时间" target="_blank"><b><i class="fa fa-sync-alt mr-2"></i>同步时间</b></a><br><br>
+
+                按 <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg#switch-btn-l"></use></svg> + <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg?v=1#switch-btn-plus"></use></svg> 呼出特斯拉菜单<br>
+                按 <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg#switch-btn-dpad-right"></use></svg> 打开 <b>Updater > AIO > Pre-Release</b> 开始下载<br>
+                完成之后, 自动重启, 处理完成之后, 自动进入系统.
             </blockquote>
         </ul><br>
 
@@ -122,7 +119,7 @@
         <ul>
             <blockquote>
                 <div id="action-buttons" class="flex-button-container gap-3">
-                    <a href="https://we1zard.github.io/guide/emmc.html" target="_blank" class="btn-download"><i class="fas fa-circle-down mr-2"></i>备份系统</a>
+                    <a href="guide/emmc.html" target="_blank" class="btn-download"><i class="fas fa-circle-down mr-2"></i>备份系统</a>
                 </div>
             </blockquote>
         </ul><br>
@@ -130,8 +127,8 @@
         <h2 id="快捷键">快捷键</h2>
         <ul>
             <blockquote>
-                特斯拉菜单: <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg#switch-btn-l"></use></svg> + <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg#switch-btn-plus"></use></svg><br>
-                系统监控: <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg#switch-btn-ls"></use></svg> + <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg#switch-btn-rs"></use></svg><br><br>
+                特斯拉菜单: <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg?v=1#switch-btn-l"></use></svg> + <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg?v=1#switch-btn-plus"></use></svg><br>
+                系统监控: <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg?v=1#switch-btn-ls"></use></svg> + <svg class="inline-block w-5 h-5 mx-1"><use xlink:href="/img/switch-buttons.svg?v=1#switch-btn-rs"></use></svg><br><br>
                 可通过 <code>Settings > KeyCombo</code> 修改快捷键
             </blockquote>
         </ul><br>
@@ -146,6 +143,4 @@
             </blockquote>
         </ul><br>
     </div>
-
-
 </html>

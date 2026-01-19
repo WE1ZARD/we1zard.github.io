@@ -88,24 +88,24 @@
     <!-- D-Pad Up -->
     <symbol id="switch-btn-dpad-up" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" fill="#60a5fa" />
-        <path d="M12 6 L16 10 L12 14 L8 10 Z" fill="#051427" />
+        <path d="M12 8 L16 14.5 L8 14.5 Z" fill="#051427" />
     </symbol>
     
     <!-- D-Pad Down -->
     <symbol id="switch-btn-dpad-down" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" fill="#60a5fa" />
-        <path d="M8 10 L12 14 L16 10 L12 6 Z" fill="#051427" />
+        <path d="M8 9.5 L12 16 L16 9.5 Z" fill="#051427" />
     </symbol>
     
     <!-- D-Pad Left -->
     <symbol id="switch-btn-dpad-left" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" fill="#60a5fa" />
-        <path d="M10 14 L14 10 L10 6 L6 10 Z" fill="#051427" />
+        <path d="M14 8 L7 12 L14 16 Z" fill="#051427" />
     </symbol>
     
     <!-- D-Pad Right -->
     <symbol id="switch-btn-dpad-right" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="10" fill="#60a5fa" />
-        <path d="M6 10 L10 6 L14 10 L10 14 Z" fill="#051427" />
+        <path d="M10 16 L17 12 L10 8 Z" fill="#051427" />
     </symbol>
 </svg>

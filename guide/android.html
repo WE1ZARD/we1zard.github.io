@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android 系统安装</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
+
+        <h2 id="注意事项">注意事项</h2>
+        <ul>
+            <blockquote style="background-color: #0c2140;padding: 16px 16px;">
+                重新创建 Android 系统分区需要重新分区格式化.<br>
+                请提前做好资料备份!!!<br><br>
+                
+                需要提前 <a href="/guide/bluetooth.html" target="_blank"><b><i class="fab fa-bluetooth mr-2"></i>提取手柄蓝牙匹配数据</b></a> 到内存卡上.<br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="下载文件">下载文件</h2>
+        <ul>
+            <blockquote>
+                <div id="action-buttons" class="flex-button-container gap-3">
+                    <a href="https://a.7u9.cn/s/Pflq22dG" target="_blank" class="btn-download"><i class="fas fa-circle-down mr-2"></i>夸克网盘</a>
+                </div>
+                <li><strong>lineage-18.1-20230817-UNOFFICIAL-nx_tab.zip</strong></li>
+                    <block>原装稳定, 兼容性好, 反应略慢.</block><br><br>
+
+                <li><strong>crDroidAndroid-11.0-20240215-nx_tab-v7.39.zip</strong></li>
+                    <block>优化精简, 速度快, 但是可能存在兼容性问题.</block><br><br>
+
+                下载解压以上安卓11系统任意版本,<br>
+                下载最新版本的, 记得系统分区使用 Dynamic 动态分区.
+            </blockquote>
+        </ul><br>
+
+        <h2 id="安装步骤">安装步骤</h2>
+        
+        <ul>
+            <blockquote>
+                <li><strong>创建分区</strong></li>
+                <block>重启按住 <strong>音量键减号</strong> 进入 <b>Hekate</b></block><br><br>
+                <div id="action-buttons" class="flex-button-container gap-3" style="padding-left: 1rem;">
+                    <a href="guide/partition.html" target="_blank" class="btn-download"><i class="fas fa-tools mr-2"></i>分区工具</a>
+                </div>
+                <block>分区创建完成之后, 打开 <b>Hekate > Tools > USB Tools > SD Card</b> 并用USB线连接电脑.</block><br><br>
+
+                <li><strong>复制系统文件</strong></li>
+                <block>将前面下载好的 <b>bootloader</b> 和 <b>switchroot</b> 复制粘贴到内存卡上.</block><br>
+                <block>复制完成之后, 从电脑上断开USB连接.</block><br><br>
+
+                <li><strong>开始安装</strong></li>
+                <block>待完善...</block>
+
+            </blockquote>
+        </ul><br>
+
+    </div>
+</body>
+</html>

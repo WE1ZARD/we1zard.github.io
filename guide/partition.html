@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分区工具</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
+
+        <h2 id="用途">用途</h2>
+        <ul>
+            <blockquote>
+                转换内存卡格式: exFAT -> FAT32<br>
+                创建系统分区:  隐藏分区, Android, Linux<br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="注意事项">注意事项</h2>
+        <ul>
+            <blockquote style="background-color: #0c2140;padding: 16px 16px;">
+                重新分区会格式化, 导致资料丢失,<br>
+                请提前做好资料备份!!!
+            </blockquote>
+        </ul><br>
+
+        <h3 id="重新分区">重新分区</h3>
+        
+        <ul>
+            <blockquote>
+                重启按住 <strong>音量键减号</strong> 进入 Hekate<br><br>
+
+            <li><strong>Hekate &gt; Tools &gt; Partition SD Card &gt; OK</strong></li>
+                <block>此操作会导致内存卡格式化</block><br>
+                <block>总文件大小不超过100mb会自动备份</block><br>
+                <block>不满足条件的需要手动备份</block><br><br>
+                
+            <li><strong>Next Step</strong></li>
+                <block>点击之后, 开始格式化, 完成之后, 设置</block><br><br>
+                    <block><strong>emuMMC (RAW)</strong></block><br>
+                        <bl>虚拟系统分区大小, 系统会占用3g</bl><br>
+                        <bl>剩余的空间将用于存档数据和游戏数据, 请根据自己情况做调整.</bl><br>
+                        <bl>请保证分区系统大于官方系统已用机身内存</bl><br><br>
+                    <block><strong>Linux (EXT4)</strong></block><br>
+                        <bl>Linux 系统分区大小, 最低要求: 16g</bl><br><br>
+                    <block><strong>Android (USER)</strong></block><br>
+                        <bl>安卓系统分区大小, 最低要求: 16g</bl><br>
+                        <bl> - Legacy 传统分区: Android 10-11</bl><br>
+                        <bl> - Dynamic 动态分区: Android 13+</bl><br><br>
+                    <strong>Next Step</strong><br>
+                        <block>点击之后, 重新格式化并分区</block><br><br>
+        </ul><br>
+    </div>
+</body>
+</html>
