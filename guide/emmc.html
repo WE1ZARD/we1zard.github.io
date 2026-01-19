@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - 系统备份与恢复</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
+
+
+        <h2 id="用途">用途</h2>
+        <ul>
+            <blockquote>
+                已经初始化的官方系统, 都建议做一下备份,<br>
+                这时候由于没有什么数据, 处理起来不会花多少时间,<br>
+                日后出现问题, 也能补救.<br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="注意事项">注意事项</h2>
+        <ul>
+            <blockquote>
+                内存卡剩余空间:<br>
+                <block>OLED > 64GB</block><br>
+                <block>其他 > 32GB</block><br><br>
+                充电操作, 避免电量不足导致操作中断<br><br>
+
+                备份保存路径: <code>sdmc:/backup</code><br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="备份系统">备份系统</h2>
+        <ul>
+            <blockquote>
+                按住 <b>音量键减号</b> 开机 <strong>进入 Hekate 主菜单</strong><br>
+                打开 <bold>Tools > Backup eMMC</bold><br><br>
+
+                <li><strong>真实系统</strong></li>
+                    <block>打开 <bold>eMMC BOOT0 & BOOT1</bold>, 备份完成之后, 点右上角 <bold>Close</bold> 返回</block><br>
+                    <block>打开 <bold>eMMC RAW GPP</bold>, 备份完成之后, 点右上角 <bold>Close</bold> 返回</block><br><br>
+
+                <li><strong>虚拟系统</strong></li>
+                    <block>打开 <strong>SD emuMMC Raw Partition ON</strong></block> (默认: <bold>OFF</bold>)<br>
+                    <block>打开 <bold>eMMC BOOT0 & BOOT1</bold>, 备份完成之后, 点右上角 <bold>Close</bold> 返回</block><br>
+                    <block>打开 <bold>eMMC RAW GPP</bold>, 备份完成之后, 点右上角 <bold>Close</bold> 返回</block><br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="恢复系统">恢复系统</h2>
+        <ul>
+            <blockquote>
+                按住 <b>音量键减号</b> 开机 <strong>进入 Hekate 主菜单</strong><br>
+                打开 <bold>Tools > Restore eMMC</bold><br><br>
+
+                <li><strong>真实系统</strong></li>
+                    <block>打开 <bold>eMMC BOOT0 & BOOT1</bold>, 备份完成之后, 点右上角 <bold>Close</bold> 返回</block><br>
+                    <block>打开 <bold>eMMC RAW GPP</bold>, 备份完成之后, 点右上角 <bold>Close</bold> 返回</block><br><br>
+
+                <li><strong>虚拟系统</strong></li>
+                    <block>打开 <strong>SD emuMMC Raw Partition ON</strong></block> (默认: <bold>OFF</bold>)<br>
+                    <block>打开 <bold>eMMC BOOT0 & BOOT1</bold>, 备份完成之后, 点右上角 <bold>Close</bold> 返回</block><br>
+                    <block>打开 <bold>eMMC RAW GPP</bold>, 备份完成之后, 点右上角 <bold>Close</bold> 返回</block><br>
+            </blockquote>
+        </ul><br>
+
+        <h2 id="意外处理">意外处理</h2>
+        <ul>
+            <blockquote>
+                假如你忘记检查内存卡空间, 进行了备份,<br>
+                最后发现内存卡不够备份完整的系统.<br><br>
+
+                空间满之后, Hekate 提示你空间不够, Partial Backup in progress! 弹窗<br>
+                点击 OK 之后, 打开 <bold>Close > Close > USB Tools > SD Card</bold> 并用 USB线连接电脑<br>
+                将已备份的从文件夹 <code>sdmc:/backup</code> 中转移到其他地方, <br>
+                需要保留内存卡上的 <strong>partial.idx</strong> 文件, 切记不要一起转移.<br>
+                完成之后, 再次打开 <bold>Close > Backup eMMC > eMMC RAW GPP</bold> 继续备份.<br><br>
+
+                不到万不得己, 不建议大家这么操作.<br>
+            </blockquote>
+        </ul><br>
+
+    </div>
+</body>
+</html>
