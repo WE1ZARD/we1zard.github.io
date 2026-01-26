@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nSwitch 在线更新工具 - Updater</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>nSwitch 在线更新工具 - Updater</h1>
+                
+                <blockquote>
+<p><strong>Updater</strong> 是Magic Suite内置工具包之一,<br />
+基于Arcane命令开发的轻量在线更新工具,<br />
+支持一键更新安装卸载 <strong><code>整合包升级</code></strong> <strong><code>插件工具</code></strong> 等.</p>
+</blockquote>
+<h2 id="_1">目录</h2>
+<ul>
+<li><a href="#下载">下载</a></li>
+<li><a href="#使用须知">使用须知</a></li>
+<li><a href="#演示视频">演示视频</a></li>
+<li><a href="#同步时间">同步时间</a><ul>
+<li><a href="#手动设置">手动设置</a></li>
+<li><a href="#dbi">DBI</a></li>
+</ul>
+</li>
+<li><a href="#升级安装">升级安装</a></li>
+<li><a href="#常见问题">常见问题</a></li>
+</ul>
+<h2 id="_2">下载</h2>
+<div class="btn-container">
+<a href="https://gitea.com/we1zard/OTA/releases/download/latest/pkgs-Updater.zip"><button>正式版</button></a>
+<a href="https://www.jianguoyun.com/p/DSMXl6wQmcW1DBj75s4FIAA"><button>历史版本</button></a>
+<a href="https://www.jianguoyun.com/p/DbAYpc8QmcW1DBiUm90FIAA"><button>更新日志</button></a>
+</div>
+
+<h2 id="_3">使用须知</h2>
+<blockquote>
+<p>注意: 
+    • 需要先安装 <strong><code>Arcane</code></strong> 才可以运行, 联网并<a href="#手动系统设置" title="立刻查看"><code>同步时间</code></a>, <a href="#同步服务器"><code>同步服务器</code></a>.
+    • 部分地区dns污染的, 还需要修改dns, 才可以正常下载
+    • 虚拟系统: 有联网保护, 无ban机风险
+    • 真实系统: <code>无联网保护</code>, <code>有ban机风险</code></p>
+</blockquote>
+<h3 id="_4"><a href="https://v.douyin.com/ir9ASyYW/">演示视频</a></h3>
+<h2 id="_5">同步时间</h2>
+<h3 id="_6">手动设置</h3>
+<blockquote>
+<p><img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241010222730087-1940603171.jpg" /></p>
+</blockquote>
+<h3 id="dbi">DBI</h3>
+<blockquote>
+<ol>
+<li>打开DBI</li>
+<li>进入工具菜单<br />
+     英文: <code>Tools &gt; NTP time sync</code><br />
+   俄语: <code>Инструменты &gt; Синхронизация времени по NTP</code>  </li>
+<li>打开NTP联网同步工具</li>
+<li>同步完成
+<img alt="img" src="https://img2024.cnblogs.com/blog/3533742/202506/3533742-20250629111950895-1274346262.jpg" />
+<img alt="img" src="https://img2024.cnblogs.com/blog/3533742/202506/3533742-20250629112000991-1020348518.jpg" />
+<img alt="img" src="https://img2024.cnblogs.com/blog/3533742/202506/3533742-20250629112009435-1326225022.jpg" /></li>
+</ol>
+</blockquote>
+<h2 id="_7">升级安装</h2>
+<ul>
+<li>按 <code>L + ✚</code> 打开 <code>Arcane</code></li>
+<li>按 <code>▶</code> 打开 <code>Update</code></li>
+<li>打开 <code>Proxy</code> 开启 <code>On</code> (<code>要求arcane 1.2.0+</code>)<ul>
+<li>在海外或者自己魔法的话, 请保持 <code>Off</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>一键更新</strong>
+- <code>Packages &gt;Update All</code> : 更新所有Packages和支持
+- <code>AIO &gt;Release</code> : 升级 正式版整合包
+- <code>AIO &gt;Pre-Release</code> : 升级 先行版整合包</p>
+<p><strong>单独安装/更新</strong>
+- <code>HomeBrew Apps &gt; ...</code> : 自制应用
+- <code>Overlays &gt; ...</code> : 菜单插件
+- <code>Packages &gt;...</code> : 工具包及系统
+- <code>Sys Modules &gt;...</code> : 系统模块
+- <code>AIO &gt;...</code> : 整合包
+- <code>Sync &gt;...</code> : 同步服务器<br />
+  • <code>Install: 安装</code><br />
+  • <code>Uninstall: 卸载</code></p>
+</blockquote>
+<h2 id="_8">常见问题</h2>
+<ol>
+<li>无法正常在线安装升级<ul>
+<li>确保已正确同步联网时间</li>
+<li>查看 <code>Updater &gt; proxy</code> 是否为 <code>On</code></li>
+<li>复制 <code>sdmc:/config/arcane/proxy.ini</code> 文件到电脑上并用文本编辑工具打开
+    <code>[config]
+    proxy=https://gh.llkk.cc</code></li>
+<li><a href="https://uptime.akams.cn/status/philanthropy">查看可用中转站</a></li>
+<li>将proxy=后面的网址替换成你电脑上显示可用的网址</li>
+<li>然后将编辑好的 <code>proxy.ini</code> 覆盖到 <code>sdmc:/config/arcane/proxy.ini</code></li>
+<li>要求 <code>arcane 1.2.0+</code></li>
+</ul>
+</li>
+</ol>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nSwitch 极限超频 - 进阶教程</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>nSwitch 极限超频 - 进阶教程</h1>
+                
+                <h2 id="switch">Switch 超频是为了什么?</h2>
+<blockquote>
+<p>合理超频可以<code>提高游戏体验</code>, 达到60帧游戏所需的性能要求,<br />
+合理超频配置, 在正常游玩的前提下, 有效<code>提升续航能力</code>.<br />
+不要再花冤枉钱找人超频, 按照这个教程, 无论新手老手都可以找到属于自己的最佳超频配置.  </p>
+</blockquote>
+<h2 id="_1">目录</h2>
+<ul>
+<li><a href="#注意事项">注意事项</a></li>
+<li><a href="#免责声明">免责声明</a></li>
+<li><a href="#准备工作">准备工作</a><ul>
+<li><a href="#查看体质">查看体质</a></li>
+<li><a href="#参考电压">参考电压</a></li>
+<li><a href="#超频作业">超频作业</a></li>
+<li><a href="#重置参数">重置参数</a></li>
+</ul>
+</li>
+<li><a href="#基础概念">基础概念</a><ul>
+<li><a href="#ram-内存篇">RAM 内存篇</a></li>
+<li><a href="#timings-时序篇">TIMINGS 时序篇</a></li>
+<li><a href="#gpu-篇">GPU 篇</a></li>
+<li><a href="#cpu-篇">CPU 篇</a></li>
+</ul>
+</li>
+<li><a href="#备份参数">备份参数</a></li>
+<li><a href="#导入参数">导入参数</a></li>
+<li><a href="#更换内存">更换内存</a></li>
+<li><a href="#视频演示">视频演示</a></li>
+<li><a href="#旧版教程">旧版教程</a></li>
+</ul>
+<h2 id="_2">注意事项</h2>
+<ul>
+<li>请使用 <strong>FAT32</strong> 格式SD卡折腾, <code>避免使用 exFAT</code> 格式.</li>
+<li>建议<code>只在虚拟系统使用</code>, 并且折腾前<code>做好备份</code>, 以免造成不可挽回的损失.</li>
+<li>如果需要在 <code>真实系统</code> 使用超频, 请确保在 <code>虚拟系统</code> 做好充分的测试.</li>
+<li>超频可能导致(包括但不限于)系统不稳定, 发热, 耗电, 损坏硬件等可能的后果.</li>
+<li>原装电池非充电状态, 尽量控制在 <code>6w&lt;</code> 内续航会比较好, <code>&gt;8w</code> 不要长期使用, 会导致电池寿命快速衰减. (已经改装大容量电池的, 无视这一条)</li>
+<li>教程基于EOS 1.6.7+</li>
+</ul>
+<h2 id="_3">免责声明</h2>
+<ul>
+<li>使用者<code>自行承担超频可能的存在的风险和后果, 本人概不负责</code>.</li>
+</ul>
+<h2 id="_4">准备工作</h2>
+<p><strong><code>注意</code></strong>:
+- 建议新手严格按照教程的顺序折腾, 少走弯路, 节省时间
+- 第一次折腾的时候, 不建议直接使用极限值, 建议退一档使用, 后续再这个基础上再进行优化, 不要一步到位
+- 测试稳定性的时候, 记得接电源, 以免高功耗使用导致电池容量不准
+- 请严格按照<code>内存</code> &gt; <code>时序</code> &gt; <code>GPU</code> &gt; <code>CPU</code> 顺序折腾
+- 当环境温度过低时, 电压会自动升高, 直到核心温度等于或者大于室温时候恢复设定值</p>
+<div class="btn-container">
+<a href="https://www.cnblogs.com/we1zard/p/18848165"><button>查看整合包</button></a>
+</div>
+<p><br><br></p>
+<h5 id="_5">查看体质</h5>
+<blockquote>
+<p><strong>Speedo越高同电压可以跑越高的频率, 初代没有参考价值</strong><br />
+CPU Val: 影响 <code>CPU的电压</code>, 可用 <code>频率上限</code><br />
+GPU Val: 影响 <code>GPU的电压</code>, 可用 <code>频率上限</code> <br />
+SOC Val: 影响 <code>DVB的电压</code>, 可用内存 <code>频率上限</code><br />
+DRAM ID: <a href="#超频作业">内存颗粒型号</a>  </p>
+</blockquote>
+<p><code>sys-clk-oc 1.2.0+ 查看方法</code></p>
+<blockquote>
+<p><code>L+加号</code> 呼出菜单 &gt; 打开 <code>sys-clk-oc &gt; Speedo</code>
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202506/3533742-20250615131608647-902415634.jpg" />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202506/3533742-20250615131619607-2138085159.jpg" /></p>
+</blockquote>
+<p><code>Hekate 查看方法</code></p>
+<blockquote>
+<p><code>Hekate &gt; Console Info &gt; HW &amp; Fuses Info</code>
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212174104157-1530832639.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212174115448-1305087726.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212174120680-1611669540.png" /></p>
+</blockquote>
+<h5 id="_6">参考电压</h5>
+<p><strong><code>默认电压</code></strong>
+- VDD2 (mV): <code>1100 mV</code>
+- VDDQ (mV): <code>600 mV</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">RAM (Mhz)</th>
+<th style="text-align: right;">2133</th>
+<th style="text-align: right;">2400</th>
+<th style="text-align: right;">2533</th>
+<th style="text-align: right;">2666</th>
+<th style="text-align: right;">2800</th>
+<th style="text-align: right;">2933</th>
+<th style="text-align: right;">3066</th>
+<th style="text-align: right;">3200</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Soc (mV)</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">725</td>
+<td style="text-align: right;">750</td>
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">825</td>
+<td style="text-align: right;">875</td>
+<td style="text-align: right;">925</td>
+<td style="text-align: right;">975</td>
+</tr>
+<tr>
+<td style="text-align: right;">GPU (mV)</td>
+<td style="text-align: right;">580</td>
+<td style="text-align: right;">610</td>
+<td style="text-align: right;">640</td>
+<td style="text-align: right;">660</td>
+<td style="text-align: right;">680</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">720</td>
+<td style="text-align: right;">740</td>
+</tr>
+</tbody>
+</table>
+<div class="btn-container">
+<a href="https://gitea.com/we1zard/OTA/releases/download/latest/uv3_calculator.html"><button>GPU UV3 电压估算器</button></a>
+</div>
+<p><br><br></p>
+<hr />
+<h5 id="_7">超频作业</h5>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>DRAM ID</th>
+<th>Ram Clock</th>
+<th>VDD2</th>
+<th>VDDQ</th>
+<th>Timings (松时序)</th>
+<th>Timings (紧时序)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GOD</td>
+<td>NEI/NEE</td>
+<td>2500-2933</td>
+<td>1175mv</td>
+<td>640mv</td>
+<td>(3-3-2) 2-5-5-4-6</td>
+<td>(4-4-4) 3-7-6-5-6</td>
+</tr>
+<tr>
+<td>GOD</td>
+<td>WT:B</td>
+<td>2466-2600</td>
+<td>1175mv</td>
+<td>600mv</td>
+<td>(4-4-5) 5-2-6-5-6</td>
+<td>(6-6-7) 7-2-6-5-6</td>
+</tr>
+<tr>
+<td>S</td>
+<td>AA</td>
+<td>2300-2600</td>
+<td>1175mv</td>
+<td>640mv</td>
+<td>(4-4-5) 5-5-6-7-6</td>
+<td>(4-4-8) 6-5-7-8-6</td>
+</tr>
+<tr>
+<td>A</td>
+<td>WT:F</td>
+<td>2400-2533</td>
+<td>1175mv</td>
+<td>600mv</td>
+<td>(4-4-2) 5-4-6-3-6</td>
+<td>(5-5-4) 5-5-6-5-6</td>
+</tr>
+<tr>
+<td>B</td>
+<td>AM-MGCJ</td>
+<td>2300-2466</td>
+<td>1175mv</td>
+<td>640mv</td>
+<td>(3-2-4) 2-4-4-4-6</td>
+<td>(4-3-8) 2-5-4-4-6</td>
+</tr>
+<tr>
+<td>B</td>
+<td>WT:E</td>
+<td>2300-2466</td>
+<td>1175mv</td>
+<td>600mv</td>
+<td>(2-2-2) 2-4-4-4-6</td>
+<td>(3-5-3) 3-5-4-5-6</td>
+</tr>
+<tr>
+<td>C</td>
+<td>AB-MGCL</td>
+<td>2133-2500</td>
+<td>1175mv</td>
+<td>640mv</td>
+<td>(4-4-4) 4-4-5-6-6</td>
+<td>(4-4-8) 5-5-6-8-6</td>
+</tr>
+<tr>
+<td>D</td>
+<td>NME</td>
+<td>2133-2333</td>
+<td>1175mv</td>
+<td>640mv</td>
+<td>(2-2-1) 0-1-4-3-6</td>
+<td>(3-3-4) 0-1-4-4-6</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>以上参数仅供参考, 可能因个体差异而导致无法使用 (资料来源 <a href="https://rentry.co/mariko#ram-configuration-based-on-tier">Mariko OC Guide</a>)</p>
+</blockquote>
+<h5 id="_8">重置参数</h5>
+<blockquote>
+<p>如果你是在真实系统折腾, 崩了真实系统就没办法用这个方法了, 这个是给虚拟系统用的.
+重新启动NS并按住 <code>音量 ▬</code> 直至启动Hekate, 从 <code>Hekate &gt; Launch &gt; Restore</code> 进入恢复系统, 降低当前参数.<br />
+按<code>L + ✚</code>呼出菜单工具<br />
+按 <code>方向键 ▶</code> 打开工具包 <code>Magic</code>
+按 <code>A</code> 打开 <code>Preferences &gt; Restore Preset</code> 将所有参数全部恢复默认
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212173830096-929548955.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241216155850614-1531012340.png" /></p>
+</blockquote>
+<h2 id="_9">基础概念</h2>
+<pre class="highlight"><code class="linenums">**CPU**  
+├`Boost Clock`       CPU睿频的频率, 主要用于加快读档速度  
+├`UV Level`          降压等级, 影响所有频率的电压及频率上限, 体质支持的情况下, 越高电压越低, 频率上限越高  
+├`High UV Level`     高频降压等级, 只影响高频的电压 (&gt; 1428 Mhz)  
+├`Low Vmin`          低频率的最小电压  (612Mhz)
+│                       内存频率越高, 电压需求越高
+│                       部分适配不好的NS需要提高这个电压才能正常进入系统
+├`High Vmin`         高频率的最小电压 (&gt; 1428 Mhz)  
+├`Vmax`              最大电压上限  
+│
+├`Table Mode`        电压分配表, 影响降压等级对电压的分配 
+│                       `Auto: 自动, 推荐用这个`
+│                       Default: 默认
+│                       1581 MHz: 分段到1581
+│                       Shift fix 1: 修复高Speedo 高频, 方案1
+│                       Shift fix 2: 修复高Speedo 高频, 方案2
+└`Max Clock`         可用最高频率, 受降压等级影响, 影响sys-clk-oc可配置的频率范围   
+                        2703 Mhz(初代: 2295 Mhz): 要求UV1+, 或者 `shift fix 1/2`  
+
+**GPU**  
+├`Speedo`            体质值 
+├`UV Level`          GPU降压等级, 影响所有频率的电压及频率上限
+│                       UV1 适用于(Speedo &lt; 1650)
+│                       UV2 适用于(1650 &lt; Speedo &lt; 1700)
+│                       UV0 使用不了1267以上的频率
+├`Volt Offset`       电压偏移量, 可以进一步降低电压, 影响UV3外的所有UV等级
+├`Vmin`              内存默认频率的GPU最小电压
+├`Vmax`              电压上限, 超出电压限制的GPU频率会被隐藏
+│
+├`Custom Table`      自定义电压表, 可以对不能用 `Auto` 档位的单独进行调整
+│
+├`GPU Boost`         GPU增强, 提高GPU的利用率, 最多可以从96.7提高到99.7%
+├`Auto Vmin`         GPU动态电压频率调整, 是一种降低功耗的技术, 需要配合Vmin使用, 影响默认内存频率下的GPU默认电压
+│                       0: 关闭
+│                       1: Offical 官方
+│                       2: Hijack  黑科技, 可能存在bug 
+├`Auto Vmin Offset`  控制的是内存超频之后的GPU动态电压偏移量
+│                       范围: -100mV ~ +20mV
+│                       默认: Auto - 0mV
+└`GPU Unlock`        解锁GPU 1305以上的频率, 需要设置对应频率电压, 初代解锁 GPU 998+
+
+**RAM 内存**          
+├`Max Clock`         可用的最高频率, 影响sys-clk-oc可配置的频率范围
+├`Vdd2`              内存电压2, 影响内存的稳定性和时序
+├`Vddq`              内存电压1, 影响内存的性能表现和时序
+└`DVB`               SOC电压, 影响内存的稳定性和上限, 无法改变本身的物理限制
+                        内存频率越高, 电压需求越高
+
+**TIMINGS 时序**  
+├`DRAM`              内存时序表, 影响内存性能表现
+├`Primary`           主时序, 对内存性能表现起主要作用, 影响内存上限
+│    ├ 1. tRCD          时序 1: RAS to CAS Delay的缩写, 表示行寻址到列寻址延迟时间
+│    ├ 2. tRP           时序 2: Row Precharge Timing 的缩写, 表示内存行地址控制器预充电时间
+│    └ 3. tRAS          时序 3: RAS Active Time的缩写, 表示内存行有效至预充电的最短周期
+├`Secondary`         次时序, 主要影响内存的稳定性和性能表现
+│    ├ 4. tRRD          时序 4: Row to Row Delay的缩写, 表示行单元到行单元的延时
+│    ├ 5. tRFC          时序 5: Row Refresh Cycle Time的缩写, 表示行地址刷新所需要的时间
+│    ├ 6. tRTW          时序 6: Read to Write Delay的缩写, 表示在最后一次有效的读操作和下一次写操作之间必须等待的时钟周期
+│    ├ 7. tWTR          时序 7: Write to Read Delay的缩写, 表示写操作到读操作的延迟时间
+│    └ 8. tREFI         时序 8: Refreshh Period的缩写, 表示内存模块的平均刷新间隔
+│ 
+├`tRFC 5`           自定义tRFC第五个选项的数值
+└`Presets`          预设时序, 可以直接配置超频作业里的预设时序
+</code></pre>
+
+<h2 id="ram">RAM 内存篇</h2>
+<h5 id="_10">超频设置</h5>
+<ul>
+<li><code>Magic &gt; Configure &gt; RAM &gt; Max Clock</code><ul>
+<li>初代: 2133, </li>
+<li>其他: 2400 (<code>推荐</code>), 2533, 2666</li>
+</ul>
+</li>
+<li>VDD2: <code>1175 mV</code> (部分内存颗粒不支持1250 mV, 最多可以到1350 mV)</li>
+<li>VDDQ: <code>600 mV</code> (部分内存颗粒不支持超过640 mV, 最多可以到650 mV)</li>
+<li>DVB和GPU Vmin OC: 根据频率选择 <a href="#参考电压">参考电压</a> 中对应的电压</li>
+<li>在Magic中编辑好, 重启才能生效<ul>
+<li>之后按住 <code>L + ✚</code> 打开菜单</li>
+<li>在 <code>sys-clk-oc</code> 中的 <code>Temporary Overrides</code> 设置 <code>内存频率, CPU, GPU最高频率</code>, 查看实时电压  </li>
+</ul>
+</li>
+</ul>
+<h5 id="_11">测试条件</h5>
+<ul>
+<li>能使用底座的机型, 直接在底座上做测试</li>
+<li>无底座的用ReverseNX插件切换成底座模式</li>
+<li>测试压力: 真实底座模式 &gt; 虚拟底座模式</li>
+<li>解锁60FPS帧数 (<a href="https://www.cnblogs.com/we1zard/p/18848910">使用方法</a>)  </li>
+</ul>
+<h5 id="_12">测试游戏</h5>
+<ul>
+<li>名称: 异度神剑X 终极版 (Xenoblade Chronicles X Definitive Edition)</li>
+<li>大小: 15GB</li>
+<li>时长: 15-30分钟</li>
+<li>测点: 游戏主菜单页面
+  <img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202506/3533742-20250616091040599-1814347922.jpg" />  </li>
+</ul>
+<h5 id="_13">报错处理</h5>
+<ul>
+<li>当出现 <code>报错</code>, <code>崩溃</code>, <code>橙屏</code>, <code>花屏</code>, <code>进不去系统</code> 等</li>
+<li>还可以操作的时候<ul>
+<li>按住 <code>L + ✚</code> 打开菜单, 再按 <code>方向键 ▶</code> 打开 <code>Magic</code></li>
+<li>调整 <code>Magic &gt; RAM &gt; DVB</code>, <code>Magic &gt; GPU &gt; Vmin</code> 的电压, 或者降低内存频率.</li>
+</ul>
+</li>
+<li>无法操作的时候<ul>
+<li>按住 <code>关机键</code> 强制关机, 重启后按住 <code>音量 ▬</code> 进入 <code>Hekate &gt; Launch &gt; Restore</code></li>
+<li>进入系统后, 按住 <code>L + ✚</code> 打开菜单, 再按 <code>方向键 ▶</code> 打开 <code>Magic</code></li>
+<li>调整 <code>Magic &gt; RAM &gt; DVB</code>, <code>Magic &gt; GPU &gt; Vmin</code> 的电压, 或者降低内存频率.<br />
+<code>优化电压</code></li>
+<li>内存频率越高, 要求越高, 发热越大, 功耗也越高</li>
+<li>降低<code>DVB</code>,<code>Vdd2</code>,<code>Vddq</code>, 可以减少发热和功耗, 但是会降低稳定性</li>
+<li><code>DVB</code>以实际电压为准, 不同体质下的初始值不同, <code>1700 speedo dvb 0</code>可能和 <code>1600 speedo dvb -2</code>实际电压是一样的</li>
+</ul>
+</li>
+</ul>
+<h2 id="timings">TIMINGS 时序篇</h2>
+<h5 id="_14">确定时序范围</h5>
+<ul>
+<li>请确保内存频率稳定再进行以下操作, 否则返回 <a href="ram-内存篇">内存篇</a></li>
+<li>以下操作顺序是为了最快速度找出极限时序, 请勿自行发挥, 浪费无谓的时间</li>
+<li>每一项都需要单独进行测试, 并且保证完全稳定才可以进行下一项, 否则到后面出问题了, 无法排查问题点</li>
+<li>每个时序都是从高往低慢慢降, 无特别强调的, 每次只调整一个参数</li>
+<li>测试条件和 <a href="ram-内存篇">内存篇</a> 一样, 只是增加了时序参数<ol>
+<li><code>DRAM: 内存时序表</code><ul>
+<li>AUTO_ADJ 自动时序表, <code>新手推荐</code>.</li>
+<li>AUTO_ADJ_HP 高性能时序表, 可以大幅降低延迟时间, 帮助稳定帧数, 需要更多的电压, 导致明显的发热</li>
+</ul>
+</li>
+<li><code>7 tWTR</code> 和 <code>8 tREFI</code> 设置成最高的选项, 开始跑测试<ul>
+<li>不稳定就降低 <code>tWTR</code>, 直到测试稳定</li>
+</ul>
+</li>
+<li><code>1 tRCD</code>,<code>2 tRP</code>设置成最高的选项, 开始跑测试<ul>
+<li><code>1 tRCD</code> 和 <code>2 tRP</code> 刚开始调整, 每次两个参数同时降低一档, 直到测试稳定</li>
+</ul>
+</li>
+<li><code>1 tRCD</code> 和 <code>2 tRP</code> 稳定之后<ul>
+<li>尝试 <code>2 tRP</code> 提高一档再测试</li>
+<li>不稳定就降回去, 此时就是 <code>1 tRCD</code> 和 <code>2 tRP</code> 的最高值</li>
+</ul>
+</li>
+<li><code>3 tRAS</code> &gt; <code>4 tRRD</code> &gt; <code>5 tRFC</code> &gt; <code>6 tRTW</code> <ul>
+<li>初始都设置成最高档位, 逐个测试并降低调整</li>
+<li>找到稳定档位再测试下一个时序参数</li>
+<li>不要同时调整多项,</li>
+</ul>
+</li>
+<li>以上所有时序测试完成之后, 这个时序就是你NS的极限时序<ul>
+<li>但是极限时序未必是性能最好的时序, 还需要进一步的优化</li>
+<li>我们现在只是测试出来时序的有效范围</li>
+<li>新手建议除了 <code>8 tREFI</code> 退一档使用, 后续可以在这个基础上参照ultracam的测试结果进行优化.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h5 id="_15">测试游戏</h5>
+<ul>
+<li>名称: 塞尔达传说: 王国之泪 (The Legend Of Zelda: Tears Of The Kingdom)</li>
+<li>版本: 1.2.1</li>
+<li>大小: 16GB</li>
+<li>时长: 15-30分钟</li>
+<li>测点: 克洛格森林: 姆萨诺奇拉神庙 (<code>需要解锁进度存档</code>, 并在底座模式下完成测试)
+  <img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241010185944015-473468897.jpg" /></li>
+</ul>
+<h5 id="_16">测试工具</h5>
+<ul>
+<li>安装和使用 <code>Ultracam Benchmark</code><ul>
+<li><code>Updater &gt; HomeBrew Apps &gt; OC-Suite &gt; OC Tester &gt; Install</code> (<a href="https://www.cnblogs.com/we1zard/p/18856925">详细使用说明</a>)</li>
+<li>安装完成之后, 进入游戏传送<code>克洛格森林: 姆萨诺奇拉神庙</code></li>
+<li>传送后按<code>✚</code>打开菜单<code>解除弓</code>或者(按下<code>左摇杆</code>让人物<code>蹲下</code>)
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011214246149-1812848629.jpg" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011214254633-700087339.jpg" /></li>
+<li>按<code>L+✚</code>打开金手指, <code>锁定天气: 晴天</code>, <code>锁定时间: 上午9点</code>, 然后保存存档进度, 这样后续测试的时候就可以直接读测试档.</li>
+<li>按<code>ZL+ZR+▼</code>启动跑分测试, 跑分动画持续1分钟左右.</li>
+<li>动画完成之后, 打开 <code>Magic &gt; UltraCam Log</code> 或者 <code>DBI</code> 查看SD卡根目录下 <code>sdmc:/TOTKBenchmark.txt</code><ul>
+<li>Total frames: 总帧数</li>
+<li>Average FPS: 平均帧数</li>
+<li>1% FPS: 1%出现的帧数</li>
+<li>0.1% FPS: 0.1%出现的帧数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="highlight"><code class="language-txt linenums">BENCHMARK FOR Korok Forest COMPLETED!
+Total frames: 2604, Average FPS: 43, 1% FPS: 38, 0.1% FPS: 38
+</code></pre>
+
+<h5 id="_17">优化思路</h5>
+<ul>
+<li>放松 <code>主时序 Primary</code> 同时收紧 <code>次时序 Secondary</code></li>
+<li>在稳定的前提下, 记录保存好相关测试数据, 以便对比TOTKBenchmark测试结果</li>
+<li>这是一个漫长枯燥的过程, 不建议新手尝试</li>
+</ul>
+<h2 id="gpu">GPU 篇</h2>
+<h5 id="_18">超频设置</h5>
+<pre class="highlight"><code class="linenums">Speedo              填写[查看体质]中的GPU Speedo的数值
+UV Level            参考[基础概念]中的说明, 结合自己的情况进行设置
+Volt Offset         默认
+Vmin                默认
+Vmax                建议 800 mV
+Custom Table        默认为Auto, 仅对UV0-2生效, 可根据需求自行设置电压
+GPU Boost           开启
+Auto Vmin           设置 1
+Auto Vmin Offset    设置 0
+GPU Unlock          开启
+</code></pre>
+
+<ul>
+<li>设置好之后, 需要重启生效</li>
+<li>使用UV3需要设置所有频率的独立电压, 参考 <a href="#uv3-自定义电压">UV3 自定义电压</a></li>
+<li>打开 sys-clk-oc 的 <code>Temporary Overrides</code> 设置需要测试的目标GPU频率</li>
+<li>测试条件和测试游戏同 <a href="#ram-内存篇">RAM 内存篇</a></li>
+</ul>
+<h5 id="_19">报错处理</h5>
+<ul>
+<li>UV3的用户<ul>
+<li>调整当前测试异常的GPU频率电压, 每次加10mV</li>
+<li>测试稳定之后, 可以尝试再降5mV, 如果测试也稳定, 可以跑 <code>UltraCam Benchmark</code> 对比性能表现, 决定最终电压 (<code>不推荐新手尝试</code>)</li>
+</ul>
+</li>
+<li>非UV3的用户<ul>
+<li>需要降档处理, 比如UV2降到UV1, UV1降到UV0</li>
+<li>稳定之后, 可以尝试调整Volt Offset (<code>不推荐新手尝试</code>)</li>
+</ul>
+</li>
+</ul>
+<h5 id="uv3">UV3 自定义电压</h5>
+<ul>
+<li>当你使用uv3自定义电压, 76 Mhz档通常需要更高电压</li>
+<li>通常情况下, 537 Mhz不会被随机切换到, 可以作为双内存低GPU电压的档位</li>
+<li><code>UV3 电压估算器</code> 可以快速计算出大致的范围, 缩短测试的时间</li>
+</ul>
+<div class="btn-container">
+<a href="https://gitea.com/we1zard/OTA/releases/download/latest/uv3_calculator.html"><button>GPU UV3 电压估算器</button></a>
+</div>
+<p><br><br></p>
+<h2 id="cpu">CPU 篇</h2>
+<h5 id="_20">超频设置</h5>
+<pre class="highlight"><code class="linenums">Boost Clock     推荐 `2397 Mhz` 或者 `2296 Mhz` (初代: 2091 Mhz)
+UV Level        推荐 `UV8`, 通常情况下, 降压等级越高, 电压越低
+High UV Level   默认 同上, 仅针对1581+Mhz
+Low Vmin        默认 低频最低电压 (612+Mhz)
+High Vmin       默认 高频最低电压 (1581+Mhz)
+Vmax            推荐 `1120 mV`
+Table Mode      默认 CPU频率电压分段模式
+Max Clock       建议UV Level测试稳定再决定, `2397 Mhz` 能满足绝大多数场景   
+</code></pre>
+
+<ul>
+<li>打开 sys-clk-oc 的 <code>Temporary Overrides</code> 设置需要测试的目标CPU频率</li>
+<li>测试条件同 <a href="#ram-内存篇">RAM 内存篇</a></li>
+</ul>
+<h5 id="_21">测试游戏</h5>
+<ul>
+<li>名称: 极品飞车14: 热力迸发 (Need For Speed: Hot Pursuit Remastered)</li>
+<li>大小: 9GB</li>
+<li>测点: 地图菜单
+  <img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241010183059639-949362895.jpg" /></li>
+<li>极品飞车对CPU UV比较敏感, 有问题很快就会出错, 通常不需要挂很长时间测试.</li>
+<li>如果UV测试都ok之后, 可以直接玩有压力的游戏, 测试CPU的稳定性.</li>
+</ul>
+<h5 id="_22">报错处理</h5>
+<ul>
+<li>测试过程死机或者报错<ul>
+<li>按住关机键重启之后, 降低UV档位</li>
+<li>或者提高Low Vmin, High Vmin, 取决于你测试的频率</li>
+</ul>
+</li>
+<li>调整UV重启之后, 进不去系统, 通过 <code>Hekate &gt; Launch &gt; Restore</code> 调整档位<ul>
+<li>重启看不到开机LOGO, 通常是 <code>UV Level问题</code>, 降低档位, 或者 <code>提高 Low Vmin</code></li>
+<li>重启之后看不到Switch LOGO, 通常是 <code>High UV Level问题</code>, 降低档位, 或者<code>提高 High Vmin</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="_23">备份参数</h2>
+<blockquote>
+<p>多用于小版本升级跨版本导入</p>
+</blockquote>
+<ul>
+<li>打开 <code>Magic &gt; Preferences &gt; Backup Current</code> 备份当前参数配置</li>
+<li>保存路径在 <code>atmosphere/kips/presets/*.json</code></li>
+<li>可在 <code>Magic &gt; Preferences &gt; Manage Presets</code> 中进行导入切换</li>
+</ul>
+<h2 id="_24">导入参数</h2>
+<blockquote>
+<p>需要提前<a href="#备份参数">备份参数</a><br />
+通常用于非新增参数的版本之间的跨版本导入<br />
+如果有新参数加入的情况下, 或者远古版本, 不建议直接导入  </p>
+</blockquote>
+<ul>
+<li>确保已经 <a href="#备份参数">备份参数</a></li>
+<li>打开 <code>Magic &gt; Preferences &gt; Manage Presets &gt; 已备份的旧参数</code><ul>
+<li>按 <code>A</code> 打开之后, 可以查看参数详情, 再按一次 <code>A</code> 应用这个参数</li>
+<li>导入成功之后, 可以看到绿色的 <code>APPLIED</code></li>
+<li>可以在 <code>Magic &gt; Preferences &gt; Current</code> 中查看导入之后的参数</li>
+<li>确认没错之后, 退回上一层菜单 <code>Reboot</code> 重启生效</li>
+</ul>
+</li>
+<li><a href="#导入参数演示">视频演示</a></li>
+</ul>
+<h2 id="_25">更换内存</h2>
+<blockquote>
+<p>请根据自己的需求选择合适的内存颗粒, 
+目标是2400内存频率的朋友, 没必要换, 各方面的差距非常小, 不值得.</p>
+<p>如果希望超频到2800+内存频率, 推荐<code>海力士 Hynix 4G</code>, 型号 <code>H9HCNNNCPUMLXR-NEI</code>
+有安卓及L4T应用需求的可以考虑8G型号, 只在NS系统使用的用户, 不推荐更换 <code>8G</code> 内存颗粒.
+只建议1700+并且有特定需求的朋友考虑, 如果机器的Speedo是低于1650的朋友, 不推荐做任何内存颗粒的更换.</p>
+</blockquote>
+<h2 id="_26">视频演示</h2>
+<!--
+<iframe width="1920" height="1080" frameborder="0" src="https://open.douyin.com/player/video?vid=7461959453294742820&autoplay=0" referrerpolicy="unsafe-url" allowfullscreen>
+</iframe>
+-->
+
+<h4 id="_27">导入参数演示</h4>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114986374532521&bvid=BV1UwtBzCErd&cid=31541953896&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h4 id="_28">功能操作演示</h4>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113886728555257&bvid=BV1DdfRYFEwg&cid=28066254789&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h4 id="ultracam">UltraCam 演示</h4>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=112861523216773&bvid=BV1g4vHetEpw&cid=500001629791902&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h2 id="_29">旧版教程</h2>
+<ul>
+<li><a href="https://www.cnblogs.com/we1zard/p/18847015">入门教程</a></li>
+<li><a href="https://www.jianguoyun.com/p/DTpB-JAQgcS1DBjY7dsFIAA">内存篇</a></li>
+<li><a href="https://www.jianguoyun.com/p/DScWazoQgcS1DBjf7dsFIAA">时序篇</a></li>
+<li><a href="https://www.jianguoyun.com/p/Db25EZYQgcS1DBji7dsFIAA">GPU篇</a></li>
+<li><a href="https://www.jianguoyun.com/p/DWP4jmsQgcS1DBjg7dsFIAA">CPU篇</a></li>
+</ul>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

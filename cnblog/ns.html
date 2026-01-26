@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nSwitch 资源库推荐</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>nSwitch 资源库推荐</h1>
+                
+                <blockquote>
+<p>欢迎大家补充, 如果有错误请及时联系我修改</p>
+</blockquote>
+<h1 id="_1">目录</h1>
+<ul>
+<li><a href="#eshop">eShop</a></li>
+<li><a href="#游戏">游戏</a></li>
+<li><a href="#mod-模组">MOD 模组</a></li>
+</ul>
+<h2 id="eshop">eShop</h2>
+<ul>
+<li><a href="https://eshop-prices.com/games?currency=CNY">eShop-price全球比价</a> (貌似没有港服)</li>
+</ul>
+<details>
+<summary>eshop-price去广告油猴脚本</summary>
+
+
+<pre class="highlight"><code class="linenums">// ==UserScript==
+// @name         eshop-prices AD block
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  删除页面中特定的广告元素
+// @author       你
+// @match https://eshop-prices.com/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // 定义要删除的元素选择器
+    const selector = 'div.ads.games-list-item';
+
+    // 初始页面加载时执行一次
+    removeAds();
+
+    // 创建一个观察器实例来监视DOM变化
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            // 检查新增的节点
+            if (mutation.addedNodes.length) {
+                removeAds();
+            }
+        });
+    });
+
+    // 配置观察器选项
+    const config = { childList: true, subtree: true };
+
+    // 开始观察document的变化
+    observer.observe(document, config);
+
+    // 删除广告元素的函数
+    function removeAds() {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element =&gt; {
+            if (element) {
+                element.remove();
+                console.log('已删除广告元素');
+            }
+        });
+    }
+})();
+</code></pre>
+
+
+
+</details>
+
+<h2 id="_2">游戏</h2>
+<p><strong>国内</strong></p>
+<ul>
+<li><a href="https://shipengliang.com/nsgame/">时鹏亮</a> (免费, 看广告可以高速下载, 部分资源付费才可以看到)</li>
+<li><a href="https://laoquzhang.com/">520</a> (免费, 电脑区有加壳广告)</li>
+<li><a href="https://www.gkinto.com/category/switch">大桶</a> (注册积分, gmail收不到验证码, 部分资源付费才可以下载)</li>
+</ul>
+<p><strong>外网</strong></p>
+<ul>
+<li><a href="https://taodung.com/">TAODUNG</a> (免费)</li>
+<li><a href="https://nsw2u.com/Category/switch">NSW2U</a> ( <a href="https://nsw2u.net/">备用站</a> (免费, 已被DMCA)</li>
+<li><a href="https://nswpedia.com/nintendo-switch-roms">NSWPEDIA</a> (免费)</li>
+<li><a href="https://not.ultranx.ru/en">UltraNX</a> (绑定账号)</li>
+<li><a href="https://nswtl.info/">NSWTL</a> (TG机器人)</li>
+</ul>
+<h2 id="mod">MOD 模组</h2>
+<p><strong>国内</strong></p>
+<ul>
+<li><a href="https://www.caimogu.cc/">踩蘑菇</a> (注册积分)</li>
+<li><a href="https://mod.3dmgame.com/mod">3DM</a> (免费)</li>
+</ul>
+<p><strong>外网</strong></p>
+<ul>
+<li><a href="https://gamebanana.com/">香蕉网</a> (注册会员)</li>
+<li><a href="https://degmods.com/mods">DEG</a> (注册会员)</li>
+<li><a href="https://www.nexusmods.com/">N网</a> (注册会员)</li>
+<li><a href="https://github.com/stars/SixelAlexiS90/lists/switch-mods">Github汇总清单</a></li>
+</ul>
+<p><strong>个人分享</strong></p>
+<ul>
+<li><a href="https://github.com/Fl4sh9174/Switch-Ultrawide-Mods">Fl4sh9174/Switch-Ultrawide-Mods</a></li>
+<li><a href="https://github.com/KeatonTheBot/switch-pchtxt-mods">KeatonTheBot/switch-pchtxt-mods</a></li>
+<li><a href="https://github.com/StevensND/switch-port-mods">StevensND/switch-port-mods</a></li>
+<li><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181/switch-ptchtxt-mods</a></li>
+<li><a href="https://github.com/cucholix/NX-IPS-romfs-compilation">cucholix/NX-IPS-romfs-compilation</a></li>
+</ul>
+<h2 id="rom">ROM</h2>
+<p><strong>国内</strong></p>
+<ul>
+<li><a href="https://bbs.oldmantvg.net/forum-3-1.htm?tagids=10___">老男人</a> (免费)</li>
+</ul>
+<p><strong>外网</strong></p>
+<ul>
+<li><a href="https://romsfun.com/roms/">ROMS FUN</a> (免费)</li>
+</ul>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

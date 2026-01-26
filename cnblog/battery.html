@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nSwitch电池校准流程</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>nSwitch电池校准流程</h1>
+                
+                <blockquote>
+<p>资料整理自: 网友<code>吥走尋常路</code></p>
+</blockquote>
+<h2 id="_1">电池校准流程</h2>
+<ul>
+<li>任意电量<br />
+    先用status monitor查看 <code>不插电时的电池电压</code>
+    建议在 <code>3.6-3.8V</code> 之间  </li>
+<li>按住R选择任意游戏, 进入自制工具菜单<br />
+    下载 <a href="https://www.jianguoyun.com/p/DbGOqwwQocW1DBiZxYQGIAA">battery_desync_fix.nro</a> 工具  <ul>
+<li>没安装的话可以手动下载, 放到switch文件夹中<br />
+按 <code>X</code> 清除原来的电池数据<br />
+按 <code>B</code> 退出插件  </li>
+</ul>
+</li>
+</ul>
+<p><code>充满 -&gt; 放完 -&gt; 充满 -&gt; 放完 -&gt; 充满</code> (3个循环)</p>
+<h5 id="_2">充电</h5>
+<pre class="highlight"><code class="linenums">可以直接充一整晚
+
+或者状态监控插件`status monitor`查看0-0.01W输入为止
+</code></pre>
+
+<h5 id="_3">放电</h5>
+<pre class="highlight"><code class="linenums">就是满电一直放到强制休眠为止
+</code></pre>
+
+<h5 id="_4">注意</h5>
+<pre class="highlight"><code class="linenums">这里不是放电到强制关机
+
+使用原装Pro手柄的话, 机器自动休眠后, 几小时内机器都不会耗电至强制关机, 无需担心不能一直监控电池状态的问题
+
+校准期间不能关机, 不能切换系统, 不能超频(建议4W左右功耗放电), 必须要满充满放
+
+校准完成后进入插件按A保存数据到本地, 进入另一个系统按Y还原刚才备份的数据(比如你是在真实校准就去虚拟还原一次, 反之同理)
+</code></pre>
+
+<h2 id="_5">修改电池模式流程</h2>
+<pre class="highlight"><code class="linenums">仅针对改大容量电池, 原装无需修改
+</code></pre>
+
+<h5 id="_6">虚拟系统</h5>
+<ol>
+<li>
+<p>进Hekate, 选择 <code>Payloads</code>的 <code>Lockpick_RCM.bin</code> , 将 <code>prod.key</code> 文件dump出来, 在SD卡的switch目录</p>
+</li>
+<li>
+<p>返回Hekate, 同样的 <code>Payloads</code>选择 <code>TegraExplorer.bin</code> 工具<br />
+   音量键移动后, 按电源键选择<code>Browse EMUMMC</code></p>
+</li>
+<li>
+<p>EMUMMC界面选择dump第三个 <code>PRODINFO</code>, 中间会提示是否需要Dump, <code>选 YES</code></p>
+</li>
+<li>
+<p>Dump的文件在SD卡根目录 <code>Tegraexplorer\Dumps</code> 文件夹内<br />
+   使用任意<a href="https://hexed.it/">Hex编辑软件</a>打开 <code>PRODINFO</code><br />
+   右上角 <code>Go to</code> 输入 <code>0x4310</code> 按回车键<br />
+   将第一个byte的 <code>00</code> (V1/V2/OLED对应值)改成02(Lite对应)后保存即可</p>
+</li>
+<li>
+<p>将<a href="#脚本">ProdinfoFIX.py文件</a>和 <code>PRODINFO</code> 放在同一个文件夹, 然后运行py, 进行CRC16和SHA256的重新计算</p>
+</li>
+<li>
+<p>保存新生成的PRODINFO文件到之前的 <code>Tegraexplorer\Dumps</code> 文件夹<br />
+   重启NS打开 <code>hekate &gt; Payloads &gt; TegraExplorer.bin</code><br />
+   打开 <code>Browse SD card &gt; tegraexplorer</code><br />
+   选择 <code>DUMPS文件夹</code><br />
+   选择 <code>刚生成的PRODINFO文件</code><br />
+   在新的目录中选择 <code>Copy to clipboard</code></p>
+</li>
+<li>
+<p>返回Tegraexplorer主界面<br />
+   选择 <code>Browse EMUMMC</code><br />
+   然后选择 <code>Clipboard -&gt; Partition</code><br />
+   提示是否要选择flash PRODINFO？<code>选 YES</code></p>
+</li>
+<li>
+<p>所有步骤完成, 在虚拟系统使用电池校准工具 <a href="https://github.com/CTCaer/battery_desync_fix_nx/releases/download/1.5.0/battery_desync_fix.nro">battery_desync_fix.nro</a> 跑循环校验电池</p>
+</li>
+<li>
+<p>编辑 <code>Atmosphere/config/settings.ini</code>
+   添加以下行, 改变电流为2a, 重启生效</p>
+</li>
+</ol>
+<pre class="highlight"><code class="linenums">[psm]
+charge_current_limit_milli_ampere=u32!0x800
+</code></pre>
+
+<h5 id="_7">脚本</h5>
+<details>
+<summary>查看python脚本</summary>
+
+
+<pre class="highlight"><code class="language-python linenums">#!/usr/bin/env python3
+import hashlib
+import struct
+import sys
+
+# CRC-16 table from the documentation
+CRC_16_TABLE = [
+    0x0000, 0xCC01, 0xD801, 0x1400, 0xF001, 0x3C00, 0x2800, 0xE401,
+    0xA001, 0x6C00, 0x7800, 0xB401, 0x5000, 0x9C01, 0x8801, 0x4400
+]
+
+def get_crc_16(data):
+    &quot;&quot;&quot;Calculate CRC-16 using the exact algorithm from documentation&quot;&quot;&quot;
+    crc = 0x55AA
+
+    for byte in data:
+        r = CRC_16_TABLE[crc &amp; 0xF]
+        crc = (crc &gt;&gt; 4) &amp; 0x0FFF
+        crc = crc ^ r ^ CRC_16_TABLE[byte &amp; 0xF]
+
+        r = CRC_16_TABLE[crc &amp; 0xF]
+        crc = (crc &gt;&gt; 4) &amp; 0x0FFF
+        crc = crc ^ r ^ CRC_16_TABLE[(byte &gt;&gt; 4) &amp; 0xF]
+
+    return crc
+
+def fix_block_crc16(block_data):
+    &quot;&quot;&quot;Fix CRC-16 for a 16-byte block&quot;&quot;&quot;
+    if len(block_data) != 16:
+        raise ValueError(&quot;Block must be exactly 16 bytes&quot;)
+
+    # Calculate CRC for first 14 bytes (data + padding, excluding CRC)
+    crc = get_crc_16(block_data[:14])
+
+    # Update last 2 bytes with correct CRC (little-endian)
+    block_data[14] = crc &amp; 0xFF
+    block_data[15] = (crc &gt;&gt; 8) &amp; 0xFF
+
+    print(f&quot;Fixed CRC-16: 0x{crc:04X}&quot;)
+    return block_data
+
+def calculate_sha256(data):
+    &quot;&quot;&quot;Calculate SHA-256 hash of data&quot;&quot;&quot;
+    return hashlib.sha256(data).digest()
+
+def fix_cal0_checksums(cal0_data):
+    &quot;&quot;&quot;Fix checksums in CAL0 data using known offsets&quot;&quot;&quot;
+    print(&quot;Fixing CAL0 checksums...&quot;)
+
+    # Convert to bytearray for modification
+    cal0_data = bytearray(cal0_data)
+
+    # CAL0 structure offsets
+    BODY_SIZE_OFFSET = 0x8
+    BODY_HASH_OFFSET = 0x20
+    BATTERY_VERSION_OFFSET = 0x4310
+
+    # Read body size to determine how much data to hash
+    body_size = struct.unpack('&lt;I', cal0_data[BODY_SIZE_OFFSET:BODY_SIZE_OFFSET + 4])[0]
+    print(f&quot;Body size: 0x{body_size:X} bytes&quot;)
+
+    # Step 1: Fix CRC-16 for battery version block
+    # Find the 16-byte block that contains the battery version
+    battery_block_start = (BATTERY_VERSION_OFFSET // 16) * 16
+
+    if battery_block_start + 16 &lt;= len(cal0_data):
+        print(f&quot;Fixing battery version CRC-16 at block offset 0x{battery_block_start:X}&quot;)
+        print(f&quot;Battery version is at offset 0x{BATTERY_VERSION_OFFSET:X} within this block&quot;)
+
+        block = cal0_data[battery_block_start:battery_block_start + 16]
+        print(f&quot;Original block: {block.hex()}&quot;)
+
+        fixed_block = fix_block_crc16(block)
+        cal0_data[battery_block_start:battery_block_start + 16] = fixed_block
+
+        print(f&quot;Fixed block: {fixed_block.hex()}&quot;)
+    else:
+        print(&quot;Battery block offset is out of bounds&quot;)
+
+    # Step 2: Calculate and update SHA-256 hash
+    # Hash covers the calibration data starting at offset 0x40
+    calibration_data_start = 0x40
+    calibration_data_end = calibration_data_start + body_size
+
+    if calibration_data_end &lt;= len(cal0_data):
+        print(f&quot;Calculating SHA-256 hash for calibration data (0x{calibration_data_start:X} to 0x{calibration_data_end:X})...&quot;)
+
+        # Get the calibration data (excluding the hash field which is in the header)
+        calibration_data = cal0_data[calibration_data_start:calibration_data_end]
+
+        # Calculate new hash
+        new_hash = calculate_sha256(calibration_data)
+
+        # Update the hash in the header
+        cal0_data[BODY_HASH_OFFSET:BODY_HASH_OFFSET + 32] = new_hash
+
+        print(f&quot;Updated SHA-256 hash at offset 0x{BODY_HASH_OFFSET:X}&quot;)
+        print(f&quot;New hash: {new_hash.hex()}&quot;)
+    else:
+        print(&quot;Calibration data extends beyond file bounds&quot;)
+
+    return bytes(cal0_data)
+
+def print_hex(data, offset=0, length=None):
+    &quot;&quot;&quot;Print data in hex format&quot;&quot;&quot;
+    if length is None:
+        length = len(data)
+
+    end = min(offset + length, len(data))
+
+    for i in range(offset, end, 16):
+        hex_part = ' '.join(f'{b:02X}' for b in data[i:i+16])
+        ascii_part = ''.join(chr(b) if 32 &lt;= b &lt; 127 else '.' for b in data[i:i+16])
+        print(f&quot;{i:08X}: {hex_part:&lt;48} {ascii_part}&quot;)
+
+def verify_cal0_magic(cal0_data):
+    &quot;&quot;&quot;Verify that the file starts with CAL0 magic&quot;&quot;&quot;
+    if len(cal0_data) &lt; 4:
+        return False
+    return cal0_data[:4] == b'CAL0'
+
+def print_cal0_info(cal0_data):
+    &quot;&quot;&quot;Print information about the CAL0 structure&quot;&quot;&quot;
+    if not verify_cal0_magic(cal0_data):
+        print(&quot;Error: File does not start with CAL0 magic!&quot;)
+        return False
+
+    # Read header fields
+    magic = cal0_data[0:4].decode('ascii')
+    version = struct.unpack('&lt;I', cal0_data[4:8])[0]
+    body_size = struct.unpack('&lt;I', cal0_data[8:12])[0]
+    model = struct.unpack('&lt;H', cal0_data[12:14])[0]
+    update_count = struct.unpack('&lt;H', cal0_data[14:16])[0]
+
+    print(f&quot;CAL0 Information:&quot;)
+    print(f&quot;  Magic: {magic}&quot;)
+    print(f&quot;  Version: 0x{version:X}&quot;)
+    print(f&quot;  Body Size: 0x{body_size:X} ({body_size} bytes)&quot;)
+    print(f&quot;  Model: 0x{model:X}&quot;)
+    print(f&quot;  Update Count: {update_count}&quot;)
+
+    # Check battery version
+    if len(cal0_data) &gt; 0x4310:
+        battery_version = cal0_data[0x4310]
+        print(f&quot;  Battery Version: 0x{battery_version:02X}&quot;)
+
+    return True
+
+def main():
+    if len(sys.argv) &lt; 2:
+        print(&quot;Usage: python cal0_fix.py &lt;cal0_file&gt;&quot;)
+        print(&quot;Example: python cal0_fix.py cal0.bin&quot;)
+        return 1
+
+    filename = sys.argv[1]
+
+    try:
+        # Read CAL0 file
+        with open(filename, 'rb') as f:
+            cal0_data = f.read()
+
+        print(f&quot;Loaded CAL0 file: {filename} ({len(cal0_data)} bytes)&quot;)
+
+        # Verify and print CAL0 info
+        if not print_cal0_info(cal0_data):
+            return 1
+
+        # Fix checksums
+        fixed_data = fix_cal0_checksums(cal0_data)
+
+        # Write back to file
+        backup_filename = filename + '.backup'
+        with open(backup_filename, 'wb') as f:
+            f.write(cal0_data)
+        print(f&quot;Original file backed up to: {backup_filename}&quot;)
+
+        with open(filename, 'wb') as f:
+            f.write(fixed_data)
+
+        print(&quot;CAL0 checksums fixed successfully!&quot;)
+
+    except FileNotFoundError:
+        print(f&quot;Error: File '{filename}' not found&quot;)
+        return 1
+    except Exception as e:
+        print(f&quot;Error: {e}&quot;)
+        return 1
+
+    return 0
+
+if __name__ == &quot;__main__&quot;:
+    sys.exit(main())
+</code></pre>
+
+
+
+</details>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nSwitch 帧数锁定工具 - FPSLocker</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>nSwitch 帧数锁定工具 - FPSLocker</h1>
+                
+                <blockquote>
+<p><strong><code>FPSLocker</code></strong> 是masagrator开发的游戏增强工具之一,<br />
+依赖SaltyNX核心读取游戏的信息,<br />
+可以对 <code>帧数设置</code>, <code>缓冲设置</code>, <code>刷新率设置</code> 等进行独立设置.  </p>
+</blockquote>
+<ul>
+<li><a href="#安装插件">安装插件</a></li>
+<li><a href="#安装补丁">安装补丁</a></li>
+<li><a href="#ns-安装">NS安装</a></li>
+<li><a href="#电脑安装">电脑安装</a></li>
+<li><a href="#补丁使用">补丁使用</a></li>
+<li><a href="#开启补丁">开启补丁</a></li>
+<li><a href="#卸载补丁">卸载补丁</a></li>
+<li><a href="#支持游戏列表">支持游戏列表</a></li>
+<li><a href="#刷新率设置">刷新率设置</a></li>
+<li><a href="#视频教程">视频教程</a></li>
+<li><a href="#安装和使用补丁">安装和使用补丁</a></li>
+<li><a href="#设置屏幕刷新率">设置屏幕刷新率</a></li>
+</ul>
+<h2 id="_1">下载</h2>
+<div class="btn-container">
+<a href="https://gitea.com/we1zard/OTA/releases/download/latest/FPSLocker-pre.zip"><button>最新版</button></a>
+<a href="https://gitea.com/we1zard/OTA/releases/download/latest/SaltyNX-pre.zip"><button>SaltyNX 依赖</button></a>
+<a href="https://www.jianguoyun.com/p/DatXHT4Ql8W1DBiNnN0FIAA"><button>历史版本</button></a>
+<a href="https://gitea.com/we1zard/OTA/releases/download/latest/60FPSLocker.zip"><button>60FPS 解锁补丁</button></a>
+<a href="https://www.jianguoyun.com/p/DYLdqLcQl8W1DBiOnN0FIAA"><button>更新日志</button></a>
+</div>
+<p><br></p>
+<h2 id="_2">额外功能</h2>
+<ul>
+<li>解锁刷新率设置限制
+LCD可用范围: <code>40-60hz</code>(只有旧版的支持75hz)
+OLED可用范围: <code>45-60hz</code>
+移除Oled使用限制, 并增加安全范围
+移除解锁声明</li>
+<li>下载解锁补丁: <code>无魔法要求</code></li>
+</ul>
+<h2 id="_3">安装插件</h2>
+<ul>
+<li>下载 <a href="https://gitea.com/we1zard/OTA/releases/download/latest/Arcane-pre.zip">Arcane</a>, <a href="https://gitea.com/we1zard/OTA/releases/download/latest/FPSLocker-pre.zip">FPSLokcer</a>, <a href="https://gitea.com/we1zard/OTA/releases/download/latest/SaltyNX-pre.zip">SaltyNX</a>, <a href="https://gitea.com/we1zard/OTA/releases/download/latest/60FPSLocker.zip">解锁补丁</a></li>
+<li>解压覆盖到根目录, 重启NS</li>
+</ul>
+<h2 id="_4">同步时间</h2>
+<h3 id="_5">手动同步</h3>
+<blockquote>
+<p>设置 &gt; 主机 &gt; 日期时间
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241010222730087-1940603171.jpg" /></p>
+</blockquote>
+<h3 id="_6">联网同步</h3>
+<blockquote>
+<ol>
+<li>打开DBI  </li>
+<li>进入工具菜单  </li>
+<li>打开NTP联网同步工具  </li>
+<li>同步完成<br />
+<img alt="img" src="https://img2024.cnblogs.com/blog/3533742/202506/3533742-20250629111950895-1274346262.jpg" />
+<img alt="img" src="https://img2024.cnblogs.com/blog/3533742/202506/3533742-20250629112000991-1020348518.jpg" />
+<img alt="img" src="https://img2024.cnblogs.com/blog/3533742/202506/3533742-20250629112009435-1326225022.jpg" /></li>
+</ol>
+</blockquote>
+<h2 id="_7">安装补丁</h2>
+<h3 id="ns">NS 安装</h3>
+<blockquote>
+<ul>
+<li>时间同步之后  </li>
+<li>按<code>L</code>+<code>✚</code>呼出<code>Arcane</code>  </li>
+<li>按<code>▶</code>打开工具包, 选择<code>Updater</code>  </li>
+<li>全部补丁: <code>Overlays &gt; FPSLocker &gt; 60 FPS: Install</code><br />
+  单独补丁: 游戏中打开 <code>FPSLocker &gt; Advanced Settings &gt; Check/download config file</code><br />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011120911870-2068100812.jpg" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011121316691-306252043.jpg" /></li>
+</ul>
+</blockquote>
+<h3 id="_8">电脑安装</h3>
+<blockquote>
+<ul>
+<li>手动下载<a href="https://gitea.com/we1zard/OTA/releases/download/latest/60FPSLocker.zip"><code>60FPSLocker.zip</code></a></li>
+<li>解压内容放到<code>SD卡根目录</code></li>
+</ul>
+</blockquote>
+<h2 id="_9">补丁使用</h2>
+<h3 id="_10">开启补丁</h3>
+<blockquote>
+<ul>
+<li><code>游戏中</code>打开<code>FPSLocker</code></li>
+<li>打开<code>Advanced Settings</code>高级配置</li>
+<li>打开<code>Convert Config to patch file</code>: 补丁转换成配置文件</li>
+<li>重启游戏解锁</li>
+<li>解锁之后, 需要根据自己情况调整目标帧数, 通常需要配合超频使用
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011120906433-1147778063.jpg" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011120911870-2068100812.jpg" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011121022218-904075959.jpg" /></li>
+</ul>
+</blockquote>
+<h3 id="_11">卸载补丁</h3>
+<blockquote>
+<ol>
+<li>按<code>L</code>+<code>加号</code>呼出<code>Arcane</code></li>
+<li>按<code>▶</code>打开工具包, 选择<code>Updater</code></li>
+<li>卸载所有补丁 <code>Overlays &gt; FPSLocker &gt; 60 FPS: Uninstall</code></li>
+</ol>
+</blockquote>
+<h2 id="_12">刷新率设置</h2>
+<h3 id="_13">支持同步</h3>
+<blockquote>
+<ul>
+<li><code>游戏中</code>打开<code>FPSLocker</code> </li>
+<li>设置<code>Display Settings &gt; Display Sync: On</code>  </li>
+<li>调整<code>FPS target</code><br />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219203500292-6962273.png" /></li>
+</ul>
+</blockquote>
+<h3 id="_14">不支持同步</h3>
+<blockquote>
+<ul>
+<li><code>游戏中</code>打开<code>FPSLocker</code> </li>
+<li>设置<code>Display Settings &gt; Display Sync: Off</code>  </li>
+<li>调整<code>Refressh Rate</code><br />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219203333500-710313966.png" /></li>
+</ul>
+</blockquote>
+<h3 id="_15">底座设置</h3>
+<p><strong>注意</strong>: 需要真实底座输出到屏幕上, 不能使用Reverse-RT底座插件替代</p>
+<blockquote>
+<ul>
+<li>打开<code>FPSLokcer &gt; Display Settings &gt; Docked Settings</code></li>
+<li>选择第二个<code>Refresh Rate Wizard</code>刷新率设置助手</li>
+<li>打开之后按<code>X</code>开始测试, 期间会要求不同按键来启动测试, 照做就可以了</li>
+<li>做完测试之后, 就可以在<code>Allowed Refresh Rates</code>设置可选择的屏幕刷新率</li>
+<li>然后返回上一页打开<code>Change Refresh Rate</code>设置你想要使用的屏幕刷新率</li>
+<li><code>Allow patches to force 60Hz</code>: 启用时, 允许补丁强制使用60Hz刷新率</li>
+<li><code>Use lowest refresh rate for unmatched FPS Targets</code>: 启用时, 给无法匹配指定帧数的游戏使用最低的刷新率
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194016134-1583321015.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194025758-920527997.png" /></li>
+</ul>
+</blockquote>
+<p><code>Refresh Rate Wizard</code>刷新率设置助手</p>
+<blockquote>
+<p><img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194033151-1262529841.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194042266-913535000.png" /></p>
+</blockquote>
+<p><code>Allowed Refresh Rates</code>设置</p>
+<blockquote>
+<p><img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194054687-37931767.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194100743-2012866581.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194104999-1784463146.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194108549-305485809.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194113318-583886176.png" /></p>
+</blockquote>
+<p><code>Frameskip Tester</code>跳帧测试工具</p>
+<blockquote>
+<p><img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194116891-1902330393.png" /></p>
+</blockquote>
+<p><code>Additional Settings</code>是额外的增强设置</p>
+<blockquote>
+<p><img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194121681-791533905.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241219194128299-1708500126.png" /></p>
+</blockquote>
+<h2 id="_16">视频教程</h2>
+<h3 id="_17">安装和使用补丁</h3>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114448144600714&bvid=BV1wiVAzYE86&cid=29782969677&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h3 id="_18">设置屏幕刷新率</h3>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114448161312604&bvid=BV1z6VAzfEZT&cid=29783034995&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h2 id="_19">注意事项</h2>
+<ul>
+<li>配置文件转换成功之后, 需要重启游戏才能生效.</li>
+<li>不可用的刷新率可以通过同步刷新率进行重置</li>
+<li>OLED屏幕刷新率支持不够完善, 不要强行操作, 以免损坏硬件.
+• 首次安装SaltyNX需要<code>重启NS才能生效</code> 
+• 部分游戏需要下载补丁文件后<a href="#开启补丁" title="立刻查看"><code>转换成配置文件</code></a>才能解锁功能
+• 下载功能需要<a href="#同步时间" title="立刻查看"><code>同步时间</code></a></li>
+</ul>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

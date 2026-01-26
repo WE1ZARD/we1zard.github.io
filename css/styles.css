@@ -211,6 +211,23 @@ h3 {
     margin-bottom: 1rem !important; /* mb-6 */
     text-align: left;
 }
+h4 {
+    font-size: 1 rem !important; /* text-xl */
+    font-weight: bold !important;
+    color: #60a5fa !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important; /* mb-6 */
+    text-align: left;
+}
+h5 {
+    font-size: 1 rem !important; /* text-xl */
+    font-weight: bold !important;
+    color: #60a5fa !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important; /* mb-6 */
+    text-align: left;
+}
+
 
 p1 {
     font-size: 1.8rem;
@@ -524,6 +541,22 @@ block {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
+    color: #9ca3af;
+}
+
+/* 确保content-container内的所有文本都使用正确的颜色 */
+.content-container * {
+    color: inherit;
+}
+
+/* 标题颜色需要单独设置以保持一致 */
+.content-container h1, .content-container h2, .content-container h3 {
+    color: #60a5fa !important;
+}
+
+/* 代码和强调文本也需要保持一致 */
+.content-container code, .content-container strong {
+    color: #60a5fa !important;
 }
 
 /* 计算结果表格公共样式 */

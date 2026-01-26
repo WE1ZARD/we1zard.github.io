@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nSwitch 全网最详细教程 5g wifi信道修改</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>nSwitch 全网最详细教程 5g wifi信道修改</h1>
+                
+                <blockquote>
+<p>适用 <code>日版NS连不了5g信号</code>, 路由器没办法设置34信道以下的人, <code>无需换路由器</code>.</p>
+</blockquote>
+<ul>
+<li><a href="#导出-prodinfo">导出PRODINFO</a><ul>
+<li><a href="#提取密钥">提取密钥</a></li>
+<li><a href="#设置密钥">设置密钥</a></li>
+<li><a href="#导出">导出</a></li>
+</ul>
+</li>
+<li><a href="#修改-5g-信道">修改5G信道方法</a><ul>
+<li><a href="#hexit">1. 复杂</a></li>
+<li><a href="#nx-wifi-region-changer">2. 简单</a></li>
+</ul>
+</li>
+<li><a href="#导入-prodinfo">导入PRODINFO</a></li>
+</ul>
+<h2 id="_1">下载</h2>
+<div class="btn-container">
+<a href="https://pan.baidu.com/s/1zI_uKY8SUbXl7vOUGIV71w?pwd=uiz9"><button>百度网盘</button></a>
+<a href="https://www.jianguoyun.com/p/Dbhk18UQ2s_tDBiM9P4FIAA"><button>坚果云盘</button></a>
+</div>
+<p><br></p>
+<ol>
+<li>Lockpick_RCM.zip</li>
+<li>NxNandManager.zip (<code>20系统需要用5.2.2版本, 从坚果云下载</code>)</li>
+<li><strong>Windows版本</strong>:NxWifiChanger.exe
+    <strong>Python版本</strong>: NxWifiChanger-1.0.1.py (依赖库: <strong>ttkbootstrap</strong> )</li>
+</ol>
+<h2 id="prodinfo">导出 PRODINFO</h2>
+<h3 id="_2">提取密钥</h3>
+<ol>
+<li>下载<code>Lockpick_RCM.zip</code>解压后将<code>bootloader</code>覆盖到<code>SD卡根目录</code></li>
+<li>重启到Hekate主页, 选择<code>Payloads &gt; Lockpick_RCM.bin</code></li>
+<li>用<code>音量键</code>控制上下, <code>关机键</code>选择</li>
+<li>密钥类型:
+    <code>Dump from SysNAND</code>: 真实系统 密钥
+    <code>Dump from EmuNAND</code>: 虚拟系统 密钥</li>
+<li>选好之后, 按<code>关机键</code>开始提取密钥<code>prod.key</code>, 保存位置在<code>sdmc:\switch\prod.key</code></li>
+<li>提取完成之后, 按<code>关机键</code>返回上一页, 然后选择<code>Reboot to hekate</code>重启</li>
+<li>进入系统之后, 把刚才提取的密钥备份到电脑上, 所有需要用到密钥的工具都可以共用.</li>
+</ol>
+<h3 id="_3">设置密钥</h3>
+<ul>
+<li>下载<code>NxNandManager.zip</code>解压后用管理员身份打开 <code>NxNandManager.exe</code></li>
+<li><code>Options &gt; Configure keyset</code></li>
+<li>选择 <code>prod.key</code></li>
+<li>点击 <code>Save</code>保存
+<img alt="Options &gt; Configure keyset" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241009200841604-1744987425.png" /></li>
+</ul>
+<h3 id="_4">导出</h3>
+<ul>
+<li>switch关机之后将sd卡拔出, 用读卡器连接电脑</li>
+<li><code>File &gt; Open drive</code> (文件系统的, 直接选择<code>Open file</code>)</li>
+<li>双击打开你的<code>虚拟系统分区</code>(通常是空间比较小的那个, <code>图2</code>)</li>
+<li>如果你看不到隐藏分区, 就直接选择读卡器(<code>图3 中的RW310 Lexar</code>)</li>
+<li>选中 <code>PRODINFO</code> 右键 <code>Decrypt &amp; dump to file</code></li>
+<li>保存路径选择同文件夹即可</li>
+<li>导出完成之后, 点右上角的<code>x</code>关闭菜单</li>
+<li>手动备份一份原始未修改的<code>PRODINFO.dec</code>
+<img alt="File &gt; Open drive" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241009200923824-772381661.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241009201010625-242106627.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202505/3533742-20250503085352017-1620822136.png" />
+<img alt="Decrypt &amp; dump to file" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241009201035710-25530481.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202411/3533742-20241102122005039-2010185152.png" /></li>
+</ul>
+<p><strong>Hekate 挂载办法</strong></p>
+<ul>
+<li>打开 <code>Hekate &gt; Tools &gt; USB Tools &gt; Read-Only ON</code></li>
+<li>选择 <code>emu RAW GPP</code> 或者 <code>eMMC RAW GPP</code> (前面是虚拟系统, 后面是真实系统), 直接将系统挂载到电脑上, 其他操作一样.</li>
+</ul>
+<h2 id="5g">修改 5G 信道</h2>
+<h3 id="hexit">Hexit</h3>
+<details>
+<summary>展开</summary>
+- 打开 [在线编辑工具](https://hexed.it/ '点击打开')
+- 将导出的 `PRODINFO.dec` 拖到编辑器标签栏
+- 选中图中高亮位置的数值, 并将数值修改成同样的数值, 共两处
+![image](https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241009201151905-846781761.png)
+- 点击左上角的 `Save as` 保存修改好的文件, 名字和原来一致`PRODINFO.dec`
+</details>
+
+<h3 id="nx-wifi-region-changer">NX Wifi Region Changer</h3>
+<p><img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202504/3533742-20250415204331907-747317925.png" />
+- 下载<code>NxWifiChanger.exe</code>后用管理员身份运行
+- 打开<code>Open PRODINFO</code>, 选择前面导出来的<code>PRODINFO.dec</code>
+- 打开下拉选项, 根据自己需求选择, 选中之后, 会自动生成.bak的备份文件,</p>
+<pre class="highlight"><code class="linenums">America 美国
+Asia (Singapore) 新加坡
+Asia (Malaysia) 马来西亚 中国
+Australia 澳洲
+Europe 欧洲
+Japan 日本
+</code></pre>
+
+<ul>
+<li>点击<code>Update Region</code>,修改5g信号
+中国用的话, 改成<code>中国</code>,<code>美国</code>或者<code>新加坡</code>, 基本上绝大多数的频道都覆盖了. </li>
+</ul>
+<details>
+<summary>5g频道分布</summary>
+
+| 频道 | 频率 (MHz) | 美国       | 欧洲 | 新加坡      | 中国大陆  | 香港    | 台湾       |
+| -------- | :--------------: | :--------------: | :--------: | :--------------: | :-----------: | :-----------: | :--------------: |
+|          | 40/20 MHz| 40/20 MHz| 未知 | 40/20 MHz| 20 MHz| 20 MHz| 40/20 MHz|
+| 7  | 5035     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 8  | 5040     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 9  | 5045     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 11 | 5055     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 12 | 5060     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 16 | 5080     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 34 | 5170     | 否            | 否      | 否            | `是`       | 否         | `是`          |
+| 36 | 5180     | `是`          | `是`    | 否            | `是`       | `是`       | `是`          |
+| 38 | 5190     | `是`          | 否      | 否            | `是`       | `是`       | `是`          |
+| 40 | 5200     | `是`          | `是`    | 否            | `是`       | `是`       | `是`          |
+| 42 | 5210     | `是`          | 否      | 否            | `是`       | `是`       | `是`          |
+| 44 | 5220     | `是`          | `是`    | 否            | `是`       | `是`       | `是`          |
+| 46 | 5230     | `是`          | 否      | 否            | `是`       | `是`       | `是`          |
+| 48 | 5240     | `是`          | `是`    | 否            | `是`       | `是`       | `是`          |
+| 52 | 5260     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 56 | 5280     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 60 | 5300     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 64 | 5320     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 100| 5500     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 104| 5520     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 108| 5540     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 112| 5560     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 116| 5580     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 120| 5600     | 否            | `是`    | 否            | `是`       | 否         | `是`          |
+| 124| 5620     | 否            | `是`    | 否            | `是`       | 否         | `是`          |
+| 128| 5640     | 否            | `是`    | 否            | `是`       | 否         | `是`          |
+| 132| 5660     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 136| 5680     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 140| 5700     | `是`          | DFS     | 否            | `是`       | 否         | `是`          |
+| 149| 5745     | `是`          | 否      | 否            | `是`       | `是`       | `是`          |
+| 153| 5765     | `是`          | 否      | 否            | `是`       | `是`       | `是`          |
+| 157| 5785     | `是`          | 否      | 否            | `是`       | `是`       | `是`          |
+| 161| 5805     | `是`          | 否      | 否            | `是`       | `是`       | `是`          |
+| 165| 5825     | `是`          | 否      | 否            | `是`       | `是`       | `是`          |
+| 183| 4915     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 184| 4920     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 185| 4925     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 187| 4935     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 188| 4940     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 189| 4945     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 192| 4960     | 否            | 否      | 否            | 否         | 否         | 否            |
+| 196| 4980     | 否            | 否      | 否            | 否         | 否         | 否            |
+
+(参考资料来自[wiki](https://zh.wikipedia.org/zh-cn/%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BF%A1%E9%81%93%E5%88%97%E8%A1%A8#5_GHz_(802.11a/h/j/n/ac/ax)[11]))
+
+</details>
+
+<h2 id="prodinfo_1">导入 PRODINFO</h2>
+<ul>
+<li>选择<code>PRODINFO</code>右键打开菜单, 选择<code>Restore from file</code></li>
+<li>选择刚才修改好保存下来的<code>PRODINFO.dec</code>, 点 <code>Yes</code>, 开始导入修改后的参数</li>
+<li>导入完成之后, 点右上角的<code>x</code>关闭菜单</li>
+<li>然后点击左上角<code>File &gt; Close/drive</code> 关闭文件和程序, 避免无法从电脑移除.</li>
+<li>重启NS连接wifi就可以正常连上5g wifi
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202411/3533742-20241102121529264-1655471276.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202411/3533742-20241102121537394-592320143.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202411/3533742-20241102121541469-1498699622.png" />
+<img alt="File &gt; Close/drive" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241009201253079-1148896045.png" />
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241009201223017-1885177594.jpg" /></li>
+</ul>
+<h2 id="_5">感谢:</h2>
+<ul>
+<li><a href="https://www.reddit.com/r/SwitchPirates/comments/1avooiv/guide_changing_wifi_regions_on_any_switch_console/">Arnas_Z</a></li>
+<li><a href="https://github.com/eliboa/NxNandManager">eliboa</a></li>
+<li><a href="https://github.com/sthetix/NX-Wifi-Region-Changer">sthetix</a></li>
+</ul>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

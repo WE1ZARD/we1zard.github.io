@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详细了解switch的文件系统</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>详细了解switch的文件系统</h1>
+                
+                <h2 id="_1">谣言</h2>
+<ol>
+<li>❌ <strong>错误</strong>: 只有exFAT才可以装4G以上的游戏<ul>
+<li>FAT32通过MTP协议向SD卡拷贝文件, <code>不存在4G大小的限制</code>, 文件会被自动切割4G大小, 然后再合并起来.</li>
+</ul>
+</li>
+<li>❌ <strong>错误</strong>: 官方都用exFAT, 所以兼容性最好<ul>
+<li>switch<code>折腾环境明确要求FAT32或者EXT4</code>, exFAT兼容性不够好, 也不够稳定, 而且无法恢复数据.</li>
+<li>但是架不住大聪明认为官方都用exFAT, 跟着用肯定没错.(希望你翻车的时候, 能想起这句话, 而不是拍自己的大腿.)</li>
+</ul>
+</li>
+<li>❌ <strong>错误</strong>: FAT32没办法格式化4G以上的SD卡<ul>
+<li><a href="https://www.cnblogs.com/we1zard/articles/18455163#3-%E6%A0%BC%E5%BC%8F%E5%8C%96sd%E5%8D%A1" title="查看详情"><code>FAT32格式化工具</code></a> 早就集成在hekate里, 并且还做了针对ns的额外优化, <code>不用在电脑端DiskGenius操作</code>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="_2">文件系统对比</h2>
+<details>
+<summary>FAT</summary>
+
+### FAT
+FAT (文件分配表) , FAT16, FAT32 是最早, 最简单的文件系统之一. 它最初是为 MS-DOS 开发的, 现在仍然用于许多可移除的存储设备. 此系统的两个主要版本是 FAT16 和 FAT32. FAT 使用文件分配表来跟踪磁盘上的文件位置. 但它缺乏高级功能, 如文件权限和日志记录, 因此不太适用于现代操作系统. FAT 16 是 1987 年随 DOS 3.31 推出的, 而 FAT32 是 1996 年与 Windows 95 OSR2(MS-DOS 7.1) 一起面世. 
+
+**优点**:
+- 简便: 简便性使其易于实施和使用, 适合资源或兼容性要求有限的设备. 
+- 数据发现: 由于结构简单, FAT 文件系统在发生数据损坏或意外删除时很容易恢复. 
+- 兼容性: Windows, MacOS 和 Linux 操作系统原生便可对其读取和写入, 而不需要第三方软件. 
+
+**缺点**:
+- 碎片化: 当文件数据分散于磁盘的不同部分时, 就会发生碎片化, 从而降低性能. 为优化磁盘性能, 需要定期整理碎片. 
+- 缺乏高级功能: 最新版 FAT32 缺乏其他文件系统中的多项高级功能. 它不支持文件级安全权限, 日志记录, 加密或压缩. 
+- 卷名称限制: FAT16 和 FAT32 的卷名称不能超过 11 个字符, 也不能包含大多数非字母数字字符. 
+- 文件名限制: FAT16 文件系统上文件的文件名不能超过 8.3 个字符. 这意味着 8 个字符加上 3 个字符的文件扩展名. 
+
+</details>
+
+<details>
+<summary>exFAT</summary>
+
+### exFAT
+exFAT  (扩展文件分配表) 是 Microsoft 作为 FAT32 的改进版引入的文件系统. 它解决了 FAT32 的一些限制问题, 支持更大的文件和更好的性能. exFAT 常用于可移除存储设备, 如外部固态硬盘, 机械硬盘和 SD 卡, 因为它在多个操作系统之间提供兼容性. 它最初是在 2006 年作为 Windows CE 6.0 的一部分推出的. 
+
+**优点**:
+- 大文件和分区大小支持: exFAT 支持文件和分区大小远远大于 FAT 文件系统. 它可以处理大于 4 GB 的文件, 因此适合存储大型媒体文件或磁盘映像. 
+- 有效的磁盘空间利用率: 与旧版 FAT 文件系统相比, exFAT 的磁盘空间利用率更高. 它使用的群集更小, 从而可减少较小文件浪费的磁盘空间量. 
+- 兼容性: Windows 和 MacOS 操作系统原生便可对其读取和写入, 而不需要第三方软件. 
+
+**缺点**:
+- 有限的元数据支持: exFAT 缺乏其他现代文件系统的一些高级功能. 它不支持文件级安全权限, 日志记录或文件系统级加密. 
+- 碎片化: 像 FAT 文件系统一样, exFAT 也容易出现碎片化. 在创建, 修改和删除文件时, 都可能发生碎片化, 随时时间的推移, 性能会因此而下降. 
+
+</details>
+
+<details>
+<summary>Ext4</summary>
+
+### Ext4
+Ext4 (第四种扩展文件系统) 是Linux 操作系统中广泛使用的一种文件系统. 它是 Ext3 的继任者, 在性能, 可扩展性和可靠性方面做出了一些改进. Ext4 是许多 Linux 发行版的默认文件系统, 最初于 2003 年推出. 
+
+**优点**:
+- 日志记录: 日志会在更改提交到磁盘之前跟踪更改, 从而在发生电源故障或系统崩溃的情况下实现更快的恢复. 它降低了数据损坏的风险, 并确保文件系统保持一致. 
+- 增大的文件和分区大小: 与其前代系统相比, Ext4 支持的文件和分区大小要大得多. 
+
+**缺点**:
+- 碎片化: 像大多数文件系统一样, Ext4 也容易出现碎片化. 在创建, 修改和删除文件时, 都可能发生碎片化, 随时时间的推移, 性能会因此而下降. 
+- 有限的扩展性: 虽然 Ext4 与前代相比支持更大的文件和分区大小, 但在极端的可扩展性方面, 它有一定的局限性. 
+- 文件系统是计算系统的必要组成部分. 它们为数据组织, 存储和检索提供基础, 确保无缝操作. 随着技术的进步, 文件系统将继续发展, 以适应存储需求并增强数据管理能力. 
+
+</details>
+
+<p>参考资料来源: <a href="https://www.kingston.com/cn/blog/personal-storage/understanding-file-systems">金士顿官网</a></p>
+<h2 id="_3">结论</h2>
+<p><code>FAT32是跨平台兼容性最好, 支持数据恢复的优秀文件系统</code>.</p>
+<p>虽然switch官方系统格式化SD卡的默认格式是exFAT, 但文件系统不适合折腾, 官方只考虑sd卡当作存储游戏的拓展介质, 而不是在上面装其他的系统.</p>
+<p>即便如此还不留有余力强推你用exFAT格式的, 
+只有两种人, 
+一种是蠢人(无知, 所以无所畏惧), 
+另一种是坏人(他们就希望你每隔一段时间出现问题, 然后花钱找他们解决问题, 一劳永逸的方法不利于他们搞钱).
+这其中就包括2025年还在强推祖传闪迪红灰卡, 三星白卡, 初代switch, 国行ns以及高贵的TX折腾芯片(优越的国产芯片)的"良心"商家.</p>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

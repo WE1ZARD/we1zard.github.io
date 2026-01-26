@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nSwitch 极限超频 - 入门教程</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>nSwitch 极限超频 - 入门教程</h1>
+                
+                <p><a href="https://www.cnblogs.com/we1zard/p/18847021">2025终极版教程</a></p>
+<h2 id="_1">介绍</h2>
+<p>任天堂为了照顾"正版玩家的游戏体验", 
+通常会将硬件限定在一个较为"合理"的范围, 因此造就了一批又一批的<code>正版受害者</code>.</p>
+<p>通常情况下的超频只是把本该属于玩家的性能拿出来用, 极端的只有极少数的人,
+超频优化后, 能够达到比官方默认的<code>更省电</code>, <code>性能更好</code>, 提升的程度<a href="#硬件信息" title="立刻查看"><code>取决于硬件的体质</code></a>.</p>
+<hr />
+<h2 id="_2">使用须知</h2>
+<ul>
+<li>请使用<strong>FAT32</strong>格式SD卡折腾, <code>避免使用 [exFAT]</code>.</li>
+<li>建议<code>只在虚拟系统使用</code>, 并且折腾前<code>做好备份</code>, 以免造成不可挽回的损失.</li>
+<li>超频可能导致(包括但不限于)系统不稳定, 发热, 耗电, 损坏硬件等可能的后果.</li>
+<li>原装电池非充电状态不要超过8w长期使用, 尽量控制在6w内续航会比较好.</li>
+</ul>
+<hr />
+<h2 id="_3">基本信息</h2>
+<details>
+<summary>参考电压</summary>
+
+### 参考电压
+
+| RAM (Mhz) | 2133 | 2400 | 2533 | 2666 | 2800 | 2933 | 3066 | 3200 |
+| --: | --: | --: | --: | --: | --: | --: | --: | --: |
+|Soc (mV)|700|725|750|800|825|875|925|975|
+|GPU (mV)|580|610|640|660|680|700|720|740|
+
+默认电压
+VDD2 (mV): 1100
+VDDQ (mV): 600
+
+[GPU UV3电压估算器](https://gitea.com/we1zard/OTA/releases/download/latest/uv3_calculator.html)
+
+</details>
+
+<details>
+<summary>数据来源</summary>
+
+
+<pre class="highlight"><code class="language-c linenums">// tegra210b01 dvfs
+        .dvb_table = {
+            {  204000, {  637,  637,  637, } },
+            {  408000, {  637,  637,  637, } },
+            {  800000, {  637,  637,  637, } },
+            { 1065600, {  637,  637,  637, } },
+            { 1331200, {  650,  637,  637, } },
+            { 1600000, {  675,  650,  637, } },
+            /* Custom */
+            { 1866000, {  700,  675,  637, } },
+            { 2133000, {  725,  700,  650, } },
+            /* Overclocking */
+            { 2400000, {  750,  725,  675, } },
+            { 2533000, {  800,  775,  725, } },
+            { 2666000, {  825,  800,  750, } },
+            { 2800000, {  900,  825,  775, } },
+            { 2933000, { 1000,  850,  800, } },
+            { 3066000, { 1025,  900,  850, } },
+            { 3200000, { 1050,  950,  900, } },
+</code></pre>
+
+
+
+---
+
+
+<pre class="highlight"><code class="language-c linenums">    {
+        .speedo_id = 10,
+        .process_id = 0,
+        .min_mv = 840,
+        .max_mv = 1120,
+        CPU_PLL_CVB_TABLE_EUCM2_JOINT_RAIL,
+    },
+    {
+        .speedo_id = 10,
+        .process_id = 1,
+        .min_mv = 840,
+        .max_mv = 1120,
+        CPU_PLL_CVB_TABLE_EUCM2_JOINT_RAIL,
+    },
+    {
+        .speedo_id = 9,
+        .process_id = 0,
+        .min_mv = 900,
+        .max_mv = 1162,
+        CPU_PLL_CVB_TABLE_EUCM2,
+    },
+    {
+        .speedo_id = 9,
+        .process_id = 1,
+        .min_mv = 900,
+        .max_mv = 1162,
+        CPU_PLL_CVB_TABLE_EUCM2,
+    },
+    {
+        .speedo_id = 8,
+        .process_id = 0,
+        .min_mv = 900,
+        .max_mv = 1195,
+        CPU_PLL_CVB_TABLE_EUCM2,
+    },
+    {
+        .speedo_id = 8,
+        .process_id = 1,
+        .min_mv = 900,
+        .max_mv = 1195,
+        CPU_PLL_CVB_TABLE_EUCM2,
+    },
+    {
+        .speedo_id = 7,
+        .process_id = 0,
+        .min_mv = 841,
+        .max_mv = 1227,
+        CPU_PLL_CVB_TABLE_EUCM1,
+    },
+    {
+        .speedo_id = 7,
+        .process_id = 1,
+        .min_mv = 841,
+        .max_mv = 1227,
+        CPU_PLL_CVB_TABLE_EUCM1,
+    },
+    {
+        .speedo_id = 6,
+        .process_id = 0,
+        .min_mv = 870,
+        .max_mv = 1150,
+        CPU_PLL_CVB_TABLE,
+    },
+    {
+        .speedo_id = 6,
+        .process_id = 1,
+        .min_mv = 870,
+        .max_mv = 1150,
+        CPU_PLL_CVB_TABLE,
+    },
+    {
+        .speedo_id = 5,
+        .process_id = 0,
+        .min_mv = 818,
+        .max_mv = 1227,
+        CPU_PLL_CVB_TABLE,
+    },
+    {
+        .speedo_id = 5,
+        .process_id = 1,
+        .min_mv = 818,
+        .max_mv = 1227,
+        CPU_PLL_CVB_TABLE,
+    },
+    {
+        .speedo_id = 4,
+        .process_id = -1,
+        .min_mv = 918,
+        .max_mv = 1113,
+        CPU_PLL_CVB_TABLE_XA,
+    },
+    {
+        .speedo_id = 3,
+        .process_id = 0,
+        .min_mv = 825,
+        .max_mv = 1257, /* Allow OC max voltage of 1257 mV */
+        CPU_PLL_CVB_TABLE_ODN,
+    },
+    {
+        .speedo_id = 3,
+        .process_id = 1,
+        .min_mv = 825,
+        .max_mv = 1257, /* Allow OC max voltage of 1257 mV */
+        CPU_PLL_CVB_TABLE_ODN,
+    },
+    {
+        .speedo_id = 2,
+        .process_id = 0,
+        .min_mv = 870,
+        .max_mv = 1227,
+        CPU_PLL_CVB_TABLE,
+    },
+    {
+        .speedo_id = 2,
+        .process_id = 1,
+        .min_mv = 870,
+        .max_mv = 1227,
+        CPU_PLL_CVB_TABLE,
+    },
+    {
+        .speedo_id = 1,
+        .process_id = 0,
+        .min_mv = 837,
+        .max_mv = 1227,
+        CPU_PLL_CVB_TABLE,
+    },
+    {
+        .speedo_id = 1,
+        .process_id = 1,
+        .min_mv = 837,
+        .max_mv = 1227,
+        CPU_PLL_CVB_TABLE,
+    },
+    {
+        .speedo_id = 0,
+        .process_id = 0,
+        .min_mv = 850,
+        .max_mv = 1170,
+        CPU_PLL_CVB_TABLE,
+    },
+    {
+        .speedo_id = 0,
+        .process_id = 1,
+        .min_mv = 850,
+        .max_mv = 1170,
+        CPU_PLL_CVB_TABLE,
+    },
+};
+</code></pre>
+
+
+</details>
+
+<details>
+<summary>重置参数</summary>
+
+### 重置参数
+
+重新启动NS并按住 `音量 ▬` 直至启动Hekate, 从`Hekate > Launch > Restore` 进入恢复系统, 降低当前参数.
+![image](https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212173830096-929548955.png)
+- 按'L+✚'呼出菜单工具
+- 按`方向键▶`打开工具包`Magic`
+- 按`A`打开`Preferences > Restore Preset`将所有参数全部恢复默认
+![image](https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241216155850614-1531012340.png)
+
+</details>
+
+<details>
+<summary>查看体质</summary>
+
+### 查看体质
+
+**`sys-clk-oc 1.2.0+`**
+- `L+加号` 呼出菜单 > 打开 `sys-clk-oc > Speedo`
+![img](https://img2023.cnblogs.com/blog/3533742/202506/3533742-20250615131608647-902415634.jpg)
+![img](https://img2023.cnblogs.com/blog/3533742/202506/3533742-20250615131619607-2138085159.jpg)
+
+**`Hekate > Console Info > HW & Fuses Info`**
+: ![image](https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212174104157-1530832639.png)
+: ![image](https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212174115448-1305087726.png)
+: ![image](https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212174120680-1611669540.png)
+: **`CPU Val`**: 影响CPU的电压以及可用频率的上限
+: **`GPU Val`**: 影响GPU的电压以及可用频率的上限
+: **`SOC Val`**: 影响DVB的电压以及可用内存频率的上限
+- DRAM ID: 为内存颗粒型号
+- 同电压Speedo越高跑越高的频率
+
+</details>
+
+<details>
+<summary>超频作业</summary>
+
+### 超频作业
+
+| Tier | DRAM ID   | Ram Clock | VDD2  | VDDQ  | Timings (松时序)          | Timings (紧时序)              |
+|------|----------|-----------|-------|-------|---------------------------|---------------------------|
+| GOD  | NEI/NEE  | 2500-2933 | 1175mv| 640mv | (3-3-2) 2-5-5-4-6      | (4-4-4) 3-7-6-5-6      |
+| GOD  | WT:B     | 2466-2600 | 1175mv| 600mv | (4-4-5) 5-2-6-5-6      | (6-6-7) 7-2-6-5-6      |
+| S    | AA | 2300-2600 | 1175mv| 640mv | (4-4-5) 5-5-6-7-6      | (4-4-8) 6-5-7-8-6      |
+| A    | WT:F     | 2400-2533 | 1175mv| 600mv | (4-4-2) 5-4-6-3-6      | (5-5-4) 5-5-6-5-6      |
+| B    | AM-MGCJ  | 2300-2466 | 1175mv| 640mv | (3-2-4) 2-4-4-4-6     | ((4-3-8) 2-5-4-4-6       |
+| B    | WT:E     | 2300-2466 | 1175mv| 600mv | (2-2-2) 2-4-4-4-6     | (3-5-3) 3-5-4-5-6      |
+| C    | AB-MGCL  | 2133-2500 | 1175mv| 640mv | (4-4-4) 4-4-5-6-6      | (4-4-8) 5-5-6-8-6      |
+| D    | NME      | 2133-2333 | 1175mv| 640mv | (2-2-1) 0-1-4-3-6     | (3-3-4) 0-1-4-4-6      |
+
+以上参数可能因个体差异而导致无法使用, 仅供参考. (资料来自 [Mariko OC Guide](https://rentry.co/mariko#ram-configuration-based-on-tier))
+
+</details>
+
+<hr />
+<h2 id="_4">超频教程</h2>
+<p>注意:
+- 建议新手严格按照教程的顺序折腾, 少走弯路, 节省时间
+- 第一次折腾的时候, 不建议直接使用极限值, 建议退一档使用, 后续再这个基础上再进行优化, 不要一步到位
+- 测试稳定性的时候, 记得接电源, 以免高功耗使用导致电池容量不准
+- 请严格按照<code>内存</code> &gt; <code>时序</code> &gt; <code>GPU</code> &gt; <code>CPU</code> 顺序折腾
+- 当环境温度过低时, 电压会自动升高, 直到核心温度等于或者大于室温时候恢复设定值
+- <a href="https://www.cnblogs.com/we1zard/p/18848165"><strong><code>整合包详情</code></strong></a></p>
+<details>
+<summary>内存篇</summary>
+
+### 内存篇
+
+**`准备工作`**
+- 测试游戏: **`怪物猎人崛起: 曙光 (20GB左右)`**
+- 测试地点: 观察据点, **`需要解锁大师等级存档`**
+- 测试参数: 目标内存频率, `GPU 最大`, `CPU 最大`, `底座模式`
+- 帧数补丁: 安装并启用60FPS解锁补丁([详细方法](https://www.cnblogs.com/we1zard/p/18848910))
+- 出错形式: 出现 `报错`, `崩溃`, `橙屏`, `花屏`, `进不去系统` 等, 按住 `关机键` 强制关机,
+**`限定电压`**: 适用于绝大部分掌机为主, 考虑续航及发热的用户, `Vdd2 = 1175 mv`, `Vddq = 650`, 其他参数选择最大值.
+**`不限电压`**: 适用于追求极限性能的用户, 所有电压参数选择最大值.
+**`注意`**: 当你从低频率重新超高, vdd2建议1250mv就好了, 除非你想超的3000, 太高的电压也会导致直接报错.
+
+**`电压参数`**
+- Magic > Configure > RAM
+`... > Vdd2`
+`... > Vddq`
+`... > DVB`
+- Magic > Configure > GPU
+`... > Vmin`
+- Magic > Configure > CPU
+`... > Low Vmin`
+`... > High Vmin`
+
+---
+
+**`内存频率`**
+- 推荐频率: `2133`, `2400`, `2533`, `2666`
+Magic > Configure > RAM > `Max Clock`
+
+---
+
+#### **`测试频率`**
+- 重启NS, 并打开`sys-clk-oc`, 切换到测试参数, 打开游戏进行测试, 测试时间越长, 越容易发现问题.
+- 出现 `报错`, `崩溃`, `橙屏`, `花屏`, `进不去系统` 等, 按住 `关机键` 强制关机, [进入恢复系统](#重置参数)降低当前参数.
+- Magic > Configure > RAM > `Max Clock` 降低目标频率, 直到找到稳定可用的频率.
+
+---
+
+#### **`优化电压`**
+- 降低`DVB`,`Vdd2`,`Vddq`, 可以减少发热和功耗, 但是会降低稳定性
+- 内存频率越高, 要求越高, 发热越大, 功耗也越高
+- `DVB`以实际电压为准, 不同体质下的初始值不同, `1700 dvb 0`可能和 `1600 dvb -2`实际电压是一样的
+
+</details>
+
+<details>
+<summary>时序篇</summary>
+
+### 时序篇
+
+#### **`找出极限时序`**
+- 测试游戏: **`怪物猎人崛起: 曙光 (20GB左右)`**
+- 测试地点: 观察据点, **`需要解锁大师等级存档`**
+- 测试参数: 目标内存频率, `GPU 最大`, `CPU 最大`, `底座模式`
+- 出错形式: 出现 `报错`, `崩溃`, `橙屏`, `花屏`, `进不去系统` 等, 按住 `关机键` 强制关机, [进入恢复系统](#重置参数)降低当前参数.
+![image](https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241010183246287-1460086826.jpg)
+
+---
+
+**`DRAM: 内存时序表`**
+- AUTO_ADJ- 自动时序表, `新手推荐`.
+- AUTO_ADJ_HP- 高性能时序表, 可以大幅降低延迟时间, 帮助稳定帧数, 需要更多的电压, 导致明显的发热.
+
+**`7 tWTR: 写入到读取延迟`**
+**`8 tREFI: 内存刷新间隔时间`**
+- `7 tWTR`,`8 tREFI`设置成最高的选项, 测试并调整直到找到稳定可用的选项.
+- 为了最好的性能, 保持`8 tREFI`不变.
+
+**`1 tRCD: RAS到CAS的延迟`**
+- `1 tRCD`,`2 tRP`设置成最高的选项, 测试并调整直到找到稳定可用的选项.
+- `1 tRCD`,`2 tRP`需要同时调整.
+
+**`2 tRP: 行预充电时间`**
+- 选项在原有基础上再提高一档, 测试并调整直到找到稳定可用的选项.
+
+**`3 tRAS: 行激活时间`**
+- 设置成最高的选项, 测试并调整直到找到稳定可用的选项.
+
+**`4 tRRD: 行到行延迟`**
+- 设置成最高的选项, 测试并调整直到找到稳定可用的选项.
+
+**`5 tRFC: 行刷新周期`**
+- 设置成最高的选项, 测试并调整直到找到稳定可用的选项.
+
+**`6 tRTW: 读到写延迟`**
+- 设置成最高的选项, 测试并调整直到找到稳定可用的选项.
+
+注意:
+- 新人第一次找出极限时序, 不要直接用找出来的极限时序, 大概率是稳定不了的.
+- 建议退一档使用, 后续在稳定的基础上根据ultracam的结果进行微调优化.
+
+---
+
+#### **优化时序**
+
+**`准备工作`**
+- 测试游戏: **`塞尔达传说: 王国之泪 (16GB左右)`**
+- 测试地点: 克洛格森林: 姆萨诺奇拉神庙, **`需要解锁进度存档`**
+- 测试工具: `Ultracam Benchmark`
+- 测试参数: 目标内存频率, `GPU 最大`, `CPU 最大`, `底座模式`, `锁定晴天上午9点`
+- 出错形式: 出现 `报错`, `崩溃`, `橙屏`, `花屏`, `进不去系统` 等, 按住 `关机键` 强制关机, [进入恢复系统](#重置参数)降低当前参数.
+
+![image](https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241010185944015-473468897.jpg)
+
+---
+
+**`Ultracam安装和使用`**
+注意: 
+    `需要已解锁克洛洛森林的存档, 并且在底座模式下进行, 否则测试结果不正确`
+- `Updater > HomeBrew Apps > OC-Suite > OC Tester > Install` ([详细使用说明](https://www.cnblogs.com/we1zard/p/18856925))
+- 安装完成之后, 进入游戏传送`克洛格森林: 姆萨诺奇拉神庙`
+- 传送后按`✚`打开菜单`解除弓`或者(按下`左摇杆`让人物`蹲下`)
+![image](https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011214246149-1812848629.jpg)
+![image](https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011214254633-700087339.jpg)
+- 按`L+✚`打开金手指, `锁定天气: 晴天`, `锁定时间: 上午9点`, 然后保存存档进度, 这样后续测试的时候就可以直接读测试档.
+- 按`ZL+ZR+▼`启动跑分测试, 跑分动画持续1分钟左右.
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=112861523216773&bvid=BV1g4vHetEpw&cid=500001629791902&p=1&autoplay=0" 
+scrolling="no" 
+border="0" 
+frameborder="no"
+framespacing="0" 
+allowfullscreen="true">
+</iframe>
+动画完成之后, 
+打开`Magic > UltraCam Log`或者**`DBI`**查看SD卡根目录下**`sdmc:/TOTKBenchmark.txt`**
+
+
+<pre class="highlight"><code class="language-txt linenums">BENCHMARK FOR Korok Forest COMPLETED!
+Total frames: 2604, Average FPS: 43, 1% FPS: 38, 0.1% FPS: 38
+</code></pre>
+
+
+
+**`Total frames`**: 总帧数
+**`Average FPS`**: 平均帧数
+**`1% FPS`**: 1%出现的帧数
+**`0.1% FPS`**: 0.1%出现的帧数
+
+**`时序优化的思路`**
+- 放松**`主时序 Primary`**同时收紧**`次时序 Secondary`**
+- 稳定的前提下, 对比benchmark测试结果, 
+
+</details>
+
+<details>
+<summary>GPU篇</summary>
+
+### GPU篇
+
+**`准备工作`**
+- 测试游戏1: **`怪物猎人崛起: 曙光 (20GB左右)`** **`异度神剑X终极版`**
+- 测试地点: 观察据点, **`需要解锁大师等级存档`**
+- 测试游戏2: **`异度神剑X终极版`**
+- 测试地点: **游戏标题界面**
+- 测试参数: 目标内存频率, `GPU 最大`, `CPU 最大`, `底座模式`
+- 出错形式: 出现 `报错`, `崩溃`, `橙屏`, `花屏`, `进不去系统` 等, 按住 `关机键` 强制关机, [进入恢复系统](#重置参数)降低当前参数.
+![image](https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241010183246287-1460086826.jpg)
+
+---
+
+**`GPU降压等级`**
+: **`UV Level`**: 需要0以上并且Vmin最大电压高于实际电压可以解锁1305mhz
+0. Default Table 默认电压
+1. SLT 标准降压
+2. HiOPT 高频加强 (speedo >1650)
+3. Custom Table 自定义静态电压, `高GPU Speedo推荐使用` (speedo >1700, 稳定不了uv2的)
+
+---
+
+**`GPU电压偏移`**
+: **`Volt Offset`**: 影响`UV1`,`UV2`下的GPU的高频电压, 选项越高减的数值越多.
+- GPU Speedo越高, 可以减的幅度越大
+- 出现`花点`, `色块`, `报错`, `花屏`可以考虑提高
+
+---
+
+**`GPU最小电压设置`**
+: **`High Vmin`**: 只作用于>1600的内存频率
+: **`Low Vmin`**: 只作用于1600的内存频率
+- UV3不生效, 影响最小GPU频率, 所有低于最小电压的频率电压都会被覆盖
+- 内存频率越高, 需要的Vmin越高, 但是过高的Vmin也会导致开不了机
+- 出现`花点`, `色块`, `报错`, `花屏`可以考虑提高
+
+要求: `sysclk-oc 1.1.4-eos`和`Magic 1.5.8+`
+
+---
+
+**`GPU最大电压设置`**
+: **`Vmax`**: 影响最大GPU频率, 超过最大电压的频率会被隐藏
+- PMIC: L4T最大值`800mv`
+- 长期使用超过PMIC限制的频率加快硬件的损坏
+
+---
+
+**`GPU占用率设置`**
+: **`GPU Boost`**:
+- On: 开启, 默认开启, 占用率提高到99.7%
+- Off: 关闭, 系统默认占用率96.7%
+
+--
+
+**`额外说明`**
+- 76 Mhz可能会要求更高电压当你使用uv3自定义电压
+- 537 Mhz通常情况下, 除非选中这个频率, 否则在系统随机切换频率的时候不会被使用到
+- [`下载UV3电压估算器`](https://gitea.com/we1zard/OTA/releases/download/latest/uv3_calculator.html)
+
+</details>
+
+<details>
+<summary>CPU篇</summary>
+
+### CPU篇
+
+注意:
+- uv0 只能2295的CPU频率
+- uv4+才可以用2601的CPU频率
+
+**`准备工作`**
+- 测试游戏: **`极品飞车14: 热力迸发 (9GB左右)`**
+- 测试地点: 地图菜单
+- 测试参数: 目标内存频率, `GPU 最大`, `CPU 最大`, `底座模式`
+- 出错形式: 出现 `报错`, `崩溃`, `橙屏`, `花屏`, `进不去系统` 等, 按住 `关机键` 强制关机, [进入恢复系统](#重置参数)降低当前参数.
+![image](https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241010183059639-949362895.jpg)
+
+- 极品飞车对CPU UV比较敏感, 有问题很快就会出错, 通常不需要挂很长时间测试.
+- 如果UV测试都ok之后, 可以直接玩有压力的游戏, 测试CPU的稳定性.
+
+---
+
+**`CPU睿频频率`**
+: **`Boost Clock`**: 影响游戏CPU占用率超过70%的频率
+- 推荐频率: 2295, 2397
+- 需要降压等级至少UV1
+
+---
+
+**`CPU降压等级`**
+: **`UV Level`**: 影响CPU频率的降压幅度和解锁的频率
+- 等级越高, 降压的效果越好, 解锁的频率也越高
+- 可用等级取决于体质, 超出可用范围会导致报错, 死机, 进不了系统
+
+---
+
+**`CPU高频降压等级`**
+: **`High UV Level`**: 影响1683mhz以上频率的降压幅度
+- 等级越高, 降压的效果越好
+- 可用等级取决于体质, 超出可用范围会导致报错, 死机, 进不了系统
+
+---
+
+**`CPU低频最小电压`**
+: **`Low Vmin`**: 影响1581mhz以下频率的电压
+- 越低的电压, 功耗越低
+- 可用范围取决于体质, 超出可用范围会导致性能损失, 报错, 死机, 进不了系统, 甚至`破坏虚拟系统`
+- 越高的内存频率, 要求越高, , 但是过高的Vmin也会导致开不了机
+
+---
+
+**`CPU高频最小电压`**
+: **`High Vmin`**: 影响1581mhz及以上频率的电压
+- 越低的电压, 功耗越低
+- 可用范围取决于体质, 超出可用范围会导致性能损失, 报错, 死机, 进不了系统, 甚至`破坏虚拟系统`
+- 越高的内存频率, 要求越高, , 但是过高的Vmin也会导致开不了机
+
+---
+
+**`CPU最大电压`**
+: **`Vmax`**: 影响CPU最高频率
+- 体质越好, 需要的电压越低, 功耗也越低
+- 推荐电压: `1120mv`
+- 可用范围取决于体质, 超出可用范围会导致性能损失, 报错, 死机, 进不了系统, 甚至`破坏虚拟系统`和`损坏硬件`
+
+---
+
+**`CPU频率分段`**
+: **`Table Mode`**: 影响低频和高频的读取电压
+- Auto: 自动根据Vmin和UV选择电压范围`(新人推荐)`
+- Default: 默认
+- 1581 Mhz: 高频从1581mhz开始选择电压范围 (默认1683mhz)
+- Shift Fix1: 防止切换电压范围
+- Shift Fix2: 防止切换电压范围, 中频使用较低的电压
+
+---
+
+**`CPU最大频率`**
+: **`Max Clock`**: 影响sys-clk-oc可选频率范围
+
+---
+
+**`都看到这里了, 支持一波再走吧!!!`**
+
+</details>
+<!--
+<iframe width="1920" height="1080" frameborder="0" src="https://open.douyin.com/player/video?vid=7461959453294742820&autoplay=0" referrerpolicy="unsafe-url" allowfullscreen>
+</iframe>
+-->
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113886728555257&bvid=BV1DdfRYFEwg&cid=28066254789&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h2 id="_5">旧版教程</h2>
+<ul>
+<li><a href="https://www.jianguoyun.com/p/DTpB-JAQgcS1DBjY7dsFIAA">内存篇</a></li>
+<li><a href="https://www.jianguoyun.com/p/DScWazoQgcS1DBjf7dsFIAA">时序篇</a></li>
+<li><a href="https://www.jianguoyun.com/p/Db25EZYQgcS1DBji7dsFIAA">GPU篇</a></li>
+<li><a href="https://www.jianguoyun.com/p/DWP4jmsQgcS1DBjg7dsFIAA">CPU篇</a></li>
+</ul>
+<h2 id="_6">免责声明</h2>
+<ul>
+<li>使用者<code>自行承担可能的存在的风险和后果, 本人概不负责</code>.</li>
+</ul>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「pfbneo游戏模拟器」介绍及使用</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>「pfbneo游戏模拟器」介绍及使用</h1>
+                
+                <h1 id="_1">介绍</h1>
+<p><strong>pfbneo</strong>是跨平台的 <strong><code>final burn neo</code></strong> 游戏模拟器, 响应速度快, 内置各种滤镜及数据库, 配置起来相对<a href="https://www.cnblogs.com/we1zard/articles/18792958">RetroArch</a>简单,
+对于普通玩家来说, 使用体验比较友好.</p>
+<div class="btn-container">
+<a href="https://pan.baidu.com/s/1Sv7AeV42Y4VJo6N1xKQUzQ?pwd=pvqj"><button>下载</button></a>
+</div>
+
+<p><img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202502/3533742-20250208194717104-936230414.png" /></p>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113982560013136&bvid=BV1yJNveyEmy&cid=28325711014&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h1 id="_2">安装模拟器</h1>
+<pre class="highlight"><code class="linenums">nsp版本选择
+• pfbneo_ams1.8.0+.nsp: 大气层系统版本1.8.0以上
+• pfbneo_ams1.1.0+.nsp: 大气层系统版本1.1.0以上
+</code></pre>
+
+<p><img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202502/3533742-20250208194744993-668773894.png" /></p>
+<p><img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202502/3533742-20250208194751852-514661519.png" /></p>
+<ol>
+<li>将下载的<code>pfbneo_v6.7.zip</code>解压后将<code>switch文件夹</code>和<code>*.nsp</code>前端安装文件复制到<code>SD卡根目录</code></li>
+<li>打开<code>相册工具 &gt; DBI &gt; Browser SD card &gt; *.nsp &gt; Start install</code>安装前端</li>
+<li>退出即可</li>
+</ol>
+<h1 id="_3">安装游戏</h1>
+<ol>
+<li><code>街机游戏</code>将下载的<code>arcade.zip</code>解压后将<code>roms文件夹</code>复制到<code>SD卡根目录</code>即可<ul>
+<li>默认不带视频预览, 需要的自行下载, 解压覆盖到<code>SD卡根目录</code>即可</li>
+</ul>
+</li>
+<li><code>FC游戏</code>将下载的<code>nes.zip</code>解压后将<code>roms文件夹</code>复制到<code>SD卡根目录</code>即可</li>
+<li><code>其他游戏</code>下载之后放到以下对应路径</li>
+</ol>
+<pre class="highlight"><code class="language-cfg linenums">/roms/arcade/
+/roms/channelf/
+/roms/coleco/
+/roms/fds/
+/roms/gamegear/
+/roms/megadrive/
+/roms/msx/
+/roms/nes/
+/roms/ngp/
+/roms/pce/
+/roms/sg1000/
+/roms/sgx/
+/roms/sms/
+/roms/spectrum/
+/roms/tg16/
+</code></pre>
+
+<h1 id="_4">使用说明</h1>
+<ol>
+<li>安装前端之后, 直接从主页打开pfbneo<ul>
+<li>建议在sysclk中将<code>CPU频率</code>适当调高, 模拟器比较吃CPU, 不吃GPU</li>
+</ul>
+</li>
+<li>菜单页面<ul>
+<li><code>方向键上下</code>移动选中框</li>
+<li><code>方向键左右键</code>翻页选中框</li>
+<li><code>X</code>收藏/取消收藏游戏<ul>
+<li>非游戏中按<code>+</code>呼出<code>MAIN MENU</code>系统菜单</li>
+<li>找到<code>SHOW FAVORITES</code>使用左右键切换选项设置成<code>ON</code>, 只显示收藏游戏</li>
+</ul>
+</li>
+<li><code>ZL/ZR</code>切换系统<ul>
+<li><code>ALL</code>: 所有游戏</li>
+<li><code>ARCADE</code>: 所有街机游戏</li>
+<li><code>NES</code>: 所有FC游戏</li>
+</ul>
+</li>
+<li><code>▬</code>减号键只设置当前选中的, 优先级高于所有的</li>
+<li><code>✚</code>加号键只设置所有的</li>
+<li>滤镜设置<ul>
+<li>非游戏中按<code>✚</code>呼出<code>MAIN MENU</code>系统菜单</li>
+<li>找到<code>EFFECT</code>使用左右键切换选项, 根据自己需求选择喜欢的滤镜效果, 默认配置已经设置为<code>复古CRT</code>效果</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>游戏中<ul>
+<li>同时按<code>▬</code>和<code>✚</code>呼出系统菜单</li>
+<li><code>▬</code>投币</li>
+<li><code>✚</code>开始</li>
+</ul>
+</li>
+</ol>
+<h1 id="_5">模拟器的区别</h1>
+<details>
+<summary>展开</summary>
+
+RetroArch 和 FinalBurn Neo (FB Neo) 的区别
+
+## 1. 定位与功能
+
+### **RetroArch**
+- **多平台前端**：  
+  RetroArch 是一个开源的前端程序，本身不直接模拟游戏，而是通过加载“核心”（即各类模拟器）来实现多平台游戏的运行。
+- **集成化体验**：  
+  支持统一界面、存档管理、按键配置、网络联机等功能，适合管理多个平台的游戏。
+- **跨平台支持**：  
+  可运行于 Windows、Linux、macOS、Android、游戏主机（如 PS Vita、Switch）等设备。
+
+### **FB Neo (FinalBurn Neo)**
+- **专注街机模拟**：  
+  FB Neo 是专为街机游戏设计的独立模拟器，前身是 FinalBurn Alpha。支持 CPS1、CPS2、Neo Geo、PGM 等经典街机硬件。
+- **独立运行**：  
+  可作为单独程序使用，也可作为 RetroArch 的“核心”被调用。
+- **精准性与兼容性**：  
+  专注于街机游戏的精准模拟和 ROM 兼容性更新，适合硬核街机玩家。
+
+---
+
+## 2. 使用场景对比
+
+| **场景**               | **RetroArch**                          | **FB Neo**                              |
+|------------------------|----------------------------------------|-----------------------------------------|
+| 多平台需求             | ✅ 支持数十种主机（如 SNES、PS1 等）。 | ❌ 仅限街机游戏。                       |
+| 街机游戏优化           | ✔️ 需加载 FB Neo 核心，依赖核心更新。  | ✅ 直接针对街机优化，更新更快。          |
+| 操作复杂度             | ❗ 配置复杂，需熟悉核心管理和前端设置。 | ✔️ 独立运行，界面简洁，适合直接使用。   |
+| 统一管理需求           | ✅ 存档、金手指、滤镜等功能统一管理。  | ❌ 需依赖外部工具或 RetroArch 的整合。  |
+
+---
+
+## 3. 协作关系
+- RetroArch 可以集成 **FB Neo 核心**，这意味着你可以在 RetroArch 中直接调用 FB Neo 的模拟功能，享受统一的前端管理（如着色器、联机功能等）。
+- 独立使用 FB Neo 时，可能更适合专注于街机游戏且希望快速更新的用户。
+
+---
+
+## 4. 其他关键区别
+
+| **特性**         | **RetroArch**                          | **FB Neo**                              |
+|------------------|----------------------------------------|-----------------------------------------|
+| 更新频率         | 前端更新频繁，核心更新依赖开发者。     | 专注街机，核心更新更直接。              |
+| 资源占用         | 较高（因前端功能复杂）。               | 较低（轻量化，专注单一用途）。          |
+| 学习成本         | 较高（需掌握核心加载、配置逻辑）。     | 较低（即开即用）。                      |
+
+---
+
+## 5. 如何选择？
+
+### **选 RetroArch**  
+- 如果你想统一管理多个平台的游戏（如同时玩街机、PS1、GBA）。
+- 如果需要高级功能（如联机、着色器滤镜）。
+
+### **选 FB Neo**  
+- 如果你只玩街机游戏，希望快速获取更新。
+- 如果偏好轻量化独立程序。
+
+</details>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

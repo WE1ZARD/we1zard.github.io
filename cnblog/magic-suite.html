@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nSwitch 大气层极限超频整合包 - Magic Suite</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>nSwitch 大气层极限超频整合包 - Magic Suite</h1>
+                
+                <center>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113886644670371&bvid=BV1qHfdYGEqj&cid=28065923752&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+</center>
+
+<blockquote>
+<p><strong><code>Magic-Suite</code></strong> 是一个以超频为核心, 深度优化使用体验的整合包,<br />
+同时拥有完整的文字说明及视频教程, 新手也可以轻松驾驭.<br />
+支持一键安装卸载更新, 最大程度简化流程, 无需电脑操作.  </p>
+<p>2024年1月份开始内测, 由我和CC共同维护开发, Github自动采集更新, 可查看完整更新日志.</p>
+</blockquote>
+<h2 id="_1">目录</h2>
+<ul>
+<li><strong>换包</strong><ul>
+<li><a href="#新卡换包">新卡换包</a></li>
+<li><a href="#自动换包">自动换包</a></li>
+<li><a href="#手动换包">手动换包</a></li>
+<li><a href="https://www.cnblogs.com/we1zard/p/18881205#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F">创建虚拟系统</a></li>
+<li><a href="https://www.cnblogs.com/we1zard/p/18872375">注入器使用(仅限初代)</a></li>
+<li><a href="#屏蔽设置">屏蔽设置</a></li>
+<li><a href="#超频模式">超频模式</a></li>
+</ul>
+</li>
+<li>
+<p><strong>升级</strong></p>
+<ul>
+<li><a href="#升级大气层">升级大气层</a></li>
+<li><a href="https://www.cnblogs.com/we1zard/p/18854970">升级固件系统</a></li>
+<li><a href="https://www.cnblogs.com/we1zard/p/18854970#%E7%86%94%E6%96%AD%E6%9F%A5%E8%AF%A2">熔断查询</a></li>
+<li><a href="#版本号">查看当前版本</a></li>
+</ul>
+</li>
+<li>
+<p><strong>安装</strong></p>
+<ul>
+<li><a href="#安装前端">安装前端</a></li>
+<li><a href="#安装游戏">安装游戏</a></li>
+<li><a href="#推荐工具">推荐工具</a></li>
+</ul>
+</li>
+<li><strong>按键操作</strong><ul>
+<li><a href="#开机引导">开机引导</a></li>
+<li><a href="#修改引导">修改引导</a></li>
+<li><a href="#arcane">特斯拉菜单</a></li>
+<li><a href="#状态监控">状态监控</a></li>
+</ul>
+</li>
+<li><strong>系统支持</strong><ul>
+<li><a href="#插件列表">插件列表</a></li>
+<li><a href="https://www.cnblogs.com/we1zard/p/18847021">超频教程</a></li>
+<li><a href="#注意事项">注意事项</a></li>
+</ul>
+</li>
+<li><strong>问题指南</strong><ul>
+<li><a href="#已知问题">已知问题</a></li>
+<li><a href="#常见问题">常见问题</a></li>
+<li><a href="#关于-ban-机"><strong>关于BAN机</strong></a></li>
+</ul>
+</li>
+</ul>
+<h2 id="_2">下载</h2>
+<ul>
+<li>先行版: 最新版本大气层, 所有的更新和修复都最快. (可能软件兼容性差一点, 主要是软件适配需时间)</li>
+<li>正式版: 比先行版晚一个版本的大气层系统, 软件方便相对兼容更好一些. (如果遇到问题, 请先尝试先行版是否已修复.)</li>
+</ul>
+<div class="btn-container">
+<a href="https://gitea.com/we1zard/OTA/releases/download/latest/AIO.zip"><button>正式版</button></a>
+<a href="https://gitea.com/we1zard/OTA/releases/download/latest/AIO-pre.zip"><button>先行版(支持21.1.0系统)</button></a>
+<a href="https://www.jianguoyun.com/p/Da5-YN0Q2s_tDBiW5OoFIAA"><button>历史版本</button></a>
+<a href="https://www.jianguoyun.com/p/DZgWte4Q2s_tDBiHhOsFIAA"><button>更新日志</button></a>
+</div>
+<p><br><br></p>
+<div class="btn-container">
+<a href="https://www.cnblogs.com/we1zard/p/18854970"><button>升级固件</button></a>
+<a href="https://www.jianguoyun.com/p/DXlOqWUQ2s_tDBjhrOIFIAA"><button>工具清单</button></a>
+<a href="https://www.cnblogs.com/we1zard/p/18853153"><button>免费资源</button></a>
+</div>
+<p><br></p>
+<h2 id="_3">安装使用</h2>
+<!--
+<iframe width="1920" height="1080" frameborder="0" src="https://open.douyin.com/player/video?vid=7459297643982769446&autoplay=0" referrerpolicy="unsafe-url" allowfullscreen>
+</iframe>
+-->
+
+<h4 id="_4">新卡换包</h4>
+<h5 id="_5">安装包</h5>
+<blockquote>
+<ul>
+<li><code>不需要用电脑格式化</code>, 直接清空SD卡内所有资料, 如果有的话.</li>
+<li>SD卡插入读卡器连接电脑</li>
+<li>下载好整合包<a href="#下载"><code>AIO.zip</code></a></li>
+<li>解压<code>AIO.zip</code>后把Magic-Suite<code>文件夹内所有内容</code>复制到<code>SD卡根目录</code>
+<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241015093955619-1386183417.png" /></li>
+<li>开机启动到<code>Hekate</code></li>
+</ul>
+</blockquote>
+<h5 id="_6">设置时间</h5>
+<blockquote>
+<p><code>没弹窗口的话, 可以跳过</code>
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526190013832-2021875011.png" />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526190021449-1654574525.png" />  </p>
+</blockquote>
+<h5 id="sd">格式化 SD 卡</h5>
+<blockquote>
+<ul>
+<li>使用hekate格式化工具将SD卡格式化成<code>FAT32格式</code>, 比用电脑DG格式化多一些针对NS的额外兼容和优化.  </li>
+<li>如果是使用DG进行分区, 记得隐藏系统分区要先分, 然后再是其他, 格式化需要FAT32, 64K簇, MBR主分区. (代价是: 安装速度变成USB 2.0)
+这里需要先拉满整张卡, 有安装其他系统需求的, <code>等初次格式化完成之后, 再重新分配空间</code>.<br />
+<code>Tools &gt; Partition SD Card &gt; OK &gt; Next Step</code><br />
+<code>SD UMS &gt; usb线连接电脑</code>  </li>
+<li>如果你前面忘记备份资料, 这一步可以通过USB线连接电脑, 进行备份.</li>
+<li>建议关机拔卡备份, 速度会快一点<br />
+<code>Start &gt; 按关机键确认 &gt; 开始格式化</code>  </li>
+<li>卡内的数据如果超过1G, 除了引导外, 其他数据都会被清除.  </li>
+</ul>
+<p><img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526180210452-2035329585.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526180224006-1603916305.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526180233058-988842767.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526180242425-1110180177.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526180250854-72475618.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250527001949209-303885179.png" />
+</p>
+</blockquote>
+<h5 id="_7">分配空间</h5>
+<blockquote>
+<ul>
+<li>HOS (FAT32): 用来装游戏和其他资料的空间  </li>
+<li>emuMMC (RAW): <code>虚拟系统分区</code>用来装系统(<code>占用4G</code>)和游戏存档的地方  <ul>
+<li>建议<code>分配 8+GB</code>, 存档多的酌情分配更多空间  </li>
+<li>如果你想用文件格式的虚拟系统, 这里也可以不分配, 但是性能肯定不如虚拟分区.  </li>
+</ul>
+</li>
+<li>Linux (EXT4): 用来装Linux系统的地方  </li>
+<li><code>分配 16+GB</code>, 不用的话可以不分配空间  </li>
+<li>Android (USER): 用来放安卓系统的地方  </li>
+<li><code>分配 16+GB</code>, 不用的话可以不分配空间  </li>
+<li><code>注意</code>:   </li>
+<li>重新分区会导致所有数据丢失, 1G以内的数据会自动挂载, 格式完成之后自动恢复</li>
+<li>安卓分区格式<ul>
+<li>Legacy: 安卓 10/11 (只有初代支持安卓10,推荐使用安卓11, 比较稳定)</li>
+<li>Dynamic: 安卓 13+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526183723691-1881827048.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526183738177-913634395.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526183747366-967907043.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526183759441-1207456465.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250527001949209-303885179.png" />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250527002555952-361741760.png" />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250527002605179-1925625406.png" /></p>
+</blockquote>
+<h5 id="_8"><a href="https://www.cnblogs.com/we1zard/p/18881205#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%B3%BB%E7%BB%9F"><code>创建虚拟系统</code></a></h5>
+<h5 id="_9">自动换包</h5>
+<blockquote>
+<ul>
+<li>switch关机拔卡用读卡器连接电脑</li>
+<li>把下载好<a href="#下载"><code>AIO.zip</code></a>解压<br />
+<code>AIO.zip
+├ bootloader
+├ Magic-Suite
+├ auto.bat
+└ auto.sh</code></li>
+</ul>
+<p><strong>Windows用户</strong>: <code>auto.bat</code> (<strong>MacOS用户</strong>: <code>auto.sh</code>)和 <code>Magic-Suite</code> 复制到 <code>SD卡根目录</code>  (包括.开头的隐藏文件)
+- 双击打开 <code>auto.bat</code>, 按 <code>空格键</code> 开始清理并初始化.
+- 完成之后, 按 <code>空格键</code> 退出, 退出读卡器, 把卡插回switch重启即可
+- 如果需要 <a href="https://www.cnblogs.com/we1zard/p/18854970#%E5%9B%BA%E4%BB%B6%E5%88%97%E8%A1%A8">离线更新固件</a> 的, 可以将下载好的系统固件文件夹复制到 <code>SD卡根目录</code>, 以便后续通过 <code>daybreak</code> 操作 <a href="https://www.cnblogs.com/we1zard/p/18854970#%E5%8D%87%E9%99%8D%E7%BA%A7%E6%96%B9%E6%B3%95">离线系统固件下载及使用</a>)</p>
+</blockquote>
+<p>注意:
+- 清理脚本会将旧包里的游戏MOD/金手指/等保留并合并到新包里
+- 保留旧包里的其他系统的引导文件
+- 保留其他系统文件(lakka,linux,android,retroarch)
+- 为防止意外丢失文件, 初次使用脚本前, 最好多备一份完整的SD卡资料到其他地方, 以防误操作导致文件丢失.</p>
+<h5 id="_10">手动换包</h5>
+<blockquote>
+<ol>
+<li><strong>备份旧文件</strong></li>
+<li>
+<p>SD卡根目录只保留以下文件, 其他的备份.
+<code>sdmc:
+├ bootloader/ini/
+├ emuMMC
+├ emuiibo
+├ JKSV
+├ lakka
+├ Nintendo
+├ switchroot
+└ warmboot</code></p>
+</li>
+<li>
+<p><strong>复制文件</strong></p>
+</li>
+<li><a href="#下载"><code>AIO.zip</code></a> 解压之后将Magic-Suite里的所有内容覆盖到sd卡根目录. (包括.开头的隐藏文件)
+<code>AIO.zip
+├ bootloader
+└ Magic-Suite
+   └ ...</code></li>
+</ol>
+</blockquote>
+<h5 id="_11">屏蔽设置</h5>
+<blockquote>
+<p>设置后面的数字说明<br />
+1 = 开启屏蔽<br />
+0 = 关闭屏蔽<br />
+仅限真实系统屏蔽, 实际上当你在nand上安装nsp之类的, 只要联网就会ban, 屏蔽和洗白都无法避免这个结果.<br />
+虚拟系统默认已经做好双屏蔽.</p>
+</blockquote>
+<ol>
+<li></li>
+</ol>
+<pre class="highlight"><code class="linenums">    /exosphere.ini
+
+    blank_prodinfo_sysmmc=1
+</code></pre>
+
+<ol>
+<li></li>
+</ol>
+<pre class="highlight"><code class="linenums">    /bootloader/hekate_ipl.ini
+
+    [SysMMC]
+    cal0blank=1
+</code></pre>
+
+<ol>
+<li>复制 <code>/atmosphere/hosts/emummc.txt</code> 改名 <code>sysmmc.txt</code></li>
+</ol>
+<h5 id="_12">超频模式</h5>
+<blockquote>
+<p>包里默认是<code>极限超频模式</code><br />
+可以通过 <code>Settings &gt; General &gt; Normal OC Mode</code> 切换成<code>普通超频模式</code> (要求: AIO 3.8.1+)<br />
+切换后需要重启才能生效, 特别适合初代玩家和稳稳党.</p>
+</blockquote>
+<h2 id="_13">升级大气层</h2>
+<blockquote>
+<p><code>仅限旧Magic-Suite包</code>
+如果你的系统已经出问题, 想修复的, 不要用这个方法.
+你需要<a href="#新卡换包">新卡换包</a>.</p>
+<p>a. <strong><code>NS在线更新</code></strong>
+- 先同步联网时间 (打开 DBI &gt; 工具 &gt; NTP 同步时间)
+- 打开<code>Updater &gt; Proxy &gt; On</code>: 海外用户或者魔法用户, 保持Off
+- <code>Updater &gt; AIO &gt; Release</code> : 更新正式版整合包
+- <code>Updater &gt; AIO &gt; Pre-Release</code> : 更新先行版整合包
+- <a href="https://www.cnblogs.com/we1zard/p/18856925" title="点击查看">Updater详细使用方法</a></p>
+<p>b. <strong><code>电脑下载更新</code></strong>
+- 解压内容<code>bootloader</code>,<code>Magic-Suite</code>直接<code>覆盖到sd卡根目录</code>
+- 重启后便会自动更新
+<code>AIO.zip
+├ bootloader
+└ Magic-Suite</code></p>
+</blockquote>
+<h2 id="_14">安装前端</h2>
+<ul>
+<li>打开相册 <a href="https://www.cnblogs.com/we1zard/p/18882227">Sphaira</a></li>
+<li>按 <code>L</code> 键进入 <code>文件浏览</code>, 找到<code>hbmenu.nro</code></li>
+<li>按 <code>✚</code> 键打开菜单, 选中<code>安装 前端</code> 按 <code>A</code> 键开始安装<blockquote>
+<p><strong>注意</strong>: 不要在真实系统安装前端, 会导致ban机  </p>
+</blockquote>
+</li>
+</ul>
+<h2 id="_15">安装游戏</h2>
+<ul>
+<li>用USB线连接电脑之后</li>
+<li>打开 <code>前端</code> 或者 相册 <a href="https://www.cnblogs.com/we1zard/p/18882227">Sphaira</a></li>
+<li>打开 <code>DBI</code> 之后按 <code>X</code> 进入MTP模式</li>
+<li>电脑上打开 <code>DBI &gt; 5号盘 SD Card Install</code></li>
+<li>将需要安装的游戏拖入或者复制粘贴过去即可<blockquote>
+<p><a href="https://www.cnblogs.com/we1zard/p/18853153">资源下载推荐页</a></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="_16">在线安装</h2>
+<ul>
+<li>先使用 DBI &gt; 工具 &gt; NTP 同步时间</li>
+<li>默认自带<a href="https://gh-proxy.com/">github加速</a>, 如果节点速度过慢或者, 无法使用, 可以手动添加节点. <a href="https://github.akams.cn/">节点地址</a></li>
+<li><code>config/arcane/proxy.ini</code> 将节点地址填入路径文件中, 模板: <code>https://gh-proxy.com/</code></li>
+</ul>
+<h2 id="_17">查看系统信息</h2>
+<ul>
+<li>主页面打开 <code>设置 &gt; 主机</code></li>
+<li>现在的系统版本: 代表固件系统版本(<a href="https://www.cnblogs.com/we1zard/p/18854970">更多详情</a>)</li>
+<li><code>AMS</code>: 代表大气层的版本</li>
+<li><code>最后的英文</code>: 指示系统环境<ul>
+<li>E: <code>EmuMMC 虚拟系统</code></li>
+<li>S: <code>SysMMC 真实系统</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="_18">推荐工具</h2>
+<ul>
+<li>离线关联工具 linkalho</li>
+<li>金手指制作工具 Breeze</li>
+<li>存档管理工具 JKSV</li>
+<li>后台无线传输工具 ftpsrv</li>
+<li>私服联机工具 ldn_mitm</li>
+<li>第三方有线手柄工具 sys-con</li>
+<li>主机音量调整增强工具 MasterVolume</li>
+<li>风扇管理工具 sys-FanControl</li>
+</ul>
+<blockquote>
+<p>以上均支持通过 <code>Updater</code> 在线安装 (<a href="https://www.cnblogs.com/we1zard/p/18856925">查看说明</a>)</p>
+</blockquote>
+<h2 id="_19">按键操作</h2>
+<h4 id="_20">开机引导</h4>
+<blockquote>
+<ul>
+<li><strong>进入hekate引导菜单</strong></li>
+<li>按住 <strong><code>音量 ▬</code></strong>, 再按一下 <strong><code>开机键</code></strong> </li>
+<li>Atmosphere 大气层 (屏蔽联网序列码)</li>
+<li>eMMC 真实系统 (不屏蔽联网序列码, 不能在桌面放破解程序 或者 自制前端, 会导致ban机)</li>
+<li>Restore 恢复模式 (同大气层, 只是loader引导不同, 用来恢复超频参数)</li>
+<li>
+<p>OFW 官方系统</p>
+</li>
+<li>
+<p><strong>进入维护模式</strong></p>
+</li>
+<li>
+<p>先按住 <strong><code>音量 ▬</code></strong> + <strong><code>音量 ✚</code></strong>, 再按一下 <strong><code>开机键</code></strong> </p>
+</li>
+<li>
+<p><strong>进入正版系统</strong></p>
+</li>
+<li>按一下 <strong><code>开机键</code></strong> </li>
+<li>同时按住 <strong><code>开机键</code></strong> + <strong><code>音量 ▬</code></strong> + <strong><code>音量✚</code></strong></li>
+<li>
+<p>看见Nintendo Logo, 松开按键</p>
+</li>
+<li>
+<p><a href="https://www.cnblogs.com/we1zard/p/18872375"><strong>初代注入</strong></a></p>
+</li>
+</ul>
+</blockquote>
+<h4 id="_21">修改引导</h4>
+<blockquote>
+<ul>
+<li>呼出菜单: <strong><code>L</code></strong> + <strong><code>✚</code></strong></li>
+<li>菜单中按<code>▶</code>打开工具包</li>
+<li>R2Config &gt; Set Launch</li>
+<li>Hekate 引导菜单</li>
+<li>HOS 虚拟系统</li>
+<li>SysNAND 真实系统</li>
+</ul>
+<p><a href="https://www.cnblogs.com/we1zard/p/18856927" title="点击查看">R2Config 使用说明</a></p>
+</blockquote>
+<h4 id="arcane">Arcane</h4>
+<blockquote>
+<ul>
+<li>呼出菜单: <strong><code>L</code></strong> + <strong><code>✚</code></strong></li>
+<li>菜单中按<code>▶</code>打开工具包</li>
+<li><strong><code>Settings &gt;KeyCombo &gt;Arcane</code></strong> 可以修改快捷键</li>
+</ul>
+</blockquote>
+<h4 id="_22">状态监控</h4>
+<blockquote>
+<ul>
+<li>退出菜单: 按住 <strong><code>左摇杆</code></strong> + <strong><code>右摇杆</code></strong></li>
+<li>可以在 <strong><code>Settings &gt;KeyCombo &gt;Status Monitor</code></strong> 修改快捷键</li>
+</ul>
+</blockquote>
+<h2 id="_23">系统支持</h2>
+<h3 id="_24">功能</h3>
+<blockquote>
+<ul>
+<li>
+<p><strong>固件系统</strong>
+支持 20.1.5</p>
+</li>
+<li>
+<p><strong>超频上限</strong>
+CPU 2703, GPU 1536, RAM 3200
+支持tRFC自定义</p>
+</li>
+<li>
+<p><strong>引导说明</strong></p>
+</li>
+<li><code>Atmosphere 虚拟系统 (默认)</code>: <code>联网保护</code>, <code>屏蔽序列码</code>, 独立的官方系统镜像</li>
+<li><code>SysNAND 真实系统</code>: <code>无联网保护</code>, <code>不屏蔽序列码</code>, 共用官方系统</li>
+<li><code>Restore 恢复系统</code>: <code>用于超频参数错误导致无法正常进系统</code></li>
+<li>
+<p><code>OFW 官方系统</code></p>
+</li>
+<li>
+<p><strong>在线更新</strong></p>
+</li>
+<li>独立安装升级</li>
+<li>
+<p>整合包升级</p>
+</li>
+<li>
+<p><strong>内置指南</strong></p>
+</li>
+</ul>
+</blockquote>
+<h3 id="_25">插件列表</h3>
+<ul>
+<li>EdiZon 金手指</li>
+<li>FPSLocker 帧数锁定</li>
+<li>MasterVolume 音量控制</li>
+<li>ReShade 游戏滤镜</li>
+<li>ReverseNX-RT 底座切换</li>
+<li>Status Monitor 状态监控</li>
+<li>Sys-clk-oc 超频管理</li>
+<li>DBI 万能安装工具</li>
+<li>Daybreak 系统离线升级工具</li>
+</ul>
+<h3 id="_26">版本号</h3>
+<blockquote>
+<ul>
+<li>呼出菜单: <strong><code>L</code></strong> + <strong><code>✚</code></strong></li>
+<li>菜单中按<code>▶</code>打开工具包</li>
+<li><code>updater &gt; AIO &gt; version</code> 查看当前包的版本号 (要求: AIO 3.8.2+)</li>
+</ul>
+</blockquote>
+<h3 id="_27">注意事项</h3>
+<blockquote>
+<p>• 建议使用<code>FAT32</code>格式SD卡折腾.<br />
+• 超频可能导致(包括但不限于): 引起系统<code>不稳定</code>, <code>发热</code>, <code>耗电</code>, <code>损坏硬件</code>等可能的后果<br />
+• 建议只在虚拟系统使用, 并且折腾前<code>做好完整的备份</code>, 以免造成不可挽回的损失.<br />
+• 使用者<code>自行承担</code>可能的存在风险和后果, 本人概不负责.
+• 如果遇到同步时间之后, 依旧无法在线下载安装的, 请尝试重新安装 <a href="https://www.cnblogs.com/we1zard/p/18856925"><strong><code>Updater</code></strong></a>
+• 由于在线更新的服务器在国外, 尽量在中国白天时间使用, 避免网络延迟导致的安装失败.</p>
+</blockquote>
+<h2 id="_28">已知问题</h2>
+<ul>
+<li>FPSLocker解锁90hz之后, 设置超过65Hz, 刷新率数字显示异常, OLED最低支持到45Hz</li>
+</ul>
+<h2 id="_29">常见问题</h2>
+<p><strong>待机异常掉电</strong>:
+- 呼出菜单: <strong><code>L</code></strong> + <strong><code>✚</code></strong>
+- 菜单中按<code>▶</code>打开工具包
+- <code>Settings &gt; General &gt; Services</code> 设置成 <code>Off</code>, 然后重启switch
+- 注意: 此设置仅限无官方联网需求的玩家, 会导致任天堂相关联网服务停止工作</p>
+<p><strong>报错信息</strong>:</p>
+<p class="red-bold">
+Failed to match warmboot with fuses!<br>
+If you continue, sleep wont work!
+</p>
+<p class="white-normal">
+Press POWER to continue.<br>
+Press VOL to go to the menu.
+</p>
+
+<p><strong>解决方法 1</strong>:
+- 关机重启到官方系统
+- 进入系统之后, 直接关机(不要更新, 不要升级, 不要联网)
+- 重启到大气层, 问题解决</p>
+<p><strong>解决方法 2</strong>:
+- 启动到<code>Hekate &gt; Tools &gt; Arch bit RCM TOUCH PKG1/2 &gt; DUMP PACKAGE</code>
+- 稍等片刻之后, 重启switch, 即可解决
+    <img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526211521669-924108046.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526211535426-1709739562.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526211504848-2014489410.png" />  </p>
+<p><strong>原因分析</strong>:
+- 这是因为系统的fuses(熔丝)没有匹配, 导致无法正常启动.
+- 通常是因为hekate版本未适配的时候, 升级了官方系统
+- 原hekate使用忽略熔断, 导致不匹配</p>
+<hr />
+<p><strong>报错信息</strong>:</p>
+<p class="red-bold">
+Error while loading fss0:<br>
+atmosphere/package3<br>
+Wrong ini cfg or missing/corrupt files!<br><br>
+
+Failed to launch HOS!
+</p>
+<p class="white-normal">
+Press any key...
+</p>
+
+<p><strong>解决方法</strong>:
+- 检查SD卡内容, 缺少的部分重新放包</p>
+<p><strong>原因分析</strong>:
+- 通常是分区格式化的时候超过sd卡内容超过1g</p>
+<hr />
+<p><strong>报错信息</strong>:</p>
+<p class="red-bold">
+Failed to match warm boot with fuses!<br>
+if you continue, sleep won't work!
+</p>
+<p class="white-normal">
+Press POWER to continue.<br>
+Press VOL to go to the menu.
+</p>
+
+<p><strong>解决方法</strong>:
+- 在这个界面按<code>音量键</code>返回Hekate引导菜单
+- 选择<code>Lanuch &gt; SysMMC</code>, 进入系统, 再关机重启即可</p>
+<p><strong>原因分析</strong>:
+- 这是因为官方系统升级之后的fuses(熔断)没有匹配</p>
+<hr />
+<p><strong>报错代码: <code>010041544d530000</code> 或者 <code>游戏提示损坏</code></strong></p>
+<p class="white-normal">
+A fatal error occurred when running Atmosphére.<br>
+Title ID: 010041544d530000<br>
+Error Desc: std::abort() called (0xffe)
+</p>
+
+<p><strong>解决方法 1</strong>:</p>
+<ul>
+<li>关机后按住<code>音量键-减号</code>进入hekate  <ol>
+<li>点击顶部的<code>Tools</code>  </li>
+<li>点击底部的<code>Arch Bit</code>  </li>
+<li>点击左上角<code>Fix Archive Bit</code>开始修复  </li>
+<li>修复完成之后就可以正常从<code>Launch</code>里引导了<br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526210907915-1272725401.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526210915567-857817733.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526210922968-1136743773.png" /><br />
+<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202505/3533742-20250526210930680-937561214.png" />  </li>
+</ol>
+</li>
+</ul>
+<p><strong>解决方法 2</strong>:</p>
+<ul>
+<li>你下错了整合包, 当前的包不支持你的固件系统, 重新下<a href="#下载">先行版</a></li>
+</ul>
+<h2 id="ban">关于 BAN 机</h2>
+<blockquote>
+<p>资料来源: <a href="https://nx.eiphax.tech/ban.html">eipHax</a><br />
+<code>90DNS Tester</code> 只能匹配他预设的网址, 不要理会.</p>
+</blockquote>
+<h5 id="1-ban">[1] 什么是 <code>BAN</code>  它如何发生？</h5>
+<p>简而言之  <code>BAN</code> 是指任天堂禁止特定主机或任天堂账户使用其在线服务</p>
+<p>多数与破解相关的 <code>BAN</code> 属于 <code>BAN</code> 机  即被 <code>BAN</code> 的主机将无法使用 eShop、游戏更新、在线游玩等任天堂在线服务
+任天堂依据用户协议保留拒绝提供服务的权利</p>
+<h5 id="2-ban">[2] 任天堂因何 <code>BAN</code> 主机？</h5>
+<p><strong>会导致立即 <code>BAN</code> 的行为：</strong>
+- 任何形式的盗版行为
+- 安装至主菜单的自制 NSP 文件
+- 通过自制系统修改用户头像
+- 可疑的 eShop 操作行为</p>
+<p><strong>非立即但最终会导致 <code>BAN</code> 的行为：</strong>
+- 修改在线游戏
+- 在线游戏中作弊
+- MIG烧录卡
+- 上传错误日志至任天堂后清除日志（因日志不匹配 可能也适用于同时在线使用 <code>虚拟系统</code> 和 <code>真实系统</code> 的情况）</p>
+<p><strong>目前尚未导致 <code>BAN</code> 的行为：</strong>
+- Atmosphere 系统本身
+- 使用自制菜单（通过相册或游戏卡带/已安装游戏启动接管）
+- 自定义主题
+- 自定义系统模块
+- 离线游戏内的修改/作弊行为
+- 使用 sys-clk 超频
+- <code>虚拟系统</code>  </p>
+<h5 id="3">[3] 任天堂如何发现违规行为？</h5>
+<p>任天堂已大幅升级遥测系统该系统会监控用户在主机上的操作 包括安装的游戏、游玩记录等大量数据</p>
+<p>Switch 会持续存储这些数据（即使离线） 一旦连接互联网并访问任天堂服务器 就会立即发送数据日志</p>
+<p>这意味着：即使在离线状态下执行违规操作 只要主机后续联网（哪怕短暂连接） 任天堂就会收到遥测日志并实施 <code>BAN</code> </p>
+<h5 id="4-ban">[4] 如何避免被 <code>BAN</code> ？</h5>
+<p>主要有两种方法：<br />
+- 避免在主机上执行任何任天堂禁止的行为；<br />
+- 保持主机永久离线 即使执行违规操作 任天堂也无法收到遥测日志</p>
+<h5 id="5-emunand-ban">[5] 什么是 emuNAND/<code>虚拟系统</code>？能否防 <code>BAN</code> ？</h5>
+<p>NAND 是电子设备常用的数据存储类型 eMMC 是 Switch 内置的 NAND 存储 所有系统数据均存储于此（又称 sysNAND/<code>真实系统</code>）emuNAND/<code>虚拟系统</code>（模拟 NAND/模拟 eMMC）是存储在 SD 卡上的 SysNAND 副本  </p>
+<p>由于遥测日志存储在 NAND 中 emuNAND 的价值在于实现双存储隔离：sysNAND 用于在线游戏和 eShop 购买 emuNAND 用于 CFW 破解并保持离线若按任天堂自制系统指南推荐的 CFW 流程设置 应已完成 emuNAND 配置</p>
+<h5 id="6-emunand-ban">[6] 用 emuNAND 就不会被 <code>BAN</code> ？</h5>
+<p>错误  </p>
+<p>emuNAND 是辅助防 <code>BAN</code> 的工具 而非万无一失的方案必须确保 emuNAND 永久离线 否则效果甚微需注意：
+尽管 sysNAND 与 emuNAND 存储独立 但二者是同一系统的副本 具有相同唯一标识符——若其中一个被 <code>BAN</code>  另一个也会被连带 <code>BAN</code> </p>
+<h5 id="7-ftp">[7] 想使用 FTP 等在线自制工具怎么办？</h5>
+<p>若需在离线主机（或 emuNAND）上使用网络 需确保主机仅连接互联网但无法访问任天堂服务器（避免发送遥测日志）  </p>
+<p>推荐方案：</p>
+<ul>
+<li>使用 dns-mitm（主机端自定义 DNS 屏蔽） 可阻断任天堂服务器并允许其他网络连接<blockquote>
+<p>本包默认包含此设置</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="8-incognitoincognito-rcm">[8] Incognito/Incognito RCM 可靠吗？</h5>
+<p>不推荐使用 原因如下：<br />
+- 其原理是清空主机启动必需的 PRODINFO 数据若操作失误、功能故障或丢失备份 可能导致主机功能损坏甚至变砖 永久失去联网能力<br />
+- 工作时强制主机向任天堂服务器发送“无效数据”（当前会被服务器拒绝） 但任天堂可随时修改服务器规则接收此类数据 导致所有依赖 Incognito 的主机瞬间暴露遥测日志<br />
+- 其删除的数据远不足以实现宣称的功能——类似向警方出示驾照时只遮挡地址却保留全名  </p>
+<p>Atmosphere 0.12.0 及以上版本内置虚拟 PRODINFO 屏蔽功能（重定向数据而非删除 安全性更高） 但仍无法替代 90DNS 作为可靠防护方案  </p>
+<blockquote>
+<p>本包默认包含90DNS设置</p>
+</blockquote>
+<h5 id="9-ban">[9] 主机被 <code>BAN</code> 后能否解封？</h5>
+<p>无法通过有效手段解封</p>
+<h5 id="10-sysnand">[10] 离线 sysNAND 违规后想联网怎么办？</h5>
+<ul>
+<li>需恢复执行违规操作前的“干净”NAND 备份  </li>
+<li>避免使用 <code>Haku33</code> 洗白工具, 不能有效避免, 会因为删不干净导致直接 <code>BAN</code></li>
+</ul>
+<blockquote>
+<p>注意：使用 Switch 原生 <code>恢复出厂设置</code> 功能无法清除遥测日志, 无法避免 <code>BAN</code></p>
+</blockquote>
+<h5 id="11-nand">[11] 未备份或丢失 NAND 数据怎么办？</h5>
+<ul>
+<li>此为操作失误 务必养成未来备份 NAND 的习惯  </li>
+<li>虽存在手动重置 NAND 数据的方法 但可靠性低于直接恢复备份 非首选方案</li>
+</ul>
+<h5 id="12">[12] 遵循指南就绝对安全吗？</h5>
+<ul>
+<li>无绝对保障本文信息基于大量实践经验</li>
+<li>破解主机需自行承担风险并对操作负责</li>
+<li>但任天堂可能随时调整 <code>BAN</code> 规则或升级遥测技术</li>
+</ul>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nSwitch 系统引导管理工具 - R2Config</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+</head>
+<body class="bg-[#051427] min-h-screen">
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-4">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="content-container p-6">
+                <h1>nSwitch 系统引导管理工具 - R2Config</h1>
+                
+                <blockquote>
+<p><strong>R2Config</strong> 是Magic Suite内置工具包之一,<br />
+基于Arcane命令开发的 <code>系统引导管理工具</code></p>
+</blockquote>
+<h2 id="_1">目录</h2>
+<ul>
+<li><a href="#下载">下载</a></li>
+<li><a href="#设置默认引导">设置默认引导</a></li>
+<li><a href="#重启到指定引导">重启到指定引导</a></li>
+<li><a href="#重启到指定系统">重启到指定系统</a></li>
+<li><a href="#恢复系统">恢复系统</a></li>
+</ul>
+<h2 id="_2">下载</h2>
+<div class="btn-container">
+<a href="https://gitea.com/we1zard/OTA/releases/download/latest/pkgs_R2Config.zip"><button>正式版</button></a>
+<a href="https://www.jianguoyun.com/p/DXdiGKEQmcW1DBjKmt0FIAA"><button>历史版本</button></a>
+<a href="https://www.jianguoyun.com/p/DbYq4UwQmcW1DBjimt0FIAA"><button>更新日志</button></a>
+</div>
+
+<h2 id="_3">使用教程</h2>
+<h3 id="_4">设置默认引导</h3>
+<ul>
+<li>按<code>L</code>+<code>加号</code>呼出<code>Arcane</code>, 再按<code>▶</code>打开<code>R2Config &gt; Set Launch</code><br />
+    • HOS: <code>虚拟系统</code><br />
+    • Hekate: <code>引导菜单</code><br />
+    • SysNAND: <code>真实系统</code>  </li>
+</ul>
+<h3 id="_5">重启到指定引导</h3>
+<ul>
+<li>按<code>L</code>+<code>加号</code>呼出<code>Arcane</code>, 再按<code>▶</code>打开<code>R2Config &gt; Reboot To Launch</code><br />
+    • HOS: <code>虚拟系统</code><br />
+    • Hekate: <code>引导菜单</code><br />
+    • SysNAND: <code>真实系统</code>  </li>
+</ul>
+<h3 id="_6">重启到指定系统</h3>
+<ul>
+<li>按<code>L</code>+<code>加号</code>呼出<code>Arcane</code>, 再按<code>▶</code>打开<code>R2Config &gt; Reboot To Config</code><br />
+    • Hekate: 引导菜单<br />
+    • Android: 安卓系统<br />
+    • Lakka: 模拟器系统<br />
+    • L4T: Linux系统(Ubuntu, Fedora, Lakka等)  </li>
+</ul>
+<blockquote>
+<p>注意:<br />
+    - <code>安卓系统</code>, <code>lakka系统</code>, <code>L4T系统</code> 切换过去的时候需要提前安装好, 并且使用默认的引导文件名和路径, 否则可能无法正常启动.
+    - 切换过去之后, 会将重启之后的系统固定为当前系统, 如果想修改回来, 需要 <code>重新设置默认引导</code>.</p>
+</blockquote>
+<h3 id="_7">恢复系统</h3>
+<ul>
+<li><code>SysMMC Restore</code><br />
+    On: 使用基于<code>真实系统的恢复系统</code><br />
+    Off(<code>默认</code>): 使用基于<code>虚拟系统基础的恢复系统</code>  </li>
+<li>主要用于不制作虚拟系统, 只玩真实系统的用户.</li>
+</ul>
+<blockquote>
+<p>注意:<br />
+    - 在你没仔细了解什么作用前, 不要乱使用.<br />
+    - 恢复系统可能会导致你的系统出现问题, 请谨慎使用.  </p>
+</blockquote>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="max-w-md mx-auto mt-8 p-2">
+            <div class="text-center text-gray-500">
+                &copy; 2025 WE1ZARD 保留所有权利.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
