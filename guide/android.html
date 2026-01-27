@@ -38,38 +38,107 @@
                 <div id="action-buttons" class="flex-button-container gap-3">
                     <a href="https://a.7u9.cn/s/Pflq22dG" target="_blank" class="btn-download"><i class="fas fa-circle-down mr-2"></i>夸克网盘</a>
                 </div>
-                <li><strong>lineage-18.1-20230817-UNOFFICIAL-nx_tab.zip</strong></li>
-                    <block>原装稳定, 兼容性好, 反应略慢.</block><br><br>
-
-                <li><strong>crDroidAndroid-11.0-20240215-nx_tab-v7.39.zip</strong></li>
-                    <block>优化精简, 速度快, 但是可能存在兼容性问题.</block><br><br>
-
-                下载解压以上安卓11系统任意版本,<br>
-                下载最新版本的, 记得系统分区使用 Dynamic 动态分区.
+                    下载zip解压后, 文件复制进内存卡.<br>
+                    再将 bootloader/ini/android.ini 覆盖到内存卡同路径上<br>
             </blockquote>
         </ul><br>
 
-        <h2 id="安装步骤">安装步骤</h2>
+        <h2 id="准备工作">准备工作</h2>
         
         <ul>
             <blockquote>
-                <li><strong>创建分区</strong></li>
-                <block>重启按住 <strong>音量键减号</strong> 进入 <b>Hekate</b></block><br><br>
-                <div id="action-buttons" class="flex-button-container gap-3" style="padding-left: 1rem;">
-                    <a href="guide/partition.html" target="_blank" class="btn-download"><i class="fas fa-tools mr-2"></i>分区工具</a>
+                <div id="action-buttons" class="flex-button-container gap-3">
+                    <a href="partition.html" target="_blank" class="btn-download"><i class="fas fa-tools mr-2"></i>重新分区</a>
                 </div>
                 <block>分区创建完成之后, 打开 <b>Hekate > Tools > USB Tools > SD Card</b> 并用USB线连接电脑.</block><br><br>
 
                 <li><strong>复制系统文件</strong></li>
-                <block>将前面下载好的 <b>bootloader</b> 和 <b>switchroot</b> 复制粘贴到内存卡上.</block><br>
+                <block>将前面下载好的 <b>bootloader</b> 和 <b>switchroot</b> 和 <b>*.zip</b> 复制粘贴到内存卡上.</block><br>
                 <block>复制完成之后, 从电脑上断开USB连接.</block><br><br>
-
-                <li><strong>开始安装</strong></li>
-                <block>待完善...</block>
-
+                <block>如果你打算刷入 eMMC, 需要确保 android.ini 中有 <strong>emmc=1</strong> 这一行.</block><br><br>
             </blockquote>
         </ul><br>
 
+        <h2 id="刷入引导">刷入引导</h2>
+        <ul>
+            <blockquote>
+                <li><strong>刷入内存卡分区</strong></li>
+                    <block><bold>Hekate &gt; Tools &gt; <strong>(直接打开) </strong>Partition SD Card > SD Partition Manager</bold></block><br><br>
+                <li><strong>刷入 eMMC 分区</strong></li>
+                    <block><bold>Hekate &gt; Tools &gt; <strong>(按住跳转) </strong>Partition SD Card > eMMC Partition Manager</bold></block><br><br>
+                <li><strong>确认操作</strong></li>
+                    <block>点击底下的 Flash Android 开始刷入安卓系统引导</block><br>
+                    <block>两次弹窗提示都选 Continue, 有要求 Power 确认的都按电源键确认开始</block><br><br>
+                    <block>完成后自动进入安卓的 <strong>恢复模式 Recovery</strong></block>
+            </blockquote>
+        </ul>
+
+        <h2 id="初始化系统">初始化系统</h2>
+        <ul>
+            <blockquote>
+                <li><strong>手动进入恢复模式</strong></li>
+                    <block>如果上一步你没有自动进入恢复模式</block><br>
+                    <block>返回 Hekate 主菜单打开 More Configs</block><br>
+                    <block>按住音量减号键同时打开 LineageOS, 手动进入恢复模式.</block><br><br>
+
+                <li><strong>初始化数据</strong></li>
+                    <block>点击 Factory reset 进入重置菜单</block><br>
+                        <bl>Format data/factory reset > format data</bl><br>
+                        <bl>Format system partition > Yes</bl><br><br>
+                    <block>完成之后点 <strong><-</strong> 返回首页</block>
+
+            </blockquote>
+        </ul>
+
+        <h2 id="安装系统">安装系统</h2>
+        <ul>
+            <blockquote>
+                <li><strong>选择安装文件</strong></li>
+                    <block>Apply update > choose from SWTICH SD</block><br>
+                    <block>选择前面复制到内存卡的zip文件</block><br><br>
+
+                <li><strong>跳过验证</strong></li>
+                    <block>当你使用的是非官方前面的安装包, 安装过程出现签名验证失败</block><br><br>
+                    <bl>Signature verification failed</bl><br>
+                    <bl>Install anyway?</bl><br>
+                    <bl>点击 yes</bl><br><br>
+                    <block>完成之后点 <strong><-</strong> 返回首页</block><br><br>
+
+                <li><strong>开启 ADB</strong></li>
+                    <block>Advanced > Enable ADB</block><br>
+                    <block>完成之后点 <strong><-</strong> 返回首页</block><br><br>
+                    <block>点击 Reboot system now 重启进入安卓系统</block><br><br>
+            </blockquote>
+        </ul>
+
+        <h2 id="解锁网络">解锁网络</h2>
+        <ul>
+            <blockquote>
+                <li><strong>开启 USB DEBUG 模式</strong></li>
+                    <block>Settings > About tablet > Build number</block><br>
+                        <bl>连点7次本机版本号激活 开发模式</bl><br><br>
+
+                    <block>System > Developer Options > USB debugging</block><br>
+                        <bl>打开并点 OK 同意</bl><br>
+                        <bl>打开 Rooted debugging</bl><br>
+                        <bl>用 USB 线连接可以进行 ADB 操作的设备</bl><br>
+                        <bl>从屏幕上方下滑打开通知中心</bl><br>
+                        <bl>打开 Charging this device via USB</bl><br>
+                        <bl>选择 File Transfer</bl><br><br>
+
+                <li><strong>解锁网络限制</strong></li>
+                    <block>在安装了 ADB 工具的设备上打开终端, 依次输入以下命令: </block><br><br>
+                        <bl><code>sudo adb shell settings delete global captive_portal_https_url</code></bl><br>
+                        <bl><code>sudo adb shell settings delete global captive_portal_http_url</code></bl><br>
+                        <bl><code>sudo adb shell settings put global captive_portal_https_url https://connect.rom.miui.com/generate_204</code></bl><br>
+                        <bl><code>sudo adb shell settings put global captive_portal_http_url http://connect.rom.miui.com/generate_204</code></bl><br>
+                        <bl><code>sudo adb shell settings put global time_zone Asia/Shanghai</code></bl><br>
+                        <bl><code>sudo adb shell settings put global ntp_server ntp1.aliyun.com</code></bl><br><br>
+
+                    <block>正常情况下, 完成以上操作, 你的网络限制会解锁, 原本已经连接的网络只需要关闭重新打开即可刷新状态.</block><br><br>
+
+            </blockquote>
+        </ul>
     </div>
 </body>
 </html>
