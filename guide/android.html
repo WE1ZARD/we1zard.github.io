@@ -55,7 +55,8 @@
                 <li><strong>复制系统文件</strong></li>
                 <block>将前面下载好的 <b>bootloader</b> 和 <b>switchroot</b> 和 <b>*.zip</b> 复制粘贴到内存卡上.</block><br>
                 <block>复制完成之后, 从电脑上断开USB连接.</block><br><br>
-                <block>如果你打算刷入 eMMC, 需要确保 android.ini 中有 <strong>emmc=1</strong> 这一行.</block><br><br>
+                <block>如果你打算刷入 eMMC, 需要确保 android.ini 中有 <strong>emmc=1</strong> 这一行.</block><br>
+                <block>如果你打算刷入 内存卡分区, 需要确保 android.ini 中没有 <strong>emmc=1</strong> 这一行.</block><br><br>
             </blockquote>
         </ul><br>
 
@@ -128,11 +129,11 @@
 
                 <li><strong>解锁网络限制</strong></li>
                     <block>在安装了 ADB 工具的设备上打开终端, 依次输入以下命令: </block><br><br>
-                        <bl><code>sudo adb shell settings delete global captive_portal_https_url</code></bl><br>
-                        <bl><code>sudo adb shell settings delete global captive_portal_http_url</code></bl><br>
-                        <bl><code>sudo adb shell settings put global captive_portal_https_url https://connect.rom.miui.com/generate_204</code></bl><br>
-                        <bl><code>sudo adb shell settings put global captive_portal_http_url http://connect.rom.miui.com/generate_204</code></bl><br>
-                        <bl><code>sudo adb shell settings put global time_zone Asia/Shanghai</code></bl><br>
+                        <bl><code>sudo adb shell settings delete global captive_portal_https_url</code></bl><br><br>
+                        <bl><code>sudo adb shell settings delete global captive_portal_http_url</code></bl><br><br>
+                        <bl><code>sudo adb shell settings put global captive_portal_https_url https://connect.rom.miui.com/generate_204</code></bl><br><br>
+                        <bl><code>sudo adb shell settings put global captive_portal_http_url http://connect.rom.miui.com/generate_204</code></bl><br><br>
+                        <bl><code>sudo adb shell settings put global time_zone Asia/Shanghai</code></bl><br><br>
                         <bl><code>sudo adb shell settings put global ntp_server ntp1.aliyun.com</code></bl><br><br>
 
                     <block>正常情况下, 完成以上操作, 你的网络限制会解锁, 原本已经连接的网络只需要关闭重新打开即可刷新状态.</block><br><br>
