@@ -112,7 +112,7 @@
             </blockquote>
         </ul>
 
-        <h2 id="解锁网络">解锁网络</h2>
+        <h2 id="解锁网络">解锁网络 - 有线版本</h2>
         <ul>
             <blockquote>
                 <li><strong>开启 USB DEBUG 模式</strong></li>
@@ -140,6 +140,33 @@
 
             </blockquote>
         </ul>
+
+        <h2 id="解锁网络">解锁网络 - 无线版本</h2>
+        <ul>
+            <blockquote>
+                <li><strong>开启开发模式</strong></li>
+                    <block>Settings > About tablet > Build number</block><br>
+                        <bl>连点7次本机版本号激活 开发模式</bl><br><br>
+                    <blolck>System > Developer Options > Wireless debugging</blolck><br>
+                        <bl>开启无线调试模式</bl><br><br>
+
+                <li><strong>安装 ADB</strong></li>       
+                    <block>安卓手机, 安装 <bold>甲壳虫ADB助手</bold></block><br><br>
+
+                <li><strong>解锁网络限制</strong></li>
+                    <block>在安装了 ADB 工具的设备上打开终端, 依次输入以下命令: </block><br><br>
+                        <bl><code>sudo adb shell settings delete global captive_portal_https_url</code></bl><br><br>
+                        <bl><code>sudo adb shell settings delete global captive_portal_http_url</code></bl><br><br>
+                        <bl><code>sudo adb shell settings put global captive_portal_https_url https://connect.rom.miui.com/generate_204</code></bl><br><br>
+                        <bl><code>sudo adb shell settings put global captive_portal_http_url http://connect.rom.miui.com/generate_204</code></bl><br><br>
+                        <bl><code>sudo adb shell settings put global time_zone Asia/Shanghai</code></bl><br><br>
+                        <bl><code>sudo adb shell settings put global ntp_server ntp1.aliyun.com</code></bl><br><br>
+
+                    <block>正常情况下, 完成以上操作, 你的网络限制会解锁, 原本已经连接的网络只需要关闭重新打开即可刷新状态.</block><br><br>
+
+            </blockquote>
+        </ul>
+
     </div>
 </body>
 </html>
