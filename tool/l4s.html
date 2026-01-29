@@ -22,7 +22,8 @@
 
     <div id="banner" class="max-w-md mx-auto mt-4 p-2">
     </div>
-    <div class="content-container bg-[#051427] p-6 rounded-md shadow-md">
+    <div class="main-container">
+        <div class="content-container bg-[#051427] p-6 rounded-md shadow-md">
         <!-- 页面标题和说明 -->
         <div class="mb-6">
             <!-- <h1>L4T 超频设置</h1> -->
@@ -53,28 +54,38 @@ ram_oc_opt=0</pre>
 
             <h2 id="基础设置">基础设置</h2>
             <blockquote>
-                <input id="ram_oc_vdd2" max="1237" min="1050" name="ram_oc_vdd2" step="1" type="range" value="1050" /> 
+                <input id="ram_oc_vdd2" max="1237" min="1050" name="ram_oc_vdd2" step="1" type="range" value="1175" />
                     <bold for="ram_oc_vdd2">Vdd2:</bold>
-                    <bold id="ram_oc_vdd2_txt">1050</bold> <bold>mV</bold><br>
-                <input id="ram_oc_vddq" max="650" min="550" name="ram_oc_vddq" step="1" type="range" value="550" /> 
+                    <bold id="ram_oc_vdd2_txt">1175</bold> <bold>mV</bold><br>
+                <input id="ram_oc_vddq" max="650" min="550" name="ram_oc_vddq" step="1" type="range" value="600" />
                     <bold for="ram_oc_vddq">Vddq:</bold>
-                    <bold id="ram_oc_vddq_txt">550</bold> <bold>mV</bold><br><br>
+                    <bold id="ram_oc_vddq_txt">600</bold> <bold>mV</bold><br><br>
                     <block><bold>初代</bold></block><br>
                         <bl>Vdd2: 1050-1237 mV</bl><br>
                     <block><bold>其他</bold></block><br>
                         <bl>Vdd2 1050-1175 mV</bl><br>
                         <bl>Vddq 550-650 mV</bl><br><br>
 
-                <input id="dvfsb" name="dvfsb" type="checkbox" /> 
+                <input id="dvfsb" name="dvfsb" type="checkbox" checked />
                     <label for="dvfsb"><bold>DVFS</bold> 启用可减少CPU/GPU/SOC功耗，可能支持更高频率</label><br>
-                <input id="gpu_dvfsc" name="gpu_dvfsc" type="checkbox" /> 
+                <input id="gpu_dvfsc" name="gpu_dvfsc" type="checkbox" checked />
                     <label for="gpu_dvfsc"><bold>GPU DVFS</bold> 启用可大幅降低GPU高频率下的功耗，支持更高频率</label><br>
-                <input id="limit_gpu_clk" name="limit_gpu_clk" type="checkbox" /> 
+                <input id="limit_gpu_clk" name="limit_gpu_clk" type="checkbox" />
                     <label for="limit_gpu_clk"><bold>限制频率</bold> 启用将GPU频率限制为1075 MHz，避免 dvfs 导致的稳定性问题</label>
             </blockquote><br>
 
-        <!-- 设置区域 -->
-        <div>
+            <!-- CPU/GPU 高级设置区域 -->
+            <h2 id="cpu-gpu-setting">高级设置</h2>
+            <blockquote>
+                <input id="max_cpu_freq" max="6" min="0" name="max_cpu_freq" step="1" type="range" value="0" />
+                    <bold for="max_cpu_freq">CPU最大频率:</bold>
+                    <bold id="max_cpu_freq_txt">0</bold> <bold>KHz</bold><br>
+                <input id="max_gpu_freq" max="7" min="0" name="max_gpu_freq" step="1" type="range" value="0" />
+                    <bold for="max_gpu_freq">GPU最大频率:</bold>
+                    <bold id="max_gpu_freq_txt">0</bold> <bold>KHz</bold><br>
+            </blockquote><br>
+
+            <!-- 设置区域 -->
             <h2 id="dvfs-setting">DVFS 设置</h2>
             <blockquote>
                 <input id="ram" max="3203" min="1966" name="ram" step="33.33" type="range" value="0" /> 
@@ -137,6 +148,8 @@ ram_oc_opt=0</pre>
         const dvfsb = document.querySelector("#dvfsb");
         const gpu_dvfsc = document.querySelector("#gpu_dvfsc");
         const limit_gpu_clk = document.querySelector("#limit_gpu_clk");
+        const max_cpu_freq = document.querySelector("#max_cpu_freq");
+        const max_gpu_freq = document.querySelector("#max_gpu_freq");
         const configCode = document.querySelector("#config-code");
         const copyStatus = document.querySelector("#copy-status");
         
@@ -169,8 +182,16 @@ ram_oc_opt=0</pre>
             ram_oc_vdd2: document.querySelector("#ram_oc_vdd2"),
             ram_oc_vdd2_txt: document.querySelector("#ram_oc_vdd2_txt"),
             ram_oc_vddq: document.querySelector("#ram_oc_vddq"),
-            ram_oc_vddq_txt: document.querySelector("#ram_oc_vddq_txt")
+            ram_oc_vddq_txt: document.querySelector("#ram_oc_vddq_txt"),
+            max_cpu_freq: document.querySelector("#max_cpu_freq"),
+            max_cpu_freq_txt: document.querySelector("#max_cpu_freq_txt"),
+            max_gpu_freq: document.querySelector("#max_gpu_freq"),
+            max_gpu_freq_txt: document.querySelector("#max_gpu_freq_txt")
         };
+
+        // CPU和GPU的指定频率值
+        const allowedCpuMaxFrequencies = [0, 1785000, 1887000, 1963500, 2091000, 2193000, 2295000];
+        const allowedGpuFrequencies = [0, 921600, 998400, 1075200, 1152000, 1228800, 1267200, 1305600];
 
         // 数值处理函数
         const eventValram = (event) => Math.ceil(event.target.value);
@@ -195,6 +216,14 @@ ram_oc_opt=0</pre>
             return refValues[event.target.value] || 0;
         };
 
+        const eventValCpuFreq = (event) => {
+            return allowedCpuMaxFrequencies[event.target.value] || 0;
+        };
+
+        const eventValGpuFreq = (event) => {
+            return allowedGpuFrequencies[event.target.value] || 0;
+        };
+
         // 配置更新函数
         const updateOCConfig = () => {
             return `ram_oc=${inputs.ram_txt.textContent}${inputs.ref.value}${inputs.cor.value}${inputs.lat.value}`;
@@ -203,7 +232,7 @@ ram_oc_opt=0</pre>
         const updateOptConfig = () => {
             // 与1.html保持一致：AC和LP的值相加，结果作为一个单独的数字
             let acLpValue = (ac.checked ? 2 : 0) + (lp.checked ? 1 : 0);
-            let opt = `0${inputs.wrl.value}${acLpValue}${inputs.trp.value}${inputs.tras.value}${inputs.trcd.value}${inputs.trtw.value}${inputs.twtr.value}${inputs.trfc.value}${inputs.trrd.value}`;
+            let opt = `${inputs.wrl.value}${acLpValue}${inputs.trp.value}${inputs.tras.value}${inputs.trcd.value}${inputs.trtw.value}${inputs.twtr.value}${inputs.trfc.value}${inputs.trrd.value}`;
             // 直接使用字符串拼接，避免Number()可能导致的精度问题
             return `ram_oc_opt=${opt}`;
         };
@@ -224,11 +253,45 @@ ram_oc_opt=0</pre>
                 params.push(`ram_oc_vddq=${inputs.ram_oc_vddq_txt.textContent}`);
             }
             
-            // 2. 核心参数
-            params.push(ocContent);
-            params.push(optContent);
+            // 2. 核心参数 - 分别根据不同的条件显示
+            // ram_oc根据DVFS设置区域的参数
+            const hasDvfsSettings = parseInt(inputs.ram_txt.textContent) !== 0 || 
+                                  parseInt(inputs.lat_txt.textContent) !== 0 || 
+                                  parseInt(inputs.cor_txt.textContent) !== 0 || 
+                                  parseInt(inputs.ref.value) !== 0;
+            if (hasDvfsSettings) {
+                params.push(ocContent);
+            }
             
-            // 3. 其他参数
+            // ram_oc_opt根据DVFS高级设置区域的参数
+            const hasDvfsAdvancedSettings = parseInt(inputs.wrl.value) !== 0 || 
+                                          parseInt(inputs.trp.value) !== 0 || 
+                                          parseInt(inputs.tras.value) !== 0 || 
+                                          parseInt(inputs.trcd.value) !== 0 || 
+                                          parseInt(inputs.trtw.value) !== 0 || 
+                                          parseInt(inputs.twtr.value) !== 0 || 
+                                          parseInt(inputs.trfc.value) !== 0 || 
+                                          parseInt(inputs.trrd.value) !== 0 || 
+                                          lp.checked || ac.checked;
+            if (hasDvfsAdvancedSettings) {
+                params.push(optContent);
+            }
+            
+            // 3. OC参数
+            // 当CPU或GPU频率任一不为0时，自动添加oc=1
+            const cpuFreq = parseInt(inputs.max_cpu_freq_txt.textContent);
+            const gpuFreq = parseInt(inputs.max_gpu_freq_txt.textContent);
+            if (cpuFreq !== 0 || gpuFreq !== 0) {
+                params.push(`oc=1`);
+            }
+            if (inputs.max_cpu_freq.value != 0) {
+                params.push(`max_cpu_freq=${inputs.max_cpu_freq_txt.textContent}`);
+            }
+            if (inputs.max_gpu_freq.value != 0) {
+                params.push(`max_gpu_freq=${inputs.max_gpu_freq_txt.textContent}`);
+            }
+            
+            // 4. 其他参数
             params.push(`dvfsb=${dvfsb.checked ? 1 : 0}`);
             params.push(`gpu_dvfsc=${gpu_dvfsc.checked ? 1 : 0}`);
             params.push(`limit_gpu_clk=${limit_gpu_clk.checked ? 1 : 0}`);
@@ -318,9 +381,23 @@ ram_oc_opt=0</pre>
         setupVoltageSlider("ram_oc_vdd2");
         setupVoltageSlider("ram_oc_vddq");
         
-        // 初始化电压参数显示
+        // 设置CPU频率滑块事件监听器
+        inputs.max_cpu_freq.addEventListener("input", (event) => {
+            inputs.max_cpu_freq_txt.textContent = eventValCpuFreq(event);
+            updateConfigCode();
+        });
+        
+        // 设置GPU频率滑块事件监听器
+        inputs.max_gpu_freq.addEventListener("input", (event) => {
+            inputs.max_gpu_freq_txt.textContent = eventValGpuFreq(event);
+            updateConfigCode();
+        });
+        
+        // 初始化参数显示
         inputs.ram_oc_vdd2_txt.textContent = inputs.ram_oc_vdd2.value;
         inputs.ram_oc_vddq_txt.textContent = inputs.ram_oc_vddq.value;
+        inputs.max_cpu_freq_txt.textContent = allowedCpuMaxFrequencies[inputs.max_cpu_freq.value];
+        inputs.max_gpu_freq_txt.textContent = allowedGpuFrequencies[inputs.max_gpu_freq.value];
         
         // 复制功能实现
         configCode.addEventListener("click", () => {
@@ -345,5 +422,7 @@ ram_oc_opt=0</pre>
     </script>
 
 
-</body>
+</div>
+    </div>
+    </body>
 </html>

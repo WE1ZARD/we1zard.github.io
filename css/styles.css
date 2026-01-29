@@ -314,7 +314,7 @@ code {
 /* 容器样式 */
 .main-container {
     padding-bottom: 120px; /* 增加底部内边距，确保内容不被footer遮挡 */
-    max-width: 28rem; /* 与banner的max-w-md保持一致 */
+    max-width: 36rem; /* 增加页面宽度 */
     margin: 0 auto;
     width: 100%;
 }
@@ -538,7 +538,7 @@ block {
 
 /* 针对cal.html中使用的表格样式 */
 .content-container {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2rem;
     color: #9ca3af;
