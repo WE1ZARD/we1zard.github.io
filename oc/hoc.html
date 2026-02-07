@@ -54,76 +54,189 @@
         </ul><br>
 
         <h2 id="参考资料">参考资料</h2>
-        <div class="overflow-x-auto mt-4 mb-2">
-            <table class="w-full text-xs sm:text-sm">
-                <thead>
-                    <tr>
-                        <th scope="col" class="text-left font-medium text-gray-500 uppercase tracking-wider">颗粒型号</th>
-                        <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">通用频率</th>
-                        <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">极限频率</th>
-                        <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">VDD2/VDDQ</th>
-                        <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">通用时序</th>
-                        <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">极限时序</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-left whitespace-nowrap"><b>NEI, NEE, X267</b></td>
-                        <td class="text-center whitespace-nowrap"><b>3100 Mhz</b></td>
-                        <td class="text-center whitespace-nowrap"><b>3133 Mhz</b></td>
-                        <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                    </tr>
+        <ul>
+            <blockquote>
+            <div class="overflow-x-auto mt-4 mb-2">
+                <h3 id="2133">2133 基础延迟</h3>
+                <table class="w-full text-xs sm:text-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-left font-medium text-gray-500 uppercase tracking-wider">颗粒型号</th>
+                            <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">通用频率</th>
+                            <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">极限频率</th>
+                            <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">VDD2/VDDQ</th>
+                            <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">通用时序</th>
+                            <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">极限时序</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>NEI, NEE, X267</b></td>
+                            <td class="text-center whitespace-nowrap"><b>3100 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>3133 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(3‑3‑3) 1‑5‑5‑4‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑4) 2‑7‑6‑6‑6</b></td>
+                        </tr>
 
-                    <tr>
-                        <td class="text-left whitespace-nowrap"><b>WTB</b></td>
-                        <td class="text-center whitespace-nowrap"><b>3066 Mhz</b></td>
-                        <td class="text-center whitespace-nowrap"><b>3100 Mhz</b></td>
-                        <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                    </tr>
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>WTB</b></td>
+                            <td class="text-center whitespace-nowrap"><b>3066 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>3100 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑5) 4‑2‑6‑5‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(6‑6‑7) 6‑2‑6‑5‑6</b></td>
+                        </tr>
 
-                    <tr>
-                        <td class="text-left whitespace-nowrap"><b>AA</b></td>
-                        <td class="text-center whitespace-nowrap"><b>2933 Mhz</b></td>
-                        <td class="text-center whitespace-nowrap"><b>3133 Mhz</b></td>
-                        <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                        <td class="text-center whitespace-nowrap"><b>(4-4-9)-5-5-6-6-6</b></td>
-                    </tr>
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>AA</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2933 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>3133 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑5) 4‑5‑6‑7‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑8) 5‑5‑7‑8‑6</b></td>
+                        </tr>
 
-                    <tr>
-                        <td class="text-left whitespace-nowrap"><b>WTF</b></td>
-                        <td class="text-center whitespace-nowrap"><b>2633 Mhz</b></td>
-                        <td class="text-center whitespace-nowrap"><b>2800 Mhz</b></td>
-                        <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                    </tr>
 
-                    <tr>
-                        <td class="text-left whitespace-nowrap"><b>AM, WTE</b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                    </tr>
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>AM</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2633 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2933 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(3‑2‑4) 1‑4‑4‑4‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑3‑8) 2‑5‑4‑4‑6</b></td>
+                        </tr>
 
-                    <tr>
-                        <td class="text-left whitespace-nowrap"><b>AB, NME</b></td>
-                        <td class="text-center whitespace-nowrap"><b>2500 Mhz</b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                        <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                        <td class="text-center whitespace-nowrap"><b></b></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div><br>
 
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>WTE</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2533 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2933 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(2‑2‑2) 0‑4‑4‑4‑6  </b></td>
+                            <td class="text-center whitespace-nowrap"><b>(3‑5‑3) 1‑5‑4‑5‑6</b></td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>WTF</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2633 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2800 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑2) 4‑4‑6‑3‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(5‑5‑4) 4‑5‑6‑5‑6</b></td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>AB</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2500 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2766</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑4) 3‑4‑5‑6‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑8) 4‑5‑6‑8‑6</b></td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>NME</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2500 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2766</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(2‑2‑1) 0‑1‑4‑3‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(3‑3‑4) 0‑1‑4‑4‑6</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 id="1600">1600 基础延迟</h3>
+                <table class="w-full text-xs sm:text-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-left font-medium text-gray-500 uppercase tracking-wider">颗粒型号</th>
+                            <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">通用频率</th>
+                            <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">极限频率</th>
+                            <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">VDD2/VDDQ</th>
+                            <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">通用时序</th>
+                            <th scope="col" class="text-center font-medium text-gray-500 uppercase tracking-wider">极限时序</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>NEI, NEE, X267</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2500 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2933 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(3‑3‑3) 1‑5‑5‑4‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑4) 2‑7‑6‑5‑6</b></td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>WTB</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2466 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2600 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑5) 4‑2‑6‑5‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(6‑6‑7) 6‑2‑6‑5‑6</b></td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>AA</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2400 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2600 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑5) 4‑5‑6‑7‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑8) 5‑5‑7‑8‑6</b></td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>WTF</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2300 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2466 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(2‑2‑2) 1‑4‑4‑4‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(3‑5‑3) 2‑5‑4‑5‑6</b></td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>AM</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2300 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2466 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(3‑2‑4) 1‑4‑4‑4‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑3‑8) 2‑5‑4‑4‑6</b></td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>WTE</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2300 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2466 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(2‑2‑2) 0‑4‑4‑4‑6  </b></td>
+                            <td class="text-center whitespace-nowrap"><b>(3‑5‑3) 1‑5‑4‑5‑6</b></td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>AB</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2133 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2500</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑4) 3‑4‑5‑6‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(4‑4‑8) 4‑5‑6‑8‑6</b></td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-left whitespace-nowrap"><b>NME</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2133 Mhz</b></td>
+                            <td class="text-center whitespace-nowrap"><b>2333</b></td>
+                            <td class="text-center whitespace-nowrap"><b>1175/600 mV</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(2‑2‑1) 0‑1‑4‑3‑6</b></td>
+                            <td class="text-center whitespace-nowrap"><b>(3‑3‑4) 0‑1‑4‑4‑6</b></td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                <strong>2133</strong>: 适合底座模式, 性能稍差, 允许超最高频率, 获得最大的带宽.<br>
+                <strong>1600</strong>: 适合掌机模式, 性能较好, 高频率受限制<br>
+            </div><br>
+            </blockquote>
+        <ul>
         <h2 id="RAM 内存">RAM 内存</h2>
         <ul>
             <blockquote>
@@ -131,15 +244,17 @@
                 <div id="action-buttons" class="flex-button-container gap-3">
                     <a href="/tool/cal.html" target="_blank" class="btn-download"><i class="fas fa-calculator mr-2"></i>电压计算器</a>
                 </div><br>
-                待完善...<br>
+                新手可以按照上面的参考资料设置电压, DVB 10<br>
             </blockquote>
         </ul><br>
 
         <h2 id="TIMINGS 时序">TIMINGS 时序</h2>
         <ul>
             <blockquote>
-                如果你是从 EOS 转过来, 可以先尝试在 EOS 的基础上, T4,T6,T7 各减去1, 测试稳定性, 不稳定的再松时序.<br>
-                待完善...<br>
+                如果你是从 EOS 转过来, 可以先尝试在 EOS 的基础上, t4,t6,t7 各降1, 测试稳定性, 不稳定的再松时序.<br><br>
+
+                新手可以先试试通用时序, 用 2133 基础延迟的参数, 比较容易超更高的频率<br>
+                如果用不了极限时序, 按 <strong>t8 → t1 → t2 → t3 → t6 → t7 → t4 → t5</strong> 顺序, 每次降1 然后测试.<br>
             </blockquote>
         </ul><br>
 
