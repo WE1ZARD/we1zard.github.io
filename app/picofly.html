@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picofly 升降级固件</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/common.js"></script>
+    <!-- Nintendo Switch Buttons SVG Sprite -->
+    <object type="image/svg+xml" data="/img/switch-buttons.svg" style="display: none;"></object>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="py-8">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="flex justify-center">
+                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+            </div>
+        </div>
+    </header>
+
+    <div class="content-container bg-[#051427] p-0 rounded-md shadow-md">
+
+        <h2 id="下载安装">下载安装</h2>
+        <ul>
+            <blockquote>
+                <div id="action-buttons" class="flex-button-container gap-3">
+                    <a href="https://a.7u9.cn/s/O4Ys5P0L" target="_blank" class="btn-download">
+                        <i class="fas fa-download mr-2"></i>picofly.zip</a>
+                </div>
+                解压复制到内存卡根目录
+            </blockquote>
+        </ul>
+
+        <h2 id="操作步骤">操作步骤</h2>
+        <ul>
+            <blockquote>
+                <li><strong>打开工具箱</strong></li>
+                    <block>重启 switch, 按住 音量减号键 进入 hekate 主菜单</block><br>
+                    <block>打开 <code>Payloads > picofly_toolbox_0.2.bin</code> 进入工具箱</block><br>
+                    <block>用音量键移动, 用电源键打开选中项</block><br><br>
+
+                <li><strong>升级</strong></li>
+                    <block>打开 Firmware > Update</block><br>
+                    <block>完成后按任意键返回</block><br><br>
+
+                <li><strong>降级</strong></li>
+                    <block>打开 Firmware > Rollback</block><br>
+                    <block>完成后按任意键返回</block><br><br>
+
+                <li><strong>打开 Back to hekate 重启系统.</strong></li>
+                    <block>升级完成, 现在可以删除内存卡根目录下的update.bin</block><br><br>
+            </blockquote>
+        </ul><br>
+
+</body>
+</html>
