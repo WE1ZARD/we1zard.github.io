@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超频教程 - HOC</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: var(--color-bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="toc">
+        <ul>
+<li><a href="#_1">免责声明</a></li>
+<li><a href="#_2">注意事项</a></li>
+<li><a href="#_3">参考参数</a></li>
+<li><a href="#_4">查看硬件</a></li>
+<li><a href="#_5">调试顺序</a><ul>
+<li><a href="#mem">MEM 内存</a></li>
+<li><a href="#timings">TIMINGS 时序</a></li>
+<li><a href="#gpu">GPU</a></li>
+<li><a href="#cpu">CPU</a></ul>
+</li>
+<li><a href="#_6">特别感谢</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="-hoc">超频教程 - HOC</h1>
+<p>tags: [超频]</p>
+<h2 id="_1">免责声明</h2>
+<div class="alert alert-note"><p>请自行承担任何由超频带来的风险与后果!!!<br>
+    超频可能导致包括但不限于异常耗电, 发热, 不稳定, 资料丢失, 系统及硬件损坏等等问题.</p></div>
+
+<h2 id="_2">注意事项</h2>
+<div class="alert alert-note"><p>请先行做好备份, 避免重要资料丢失.<br>
+    尽量避免 使用 exFAT格式的内存卡 进行折腾, 可以参考 教程<br>
+    尽量避免 SysMMC真实系统 折腾!!!<br><br>
+    暂时不支持 8G 内存.<br>
+    跨版本使用不对应版本的 kip 会导致无法进入系统.<br>
+    跨版本导入旧超频配置可能导致 kip 文件污染, 系统崩溃等问题.<br><br>
+    有条件情况下, 使用副卡折腾测试, 再将稳定参数应用到主卡.</p></div>
+
+<h2 id="_3">参考参数</h2>
+<p>2133/1866 基础延迟 (推荐底座)<br><br></p>
+<table>
+<thead>
+<tr>
+<th>内存型号</th>
+<th>内存频率</th>
+<th>VDD2</th>
+<th>VDDQ</th>
+<th>通用时序</th>
+<th>极限时序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WT:B</td>
+<td>3066–3200</td>
+<td>1175 mV</td>
+<td>600 mV</td>
+<td>(4-4-5) 4-2-6-5-6</td>
+<td>(6-6-7) 6-2-6-5-6</td>
+</tr>
+<tr>
+<td>NEI/NEE/x267</td>
+<td>3100–3300</td>
+<td>1175 mV</td>
+<td>640 mV</td>
+<td>(3-3-2) 1-5-5-4-6</td>
+<td>(4-4-4) 2-7-6-5-6</td>
+</tr>
+<tr>
+<td>AA-MGCL/MGCR</td>
+<td>2766–3100</td>
+<td>1175 mV</td>
+<td>640 mV</td>
+<td>(4-4-5) 4-5-6-7-6</td>
+<td>(4-4-8) 5-5-6-7-6</td>
+</tr>
+<tr>
+<td>AM-MGCJ</td>
+<td>2633–2933</td>
+<td>1175 mV</td>
+<td>640 mV</td>
+<td>(3-2-4) 1-4-4-4-6</td>
+<td>(4-3-8) 1-5-4-4-6</td>
+</tr>
+<tr>
+<td>WT:E</td>
+<td>2500–2933</td>
+<td>1175 mV</td>
+<td>600 mV</td>
+<td>(2-2-2) 1-4-4-4-6</td>
+<td>(3-5-3) 2-5-4-5-6</td>
+</tr>
+<tr>
+<td>WT:F</td>
+<td>2633–2800</td>
+<td>1175 mV</td>
+<td>600 mV</td>
+<td>(4-4-2) 4-4-6-3-6</td>
+<td>(5-5-4) 4-5-6-5-6</td>
+</tr>
+<tr>
+<td>AB-MGCL</td>
+<td>2500-2766</td>
+<td>1175 mV</td>
+<td>640 mV</td>
+<td>(4-4-4) 3-4-5-6-6</td>
+<td>(4-4-8) 4-5-6-8-6</td>
+</tr>
+<tr>
+<td>NME</td>
+<td>2500-2766</td>
+<td>1175 mV</td>
+<td>640 mV</td>
+<td>(2-2-1) 0-1-4-3-6</td>
+<td>(3-3-4) 0-1-4-4-6</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>使用 <code>1866BL</code> 可以提升性能, 但是可能会降低内存频率上限, 可能需要额外加压.</p>
+</blockquote>
+<p><br><br></p>
+<p>1600 基础延迟 (推荐掌机)<br><br></p>
+<table>
+<thead>
+<tr>
+<th>内存型号</th>
+<th>内存频率</th>
+<th>VDD2</th>
+<th>VDDQ</th>
+<th>通用时序</th>
+<th>极限时序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NEI/NEE/x267</td>
+<td>2500–2933</td>
+<td>1175 mV</td>
+<td>640 mV</td>
+<td>(3-3-2) 1-5-5-4-6</td>
+<td>(4-4-4) 2-7-6-5-6</td>
+</tr>
+<tr>
+<td>WT:B</td>
+<td>2466–2600</td>
+<td>1175 mV</td>
+<td>600 mV</td>
+<td>(4-4-5) 4-2-6-5-6</td>
+<td>(6-6-7) 6-2-6-5-6</td>
+</tr>
+<tr>
+<td>WT:F</td>
+<td>2400–2533</td>
+<td>1175 mV</td>
+<td>600 mV</td>
+<td>(4-4-2) 4-4-6-3-6</td>
+<td>(5-5-4) 4-5-6-5-6</td>
+</tr>
+<tr>
+<td>AA-MGCL/MGCR</td>
+<td>2300–2600</td>
+<td>1175 mV</td>
+<td>640 mV</td>
+<td>(4-4-5) 4-5-6-7-6</td>
+<td>(4-4-8) 5-5-6-7-6</td>
+</tr>
+<tr>
+<td>AM-MGCJ</td>
+<td>2300–2466</td>
+<td>1175 mV</td>
+<td>640 mV</td>
+<td>(3-2-4) 1-4-4-4-6</td>
+<td>(4-3-8) 1-5-4-4-6</td>
+</tr>
+<tr>
+<td>WT:E</td>
+<td>2300–2466</td>
+<td>1175 mV</td>
+<td>600 mV</td>
+<td>(2-2-2) 1-4-4-4-6</td>
+<td>(3-5-3) 2-5-4-5-6</td>
+</tr>
+<tr>
+<td>AB-MGCL</td>
+<td>2133–2500</td>
+<td>1175 mV</td>
+<td>640 mV</td>
+<td>(4-4-4) 3-4-5-6-6</td>
+<td>(4-4-8) 4-5-6-8-6</td>
+</tr>
+<tr>
+<td>NME</td>
+<td>2133–2333</td>
+<td>1175 mV</td>
+<td>640 mV</td>
+<td>(2-2-1) 0-1-4-3-6</td>
+<td>(3-3-4) 0-1-4-4-6</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>1333BL</code> 会明显降低内存频率上限, 且 t2 &lt;=2, 整体电压要求较高, 理论上性能最好.</p>
+</blockquote>
+<h2 id="_4">查看硬件</h2>
+<p>重启按住 &lt;音量键减号&gt; 进入 hekate 主菜单<br>
+打开顶部第三个 <code>Console Info &gt; HW &amp; Fuses</code><br>
+记录以下信息:</p>
+<ul>
+<li><strong>DRAM ID</strong>: 内存型号</li>
+<li><strong>CPU/GPU/SOC Speedo</strong>: 体质值</li>
+</ul>
+<h2 id="_5">调试顺序</h2>
+<ol>
+<li>MEM 内存</li>
+<li>TIMINGS 时序</li>
+<li>GPU</li>
+<li>CPU</li>
+</ol>
+<blockquote>
+<p>未完全确定参数稳定之前, 不要开始下一步的操作.
+新手每一次只动一个参数, 测试没问题之后开始再下一个参数.</p>
+</blockquote>
+<h3 id="mem">MEM 内存</h3>
+<ol>
+<li>待完善...</li>
+<li>待完善...</li>
+<li>待完善...</li>
+</ol>
+<h3 id="timings">TIMINGS 时序</h3>
+<ol>
+<li>待完善...</li>
+<li>待完善...</li>
+<li>待完善...</li>
+</ol>
+<h3 id="gpu">GPU</h3>
+<ol>
+<li>待完善...</li>
+<li>待完善...</li>
+<li>待完善...</li>
+</ol>
+<h3 id="cpu">CPU</h3>
+<ol>
+<li>待完善...</li>
+<li>待完善...</li>
+<li>待完善...</li>
+</ol>
+<h2 id="_6">特别感谢</h2>
+<div class="alert alert-info"><p>非常感谢 <strong>Horizon-OC</strong> 开发团队为 NS 超频圈带来第二春<br>
+    为超频开发测试提供数据的所有人.<br><br>
+    开源地址: https://github.com/Horizon-OC/Horizon-OC.git</p></div>
+                <div class="update-time">2026-03-13 16:21:37</div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

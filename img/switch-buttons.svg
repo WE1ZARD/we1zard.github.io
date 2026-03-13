@@ -1,111 +1,111 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <!-- A -->
     <symbol id="switch-btn-a" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <text x="12" y="16" font-size="12" font-weight="bold" text-anchor="middle" fill="#051427">A</text>
     </symbol>
     
     <!-- B -->
     <symbol id="switch-btn-b" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <text x="12" y="16" font-size="12" font-weight="bold" text-anchor="middle" fill="#051427">B</text>
     </symbol>
     
     <!-- X -->
     <symbol id="switch-btn-x" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <text x="12" y="16" font-size="12" font-weight="bold" text-anchor="middle" fill="#051427">X</text>
     </symbol>
     
     <!-- Y -->
     <symbol id="switch-btn-y" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <text x="12" y="16" font-size="12" font-weight="bold" text-anchor="middle" fill="#051427">Y</text>
     </symbol>
     
     <!-- L -->
     <symbol id="switch-btn-l" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <text x="12" y="16" font-size="12" font-weight="bold" text-anchor="middle" fill="#051427">L</text>
     </symbol>
     
     <!-- R -->
     <symbol id="switch-btn-r" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <text x="12" y="16" font-size="12" font-weight="bold" text-anchor="middle" fill="#051427">R</text>
     </symbol>
     
     <!-- ZL -->
     <symbol id="switch-btn-zl" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <text x="12" y="15" font-size="10" font-weight="bold" text-anchor="middle" fill="#051427">ZL</text>
     </symbol>
     
     <!-- ZR -->
     <symbol id="switch-btn-zr" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <text x="12" y="15" font-size="10" font-weight="bold" text-anchor="middle" fill="#051427">ZR</text>
     </symbol>
     
     <!-- Plus -->
     <symbol id="switch-btn-plus" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <rect x="11" y="8" width="2" height="8" fill="#051427" />
         <rect x="8" y="11" width="8" height="2" fill="#051427" />
     </symbol>
     
     <!-- Minus -->
     <symbol id="switch-btn-minus" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <rect x="8" y="11" width="8" height="2" fill="#051427" />
     </symbol>
     
     <!-- Home -->
     <symbol id="switch-btn-home" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <path d="M12 6 L10 10 L10 16 L14 16 L14 10 Z" fill="#051427" />
     </symbol>
     
     <!-- Capture -->
     <symbol id="switch-btn-capture" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <rect x="9" y="9" width="6" height="6" fill="#051427" />
-        <circle cx="11" cy="11" r="1" fill="#60a5fa" />
+        <circle cx="11" cy="11" r="1" fill="#93c5fd" />
     </symbol>
     
     <!-- LS (Left Stick) -->
     <symbol id="switch-btn-ls" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <text x="12" y="16" font-size="10" font-weight="bold" text-anchor="middle" fill="#051427">LS</text>
     </symbol>
     
     <!-- RS (Right Stick) -->
     <symbol id="switch-btn-rs" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <text x="12" y="16" font-size="10" font-weight="bold" text-anchor="middle" fill="#051427">RS</text>
     </symbol>
     
     <!-- D-Pad Up -->
     <symbol id="switch-btn-dpad-up" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <path d="M12 8 L16 14.5 L8 14.5 Z" fill="#051427" />
     </symbol>
     
     <!-- D-Pad Down -->
     <symbol id="switch-btn-dpad-down" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <path d="M8 9.5 L12 16 L16 9.5 Z" fill="#051427" />
     </symbol>
     
     <!-- D-Pad Left -->
     <symbol id="switch-btn-dpad-left" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <path d="M14 8 L7 12 L14 16 Z" fill="#051427" />
     </symbol>
     
     <!-- D-Pad Right -->
     <symbol id="switch-btn-dpad-right" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" fill="#60a5fa" />
+        <circle cx="12" cy="12" r="10" fill="#93c5fd" />
         <path d="M10 16 L17 12 L10 8 Z" fill="#051427" />
     </symbol>
 </svg>

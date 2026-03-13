@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .blog-container {
+            background-color: var(--color-bg-primary);
+        }
+        .blog-article-card {
+            background-color: var(--color-bg-primary);
+        }
+
+        /* blog页面特殊样式 */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--size-48) var(--size-24);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--size-24);
+            margin-bottom: var(--size-64);
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .blog-article-link {
+            display: block;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: var(--size-32);
+            border-radius: var(--size-12);
+            background: var(--color-code-bg);
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        
+        .blog-article-link:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--color-shadow-secondary) 0 8px 24px;
+            border-color: var(--color-highlight);
+        }
+        
+        .blog-article-title {
+            margin: 0 0 var(--size-16) 0;
+            font-size: var(--font-size-24);
+            font-weight: bold;
+            color: var(--color-code-text);
+        }
+        
+        .blog-article-excerpt {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-12);
+            line-height: 1.6;
+            margin: var(--size-16) 0 0;
+        }
+        
+        .blog-article-tags {
+            margin: var(--size-16) 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--size-4);
+        }
+        
+        .blog-tag {
+            font-size: var(--font-size-10);
+            padding: var(--size-4) var(--size-8);
+            background: rgba(96, 165, 250, 0.2);
+            color: var(--color-highlight);
+            border-radius: var(--size-4);
+        }
+        
+        .tag-section {
+            margin-bottom: var(--size-64);
+        }
+        
+        .tag-section h2 {
+            color: var(--color-highlight);
+            margin-bottom: var(--size-24);
+            font-size: var(--font-size-20);
+        }
+        
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: var(--size-24) var(--size-16);
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: var(--size-24);
+            }
+            
+            .blog-article-link {
+                padding: var(--size-24);
+            }
+            
+            .blog-article-title {
+                font-size: var(--font-size-20);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="blog-container">
+            <!-- 按标签分类 -->
+            <div class="tag-section">
+                <h2>超频</h2>
+                <div class="blog-grid">
+                    <div class="blog-article-card">
+                        <a href="hoc.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                超频教程 - HOC
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="eos.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                NS极限超频 - 进阶教程
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="ocs.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                NS极限超频 - 入门教程
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tag-section">
+                <h2>系统</h2>
+                <div class="blog-grid">
+                    <div class="blog-article-card">
+                        <a href="picofly.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                Picofly - 树莓派芯片
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="lockpick.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                提取密钥 Lockpick_RCM
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="tegrarcmgui.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                TegraRcmGUI 注入器使用说明
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="autorcm.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                NS初代 - 注入器使用说明
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="emmc.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                系统备份
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="fw.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                升降级固件 Firmware
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tag-section">
+                <h2>模拟器</h2>
+                <div class="blog-grid">
+                    <div class="blog-article-card">
+                        <a href="retroarch.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                RetroArch - 全能模拟器
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tag-section">
+                <h2>软件包</h2>
+                <div class="blog-grid">
+                    <div class="blog-article-card">
+                        <a href="updater.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                Updater - 在线更新助手
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="settings.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                Settings - 系统设置助手
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="r2config.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                R2Config 系统引导助手
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="magic.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                Magic - EOS 超频助手
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="aurora.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                Aurora - HOC 超频助手
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tag-section">
+                <h2>未分类</h2>
+                <div class="blog-grid">
+                    <div class="blog-article-card">
+                        <a href="reshade.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                ReShade 复古游戏滤镜插件
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="sphaira.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                Sphaira 应用菜单工具
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="autosave.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                autoSAVE - 存档自动备份
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="fpslocker.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                FPSLocker - 帧数锁定工具
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="ftpsrv.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                ftpsrv 无限传输工具
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="battery.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                电池校准流程
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-article-card">
+                        <a href="dbi.html" class="blog-article-link" target="_blank">
+                            <div class="blog-article-title">
+                                DBI 使用教程
+                            </div>
+                            <div class="blog-article-excerpt">
+                                查看内容
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

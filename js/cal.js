@@ -356,7 +356,7 @@ function calculateVoltages() {
     }
 
     // Create two-column layout for GPU results, using items-start to ensure top alignment
-    let result = '<div class="grid grid-cols-2 gap-2 items-start">';
+    let result = '<div class="grid grid-cols-2 gap-3 items-start">';
     
     // First column
     result += '<table class="w-full text-xs">';
@@ -403,6 +403,6 @@ function calculateVoltages() {
     result += '</div>';
     
     // Display GPU result with same style as SOC voltage card
-    document.getElementById('gpu_result').innerHTML = '<div class="w-full p-4 rounded-xl bg-gray-700/40">' + result + '</div>';
+    document.getElementById('gpu_result').innerHTML = '<div class="w-full rounded-xl bg-gray-700/40 text-sm">' + result + '</div>';
     // Action buttons section not needed for this implementation
 }

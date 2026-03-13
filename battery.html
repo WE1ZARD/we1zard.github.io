@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电池校准流程</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: var(--color-bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="toc">
+        <ul>
+<li><a href="#_5">修改电池模式流程</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="_1">电池校准流程</h1>
+<blockquote>
+<p>资料整理自: 网友<code>吥走尋常路</code></p>
+</blockquote>
+<ul>
+<li>任意电量<br />
+    先用status monitor查看 <code>不插电时的电池电压</code>
+    建议在 <code>3.6-3.8V</code> 之间  </li>
+<li>按住R选择任意游戏, 进入自制工具菜单<br />
+    下载 <a href="https://www.jianguoyun.com/p/DbGOqwwQocW1DBiZxYQGIAA">battery_desync_fix.nro</a> 工具  <ul>
+<li>没安装的话可以手动下载, 放到switch文件夹中<br />
+按 <code>X</code> 清除原来的电池数据<br />
+按 <code>B</code> 退出插件  </li>
+</ul>
+</li>
+</ul>
+<p><code>充满 -&gt; 放完 -&gt; 充满 -&gt; 放完 -&gt; 充满</code> (3个循环)</p>
+<h5 id="_2">充电</h5>
+<div class="codehilite"><pre><span></span><code>可以直接充一整晚
+
+或者状态监控插件`status monitor`查看0-0.01W输入为止
+</code></pre></div>
+
+<h5 id="_3">放电</h5>
+<div class="codehilite"><pre><span></span><code>就是满电一直放到强制休眠为止
+</code></pre></div>
+
+<h5 id="_4">注意</h5>
+<div class="codehilite"><pre><span></span><code>这里不是放电到强制关机
+
+使用原装Pro手柄的话, 机器自动休眠后, 几小时内机器都不会耗电至强制关机, 无需担心不能一直监控电池状态的问题
+
+校准期间不能关机, 不能切换系统, 不能超频(建议4W左右功耗放电), 必须要满充满放
+
+校准完成后进入插件按A保存数据到本地, 进入另一个系统按Y还原刚才备份的数据(比如你是在真实校准就去虚拟还原一次, 反之同理)
+</code></pre></div>
+
+<h2 id="_5">修改电池模式流程</h2>
+<div class="codehilite"><pre><span></span><code>仅针对改大容量电池, 原装无需修改
+</code></pre></div>
+
+<h5 id="_6">虚拟系统</h5>
+<ol>
+<li>
+<p>进Hekate, 选择 <code>Payloads</code>的 <code>Lockpick_RCM.bin</code> , 将 <code>prod.key</code> 文件dump出来, 在SD卡的switch目录</p>
+</li>
+<li>
+<p>返回Hekate, 同样的 <code>Payloads</code>选择 <code>TegraExplorer.bin</code> 工具<br />
+   音量键移动后, 按电源键选择<code>Browse EMUMMC</code></p>
+</li>
+<li>
+<p>EMUMMC界面选择dump第三个 <code>PRODINFO</code>, 中间会提示是否需要Dump, <code>选 YES</code></p>
+</li>
+<li>
+<p>Dump的文件在SD卡根目录 <code>Tegraexplorer\Dumps</code> 文件夹内<br />
+   使用任意<a href="https://hexed.it/">Hex编辑软件</a>打开 <code>PRODINFO</code><br />
+   右上角 <code>Go to</code> 输入 <code>0x4310</code> 按回车键<br />
+   将第一个byte的 <code>00</code> (V1/V2/OLED对应值)改成02(Lite对应)后保存即可</p>
+</li>
+<li>
+<p>将<a href="#脚本">ProdinfoFIX.py文件</a>和 <code>PRODINFO</code> 放在同一个文件夹, 然后运行py, 进行CRC16和SHA256的重新计算</p>
+</li>
+<li>
+<p>保存新生成的PRODINFO文件到之前的 <code>Tegraexplorer\Dumps</code> 文件夹<br />
+   重启NS打开 <code>hekate &gt; Payloads &gt; TegraExplorer.bin</code><br />
+   打开 <code>Browse SD card &gt; tegraexplorer</code><br />
+   选择 <code>DUMPS文件夹</code><br />
+   选择 <code>刚生成的PRODINFO文件</code><br />
+   在新的目录中选择 <code>Copy to clipboard</code></p>
+</li>
+<li>
+<p>返回Tegraexplorer主界面<br />
+   选择 <code>Browse EMUMMC</code><br />
+   然后选择 <code>Clipboard -&gt; Partition</code><br />
+   提示是否要选择flash PRODINFO？<code>选 YES</code></p>
+</li>
+<li>
+<p>所有步骤完成, 在虚拟系统使用电池校准工具 <a href="https://github.com/CTCaer/battery_desync_fix_nx/releases/download/1.5.0/battery_desync_fix.nro">battery_desync_fix.nro</a> 跑循环校验电池</p>
+</li>
+<li>
+<p>编辑 <code>Atmosphere/config/settings.ini</code>
+   添加以下行, 改变电流为2a, 重启生效</p>
+</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="k">[psm]</span>
+<span class="na">charge_current_limit_milli_ampere</span><span class="o">=</span><span class="s">u32!0x800</span>
+</code></pre></div>
+
+<h5 id="_7">脚本</h5>
+<details>
+<summary>查看python脚本</summary>
+
+
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="c1"># CRC-16 table from the documentation</span>
+<span class="n">CRC_16_TABLE</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mh">0x0000</span><span class="p">,</span> <span class="mh">0xCC01</span><span class="p">,</span> <span class="mh">0xD801</span><span class="p">,</span> <span class="mh">0x1400</span><span class="p">,</span> <span class="mh">0xF001</span><span class="p">,</span> <span class="mh">0x3C00</span><span class="p">,</span> <span class="mh">0x2800</span><span class="p">,</span> <span class="mh">0xE401</span><span class="p">,</span>
+    <span class="mh">0xA001</span><span class="p">,</span> <span class="mh">0x6C00</span><span class="p">,</span> <span class="mh">0x7800</span><span class="p">,</span> <span class="mh">0xB401</span><span class="p">,</span> <span class="mh">0x5000</span><span class="p">,</span> <span class="mh">0x9C01</span><span class="p">,</span> <span class="mh">0x8801</span><span class="p">,</span> <span class="mh">0x4400</span>
+<span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_crc_16</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate CRC-16 using the exact algorithm from documentation&quot;&quot;&quot;</span>
+    <span class="n">crc</span> <span class="o">=</span> <span class="mh">0x55AA</span>
+
+    <span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">CRC_16_TABLE</span><span class="p">[</span><span class="n">crc</span> <span class="o">&amp;</span> <span class="mh">0xF</span><span class="p">]</span>
+        <span class="n">crc</span> <span class="o">=</span> <span class="p">(</span><span class="n">crc</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x0FFF</span>
+        <span class="n">crc</span> <span class="o">=</span> <span class="n">crc</span> <span class="o">^</span> <span class="n">r</span> <span class="o">^</span> <span class="n">CRC_16_TABLE</span><span class="p">[</span><span class="n">byte</span> <span class="o">&amp;</span> <span class="mh">0xF</span><span class="p">]</span>
+
+        <span class="n">r</span> <span class="o">=</span> <span class="n">CRC_16_TABLE</span><span class="p">[</span><span class="n">crc</span> <span class="o">&amp;</span> <span class="mh">0xF</span><span class="p">]</span>
+        <span class="n">crc</span> <span class="o">=</span> <span class="p">(</span><span class="n">crc</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x0FFF</span>
+        <span class="n">crc</span> <span class="o">=</span> <span class="n">crc</span> <span class="o">^</span> <span class="n">r</span> <span class="o">^</span> <span class="n">CRC_16_TABLE</span><span class="p">[(</span><span class="n">byte</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xF</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">crc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fix_block_crc16</span><span class="p">(</span><span class="n">block_data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fix CRC-16 for a 16-byte block&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">block_data</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">16</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Block must be exactly 16 bytes&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Calculate CRC for first 14 bytes (data + padding, excluding CRC)</span>
+    <span class="n">crc</span> <span class="o">=</span> <span class="n">get_crc_16</span><span class="p">(</span><span class="n">block_data</span><span class="p">[:</span><span class="mi">14</span><span class="p">])</span>
+
+    <span class="c1"># Update last 2 bytes with correct CRC (little-endian)</span>
+    <span class="n">block_data</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="n">crc</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+    <span class="n">block_data</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">crc</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fixed CRC-16: 0x</span><span class="si">{</span><span class="n">crc</span><span class="si">:</span><span class="s2">04X</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">block_data</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_sha256</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate SHA-256 hash of data&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fix_cal0_checksums</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fix checksums in CAL0 data using known offsets&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fixing CAL0 checksums...&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Convert to bytearray for modification</span>
+    <span class="n">cal0_data</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">)</span>
+
+    <span class="c1"># CAL0 structure offsets</span>
+    <span class="n">BODY_SIZE_OFFSET</span> <span class="o">=</span> <span class="mh">0x8</span>
+    <span class="n">BODY_HASH_OFFSET</span> <span class="o">=</span> <span class="mh">0x20</span>
+    <span class="n">BATTERY_VERSION_OFFSET</span> <span class="o">=</span> <span class="mh">0x4310</span>
+
+    <span class="c1"># Read body size to determine how much data to hash</span>
+    <span class="n">body_size</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;I&#39;</span><span class="p">,</span> <span class="n">cal0_data</span><span class="p">[</span><span class="n">BODY_SIZE_OFFSET</span><span class="p">:</span><span class="n">BODY_SIZE_OFFSET</span> <span class="o">+</span> <span class="mi">4</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Body size: 0x</span><span class="si">{</span><span class="n">body_size</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Step 1: Fix CRC-16 for battery version block</span>
+    <span class="c1"># Find the 16-byte block that contains the battery version</span>
+    <span class="n">battery_block_start</span> <span class="o">=</span> <span class="p">(</span><span class="n">BATTERY_VERSION_OFFSET</span> <span class="o">//</span> <span class="mi">16</span><span class="p">)</span> <span class="o">*</span> <span class="mi">16</span>
+
+    <span class="k">if</span> <span class="n">battery_block_start</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fixing battery version CRC-16 at block offset 0x</span><span class="si">{</span><span class="n">battery_block_start</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Battery version is at offset 0x</span><span class="si">{</span><span class="n">BATTERY_VERSION_OFFSET</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2"> within this block&quot;</span><span class="p">)</span>
+
+        <span class="n">block</span> <span class="o">=</span> <span class="n">cal0_data</span><span class="p">[</span><span class="n">battery_block_start</span><span class="p">:</span><span class="n">battery_block_start</span> <span class="o">+</span> <span class="mi">16</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original block: </span><span class="si">{</span><span class="n">block</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">fixed_block</span> <span class="o">=</span> <span class="n">fix_block_crc16</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+        <span class="n">cal0_data</span><span class="p">[</span><span class="n">battery_block_start</span><span class="p">:</span><span class="n">battery_block_start</span> <span class="o">+</span> <span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="n">fixed_block</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fixed block: </span><span class="si">{</span><span class="n">fixed_block</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Battery block offset is out of bounds&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Step 2: Calculate and update SHA-256 hash</span>
+    <span class="c1"># Hash covers the calibration data starting at offset 0x40</span>
+    <span class="n">calibration_data_start</span> <span class="o">=</span> <span class="mh">0x40</span>
+    <span class="n">calibration_data_end</span> <span class="o">=</span> <span class="n">calibration_data_start</span> <span class="o">+</span> <span class="n">body_size</span>
+
+    <span class="k">if</span> <span class="n">calibration_data_end</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Calculating SHA-256 hash for calibration data (0x</span><span class="si">{</span><span class="n">calibration_data_start</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2"> to 0x</span><span class="si">{</span><span class="n">calibration_data_end</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2">)...&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Get the calibration data (excluding the hash field which is in the header)</span>
+        <span class="n">calibration_data</span> <span class="o">=</span> <span class="n">cal0_data</span><span class="p">[</span><span class="n">calibration_data_start</span><span class="p">:</span><span class="n">calibration_data_end</span><span class="p">]</span>
+
+        <span class="c1"># Calculate new hash</span>
+        <span class="n">new_hash</span> <span class="o">=</span> <span class="n">calculate_sha256</span><span class="p">(</span><span class="n">calibration_data</span><span class="p">)</span>
+
+        <span class="c1"># Update the hash in the header</span>
+        <span class="n">cal0_data</span><span class="p">[</span><span class="n">BODY_HASH_OFFSET</span><span class="p">:</span><span class="n">BODY_HASH_OFFSET</span> <span class="o">+</span> <span class="mi">32</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_hash</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Updated SHA-256 hash at offset 0x</span><span class="si">{</span><span class="n">BODY_HASH_OFFSET</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New hash: </span><span class="si">{</span><span class="n">new_hash</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calibration data extends beyond file bounds&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">print_hex</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print data in hex format&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">length</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">offset</span> <span class="o">+</span> <span class="n">length</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="mi">16</span><span class="p">):</span>
+        <span class="n">hex_part</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s1">02X</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">16</span><span class="p">])</span>
+        <span class="n">ascii_part</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">if</span> <span class="mi">32</span> <span class="o">&lt;=</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">127</span> <span class="k">else</span> <span class="s1">&#39;.&#39;</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">16</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">08X</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">hex_part</span><span class="si">:</span><span class="s2">&lt;48</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">ascii_part</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">verify_cal0_magic</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Verify that the file starts with CAL0 magic&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">cal0_data</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="sa">b</span><span class="s1">&#39;CAL0&#39;</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">print_cal0_info</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print information about the CAL0 structure&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">verify_cal0_magic</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: File does not start with CAL0 magic!&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># Read header fields</span>
+    <span class="n">magic</span> <span class="o">=</span> <span class="n">cal0_data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;I&#39;</span><span class="p">,</span> <span class="n">cal0_data</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">body_size</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;I&#39;</span><span class="p">,</span> <span class="n">cal0_data</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">12</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;H&#39;</span><span class="p">,</span> <span class="n">cal0_data</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">14</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">update_count</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;H&#39;</span><span class="p">,</span> <span class="n">cal0_data</span><span class="p">[</span><span class="mi">14</span><span class="p">:</span><span class="mi">16</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CAL0 Information:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Magic: </span><span class="si">{</span><span class="n">magic</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Version: 0x</span><span class="si">{</span><span class="n">version</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Body Size: 0x</span><span class="si">{</span><span class="n">body_size</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">body_size</span><span class="si">}</span><span class="s2"> bytes)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Model: 0x</span><span class="si">{</span><span class="n">model</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Update Count: </span><span class="si">{</span><span class="n">update_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Check battery version</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mh">0x4310</span><span class="p">:</span>
+        <span class="n">battery_version</span> <span class="o">=</span> <span class="n">cal0_data</span><span class="p">[</span><span class="mh">0x4310</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Battery Version: 0x</span><span class="si">{</span><span class="n">battery_version</span><span class="si">:</span><span class="s2">02X</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Usage: python cal0_fix.py &lt;cal0_file&gt;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Example: python cal0_fix.py cal0.bin&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Read CAL0 file</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">cal0_data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loaded CAL0 file: </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">)</span><span class="si">}</span><span class="s2"> bytes)&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Verify and print CAL0 info</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">print_cal0_info</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mi">1</span>
+
+        <span class="c1"># Fix checksums</span>
+        <span class="n">fixed_data</span> <span class="o">=</span> <span class="n">fix_cal0_checksums</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">)</span>
+
+        <span class="c1"># Write back to file</span>
+        <span class="n">backup_filename</span> <span class="o">=</span> <span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39;.backup&#39;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">backup_filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cal0_data</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original file backed up to: </span><span class="si">{</span><span class="n">backup_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fixed_data</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAL0 checksums fixed successfully!&quot;</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: File &#39;</span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&#39; not found&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="mi">0</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+
+
+
+</details>
+                <div class="update-time">2026-03-13 15:52:29</div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

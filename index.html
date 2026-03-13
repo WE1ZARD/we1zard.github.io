@@ -3,88 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>主页</title>
+    <title>WE1ZARD</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Landing Page Styles */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--color-bg-primary);
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text {
+            max-width: 600px;
+        }
+        
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            text-align: left;
+        }
+        
+        .hero-title .highlight {
+            color: var(--color-highlight);
+        }
+        
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--color-text-primary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            text-align: left;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .hero-button {
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-button.primary {
+            background-color: var(--color-highlight);
+            color: #1e3a8a;
+            border: 1px solid var(--color-highlight);
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.25);
+        }
+        
+        .hero-button.primary:hover {
+            transform: translateY(-1px);
+        }
+        
+        .hero-button.primary:hover .arrow {
+            animation: arrow-shake 0.5s ease-in-out 1;
+        }
+        
+        @keyframes arrow-shake {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+        
+        .hero-button.secondary {
+            background-color: transparent;
+            color: var(--color-text-primary);
+            border: 1px solid #374151;
+        }
+        
+        .hero-button.secondary:hover {
+            background-color: #374151;
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            width: 100%;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--color-highlight);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-symbol {
+            font-size: 1.25rem;
+        }
+        
+        .stat-label {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+        
+        .image-scroller {
+            width: 75%;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            position: relative;
+        }
+        
+        .image-scroller::before,
+        .image-scroller::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            z-index: 1;
+        }
+        
+        .image-scroller::before {
+            left: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+        }
+        
+        .image-scroller::after {
+            right: 0;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.4), transparent);
+        }
+        
+        .image-track {
+            display: flex;
+        }
+        
+        .image-track img {
+            width: 150px;
+            height: auto;
+            margin: 0 20px 0 0;
+            border-radius: 1.5rem;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero-button {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-bg {
+                width: 100%;
+            }
+        }
+    </style>
     <script src="/js/common.js"></script>
 </head>
 <body class="bg-[#051427] min-h-screen">
-    <!-- 页面头部 -->
-    <header class="py-8">
-        <div class="max-w-3xl mx-auto px-4">
-            <div class="flex justify-center">
-                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- 主要内容 -->
-    <main class="py-4">
-        <div class="max-w-3xl mx-auto px-4">
-            <!-- 快捷入口区域 -->
-            <section class="mb-8">
-                <div class="content-container p-4">
-                    <h2 class="text-xl font-bold text-blue-500 mb-6 text-left w-3/4 mx-auto">快捷入口</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 justify-items-center w-3/4 mx-auto">
-                        <a href="/aio.html" target="_blank" class="main-button">
-                            <i class="fas fa-download text-2xl text-blue-500"></i>
-                            <strong>安装升级</strong>
-                        </a>
-                        <a href="/guide/fw.html" target="_blank" class="main-button">
-                            <i class="fas fa-circle-down text-2xl text-blue-500"></i>
-                            <strong>系统固件</strong>
-                        </a>
-                        <a href="https://www.jianguoyun.com/p/DZgWte4Q2s_tDBiHhOsFIAA" target="_blank" class="main-button">
-                            <i class="fas fa-history text-2xl text-blue-500"></i>
-                            <strong>更新日志</strong>
-                        </a>
-                        <a href="/feedback.html" target="_blank" class="main-button">
-                            <i class="fas fa-envelope-open-text text-2xl text-blue-500"></i>
-                            <strong>我要反馈</strong>
-                        </a>
-                        <a href="/guides.html" target="_blank" class="main-button">
-                            <i class="fas fa-book-open text-2xl text-blue-500"></i>
-                            <strong>文字教程</strong>
-                        </a>
-                        <a href="https://space.bilibili.com/3595105/lists/4599095?type=series" target="_blank" class="main-button">
-                            <i class="fab fa-bilibili text-2xl text-blue-500"></i>
-                            <strong>视频教程</strong>
-                        </a>
-                        <a href="/cnblog.html" target="_blank" class="main-button">
-                            <i class="fas fa-book-open text-2xl text-blue-500"></i>
-                            <strong>博客园旧文</strong>
-                        </a>
+    <!-- 英雄区域 -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    倾心打造<br>
+                    <span class="highlight">ㅤ稳定高效的整合包</span><br>
+                    
+                </h1>
+                <p class="hero-description">
+                    支持在线更新, 双语切换, 深度优化, Switch 折腾升级更省心!
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://gitea.com/we1zard/OTA/releases/download/latest/AIO-pre.zip" target="_blank" class="hero-button primary">
+                        立即下载<span class="arrow">➔</span>
+                    </a>
+                    <a href="/aio.html" target="_blank" class="hero-button secondary">
+                        了解更多
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15<span class="stat-symbol">MB</span></div>
+                        <div class="stat-label">精简优化</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4-8<span class="stat-symbol">G</span></div>
+                        <div class="stat-label">自由切换</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100<span class="stat-symbol">%</span></div>
+                        <div class="stat-label">免费使用</div>
                     </div>
                 </div>
-            </section>
-
-            <!-- 常用工具区域 -->
-            <section>
-                <div class="content-container p-4">
-                    <h2 class="text-xl font-bold text-blue-500 mb-6 text-left w-3/4 mx-auto">常用工具</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 justify-items-center w-3/4 mx-auto">
-                        <a href="/tool/error.html" target="_blank" class="main-button">
-                            <i class="fas fa-search text-2xl text-blue-500"></i>
-                            <strong>错误查询</strong>
-                        </a>
-                        <a href="/tool/cal.html" target="_blank" class="main-button">
-                            <i class="fas fa-calculator text-2xl text-blue-500"></i>
-                            <strong>电压计算</strong>
-                        </a>
-                        <a href="/tool/l4s.html" target="_blank" class="main-button">
-                            <i class="fas fa-diagram-next text-2xl text-blue-500"></i>
-                            <strong>L4S 超频</strong>
-                        </a>
-                        <a href="/tool/fuses.html" target="_blank" class="main-button">
-                            <i class="fas fa-search text-2xl text-blue-500"></i>
-                            <strong>熔断数</strong>
-                        </a>
-
+            </div>
+            <div class="hero-image">
+                <div class="image-scroller">
+                    <div class="image-track" id="imageTrack">
+                        <!-- 图片将通过JavaScript动态添加 -->
                     </div>
                 </div>
-            </section>
+            </div>
+            
+            <script>
+                // 图片数组 - 自动从/img/demo/目录获取图片
+                const images = ["img/demo/0-sphaira.jpg", "img/demo/1-dbi.jpg", "img/demo/2-daybreak.jpg", "img/demo/3-edizon.jpg", "img/demo/4-sysclk.jpg", "img/demo/5-JKSV.jpg", "img/demo/6-cpu.jpg", "img/demo/7-furmark.jpg"];
+                
+                // 未来可以通过后端API或构建脚本自动生成此数组
+                // 例如：const images = getImagesFromDirectory('/img/demo/');
+                
+                // 获取图片轨道元素
+                const imageTrack = document.getElementById('imageTrack');
+                
+                // 动态添加图片
+                images.forEach((imgSrc, index) => {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = `内容展示 ${index + 1}`;
+                    img.style.width = '150px';
+                    img.style.height = 'auto';
+                    img.style.margin = '0 20px 0 0';
+                    img.style.borderRadius = '1.5rem';
+                    imageTrack.appendChild(img);
+                });
+                
+                // 复制图片以实现无缝循环
+                images.forEach((imgSrc, index) => {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = `内容展示 ${index + 1}`;
+                    img.style.width = '150px';
+                    img.style.height = 'auto';
+                    img.style.margin = '0 20px 0 0';
+                    img.style.borderRadius = '1.5rem';
+                    imageTrack.appendChild(img);
+                });
+                
+                // 实现平滑滚动
+                let scrollPosition = 0;
+                const scrollSpeed = 0.5; // 减慢滚动速度
+                
+                function animateScroll() {
+                    scrollPosition += scrollSpeed;
+                    
+                    // 计算单组图片的总宽度（包括间距）
+                    const singleImageWidth = 150 + 20; // 图片宽度 + 右边距
+                    const totalWidth = singleImageWidth * images.length;
+                    
+                    // 当滚动到单组图片的宽度时，重置滚动位置
+                    if (scrollPosition >= totalWidth) {
+                        scrollPosition = 0;
+                    }
+                    
+                    imageTrack.style.transform = `translateX(-${scrollPosition}px)`;
+                    requestAnimationFrame(animateScroll);
+                }
+                
+                // 启动动画
+                animateScroll();
+            </script>
         </div>
-    </main>
+    </section>
+
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

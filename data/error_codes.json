@@ -3423,6 +3423,13 @@
     "subsubsection": ""
   },
   {
+    "code": "42000000000000A0",
+    "description": "sys-dock",
+    "section": "大气层系统",
+    "subsection": "自制系统模块",
+    "subsubsection": ""
+  },
+  {
     "code": "010000000000F00F",
     "description": "dvdnx",
     "section": "大气层系统",

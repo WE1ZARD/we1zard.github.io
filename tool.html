@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工具 - WE1ZARD</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .blog-container {
+            background-color: var(--color-bg-primary);
+        }
+        .blog-article-card {
+            background-color: var(--color-bg-primary);
+        }
+    </style>
+    <style>
+        /* blog页面特殊样式 */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--size-48) var(--size-24);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--size-24);
+            margin-bottom: var(--size-64);
+        }
+        
+        @media (max-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .blog-article-link {
+            display: block;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: var(--size-32);
+            border-radius: var(--size-12);
+            background: var(--color-code-bg);
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        
+        .blog-article-link:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--color-shadow-secondary) 0 8px 24px;
+            border-color: var(--color-highlight);
+        }
+        
+        .blog-article-title {
+            margin: 0 0 var(--size-16) 0;
+            font-size: var(--font-size-24);
+            font-weight: bold;
+            color: var(--color-code-text);
+        }
+        
+        .blog-article-excerpt {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-12);
+            line-height: 1.6;
+            margin: var(--size-16) 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: var(--size-24) var(--size-16);
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: var(--size-24);
+            }
+            
+            .blog-article-link {
+                padding: var(--size-24);
+            }
+            
+            .blog-article-title {
+                font-size: var(--font-size-20);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="blog-container">
+            <div class="blog-grid">
+                <div class="blog-article-card">
+                    <a href="tool/fuses.html" class="blog-article-link" target="_blank">
+                        <div class="blog-article-title">
+                            熔断查询
+                        </div>
+                        <div class="blog-article-excerpt">
+                            查看内容
+                        </div>
+                    </a>
+                </div>
+                <div class="blog-article-card">
+                    <a href="tool/l4s.html" class="blog-article-link" target="_blank">
+                        <div class="blog-article-title">
+                            L4S 超频设置
+                        </div>
+                        <div class="blog-article-excerpt">
+                            查看内容
+                        </div>
+                    </a>
+                </div>
+                <div class="blog-article-card">
+                    <a href="tool/error.html" class="blog-article-link" target="_blank">
+                        <div class="blog-article-title">
+                            报错查询
+                        </div>
+                        <div class="blog-article-excerpt">
+                            查看内容
+                        </div>
+                    </a>
+                </div>
+                <div class="blog-article-card">
+                    <a href="tool/cal.html" class="blog-article-link" target="_blank">
+                        <div class="blog-article-title">
+                            电压计算
+                        </div>
+                        <div class="blog-article-excerpt">
+                            查看内容
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

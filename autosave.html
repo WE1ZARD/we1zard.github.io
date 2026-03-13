@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autoSAVE - 存档自动备份</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: var(--color-bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="toc">
+        <ul>
+<li><a href="#_1">主要功能</a></li>
+<li><a href="#_2">使用方法</a></li>
+<li><a href="#led">LED灯指示说明</a></li>
+<li><a href="#_3">文件路径说明</a></li>
+<li><a href="#_4">注意事项</a></li>
+<li><a href="#_5">特别感谢</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="autosave-">autoSAVE - 存档自动备份</h1>
+<blockquote>
+<p><strong><code>autoSAVE</code></strong> 是switch大气层系统上使用的系统模块,<br />
+个人开发, 纯c语言编写, 执行效率高, 系统资源占用比较低.<br />
+主要解决日常有存档备份需求但不具备联网条件的痛点.  </p>
+</blockquote>
+<ul>
+<li><a href="https://gitea.com/we1zard/OTA/releases/download/latest/autoSAVE.zip"><strong>下载地址</strong></a></li>
+<li><a href="https://www.jianguoyun.com/p/DSRk64MQ88W1DBjUqosGIAA"><strong>更新日志</strong></a></li>
+</ul>
+<h2 id="_1">主要功能</h2>
+<ul>
+<li>开袋即食, 无需配置</li>
+<li>动态保留3份最新存档</li>
+<li>完美兼容JKSV, 不会影响手动备份的存档</li>
+<li>支持多用户自动切换</li>
+<li>支持实时开启关闭, 后台一键切换</li>
+</ul>
+<h2 id="_2">使用方法</h2>
+<ul>
+<li>下载zip文件, 解压之后, 将 <code>atmosphere</code> 文件夹复制到 <code>sd卡根目录</code></li>
+<li>默认开启, 可以通过后台服务管理插件, <code>ovl-sysmodules</code> 或者 <code>MagicToolbox</code> 实时切换</li>
+</ul>
+<h2 id="led">LED灯指示说明</h2>
+<ul>
+<li>慢呼吸灯: 存档 <code>备份中</code>  </li>
+<li>连续快闪: 存档 <code>备份失败</code>  </li>
+</ul>
+<h2 id="_3">文件路径说明</h2>
+<ul>
+<li>存档: <code>sdmc:/JKSV/游戏标题/[A] 用户名 - 时间戳.zip</code>  </li>
+<li>记录:<code>sdmc:/JKSV/游戏标题/crc.txt</code>  </li>
+</ul>
+<h2 id="_4">注意事项</h2>
+<ul>
+<li>请勿将这个项目用于<code>任何商业</code>或其他<code>非法用途</code>, 否则<code>后果自负</code>.</li>
+<li>本人保留所有权利, 未授权任何人或组织机构将本项目进行<code>分发</code>或<code>整合</code>.</li>
+</ul>
+<h2 id="_5">特别感谢</h2>
+<ul>
+<li><a href="https://github.com/ITotalJustice/ftpsrv">ftpsrv</a></li>
+<li><a href="https://github.com/J-D-K/JKSV">JKSV</a></li>
+<li><a href="https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html">PKZip file</a></li>
+<li><a href="https://github.com/switchbrew/switch-examples">SwitchBrew</a></li>
+</ul>
+                <div class="update-time">2026-03-13 15:58:05</div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

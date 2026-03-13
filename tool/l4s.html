@@ -5,25 +5,244 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L4S 超频设置</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/common.js"></script>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    
+    <style>
+        /* 本地样式替代Tailwind CSS */
+        .max-w-md {
+            max-width: 28rem;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .mt-4 {
+            margin-top: 1rem;
+        }
+        .p-2 {
+            padding: 0.5rem;
+        }
+        .main-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+        .content-container {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 1.5rem;
+            border-radius: 0.375rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            background-color: #051427;
+        }
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+        .relative {
+            position: relative;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .border {
+            border-width: 1px;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+        .whitespace-pre-wrap {
+            white-space: pre-wrap;
+        }
+        .text-\[\#9ca3af\] {
+            color: #9ca3af;
+        }
+        .font-mono {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        .max-h-60 {
+            max-height: 15rem;
+        }
+        .overflow-y-auto {
+            overflow-y: auto;
+        }
+        .p-4 {
+            padding: 1rem;
+        }
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        .duration-200 {
+            transition-duration: 200ms;
+        }
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+        .text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem;
+        }
+        blockquote {
+            margin: 0;
+        }
+        bold {
+            font-weight: bold;
+        }
+        bl {
+            display: block;
+        }
+        block {
+            display: block;
+        }
+        label {
+            cursor: pointer;
+        }
+        /* 确保滑动条不影响页面宽度 */
+        html {
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        * {
+            box-sizing: inherit;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        /* 为导航栏添加占位空间 */
+        .navbar-space {
+            height: var(--size-64);
+        }
+        /* 为页脚添加占位空间 */
+        .footer-space {
+            height: 100px;
+        }
+        
+        /* 自定义滑动条样式 */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16%;
+            height: 4px;
+            background: #3b82f6;
+            border-radius: 2px;
+            outline: none;
+            margin: 0 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #3b82f6;
+            border: 2px solid #93c5fd;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #3b82f6;
+            border: 2px solid #93c5fd;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+        }
+        
+        /* 内容布局 */
+        .content-container {
+            position: relative;
+        }
+        
+        .content-container blockquote {
+            position: relative;
+        }
+        
+        /* 自定义开关样式 */
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 50px;
+            height: 24px;
+            background: #374151;
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        input[type="checkbox"]:checked {
+            background: #3b82f6;
+        }
+        
+        input[type="checkbox"]::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        
+        input[type="checkbox"]:checked::after {
+            transform: translateX(26px);
+        }
+        
+        /* 标题样式 */
+        h2 {
+            color: #93c5fd;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <!-- 页面头部 -->
-    <header class="py-8">
-        <div class="max-w-3xl mx-auto px-4">
-            <div class="flex justify-center">
-                <img src="/img/aurora.svg" alt="WE1ZARD" width="184" height="40">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
-
+    </nav>
+    
+    <!-- 导航栏占位空间 -->
+    <div class="navbar-space"></div>
+    
     <div id="banner" class="max-w-md mx-auto mt-4 p-2">
     </div>
     <div class="main-container">
-        <div class="content-container bg-[#051427] p-6 rounded-md shadow-md">
+        <div class="content-container">
         <!-- 页面标题和说明 -->
         <div class="mb-6">
             <!-- <h1>L4T 超频设置</h1> -->
@@ -46,7 +265,7 @@
 
             <!-- 为代码框添加相对定位的容器 -->
             <div class="relative w-full">
-                <pre id="config-code" class="border border-[#60a5fa] hover:border-[#3b82f6] hover:shadow-[0_0_12px_rgba(96,165,250,0.6)] cursor-pointer whitespace-pre-wrap text-[#9ca3af] font-mono text-sm max-h-60 overflow-y-auto p-4 bg-[#051427] rounded-md transition-all duration-200">
+                <pre id="config-code" class="border border-[#93c5fd] hover:border-[#3b82f6] hover:shadow-[0_0_12px_rgba(96,165,250,0.6)] cursor-pointer whitespace-pre-wrap text-[#9ca3af] font-mono text-sm max-h-60 overflow-y-auto p-4 bg-[#051427] rounded-md transition-all duration-200">
 ram_oc=0000000
 ram_oc_opt=0</pre>
                 <p id="copy-status" class="text-xs text-[#9ca3af] mt-2"></p>
@@ -54,10 +273,10 @@ ram_oc_opt=0</pre>
 
             <h2 id="基础设置">基础设置</h2>
             <blockquote>
-                <input id="ram_oc_vdd2" max="1237" min="1050" name="ram_oc_vdd2" step="1" type="range" value="1175" />
+                <input id="ram_oc_vdd2" max="1237" min="1050" name="ram_oc_vdd2" step="5" type="range" value="1175" />
                     <bold for="ram_oc_vdd2">Vdd2:</bold>
                     <bold id="ram_oc_vdd2_txt">1175</bold> <bold>mV</bold><br>
-                <input id="ram_oc_vddq" max="650" min="550" name="ram_oc_vddq" step="1" type="range" value="600" />
+                <input id="ram_oc_vddq" max="650" min="550" name="ram_oc_vddq" step="5" type="range" value="600" />
                     <bold for="ram_oc_vddq">Vddq:</bold>
                     <bold id="ram_oc_vddq_txt">600</bold> <bold>mV</bold><br><br>
                     <block><bold>初代</bold></block><br>
@@ -79,10 +298,10 @@ ram_oc_opt=0</pre>
             <blockquote>
                 <input id="max_cpu_freq" max="6" min="0" name="max_cpu_freq" step="1" type="range" value="0" />
                     <bold for="max_cpu_freq">CPU最大频率:</bold>
-                    <bold id="max_cpu_freq_txt">0</bold> <bold>KHz</bold><br>
+                    <bold id="max_cpu_freq_txt">0</bold> <bold>MHz</bold><br>
                 <input id="max_gpu_freq" max="7" min="0" name="max_gpu_freq" step="1" type="range" value="0" />
                     <bold for="max_gpu_freq">GPU最大频率:</bold>
-                    <bold id="max_gpu_freq_txt">0</bold> <bold>KHz</bold><br>
+                    <bold id="max_gpu_freq_txt">0</bold> <bold>MHz</bold><br>
             </blockquote><br>
 
             <!-- 设置区域 -->
@@ -139,6 +358,9 @@ ram_oc_opt=0</pre>
             </blockquote><br>
         </div>
     </div>
+    
+    <!-- 页脚占位空间 -->
+    <div class="footer-space"></div>
 
     <script>
         // 获取DOM元素
@@ -217,11 +439,13 @@ ram_oc_opt=0</pre>
         };
 
         const eventValCpuFreq = (event) => {
-            return allowedCpuMaxFrequencies[event.target.value] || 0;
+            const khzValue = allowedCpuMaxFrequencies[event.target.value] || 0;
+            return khzValue > 0 ? khzValue / 1000 : 0;
         };
 
         const eventValGpuFreq = (event) => {
-            return allowedGpuFrequencies[event.target.value] || 0;
+            const khzValue = allowedGpuFrequencies[event.target.value] || 0;
+            return khzValue > 0 ? khzValue / 1000 : 0;
         };
 
         // 配置更新函数
@@ -279,16 +503,18 @@ ram_oc_opt=0</pre>
             
             // 3. OC参数
             // 当CPU或GPU频率任一不为0时，自动添加oc=1
-            const cpuFreq = parseInt(inputs.max_cpu_freq_txt.textContent);
-            const gpuFreq = parseInt(inputs.max_gpu_freq_txt.textContent);
+            const cpuFreqIndex = parseInt(inputs.max_cpu_freq.value);
+            const gpuFreqIndex = parseInt(inputs.max_gpu_freq.value);
+            const cpuFreq = allowedCpuMaxFrequencies[cpuFreqIndex] || 0;
+            const gpuFreq = allowedGpuFrequencies[gpuFreqIndex] || 0;
             if (cpuFreq !== 0 || gpuFreq !== 0) {
                 params.push(`oc=1`);
             }
             if (inputs.max_cpu_freq.value != 0) {
-                params.push(`max_cpu_freq=${inputs.max_cpu_freq_txt.textContent}`);
+                params.push(`max_cpu_freq=${cpuFreq}`);
             }
             if (inputs.max_gpu_freq.value != 0) {
-                params.push(`max_gpu_freq=${inputs.max_gpu_freq_txt.textContent}`);
+                params.push(`max_gpu_freq=${gpuFreq}`);
             }
             
             // 4. 其他参数
@@ -396,8 +622,10 @@ ram_oc_opt=0</pre>
         // 初始化参数显示
         inputs.ram_oc_vdd2_txt.textContent = inputs.ram_oc_vdd2.value;
         inputs.ram_oc_vddq_txt.textContent = inputs.ram_oc_vddq.value;
-        inputs.max_cpu_freq_txt.textContent = allowedCpuMaxFrequencies[inputs.max_cpu_freq.value];
-        inputs.max_gpu_freq_txt.textContent = allowedGpuFrequencies[inputs.max_gpu_freq.value];
+        const initialCpuFreq = allowedCpuMaxFrequencies[inputs.max_cpu_freq.value] || 0;
+        inputs.max_cpu_freq_txt.textContent = initialCpuFreq > 0 ? initialCpuFreq / 1000 : 0;
+        const initialGpuFreq = allowedGpuFrequencies[inputs.max_gpu_freq.value] || 0;
+        inputs.max_gpu_freq_txt.textContent = initialGpuFreq > 0 ? initialGpuFreq / 1000 : 0;
         
         // 复制功能实现
         configCode.addEventListener("click", () => {
@@ -421,8 +649,16 @@ ram_oc_opt=0</pre>
         updateConfigCode();
     </script>
 
-
-</div>
-    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
     </body>
 </html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS初代 - 注入器使用说明</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: var(--color-bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="toc">
+        <ul>
+<li><a href="#_1">注意事项</a></li>
+<li><a href="#_2">注入器方法</a></li>
+<li><a href="#_3">电脑端方法</a></li>
+<li><a href="#_4">手机端方法</a></li>
+<li><a href="#autorcm">开启免短接 AutoRCM</a></li>
+<li><a href="#_5">参考资料</a><ul>
+<li><a href="#_6">注入器</a></li>
+<li><a href="#_7">短接器</a></li>
+<li><a href="#_8">短接方法</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="ns-">NS初代 - 注入器使用说明</h1>
+<p>tags: [系统]</p>
+<h2 id="_1">注意事项</h2>
+<ul>
+<li>只适合未被打补丁的初代机器</li>
+<li>每次关机之后都需要重新注入</li>
+<li>第一次开启<code>AutoRCM</code>请确保你已经备份<code>BOOT0</code>和<code>BOOT1</code> 文件</li>
+</ul>
+<h2 id="_2">注入器方法</h2>
+<ul>
+<li>将已经安装好 <a href="https://www.cnblogs.com/we1zard/p/18848165#%E4%B8%8B%E8%BD%BD"><strong>整合包</strong></a> 的关机状态的switch的 <code>右边 joycon滑轨</code> 插入 <a href="#短接器">短接器</a></li>
+<li>接入 <a href="#注入器">注入器</a></li>
+<li>长按 <code>音量键 +</code> 同时按一下 <code>开机键</code>直到<code>减号灯灭</code>, 注入成功, 开机进入hekate</li>
+<li>卸下短接器, 拔掉注入器, 其他的操作就和硬破的switch一样了</li>
+</ul>
+<h2 id="_3">电脑端方法</h2>
+<ul>
+<li>下载 [<code>TegraRcmGUI_vx.x_Installer_2.msi</code>] 到电脑上<ul>
+<li><a href="https://www.jianguoyun.com/p/DXYNiTMQ2s_tDBjKjoIGIAA">网盘下载</a>  </li>
+<li><a href="https://tegrarcmgui.com/wp-content/uploads/2024/05/TegraRcmGUI_v2.6_Installer_2.msi">官网下载</a>  </li>
+</ul>
+</li>
+<li>双击打开之后一直按 <code>Next</code> 直到完成安装</li>
+<li>打开桌面的 <code>TegraRcmGUI</code> 快捷方式</li>
+<li><code>Settings &gt; Install Driver</code> 安装驱动
+    如果驱动有问题, 请手动安装 <code>Zadig</code>
+    打开下载好的 <code>Zadig.exe</code> 选择 <code>libusbK (v3.1.0.0)</code><br />
+    点 <code>Install Driver</code> 开始安装驱动<ul>
+<li><a href="https://www.jianguoyun.com/p/DXYNiTMQ2s_tDBjKjoIGIAA">网盘下载</a></li>
+<li><a href="(https://github.compbatard/libwdi/releases/download/v1.5.1/zadig-2.9.exe)">官网下载</a> </li>
+</ul>
+</li>
+<li>打开 <code>Inject payload</code> 旁边的 <code>文件夹图标</code></li>
+<li>选择电脑上 <a href="https://www.cnblogs.com/we1zard/p/18848165#%E4%B8%8B%E8%BD%BD"><strong>整合包</strong></a> 解压之后的 <code>/Magic-Suite/payloader.bin</code></li>
+<li>将已经安装好整合包的关机状态的switch的 <code>右边 joycon滑轨</code> 插入 <a href="#短接器">短接器</a></li>
+<li>长按 <code>音量键 +</code> 同时用usb线接入电脑</li>
+<li>正常情况下, 左下角图标会开始显示短接, 然后成功后变为<code>绿色 RCM OK</code>, 说明注入成功了</li>
+<li>注入成功之后, switch会开机进入Hekate菜单, 现在松开按键, 卸下短接器, 拔掉usb线, 其他的操作就和硬破的switch一样了</li>
+</ul>
+<p><img alt="image" src="https://tegrarcmgui.com/wp-content/uploads/2024/04/tegrarcmgui1.png" /></p>
+<h2 id="_4">手机端方法</h2>
+<ul>
+<li>下载 [5.3.Rekado.110.-release.apk] 并安装到安卓手机上<ul>
+<li><a href="https://www.jianguoyun.com/p/DXYNiTMQ2s_tDBjKjoIGIAA">网盘下载</a></li>
+<li><a href="https://github.comMenosGrante/Rekado/releases/download/5.3_pre-release/5.3.Rekado.110.-release.apk">官网下载</a></li>
+</ul>
+</li>
+<li>将 <a href="https://www.cnblogs.com/we1zard/p/18848165#%E4%B8%8B%E8%BD%BD"><strong>整合包</strong></a> 解压之后的 <code>/Magic-Suite/payloader.bin</code>复制进手机</li>
+<li>打开<code>Rekado</code>, 点击 <code>+</code> 选择刚才复制的 <code>payloader.bin</code> 的文件路径</li>
+<li>将已经安装好整合包的关机状态的switch插入 <a href="#短接器">短接器</a></li>
+<li>长按 <code>音量键 +</code> 同时用usb线接入手机, 从手机弹出窗口, 选择<code>payloader.bin</code>注入</li>
+<li>注入成功之后, switch会开机进入Hekate菜单, 现在可以松开按键, 卸下短接器, 拔掉usb线, 其他的操作就和硬破的switch一样了</li>
+</ul>
+<h2 id="autorcm">开启免短接 AutoRCM</h2>
+<p><strong>优点</strong>:<br />
+- 开机不需要短接, 按开机键直接进入引导</p>
+<p><strong>缺点</strong>:<br />
+- 完全没电之后, RCM失效, 需要充20分钟左右
+- 失效之后开机会进入黑屏RCM模式, 不是死机, 需要重新注入
+- 每次升级系统之后, 需要重新打开AutoRCM</p>
+<ol>
+<li>首次开启AutoRCM<ul>
+<li>启动到Hekate, 打开 <code>Hekate &gt; Tools &gt; Backup eMMC &gt; eMMC BOOT0 &amp; BOOT1</code>, 进行备份(已备份直接<code>步骤2</code>)</li>
+</ul>
+</li>
+<li>打开 <code>Hekate &gt; Tools &gt; Arch Bit • AutoRCM • Touch • Pkg1/2</code><ul>
+<li>开启: <code>AutoRCM On</code> </li>
+<li>关闭: <code>AutoRCM Off</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="_5">参考资料</h2>
+<ul>
+<li><a href="https://switch.hacks.guide/user_guide/rcm/entering_rcm.html?tab=bent-joy-con-pins-(not-recommended)&amp;-10&amp;-10&amp;-10&amp;-10&amp;-10&amp;-10&amp;-10#entering-rcm">Enter RCM</a></li>
+<li><a href="https://switch.hacks.guide/user_guide/rcm/sending_payload.html?tab=windows#injecting-a-payload">Injecting a payload</a></li>
+<li><a href="https://switch.hacks.guide/user_guide/rcm/sending_payload.html?tab=windows#driver-installation-with-zadig">Install Zadig</a></li>
+<li><a href="https://switch.hacks.guide/extras/autorcm.html">AutoRCM</a></li>
+</ul>
+<h3 id="_6">注入器</h3>
+<p><img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202505/3533742-20250501224825706-1389982942.png" /></p>
+<h3 id="_7">短接器</h3>
+<p><img alt="image" src="https://switch.hacks.guide/assets/recommended_jig.BfTWMjvp.jpg" /></p>
+<h3 id="_8">短接方法</h3>
+<ul>
+<li>用回形针短接<code>10 pin</code>和<code>1 pin</code>,<code>7 pin</code>, <code>9 pin</code>3个中的任一个, 此方法有概率会导致switch无法进入RCM模式, 请谨慎使用.</li>
+</ul>
+<p><img alt="image" src="https://switch.hacks.guide/assets/enterting_rcm_pins_numbered.Bk8vBaHb.jpg" /></p>
+                <div class="update-time">2026-03-13 16:25:07</div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

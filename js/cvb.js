@@ -572,12 +572,12 @@ function drawVoltageChart(frequencies, calculationResults, calculationType) {
         datasets: [{
             label: calculationType === 'cvb_mv' ? '电压 (mV)' : '缩放比例',
             data: validData.map(item => item.value),
-            borderColor: '#60a5fa',
+            borderColor: '#93c5fd',
             backgroundColor: 'rgba(96, 165, 250, 0.1)',
             borderWidth: 2,
             fill: true,
             tension: 0.2,
-            pointBackgroundColor: '#60a5fa',
+            pointBackgroundColor: '#93c5fd',
             pointRadius: 3,
             pointHoverRadius: 5
         }]

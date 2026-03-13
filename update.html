@@ -1,0 +1,3502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更新日志 - WE1ZARD</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: var(--color-bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="toc">
+        <ul>
+<li><a href="#aio-10215">10.2.15</a></li>
+<li><a href="#aio-10214">10.2.14</a></li>
+<li><a href="#aio-10213">10.2.13</a></li>
+<li><a href="#aio-10212">10.2.12</a></li>
+<li><a href="#aio-10211">10.2.11</a></li>
+<li><a href="#aio-10210">10.2.10</a></li>
+<li><a href="#aio-1029">10.2.9</a></li>
+<li><a href="#aio-1028">10.2.8</a></li>
+<li><a href="#aio-1027">10.2.7</a></li>
+<li><a href="#aio-1026">10.2.6</a></li>
+<li><a href="#aio-1025">10.2.5</a></li>
+<li><a href="#aio-1024">10.2.4</a></li>
+<li><a href="#aio-1023">10.2.3</a></li>
+<li><a href="#aio-1022">10.2.2</a></li>
+<li><a href="#aio-1021">10.2.1</a></li>
+<li><a href="#aio-1020">10.2.0</a></li>
+<li><a href="#aio-10112">10.1.12</a></li>
+<li><a href="#aio-10111">10.1.11</a></li>
+<li><a href="#aio-10110">10.1.10</a></li>
+<li><a href="#aio-1019">10.1.9</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="aio-10215">AIO 10.2.15</h1>
+<h2 id="sys-clk-230">sys-clk 2.3.0</h2>
+<ul>
+<li>支持切换中英菜单, 要求 Settings 3.4.1+</li>
+<li>完善熄屏充电逻辑</li>
+<li>调整涓流阈值范围70-95%</li>
+<li>特别感谢网友: 阿斗, 手语, 历音等人的测试反馈</li>
+</ul>
+<h2 id="settings-341">Settings 3.4.1</h2>
+<ul>
+<li>添加 Sys-clk 双语切换支持</li>
+</ul>
+<h2 id="updater-550">Updater 5.5.0</h2>
+<ul>
+<li>新增 <code>Overlays &gt; KeyX</code> 按键助手</li>
+<li>新增 <code>HB Apps &gt; NX-Mod-Manager</code> 模组管理工具</li>
+<li>以上两个工具来自 <a href="https://github.com/TOM-BadEN">TOM</a> 的开源项目</li>
+</ul>
+<h2 id="sys-clk-220">sys-clk 2.2.0</h2>
+<ul>
+<li>新增 <code>Governor</code> CPU 独立变频模式, GPU 独立变频模式, All 变频模式</li>
+<li>新增 <code>Governor Overrides</code> 设置变频下限, 默认变频下限值CPU 1020, GPU 307</li>
+<li><code>Governor</code> 变频上限为超频配置的目标值, 若未设置目标值, 则以可选最高目标值作为上限</li>
+</ul>
+<h2 id="sys-clk-211">sys-clk 2.1.1</h2>
+<ul>
+<li>修复错误的涓流的百分比逻辑</li>
+<li>补全 <code>dvfs -15mv</code> 档位</li>
+<li>添加 <code>Uncapped Clocks</code> 解锁频率切换按钮, 配合 Governor 动态调节, 可以提高掌机续航.</li>
+<li>注意: 涓流电流值由于硬件还有计算精度的问题, <code>实际值与设定值有一定的偏差</code>, 尤其是低于 448 mA的值, 偏差会更大.</li>
+</ul>
+<h2 id="aurora-102b6">Aurora 10.2.b6</h2>
+<ul>
+<li>统一超频名称, 修改 RAM 名称为 MEM (导入旧参数, 需要将json中RAM替换成MEM)</li>
+<li>修复初始化的 pkg 名称</li>
+<li>支持最新 libnx</li>
+<li>优化 High UV7 和 Extreme table</li>
+</ul>
+<h1 id="aio-10214">AIO 10.2.14</h1>
+<ul>
+<li>添加最新 libnx 支持</li>
+<li>使用 Sys-clk 替换 Sys-clk-oc</li>
+</ul>
+<h2 id="arcane-316">Arcane 3.1.6</h2>
+<ul>
+<li>新增 <code>国行切换国际版</code>, 要求 Settings 3.4.0+</li>
+</ul>
+<h2 id="settings-340">Settings 3.4.0</h2>
+<ul>
+<li>新增 <code>Set Global Region</code> 国行转国际版, 要求 Arcane 3.1.6+, 切换后需要重启生效</li>
+</ul>
+<h2 id="sys-clk-210">Sys-clk 2.1.0</h2>
+<ul>
+<li>新增 <code>FAN</code> 风速显示</li>
+<li>新增 <code>Governor</code> GPU 独立睿频</li>
+<li>新增 <code>Thermal Throttle</code> 温度功耗墙限制设置</li>
+<li>新增 <code>Charging</code> 充电设置, 包括: 电池充电百分比设置, 涓流百分比设置</li>
+<li>显示 Speedo 数值</li>
+</ul>
+<h2 id="status-monitor-overlay-146">Status-Monitor-Overlay 1.4.6</h2>
+<ul>
+<li>优化 Mini 和 Micro 模式的隐藏逻辑, 默认快捷键 <code>L + LS</code></li>
+<li>统一内存名称 <code>MEM</code></li>
+</ul>
+<h2 id="dbi-875">DBI 875</h2>
+<ul>
+<li>A fix for regexp for firmware files</li>
+</ul>
+<h2 id="dbi-874">DBI 874</h2>
+<ul>
+<li>Fixes for working with the activity log</li>
+</ul>
+<h2 id="dbi-873">DBI 873</h2>
+<h2 id="dbi-871">DBI 871</h2>
+<ul>
+<li>Displaying the DLS name in the game card. Creating all known unlockers for the game at once.</li>
+</ul>
+<h2 id="dbi-867">DBI 867</h2>
+<ul>
+<li>Fixing a bug when copying files via MTP.</li>
+</ul>
+<h2 id="dbi-866">DBI 866</h2>
+<ul>
+<li>The work with LFS has been revamped, and numerous bugs in working with LFS have been fixed.</li>
+</ul>
+<h2 id="dbi-865">DBI 865</h2>
+<ul>
+<li>Information about the SD card in the system information. Warning about a fake card.</li>
+</ul>
+<h1 id="aio-10213">AIO 10.2.13</h1>
+<h2 id="updater-540">Updater 5.4.0</h2>
+<ul>
+<li>新增 sys-dock 底座刷新率增强模块</li>
+</ul>
+<h2 id="status-monitor-overlay-145">Status-Monitor-Overlay 1.4.5</h2>
+<ul>
+<li>修复游戏未运行时, 打开 FPS graph 会死机的问题</li>
+<li>调整 Battery 和 Misc 的UI</li>
+</ul>
+<h2 id="fpslocker-331">FPSLocker 3.3.1</h2>
+<ul>
+<li>Fix an issue with Change Refresh Rate not showing up when Docked Display Sync was off</li>
+<li>Add support for new type of NACP introduced with The Legend of Zelda: Breath of The Wild 1.9.0, now title is showing up properly.</li>
+<li>Titles for "Games list" are retrieved faster by 10-15% on 21.0.0+
+If you ever had an issue with glitchy horizontal lines when using high refresh rate in docked mode at 1080p, new sys-dock release introduced "force_full_render_pass" patch which fixes the issue. Read README for link.</li>
+</ul>
+<h2 id="fpslocker-330">FPSLocker 3.3.0</h2>
+<ul>
+<li>Fixed numerous issues that occured when using sys-dock sysmodule</li>
+<li>Fixed an issue with emoji indicator next to HBR mode that was not properly aligned in different languages than English</li>
+<li>Changed emoji behavior next to HBR mode so ❌ occurs only for HBR mode with 2 DP lanes, in case of 4 DP lanes or HBR2 it will show ✅.</li>
+<li>Updated internal titleid base.</li>
+<li>For Switch OLED users that want to play in docked mode at high refresh rates and can't get past 75 Hz: new sysmodule has been released - it's called sys-dock. This can fix your issues. Read README properly!
+Update SaltyNX to 1.7.4 or newer!</li>
+</ul>
+<h1 id="saltynx-174">SaltyNX 1.7.4</h1>
+<ul>
+<li>Expose dock DP lane count via IPC (necessary to introduce some changes in FPSLocker)</li>
+<li>Don't block max refresh rate to 75 Hz in case of detecting HBR mode in 3rd party dock with active 4 DP lanes</li>
+</ul>
+<h2 id="aurora-102b5">Aurora 10.2.b5</h2>
+<ul>
+<li>修复预设时序2133错误的BL值</li>
+<li>默认CPU Table 采用1683</li>
+<li>Erista:<ul>
+<li>Fixed various table issues with multiple ram frequencies</li>
+<li>Fixed slight timing mistakes</li>
+</ul>
+</li>
+</ul>
+<h2 id="aurora-102b3">Aurora 10.2.b3</h2>
+<ul>
+<li>部分时序调整</li>
+<li>Erista:<ul>
+<li>DVB was added</li>
+<li>Timings were improved</li>
+<li>These are NOT proper timings!</li>
+<li>2 additional ram frequencies were added to erista</li>
+</ul>
+</li>
+</ul>
+<h2 id="status-monitor-overlay-144">Status-Monitor-Overlay 1.4.4</h2>
+<ul>
+<li>修复FPS Counter模式长时间待机后无法退出的bug</li>
+</ul>
+<h2 id="lockpick_rcm-1918">Lockpick_RCM 1.9.18</h2>
+<ul>
+<li>增加修改wifi区域, <code>change wifi region</code></li>
+<li>修复 prodinfo.dec.bak 会被新文件覆盖的问题</li>
+<li>修复 缓存未刷新, 导致修改失败的问题</li>
+</ul>
+<h1 id="aio-10212">AIO 10.2.12</h1>
+<h2 id="aurora-102b2">Aurora 10.2.b2</h2>
+<ul>
+<li>修复时序导入问题</li>
+</ul>
+<h1 id="aio-10211">AIO 10.2.11</h1>
+<ul>
+<li>支持 4G/8G 内存切换</li>
+</ul>
+<h2 id="aurora-102b1">Aurora 10.2.b1</h2>
+<ul>
+<li>支持 8G</li>
+<li>合并GPU Vmin中的Auto和DVFS</li>
+</ul>
+<h2 id="updater-539">Updater 5.3.9</h2>
+<ul>
+<li>添加 SaltyNX 增强补丁下载</li>
+</ul>
+<h2 id="settings-331">Settings 3.3.1</h2>
+<ul>
+<li>添加 SaltyNX 增强补丁开关</li>
+</ul>
+<h2 id="settings-330">Settings 3.3.0</h2>
+<ul>
+<li>移除 8G 引导, 合并到 Aurora</li>
+</ul>
+<h1 id="aio-10210">AIO 10.2.10</h1>
+<h2 id="arcane-315">Arcane 3.1.5</h2>
+<ul>
+<li>恢复ovl退出处理逻辑, 不再直接隐藏ovl菜单</li>
+<li>修改 LOGO 样式</li>
+</ul>
+<h2 id="aurora-102a16">Aurora 10.2.a16</h2>
+<ul>
+<li>新增 tWTR 微调参数</li>
+</ul>
+<h1 id="dbi-864">DBI 864</h1>
+<h1 id="aio-1029">AIO 10.2.9</h1>
+<ul>
+<li>新增按键助手中文名切换</li>
+</ul>
+<h2 id="arcane-314">Arcane 3.1.4</h2>
+<ul>
+<li>修复因为刷新菜单导致的返回bug</li>
+</ul>
+<h1 id="aio-1028">AIO 10.2.8</h1>
+<ul>
+<li>修复Updater无法正常解压zip的问题</li>
+</ul>
+<h2 id="status-monitor-overlay-143">Status-Monitor-Overlay 1.4.3</h2>
+<ul>
+<li>优化快捷键按键处理逻辑</li>
+<li>修复无法使用快捷键隐藏状态监控</li>
+<li>添加 <code>Mini 模式</code> 可隐藏状态监控支持</li>
+<li><code>Mini 模式</code> 默认重置 FPS 统计快捷键 <code>ZL+L</code></li>
+<li>默认的隐藏状态监控改为: <code>LS+L</code>, 可在 Settings &gt; KeyCombo 进行修改</li>
+</ul>
+<h2 id="settings-329">Settings 3.2.9</h2>
+<ul>
+<li>新增 status monitor 快捷键 LS+L, 移除 ZL+L</li>
+</ul>
+<h1 id="aio-1027">AIO 10.2.7</h1>
+<h2 id="aurora-102a15">Aurora 10.2.a15</h2>
+<ul>
+<li>优化时序, 更好的高频表现</li>
+<li>移除 MTC 设置项</li>
+</ul>
+<h2 id="arcane-313">Arcane 3.1.3</h2>
+<ul>
+<li>修复 header 被错误截断的问题</li>
+<li>修复 applied 后无法正确刷新的问题</li>
+</ul>
+<h2 id="sphaira-lite-106">sphaira-lite 1.0.6</h2>
+<ul>
+<li>默认显示所有隐藏文件</li>
+</ul>
+<h2 id="settings-328">Settings 3.2.8</h2>
+<ul>
+<li>修复错误路径</li>
+</ul>
+<h2 id="updater-538">Updater 5.3.8</h2>
+<ul>
+<li>修复 OC-Suite 错字</li>
+</ul>
+<h1 id="aio-1026">AIO 10.2.6</h1>
+<h2 id="aurora-102a14">Aurora 10.2.a14</h2>
+<ul>
+<li>内置时序预设配置 TIMINGS &gt; Presets</li>
+<li>更新帮助内容</li>
+</ul>
+<h2 id="arcane-312">Arcane 3.1.2</h2>
+<ul>
+<li>修复偶尔快捷键无法正常呼出菜单的问题</li>
+</ul>
+<h1 id="aio-1025">AIO 10.2.5</h1>
+<h2 id="updater-537">Updater 5.3.7</h2>
+<ul>
+<li>调整先行版到安装页面第一位置</li>
+<li>未安装应用, 隐藏删除选项</li>
+</ul>
+<h2 id="saltynx-173">SaltyNX 1.7.3</h2>
+<ul>
+<li>Properly fix an issue with GetAllModuleInfo function introduced in 20.x SDK instead of using workaround (Thanks to @nvnprogram for solution). This function is mainly used by Unity 6 games.</li>
+<li>Since I was asked to add this adnotation as the same function is used to detect if Splatoon 3 has injected modules.</li>
+<li>Warning (警告)<ul>
+<li>Using SaltyNX in online games can lead to ban. (在线游戏使用 SaltyNX 可能会导致 BAN, 尤其第一方.)</li>
+<li>Not that I got any report personally, but it's very obvious from how it works it's a ban bait in online games, especially first party.</li>
+</ul>
+</li>
+</ul>
+<h2 id="saltynx-172">SaltyNX 1.7.2</h2>
+<ul>
+<li>Fixed an issue with Unreal Engine games not setting properly on boot Fake Docked mode saved with ReverseNX-RT</li>
+<li>Issue comes from engine's strict order in processing notifications, OperationMode must be processed before PerformanceMode</li>
+</ul>
+<h1 id="aio-1024">AIO 10.2.4</h1>
+<h2 id="fpslocker-324">FPSLocker 3.2.4</h2>
+<ul>
+<li>Add Traditional Chinese language</li>
+<li>Updated internal titleid base.</li>
+</ul>
+<h2 id="updater-536">Updater 5.3.6</h2>
+<ul>
+<li>添加设置自动检测, 要求 Arcane 3.1.1+</li>
+</ul>
+<h2 id="settings-327">Settings 3.2.7</h2>
+<ul>
+<li>移除相册线程切换</li>
+<li>添加设置自动检测, 要求 Arcane 3.1.1+</li>
+</ul>
+<h2 id="r2config-224">R2Config 2.2.4</h2>
+<ul>
+<li>添加L4T和安卓自动检测</li>
+<li>要求 Arcane 3.1.1+</li>
+</ul>
+<h2 id="magic-721">Magic 7.2.1</h2>
+<ul>
+<li>更新备份preset和kip的命名, 以eos开头, 避免和hoc混淆.</li>
+<li>要求 Arcane 3.1.1+</li>
+</ul>
+<h2 id="aurora-102a13">Aurora 10.2.a13</h2>
+<ul>
+<li>更新备份preset和kip的命名, 以hoc开头, 避免和eos混淆.</li>
+<li>要求 Arcane 3.1.1+</li>
+</ul>
+<h2 id="arcane-311">Arcane 3.1.1</h2>
+<ul>
+<li>交换ZL/L 和 ZR/R的滚动逻辑</li>
+<li>修改kip命令和preset备份命令, 添加用于区分hoc和eos.</li>
+<li>新增 NA 命令</li>
+</ul>
+<h2 id="arcane-310">Arcane 3.1.0</h2>
+<ul>
+<li>新增 Exist 命令</li>
+</ul>
+<h1 id="aio-1023">AIO 10.2.3</h1>
+<h2 id="updater-535">Updater 5.3.5</h2>
+<ul>
+<li>修复无法初始化的问题</li>
+<li>添加 EdiZon 在线版本 (感谢: 星落尘降)</li>
+</ul>
+<h2 id="aurora-102a10">Aurora 10.2.a10</h2>
+<ul>
+<li>扩展DVB到350mV</li>
+<li>内存频率扩展到3500, 目前3400确认能跑</li>
+<li>修复3133的错误值</li>
+<li>修复无法使用vdd2无法使用 1100 mV 以下的电压</li>
+<li>将 3000 CPU 移至 Extreme Table</li>
+<li>Mariko:<ul>
+<li>Improved dram timings:</li>
+<li>2133 tWRL was improved and should be more stable now</li>
+<li>1866 and 1600 read/write latency now works, although there may be slight math errors</li>
+</ul>
+</li>
+<li>Erista:<ul>
+<li>Fixed typo in gpu vmin patches, if it actually works is untested 😅 </li>
+</ul>
+</li>
+</ul>
+<h1 id="aio-1022">AIO 10.2.2</h1>
+<ul>
+<li>完善版权协议细分</li>
+<li>修复错误的arcane版本</li>
+</ul>
+<h2 id="lockpick_rcm-1918_1">Lockpick_RCM 1.9.18</h2>
+<ul>
+<li>增加修改wifi区域, <code>change wifi region</code></li>
+<li>修复 prodinfo.dec.bak 会被新文件覆盖的问题</li>
+</ul>
+<h1 id="aio-1021">AIO 10.2.1</h1>
+<h2 id="settings-326">Settings 3.2.6</h2>
+<ul>
+<li>调整 4G/8G 切换的命令</li>
+<li>更新引导文件 <code>hekate_ipl.ini</code>, 采用原生 <code>stock</code> 启动 OFW, 不再通过 <code>ofw=1</code> 指令</li>
+<li>旧引导配置需要修改指令 <code>ofw=1</code>改为<code>emummc_force_disable=1</code>,<code>pkg3=atmosphere/package3</code>, <code>stock=1</code></li>
+<li>并且确保免熔断设置是 <code>autonogc=0</code></li>
+</ul>
+<h2 id="hekate-v650">hekate v6.5.0</h2>
+<ul>
+<li>HOS 21.2.0 support</li>
+<li>Significantly faster booting.</li>
+<li>T210: Several components of HOS booting are now 464% faster</li>
+<li>T210B01: Same components for mariko are now up to 15847% faster and many others up to 41% faster.</li>
+<li>Coreboot support is now obsolete and removed</li>
+<li>The last thing that was keeping it was newer Android releases not being stable as very old ones.</li>
+<li>They are just now more stable and beyond parity with old ones, so please update to newer that use L4T loader instead.</li>
+<li>HOS MWS (Mariko Warmboot Storage) is now removed in favor of L4T based one.</li>
+<li>It was already deprecated for the last 3 years. So remove it to save codebin space.</li>
+<li>The error message Panic occurred while running Atmosphere. for fatals is now a simpler Atmosphere panic occurred!.</li>
+<li>Several other improvements and fixes</li>
+</ul>
+<h2 id="nyx-v190">Nyx v1.9.0</h2>
+<ul>
+<li>Significantly faster performance of 107% for T210B01</li>
+<li>All logic and rendering of GUI is now up to 107% faster for Mariko based devices.</li>
+<li>Main Easter egg was updated to v2.6.0</li>
+<li>Updated BDK to latest</li>
+<li>Added support for setting BPMP clock via clock.cfg file. (Single byte value based on bpmp_freq_t)</li>
+<li>Better Joy-Con charging and better font background color management</li>
+<li>A new Easter egg was also added</li>
+<li>Added support for dumping all locked ODM fuses on T210B01</li>
+<li>Corrected wafer bounds for T210 (placement was adjusted to the left)</li>
+<li>Reduced power draw for T210B01 a bit.</li>
+<li>Added Joy-Con charging debug info</li>
+<li>Console window can now be opened/closed if only the secondary Joy-Con is plugged and debug info is updated also no matter what.</li>
+<li>Removed some invisible useless buttons in eMMC partition manager</li>
+<li>Several other improvements and fixes</li>
+</ul>
+<h2 id="lockpick_rcm-1918_2">Lockpick_RCM 1.9.18</h2>
+<ul>
+<li>增加修改wifi区域, <code>change wifi region</code></li>
+</ul>
+<h1 id="aio-1020">AIO 10.2.0</h1>
+<h1 id="atmosphere-1102">Atmosphere 1.10.2</h1>
+<ul>
+<li>支持 fw 21.2.0</li>
+</ul>
+<h2 id="aurora-102a8">Aurora 10.2.a8</h2>
+<ul>
+<li>支持 fw 21.2.0</li>
+</ul>
+<h1 id="aio-10112">AIO 10.1.12</h1>
+<h2 id="lockpick_rcm-1917">Lockpick_RCM 1.9.17</h2>
+<ul>
+<li>修复不能正确提取 FW21 密钥</li>
+<li>支持1TB卡, 支持截图</li>
+<li>支持 <code>Restore PRODINFO</code></li>
+<li>提取密钥同时, 提取 PRODINFO  <ul>
+<li>保存备份的路径:<br />
+<code>/backup/%s/partitions/PRODINFO</code><br />
+<code>/backup/%s/dumps/prodinfo.enc</code><br />
+<code>/backup/%s/dumps/prodinfo.dec</code>  </li>
+</ul>
+</li>
+</ul>
+<h1 id="aio-10111">AIO 10.1.11</h1>
+<ul>
+<li>移除/bootloader/patches.ini</li>
+<li>优化自动换包程序</li>
+<li>不再默认内置 Guides 用户指南</li>
+<li>添加更多DNS屏蔽</li>
+</ul>
+<h2 id="arcane-302">Arcane 3.0.2</h2>
+<ul>
+<li>修复 ref的项小于2的时候, 无法正常显示对应名称的bug</li>
+</ul>
+<h2 id="updater-534">Updater 5.3.4</h2>
+<ul>
+<li>更新 <code>Packages</code> 的下载链接</li>
+<li><code>Packages</code> 中的 <code>Update All</code> 排除更新 Magic, Aurora, Guides</li>
+<li>添加 <code>Packages &gt; Aurora HOC 超频编辑器</code> 安装下载</li>
+</ul>
+<h2 id="updater-533">Updater 5.3.3</h2>
+<ul>
+<li>移除 <code>HB Apps &gt; OC-Suite</code> 中无法在大气层1.10.1上正常运行的应用</li>
+<li>添加 <code>HB Apps &gt; OC-Suite &gt; CPU Monitor</code> CPU实时监控 和 <code>HB Apps &gt; OC-Suite &gt; FurMarkNX</code> 甜甜圈烤机</li>
+</ul>
+<h2 id="updater-532">Updater 5.3.2</h2>
+<ul>
+<li>优化处理逻辑, 调整菜单层级, 原 <code>HomeBrew Apps</code> 改为 <code>HB Apps</code></li>
+<li>优化打包逻辑</li>
+</ul>
+<h2 id="settings-325">Settings 3.2.5</h2>
+<ul>
+<li>优化处理逻辑, 调整菜单层级, 新增 <code>HB Apps</code>, 将自制应用合并到里面</li>
+<li>优化打包逻辑</li>
+</ul>
+<h2 id="r2config-223">R2Config 2.2.3</h2>
+<ul>
+<li>优化打包</li>
+</ul>
+<h2 id="sphaira-lite-103">sphaira-lite 1.0.3</h2>
+<ul>
+<li>添加 缺失的备注名</li>
+</ul>
+<h1 id="aio-10110">AIO 10.1.10</h1>
+<ul>
+<li>修复 DBI 字体显示不全的问题</li>
+</ul>
+<h1 id="aio-1019">AIO 10.1.9</h1>
+<ul>
+<li>默认显示 DBI MTP 菜单, 快捷方式是打开DBI按X</li>
+<li>添加 MTP 7号盘 存档资料 显示</li>
+<li>修复 Updater 版本查询显示错误</li>
+</ul>
+<h2 id="fpslocker-323">FPSLocker 3.2.3</h2>
+<ul>
+<li>Fixed an issue where running game with different program than main one resulted in no game version showing up in Advanced Settings</li>
+<li>Updated internal titleid base.</li>
+</ul>
+<h1 id="aio-1018">AIO 10.1.8</h1>
+<ul>
+<li>修复自动换包文件无法正常复制的问题(<a href="https://we1zard.qzz.io/aio.html">详细</a>)</li>
+<li>移除 <code>auto.bat</code>, <code>auto.sh</code> 换包脚本</li>
+</ul>
+<h2 id="tegraexplorer-520">TegraExplorer 5.2.0</h2>
+<ul>
+<li>内置 <code>DowngradeFixer</code> 系统降级修复</li>
+<li>内置 <code>DumpSaves</code> 存档导出</li>
+<li>内置 <code>SystemRestore</code> 系统恢复</li>
+</ul>
+<h2 id="saltynx-171">SaltyNX 1.7.1</h2>
+<ul>
+<li>Fix elf plugins support broken in 1.7.0 release<ul>
+<li>This also fixed issues with loading elf plugins to all retail games that were added as exceptions, so now those games are fully compatible with SaltyNX instead of partially compatible:<ul>
+<li>Alien: Isolation</li>
+<li>Company of Heroes Collection</li>
+<li>EA SPORTS FC 24</li>
+<li>GRID: Autosport</li>
+<li>Immortals Fenyx Rising</li>
+<li>Luigi's Mansion 3</li>
+<li>Mario Strikers: Battle League</li>
+<li>Olympic Games Tokyo 2020 – The Official Video Game</li>
+<li>Plants vs. Zombies: Battle for Neighborville</li>
+<li>Stubbs the Zombie in Rebel Without a Pulse</li>
+<li>The Lara Croft Collection</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="settings-324">Settings 3.2.4</h2>
+<ul>
+<li>添加更多的 <code>Reshade</code> 透明度选择</li>
+</ul>
+<h1 id="aio-1017">AIO 10.1.7</h1>
+<ul>
+<li>新增 <code>DowngradeFixer.bin</code>, 可以解决虚拟系统降级保存资料导致的问题.</li>
+</ul>
+<h2 id="saltynx-170">SaltyNX 1.7.0</h2>
+<ul>
+<li>Reduced sysmodule RAM usage from 724 kB to 404 kB without removing any functionality (this is like the hard limit without doing some optimization shenanigans or reducing functionality, ram usage is now completely independent from Core's size)</li>
+<li>Reduce Cores sizes by 20%</li>
+</ul>
+<h1 id="aio-1016">AIO 10.1.6</h1>
+<ul>
+<li>修改 AIO 版本的逻辑, 滚动更新, 正式版为先行版的上一个版本</li>
+<li>增加 DBI 默认设置</li>
+</ul>
+<h2 id="fpslocker-322">FPSLocker 3.2.2</h2>
+<ul>
+<li>Fix 0x207 error showing up for some people</li>
+<li>It was a combination of using nx-ovlloader in 4MB mode and me using too big socket buffers which I increased recently when debugging some other errors, which resulted in socket buffers taking 4x more space.</li>
+<li>Update internal titleid base.</li>
+</ul>
+<h2 id="updater-531">Updater 5.3.1</h2>
+<ul>
+<li>修复 卸载 <code>GPU Benchmark</code> 的错误路径</li>
+</ul>
+<h1 id="aio-1015">AIO 10.1.5</h1>
+<h2 id="settings-323">Settings 3.2.3</h2>
+<ul>
+<li>修复一处错误路径</li>
+</ul>
+<h2 id="updater-530">Updater 5.3.0</h2>
+<ul>
+<li>新增 <code>HomeBrew Apps &gt; OC-Suite &gt; GPU Benchmark</code> GPU 测试工具</li>
+</ul>
+<h1 id="aio-1014">AIO 10.1.4</h1>
+<ul>
+<li>不再使用内置签名</li>
+<li>修复fw 21 虚拟系统打开wifi无法运行游戏的问题</li>
+</ul>
+<h2 id="settings-322">Settings 3.2.2</h2>
+<ul>
+<li>后台服务现在开始默认关闭, 兼容fw 21虚拟系统, 真实系统联网需要打开</li>
+</ul>
+<h1 id="aio-1013">AIO 10.1.3</h1>
+<h2 id="magic-710">Magic 7.1.0</h2>
+<ul>
+<li>支持 Atmosphere 1.10.1</li>
+<li>更新 EOS 1.7.1</li>
+</ul>
+<h1 id="aio-1012">AIO 10.1.2</h1>
+<ul>
+<li>新增: DBI 初始配置文件</li>
+<li>移除 Magic 和 loader.kip</li>
+</ul>
+<h2 id="atmosphere-1101">Atmosphere 1.10.1</h2>
+<ul>
+<li>支持 FW 21.1.0</li>
+<li><code>mesosphere.bin</code> 从 Settings 移动到 <code>Atmosphere</code> 避免版本冲突问题</li>
+</ul>
+<h2 id="r2config-222">R2Config 2.2.2</h2>
+<ul>
+<li><code>custom.ini</code> 移至 AIO 打包, 避免跨版本冲突</li>
+</ul>
+<h2 id="settings-321">Settings 3.2.1</h2>
+<ul>
+<li>将 <code>mesosphere.bin</code> 和 <code>hbl.nsp</code> 移至 <code>atmosphere</code>, 避免跨版本冲突</li>
+<li>将 <code>4g/8g</code> 移至 <code>bootloader</code>, 避免跨版本冲突</li>
+</ul>
+<h2 id="fpslocker-321">FPSLocker 3.2.1</h2>
+<ul>
+<li>Fix an issue with game specific "Delete settings" option not deleting settings for different programs than main one (limited to first 16 IDs).</li>
+</ul>
+<h2 id="fpslocker-320">FPSLocker 3.2.0</h2>
+<ul>
+<li>Add an alternative source "Gitee" for downloading FPSLocker configs that is not blocked by China and other countries that block Github/are blocked by Github. I used it as first source because it's universally available, though it may be a bit slower to use for people located further from China.</li>
+<li>Big thanks to sskyNS for hosting automated clone repository on Gitee (because it requires Chinese phone number to create repository).</li>
+<li>So first is checked Gitee, if config was not found it checks readme on gitee, then it moves to github to check for config and if not found, it checks readme on Github.</li>
+<li>Now you can exit Advanced settings even in the middle of Check/Download config file connection, session will be terminated before going back to main menu.</li>
+<li>When config file is not found in Warehouse, percentage indicator will show up when downloading README.</li>
+<li>Change license to GPLv2 to comply with libtesla.</li>
+<li>Update internal titleid base.</li>
+</ul>
+<h1 id="aio-1001">AIO 10.0.1</h1>
+<ul>
+<li>修复: MTP 连接出错的问题</li>
+<li>修复: 真实系统转移存档报错的问题</li>
+<li>更新: 使用内置签名补丁</li>
+</ul>
+<h2 id="fpslocker-311">FPSLocker 3.1.1</h2>
+<ul>
+<li>Games list titles now load faster by 35% on average on FW 19.0.0+</li>
+<li>Found a different way to retrieve titles which is faster than original function. Added PR to libnx so other people can use it.</li>
+<li>If you are using old enough SaltyNX for BID to show only zeroes, Check/Download config file will instantly time out.</li>
+<li>Updated internal titleid base.</li>
+<li>Updated Chinese Simplified translation. Thanks to @naicfeng #80</li>
+</ul>
+<h2 id="updater-524">Updater 5.2.4</h2>
+<ul>
+<li>添加 <code>DBI</code> 英文版</li>
+</ul>
+<h2 id="dbi-849">DBI 849</h2>
+<ul>
+<li>Fixed a critical bug in the FTP server when transferring a large number of small files.</li>
+</ul>
+<h1 id="aio-1000">AIO 10.0.0</h1>
+<ul>
+<li>同步AIO和大气层大版本号 (比如: AMS 1.10.0 对应 10.x.x 版本, AMS 1.11.0 对应 11.x.x 版本...)</li>
+<li>修复hos版本号显示异常的问题</li>
+</ul>
+<h1 id="aio-435">AIO 4.3.5</h1>
+<ul>
+<li>更新sigpatches</li>
+<li>修复因为offset导致的本地存档转移报错</li>
+</ul>
+<h2 id="settings-320">Settings 3.2.0</h2>
+<ul>
+<li>新增 olsc 的 <code>enable_olsc_communication_block</code></li>
+</ul>
+<h1 id="aio-434">AIO 4.3.4</h1>
+<ul>
+<li>更新大气层内核, 添加虚拟系统模块 40mb补丁, 也就是解锁了之前部分mod过大导致报错的问题</li>
+<li>需要避免同时开过多的系统模块进入真实系统, 否则会直接导致报错无法进入系统</li>
+</ul>
+<h2 id="settings-319">Settings 3.1.9</h2>
+<ul>
+<li>更新 mesosphere 内核, 支持40mb 虚拟系统模块</li>
+</ul>
+<h1 id="aio-433">AIO 4.3.3</h1>
+<h2 id="hekate-642">Hekate 6.4.2</h2>
+<ul>
+<li>修复初代开机的问题</li>
+<li>新增8g魔改内存支持</li>
+</ul>
+<h2 id="settings-318">Settings 3.1.8</h2>
+<ul>
+<li>新增 <code>General &gt; Switch Modules</code> 切换内存, 仅限8g改装使用</li>
+</ul>
+<h1 id="aio-432">AIO 4.3.2</h1>
+<ul>
+<li>更新大气层最新修复</li>
+</ul>
+<h2 id="settings-317">Settings 3.1.7</h2>
+<ul>
+<li>更新 mesosphere 内核, 仅支持AMS 1.10.0</li>
+</ul>
+<h2 id="updater-523">Updater 5.2.3</h2>
+<ul>
+<li>新增 <code>wiliwili</code> deko3d 和 opengl 版本</li>
+<li>修复 wiliwili 在 fw 21系统报错的问题</li>
+</ul>
+<h1 id="aio-431">AIO 4.3.1</h1>
+<h2 id="magic-220">Magic 2.2.0</h2>
+<ul>
+<li>支持FW 21</li>
+<li>新增 Helios CPU 电压表</li>
+<li>拓展CPU High Vmin电压范围 (645-900mV)</li>
+</ul>
+<h2 id="updater-522">Updater 5.2.2</h2>
+<ul>
+<li>新增第三方手柄工具 <code>Sys Modules &gt; MissionControl</code>, <code>Sys Modules &gt; sys-con</code></li>
+</ul>
+<h2 id="saltynx-162">SaltyNX 1.6.2</h2>
+<ul>
+<li>Fix focus detection for games with multiple programs (f.e. The Long Dark with DLC)<ul>
+<li>When switching to new program, SaltyNX while game was running was reporting it as out of focus so "60Hz in HOME Menu" function was broken.</li>
+</ul>
+</li>
+<li>Add support for reading resolutions from Vulkan's Scissor functions (Similar to nvn, reported as Viewport)<ul>
+<li>It fixes an issue with some games not reporting resolutions, f.e. Blades of Time</li>
+</ul>
+</li>
+</ul>
+<h2 id="saltynx-161">SaltyNX 1.6.1</h2>
+<ul>
+<li>Fix an issue with some games not reporting file read speed (f.e. Saints Row The Third)<ul>
+<li>Replaced a function pointer for reading file that is used when GlobalFileDataCache is enabled.</li>
+</ul>
+</li>
+</ul>
+<h2 id="saltynx-160">SaltyNX 1.6.0</h2>
+<ul>
+<li>Added compatibility for Atmosphere 1.10.0+<ul>
+<li>Older SaltyNX releases can have random issues when using with Atmosphere 1.10.0 and newer.</li>
+<li>This release is backwards compatible so you can use it with older Atmosphere too.</li>
+</ul>
+</li>
+<li>Streamlined compiling Core and Bootstrap so 32-bit and 64-bit share now the same source code with few ifdefs<ul>
+<li>Because this is a big change, it may have introduced some bug I am not aware of</li>
+</ul>
+</li>
+</ul>
+<h2 id="status-monitor-overlay-142">Status-Monitor-Overlay 1.4.2</h2>
+<ul>
+<li>Added compatibility for Atmosphere 1.10.0+</li>
+<li>Older Status Monitor Overlay releases can have random issues when using with Atmosphere 1.10.0 and newer.</li>
+<li>This release is backwards compatible so you can use it with older Atmosphere too.</li>
+<li>It is required to update to SaltyNX 1.6.0+ for the same reason!</li>
+<li>Optimize CPU usage calculation so now there is less time spend on executing each loop, in result getting more precise results</li>
+<li>Fix how CPU usage is calculated so now overlay doesn't report randomly minus 0.</li>
+</ul>
+<h2 id="fpslocker-310">FPSLocker 3.1.0</h2>
+<ul>
+<li>Added compatibility for Atmosphere 1.10.0+</li>
+<li>Older FPSLocker releases can have random issues when using with Atmosphere 1.10.0 and newer.</li>
+<li>This release is backwards compatible so you can use it with older Atmosphere too.</li>
+<li>It is required to update to SaltyNX 1.6.0+ for the same reason!</li>
+<li>When using Check/Download config file and when config file was not found, but it was confirmed that game is listed in Warehouse with different version, now newest supported update is printed.</li>
+<li>Updated internal titleid base</li>
+</ul>
+<h2 id="fpslocker-306">FPSLocker 3.0.6</h2>
+<ul>
+<li>Updated internal titleid base</li>
+</ul>
+<h2 id="reversenx-rt-224">ReverseNX-RT 2.2.4</h2>
+<ul>
+<li>Added compatibility for Atmosphere 1.10.0+</li>
+<li>Older ReverseNX-RT releases can have random issues when using with Atmosphere 1.10.0 and newer.</li>
+<li>This release is backwards compatible so you can use it with older Atmosphere too.</li>
+<li>It is required to update to SaltyNX 1.6.0+ for the same reason!</li>
+</ul>
+<h2 id="settings-315">Settings 3.1.5</h2>
+<ul>
+<li>增加更多的系统更新屏蔽</li>
+</ul>
+<h2 id="atmosphere-1100">Atmosphere 1.10.0</h2>
+<h2 id="hekate-641">Hekate 6.4.1</h2>
+<h2 id="nyx-181">Nyx 1.8.1</h2>
+<h2 id="sys-clk-oc-eos-130">sys-clk-oc EOS-1.3.0</h2>
+<ul>
+<li>Implemented GPU load driver for accurate GPU utilization </li>
+<li>Overlay now shows CPU/GPU/RAM load</li>
+</ul>
+<h2 id="nx-ovlloader-110">nx-ovlloader 1.1.0</h2>
+<h2 id="arcane-300">Arcane 3.0.0</h2>
+<h2 id="dbi-843">DBI 843</h2>
+<h2 id="sys-patch-158">sys-patch 1.5.8</h2>
+<h2 id="sphaira-lite-102">sphaira-lite 1.0.2</h2>
+<h2 id="mastervolume-122">MasterVolume 1.2.2</h2>
+<h2 id="ovlloader-210">ovlloader 2.1.0</h2>
+<h2 id="magic-toolbox-500">Magic-Toolbox 5.0.0</h2>
+<ul>
+<li>支持 FW 21</li>
+</ul>
+<h1 id="aio-430">AIO 4.3.0</h1>
+<h2 id="sys-clk-oc-eos-127-magic">sys-clk-oc EOS-1.2.7-magic</h2>
+<ul>
+<li>修复电压bug</li>
+</ul>
+<h2 id="fpslocker-305">FPSLocker 3.0.5</h2>
+<ul>
+<li>Now if game has no config available on sdcard, in Advanced settings below provided TID and BID you will see also game versions:</li>
+<li>Developer game version | Internal game version's major value / Raw internal game version</li>
+<li>Updated internal titleid base</li>
+<li>Added check that without it can lead to some random issues for games without update installed.</li>
+</ul>
+<h1 id="aio-429">AIO 4.2.9</h1>
+<h2 id="status-monitor-overlay-141">Status-Monitor-Overlay 1.4.1</h2>
+<ul>
+<li>Fix an issue where in Mini and Full modes two resolutions were showing up next to each other, first being 0x0. Now it shows up only second resolution in that case.</li>
+</ul>
+<h2 id="updater-520">Updater 5.2.0</h2>
+<ul>
+<li>新增 <code>DBI &gt; SDK</code></li>
+<li>移除 <code>DBI</code> 英文版647</li>
+<li>更换下载节点</li>
+<li>旧版本无法下载的, 请PC手动下载更新</li>
+</ul>
+<h1 id="aio-428">AIO 4.2.8</h1>
+<h2 id="saltynx-159">SaltyNX 1.5.9</h2>
+<ul>
+<li>Change method for retrieving focus of Application<ul>
+<li>It doesn't change anything in Core so perfect compatibility is maintained</li>
+<li>Now CPU usage doesn't spike drastically while some games are running, causing sysmodule to be randomly unresponsive - if user decides to enable 60 HZ in HOME Menu in FPSLocker</li>
+</ul>
+</li>
+</ul>
+<h2 id="saltynx-158">SaltyNX 1.5.8</h2>
+<ul>
+<li>Remove exposing focus state<ul>
+<li>Was causing compatibility issues with some games like Super Mario Galaxy or Trails in the Sky 1st</li>
+<li>"60 Hz in HOME Menu" from FPSLocker goes back to using old method</li>
+</ul>
+</li>
+</ul>
+<h1 id="aio-427">AIO 4.2.7</h1>
+<h2 id="saltynx-157">SaltyNX 1.5.7</h2>
+<ul>
+<li>Check focus state only when notification is received instead on every frame.</li>
+</ul>
+<h2 id="saltynx-156">SaltyNX 1.5.6</h2>
+<ul>
+<li>Change method of how game's focus state is retrieved<ul>
+<li>This allows us to ditch old code for finding focus state of game, fixing an issue with rampaging CPU core in some games when they were out of focus IF user enabled "60 Hz in HOME Menu" option in FPSLocker</li>
+<li>Now Core also exposes game's current focus state so other developers can use it (This doesn't inform if game was paused or not, this is solely retrieving its focus state - look at libnx AppletFocusState enum in applet.h for more informations)</li>
+</ul>
+</li>
+<li>Change method of forcing game into pause (FPSLocker's Halt unfocused game), now Core only manages how game should handle focus state, leaving to kernel maintaining game in pause state which should have better compatibility than previous method</li>
+</ul>
+<h2 id="fpslocker-304">FPSLocker 3.0.4</h2>
+<ul>
+<li>Fix Halt unfocused game state not being saved in certain situations.</li>
+<li>Update internal titleid base.</li>
+</ul>
+<h1 id="aio-426">AIO 4.2.6</h1>
+<h2 id="settings-314">Settings 3.1.4</h2>
+<ul>
+<li>支持 Status Monitor 1.4.0</li>
+<li>触屏功能开关</li>
+<li>Mini模式内存占用详情开关</li>
+</ul>
+<h2 id="status-monitor-overlay-140">Status-Monitor-Overlay 1.4.0</h2>
+<ul>
+<li>Add touch screen functionality to Mini, FPS Graph, FPS Counter and Game Resolutions modes.</li>
+<li>You can now temporarily change position of them to wherever you want on screen. Position will reset after exiting chosen mode.</li>
+<li>If you have issues with touch screen, you can disable touch screen functionality in config file by changing touch_screen to false, more here.</li>
+<li>Changed behavior of combo key so now it's more consistent between various FPS, now it won't exit until at least 200 ms will pass holding buttons.</li>
+<li>Instead of printing 254, 254.0 or inf for FPS it will print now "n/d" aka "no data".</li>
+<li>Fixed an issue with Mini mode going out of bounds when using touch screen to change its position, switching to docked mode which has different font size.</li>
+</ul>
+<h2 id="dbi-831">DBI 831</h2>
+<h1 id="aio-425">AIO 4.2.5</h1>
+<h2 id="reversenx-rt-223">ReverseNX-RT 2.2.3</h2>
+<ul>
+<li>修复无法正常同步的问题, 取消中英双语</li>
+</ul>
+<h2 id="dbi-828">DBI 828</h2>
+<ul>
+<li>SDK export/substitution</li>
+</ul>
+<h2 id="dbi-827">DBI 827</h2>
+<ul>
+<li>Fix for installation of some titles on new HOS</li>
+</ul>
+<h2 id="dbi-826">DBI 826</h2>
+<ul>
+<li>Fix Failed writing headers</li>
+</ul>
+<h1 id="aio-424">AIO 4.2.4</h1>
+<h2 id="status-monitor-overlay-136">Status-Monitor-Overlay 1.3.6</h2>
+<ul>
+<li>Add to Mini Mode next to RAM Load which part of it belongs to CPU and GPU.</li>
+<li>Fixed an issue with switching from and to micro mode when overlay has different name than standard one.</li>
+</ul>
+<h2 id="fpslocker-303">FPSLocker 3.0.3</h2>
+<ul>
+<li>Fix config to patch conversion in scenario where MASTER_WRITE's asm_a64 type included BL instruction with direct offset (this fixes an issue with config for Kirby's Dream Buffet)</li>
+</ul>
+<h2 id="saltynx-155">SaltyNX 1.5.5</h2>
+<ul>
+<li>Stop reporting resolutions that have height higher than 1440 pixels.</li>
+</ul>
+<h2 id="r2config-221">R2Config 2.2.1</h2>
+<ul>
+<li>增加更多的RAW选项</li>
+</ul>
+<h1 id="aio-423">AIO 4.2.3</h1>
+<h2 id="updater-515">Updater 5.1.5</h2>
+<ul>
+<li>修改代理设置, 默认使用内置加速站点</li>
+</ul>
+<h2 id="arcane-208">Arcane 2.0.8</h2>
+<ul>
+<li>优化代理加速, 原方案没办法支持在线更新安装大文件</li>
+</ul>
+<h2 id="dbi-825">DBI 825</h2>
+<h1 id="aio-422">AIO 4.2.2</h1>
+<h2 id="status-monitor-overlay-135">Status-Monitor-Overlay 1.3.5</h2>
+<ul>
+<li>修复 <code>FSP Graph</code> 模式额外信息统计不到的问题</li>
+<li>In Full mode and Mini mode if only one reported resolution is changed, other one now stays in the same place. This solves an issue where some games have similar amount of calls to two different resolutions, resulting in constantly swapping places.</li>
+</ul>
+<h1 id="aio-421">AIO 4.2.1</h1>
+<ul>
+<li>移除内置签名补丁, 改用外置签名补丁</li>
+<li>sys-patch现在真实系统默认关闭</li>
+</ul>
+<h2 id="fpslocker-302">FPSLocker 3.0.2</h2>
+<ul>
+<li>增加国内源下载, 无需翻墙, 可以在线单独下载游戏帧数解锁补丁</li>
+<li>Multiple fixes in FPSLocker config to patch conversion related to assembly instructions (no config was affected by it as of 17.10.2025, but this was hindering slightly process of writing them)</li>
+<li>LDRB and LDRH now don't return error when instruction has provided fixed offset</li>
+<li>TBZ and TBNZ now support goto labels</li>
+<li>All condiitonal branches are now supported</li>
+<li>Updated titleid base to match current day status</li>
+</ul>
+<h1 id="aio-420">AIO 4.2.0</h1>
+<h2 id="arcane-207">Arcane 2.0.7</h2>
+<ul>
+<li>修复初始化列表菜单显示异常的问题</li>
+</ul>
+<h2 id="updater-514">Updater 5.1.4</h2>
+<ul>
+<li>移除 <code>NX-Mod-Manager</code>, 作者已上传homebrew app, 需要的去sphaira-lite应用商店安装</li>
+</ul>
+<h2 id="settings-313">Settings 3.1.3</h2>
+<ul>
+<li>修复 <code>General &gt; FanControl</code> 初始化提示FAIL的问题</li>
+</ul>
+<h2 id="r2config-220">R2Config 2.2.0</h2>
+<ul>
+<li>新增双虚拟系统分区配置</li>
+<li>更新说明文件</li>
+</ul>
+<h2 id="saltynx-154">SaltyNX 1.5.4</h2>
+<ul>
+<li>Add support for reading resolutions from nvnCommandBufferSetScissor and nvnCommandBufferSetScissors, resolutions are pushed as Viewport. Any resolution passed to Scissor is ignored that was the same as last resolution pushed to Viewport. This fixes an issue with reading resolution in games on Pokemon Engine which are using Scissors for dynamic resolution.</li>
+<li>Core32 now is using hard float ABI, making it faster and smaller.</li>
+<li>Add to toolbox.json version of sysmodule so Sysmodules 1.4.0+ overlay can show properly sysmodule's version.</li>
+</ul>
+<h1 id="aio-419">AIO 4.1.9</h1>
+<ul>
+<li><code>auto.bat</code> 脚本增加对隐藏文件的支持</li>
+</ul>
+<h2 id="updater-513">Updater 5.1.3</h2>
+<h2 id="settings-312">Settings 3.1.2</h2>
+<h2 id="guides-211">Guides 2.1.1</h2>
+<h2 id="magic-211">Magic 2.1.1</h2>
+<h2 id="r2config-211">R2Config 2.1.1</h2>
+<ul>
+<li>修复初始化后, 中文名不能正常显示的问题</li>
+</ul>
+<h1 id="aio-418">AIO 4.1.8</h1>
+<h2 id="updater-512">Updater 5.1.2</h2>
+<ul>
+<li>新增 <code>autoSAVE</code> 自动存档备份</li>
+<li>修复部分错误的文字</li>
+<li>修复ovl中文名称显示异常的问题</li>
+</ul>
+<h1 id="aio-417">AIO 4.1.7</h1>
+<h2 id="settings-311">Settings 3.1.1</h2>
+<ul>
+<li>移除 <code>ReShade</code> 垂直水平切换, ReShade 1.1.0+ 已经有独立选项</li>
+<li><code>Languages</code> 语言切换添加 <code>Reshade</code> 的中英语言切换</li>
+</ul>
+<h2 id="reshade-110">ReShade 1.1.0</h2>
+<ul>
+<li>支持中英语言切换, 在 <code>Settings &gt; Languages</code> 进行切换, 要求: Settings 3.1.1+</li>
+<li>独立显示垂直和水平扫描线</li>
+<li>优化了渲染性能, 减少系统资源消耗, 提高响应速度</li>
+</ul>
+<h1 id="aio-416">AIO 4.1.6</h1>
+<ul>
+<li>补充全 ovl 中文名, 如果.ovl_name没有对应名称的, 欢迎大家补充</li>
+</ul>
+<h2 id="arcane-206">Arcane 2.0.6</h2>
+<ul>
+<li>修复当ovl不存在对应项时, 不能显示正确的ovl名称</li>
+</ul>
+<h2 id="fpslocker-302_1">FPSLocker 3.0.2</h2>
+<ul>
+<li>增加国内源下载, 无需翻墙, 可以在线单独下载游戏帧数解锁补丁</li>
+</ul>
+<h2 id="saltynx-153">SaltyNX 1.5.3</h2>
+<ul>
+<li>Fixed a bug in 64-bit Core with FPSLocker patches that were using negative offsets in addresses (fixes an issue with WARRIORS OROCHI 4 / 無双OROCHI3 patches).</li>
+</ul>
+<h2 id="updater-511">Updater 5.1.1</h2>
+<ul>
+<li>修复部分无法正常安装的工具 <code>PNGShot</code>, <code>ovl-sysmodules</code>, <code>Breeze</code>, <code>OC-Suite</code>, <code>dvr-patches</code></li>
+<li>移除 <code>60FPS补丁合集</code> 下载, FPSLocker 3.0.2 已经支持国内在线独立下载</li>
+</ul>
+<h1 id="aio-415">AIO 4.1.5</h1>
+<ul>
+<li>修复最新版本的 sys-clk-oc 没有被正确打包的问题</li>
+</ul>
+<h2 id="reversenx-rt-223_1">ReverseNX-RT 2.2.3</h2>
+<ul>
+<li>修复切换语言无法保存的问题</li>
+</ul>
+<h2 id="guides-210">Guides 2.1.0</h2>
+<h2 id="magic-210">Magic 2.1.0</h2>
+<h2 id="r2config-210">R2Config 2.1.0</h2>
+<h2 id="settings-310">Settings 3.1.0</h2>
+<h2 id="updater-510">Updater 5.1.0</h2>
+<ul>
+<li>新增解包初始化, 提高更新可靠性, 安装不会残留旧文件, 避免冲突.</li>
+<li>初次打开会提示<code>PRROCESSING...</code>为正常现象</li>
+</ul>
+<h1 id="aio-414">AIO 4.1.4</h1>
+<h2 id="status-monitor-overlay-134">Status-Monitor-Overlay 1.3.4</h2>
+<ul>
+<li>修复 <code>mini</code> 模式FPS统计读取不正常的问题</li>
+</ul>
+<h2 id="reversenx-rt-222">ReverseNX-RT 2.2.2</h2>
+<ul>
+<li>改进了控制逻辑, 使用系统控制的时候, 会自动重置为当前的真实状态</li>
+<li>修复无法切换模式的问题</li>
+</ul>
+<h2 id="settings-307">Settings 3.0.7</h2>
+<ul>
+<li>修复 <code>Status Monitor</code> 的设置bug</li>
+<li>移除 <code>Status Monitor &gt; Micro &gt; AlignTo</code></li>
+</ul>
+<h1 id="aio-413">AIO 4.1.3</h1>
+<h2 id="updater-505">Updater 5.0.5</h2>
+<ul>
+<li>DBI 安装页面英文名称现在可以正常显示</li>
+</ul>
+<h1 id="aio-412">AIO 4.1.2</h1>
+<h2 id="arcane-205">Arcane 2.0.5</h2>
+<ul>
+<li>追加一个会导致崩溃的bug修复</li>
+</ul>
+<h2 id="r2config-202">R2Config 2.0.2</h2>
+<ul>
+<li>修复<code>.R2Config</code>名称错误的问题</li>
+</ul>
+<h1 id="aio-411">AIO 4.1.1</h1>
+<h2 id="sys-clk-oc-eos-127">sys-clk-oc EOS-1.2.7</h2>
+<ul>
+<li>More reliable boost clock detection </li>
+<li>Reworked Auto CPU boost </li>
+<li>Auto GPU Vmin fix</li>
+<li>Reworked handheld capping</li>
+<li>Renamed config commands</li>
+</ul>
+<h2 id="magic-204">Magic 2.0.4</h2>
+<ul>
+<li>支持 20.5.0</li>
+<li>要求 atmosphere 1.9.5</li>
+</ul>
+<h2 id="magic-203">Magic 2.0.3</h2>
+<ul>
+<li>修复 kip_info 导致的崩溃</li>
+<li>要求 arcane 2.0.5+</li>
+</ul>
+<h2 id="arcane-205_1">Arcane 2.0.5</h2>
+<ul>
+<li>修复一个严重的bug, 打开kip_info导致崩溃</li>
+</ul>
+<h1 id="aio-410">AIO 4.1.0</h1>
+<h2 id="r2config-202_1">R2Config 2.0.2</h2>
+<ul>
+<li>现在支持使用<code>.R2Config</code>进行备注名设置</li>
+<li>要求 arcane 2.0.4+</li>
+</ul>
+<h2 id="updater-504">Updater 5.0.4</h2>
+<ul>
+<li>现在支持使用<code>.Updater</code>进行备注名设置</li>
+<li>要求 arcane 2.0.4+</li>
+</ul>
+<h2 id="magic-202">Magic 2.0.2</h2>
+<ul>
+<li>现在支持使用<code>.Magic</code>进行备注名设置</li>
+<li>要求 arcane 2.0.4+</li>
+</ul>
+<h2 id="settings-306">Settings 3.0.6</h2>
+<ul>
+<li>现在支持使用<code>.Settings</code>进行备注名设置</li>
+<li>现在切换语言后会马上显示对应语言</li>
+<li>要求 arcane 2.0.4+</li>
+</ul>
+<h2 id="guides-201">Guides 2.0.1</h2>
+<ul>
+<li>现在支持使用<code>.Guides</code>进行备注名设置</li>
+<li>要求 arcane 2.0.4+</li>
+</ul>
+<h2 id="arcane-204">Arcane 2.0.4</h2>
+<ul>
+<li>支持自定义标识符搜索编辑</li>
+<li>支持使用 <code>.{pkgs name}</code>, <code>.ovl_name</code> 进行备注名设置</li>
+<li>降低系统资源占用</li>
+<li>提高执行效率</li>
+<li>修复内存泄漏的问题</li>
+</ul>
+<h2 id="updater-503">Updater 5.0.3</h2>
+<ul>
+<li>更新 <code>ftpsrv</code> 安装逻辑, 移除 <code>nro</code> 版本</li>
+</ul>
+<h1 id="aio-408">AIO 4.0.8</h1>
+<h2 id="dbi-814">DBI 814</h2>
+<h2 id="arcane-203">Arcane 2.0.3</h2>
+<ul>
+<li>提高下载速度</li>
+</ul>
+<h2 id="settings-305">Settings 3.0.5</h2>
+<ul>
+<li>新增 <code>General &gt; Memory Hack</code> 替换内核模块, fetal 触发下限更低, 降低内存溢出导致的崩溃, 19系统以上会导致录屏功能异常.</li>
+</ul>
+<h1 id="aio-407">AIO 4.0.7</h1>
+<h2 id="fpslocker-301">FPSLocker 3.0.1</h2>
+<ul>
+<li>oled 隐藏<code>解锁 90Hz</code>选项, 待测试</li>
+<li>Add support for SaltyNX 1.5.2 new feature which allows changing buffering in real time in supported NVN games (if game is not compatible with that real time feature, in Set Buffering menu you will see notice "It will be applied on next game boot").</li>
+<li>Remember that some games are designed in the way where you won't see the difference in FPS between double and triple buffer, usually that's a result of missing some NVN calls - example of such game is The Hundred Line.</li>
+<li>Updating to SaltyNX 1.5.2+ is required!</li>
+</ul>
+<h2 id="saltynx-152">SaltyNX 1.5.2</h2>
+<ul>
+<li>Add support for changing in real time amount of buffers in compatible NVN games (Requires FPSLocker 3.0.1+)</li>
+</ul>
+<h1 id="aio-406">AIO 4.0.6</h1>
+<h2 id="sphaira-lite-101">sphaira-lite 1.0.1</h2>
+<ul>
+<li>修复<code>隐藏</code>功能的异常问题</li>
+</ul>
+<h2 id="settings-304">Settings 3.0.4</h2>
+<ul>
+<li>修复 <code>General &gt; Services</code> 不同步的问题</li>
+<li>修复部分字符缺失的问题</li>
+</ul>
+<h2 id="settings-303">Settings 3.0.3</h2>
+<ul>
+<li><code>Settings &gt; FTPSRV</code> 添加更多的可设置项</li>
+</ul>
+<h2 id="settings-302">Settings 3.0.2</h2>
+<ul>
+<li>简化操作, 提高执行效率</li>
+<li>新增 <code>Settings &gt; Languages</code>, 支持中英菜单, 要求Arcane 2.0.2</li>
+<li>新增 <code>Settings &gt; Sys-Patch</code>, 对系统补丁行为进行设置</li>
+<li>调整部分文字说明</li>
+</ul>
+<h1 id="aio-405">AIO 4.0.5</h1>
+<h2 id="settings-301">Settings 3.0.1</h2>
+<ul>
+<li><code>Settings &gt; FTPSRV</code> 添加更多的可设置项</li>
+</ul>
+<h2 id="saltynx-151">SaltyNX 1.5.1</h2>
+<ul>
+<li>Bring back original max brightness for Switch OLED when refresh rate is set below 60 Hz</li>
+<li>Change colors for Switch OLED's 50 Hz at low range of brightness to better match 60 Hz colors</li>
+<li>This release focuses on fixing compatibility issues with games in Exceptions.</li>
+<li>Because it changes how some crucial functions are working, it needs to be tested if it doesn't break any game that was working before.</li>
+<li>Games that were not compatible up to 1.5.0 but are now with 1.5.1 Beta:</li>
+<li>Death Road to Canada<ul>
+<li>Donkey Kong Country: Tropical Freeze</li>
+<li>Stubbs the Zombie in Rebel Without a Pulse (game has hardcoded sizes, requires exefs patch to reduce 1.5GB general buffer by 2MB - added patches for versions 1.0.0 and 1.0.3)</li>
+<li>Olympic Games Tokyo 2020 – The Official Video Game™ (game has hardcoded sizes, requires exefs patch to reduce ~1.4GB general buffer by 2MB - added patches for versions 1.0.0 and 1.0.2 EUR + 1.0.9 Asia)</li>
+<li>Splatoon 3</li>
+</ul>
+</li>
+</ul>
+<h1 id="aio-404">AIO 4.0.4</h1>
+<h2 id="reversenx-rt-221">ReverseNX-RT 2.2.1</h2>
+<ul>
+<li>支持中英文切换, 游戏中打开菜单 <code>Change Languages/切换语言</code></li>
+<li>移除 <code>Save Current Settings/保存设置</code>, 现在任何改动之后都会自动保存当前设置, 设置好直接退出即可</li>
+</ul>
+<h2 id="sphaira-lite-100">sphaira-lite 1.0.0</h2>
+<ul>
+<li>大幅度精简, 从3mb到1.6m</li>
+<li>修复游戏后台运行打开相册工具会崩溃的bug</li>
+</ul>
+<h2 id="fpslocker-300">FPSLocker 3.0.0</h2>
+<ul>
+<li>旧的v3, v3.1补丁, 将无法转成可用解锁补丁, 需要重新下载v4补丁, 博客下载链接已更新为v4</li>
+<li>Add support for next generation of FPSLocker configs called "v4"</li>
+<li>Allows putting code caves and new variables inside SaltyNX Core, which allows easier updating of more complex configs + helps avoiding conflicts with cheats using caves</li>
+<li>More functionality when using branches in assembly</li>
+<li>"v3" branch in FPSLocker Warehouse is now removed, and "v3.1" branch will be removed in next week.</li>
+<li>User is now informed in main menu with red text "Patch file was not found" when currently running game is known that it should use FPSLocker patch but FPSLocker didn't detect it.</li>
+</ul>
+<h2 id="saltynx-150">SaltyNX 1.5.0</h2>
+<ul>
+<li>Add support for next generation of FPSLocker patches introduced in FPSLocker 3.0.0 release</li>
+<li>Fix compatibility with Unity 6 games (Hollow Knight Silksong, Disney Dreamlight Valley 1.18.0)</li>
+<li>NX-FPS: report resolutions only with width higher than 160 px</li>
+<li>FPSLocker patch is now applied every frame in handheld instead of every second. This can cause crashes with some old patches on game's boot, it can be solved by removing patch in FPSLocker, downloading new config with FPSLocker 3.0.0+ and creating from it new patch</li>
+<li>With each new release "Debug_files.zip" will be included for easier debugging of specific release version</li>
+</ul>
+<h1 id="aio-403">AIO 4.0.3</h1>
+<h2 id="sys-patch-157">Sys-Patch 1.5.7</h2>
+<ul>
+<li>使用新的方法处理loader</li>
+<li>添加缺失的系统补丁</li>
+</ul>
+<h2 id="arcane-202">Arcane 2.0.2</h2>
+<ul>
+<li>支持中英菜单切换, <code>Settings &gt; Languages</code></li>
+<li>修复部分显示文字异常的问题</li>
+</ul>
+<h2 id="updater-502">Updater 5.0.2</h2>
+<ul>
+<li>再次精简, 改善在线更新速度</li>
+</ul>
+<h2 id="magic-201">Magic 2.0.1</h2>
+<h2 id="r2config-201">R2Config 2.0.1</h2>
+<h2 id="settings-302_1">Settings 3.0.2</h2>
+<ul>
+<li>简化操作, 提高执行效率</li>
+<li>新增 <code>Settings &gt; Languages</code>, 支持中英菜单, 要求Arcane 2.0.2</li>
+<li>新增 <code>Settings &gt; Sys-Patch</code>, 对系统补丁行为进行设置</li>
+<li>调整部分文字说明</li>
+</ul>
+<h1 id="aio-402">AIO 4.0.2</h1>
+<h2 id="fpslocker-300_1">FPSLocker 3.0.0</h2>
+<ul>
+<li>修复丝之歌问题</li>
+</ul>
+<h1 id="aio-401">AIO 4.0.1</h1>
+<h2 id="updater-501">Updater 5.0.1</h2>
+<ul>
+<li>精简整体内容, 只保留Sphaira应用商店无法下载的部分</li>
+<li>更新代理, 更稳定</li>
+</ul>
+<h2 id="settings-301_1">Settings 3.0.1</h2>
+<ul>
+<li>修改<code>充电电流</code></li>
+</ul>
+<h2 id="arcane-201">Arcane 2.0.1</h2>
+<ul>
+<li>修复部分名称显示异常问题</li>
+</ul>
+<h1 id="aio-400">AIO 4.0.0</h1>
+<h2 id="magic-200">Magic 2.0.0</h2>
+<ul>
+<li>汉化菜单, 要求 Arcane 2.0.0+</li>
+<li>支持 atmosphere 1.9.4</li>
+</ul>
+<h2 id="atmosphere-194">Atmosphere 1.9.4</h2>
+<ul>
+<li>支持FW 20.4.0</li>
+<li>汉化Daybeak</li>
+<li>fusee-primary no longer exists, and will not work any more.</li>
+<li>Basic support was added for 20.4.0.</li>
+<li>An issue was fixed in exosphère's register accessilibity tables (thanks @CTCaer).</li>
+<li>I believe this had no impact on official code, though it would have prevented some homebrew from interacting correctly with the MC0/MC1 registers.</li>
+<li>An issue was fixed that could cause a deadlock when building multiple romfs images simultaneously (thanks @Ereza).</li>
+<li>This fixes support for certain mods, e.g. system language translations overriding content for both overlayDisp and qlaunch.</li>
+<li>General system stability improvements to enhance the user's experience.</li>
+<li>移除所有外置补丁</li>
+</ul>
+<h2 id="sphaira-lite-0140">sphaira-lite 0.14.0</h2>
+<ul>
+<li>支持显示备注名, (默认:打开)</li>
+<li>支持导出NSP/NSZ</li>
+<li>支持挂载文件系统</li>
+<li>支持网页安装</li>
+<li>移除在线主题</li>
+</ul>
+<h2 id="updater-500">Updater 5.0.0</h2>
+<ul>
+<li>汉化菜单, 要求 Arcane 2.0.0+</li>
+<li>调整部分菜单</li>
+<li>修复一些小错误</li>
+<li>新增<code>更新代理</code>,<code>代理设置</code></li>
+</ul>
+<h2 id="settings-300">Settings 3.0.0</h2>
+<ul>
+<li>汉化菜单, 要求 Arcane 2.0.0+</li>
+<li><code>FTPSRV</code>添加调试日志开关</li>
+<li>移除 <code>Forwarder</code> 设置</li>
+</ul>
+<h2 id="r2config-200">R2Config 2.0.0</h2>
+<ul>
+<li>汉化菜单, 要求 Arcane 2.0.0+</li>
+</ul>
+<h2 id="arcane-200">Arcane 2.0.0</h2>
+<ul>
+<li>支持汉化菜单</li>
+</ul>
+<h2 id="status-monitor-overlay-133">Status-Monitor-Overlay 1.3.3</h2>
+<ul>
+<li>优化gpu线程加载</li>
+</ul>
+<h1 id="aio-395">AIO 3.9.5</h1>
+<h2 id="saltynx-148">SaltyNX 1.4.8</h2>
+<ul>
+<li>Fix a bug introduced in 1.4.3 release with underclocked OLED not readjusting colors after waking from sleep.</li>
+</ul>
+<h2 id="sphaira-lite-0136">sphaira-lite 0.13.6</h2>
+<ul>
+<li>补全缺失的英文翻译</li>
+</ul>
+<h1 id="aio-394">AIO 3.9.4</h1>
+<h2 id="status-monitor-overlay-132">Status-Monitor-Overlay 1.3.2</h2>
+<ul>
+<li>Round FPS Average to PFPS if difference is in range +/- 0.25 (you can turn off rounding in config file), thanks to this we can minimize changes in FPS Average where some games are under constant changes while they provide in fact locked 60 FPS. For best results utilize always newest SaltyNX!</li>
+<li>This wasn't utilized before because PFPS reading was too unstable so current solution would not work. In SaltyNX 1.4.0 was introduced a better way to measure PFPS without cheating which gives now much stable results for referencing.</li>
+<li>Change optimization level from -O2 to -O3 for better performance at cost of slighly bigger overlay</li>
+</ul>
+<h2 id="settings-272">Settings 2.7.2</h2>
+<ul>
+<li>新增 <code>StatusMonitor &gt; Show Old Avg FPS</code> 切换FPS显示方式, 仅限 Status Monitor 1.3.2+</li>
+<li>调整 <code>StatusMonitor</code> UI分布, 按照模式进行分类, 通用的放在 <code>StatusMonitor &gt; General</code></li>
+</ul>
+<h1 id="aio-393">AIO 3.9.3</h1>
+<h2 id="magic-180">Magic 1.8.0</h2>
+<p>## EOS 1.6.7
+    - CPU UV bugfixes
+    - Minor UI improvements and bug fixes in the Toolkit
+    - 彻底移除 GPU UV3, 现在只要设置了 <code>Custom Table</code> 电压, 等同于原来的UV3</p>
+<h2 id="dbi-802">DBI 802</h2>
+<h1 id="aio-392">AIO 3.9.2</h1>
+<h2 id="magic-179">Magic 1.7.9</h2>
+<ul>
+<li>还原 GPU UV3选项</li>
+<li>修复无法显示GPU 1305 以上频率的问题</li>
+<li>切换GPU UV等级不再重置电压</li>
+<li>新增 <code>Custom Table &gt; Auto</code> 恢复电压</li>
+<li>使用UV 0-2 默认电压需要通过 <code>Custom Table &gt; Auto</code> 还原电压</li>
+<li>移除 <code>GPU Vmin OC</code></li>
+</ul>
+<h1 id="aio-391">AIO 3.9.1</h1>
+<h2 id="saltynx-147">SaltyNX 1.4.7</h2>
+<ul>
+<li>Fixed a bug in vulkan layer, causing crash in Until Then game</li>
+</ul>
+<h2 id="magic-178">Magic 1.7.8</h2>
+<p>## EOS 1.6.6
+  - 优化CPU UV table shift fix
+  - 移除 <code>UV3等级</code> 选项, 现在直接 <code>Custom Table</code> 改电压就是原来的 <code>UV3</code>
+  - <code>GPU UV3 Table</code> 现在改为 <code>Custom Table</code>
+    - 支持所有UV等级
+    - 切换UV等级, 将自动把 <code>Custom Table</code> 电压重置成 <code>Auto</code></p>
+<h2 id="sys-clk-oc-eos-124">sys-clk-oc EOS-1.2.4</h2>
+<ul>
+<li>Reworked clock cappings</li>
+<li>Handheld capping lower bound is set to 460</li>
+<li>Minor fix for reversenx sync</li>
+</ul>
+<h2 id="dbi-801">DBI 801</h2>
+<h1 id="aio-390">AIO 3.9.0</h1>
+<h2 id="sys-clk-oc-eos-124_1">sys-clk-oc EOS-1.2.4</h2>
+<ul>
+<li>handheld capping lower bound is set to 460,</li>
+<li>minor fix for reversenx sync</li>
+</ul>
+<h2 id="sys-clk-oc-eos-123">sys-clk-oc EOS-1.2.3</h2>
+<ul>
+<li>reworked clock cappings</li>
+</ul>
+<h1 id="aio-389">AIO 3.8.9</h1>
+<h2 id="fpslocker-240">FPSLocker 2.4.0</h2>
+<ul>
+<li>Add support for FPSLocker configs utilizing "asm_a64" in MASTER_WRITE. It allows writing human readable assembly instead of using big endian integers like it was before</li>
+<li>Switch to new branch v3.1 in Warehouse which will support this new type of writing assembly, v3 branch which was used in previous FPSLocker versions is now deprecated and will be removed in 1-2 months.</li>
+<li>This doesn't bring any new functionality to users, but not updating FPSLocker to newest version can eventually result in not having access to Warehouse directly from overlay, so update is recommended for everybody.</li>
+<li>Status-Monitor-Overlay 1.3.1</li>
+<li>Fix an issue with FPS Graph incorrectly detecting when game is paused, causing random pausing for a short moment (Requires SaltyNX 1.4.6+)</li>
+</ul>
+<h2 id="saltynx-146">SaltyNX 1.4.6</h2>
+<ul>
+<li>Share how many frames were generated by game (this fixes an issue with Status Monitor "FPS Graph" wrongly detecting paused games for brief moments, update Status Monitor to get proper support)</li>
+</ul>
+<h1 id="aio-388">AIO 3.8.8</h1>
+<h2 id="updater-427">Updater 4.2.7</h2>
+<ul>
+<li><code>Sys Modules &gt; ldn_mitm</code> 修复安装卸载逻辑</li>
+</ul>
+<h1 id="aio-387">AIO 3.8.7</h1>
+<h2 id="magic-177">Magic 1.7.7</h2>
+<ul>
+<li>移除 <code>GPU Vmin OC</code></li>
+<li>新增 <code>GPU DVFS Offset</code>, 初代不支持</li>
+</ul>
+<h1 id="aio-386">AIO 3.8.6</h1>
+<h2 id="magic-176">Magic 1.7.6</h2>
+<p>## EOS 1.6.5
+  - 支持20.3.0</p>
+<h2 id="saltynx-145">SaltyNX 1.4.5</h2>
+<ul>
+<li>Fix reporting doubled FPS value in Crypt of the NecroDancer</li>
+</ul>
+<h1 id="aio-385">AIO 3.8.5</h1>
+<h2 id="mastervolume-121b">MasterVolume 1.2.1b</h2>
+<ul>
+<li>支持20+系统</li>
+</ul>
+<h2 id="updater-426">Updater 4.2.6</h2>
+<ul>
+<li><code>Overlays &gt; MasterVolume</code> 安装20系统补丁</li>
+</ul>
+<h1 id="aio-384">AIO 3.8.4</h1>
+<h2 id="saltynx-144">SaltyNX 1.4.4</h2>
+<ul>
+<li>Fix an issue where GetDefaultDisplayResolution could return 0x0 in some cases, leading to game crash.</li>
+</ul>
+<h2 id="sphaira-lite-0135">sphaira-lite 0.13.5</h2>
+<ul>
+<li>修复<code>加号键</code>不能正常呼出右选项</li>
+<li>汉化选项提示信息</li>
+</ul>
+<h1 id="aio-383">AIO 3.8.3</h1>
+<h2 id="sphaira-lite-0134">sphaira-lite 0.13.4</h2>
+<ul>
+<li>默认关闭MTP, 以免和DBI造成冲突</li>
+</ul>
+<h2 id="fpslocker-231">FPSLocker 2.3.1</h2>
+<ul>
+<li>Add option "60 Hz in HOME Menu" in Display settings and Docked Settings-&gt;Additional Settings. More in README.</li>
+<li>Requires SaltyNX 1.4.3+ to work properly!</li>
+</ul>
+<h2 id="saltynx-143">SaltyNX 1.4.3</h2>
+<ul>
+<li>Add option to always force 60 Hz when in HOME Menu while Display Sync is turned on (requires FPSLocker 2.3.1+)</li>
+<li>Add support for overriding Default Display Resolution (Requires ReverseNX-RT 2.3.0+)</li>
+<li>Fix an issue for V1 and V2 models which in docked mode would report 0Hz if user was not using display sync</li>
+<li>Fix ReverseNX-RT not working in CelDamage HD</li>
+<li>Shadow update 05.08.2025 07:16 GMT: Fixed an issue where disabling system control in ReverseNX-RT didn't update custom DDR in game.</li>
+</ul>
+<h2 id="reversenx-rt-220">ReverseNX-RT 2.2.0</h2>
+<ul>
+<li>Add Change Handheld DDR and Change Docked DDR options, they will show up in compatible games. More in README.</li>
+<li>Requires SaltyNX 1.4.3+ to work properly!</li>
+</ul>
+<h1 id="aio-382">AIO 3.8.2</h1>
+<h2 id="atmosphere-193">atmosphere 1.9.3</h2>
+<ul>
+<li>支持20.3.0系统</li>
+</ul>
+<h2 id="updater-425">Updater 4.2.5</h2>
+<ul>
+<li>新增 <code>AIO &gt; Version</code> 查看AIO包版本, 要求3.8.2+版本</li>
+</ul>
+<h2 id="saltynx-142">SaltyNX 1.4.2</h2>
+<ul>
+<li>Fix an issue with Red Dead Redemption not detecting properly if it's in docked mode or handheld for NX-FPS internal use, causing FPS lock issues in docked mode</li>
+<li>Optimize dumping resolutions</li>
+</ul>
+<h2 id="saltynx-141a">SaltyNX 1.4.1a</h2>
+<ul>
+<li>Fix an issue where handheld will retain expected refresh rate from docked mode if handheld mode has no FPS Target set in FPSLocker while it's in docked mode.</li>
+</ul>
+<h2 id="saltynx-141">SaltyNX 1.4.1</h2>
+<ul>
+<li>Enable hardware floating-point instructions in Core32 for better performance in 32-bit games, but still use the soft-float calling conventions for compatibility reasons.</li>
+</ul>
+<h2 id="saltynx-140">SaltyNX 1.4.0</h2>
+<ul>
+<li>Read separately FPS targets for docked and handheld from FPSLocker save (requires FPSLocker 2.3.0+)</li>
+<li>Add SaltyNX version to logs of sysmodule and Cores</li>
+<li>Fix an issue with sysmodule not injecting Core anymore to next games if Core initialization failed which resulted in game crash before Core had a chance to close connection</li>
+<li>Improve NX-FPS's PFPS stat reporting</li>
+<li>Read separate docked overclocking settings for 720p (requires FPSLocker 2.3.0+)</li>
+<li>Now game read speed in Core is opt-out instead of opt-in (to get game read speed use Status Monitor Overlay 1.2.0+)</li>
+</ul>
+<h2 id="fpslocker-130">FPSLocker 1.3.0</h2>
+<ul>
+<li>Requires SaltyNX 1.4.0+ to work properly</li>
+<li>Removed save settings option, now every change is automatically saved</li>
+<li>Fixed bugged Display Sync Docked functionality</li>
+<li>Fix issue with both Wizards, being initiated, not returning to 60 Hz after pressing B</li>
+<li>Separate display overclocking settings for docked 720p</li>
+<li>Separate FPS targets saved for docked and handheld</li>
+<li>Hide Docked Settings options that were blocked (because of not being in docked mode or not using 720p/1080p modes)
+  ## FPSLocker now is closed faster when game is running</li>
+<li>Status-Monitor-Overlay 1.3.0</li>
+<li>Redesign game informations in Full mode to match stylistically with hardware informations</li>
+<li>Add information about game read speed in Full and Mini modes (for Mini mode you must add "READ" value to "show" key, more in docs and config template). Requires SaltyNX 1.4.0+ to work properly.</li>
+<li>Fix FPS Graph not showing properly max FPS value if display refresh rate is 100 Hz or higher</li>
+<li>Redesign sleep logic so now overlay has snappier reaction time</li>
+<li>Shadow update 31.07.2025 17:45 GMT: Fixed threads related to reading CPU usage, it didn't apply proper logic to exit them immediately when requested which could slow down moving between different modes.</li>
+</ul>
+<h2 id="settings-271">Settings 2.7.1</h2>
+<ul>
+<li>新增 <code>StatusMonitor &gt; Mini &gt; Show Read Speed</code> 切换显示读取速度, 仅限Status Monitor 1.3.0+</li>
+</ul>
+<h1 id="aio-381">AIO 3.8.1</h1>
+<h2 id="settings-270">Settings 2.7.0</h2>
+<ul>
+<li>新增 <code>General &gt; Normal OC Mode</code> 切换普通超频模式</li>
+</ul>
+<h2 id="fpslocker-230">FPSLocker 2.3.0</h2>
+<ul>
+<li>新增 <code>Display Settings &gt; Unlock 90Hz</code> 解锁90hz刷新率开关</li>
+</ul>
+<h2 id="saltynx-130">SaltyNX 1.3.0</h2>
+<h1 id="aio-380">AIO 3.8.0</h1>
+<ul>
+<li>新增 <code>exefs_patches</code> 模块</li>
+</ul>
+<h2 id="dbi-800">DBI 800</h2>
+<h1 id="aio-374">AIO 3.7.4</h1>
+<h2 id="dbi-798">DBI 798</h2>
+<ul>
+<li>Fixing the display of occupied space in saves</li>
+<li>MTP默认只打开1,5盘</li>
+</ul>
+<h2 id="fpslocker-222">FPSLocker 2.2.2</h2>
+<h2 id="saltynx-132">SaltyNX 1.3.2</h2>
+<h2 id="sys-clk-oc-eos-120-ui">sys-clk-oc EOS-1.2.0 汉化, 微调ui</h2>
+<ul>
+<li>新增 MasterVolume 1.2.1a 汉化</li>
+<li>新增 EdiZon 1.1.1 汉化</li>
+<li>新增 ReverseNX-RT 2.1.0a 汉化</li>
+</ul>
+<h1 id="aio-373">AIO 3.7.3</h1>
+<ul>
+<li>新增 <code>auto.sh</code> 支持macOS用户使用</li>
+<li>20+虚拟系统遇到待机掉电问题, 可以尝试开启 <code>Settings &gt; General &gt; Services</code> 解决后台因为屏蔽任天堂服务器导致的无限请求带来的掉电问题</li>
+</ul>
+<h1 id="aio-372">AIO 3.7.2</h1>
+<h2 id="atmosphere-192">atmosphere 1.9.2</h2>
+<ul>
+<li>支持20.2.0</li>
+</ul>
+<h1 id="aio-371">AIO 3.7.1</h1>
+<h2 id="atmosphere-191-pre-894a6bfdc">atmosphere 1.9.1-pre-894a6bfdc</h2>
+<ul>
+<li>支持20.2.0</li>
+<li>暂不支持开启USB3.0</li>
+</ul>
+<h2 id="magic-175">Magic 1.7.5</h2>
+<p>## EOS 1.6.4
+  - 支持20.2.0</p>
+<h1 id="aio-370">AIO 3.7.0</h1>
+<ul>
+<li>修复<code>Salty</code>文件缺失导致运行失败的问题</li>
+</ul>
+<h1 id="aio-369">AIO 3.6.9</h1>
+<h2 id="fpslocker-221">FPSLocker 2.2.1</h2>
+<ul>
+<li>Separate Display Sync for handheld and docked</li>
+</ul>
+<h2 id="saltynx-131">SaltyNX 1.3.1</h2>
+<ul>
+<li>Separate display sync for handheld and docked (Requires FPSLocker 2.2.1+ for proper support)</li>
+<li>Fix memory leak related to reading external display's config (it was crashing system)</li>
+<li>Give an option to measure game files read speed if filestats.flag exists</li>
+</ul>
+<h2 id="settings-262">Settings 2.6.2</h2>
+<ul>
+<li><code>Delete Log</code> 添加清除 <code>SaltySD</code></li>
+</ul>
+<h2 id="fpslocker-220">FPSLocker 2.2.0</h2>
+<ul>
+<li>解锁90hz</li>
+<li>Add support for 720p/1080p docked mode refresh rates: 70, 72, 75, 80, 90, 95, 100, 110, 120 Hz (Requires SaltyNX 1.3.0+)</li>
+<li>Add wizard for testing refresh rates from 70 up to 120 Hz for 1080p (for 720p it automatically unlocks all refresh rates supported by your display)</li>
+<li>Not all displays supporting 1080p signal with refresh rates higher than 75 Hz can be set to those higher refresh rates, more in README.</li>
+<li>Add support for changing refresh rates for Switch OLED and Retro Remake OLED displays. (Requires SaltyNX 1.3.0+)</li>
+<li>For Switch OLED it comes with auto gamma curve adjustments on hardware level that are trying to reproduce original colors as close as possible, but because of nature of such approach it's not possible to do it perfectly (the worst case is at ~60% brightness using 45 Hz). With that also comes another issue, the lower the refresh rate the lower max brightness.</li>
+<li>For Retro Remake SUPER5 first revision users, you must enable Retro Remake Mode in Display Settings. That is because we can't differentiate between first SUPER5 and already existing InnoLux display. That option won't show up for other users.</li>
+<li>Load game titles in background, resulting in faster boot times when game is not running</li>
+<li>Add support for languages: German, French, Russian, Brazilian Portuguese, Chinese Simplified (UI was redesigned to give them more space for text), it's set based on system language. You can force back English if you prefer.</li>
+</ul>
+<h2 id="saltynx-130_1">SaltyNX 1.3.0</h2>
+<ul>
+<li>Add support for overclocking compatible external display's refresh rate up to 120 Hz</li>
+<li>Add support for downclocking OLED internal display refresh rate down to 45 Hz</li>
+<li>Add support for downclocking Retro Remake SUPER5 refresh rate down to 40 Hz (with initial support for other Retro Remake displays)</li>
+<li>Fix an issue with not clearing shared memory after application is closed, resulting in tools such as Status Monitor and FPSLocker reporting false values</li>
+<li>Requires FPSLocker 2.2.0 and newer to properly utilize new functions. Its readme also has more informations about specific issues related to new functions.</li>
+</ul>
+<h2 id="edizon-111">EdiZon 1.1.1</h2>
+<ul>
+<li>汉化</li>
+</ul>
+<h1 id="aio-368">AIO 3.6.8</h1>
+<h2 id="settings-261">Settings 2.6.1</h2>
+<ul>
+<li>新增 <code>flag</code> 标识, 方便管理</li>
+<li>修复 <code>cheats</code> 标识状态</li>
+</ul>
+<h2 id="settings-260">Settings 2.6.0</h2>
+<ul>
+<li>新增 <code>General &gt; Blank PRODINFO</code> 序列码屏蔽设置</li>
+</ul>
+<h2 id="fpslocker-220-prerelease9">FPSLocker 2.2.0 prerelease.9</h2>
+<ul>
+<li>Remove option from prerelease.8 (SaltyNX 1.3.0-prerelease.11 now properly supports restoring color at 60 Hz)</li>
+</ul>
+<h2 id="saltynx-prerelease11">SaltyNX prerelease.11</h2>
+<ul>
+<li>Restore always proper 60 Hz colors for OLED, removes option from prerelease.10</li>
+</ul>
+<h2 id="saltynx-prerelease12">SaltyNX prerelease.12</h2>
+<ul>
+<li>Don't override max refresh rate in 720p mode in case of detecting myDP link rate at HBR speed</li>
+</ul>
+<h2 id="updater-424">Updater 4.2.4</h2>
+<ul>
+<li>新增 <code>SatlyNX pre</code></li>
+</ul>
+<h2 id="saltynx-prerelease10">SaltyNX prerelease.10</h2>
+<ul>
+<li>Allow overriding stock 60 Hz colors in Switch OLED panel in all cases (use FPSLocker 2.2.0-prerelease.8 to enable it)</li>
+<li>Shadow update 17:29 30.06.2025 GMT: Fixed an issue where overriding colors was not applied at console boot</li>
+</ul>
+<h2 id="fpslocker-prerelease8">FPSLocker prerelease.8</h2>
+<ul>
+<li>Add "OLED 60Hz stock colors when possible" option in Display settings. More in README. (Requires SaltyNX 1.3.0-prerelease.10)</li>
+</ul>
+<h2 id="settings-252">Settings 2.5.2</h2>
+<ul>
+<li>修复 <code>Keycombo &gt; ReShade</code> 不能正确生效的问题</li>
+</ul>
+<h1 id="aio-367">AIO 3.6.7</h1>
+<h2 id="saltynx-130_2">SaltyNX 1.3.0</h2>
+<ul>
+<li>Add support for docked mode up to 120 Hz (Requires FPSLocker 2.2.0, more in FPSLocker repository)</li>
+<li>prerelease.2:<ul>
+<li>Add test flag to use with Wizards in FPSLocker (requires 2.2.0-prerelease.2)</li>
+</ul>
+</li>
+<li>prerelease.3:<ul>
+<li>Fallback to 60 Hz in case of parsing incompatible EDID (the same fix was applied to FPSLocker 2.2.0-prerelease.3)</li>
+<li>prerelease.4:</li>
+<li>Use NVDISP_GET_MODE_DB2 instead of parsing EDID, expose reading to IPC (Requires FPSLocker 2.2.0-prerelease.4 to work properly)</li>
+</ul>
+</li>
+<li>prerelease.5:<ul>
+<li>Use NVDISP_GET_PANEL_DATA to retrieve info if your Switch-Dock pair is compatible with refresh rates above 75Hz at 1080p (use FPSLocker 2.2.0 prerelease.5 for it to work properly)</li>
+<li>Fix an issue where Switch OLED had underclocked display when you were playing in docked at lower refresh rates and then you pulled out Switch.</li>
+<li>Small changes into dock/handheld detection</li>
+<li>Shadow update 21:00 18.06.2025 GMT: fixed memory leak related to changing docked refresh rate</li>
+</ul>
+</li>
+<li>prerelease.6:<ul>
+<li>Block recognizing refresh rates of old DVI standards which resulted in reporting 60 Hz screens as 75Hz compatible</li>
+</ul>
+</li>
+<li>prerelease.7: <ul>
+<li>Add support for Samsung and Retro Remake OLED displays (Requires FPSLocker 2.2.0-prerelease.6 to work properly)</li>
+<li>Fix an issue with not clearing shared memory after application is closed, resulting in tools such as Status Monitor and FPSLocker reporting false values</li>
+</ul>
+</li>
+<li>prerelease.8: <ul>
+<li>Restore fix from prerelease.6</li>
+</ul>
+</li>
+<li>prerelease.9:<ul>
+<li>Fix an issue where sysmodule gets stuck at boot on Switch Lites when trying to exit nv to free resources that won't be utilized further</li>
+</ul>
+</li>
+</ul>
+<h2 id="fpslocker-220_1">FPSLocker 2.2.0</h2>
+<ul>
+<li>修复刷新率无法独立调整的问题</li>
+<li>Add support for 720p/1080p docked mode refresh rates: 70, 72, 75, 80, 90, 95, 100, 110, 120 Hz (Requires SaltyNX 1.3.0, currently in prerelease)<ul>
+<li>Add wizard for testing refresh rates from 70 up to 120 Hz for 1080p (for 720p it automatically unlocks all refresh rates supported by your display)</li>
+<li>Not all displays supporting 1080p signal with refresh rates higher than 75 Hz can be set to those higher refresh rates. That is because Switch 1 doesn't support signaling to those displays we need higher pixel clock available, so if your display needs correctly reported VIC (Video format Identification Code) to unlock pixel clock above 180 MHz, you are locked to 75 Hz in 1080p (for 720p it goes up to 120 Hz). This touches mainly TVs and 16:9 non-1080p monitors.</li>
+<li>prerelease.2: Fixed wizards not working properly (requires updated SaltyNX 1.3.0 prerelease.2)</li>
+<li>prerelease.3: Fallback to 60 Hz in case of parsing incompatible EDID (the same fix was applied to SaltyNX 1.3.0 prerelease.3)</li>
+<li>prerelease.4: Ask SaltyNX for External display refresh rate, stop parsing EDID</li>
+<li>prerelease.6: In pair with SaltyNX 1.3.0 prerelease.7 allows changing refresh rates for Switch OLED and Retro Remake OLED displays. For Switch OLED it comes with auto gamma curve adjustments on hardware level that are trying to reproduce original colors as close as possible, but because of nature of such approach it's not possible to do it perfectly (the worst case is at ~60% brightness using 45 Hz). With that also comes another issue, the lower the refresh rate the lower max brightness. For Retro Remake SUPER5 first revision users, you must enable Retro Remake Mode in Display Settings. That is because we can't differentiate between first SUPER5 and already existing InnoLux display. That option won't show up for other users.</li>
+<li>prerelease.7: Load game titles in background, resulting in faster boot times when game is not running</li>
+</ul>
+</li>
+</ul>
+<h2 id="dbi-796">DBI 796</h2>
+<ul>
+<li>Mostly minor bug fixes, but after reading some smart books on C 23, I revamped the multithreading and synchronization objects. On my almost clean environment, I achieved about an 8% increase in installation speed.</li>
+</ul>
+<h1 id="aio-366">AIO 3.6.6</h1>
+<ul>
+<li>默认不开启正版系统的后台系统服务, 避免 <code>sysMMC 真实系统</code>联网方面的问题</li>
+<li><code>emuMMC 虚拟系统</code> 想开启的在 <code>Settings &gt; General &gt; Services</code> 开启</li>
+</ul>
+<h1 id="aio-365">AIO 3.6.5</h1>
+<h2 id="updater-423">Updater 4.2.3</h2>
+<ul>
+<li>移除 <code>Updater &gt; sync</code></li>
+<li>新增 <code>Updater &gt; Proxy</code>, 要求arcane 1.2.0+版本</li>
+<li>Arcane 1.2.0</li>
+<li>增加 <code>Updater &gt; Proxy</code> 支持</li>
+</ul>
+<h1 id="aio-364">AIO 3.6.4</h1>
+<h2 id="updater-422">Updater 4.2.2</h2>
+<ul>
+<li>镜像失效的时候, 现在可以通过sync更新Updater</li>
+</ul>
+<h2 id="updater-421">Updater 4.2.1</h2>
+<ul>
+<li>修复在线更新失败的问题</li>
+<li>去掉 <code>Restore</code> 的KIP加载</li>
+</ul>
+<h1 id="aio-363">AIO 3.6.3</h1>
+<h2 id="magic-174">Magic 1.7.4</h2>
+<ul>
+<li>增加AMS 1.9.1 usb 3.0支持</li>
+</ul>
+<h1 id="aio-362">AIO 3.6.2</h1>
+<h2 id="sphaira-lite-0134_1">sphaira-lite 0.13.4</h2>
+<ul>
+<li>默认关闭MTP, 以免和DBI造成冲突</li>
+</ul>
+<h1 id="aio-361">AIO 3.6.1</h1>
+<ul>
+<li>新增 <code>ReShade</code> 复古滤镜插件</li>
+</ul>
+<h2 id="updater-420">Updater 4.2.0</h2>
+<ul>
+<li>新增 <code>Overlays &gt; ReShade</code> 复古滤镜插件</li>
+</ul>
+<h2 id="settings-251">Settings 2.5.1</h2>
+<ul>
+<li><code>RetroShader</code> 改为 <code>ReShade</code></li>
+<li>添加版本号到emummc.txt</li>
+<li>hosts域名改为传统方式, 消除部分玩家的顾虑</li>
+</ul>
+<h2 id="sphaira-lite-0133">sphaira-lite 0.13.3</h2>
+<ul>
+<li>Fixed account save listing where the profile uid differs from the account uid.</li>
+<li>Updated UK translation by @rashevskyv in #180</li>
+</ul>
+<h2 id="sphaira-lite-0132">sphaira-lite 0.13.2</h2>
+<ul>
+<li>Fixed flashcart detection in the GameCard menu.</li>
+<li>Fixed CreateFolderWithPath for hdd crashing due to a nullptr dereference.</li>
+</ul>
+<h2 id="sphaira-lite-0131">sphaira-lite 0.13.1</h2>
+<ul>
+<li>Fixed potential deadlock if an invalid jpeg was loading with nvjpg (thanks to Dark_Iron_X for reporting and helping fix the bug).</li>
+</ul>
+<h1 id="aio-360">AIO 3.6.0</h1>
+<ul>
+<li>Atmosphere添加20系统usb补丁支持</li>
+<li>微调开机logo色调</li>
+</ul>
+<h2 id="sphaira-lite-0130">sphaira-lite 0.13.0</h2>
+<ul>
+<li>新增MTP安装, 可能存在bug</li>
+</ul>
+<h1 id="aio-359">AIO 3.5.9</h1>
+<ul>
+<li>修复一个可能导致联网不成功的问题</li>
+</ul>
+<h1 id="aio-358">AIO 3.5.8</h1>
+<h2 id="updater-413">Updater 4.1.3</h2>
+<ul>
+<li><code>ftpsrv</code> 从采用cc的fork, 以兼容自动备份</li>
+</ul>
+<h2 id="sys-clk-oc-eos-120">sys-clk-oc EOS-1.2.0</h2>
+<ul>
+<li>reworked gpu dvfs. use config option 1 for official service method, and 2 for hijack method (not recommended)</li>
+<li>optimized and fixed bugs related to gpu dvfs method 2</li>
+<li>added clock cappings for switch lite variant</li>
+<li>handheld clock cappings (and lite max capping) are dynamically adjusted based on gpu voltage</li>
+<li>improved auto cpu boost algorithm</li>
+</ul>
+<h2 id="magic-173">Magic 1.7.3</h2>
+<ul>
+<li>增加GPU dvfs设置支持</li>
+</ul>
+<h1 id="aio-357">AIO 3.5.7</h1>
+<h2 id="updater-412">Updater 4.1.2</h2>
+<ul>
+<li>移除 <code>JKSV</code> 测试项</li>
+<li>修复TX启动兼容性</li>
+</ul>
+<h1 id="aio-356">AIO 3.5.6</h1>
+<h2 id="magic-172">Magic 1.7.2</h2>
+<ul>
+<li>调整低speedo的UV支持</li>
+<li>DBI-CN 794</li>
+</ul>
+<h1 id="aio-355">AIO 3.5.5</h1>
+<h2 id="sys-clk-oc-eos-115">sys-clk-oc EOS-1.1.5</h2>
+<ul>
+<li>proper reimplementation of Gpu-Dvfs (voltage can be higher than needed because of limitations of proper impl)</li>
+<li>added misc tab in overlay</li>
+<li>overlay volt display fix</li>
+</ul>
+<h1 id="aio-354">AIO 3.5.4</h1>
+<h2 id="nx-ovlloader-109">nx-ovlloader 1.0.9</h2>
+<ul>
+<li>增加heap size到默认的1.6倍</li>
+</ul>
+<h2 id="updater-410">Updater 4.1.0</h2>
+<ul>
+<li>新增 <code>Overlays &gt; TraNX</code> 屏幕翻译器</li>
+</ul>
+<h1 id="aio-353">AIO 3.5.3</h1>
+<ul>
+<li>用最新的hekate提取boot.dat</li>
+</ul>
+<h2 id="sphaira-lite-0120">sphaira-lite 0.12.0</h2>
+<ul>
+<li>fix ncz block installs.</li>
+<li>fix usbds setting zlt for both read/write, rather than just write.</li>
+<li>appstore add option to view installed files.</li>
+<li>appstore add option to view project website.</li>
+<li>add support for setting custom forwarder gif/logo from file.</li>
+<li>option to swap left/right side menus.</li>
+<li>multi-threaded zip and unzip.</li>
+<li>further optimise appstore installing by downloading zip to memory rather than file, multi-threading the md5 hash and multi-threading the unzip.</li>
+<li>use nxtc for title caching.</li>
+<li>use oss-nvjpg for jpeg loading (improved performance over stbi).</li>
+<li>add save menu, currently backup and restore are supported.</li>
+<li>further optimise zip/unzip code by increasing the file buffer size to reduce io r/w.</li>
+<li>fix action buttons in the filebrowser not responding to touch screen.</li>
+<li>Pt patches by @ninstar in #157</li>
+<li>Add default theme and update screenshots by @ninstar in #160</li>
+<li>Updated theme and new strings. by @Yorunokyujitsu in #156</li>
+<li>中文语言文件更新 by @Johnluckygogogo in #163</li>
+<li>Update fr.json by @chronoss09 in #162</li>
+<li>fixed long strings, translate untranslated by @rashevskyv in #164</li>
+</ul>
+<h1 id="aio-352">AIO 3.5.2</h1>
+<h2 id="atmosphere-191">atmosphere 1.9.1</h2>
+<ul>
+<li>支持20.1.0</li>
+</ul>
+<h2 id="magic-171">Magic 1.7.1</h2>
+<ul>
+<li>支持大气层1.9.1</li>
+</ul>
+<h2 id="saltynx-130_3">SaltyNX 1.3.0</h2>
+<ul>
+<li>Add support for docked mode up to 120 Hz (Requires FPSLocker 2.2.0, more in FPSLocker repository)</li>
+<li>prerelease.2: Add test flag to use with Wizards in FPSLocker (requires 2.2.0-prerelease.2)</li>
+<li>prerelease.3: Fallback to 60 Hz in case of parsing incompatible EDID (the same fix was applied to FPSLocker 2.2.0-prerelease.3)</li>
+<li>prerelease.4: Use NVDISP_GET_MODE_DB2 instead of parsing EDID, expose reading to IPC (Requires FPSLocker 2.2.0-prerelease.4 to work properly)</li>
+</ul>
+<h2 id="sphaira-lite-0113">sphaira-lite 0.11.3</h2>
+<ul>
+<li>使用缓存, 加快加载速度</li>
+</ul>
+<h2 id="updater-401">Updater 4.0.1</h2>
+<ul>
+<li><code>JKSV</code> 安装的时候放进JKSV文件夹, 以便log文件生成在同一个目录下</li>
+</ul>
+<h1 id="aio-351">AIO 3.5.1</h1>
+<h2 id="dbi-789-cn">DBI 789-CN</h2>
+<p>## 789中文版
+  - 由国内 <a href="https://shipengliang.com/games/%e7%ab%af%e5%8d%88%e8%8a%82%e5%84%bf%e7%ab%a5%e8%8a%82%e7%a4%bc%e7%89%a9%ef%bc%9a%e5%85%a8%e7%90%83%e9%a6%96%e5%8f%91-dbi-%e4%b8%ad%e6%96%87%e7%89%88.html">时鹏亮</a> 汉化, 感谢热心人士对NS圈做出的贡献</p>
+<h2 id="hekate-631">hekate 6.3.1</h2>
+<ul>
+<li>支持 20.1.0</li>
+</ul>
+<h1 id="aio-350">AIO 3.5.0</h1>
+<h2 id="magic-toolbox-417">Magic Toolbox 4.1.7</h2>
+<ul>
+<li>微调主题, 采用更耐看的颜色</li>
+<li>简化布局</li>
+</ul>
+<h2 id="sphaira-lite-0113_1">sphaira-lite 0.11.3</h2>
+<ul>
+<li>Fixed ncz install caused by write offset being incremented twice.</li>
+<li>Fixed zlt being set only when size == max_packet rather than size % max_packet == 0.</li>
+<li>Added web browser back.</li>
+<li>Added list of built-in URL's for the web browser.</li>
+<li>Update Russian translation by @redraz in #155</li>
+</ul>
+<h2 id="sphaira-lite-0112">sphaira-lite 0.11.2</h2>
+<ul>
+<li>fix filebrowser displaying native (sd) folders as empty in the info.</li>
+<li>enable mounting hdd over ftp.</li>
+<li>fix the left-side menu appearing as an option in the misc menu.</li>
+<li>change builtin updater to update all sphaira paths.</li>
+<li>fix toggling the ftp option in the network menu which would prevent ftp from re-starting.</li>
+<li>workaround users using file based emummc (please use partiton based) which would cause file copy (sd -&gt; sd), game dumps and installing.</li>
+<li>hasher is now multi-threaded (80 MB/s + for sd, 100 MB/s + for hdd).</li>
+<li>file copy is now multi-threaded (2.5x speed up for sd -&gt; hdd copy).</li>
+<li>Make RU translation by @redraz in #151</li>
+<li>Update Portuguese translation by @ninstar in #152</li>
+<li>Impeeza build enh by @impeeza in #144</li>
+</ul>
+<h2 id="saltynx-127">SaltyNX 1.2.7</h2>
+<ul>
+<li>Fix crash in some units when going to sleep mode (bug introduced in 1.2.6).</li>
+</ul>
+<h2 id="saltynx-126">SaltyNX 1.2.6</h2>
+<ul>
+<li>Read Docked settings from ini file instead of EDID dump (this is a needed step to introduce proper docked display overclocking in future).</li>
+<li>Requires FPSLocker 2.1.5+ for support, old settings will be overriden by raw EDID dump</li>
+<li>Move to reading EDID with already fixed libnx</li>
+</ul>
+<h2 id="fpslocker-215">FPSLocker 2.1.5</h2>
+<ul>
+<li>Store Docked settings in ini file instead of EDID dump (this is a needed step to introduce proper docked display overclocking in future)</li>
+<li>Use SaltyNX 1.2.6+ for proper support</li>
+<li>Print your display's config name in Docked settings</li>
+<li>For people that would want to know which config is which when exploring files, I added key "tvName", its value can be edited and it will be maintained. Don't use spaces, those will be removed next time you change settings</li>
+</ul>
+<h2 id="sphaira-lite-0111">sphaira-lite 0.11.1</h2>
+<ul>
+<li>Fixed crash in the filebrowser when using split mode due to capturing a lambda by ref rather than value.</li>
+</ul>
+<h2 id="sphaira-lite-0110">sphaira-lite 0.11.0</h2>
+<ul>
+<li>gamecard (xci) dumping, both full and trimmed.</li>
+<li>gamecard cert / bin dumping.</li>
+<li>gamecard auto trim detection (for flashcart).</li>
+<li>multi-threaded game dumping.</li>
+<li>multi-threaded file uploads.</li>
+<li>added extension for usb S2S install which allows for multi-threaded transfers.</li>
+<li>controller led flashing during ftp/mtp/nxlink is limited to player 1 now, rather than all controllers.</li>
+<li>disable auto sleep during file transfer.</li>
+<li>add usbds max packet detection and zlt handling.</li>
+<li>display error box on all transfer errors.</li>
+<li>gamecard menu can now be accessed even if install is disabled, to allow for dumping.</li>
+<li>add hdd mount support to the file browser.</li>
+<li>add hdd dumping support.</li>
+<li>add split screen mode for the file browser.</li>
+<li>massively improve boot time (730ms -&gt; 280ms).</li>
+<li>add file hashing in the file browser (crc32, md5, sha1, sha256).</li>
+<li>add scrolling text for progress bar and menus (no more clipped text).</li>
+<li>display game icon whilst dumping nsp / gamecard.</li>
+<li>fix time/battery text position changing every few seconds due to spacing issue.</li>
+<li>loads of new translation changes (thank you to everyone!)</li>
+<li>enable boost mode during boot and file transfers, speeds up some transfers by 1.5x.</li>
+<li>add file assoc for nxmp and SwitchWave. clicking on any media file (such as .mp4) in the filebrowser will show allow you to load that file with either of the above apps.</li>
+<li>support for changing the left-side menu.</li>
+<li>optimised appstore unzip code by interating the zip rather than searching for each file, reduces retroarch extract time from 52s -&gt; 26s.</li>
+<li>Added new strings and update Korean, Japanese lang. by @Yorunokyujitsu in #146</li>
+<li>Update french translation by @shadow2560 in #149</li>
+<li>NSP dumper: use standardized PFS string table padding by @DCNick3 in #147</li>
+</ul>
+<h2 id="updater-390">Updater 3.9.0</h2>
+<ul>
+<li>新增游戏语言修改工具 <code>nx-locale-switcher</code></li>
+</ul>
+<h1 id="aio-342">AIO 3.4.2</h1>
+<h2 id="sphaira-lite-0103a">sphaira-lite 0.10.3a</h2>
+<ul>
+<li>补全中文翻译</li>
+<li>主题色改为赛博风</li>
+<li>修复主题音乐无法正常下载的问题</li>
+</ul>
+<h2 id="magic-toolbox-416">Magic-Toolbox 4.1.6</h2>
+<ul>
+<li>移除无用信息, 调整按钮</li>
+<li>使用主题色</li>
+<li>R2Config 1.3.4</li>
+<li>修复 <code>Android</code> 不能正常启动的问题</li>
+<li>默认注释安卓超频配置</li>
+<li>添加图标路径</li>
+</ul>
+<h2 id="fpslocker-214">FPSLocker 2.1.4</h2>
+<ul>
+<li>Improve "Reported max refresh rate" readings in Docked display settings.</li>
+</ul>
+<h1 id="aio-341">AIO 3.4.1</h1>
+<ul>
+<li>修复升级解压错误, 将 <code>使用说明.md</code> 改成 <code>README.md</code> </li>
+</ul>
+<h2 id="updater-380">Updater 3.8.0</h2>
+<ul>
+<li>合并删减一些过时的插件下载</li>
+<li>切换镜像</li>
+</ul>
+<h2 id="settings-250">Settings 2.5.0</h2>
+<ul>
+<li>增加 <code>RetroShader</code> 扫描线管理模块, 需要配合 <code>retro-shader.ovl</code> 使用</li>
+</ul>
+<h2 id="settings-240">Settings 2.4.0</h2>
+<ul>
+<li>增加 <code>FTPSRV</code>模块, 管理后台无线传输</li>
+<li>R2Config 1.3.3</li>
+<li>添加 <code>L4T</code> 系统默认引导</li>
+</ul>
+<h1 id="aio-340">AIO 3.4.0</h1>
+<h2 id="saltynx-125">SaltyNX 1.2.5</h2>
+<ul>
+<li>Add option to force game into custom made suspend when in Home Menu (requires FPSLocker 2.1.3+).</li>
+</ul>
+<h2 id="fpslocker-213">FPSLocker 2.1.3</h2>
+<ul>
+<li>Add "Halt unfocused game" in Advanced Settings (to work properly it requires SaltyNX 1.2.5+).</li>
+<li>Some games are not suspended when your Switch is in Home Menu (for example Tales of Graces f). 
+    Enabling this option moves thread responsible for pushing frames to display into infinite loop when you are in Home Menu. 
+    Enabling this option can cause various issues depending on game, so be sure to not use it frivolously.</li>
+</ul>
+<h1 id="aio-335">AIO 3.3.5</h1>
+<ul>
+<li>修复sphaira-lite一个潜在可能导致USB安装失败的问题</li>
+</ul>
+<h2 id="saltynx-124">SaltyNX 1.2.4</h2>
+<ul>
+<li>Fix FPS Lock not working when Display Sync was disabled.</li>
+<li>Report proper interval for EGL if game is passing invalid value</li>
+<li>Status-Monitor-Overlay 1.2.9</li>
+<li>Fix an issue with FPS Graph not pausing when game doesn't push new frames</li>
+</ul>
+<h2 id="settings-230">Settings 2.3.0</h2>
+<ul>
+<li>新增 <code>General &gt; Game Card</code>, 设置显示或者隐藏卡带</li>
+</ul>
+<h1 id="aio-334">AIO 3.3.4</h1>
+<h2 id="saltynx-123">SaltyNX 1.2.3</h2>
+<ul>
+<li>Fix FPS Lock not working when Display Sync was disabled.</li>
+<li>Report proper interval for EGL if game is passing invalid value</li>
+</ul>
+<h2 id="atmosphere-gcc15">atmosphere 更新gcc15编译</h2>
+<h2 id="settings-220">Settings 2.2.0</h2>
+<ul>
+<li>新增 <code>Forwarder</code><ul>
+<li>sphaira 支持</li>
+<li>hbmenu 支持</li>
+</ul>
+</li>
+</ul>
+<h2 id="sphaira-lite">sphaira-lite 翻译微调整</h2>
+<h1 id="aio-333">AIO 3.3.3</h1>
+<h2 id="sphaira-lite-0102">sphaira-lite 0.10.2</h2>
+<ul>
+<li>默认降低游戏版本要求</li>
+<li>Added Ukrainian language by @rashevskyv in #139</li>
+<li>Fix hbmenu not being updated on exit due to faulty string compare.</li>
+</ul>
+<h2 id="sphaira-lite-0101">sphaira-lite 0.10.1</h2>
+<ul>
+<li>修复游戏不能正常导出到SD卡的问题</li>
+</ul>
+<h1 id="aio-332">AIO 3.3.2</h1>
+<ul>
+<li>EdiZon-Overlay 1.1.0</li>
+<li>支持FW 20.0.1+</li>
+</ul>
+<h1 id="aio-331">AIO 3.3.1</h1>
+<h2 id="fpslocker-212">FPSLocker 2.1.2</h2>
+<ul>
+<li>添加对 Vulkan 游戏中缓冲区数量的更改支持（需要 SaltyNX 1.2.3+）</li>
+<li>修复在网络连接不稳定的情况下检查仓库补丁信息需要 20-30 秒而不是几秒钟的问题</li>
+</ul>
+<h2 id="saltynx-123_1">SaltyNX 1.2.3</h2>
+<ul>
+<li>将 Core32 的大小减少 15%，将 Core 的大小减少 35%，这样 sysmodule 占用的 RAM 就可以减少 64kB</li>
+<li>允许更改 Vulkan 游戏中的缓冲区数量（需要 FPSLocker 1.2.2+）</li>
+<li>修复某些游戏帧数过高（120 帧而不是 60 帧）的问题，例如 Hades</li>
+<li>修复了自 1.2.0 版本发布以来，极少数 Erista 单位出现图像持续卡顿和加载时间增加的问题</li>
+</ul>
+<h2 id="updater-370">Updater 3.7.0</h2>
+<ul>
+<li>增加主题安装工具(含补丁), 主题需要额外下载, 可以从sphaira安装</li>
+</ul>
+<h1 id="aio-330">AIO 3.3.0</h1>
+<h2 id="magic-toolbox-415">Magic-ToolBox 4.1.5</h2>
+<ul>
+<li>增加<code>SaltyNX</code>独立控制按钮, 无需重启即可切换开启关闭</li>
+<li>R2Config 1.3.2</li>
+<li>修复错误的字符<code>SysNAND</code> &gt; <code>SysMMC</code></li>
+<li>使用 sphaira-lite 替换 hbmenu</li>
+</ul>
+<h2 id="sphaira-lite-092">sphaira-lite 0.9.2</h2>
+<ul>
+<li>修复fw20导致的加载慢速问题</li>
+<li>排序里新增布局切换</li>
+<li>auto.bat 1.1.0</li>
+<li>保留<code>warmboot</code></li>
+</ul>
+<h2 id="hekate_iplini">hekate_ipl.ini</h2>
+<ul>
+<li>默认关闭<code>autonogc</code></li>
+</ul>
+<h2 id="updater-360">Updater 3.6.0</h2>
+<ul>
+<li>补全部分Pre分支</li>
+</ul>
+<h2 id="fpslocker-211">FPSLocker 2.1.1</h2>
+<ul>
+<li>之前已经转换过的补丁, 需要删除之后重新生成才可以生效, 补丁文件不用重新下载</li>
+<li>支持SaltyNX 1.2.1+</li>
+<li>Status-Monitor-Overlay 1.2.8</li>
+<li>增加字体缓存<code>font_cache</code>, 默认打开, 减少对游戏表现的影响</li>
+<li>现在可以正确显示EGL和Vulkan的游戏分辨率</li>
+<li>支持SaltyNX 1.2.1+</li>
+</ul>
+<h2 id="saltynx-122">SaltyNX 1.2.2</h2>
+<ul>
+<li>修复了一个旧错误，该错误导致具有较大 .bss 段的游戏的启动时间明显比其他游戏长（例如，使用 Regista 或 LucaSystem 引擎的游戏的启动时间需要 30-40 秒。修复后，现在启动时间少于 5 秒）</li>
+<li>Sysmodule 日志现在打印自 sysmodule 启动以来已经过了多少时间的信息</li>
+<li>系统模块小优化</li>
+</ul>
+<h1 id="aio-329">AIO 3.2.9</h1>
+<h2 id="atmosphere-190-prerelease">atmosphere 1.9.0-prerelease</h2>
+<ul>
+<li>支持FW 20.0.0+</li>
+</ul>
+<h2 id="hekate-630">hekate 6.3.0</h2>
+<ul>
+<li>支持FW 20.0.0+</li>
+<li>使用新键值</li>
+<li>修复恢复虚拟系统失败的错误</li>
+<li>修复usb3失效的问题</li>
+</ul>
+<h2 id="settings-210">Settings 2.1.0</h2>
+<ul>
+<li>屏蔽系统升级功能改善<code>General &gt; SysMMC Update Block</code></li>
+<li>使用<code>sphaira</code>替换<code>hbmenu</code>自制应用菜单</li>
+</ul>
+<h2 id="magic-170">Magic 1.7.0</h2>
+<ul>
+<li>支持大气层1.9.0</li>
+<li>本次更新变动多,<code>不要跨版本导入参数</code>, 手动设置</li>
+<li><code>GPU Max Clock</code>改为<code>GPU Lock</code>开关<ul>
+<li>开启自动切换为<code>UV3</code></li>
+</ul>
+</li>
+<li>GPU UV3支持关闭频率<code>Disable</code><ul>
+<li>必须是连续的频率, 不能单独关闭中间一个</li>
+</ul>
+</li>
+<li>mariko<ul>
+<li>新增GPU 1459/1497 Mhz</li>
+<li>移除dvb -3/-4</li>
+</ul>
+</li>
+<li>erista<ul>
+<li>新增GPU 1075/1152 Mhz</li>
+</ul>
+</li>
+</ul>
+<h2 id="lockpick_rcm-1915">Lockpick_RCM 1.9.15</h2>
+<ul>
+<li>修复因为text size导致的死机和导出不成功</li>
+</ul>
+<h1 id="aio-328">AIO 3.2.8</h1>
+<ul>
+<li>修复Updater获取源失败的问题(<code>快4个月了...才发现</code>)</li>
+</ul>
+<h2 id="updater-350">Updater 3.5.0</h2>
+<ul>
+<li>新增<code>HomeBrew Apps &gt; Chiaki-ng</code>PS串流工具</li>
+</ul>
+<h2 id="magic-166">Magic 1.6.6</h2>
+<ul>
+<li>修复<code>Preferences &gt; Current</code>读数显示异常的问题</li>
+<li>Atmosphere</li>
+<li>解锁金手指数量和行数的限制</li>
+</ul>
+<h1 id="aio-327">AIO 3.2.7</h1>
+<ul>
+<li>虚拟系统host屏蔽更多的网站, 包括youtube广告</li>
+<li>auto.bat 1.0.9</li>
+<li>重写脚本, 优化处理速度, 移除exefs_patches冲突补丁</li>
+<li>保留相册工具置顶项</li>
+<li>移除可能导致新旧插件设置冲突的项</li>
+</ul>
+<h2 id="updater-340">Updater 3.4.0</h2>
+<ul>
+<li>新增<code>Overlays &gt; sys-modules</code>系统模块管理</li>
+</ul>
+<h1 id="aio-326">AIO 3.2.6</h1>
+<h2 id="updater-332">Updater 3.3.2</h2>
+<ul>
+<li><code>MasterVolume</code>修改为自己的fork</li>
+</ul>
+<h2 id="fpslocker-210g">FPSLocker 2.1.0g</h2>
+<ul>
+<li>修复<code>Display Sync</code>会导致oled设置消失的问题</li>
+</ul>
+<h1 id="aio-325">AIO 3.2.5</h1>
+<h2 id="fpslocker-210f">FPSLocker 2.1.0f</h2>
+<ul>
+<li>修复<code>Refresh Rate Wizard</code>说明文字遮挡问题</li>
+</ul>
+<h2 id="settings-209">Settings 2.0.9</h2>
+<ul>
+<li>微调<code>KeyCombo</code>图标样式</li>
+<li>usb默认开启3.0</li>
+</ul>
+<h2 id="autobat-108">auto.bat 1.0.8</h2>
+<ul>
+<li>删除<code>switch/.overlays</code></li>
+<li>删除<code>config</code></li>
+</ul>
+<h1 id="aio-324">AIO 3.2.4</h1>
+<h2 id="fpslocker-210e">FPSLocker 2.1.0e</h2>
+<ul>
+<li>微调UI</li>
+<li>修复补丁文件不能正常生成的bug</li>
+</ul>
+<h1 id="aio-323">AIO 3.2.3</h1>
+<h2 id="autobat-107">auto.bat 1.0.7</h2>
+<ul>
+<li>删除主题文件, 避免无法进入系统</li>
+</ul>
+<h1 id="aio-322">AIO 3.2.2</h1>
+<ul>
+<li>添加dmnt额外支持</li>
+</ul>
+<h2 id="autobat-106">auto.bat 1.0.6</h2>
+<ul>
+<li>排除<code>nxdt_rw_poc</code>,<code>roms</code></li>
+</ul>
+<h1 id="aio-321">AIO 3.2.1</h1>
+<ul>
+<li>通告: 这应该就是年前最后一次更新, 感谢各位一年来的支持与理解, 预祝各位新春快乐, 心想事成!</li>
+</ul>
+<h2 id="autobat-105">auto.bat 1.0.5</h2>
+<ul>
+<li>排除<code>switch</code>文件夹</li>
+<li>解决根目录<code>arch bit</code>问题</li>
+</ul>
+<h2 id="magic-164">Magic 1.6.4</h2>
+<ul>
+<li>默认CPU上限从<code>2601</code>改为<code>2397</code></li>
+<li>修复<code>Vddq</code>默认值的文本错误</li>
+</ul>
+<h1 id="aio-320">AIO 3.2.0</h1>
+<h2 id="autobat-104">auto.bat 1.0.4</h2>
+<ul>
+<li>修复<code>archive bit</code>问题</li>
+<li>添加版本号显示</li>
+</ul>
+<h2 id="updater-330">Updater 3.3.0</h2>
+<ul>
+<li>加速下载速度, 稳定性待测试</li>
+</ul>
+<h2 id="settings-208">Settings 2.0.8</h2>
+<ul>
+<li><code>FanControl</code>风扇预设<code>Default</code>恢复系统默认</li>
+</ul>
+<h1 id="aio-311">AIO 3.1.1</h1>
+<h2 id="autobat-103">auto.bat 1.0.3</h2>
+<ul>
+<li>排除<code>switch\batt.cal</code>电池矫正数据</li>
+</ul>
+<h2 id="updater-322">Updater 3.2.2</h2>
+<ul>
+<li>移除<code>Languages</code></li>
+</ul>
+<h2 id="arcane-113">Arcane 1.1.3</h2>
+<ul>
+<li>统一默认的风扇曲线</li>
+<li>当温度控制参数是空的<ul>
+<li>手持风扇曲线设置为静音挡</li>
+<li>底座风扇曲线设置为增强挡</li>
+<li>可触摸温度和可握持温度设置为60c</li>
+</ul>
+</li>
+</ul>
+<h2 id="settings-207">Settings 2.0.7</h2>
+<ul>
+<li>移除<code>FanControl</code>初始化温度设置</li>
+<li>优化<code>FanControl</code>风扇曲线, 手持更静音省电, 底座加强</li>
+</ul>
+<h1 id="aio-310">AIO 3.1.0</h1>
+<h2 id="autobat-102">auto.bat 1.0.2</h2>
+<ul>
+<li>修复路径错误问题</li>
+<li>使用换包脚本之后大气层启动出现<a href="https://www.cnblogs.com/we1zard/articles/18455163#010041544d530000%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><code>010041544d530000</code>错误的解决方法</a></li>
+</ul>
+<h2 id="settings-206">Settings 2.0.6</h2>
+<p>## FanControl的温度范围
+  ## 风扇控制参数</p>
+<h2 id="magic-161">Magic 1.6.1</h2>
+<ul>
+<li>修复<code>Preferences</code> UV3电压设置<code>Disabled</code>无法正确显示的问题</li>
+<li>增加UltraCam跑分结果查询<code>UltraCam Log</code>
+  ## 帮助说明</li>
+</ul>
+<h1 id="aio-300">AIO 3.0.0</h1>
+<h2 id="autobat-101">auto.bat 1.0.1</h2>
+<ul>
+<li>新增保留文件夹<code>kips</code></li>
+</ul>
+<h2 id="magic-160">Magic 1.6.0</h2>
+<ul>
+<li>新增<code>GPU &gt; GPU DVFS Override</code>允许分开设置内存电压</li>
+<li>新增<code>GPU &gt; GPU Unlocked</code>解锁GPU 1536</li>
+<li>新增<code>GPU &gt; Vmin OC</code>设置内存超频GPU最小电压</li>
+<li>GPU UV1改成固定电压</li>
+<li>GPU UV3电压范围改成<code>480 - 960mv</code>
+  ## 帮助说明</li>
+</ul>
+<h1 id="aio-292">AIO 2.9.2</h1>
+<h2 id="autobat-100">auto.bat 1.0.0</h2>
+<ul>
+<li>换包自动脚本的的处理速度</li>
+<li>新增保留文件夹<code>avatars</code>,<code>mods</code>,<code>retroarch</code>,<code>emuiibo</code></li>
+<li>新增包内<code>auto.bat</code>使用说明</li>
+</ul>
+<h1 id="aio-291">AIO 2.9.1</h1>
+<h2 id="updater-321">Updater 3.2.1</h2>
+<ul>
+<li><code>Sphaira-Lite</code>修复下载失败的问题</li>
+</ul>
+<h2 id="nyx-170">nyx 1.7.0</h2>
+<ul>
+<li>修复从引导不能正确启动到ofw的问题</li>
+</ul>
+<h1 id="aio-290">AIO 2.9.0</h1>
+<h2 id="atmosphere-4e99a5e-breezednmt">Atmosphere-4e99a5e, 支持breeze新dnmt扩展功能</h2>
+<h1 id="aio-281">AIO 2.8.1</h1>
+<ul>
+<li>新增自动换包脚本<code>auto.bat</code></li>
+<li>保存任意包的<code>金手指</code>/<code>MOD</code>/<code>补丁</code>/<code>其他系统</code>同时换到Magic包</li>
+<li><a href="https://www.cnblogs.com/we1zard/articles/18455163#%E4%BB%BB%E4%BD%95%E5%8C%85%E6%8D%A2%E6%88%90magic%E5%8C%85">操作详情</a></li>
+</ul>
+<h2 id="settings-205">Settings 2.0.5</h2>
+<ul>
+<li>FanControl优化显示, 引入OLED判定</li>
+</ul>
+<h2 id="arcane-112">Arcane 1.1.2</h2>
+<ul>
+<li>优化FanControl的UI显示</li>
+<li>引入OLED机型判定</li>
+</ul>
+<h2 id="status-monitor-127d">Status Monitor 1.2.7d</h2>
+<ul>
+<li>修复<code>mini</code>CPU满载时文字显示不全的问题</li>
+</ul>
+<h2 id="updater-320">Updater 3.2.0</h2>
+<ul>
+<li><code>Sphaira</code>替换成<code>Sphaira-Lite</code></li>
+</ul>
+<h1 id="aio-280">AIO 2.8.0</h1>
+<h2 id="magic-158">Magic 1.5.8</h2>
+<ul>
+<li>新增<code>GPU &gt; High Vmin</code>不能正常显示的问题</li>
+</ul>
+<h2 id="magic-157">Magic 1.5.7</h2>
+<ul>
+<li>新增sys-clk-oc 1.1.4-eos预设支持</li>
+<li>新增<code>GPU &gt; High Vmin</code>, <code>GPU &gt; Low Vmin</code>详细说明看帮助菜单</li>
+</ul>
+<h2 id="sys-clk-oc-eos-114">sys-clk-oc EOS-1.1.4</h2>
+<ul>
+<li>GUI rework &amp; shows reversenx sync state in profile</li>
+<li>implemented EMC-GPU DVFS (from HELIOS)</li>
+<li>vmin is overridable via config value</li>
+<li>mariko only</li>
+<li>auto cpu boost checks all 4 cores</li>
+<li>统一libtesla
+  ## FPSLocker 2.1.0d
+  ## Arcane 1.1.1</li>
+</ul>
+<h1 id="aio-271">AIO 2.7.1</h1>
+<h2 id="fpslocker-210c">FPSLocker 2.1.0c</h2>
+<ul>
+<li>修复非同步状态下, 无法手动调整屏幕刷新率的问题</li>
+</ul>
+<h2 id="status-monitor-127c">Status Monitor 1.2.7c</h2>
+<ul>
+<li>修复<code>full</code>一些错误的设置参数</li>
+<li>优化代码结构</li>
+</ul>
+<h1 id="aio-270">AIO 2.7.0</h1>
+<h2 id="r2config-130">R2Config 1.3.0</h2>
+<ul>
+<li>修复<code>SysMMC Restore</code>开关异常问题</li>
+<li>增加<code>Reboot To Launch</code>重启到启动项</li>
+</ul>
+<h2 id="nyx-170_1">nyx 1.7.0</h2>
+<ul>
+<li>增加OFW官方系统入口</li>
+</ul>
+<h2 id="status-monitor-127b">Status Monitor 1.2.7b</h2>
+<ul>
+<li>优化<code>Battery</code>电池信息的文本显示</li>
+</ul>
+<h2 id="settings-204">Settings 2.0.4</h2>
+<ul>
+<li>修复<code>General &gt; PowerSupply</code>多余的字符错误</li>
+</ul>
+<h1 id="aio-261">AIO 2.6.1</h1>
+<h2 id="fpslocker-210b">FPSLocker 2.1.0b</h2>
+<ul>
+<li>重新优化UI, 调整字体大小和位置</li>
+</ul>
+<h2 id="settings-203">Settings 2.0.3</h2>
+<ul>
+<li>修复<code>Status Monitor &gt; Mini &gt; Show Battery Time</code>不能正常生效的问题</li>
+</ul>
+<h2 id="settings-202">Settings 2.0.2</h2>
+<ul>
+<li>修复<code>General &gt; PowerSupplyManager</code>错误的字符, 导致无法生效</li>
+</ul>
+<h1 id="aio-260">AIO 2.6.0</h1>
+<h2 id="fpslocker-210a">FPSLocker 2.1.0a</h2>
+<ul>
+<li>支持底座模式改变刷新率, 刷新率锁定上限60hz</li>
+<li>需要SaltyNX 1.2.0支持, 部分游戏补丁需要重新下载, 重新应用才可以生效</li>
+</ul>
+<h2 id="saltynx-120">SaltyNX 1.2.0</h2>
+<ul>
+<li>支持底座输出屏幕改变刷新率40-60hz, 兼容最新libnx</li>
+<li>采用全新的方法计算掌机模式下的刷新率</li>
+<li>核心从libnx完全独立出来</li>
+</ul>
+<h2 id="r2config-120">R2Config 1.2.0</h2>
+<ul>
+<li>增加<code>SysMMC Restore</code>将恢复模式使用的真实系统的镜像</li>
+</ul>
+<h2 id="settings-201">Settings 2.0.1</h2>
+<ul>
+<li>优化代码, 减少储存空间占用</li>
+</ul>
+<h1 id="aio-254">AIO 2.5.4</h1>
+<h2 id="updater-300">Updater 3.0.0</h2>
+<ul>
+<li>新增<code>Sync</code>, 允许重新同步服务器, 解决无法正常下载的问题</li>
+<li>遇到下载不成功卡住的<ul>
+<li>按<code>home键</code>回到桌面, 打开自制应用<code>Magic ToolBox</code></li>
+<li>后台服务关闭<code>Tesla</code>再打开就可以终止下载</li>
+</ul>
+</li>
+</ul>
+<h1 id="aio-253">AIO 2.5.3</h1>
+<h2 id="updater-293">Updater 2.9.3</h2>
+<ul>
+<li>修复SSL错误导致无法下载的问题, 需要电脑手动更新</li>
+</ul>
+<h1 id="aio-252">AIO 2.5.2</h1>
+<h2 id="maigc-156">Maigc 1.5.6</h2>
+<ul>
+<li>修复导出超频参数不正常的bug, 从而重启之后报错无法进入系统</li>
+<li>补全erista缺失长度标识</li>
+</ul>
+<h2 id="arcane-110">Arcane 1.1.0</h2>
+<ul>
+<li>支持超频参数导出导入</li>
+</ul>
+<h2 id="maigc-155">Maigc 1.5.5</h2>
+<ul>
+<li>支持导出导入超频参数, 理论上可以跨版本, 暂时不能支持自定义时序</li>
+<li>参数保存路径<code>./atmosphere/kips/presets/</code></li>
+<li><code>Wizard</code>合并到<code>Preferences</code>
+  ## 帮助文字</li>
+</ul>
+<h2 id="status-monitor-127a">Status Monitor 1.2.7a</h2>
+<ul>
+<li>修复<code>Mini模式</code>show错误</li>
+</ul>
+<h1 id="aio-251">AIO 2.5.1</h1>
+<h2 id="arcane-105">Arcane 1.0.5</h2>
+<ul>
+<li>假如不存在<code>config/tesla/config.ini</code>就自动创建一个并使用默认的快捷键</li>
+<li>初始化<code>config/arcane/config.ini</code>直接写入默认快捷键并复制到<code>config/tesla/config.ini</code></li>
+</ul>
+<h1 id="aio-250">AIO 2.5.0</h1>
+<h2 id="status-monitor-127">Status Monitor 1.2.7</h2>
+<ul>
+<li>使用<code>ZL+L</code>快捷键可以临时隐藏<code>Micro</code>监控条<ul>
+<li>可以在<code>Settings &gt; KeyCombo &gt; Status Monitor &gt; Extra</code>进行修改</li>
+</ul>
+</li>
+<li>新增不安全电流提示<ul>
+<li>功耗和电流超出安全使用范围会闪烁提示</li>
+</ul>
+</li>
+</ul>
+<h2 id="settings-200">Settings 2.0.0</h2>
+<ul>
+<li><code>Status Monitor</code>重新调整分类<ul>
+<li>新增<code>Status Monitor &gt; Micro &gt; Show Warning</code> 不安全电流提示开关</li>
+<li>现在将部分功能设置独立到<code>Micro</code>和<code>Mini</code></li>
+</ul>
+<h2 id="_1">帮助文字</h2>
+</li>
+</ul>
+<h2 id="updater-291">Updater 2.9.1</h2>
+<ul>
+<li><code>Overlays &gt; Status Monitor</code>更新会覆盖<code>/config/status-monitor/config.ini.template</code><ul>
+<li>遇到新版本更新异常的, 可以通过<code>Settings &gt; Status Monitor &gt; Restore Config &gt; Default</code>重置</li>
+</ul>
+</li>
+</ul>
+<h2 id="updater-290">Updater 2.9.0</h2>
+<ul>
+<li>新增<code>HomeBrew Apps &gt; TinWoo</code>游戏安装工具</li>
+</ul>
+<h1 id="aio-240">AIO 2.4.0</h1>
+<h2 id="updater-280">Updater 2.8.0</h2>
+<ul>
+<li>新增<code>AIO &gt; Lanaguages</code> 语言分类<ul>
+<li><code>初始化</code>需要联网</li>
+<li>新增Hekate中英切换</li>
+</ul>
+</li>
+<li>引导菜单图标更新</li>
+</ul>
+<h1 id="aio-231">AIO 2.3.1</h1>
+<ul>
+<li>Hekate使用矢量无底图标, 原先的<code>Recover</code>改为<code>Restore</code></li>
+</ul>
+<h2 id="settings-191">Settings 1.9.1</h2>
+<ul>
+<li>修复<code>Fan Control</code>无限重选的错误</li>
+</ul>
+<h1 id="aio-230">AIO 2.3.0</h1>
+<h2 id="settings-190">Settings 1.9.0</h2>
+<ul>
+<li><code>EdiZon</code>变更为<code>Cheat Code</code></li>
+<li>新增<code>KeyCombo &gt; Album</code>, 切换是否需要按住<code>R键</code>打开相册
+  ## 帮助说明, 移除错误的信息</li>
+</ul>
+<h2 id="settings-180">Settings 1.8.0</h2>
+<ul>
+<li>新增<code>General &gt; PowerSupplyManager</code>电源管理模块
+  ## 帮助说明</li>
+</ul>
+<h2 id="updater-270">Updater 2.7.0</h2>
+<p>## 帮助说明
+    - 修复部分错误的字符
+    - 添加新增部分说明
+  - 新增<code>AIO</code>,<code>HomeBrew Apps</code>,<code>Sys Modules</code>, 优化层级
+    - <code>Packages &gt; AIO</code>移至<code>AIO</code>
+    - <code>Misc &gt; NROs</code>移至<code>HomeBrew Apps</code>
+    - <code>Misc &gt; Sys Modules</code>移至<code>Sys Modules</code>
+    - <code>Misc &gt; Sys Modules &gt; Picofly</code>移至<code>AIO</code>
+  - 合并<code>hbmenu</code>和<code>sphaira</code>
+    - 将相册按键设置移至<code>Settings &gt; KeyCombo</code>
+  - 合并<code>ftpsrv</code>的<code>HB App</code>和<code>sys modules</code>
+    - 修复<code>sys modules &gt; ftpsrv</code>不能正常安装的问题
+    - 安装ftp模块自动禁止其他ftp模块同时启动, 以免系统冲突造成崩溃</p>
+<h2 id="updater-262">Updater 2.6.2</h2>
+<ul>
+<li>修复<code>Misc &gt; NROs &gt; JKSV</code>安装不成功的问题</li>
+</ul>
+<h2 id="updater-261">Updater 2.6.1</h2>
+<ul>
+<li><code>Overlays &gt; Status-Monitor</code>更新的不再删除ini</li>
+</ul>
+<h1 id="aio-221">AIO 2.2.1</h1>
+<ul>
+<li>全新换包添加status monitor初始配置文件, 在线升级不影响</li>
+</ul>
+<h2 id="arcane-104">Arcane 1.0.4</h2>
+<ul>
+<li>全新换包添加添加Arcane初始配置文件, 在线升级不影响</li>
+</ul>
+<h1 id="aio-220">AIO 2.2.0</h1>
+<h2 id="ini-nosigchk">自动移除无用的ini, 引导移除nosigchk</h2>
+<h2 id="sys-patch-155">sys-patch 1.5.5, 合并多个补丁, 修复匹配错误</h2>
+<h2 id="updater-260">Updater 2.6.0</h2>
+<ul>
+<li>新增<code>Misc &gt; SysModules &gt; sys-patch</code>系统补丁工具</li>
+</ul>
+<h1 id="aio-210">AIO 2.1.0</h1>
+<ul>
+<li>内置sigpatches</li>
+<li>修复nim模块导致的报错问题</li>
+<li>修复usb3.0模块导致连接无法识别的问题</li>
+</ul>
+<h1 id="aio-201">AIO 2.0.1</h1>
+<ul>
+<li>默认使用hbmenu, 需要sphaira自行安装, 以兼容低固件版本的玩家</li>
+</ul>
+<h2 id="settings-172">Settings 1.7.2</h2>
+<ul>
+<li>移除Game模块</li>
+</ul>
+<h2 id="maigc-154">Maigc 1.5.4</h2>
+<ul>
+<li>增加GPU UV3 所有频率自定义电压</li>
+</ul>
+<h2 id="sigpatches-181">sigpatches 1.8.1</h2>
+<ul>
+<li>修复17.0.0以上系统, prodinfo屏蔽导致的报错问题</li>
+</ul>
+<h1 id="aio-200">AIO 2.0.0</h1>
+<h2 id="updater-252">Updater 2.5.2</h2>
+<ul>
+<li>添加之前漏掉的AIO pre先行版接口</li>
+<li>使用Magic-Toolbox汉化工具箱</li>
+</ul>
+<h1 id="aio-190">AIO 1.9.0</h1>
+<h2 id="updater-250">Updater 2.5.0</h2>
+<ul>
+<li>新增ftpsrv系统模块版本和nro版本</li>
+<li>新增<code>Misc &gt; NROs &gt; sphaira</code>相册工具菜单及前端安装</li>
+<li>新增<code>Misc &gt; NROs &gt; hbmenu</code>相册工具菜单及前端安装</li>
+<li>移除<code>Misc &gt; NSP</code> 前端合并到各个对应的NRO选项里</li>
+<li>默认相册工具改为<code>sphaira</code></li>
+</ul>
+<h1 id="aio-181">AIO 1.8.1</h1>
+<h2 id="saltynx-120_1">SaltyNX 1.2.0</h2>
+<h2 id="status-monitor-117a">Status Monitor 1.1.7a</h2>
+<ul>
+<li>移除<code>FPS Graph</code>对<code>SaltyNX旧版本</code>的支持, 修复底座模式下刷新率获取的问题</li>
+<li>要求<code>SaltyNX</code> 1.2.0+, 否则底座模式下的<code>FPS Graph</code>会出现bug</li>
+</ul>
+<h1 id="aio-180">AIO 1.8.0</h1>
+<h2 id="updater-240">Updater 2.4.0</h2>
+<ul>
+<li>新增<code>Misc &gt; NROs &gt; SimpleModDownloader</code>, 从香蕉网直接下载游戏MOD<ul>
+<li>可以通过<code>SimpleModManager</code>安装管理</li>
+<li>优化<code>SimpleModManager</code>下载速度</li>
+</ul>
+</li>
+</ul>
+<h2 id="arcane-103-fancontrol">Arcane 1.0.3, 调整FanControl初始参数</h2>
+<h2 id="updater-230">Updater 2.3.0</h2>
+<ul>
+<li>新增<code>Misc &gt; NROs &gt; Switch 90DNS Tester</code>, 任天堂DNS屏蔽测试工具</li>
+<li>新增<code>Misc &gt; NROs &gt; Tencent-Switcher-Gui</code>, 国行切换成其他区域, 别在虚拟系统以外的用</li>
+</ul>
+<h2 id="settings-170">Settings 1.7.0</h2>
+<ul>
+<li>修复<code>FanControl</code>设置之后导致风扇速度异常的问题<ul>
+<li>将Handheld手持和Console底座的设置独立</li>
+<li>初始化为所有机型设置好对应的参数</li>
+</ul>
+</li>
+</ul>
+<h2 id="updater-220">Updater 2.2.0</h2>
+<ul>
+<li>新增<code>Misc &gt; NROs &gt; NX-Activity-Log</code></li>
+<li>优化<code>nso-icon-tool</code>下载速度</li>
+</ul>
+<h1 id="aio-171">AIO 1.7.1</h1>
+<h2 id="status-monitor-116d">Status Monitor 1.1.6d</h2>
+<ul>
+<li>修复屏幕刷新率&lt;60时,<code>FPS Graph</code>显示异常的问题</li>
+<li>更新 <code>config.ini.template</code>, 搭配<code>Settings &gt; Status Monitor &gt; Reset Config</code>可以恢复默认设置, 并正确显示开启项</li>
+</ul>
+<h2 id="settings-161">Settings 1.6.1</h2>
+<ul>
+<li>优化Status Monitor<ul>
+<li><code>Reset All</code>改成<code>Reset Config</code>, 通过替换<code>config.ini</code>来修复因为旧版本升级导致的异常问题</li>
+</ul>
+</li>
+</ul>
+<h2 id="updater-212">Updater 2.1.2</h2>
+<ul>
+<li>提高60FPS解锁补丁下载速度</li>
+<li>移除60FPS解锁补丁中的王国之泪, 避免和ultracam冲突</li>
+</ul>
+<h2 id="reversenx-rt-210a">ReverseNX-RT 2.1.0a</h2>
+<ul>
+<li>选项顺序调整</li>
+<li><code>Change Mode</code>可以直接改变模式, <code>Controlled By System</code>自动变更为<code>NO</code></li>
+</ul>
+<h2 id="saltynx-111">SaltyNX 1.1.1</h2>
+<ul>
+<li>修复ReverseNX-RT BUG<ul>
+<li>修复<code>智慧的再现</code>兼容问题</li>
+<li>修复<code>毛线小精灵2</code>兼容问题</li>
+</ul>
+</li>
+</ul>
+<h2 id="212">2.1.2</h2>
+<ul>
+<li>移除60FPS解锁补丁中的王国之泪, 避免和ultracam冲突</li>
+</ul>
+<h1 id="aio-170">AIO 1.7.0</h1>
+<h2 id="reversenx-rt-210">ReverseNX-RT 2.1.0, 支持对不同游戏进行独立配置</h2>
+<h2 id="saltynx-110">SaltyNX 1.1.0</h2>
+<ul>
+<li>使用官方libnx替代libnx_min</li>
+<li>修复dmnt.gen2运行时无法读取正在运行的游戏Build ID</li>
+<li>添加对ReverseNX-RT设定读取的支持, 要求2.1.0以上版本</li>
+<li>ReverseNX-RT现在只有手持切换底座模式下GetDefaultDisplayResolution才返回1920x1080</li>
+</ul>
+<h2 id="updater-210">Updater 2.1.0</h2>
+<ul>
+<li>添加删除ultracam和mhr 900p画质补丁的选项</li>
+</ul>
+<h2 id="updater-201">Updater 2.0.1</h2>
+<ul>
+<li>删除已失效的<code>MODS</code></li>
+</ul>
+<h1 id="aio-161">AIO 1.6.1</h1>
+<h2 id="magic-153">Magic 1.5.3</h2>
+<ul>
+<li>修复时序预设导入错误问题</li>
+</ul>
+<h2 id="magic-152">Magic 1.5.2</h2>
+<ul>
+<li>tRFC5增加<code>51-59</code></li>
+</ul>
+<h1 id="aio-160">AIO 1.6.0</h1>
+<h2 id="status-monitor-116c">Status Monitor 1.1.6c</h2>
+<ul>
+<li>修复从Settings开启关闭mini和micro部分功能, 导致mini显示异常的问题</li>
+</ul>
+<h2 id="r2config-113">R2Config 1.1.3</h2>
+<ul>
+<li>修复不能正确恢复引导的问题</li>
+</ul>
+<h1 id="aio-159">AIO 1.5.9</h1>
+<ul>
+<li>重新整合优化脚本, 修复了一些语法错误</li>
+<li>发布Pre-Release先行版</li>
+</ul>
+<h1 id="aio-158">AIO 1.5.8</h1>
+<h2 id="updater-200">Updater 2.0.0</h2>
+<ul>
+<li><code>Misc &gt; NROs &gt; OC-Suite</code>增加<code>Testing Saves</code>, <code>TOTK</code>和<code>MHR</code>测试存档下载</li>
+<li>将<code>MemToolkitNX</code>,<code>mhz</code>,<code>stress-nx</code>, <code>ultracam</code>和<code>MHR补丁</code>合并到<code>Misc &gt; NROs &gt; OC-Suite &gt; OC Tester</code></li>
+<li>部分插件增加pre-release先行版, 解决跨版本的兼容问题</li>
+<li>采用新的同步方式</li>
+</ul>
+<h2 id="saltynx-106">SaltyNX 1.0.6</h2>
+<ul>
+<li>修复屏蔽Vulkan游戏FPS补丁的bug</li>
+<li>修复在32位游戏使用SaltyNX core后, 又用了skyline插件而导致报错bug, skyline插件本身也需要修复.</li>
+</ul>
+<h2 id="updater-182">Updater 1.8.2</h2>
+<ul>
+<li>修复nso-icon-tool安装报错</li>
+</ul>
+<h1 id="aio-157">AIO 1.5.7</h1>
+<h2 id="saltynx-105">SaltyNX 1.0.5</h2>
+<ul>
+<li>当FPS补丁锁定60fps同时锁定60hz</li>
+</ul>
+<h2 id="magic-151">Magic 1.5.1</h2>
+<ul>
+<li>增加pre-release</li>
+<li>移除info</li>
+</ul>
+<h1 id="aio-156">AIO 1.5.6</h1>
+<h2 id="updater-180">Updater 1.8.0</h2>
+<ul>
+<li>增加 <code>Misc &gt; SysModules &gt; PNGShot</code> 截图保存为PNG格式</li>
+</ul>
+<h2 id="updater-170">Updater 1.7.0</h2>
+<ul>
+<li>增加 <code>Overlays &gt; MasterVolume</code> 音量控制</li>
+</ul>
+<h2 id="updater-168">Updater 1.6.8</h2>
+<p>## status monitor现在会删掉旧的配置文件, 以免冲突
+- 补充一个es补丁</p>
+<h2 id="saltynx-104a2">SaltyNX 1.0.4a2</h2>
+<ul>
+<li>修复黑名单不能正确工作的bug </li>
+</ul>
+<h2 id="saltynx-104a">SaltyNX 1.0.4a</h2>
+<ul>
+<li>修复金手指不能正常使用的问题</li>
+</ul>
+<h2 id="saltynx-104">SaltyNX 1.0.4</h2>
+<ul>
+<li>GetThreadList超时时间从10s改为30s</li>
+</ul>
+<h1 id="aio-155">AIO 1.5.5</h1>
+<h2 id="status-monitor-116">Status Monitor 1.1.6</h2>
+<ul>
+<li>支持SaltyNX 1.0.3</li>
+</ul>
+<h2 id="saltynx-103">SaltyNX 1.0.3</h2>
+<ul>
+<li>添加32位屏幕刷新率支持</li>
+</ul>
+<h1 id="aio-154">AIO 1.5.4</h1>
+<h2 id="sys-patch-154-1901">sys-patch 1.5.4: 1901支持</h2>
+<h2 id="saltynx-102">SaltyNX 1.0.2</h2>
+<h1 id="aio-153">AIO 1.5.3</h1>
+<h2 id="updater-167">Updater 1.6.7</h2>
+<ul>
+<li>增加 <code>NROs &gt; nso-icon-tool</code> 官方风格头像制作工具</li>
+</ul>
+<h2 id="updater-157">Updater 1.5.7</h2>
+<ul>
+<li>使用统一的DBI文件夹, 单独命名不同语言版本的dbi.nro</li>
+</ul>
+<h2 id="settings-144">Settings 1.4.4</h2>
+<ul>
+<li>status monitor新增<code>avg gpu load</code>支持</li>
+</ul>
+<h2 id="status-monitor-115a">Status Monitor 1.1.5a</h2>
+<ul>
+<li>增加avg GPU Load 支持</li>
+<li>默认DBI用英文版</li>
+</ul>
+<h2 id="updater-156">Updater 1.5.6</h2>
+<ul>
+<li>增加 <code>NROs &gt; ReverseNX-Tool</code> 游戏模式设定工具</li>
+</ul>
+<h2 id="salty-100">Salty 1.0.0</h2>
+<ul>
+<li>支持32位游戏</li>
+</ul>
+<h1 id="aio-152">AIO 1.5.2</h1>
+<h2 id="logo">开机logo</h2>
+<h2 id="salty-0100">Salty 0.10.0</h2>
+<h2 id="settings-134">Settings 1.3.4</h2>
+<h2 id="hbl-1900">hbl, 支持1900</h2>
+<ul>
+<li>补全sigpatches</li>
+<li>添加初始风扇参数到system_settings.ini</li>
+</ul>
+<h2 id="dbi-719">DBI 719</h2>
+<ul>
+<li>修复712在1900报错的问题</li>
+</ul>
+<h2 id="settings-132">Settings 1.3.2</h2>
+<ul>
+<li>补全缺失的delele log
+  ## 帮助文字</li>
+</ul>
+<h1 id="aio-151">AIO 1.5.1</h1>
+<h2 id="system_settingsini">system_settings.ini</h2>
+<h1 id="aio-150">AIO 1.5.0</h1>
+<h2 id="atmosphere-180">atmosphere 1.8.0</h2>
+<ul>
+<li>R2Config 1.1.2</li>
+<li>新增开机启动到<code>真实系统</code>选项<code>Set Launch &gt; SysNAND</code><ul>
+<li>设置完成之后, 正常的重启命令也会跟随变化</li>
+</ul>
+</li>
+</ul>
+<h2 id="lockpick_rcm-1913">Lockpick_RCM 1.9.13</h2>
+<h2 id="nx-ovlloader-108">nx-ovlloader 1.0.8</h2>
+<ul>
+<li>nx-hbloader 2.4.5</li>
+</ul>
+<h2 id="settings-131">Settings 1.3.1</h2>
+<ul>
+<li><code>Threads</code> GPU线程</li>
+</ul>
+<h2 id="status-monitor-overlay-114b">Status-Monitor-Overlay 1.1.4b</h2>
+<h2 id="sys-clk-oc-111">sys-clk-oc 1.1.1</h2>
+<h2 id="magic-150">Magic 1.5.0</h2>
+<h1 id="aio-144c">AIO 1.4.4c</h1>
+<h2 id="dbi-710">DBI 710 俄版 <a href="https://www.jianguoyun.com/p/DaWnOYgQocW1DBjWldoFIAA">更新日志</a></h2>
+<h2 id="updater-144">Updater 1.4.4</h2>
+<ul>
+<li>hbmenu安装后, 提高充电时的超频性能</li>
+</ul>
+<h2 id="nx-hbmenu-361">nx-hbmenu 3.6.1</h2>
+<ul>
+<li>修复一些错误的翻译</li>
+<li>sys-patch 1.5.3</li>
+<li>支持19.0.0</li>
+</ul>
+<h2 id="updater-143">Updater 1.4.3</h2>
+<ul>
+<li>允许DBI多个版本同时存在</li>
+</ul>
+<h2 id="saltynx-094">SaltyNX 0.9.4</h2>
+<ul>
+<li>修复游戏启动时金手指不加载的问题</li>
+</ul>
+<h2 id="status-monitor-overlay-114a">Status-Monitor-Overlay 1.1.4a</h2>
+<ul>
+<li>支持FW 19.0.0</li>
+<li>修复关于nv services在启动系统时可能导致崩溃的问题</li>
+<li>修复FW19.0.0+ bug<ul>
+<li>休眠模式下 <code>tsSessionGetTemperature</code> 导致崩溃的问题</li>
+<li>采用i2c替代原有的读取与输出</li>
+</ul>
+</li>
+</ul>
+<h2 id="settings-130">Settings 1.3.0</h2>
+<ul>
+<li>DNS屏蔽检测报告<ul>
+<li><code>General &gt; DNS Reports</code></li>
+<li>报告生成路径 <code>/atmosphere/logs/dns_mitm_startup.log</code></li>
+</ul>
+</li>
+<li>真实系统联网升级屏蔽<ul>
+<li><code>General &gt; SysMMC Update Block</code></li>
+<li>不会有更新推送</li>
+<li>可以正常访问eShop, 联机, 下载游戏</li>
+</ul>
+</li>
+</ul>
+<h2 id="hekate-v622-nyx-v164">hekate v6.2.2 &amp; Nyx v1.6.4</h2>
+<p>## 19.0.0支持
+  - 使用和大气层同样的命名, 真实系统引导名从 <code>SysNAND</code> 改成 <code>SysMMC</code>
+- 移除系统模块
+  - FanControl
+  - Fizeau
+  - dmnt
+  - gen2
+  - MissionControl</p>
+<h2 id="lockpick_rcm-1913_1">Lockpick_RCM 1.9.13</h2>
+<ul>
+<li>支持HOS 19.0.0</li>
+</ul>
+<h2 id="updater-133">Updater 1.3.3</h2>
+<ul>
+<li>增加 <code>Misc &gt; NROs</code>
+    ## DBI 647 中文版本</li>
+</ul>
+<h2 id="updater-123">Updater 1.2.3</h2>
+<ul>
+<li>增加 <code>Misc &gt; SysModules &gt; sys-ftpd-light</code><ul>
+<li>Fast版: 系统占用比Light稍高, 4x传输速度</li>
+<li>Light版: 系统占用更小, 传输速度最慢</li>
+</ul>
+</li>
+<li>增加 <code>Misc &gt; NSPs</code> 真实系统安装警告</li>
+</ul>
+<h2 id="fpslocker-203">FPSLocker 2.0.3</h2>
+<ul>
+<li>采用独立线程处理补丁下载和检测</li>
+<li>下载未完成之前, 你将无法退出<code>Advanced Settings</code></li>
+<li>线程运行如果超时30秒, 将会自动解锁并退出</li>
+<li>微调ui</li>
+</ul>
+<h2 id="fpslocker-202">FPSLocker 2.0.2</h2>
+<ul>
+<li>重做高级设置页面, 简化单独补丁下载逻辑</li>
+<li>提高独立补丁下载速度</li>
+</ul>
+<h2 id="saltynx-093">SaltyNX 0.9.3</h2>
+<ul>
+<li>修复 <code>EOW 智慧的再现</code> 退出时的报错</li>
+</ul>
+<h1 id="aio-144b">AIO 1.4.4b</h1>
+<h2 id="saltynx-093_1">SaltyNX 0.9.3: 支持智慧在线</h2>
+<h2 id="status-monitor-113c-mini">Status Monitor 1.1.3c: 微调mini间距</h2>
+<h2 id="guides-108">Guides 1.0.8 新增使用说明</h2>
+<ul>
+<li><code>Overlays &gt; sysclk</code> 超频管理插件增强功能介绍</li>
+</ul>
+<h2 id="sysclk-oc">sysclk-oc增强功能字符</h2>
+<h2 id="updater-120">Updater 1.2.0</h2>
+<ul>
+<li>增加 <code>Misc &gt; NROs &gt; Battery Desync Fixer NX</code> 电池容量校准工具</li>
+<li>增加 <code>Overlays &gt; SaltyNX</code>, 将SaltyNX 从FPSLocker中独立出来</li>
+</ul>
+<h1 id="aio-144a">AIO 1.4.4a</h1>
+<h2 id="status-monitor-113b">Status Monitor 1.1.3b</h2>
+<ul>
+<li>使用自动间距</li>
+<li>FPS图形新增Show Info设置, 显示额外的信息</li>
+<li>修复使用sysclk-oc EOS1.0.1版本导致内存电压读数不正确</li>
+</ul>
+<h2 id="sysclk-oc-101">sysclk-oc 1.0.1</h2>
+<ul>
+<li>修复GPU2600频率以上的显示问题</li>
+</ul>
+<h2 id="settings-120-status-monitor">Settings 1.2.0: 重新调整Status Monitor模块</h2>
+<ul>
+<li>新增Show RAM开关: 显示内存数值</li>
+<li>新增Full CPU开关: 显示完整CPU占比</li>
+<li>新增Show GB开关: 显示成GB</li>
+<li>新增Full Temp开关: 显示完整温度</li>
+<li>新增Show Info开关: 显示额外的信息</li>
+<li>AlignTo精简部分模式的对齐方式</li>
+<li>加快Reset All速度</li>
+</ul>
+<h1 id="aio-144">AIO 1.4.4</h1>
+<h2 id="magic">Magic</h2>
+<ul>
+<li>tREF时序修复</li>
+<li>8G时序修复</li>
+<li>GPU Vmin 提高Auto精准度</li>
+<li>DRAM移除NO_ADJ, 新增AUTO_ADJ_HP, 相当于原来的HP MODE</li>
+</ul>
+<h2 id="_2">所有工具包帮助文件</h2>
+<ul>
+<li>移除usb3.0_patches</li>
+</ul>
+<h2 id="guides-105">Guides 1.0.5</h2>
+<ul>
+<li>Misc增加分类</li>
+<li>新增使用说明<ul>
+<li><code>Misc &gt; sys-ftpd-light</code> 后台无线传输工具</li>
+<li><code>Misc &gt; linkalho</code> 离线关联工具</li>
+<li><code>Misc &gt; DBI RU</code> 俄版万能安装工具</li>
+<li><code>Misc &gt; Picofly Toolbox</code> 树莓派固件升级工具</li>
+</ul>
+</li>
+</ul>
+<h2 id="updater-117">Updater 1.1.7</h2>
+<ul>
+<li>增加 <code>Misc &gt; Picofly</code> 树莓派工具</li>
+<li>增加 <code>Misc &gt; NROs &gt; MemToolkitNX</code> 内存测试工具</li>
+<li>增加 <code>Misc &gt; NROs &gt; Mhz</code> CPU实时频率</li>
+<li>增加 <code>Misc &gt; NROs &gt; stress-nx</code> CPU 压力测试工具</li>
+<li>精简</li>
+<li>从包中移除 <code>mhz.nro</code>, <code>JKSV.nro</code>, <code>MemToolkitNX.nro</code></li>
+<li>可以通过 <code>Udpater &gt; Misc &gt; NROs</code> 安装</li>
+</ul>
+<h1 id="aio-143e">AIO 1.4.3e</h1>
+<ul>
+<li>添加SaltyNX: 智慧的再现: 错误修复补丁</li>
+</ul>
+<h2 id="updater-116">updater 1.1.6</h2>
+<ul>
+<li>新增 <code>Misc &gt; NROs &gt; JKSV</code> 存档管理工具</li>
+</ul>
+<h1 id="aio-143d">AIO 1.4.3d</h1>
+<h2 id="sysclk">sysclk字符</h2>
+<ul>
+<li>启动auto cpu boost </li>
+<li>移除默认的风扇配置, 以免自定义时无法正常生效</li>
+</ul>
+<h2 id="arcane-102">arcane 1.0.2</h2>
+<h1 id="aio-143c">AIO 1.4.3c</h1>
+<ul>
+<li>修复CPU MAX Clock选择之后无法再重新选的问题</li>
+</ul>
+<h1 id="aio-143b">AIO 1.4.3b</h1>
+<h2 id="arcane-101">Arcane 1.0.1: 修复快捷键设置问题</h2>
+<h1 id="aio-143a">AIO 1.4.3a</h1>
+<h2 id="guides-101">Guides 1.0.1: 添加使用说明</h2>
+<ul>
+<li>Guides &gt; Packages &gt; Updater</li>
+<li>Guides &gt; Packages &gt; R2Config</li>
+<li>Guides &gt; Overlays &gt; FPSLocker</li>
+<li>Guides &gt; Misc &gt; Ultracam</li>
+</ul>
+<h2 id="ultracam-214a">Ultracam 2.1.4a</h2>
+<ul>
+<li>加入锁定天气时间金手指</li>
+</ul>
+<h2 id="updater-113">Updater 1.1.3</h2>
+<ul>
+<li><code>Updater &gt; Misc &gt; MOD &gt; Ultracam</code> 可选择是否安装带天气时间锁定金手指, 会覆盖原本的金手指</li>
+<li>修复<code>Updater &gt; Packages &gt; Guides</code> 错误链接导致下载不成功</li>
+</ul>
+<h1 id="aio-143">AIO 1.4.3</h1>
+<h2 id="jksv_webdav-9112024">JKSV_webDAV 9.11.2024</h2>
+<ul>
+<li>隐藏重启自动删除安卓垃圾文件的logs不存在的报错信息</li>
+<li>Erista: 修复T5时序, 新T5 = 旧T5-3</li>
+</ul>
+<h2 id="_3">时序预设</h2>
+<ul>
+<li>Wizard &gt; Backup现在可以选择备份的名称, 选同样名称会覆盖上一次的备份</li>
+</ul>
+<h2 id="_4">帮助文字</h2>
+<ul>
+<li>调整预设时序</li>
+<li>'RAM &gt; DVB' 新增-3, -4</li>
+<li><code>RAM &gt; Max Clock</code> 加入1333, 1600频率</li>
+<li>所有适配Arcane的包统一解压密码: <code>https://afdian.com/a/weizard</code></li>
+</ul>
+<h2 id="packages-arcane">所有packages, 支持Arcane</h2>
+<ul>
+<li>不再使用Tesla-Pro, 采用全新ovl管理<a href="https://www.jianguoyun.com/p/DZ33AB8Ql8W1DBiFx9YFIAA">Arcane</a></li>
+</ul>
+<h1 id="aio-142b">AIO 1.4.2b</h1>
+<ul>
+<li>暂时降级至sys-clk-oc 1.0.0, 1.0.1会导致内存电压读取异常</li>
+<li>移除实时风扇控制插件FanControl, 改为<code>Updater &gt; Overlays &gt; FanControl</code>独立安装</li>
+</ul>
+<h1 id="aio-142a">AIO 1.4.2a</h1>
+<ul>
+<li>加入 <code>Misc &gt; NROs &gt; Goldleaf</code></li>
+<li>加入 <code>Misc &gt; NROs &gt; DBI</code></li>
+<li>修复SimpleModManager卸载错误</li>
+<li>加入离线账号关联 <code>Misc &gt; NROs &gt; linkalho</code></li>
+<li>加入实时风扇控制 <code>Overlays &gt; FanControl</code></li>
+<li>加入用户指南 <code>Packages &gt; Guides</code></li>
+<li>Update All现在连同特斯拉菜单一起更新, 不仅仅更新packages</li>
+<li>Pacakges 现在也支持独立安装卸载</li>
+<li>采用新的命令行</li>
+</ul>
+<h2 id="updater-111">Updater 1.1.1</h2>
+<ul>
+<li>加入实时风扇控制插件FanControl</li>
+</ul>
+<h2 id="sys-clk-oc-101-2601bug">sys-clk-oc 1.0.1: 修复2601实时频率显示bug</h2>
+<h1 id="aio-142">AIO 1.4.2</h1>
+<ul>
+<li>修复cpu table auto针对高speedo优化</li>
+<li>新增Shift Fix 1: 防止table切换</li>
+<li>新增Shift Fix 1: 防止table切换, 明显降低中频电压</li>
+</ul>
+<h1 id="aio-141">AIO 1.4.1</h1>
+<ul>
+<li>kip增加8G时序</li>
+<li>CPU高频vmin改为710mv</li>
+<li>新增CPU 2499档位锁定</li>
+<li>改善CPU Table Auto兼容性</li>
+<li>gpu_volt_mariko.py更新改善后uv1表</li>
+</ul>
+<h2 id="sys-clk-oc-eos-101-cpu2600bug">sys-clk-oc EOS-1.0.1: 修复CPU2600+的实时频率bug</h2>
+<h1 id="aio-140b">AIO 1.4.0b</h1>
+<h2 id="tesla-pro-316-bug">Tesla-pro 3.1.6: 修复优先bug</h2>
+<h2 id="status-monitor-113a-nx-fancontrol">Status Monitor 1.1.3a: 微调间距, 修复nx-fancontrol冲突</h2>
+<h2 id="updater-011-update-aio-settingsini-hekate_iplini">Updater 0.1.1: Update AIO 不再覆盖<code>settings.ini</code>, <code>hekate_ipl.ini</code></h2>
+<ul>
+<li>设置add_defaults_to_dns_hosts=u8!0x0, 解除真实系统联网屏蔽</li>
+</ul>
+<h1 id="aio-140a">AIO 1.4.0a</h1>
+<h2 id="tesla-pro-315">Tesla-pro 3.1.5</h2>
+<ul>
+<li>新增USB 3.0补丁</li>
+<li>修复大气层开机画面亮度问题, 现在和switch logo相同</li>
+<li>ultracam 降回2.1.4</li>
+</ul>
+<h2 id="r2config-002">R2Config 0.0.2, 内置进整合包</h2>
+<ul>
+<li>优化显示逻辑</li>
+<li>新增<code>Reboot To &gt; Hekate</code> 重启到Hekate引导界面</li>
+<li>新增<code>Set Launch</code>, 设置开机启动HOS还是Hekate菜单</li>
+</ul>
+<h1 id="aio-140">AIO 1.4.0</h1>
+<ul>
+<li>修复status monitor &gt; micro 字符串长度不够导致重叠显示</li>
+</ul>
+<h2 id="ultracam-250-benchmarkzlzrls">ultracam 2.5.0, benchmark启动快捷键<code>ZL+ZR+LS</code></h2>
+<h2 id="settings-016">Settings 0.1.6</h2>
+<ul>
+<li>将<code>settings.ini</code>录制设置设为默认, 可以解决无法传输手机的问题</li>
+<li>mariko <code>GPU UV1</code> 优化</li>
+<li>GPU 1305mhz 只能UV2或者UV3才能使用</li>
+<li>CPU Low Freq Vmin 默认改为 <code>620mv</code></li>
+<li>CPU 新增 <code>Table Config</code>, 调整High Freq分段</li>
+<li>Auto: 根据Vmin和UV自动调整</li>
+<li>Default: 默认无修改</li>
+<li>1581 Mhz: 高频从1581开始</li>
+<li>新增时序 <code>tRTW</code></li>
+<li>去掉时序 <code>tWRWR</code> , <code>tRDRD</code></li>
+<li>主时序改回选项序号</li>
+<li>默认tRFC新增<code>90</code> <code>50</code> <code>40</code></li>
+<li>移除 <code>AUTO_ADJ_LV</code></li>
+<li>调整magic &gt; configure 排序</li>
+</ul>
+<h2 id="magickip">Magic加入更新覆盖kip确认</h2>
+<h2 id="tesla-pro-314">Tesla Pro 3.1.4, 增加新时序支持</h2>
+<h2 id="memtoolkitnx-110">MemToolkitNX 1.1.0, 支持读取超频参数</h2>
+<h2 id="sys-clk-oc-eos-100">sys-clk-oc EOS-1.0.0, 支持读取超频参数</h2>
+<h2 id="status-monitor-112">Status Monitor 1.1.2配置模板文件和默认设置</h2>
+<h2 id="settings-015-game">Settings 0.1.5, 增加Game模块</h2>
+<h1 id="aio-137">AIO 1.3.7</h1>
+<ul>
+<li>去掉status monitor的默认config.ini</li>
+</ul>
+<h2 id="fpslocker-201-magic-bug">FPSLocker 2.0.1-magic, 修复刷新率导致死机的bug</h2>
+<ul>
+<li>修复Updater错误序号导致无法正常更新, 0.1.0以下的版本需要手动覆盖更新updater</li>
+</ul>
+<h2 id="updater-010">Updater 0.1.0</h2>
+<ul>
+<li>tRFC4新增92-98</li>
+<li>去除插件分隔线</li>
+</ul>
+<h2 id="status-monitor-112_1">Status Monitor 1.1.2</h2>
+<h2 id="settings-014">Settings 0.1.4</h2>
+<ul>
+<li>CPU频率上限锁定, 新增1963Mhz</li>
+<li>无UV下CPU的最大频率现在改为1963Mhz</li>
+<li>GPU U2电压微调</li>
+<li>1075Mhz的GPU电压增加对高speedo的兼容</li>
+</ul>
+<h1 id="aio-136">AIO 1.3.6</h1>
+<ul>
+<li>vdd2电压调整为912.5-1350mv</li>
+<li>vddq电压调整为370-650mv</li>
+</ul>
+<h1 id="aio-135">AIO 1.3.5</h1>
+<ul>
+<li>修复updater错误路径</li>
+<li>移除hekate中强制开启usb3.0</li>
+<li>新增时序预设 <code>Magic &gt; Configure &gt; TIMING &gt; Presets</code></li>
+</ul>
+<h2 id="settings-013">Settings 0.1.3, 新增系统报错记录清理</h2>
+<h2 id="tesla-pro-302-backup">tesla pro 3.0.2, 采用新的backup名称和版本编号</h2>
+<h2 id="cpu900-1235mv">cpu最大电压范围为900-1235mv</h2>
+<ul>
+<li>DVB现在允许降低电压选项 <code>-1, -2</code>, <code>soc speedo &gt; 1633</code> 可用</li>
+<li>mariko CPU最大电压现在解锁到1235mv, 比较危险, 不建议用最高电压</li>
+</ul>
+<h2 id="status-monitor-112_2">Status Monitor 1.1.2</h2>
+<h2 id="memtoolkitnx-110_1">MemToolkitNX 1.1.0</h2>
+<h2 id="saltynx-092-skyrim">SaltyNX 0.9.2, 兼容skyrim</h2>
+<h1 id="aio-134">AIO 1.3.4</h1>
+<ul>
+<li>新增Full模式和Mini模式分辨率显示</li>
+</ul>
+<h2 id="status-monitor-111">Status monitor 1.1.1</h2>
+<h2 id="saltynx-091">SaltyNX 0.9.1</h2>
+<h2 id="status-monitor-110">Status monitor 1.1.0</h2>
+<h2 id="saltynx-090">SaltyNX 0.9.0</h2>
+<h2 id="settings-012">Settings 0.1.2</h2>
+<ul>
+<li>新增超频参数最后记录</li>
+<li>调整erista部分参数范围</li>
+<li>加入1672 speedo</li>
+<li>CPU UV和High UV拆分, UV0-8, HIGH UV0-12</li>
+</ul>
+<h2 id="jksv-webdav-202481">JKSV-webDAV 2024.8.1</h2>
+<ul>
+<li>添加AMS缺失的MTC tables</li>
+<li>移除ADJ_LV_HP</li>
+</ul>
+<h2 id="updater-005">Updater 0.0.5</h2>
+<ul>
+<li>调整GPU UV2电压(1267mhz电压明显降低了)</li>
+<li>DVB可选范围增加</li>
+<li>tRAS最低可以选17</li>
+</ul>
+<h1 id="aio-134-pre">AIO 1.3.4-pre</h1>
+<h2 id="telsa-pro-301">Telsa Pro 3.0.1</h2>
+<h2 id="updadater-003">Updadater 0.0.3</h2>
+<ul>
+<li>新增R2Config模块, 允许重启到Android, Lakka, L4T</li>
+</ul>
+<h2 id="settings-010">Settings 0.1.0</h2>
+<ul>
+<li>增加时序序号, 新增NME, NEI颗粒预设</li>
+</ul>
+<h2 id="edizon">EdiZon, 改成打开直接显示金手指</h2>
+<h2 id="updater-002">Updater 0.0.2</h2>
+<h2 id="jksv-7182024">JKSV 7.18.2024官方版</h2>
+<ul>
+<li>新增Updater更新模块, 支持HOS内一键更新</li>
+<li>settings.ini 开启金手指启动项保存</li>
+<li>Settings更新到0.0.9, 新增EdiZon金手指设置</li>
+</ul>
+<h2 id="httpsgithubcomwe1zard-httpsafdiannetaweizard-134">全部解压密码<code>https://github.com/WE1ZARD</code>, 旧密码<code>https://afdian.net/a/weizard</code> 只能用于1.3.4之前的版本</h2>
+<ul>
+<li>新增magic-suite展示页开源项目https://github.com/WE1ZARD/Magic-Suite</li>
+</ul>
+<h2 id="cpu">CPU帮助文件</h2>
+<ul>
+<li>新增CPU UV0-12</li>
+<li>新增mhr.nro CPU频率实时监控工具</li>
+</ul>
+<h1 id="aio-133">AIO 1.3.3</h1>
+<ul>
+<li>增加mhz.nro cpu频率测试工具</li>
+<li>把HP mode开关显示从数字0 1 改成 OFF ON</li>
+<li>增加TX芯片的引导支持</li>
+<li>添加更多的tRAS值</li>
+<li>修复导入配置的错误长度</li>
+<li>新增HP mode选项, 默认关闭, 开启可以提高性能, 大幅降低延时, 但是会明显发热和耗电</li>
+<li>新增Unlock CPU选项, 默认开启, 解锁2601频率</li>
+<li>新增HP mode 高性能模式, 提高性能的同时会增大功耗和升温</li>
+<li>移除AUTO_ADJ_HP</li>
+</ul>
+<h1 id="aio-132">AIO 1.3.2</h1>
+<ul>
+<li>修复全新换包kip没有正常生成导致的报错</li>
+</ul>
+<h2 id="hekate-621-nyx-163">hekate 6.2.1 &amp; nyx 1.6.3</h2>
+<ul>
+<li>FPSLocker解锁屏幕刷新率75hz</li>
+</ul>
+<h2 id="settings-008usb-30">Settings 0.0.8(新增USB 3.0开关, 后台服务开关)</h2>
+<ul>
+<li>调整刷新率数值, 调整FPSLocker UI</li>
+</ul>
+<h2 id="saltynx-080">SaltyNX 0.8.0, 修复底座不能自动恢复屏幕刷新率, 可能导致的死机</h2>
+<h2 id="fpslocker-200-70">FPSLocker 2.0.0(允许刷新率超频, 移除警告, 上限加到70)</h2>
+<h2 id="status-monitor-104">Status Monitor 1.0.4(屏幕刷新率功能兼容修复)</h2>
+<ul>
+<li>金手指个数限制从128个增加到255个</li>
+<li>进一步优化GPU体质差的最小电压</li>
+</ul>
+<h2 id="sys-clk-oc-oc8-616bug">sys-clk-oc oc8-616(修复电压和睿频的bug)</h2>
+<h1 id="aio-131">AIO 1.3.1</h1>
+<ul>
+<li>修复importer.ps1 bug</li>
+<li>修复exporter.ps1存在多个文件时的导出错误</li>
+<li>微调GPU Speedo低的GPU vmin</li>
+<li>FPSLocker加入屏幕刷新率调整模块(仅限LCD屏幕)</li>
+</ul>
+<h2 id="saltynx-075">SaltyNX 0.7.5</h2>
+<ul>
+<li>调整多个插件的UI</li>
+</ul>
+<h1 id="aio-130">AIO 1.3.0</h1>
+<ul>
+<li>升级hekate 6.2.0 v4, 修复初代机无法启动到L4T系统</li>
+<li>无痛升级现在会自动移除主题相关的文件避免开不了机</li>
+<li>不再包含<a href="https://www.jianguoyun.com/p/Df3tCWMQ88W1DBiuoMkFIAA">ldnmitm LanPlay私服联机插件</a>, <a href="https://www.jianguoyun.com/p/DXU7rlQQ88W1DBiSs70FIAA">MissionControl 第三方蓝牙手柄</a>, <a href="https://www.jianguoyun.com/p/De6_85EQ88W1DBixoMkFIAA">Sys-Con 第三方有线手柄</a> (自行下载)</li>
+<li>GPU自动最小电压微调</li>
+<li>微调初代机CPU UV4</li>
+</ul>
+<h2 id="missoncontrol-0111">蓝牙手柄MissonControl 0.11.1</h2>
+<h2 id="171-hekate620-181sigpatches">大气层1.7.1 hekate6.2.0 支持18.1系统(含sigpatches)</h2>
+<h1 id="aio-127">AIO 1.2.7</h1>
+<h2 id="ovledizonovl">ovlEdiZon.ovl<a href="https://www.jianguoyun.com/p/DTkxcPwQl8W1DBiF8sgF">更新日志</a></h2>
+<ul>
+<li>Lockpick_RCM更新至1.9.12, 支持18.0.0系统key</li>
+<li>修改Tesla-Pro Slider样式</li>
+<li>修复不能正确生成loader.kip的问题</li>
+<li>修复./switch/prod.key不存在导致的报错问题</li>
+<li>大气层更新到最新的atmosphere-1.7.0-dev-4afc4210c</li>
+<li>修复开启GPUboost不能使用GPU 1305mhz</li>
+<li>内存上限提至3200</li>
+<li>新增无痛升级 <a href="https://www.jianguoyun.com/p/DVkHswgQgcS1DBiSz80FIAA">无痛升级教程</a></li>
+<li>新增AUTO_ADJ_LV_HP时序, 低压更紧的时序</li>
+<li>初代机CPU现在有UV1-5, UV5是原来的UV3</li>
+<li>初代机GPU UV3电压表独立出来</li>
+</ul>
+<h1 id="aio-126">AIO 1.2.6</h1>
+<ul>
+<li>移除Init KIPs模块</li>
+<li>移除KIP版本验证</li>
+<li>新增MagicSuite初始化脚本(不再需要手动从.bak复制默认kip并改名loader.kip)</li>
+<li>微调Micro模式间距</li>
+<li>Kip版本号更新</li>
+<li>AUTO_ADJ_2400改名为AUTO_ADJ_LV, AUTO_ADJ_LV非初代机的性能得到提升, 是一个更宽松的时序</li>
+</ul>
+<h1 id="aio-125">AIO 1.2.5</h1>
+<ul>
+<li>修复了exporter.ps1导出时, Presets.json可能出现两个中括号的问题</li>
+<li>修复一些小bug</li>
+<li>改变CPU UV7 (UV6 high8 + 1428 MHz分段)</li>
+<li>新增“AUTO_ADJ_2400”时序表, 帮助体质比较差的机子超到2400</li>
+<li>统一时序表命名</li>
+<li>SysClk-oc修复初代机的电压bug</li>
+<li>将全局设置合并到General层级</li>
+</ul>
+<h1 id="aio-124-beta">AIO 1.2.4-beta</h1>
+<ul>
+<li>微调部分GPU UV电压以提高稳定性</li>
+</ul>
+<h2 id="hbmenulibnx-nsp">hbmenu使用最新的libnx, 并提供 <a href="https://www.jianguoyun.com/p/DQnniwAQgcS1DBj-v9EFIAA">NSP版本</a></h2>
+<ul>
+<li>为了系统稳定性, 将默认线程从4线程改为3线程, 新增Threads模块, 可以进行线程切换</li>
+<li>新增Init KIPs模块, 首次全新换包设置好之后可以直接用Magic调频, 无须手动从.bak复制kip</li>
+</ul>
+<h1 id="aio-124">AIO 1.2.4</h1>
+<ul>
+<li>Erista</li>
+<li>修复休眠模式下的CPU UV 1-3</li>
+</ul>
+<h1 id="aio-123">AIO 1.2.3</h1>
+<ul>
+<li>优化结构, 更新帮助文档</li>
+<li>默认KIP的T1,T2,T3时序现在改为默认实际数值18-18-42, 不再采用0-0-0</li>
+<li>Erista</li>
+<li>改善GPU UV2, 提高稳定性</li>
+<li>Mariko</li>
+<li>自动调整GPU最小电压</li>
+<li>优化部分speedo的计算</li>
+</ul>
+<h1 id="aio-122">AIO 1.2.2</h1>
+<h2 id="sys-clk-oc-8f3">Sys-clk-oc 8f3</h2>
+<h2 id="sys-clk-oc-8f2">Sys-clk-oc 8f2</h2>
+<ul>
+<li>所有powershell脚本由 <code>旧城(C.C.)大佬</code>负责开发, 非常感谢!!!</li>
+<li>WIZARD现在支持一键导入配置(现在已支持导入自定义时序)</li>
+<li>现在可以使用exporter来导出KIP配置</li>
+<li>现在可以使用importer把配置写入KIP</li>
+<li>修复包浆机UV2部分电压问题 </li>
+<li>新增包浆机GPU降压等级</li>
+<li>UV1 = 在Medel GPU静态降压曲线基础上整体+30mV</li>
+<li>UV2 = 动态高降压等级(目前可能不太稳定)</li>
+<li>UV3 = 静态电压</li>
+</ul>
+<h1 id="aio-121">AIO 1.2.1</h1>
+<ul>
+<li>GPU Speedo由原SPEEDO合并到GPU</li>
+<li>GPU Volt Max范围现在是800-850mv</li>
+<li>关闭GPU Boost才可以使用1305mhz</li>
+<li>Perference现在增加GPU Speedo显示, CPU UV和HIGH UV显示在一行</li>
+<li>DVB现在erista和mariko分开成两张表以支持最新的变动</li>
+<li>erista CPU UV2&amp;3现在最高支持到2295mhz</li>
+<li>erista DVB现在支持0-4, 共4档</li>
+<li>合并更新了所有帮助菜单</li>
+<li>引入WIZARD模块, 可以一键导入超频配置</li>
+<li>实验性: 跨版本导入配置(不支持有新参数变化的跨版本)</li>
+<li>实验性: 通过"字符串"分享超频配置</li>
+<li>已知问题: 暂不支持从KIP文件导出配置,只能手动写配置文件, tRFC自定义时序暂时不支持</li>
+</ul>
+<h1 id="aio-12">AIO 1.2</h1>
+<ul>
+<li>新增Erista UV0-3支持</li>
+<li>变更Erista CPU Vmin 最低电压: 750-850mv</li>
+<li>变更Erista CPU Vmax 最大电压: 1200-1257mv</li>
+<li>内置Sigpatches</li>
+<li>新增CPU High UV0-8</li>
+<li>提高系统启动速度</li>
+<li>添加18.0.1 nifm补丁</li>
+</ul>
+<h2 id="settings-003">Settings 0.0.3</h2>
+<ul>
+<li>Settings添加GPU Boost模块</li>
+<li>默认kip初始值重新调整以兼容更多机器</li>
+<li>修复mini模式下偶尔会出现部分读数空白的问题</li>
+</ul>
+<h1 id="aio-111">AIO 1.1.1</h1>
+<ul>
+<li>提高CPU UV5-6的兼容性(部分机型原来无法开机的应该可以正常开机了)</li>
+<li>旧UV8现改为UV7</li>
+<li>UV8 现在可以设置一个更低的高频最低电压</li>
+<li>Tesla-Pro 更新2.0.7</li>
+<li>Status Monitor监控FPW能效开关</li>
+<li>Status Monitor监控Volts电压开关</li>
+<li>FanControl风扇 &amp; KeyCombo快捷键模块, 合并到Settings二级菜单</li>
+<li>新增Record系统录制功能配置</li>
+<li>帮助文件逻辑优化和订正部分错误的文本说明</li>
+<li>修复部分Status Monitor的逻辑问题, 新增Settings对齐设置</li>
+</ul>
+<h2 id="status-monitor-103c">status monitor 1.0.3c</h2>
+<h2 id="settings-002">Settings 0.0.2</h2>
+<h1 id="aio-11">AIO 1.1</h1>
+<ul>
+<li>解锁CPU 2601</li>
+<li>增加CPU UV5-8</li>
+<li>解锁GPU 1305</li>
+<li>Sysclk-oc 支持自动同步底座模式配置</li>
+<li>增加disable_remap_dialog
+  ## SaltyNX 0.7.3</li>
+<li>移除comm</li>
+</ul>
+<h1 id="aio-11-beta">AIO 1.1-beta</h1>
+<ul>
+<li>tRCD, tRP, tRAS现在直接显示成实际值, 而不是选项值</li>
+<li>要求AMS 17.0 支持HOS 18.0.0</li>
+<li>采用扩展时序名</li>
+<li>增加sigpatches对18.0.0的支持</li>
+<li>支持EOS 1.1</li>
+<li>MissonControl 蓝牙手柄插件支持18.0.0</li>
+<li>Hekate增加recover恢复模式</li>
+</ul>
+<h1 id="aio-10-beta">AIO 1.0-beta</h1>
+<ul>
+<li>主时序1拆分成3个独立的选项, 极限值进一步提高</li>
+<li>WL-RL拆分成2个独立的选项, 以兼容更多颗粒</li>
+<li>支持EOS 1.0</li>
+</ul>
+<h1 id="aio-05-beta">AIO 0.5-beta</h1>
+<ul>
+<li>增加CPU UV4</li>
+<li>erista 初代机引入GPU UV1 自定义电压</li>
+</ul>
+<h1 id="aio-04-beta">AIO 0.4-beta</h1>
+<ul>
+<li>提供4线程hbl</li>
+<li>vdd2上限同步到1212mv</li>
+<li>GPU Speedo +1626
+  ## Y帮助菜单内容</li>
+<li>EOS 0.4 支持</li>
+<li>修复自动存档kip命名规则</li>
+</ul>
+<h1 id="aio-03-beta">AIO 0.3-beta</h1>
+<ul>
+<li>修复Telsa呼出bug</li>
+<li>修复ini文件不能正确生成的问题</li>
+<li>Status Monitor引入实时电压</li>
+<li>超频管理插件更换为sys-clk-oc</li>
+<li>加入HekateToolBox</li>
+<li>使用eos 0.3 kip及Magic调频模块</li>
+<li>简化风扇控制UI显示
+  ## hbl支持libnx 4.6.0</li>
+<li>JKSV新增webDAV支持 <a href="https://www.bilibili.com/video/BV19J4m1a71j" title="跳转到Bilibili">演示视频</a></li>
+<li>重构了底层, 修复大量bug</li>
+<li>整合多个json列表, 优化packages载入速度</li>
+<li>修复部分cust转化不完全导致的bug</li>
+<li>Tesla Pro修复小bug</li>
+<li>加入t2_tRRD-tFAW自定义时序(kip读取无法获取到时序的值, 所以暂不放进去)</li>
+<li>加入快捷键模块, 风扇控制模块</li>
+<li>超频设置里的所有值现在都可以正常显示出来, 包括自定义时序值</li>
+<li>Preferences里添加自定义时序显示</li>
+</ul>
+<h1 id="aio-02-beta">AIO 0.2-beta</h1>
+<ul>
+<li>优化了Tesla Pro的配置逻辑</li>
+<li>加入了kip版本号的验证</li>
+<li>加入了3组kip预设配置</li>
+</ul>
+<h1 id="aio-01-beta">AIO 0.1-beta</h1>
+<ul>
+<li>已更新CPU UV配置文件</li>
+<li>sigpatch文件重新覆盖最新的</li>
+<li>修复自定义tRAS和tRFC偏移量的错误</li>
+<li>Y帮助文件已更新对应版本</li>
+</ul>
+                <div class="update-time">2026-03-12 16:40:35</div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>熔断查询</title>
+    <title>升降级固件 Firmware</title>
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -41,151 +41,57 @@
         </div>
     </nav>
     <div class="toc">
-        
+        <ul>
+<li><a href="#_1">免责声明</a></li>
+<li><a href="#_2">注意事项</a></li>
+<li><a href="#_3">下载</a></li>
+<li><a href="#_4">升降级系统</a><ul>
+<li><a href="#_5">升级</a></li>
+<li><a href="#_6">降级</a></li>
+</ul>
+</li>
+</ul>
+
     </div>
     <div class="container">
         <div class="header-space"></div>
         <div class="main-layout">
             <main class="content">
-                <h1 id="_1">熔断查询</h1>
-<div class="columns-2"><div class="column"><table>
-<thead>
-<tr>
-<th>版本</th>
-<th>熔断数</th>
-<th>版本</th>
-<th>熔断数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>21.0.0+</td>
-<td>22</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>20.0.0+</td>
-<td>21</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>19.0.0+</td>
-<td>20</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>17.0.0+</td>
-<td>19</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>16.0.0+</td>
-<td>18</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>15.0.0+</td>
-<td>17</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>13.2.1+</td>
-<td>16</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>12.0.2+</td>
-<td>15</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>11.0.0+</td>
-<td>14</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table></div><div class="column"><table>
-<thead>
-<tr>
-<th>版本</th>
-<th>熔断数</th>
-<th>版本</th>
-<th>熔断数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>10.0.0+</td>
-<td>13</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>9.0.0+</td>
-<td>11</td>
-<td>9.1.0+</td>
-<td>12</td>
-</tr>
-<tr>
-<td>8.1.0+</td>
-<td>10</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>7.0.0+</td>
-<td>9</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>6.0.0+</td>
-<td>7</td>
-<td>6.2.0</td>
-<td>8</td>
-</tr>
-<tr>
-<td>5.0.0+</td>
-<td>6</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>4.0.0+</td>
-<td>5</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>3.0.0</td>
-<td>3</td>
-<td>3.0.0+</td>
-<td>4</td>
-</tr>
-<tr>
-<td>2.0.0+</td>
-<td>2</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>1.0.0</td>
-<td>1</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table></div></div>
-                <div class="update-time">2026-03-11 22:26:46</div>
+                <h1 id="firmware">升降级固件 Firmware</h1>
+<p>tags: [系统]</p>
+<h2 id="_1">免责声明</h2>
+<div class="alert alert-note"><p>仅用于个人学习, 非商用, 侵删.</p></div>
+
+<h2 id="_2">注意事项</h2>
+<div class="alert alert-note"><p>确保整合包支持系统版本, 再升降级系统固件,
+    否则会导致无法进入系统.<br><br>
+    <strong>避免使用 Daybreak 离线升降级真实系统!!!</strong><br>
+    错误操作会导致熔断数不对应无法正常进入官方系统.</p></div>
+
+<h2 id="_3">下载</h2>
+<p><a href="https://a.7u9.cn/s/bl6ABGEe" class="button" target="_blank">夸克网盘</a><br>
+下载解压, 复制对应的 Firmware_xxx 文件夹到 <code>sdmc:/</code> 内存卡根目录</p>
+<h2 id="_4">升降级系统</h2>
+<h3 id="_5">升级</h3>
+<p>进入自制工具菜单, 打开 <code>sdmc:/switch/Daybreak.nro</code></p>
+<p>按 <strong>A</strong> 开始安装, 选择 <code>sdmc:/Firmware_xxx</code> 文件夹<br>
+后续所有出现的选项都选择右边, 直到完成重启.</p>
+<h3 id="_6">降级</h3>
+<p>除了选择恢复出厂数据之外, 其他的操作和升级系统一样.</p>
+<p>如果你操作之后, 仍然报错, 可以尝试以下方法:</p>
+<ul>
+<li>先 <a href="/lockpick.html"><strong>提取密钥</strong></a> (操作过的, 可以跳过这一步)</li>
+<li>重启(<strong>按住</strong> &lt;音量键 减号&gt;) 进入 hekate 主菜单</li>
+<li>打开 <code>Payloads &gt; TegraExplorer</code></li>
+<li>运行 <code>Script &gt; DowngradeFixer.te</code></li>
+<li>打开后选择 <code>EmuMMC</code></li>
+<li>出现 <code>Press POWER to continue, any other key to exit</code> 后</li>
+<li>按 <strong>电源键 继续</strong></li>
+<li>完成后 按 <strong>任意键 退出</strong></li>
+<li>退出后, 选择 <code>Reboot to Hekate</code>, 重启进入系统</li>
+<li>完成操作</li>
+</ul>
+                <div class="update-time">2026-03-13 16:24:55</div>
             </main>
         </div>
     </div>

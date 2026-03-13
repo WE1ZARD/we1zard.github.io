@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ftpsrv 无限传输工具</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: var(--color-bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="toc">
+        <ul>
+<li><a href="#_1">目录</a></li>
+<li><a href="#_2">安装</a><ul>
+<li><a href="#ns">NS 安装</a></li>
+<li><a href="#pc">PC 安装</a></li>
+<li><a href="#_3">开启后台服务</a></li>
+<li><a href="#ftp">连接ftp服务器</a></ul>
+</li>
+<li><a href="#_4">配置</a></li>
+<li><a href="#_5">注意</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="ftpsrv">ftpsrv 无限传输工具</h1>
+<blockquote>
+<p><a href="https://github.com/ITotalJustice/ftpsrv" title="github源地址"><code>ftpsrv</code></a>是ITotalJustice开发的ftp单线程无线传输工具, 
+支持的<a href="#远程命令">命令控制</a>, 由c语言编写, 具有速度快, 内存占用小等特点. 
+已支持switch, wii, 3ds, ds等平台.</p>
+<p>分为<code>系统后台</code>和<code>应用程序</code>两种形式, 可以独立运行,<br />
+后台速度稍慢, 开启之后只要联网即可, 占用系统资源.<br />
+应用程序需要在自制工具中打开才启动, 速度更快, 权限更高, 平时不占用系统资源.</p>
+</blockquote>
+<h2 id="_1">目录</h2>
+<ul>
+<li><a href="#安装">安装</a><ul>
+<li><a href="#ns-安装">NS安装</a></li>
+<li><a href="#pc-安装">PC安装</a></li>
+</ul>
+</li>
+<li><a href="#配置">配置</a></li>
+<li><a href="#注意">注意</a></li>
+</ul>
+<h2 id="_2">安装</h2>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114591925274246&bvid=BV1RD7jzPE7a&cid=30217994469&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h3 id="ns">NS 安装</h3>
+<ul>
+<li>系统后台: 打开 <code>Updater &gt; Sys Modules &gt; ftpsrv &gt; Sys Module &gt; Install</code></li>
+<li>应用程序: 打开 <code>Updater &gt; Sys Modules &gt; ftpsrv &gt; Install</code></li>
+</ul>
+<h3 id="pc">PC 安装</h3>
+<ul>
+<li>系统后台: switch_sysmod.zip</li>
+<li>应用程序: switch_application.zip</li>
+<li><a href="https://www.jianguoyun.com/p/DQi-URoQx8X-DBiR5fkFIAA">网盘地址</a></li>
+<li>下载解压后复制到switch根目录下</li>
+</ul>
+<h3 id="_3">开启后台服务</h3>
+<ul>
+<li>打开<code>相册工具 &gt; Magic Toolbox</code></li>
+<li>打开<code>后台服务 &gt; sys-ftp</code>: <code>Off</code> 设置成 <code>On</code></li>
+</ul>
+<h3 id="ftp">连接ftp服务器</h3>
+<ul>
+<li>连接wifi</li>
+<li>打开<code>设置 &gt; 互联网 &gt; IP地址</code>: 记录地址信息</li>
+<li>电脑操作
+• 在搜索栏上输入<code>ftp://刚才的IP地址:端口</code>, 例如: <code>192.168.x.x:21</code>
+• 弹窗之后, 选择匿名登陆进入SD卡根目录
+• 可以收藏这个路径, 后续只要NS联网了就可以直接访问</li>
+<li>手机操作
+• 安装FTP管理app, 输入<code>ftp://刚才的IP地址:端口</code>, 就可以从手机上访问了
+• iOS: <code>FTPManager</code>
+• 安卓: 我没安卓手机, 谁送我华为奏折机, 我研究一下😊</li>
+</ul>
+<h2 id="_4">配置</h2>
+<ul>
+<li>打开sd卡根目录下的<code>/config/ftpsrv/config.ini.template</code>, 复制并改名为<code>config.ini</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1">##########</span>
+<span class="c1"># ftpsrv #</span>
+<span class="c1">##########</span>
+
+<span class="c1">#######################################################################</span>
+<span class="c1"># Rename config.ini.template to config.ini for changes to take effect.#</span>
+<span class="c1">#######################################################################</span>
+
+<span class="k">[Login]</span>
+<span class="c1"># disabled by default, do not enable if using ldn_mitm as</span>
+<span class="c1"># it&#39;s a security risk - you have been warned!</span>
+<span class="c1"># 1: 开启</span>
+<span class="c1"># 0: 关闭</span>
+<span class="c1"># 匿名登陆</span>
+<span class="na">anon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+
+<span class="c1"># if anon is disabled, then user and pass must be set.</span>
+<span class="c1"># 不使用匿名登陆的时候, 需要把前面的分号删掉, 并填写好</span>
+<span class="c1"># user = 用户名</span>
+<span class="c1"># pass = 登陆密码</span>
+<span class="c1">; user =</span>
+<span class="c1">; pass =</span>
+
+<span class="k">[Network]</span>
+<span class="c1"># ports to be opened (&lt; 1024), however, port 21 works fine for me...</span>
+<span class="c1"># 传输端口, 可以使用5000, 和其他sftp工具统一.</span>
+<span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">21</span>
+
+<span class="c1"># timeout in seconds until a session is closed.</span>
+<span class="c1"># if 0, then no timeout is set.</span>
+<span class="c1"># it is recommended to set this to an actual value, eg 20.</span>
+<span class="c1"># 0: 关闭</span>
+<span class="c1"># 其他数值是设置自动超时关闭的时间, 单位是秒</span>
+<span class="na">timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+
+<span class="k">[Misc]</span>
+<span class="c1"># use local time zone over gm (UTC) time zone.</span>
+<span class="c1"># 使用本地时间</span>
+<span class="na">use_localtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+
+<span class="k">[Log]</span>
+<span class="c1"># enables log output to /config/ftpsrv/log.txt</span>
+<span class="c1"># 1: 开启</span>
+<span class="c1"># 0: 关闭</span>
+<span class="c1"># 调试日志, 会在本地生成日志文件, 默认关闭</span>
+<span class="na">log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+
+<span class="c1"># options specific to Nintendo Switch</span>
+<span class="k">[Nx]</span>
+<span class="c1"># enables showing all available mount points at root &quot;/&quot;</span>
+<span class="c1"># for example, SdCard is as at &quot;/sdmc:&quot;</span>
+<span class="c1"># 1: 开启</span>
+<span class="c1"># 0: 关闭</span>
+<span class="c1"># 根目录挂载所有可挂载的路径</span>
+<span class="na">mount_devices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+
+<span class="c1"># allows save data to be writable, needs mount_devices = 1</span>
+<span class="c1"># 1: 开启</span>
+<span class="c1"># 0: 关闭</span>
+<span class="c1"># 存档写入权限, 默认关闭, 避免误操作</span>
+<span class="na">save_writable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+
+<span class="c1"># allows for bis partitions to be mounted, needs mount_devices = 1</span>
+<span class="c1"># WARNING: modifying bis files can soft brick your switch!</span>
+<span class="c1"># 1: 开启</span>
+<span class="c1"># 0: 关闭</span>
+<span class="c1"># 开启bis文件挂载</span>
+<span class="na">mount_bis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+
+<span class="c1"># uncomment to override the port for application</span>
+<span class="c1"># 应用程序端口, 覆盖默认端口设置</span>
+<span class="c1"># app_port = 21</span>
+
+<span class="c1"># uncomment to override the port for sysmode</span>
+<span class="c1"># 系统后台模块端口, 覆盖默认端口设置</span>
+<span class="c1"># sys_port = 21</span>
+
+<span class="c1"># enables led on the controller to light flash</span>
+<span class="c1"># 1: 开启</span>
+<span class="c1"># 0: 关闭</span>
+<span class="c1"># 传输时候手柄上的HOME键闪烁</span>
+<span class="na">led</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0</span>
+
+<span class="c1"># options specific to Nintendo Switch App</span>
+<span class="c1"># 指定自制应用的设置</span>
+<span class="k">[Nx-App]</span>
+<span class="c1">; anon = 0</span>
+<span class="c1">; user = &quot;&quot;</span>
+<span class="c1">; pass = &quot;&quot;</span>
+<span class="c1">; port = 21</span>
+<span class="c1">; timeout = 0</span>
+<span class="c1">; use_localtime = 0</span>
+<span class="c1">; log = 0</span>
+<span class="c1">; mount_devices = 0</span>
+<span class="c1">; save_writable = 0</span>
+<span class="c1">; mount_bis = 0</span>
+<span class="c1">; led = 0</span>
+
+<span class="c1"># options specific to Nintendo Switch Sysmodule</span>
+<span class="c1"># 指定系统模块的设置</span>
+<span class="k">[Nx-Sys]</span>
+<span class="c1">; anon = 0</span>
+<span class="c1">; user = &quot;&quot;</span>
+<span class="c1">; pass = &quot;&quot;</span>
+<span class="c1">; port = 21</span>
+<span class="c1">; timeout = 0</span>
+<span class="c1">; use_localtime = 0</span>
+<span class="c1">; log = 0</span>
+<span class="c1">; mount_devices = 0</span>
+<span class="c1">; save_writable = 0</span>
+<span class="c1">; mount_bis = 0</span>
+<span class="c1">; led = 0</span>
+</code></pre></div>
+
+<h2 id="_5">注意</h2>
+<ul>
+<li>部分系统文件<code>不允许覆盖</code>和<code>移动</code></li>
+</ul>
+                <div class="update-time">2026-03-13 15:54:16</div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

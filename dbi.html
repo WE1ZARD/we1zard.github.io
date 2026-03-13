@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBI 使用教程</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: var(--color-bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="toc">
+        <ul>
+<li><a href="#_1">免责声明</a></li>
+<li><a href="#_2">快捷键</a></li>
+<li><a href="#_3">同步时间</a></li>
+<li><a href="#_4">弹窗问题</a></li>
+<li><a href="#sdk">SDK 使用</a><ul>
+<li><a href="#sdk_1">导出 SDK</a></li>
+<li><a href="#sdk_2">替换 SDK</a></li>
+<li><a href="#sdk_3">下载 SDK</a></li>
+<li><a href="#sdk_4">安装 SDK</a></ul>
+</li>
+<li><a href="#_5">本地游戏库搭建</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="dbi">DBI 使用教程</h1>
+<h2 id="_1">免责声明</h2>
+<div class="alert alert-note"><p>仅用于个人学习, 非商用, 侵删.</p></div>
+
+<h2 id="_2">快捷键</h2>
+<ul>
+<li><strong>X</strong> 连接 <code>MTP 模式</code> 外接设备</li>
+<li><strong>Y</strong> 连接 <code>USB 模式</code> 外接设备</li>
+<li><strong>L</strong> 浏览 <code>已安装的程序</code></li>
+<li><strong>R</strong> 浏览 <code>已安装的自制软件</code></li>
+</ul>
+<h2 id="_3">同步时间</h2>
+<ul>
+<li>用于下载服务, 不同步无法正常使用</li>
+<li>主页面 &gt; 工具 &gt; NTP 时间同步</li>
+<li>看到绿色 <strong>OK</strong> 表示完成</li>
+</ul>
+<h2 id="_4">弹窗问题</h2>
+<ul>
+<li>不影响安装, 但是所有需要密钥的高级功能都不能使用</li>
+<li>按照教程处理后, 不再弹窗, 并且解锁所有功能</li>
+</ul>
+<p><a href="/lockpick.html" class="button" target="_blank">提取密钥教程</a></p>
+<h2 id="sdk">SDK 使用</h2>
+<ul>
+<li>所有操作都 <strong>需要密钥</strong></li>
+<li>用于低版本系统运行高版本游戏</li>
+<li>仅限未使用高级系统版本功能的游戏</li>
+</ul>
+<h3 id="sdk_1">导出 SDK</h3>
+<ol>
+<li>主页面 <strong>按 L</strong> 打开已安装的程序列表</li>
+<li>选中需要 SDK 版本的游戏按 <strong>按 加号键</strong> 导出 SDK</li>
+<li>导出的 SDK 将按照版本号保存到路径 <code>sdmc:/switch/DBI/dumps/SDK/</code></li>
+</ol>
+<h3 id="sdk_2">替换 SDK</h3>
+<ol>
+<li>主页面 <strong>按 L</strong> 打开已安装的程序列表</li>
+<li>选中需要替换 SDK 版本的游戏 <strong>按 加号键</strong> 替换 SDK<blockquote>
+<p>需先将 SDK 保存到路径 <code>sdmc:/switch/DBI/dumps/SDK/</code></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="sdk_3">下载 SDK</h3>
+<p><a href="https://a.7u9.cn/s/kCsGCn3e" class="button" target="_blank">夸克网盘</a></p>
+<h3 id="sdk_4">安装 SDK</h3>
+<ul>
+<li>下载后, 复制到内存卡 <code>sdmc:/switch/DBI/dumps/SDK/</code></li>
+</ul>
+<h2 id="_5">本地游戏库搭建</h2>
+<p><a href="https://a.7u9.cn/s/mrv75qUC" class="button" target="_blank">SGS.zip</a></p>
+<p>下载 SGS.zip, 然后按里面的 使用说明.txt 操作</p>
+                <div class="update-time">2026-03-13 12:09:42</div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

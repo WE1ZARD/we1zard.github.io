@@ -4,18 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>报错查询</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     
     <!-- 使用与其他页面相同的依赖 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* 错误代码查询页面专用样式 */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding-bottom: 120px !important; /* 覆盖全局样式中的padding-bottom */
+            min-height: 100vh;
+        }
+        .search-container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(5, 20, 39, 0.95) !important;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(59, 130, 246, 0.15);
+            margin: 0 !important;
+            flex-shrink: 0;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            transition: all 0.3s ease;
+        }
+        .search-container.has-content {
+            top: 80px;
+            transform: translate(-50%, 0);
+            padding: 15px 20px;
+        }
+        #search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 14px 20px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 14px;
+            background-color: var(--color-bg-secondary);
+            color: #e5e7eb;
+            font-size: 16px;
+            font-weight: 400;
+            transition: all 0.2s ease;
+            outline: none;
+            backdrop-filter: blur(10px);
+        }
+        #search-input:focus {
+            border-color: var(--color-highlight);
+            background-color: var(--color-bg-tertiary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            transform: translateY(-1px);
+        }
+        #search-input::placeholder {
+            color: rgba(229, 231, 235, 0.5);
+            font-style: normal;
+            font-weight: 300;
+        }
+        .results-container {
+            width: 100%;
+            max-width: 800px;
+            flex-shrink: 0;
+            padding: 0 20px;
+        }
+        .centered-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            width: 100%;
+            padding-top: 380px; /* 增加顶部内边距，避免搜索结果被遮挡 */
+            padding-bottom: 100px;
+            box-sizing: border-box;
+        }
+    </style>
     <script src="/js/common.js"></script>
     <script src="/js/error.js"></script>
     
 
-</head>
-<body class="error-page">
-    
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <div class="main-container">
         <!-- 垂直居中容器 -->
         <div class="centered-container">
@@ -50,9 +144,17 @@
             </div>
         </div>
     </div>
-    
 
-    
-
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

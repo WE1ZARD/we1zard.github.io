@@ -4,26 +4,1001 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>电压计算</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/common.js"></script>
-<script src="/js/cal.js"></script>
     
-    <!-- Nintendo Switch Buttons SVG Sprite -->
-    <object data="/img/switch-buttons.svg" type="image/svg+xml" style="display: none;"></object>
-    <!-- 移除不存在的脚本引用，JavaScript代码已嵌入HTML -->
+    <style>
+
+        /* 本地样式替代Tailwind CSS */
+        .max-w-4xl {
+            max-width: 56rem;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .bg-gray-800\/50 {
+            background-color: rgba(31, 41, 55, 0.5);
+        }
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+        .p-4 {
+            padding: 1rem;
+        }
+        .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .max-w-\[26rem\] {
+            max-width: 26rem;
+        }
+        .grid {
+            display: grid;
+        }
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .gap-3 {
+            gap: 0.75rem;
+        }
+        .mt-3 {
+            margin-top: 0.75rem;
+        }
+        .max-w-\[24rem\] {
+            max-width: 24rem;
+        }
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        .bg-gray-700\/50 {
+            background-color: rgba(55, 65, 81, 0.5);
+        }
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+        .text-gray-300 {
+            color: #d1d5db;
+        }
+        .focus\:outline-none:focus {
+            outline: none;
+        }
+        .focus\:ring-2:focus {
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+        .bg-blue-700\/30 {
+            background-color: rgba(29, 78, 216, 0.3);
+        }
+        .text-blue-300 {
+            color: #93c5fd;
+        }
+        .flex {
+            display: flex;
+        }
+        .items-center {
+            align-items: center;
+        }
+        .justify-start {
+            justify-content: flex-start;
+        }
+        .font-bold {
+            font-weight: 700;
+        }
+        .mt-1 {
+            margin-top: 0.25rem;
+        }
+        .hidden {
+            display: none;
+        }
+        .gap-2 {
+            gap: 0.5rem;
+        }
+        .items-start {
+            align-items: flex-start;
+        }
+        .text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem;
+        }
+        .bg-gray-700\/40 {
+            background-color: rgba(55, 65, 81, 0.4);
+        }
+
+        input[type="range"] {
+            width: 100px;
+            height: 16px;
+            margin-right: 4px;
+            vertical-align: -2px;
+            background: transparent;
+            border-radius: 3px;
+            outline: none;
+            border: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        input[type="range"]:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: transparent !important;
+        }
+        input[type="range"]:-moz-focusring {
+            outline: none;
+            box-shadow: none;
+            border: none;
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: rgba(59, 130, 246, 0.2);
+            border: none;
+            border-radius: 3px;
+            height: 6px;
+            margin-top: 5px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #93c5fd;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #93c5fd;
+            transition: all 0.3s ease;
+            margin-top: -5px;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #2563eb;
+            box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+            transform: scale(1.1);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #93c5fd;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #93c5fd;
+            transition: all 0.3s ease;
+        }
+        input[type="range"]::-moz-range-thumb:hover {
+            background: #2563eb;
+            box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+            transform: scale(1.1);
+        }
+
+        /* Firefox轨道样式 */
+        input[type="range"]::-moz-range-track {
+            background: rgba(59, 130, 246, 0.2);
+            border: none;
+            border-radius: 3px;
+            height: 6px;
+        }
+        block {
+            color: #9ca3af;
+        }
+            
+
+        /* Disclaimer 专用样式 */
+        .disclaimer {
+            margin-bottom: 2rem;
+            max-width: 24rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem;
+            background-color: rgba(55, 65, 81, 0.3);
+            border-radius: 0.5rem;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+        .disclaimer ol {
+            list-style-type: decimal;
+            list-style-position: outside;
+            padding-left: 1.5em;
+            margin: 0;
+        }
+        .disclaimer li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 计算页面输入框样式 */
+        .cal-input {
+            padding: 0.75rem;
+            background-color: rgba(10, 30, 55, 0.8);
+            border: 1px solid #93c5fd;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        .cal-input:focus {
+            outline: none;
+            border-color: #93c5fd;
+            box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+            background-color: rgba(10, 30, 55, 0.95);
+        }
+
+        .cal-button {
+            padding: 0.75rem;
+            background-color: rgba(59, 130, 246, 0.35);
+            border: 1px solid #93c5fd;
+            border-radius: 8px;
+            color: #cbd5e1;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .cal-button:hover {
+            background-color: rgba(59, 130, 246, 0.3);
+            color: #93c5fd;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* 针对cal.html中使用的表格样式 */
+        .cal-content-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #9ca3af;
+        }
+
+        /* 确保content-container内的所有文本都使用正确的颜色 */
+        .cal-content-container * {
+            color: inherit;
+        }
+
+        /* 标题颜色需要单独设置以保持一致 */
+        .cal-content-container h1, .cal-content-container h2, .cal-content-container h3 {
+            color: #93c5fd !important;
+        }
+
+        /* 代码和强调文本也需要保持一致 */
+        .cal-content-container code, .cal-content-container strong {
+            color: #93c5fd !important;
+        }
+
+        /* 计算结果表格公共样式 */
+        .cal-content-container table,
+        #batchResults table,
+        #gpu_result table,
+        #mem_result table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cal-content-container th,
+        .cal-content-container td,
+        #batchResults th,
+        #batchResults td,
+        #gpu_result th,
+        #gpu_result td,
+        #mem_result th,
+        #mem_result td {
+            padding: 0.25rem 0.5rem;
+            border: none;
+            text-align: center;
+            font-size: 0.75rem;
+            line-height: 1.0;
+        }
+
+        .cal-content-container th,
+        #batchResults th,
+        #gpu_result th,
+        #mem_result th {
+            background-color: rgba(59, 130, 246, 0.1);
+            font-weight: 600;
+            color: #93c5fd !important;
+        }
+
+        .cal-content-container td,
+        #batchResults td,
+        #gpu_result td,
+        #mem_result td {
+            color: #9ca3af !important;
+        }
+
+        .cal-content-container table tbody tr:nth-child(even),
+        #gpu_result table tbody tr:nth-child(even),
+        #mem_result table tbody tr:nth-child(even),
+        #batchResults table tbody tr:nth-child(even) {
+            background-color: rgba(100, 116, 139, 0.1);
+        }
+
+        .cal-content-container table tbody tr:hover td,
+        .cal-content-container table tbody tr:hover th,
+        #batchResults table tbody tr:hover td,
+        #batchResults table tbody tr:hover th,
+        #gpu_result table tbody tr:hover td,
+        #gpu_result table tbody tr:hover th,
+        #mem_result table tbody tr:hover td,
+        #mem_result table tbody tr:hover th {
+            background-color: rgba(100, 116, 139, 0.2);
+            color: white !important;
+            font-weight: inherit;
+        }
+
+        /* 表格容器样式 - 用于hoc.html */
+        .cal-table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        .cal-content-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .cal-content-table th,
+        .cal-content-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #0c2140;
+        }
+        .cal-content-table th {
+            background-color: #184280;
+            font-weight: bold;
+        }
+        .cal-content-table tr:nth-child(even) {
+            background-color: #184280;
+        }
+        .cal-content-table tbody tr:hover {
+            background-color: #184280;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* 确保文本颜色在各种情况下都正确 */
+        .cal-text-gray-500 {
+            color: #9ca3af !important;
+        }
+        .cal-text-blue-400 {
+            color: #93c5fd !important;
+        }
+        .cal-text-blue-500 {
+            color: #93c5fd !important;
+        }
+        .cal-text-blue {
+            color: #93c5fd !important;
+        }
+        .cal-text-blue:hover:not(.cal-main-button *) {
+            color: #9ca3af !important;
+        }
+        .cal-text-grey {
+            color: #9ca3af !important;
+        }
+        .cal-text-grey:hover {
+            color: #93c5fd !important;
+        }
+
+        /* 计算结果容器样式 */
+        .cal-result-section {
+            margin-top: 1.5rem;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+        }
+        #cal-resultVal {
+            font-size: 1rem;
+            font-weight: 500;
+            width: 100%;
+            line-height: 1.1;
+        }
+
+        /* 计算结果表格样式 - 已合并到公共样式中 */
+
+        .cal-flex-button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        /* CVB计算器输入框样式 - 无边框 */
+        .cal-input {
+            border: none !important;
+            background-color: rgba(103, 128, 159, 0.15) !important; /* 与HTML中设置的bg-gray-700/50相匹配 */
+            border-radius: 0.5rem !important; /* 与HTML中设置的rounded-lg相匹配 */
+        }
+        .cal-input:focus {
+            border: none !important;
+            border-color: transparent !important;
+        }
+        .cal-input-section {
+            margin-bottom: 1rem;
+        }
+        input:focus {
+            outline: none;
+            border-color: #93c5fd;
+            box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+        }
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 40px;
+            height: 20px;
+            background-color: rgba(103, 128, 159, 0.3);
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+            margin-right: 8px;
+            margin-top: 2px;
+            margin-bottom: 8px;
+            vertical-align: middle;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+        input[type="checkbox"]::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 12px;
+            height: 12px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        input[type="checkbox"]:hover {
+            background-color: rgba(103, 128, 159, 0.4);
+        }
+        input[type="checkbox"]:checked {
+            background-color: rgba(59, 130, 246, 0.8);
+        }
+        input[type="checkbox"]:checked::before {
+            transform: translateX(20px);
+            background-color: #ffffff;
+        }
+        input[type="checkbox"]:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            appearance: none;
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            appearance: textfield;
+            -moz-appearance: textfield;
+        }
+
+        /* CVB计算器统一控制项样式 */
+        .cvb-control-item {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+            box-sizing: border-box;
+            height: auto;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cvb-button {
+            background-color: rgba(59, 130, 246, 0.3);
+            color: #93c5fd;
+            border: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .cvb-button:hover {
+            background-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        .cvb-result-box {
+            color: #e2e8f0;
+            border: none;
+            background-color: rgba(26, 32, 44, 0.7);
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+        .cvb-result-box.success {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: none;
+            color: #4ade80;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+        .cvb-result-box.error {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: none;
+            color: #f87171;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        /* CVB计算器频率选择器样式 */
+        #frequency.cvb-control-item {
+            background-color: rgba(103, 128, 159, 0.15); /* 与输入框背景色匹配 */
+            color: #e2e8f0;
+            border: none;
+        }
+        #frequency.cvb-control-item {
+            max-height: 200px; /* 限制下拉菜单的最大高度 */
+            overflow-y: auto; /* 允许垂直滚动 */
+        }
+        #frequency.cvb-control-item:focus {
+            background-color: rgba(26, 32, 44, 0.9);
+            border-color: rgba(59, 130, 246, 1);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            outline: none;
+        }
+    </style>
+    
+    <script>
+        // Cal (Calculator) Script for EMC and GPU DVFS
+
+        // 页面加载完成后，为所有输入框添加事件监听器，实现实时计算
+        window.onload = function() {
+            // 获取所有输入框
+            const inputs = document.querySelectorAll('input');
+            
+            // 为每个输入框添加事件监听器
+            inputs.forEach(input => {
+                input.addEventListener('input', calculateAllVoltages);
+            });
+            
+            // 页面加载时自动计算一次
+            calculateAllVoltages();
+        };
+
+        // Memory DVB DVFS Tables (from pcv.hpp and pcv_mariko.cpp)
+        const EmcDvbTableDefault = [
+            { freq: 204000, volts: [637, 637, 637] },    // 204000 Hz
+            { freq: 408000, volts: [637, 637, 637] },    // 408000 Hz
+            { freq: 800000, volts: [637, 637, 637] },    // 800000 Hz
+            { freq: 1065600, volts: [637, 637, 637] },   // 1065600 Hz
+            { freq: 1331200, volts: [650, 637, 637] },   // 1331200 Hz
+            { freq: 1600000, volts: [675, 650, 637] },   // 1600000 Hz
+        ];
+
+        const EmcClkOSLimit = 1600000; // 从代码中推断的默认限制
+
+        // Helper function to calculate DVB voltage with shift
+        function calculateDvbVolt(zero, one, two, voltAdd) {
+            // 添加电压最小值限制，确保电压不会过低
+            const minVolt = 600;
+            return [
+                Math.max(Math.min(zero + voltAdd, 1050), minVolt),
+                Math.max(Math.min(one + voltAdd, 1025), minVolt),
+                Math.max(Math.min(two + voltAdd, 1000), minVolt),
+                Math.max(Math.min(two + voltAdd, 1000), minVolt) // 为bracket 3添加第四个元素（使用与bracket 2相同的值）
+            ];
+        }
+
+        // 合并计算GPU和内存电压的函数
+        function calculateAllVoltages() {
+            // 显示结果部分
+            document.getElementById('result-section').classList.remove('hidden');
+            // 先计算内存电压，这样currentSocVoltage变量会被正确设置
+            calculateMemVoltages();
+            // 然后计算GPU电压
+            calculateVoltages();
+        }
+
+        // 用于存储当前内存电压值的全局变量
+        let currentSocVoltage = 0;
+
+        function calculateMemVoltages() {
+            // 清除之前的内存结果
+            document.getElementById('mem_result').innerHTML = '';
+            
+            // Get input values with defaults
+            let userInputFreq = parseInt(document.getElementById('mem_emcMaxClock').value) || 2133000;
+            const emcDvbShift = parseInt(document.getElementById('mem_emcDvbShift').value) || 0;
+            
+            // 获取当前SOC Speedo值，用于确定对应的bracket
+            const speedo = parseInt(document.getElementById('soc_speedo').value) || parseInt(document.getElementById('speedo').value) || 1600;
+            
+            // 如果输入值小于100000，自动乘以1000转换为Hz
+            if (userInputFreq < 100000) {
+                userInputFreq *= 1000;
+            }
+
+            // Calculate voltage offset
+            const voltAdd = 25 * emcDvbShift;
+
+            // Determine the appropriate voltage configuration based on user input
+            let selectedVolts = [725, 700, 675]; // Default to 2131200 Hz voltages
+            
+            // Find the appropriate voltage configuration for the user's frequency
+            if (userInputFreq >= 3200000) {
+                selectedVolts = calculateDvbVolt(800, 800, 775, voltAdd);
+            } else if (userInputFreq >= 2931200) {
+                selectedVolts = calculateDvbVolt(800, 775, 750, voltAdd);
+            } else if (userInputFreq >= 2665600) {
+                selectedVolts = calculateDvbVolt(775, 750, 725, voltAdd);
+            } else if (userInputFreq >= 2400000) {
+                selectedVolts = calculateDvbVolt(750, 725, 700, voltAdd);
+            } else if (userInputFreq >= 2131200) {
+                selectedVolts = calculateDvbVolt(725, 700, 675, voltAdd);
+            }
+            
+            // 使用GPU Speedo值计算对应的bracket
+            const currentBracket = getSpeedoBracket(speedo);
+            
+            // 只显示当前bracket的电压值
+            const bracketVoltage = selectedVolts[currentBracket];
+            
+            // 存储当前内存电压值
+            currentSocVoltage = bracketVoltage;
+            
+            // 不显示内存结果，仅作为后台计算
+            
+            // 返回计算出的内存电压值
+            return bracketVoltage;
+        }
+
+        // GPU DVFS Tables (converted from Python)
+        const gpu_dvfs_table_0 = [
+            [ 480000, 0, 0, 0, 0, 0 ],    // 76800 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 153600 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 230400 Hz
+            [ 738712, -7304, -552, 119, -3750, -2 ],    // 307200 Hz
+            [ 758712, -7304, -552, 119, -3750, -2 ],    // 384000 Hz
+            [ 778712, -7304, -552, 119, -3750, -2 ],    // 460800 Hz
+            [ 798712, -7304, -552, 119, -3750, -2 ],    // 537600 Hz
+            [ 818712, -7304, -552, 119, -3750, -2 ],    // 614400 Hz
+            [ 838712, -7304, -552, 119, -3750, -2 ],    // 691200 Hz
+            [ 880210, -7955, -584, 0, -2849, 39 ],    // 768000 Hz
+            [ 926398, -8892, -602, -60, -384, -93 ],    // 844800 Hz
+            [ 970060, -10108, -614, -179, 1508, -13 ],    // 921600 Hz
+            [ 1065665, -16075, -497, -179, 3213, 9 ],    // 998400 Hz
+            [ 1132576, -16093, -648, 0, 1077, 40 ],    // 1075200 Hz
+            [ 1180029, -14534, -830, 0, 1469, 110 ],    // 1152000 Hz
+            [ 1248293, -16383, -859, 0, 3722, 313 ],    // 1228800 Hz
+            [ 1286399, -17475, -867, 0, 3681, 559 ]    // 1267200 Hz
+        ];
+
+        const gpu_dvfs_table_1 = [
+            [ 480000, 0, 0, 0, 0, 0 ],    // 76800 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 153600 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 230400 Hz
+            [ 738712, -7304, -552, 119, -3750, -2 ],    // 307200 Hz
+            [ 758712, -7304, -552, 119, -3750, -2 ],    // 384000 Hz
+            [ 778712, -7304, -552, 119, -3750, -2 ],    // 460800 Hz
+            [ 798712, -7304, -552, 119, -3750, -2 ],    // 537600 Hz
+            [ 818712, -7304, -552, 119, -3750, -2 ],    // 614400 Hz
+            [ 838712, -7304, -552, 119, -3750, -2 ],    // 691200 Hz
+            [ 880210, -7955, -584, 0, -2849, 39 ],    // 768000 Hz
+            [ 926398, -8892, -602, -60, -384, -93 ],    // 844800 Hz
+            [ 970060, -10108, -614, -179, 1508, -13 ],    // 921600 Hz
+            [ 1065665, -16075, -497, -179, 3213, 9 ],    // 998400 Hz
+            [ 1132576, -16093, -648, 0, 1077, 40 ],    // 1075200 Hz
+            [ 1180029, -14534, -830, 0, 1469, 110 ],    // 1152000 Hz
+            [ 1248293, -16383, -859, 0, 3722, 313 ],    // 1228800 Hz
+            [ 1286399, -17475, -867, 0, 3681, 559 ]    // 1267200 Hz
+        ];
+
+        const gpu_dvfs_table_2 = [
+            [ 480000, 0, 0, 0, 0, 0 ],    // 76800 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 153600 Hz
+            [ 480000, 0, 0, 0, 0, 0 ],    // 230400 Hz
+            [ 738712, -7304, -552, 119, -3750, -2 ],    // 307200 Hz
+            [ 758712, -7304, -552, 119, -3750, -2 ],    // 384000 Hz
+            [ 778712, -7304, -552, 119, -3750, -2 ],    // 460800 Hz
+            [ 798712, -7304, -552, 119, -3750, -2 ],    // 537600 Hz
+            [ 818712, -7304, -552, 119, -3750, -2 ],    // 614400 Hz
+            [ 838712, -7304, -552, 119, -3750, -2 ],    // 691200 Hz
+            [ 880210, -7955, -584, 0, -2849, 39 ],    // 768000 Hz
+            [ 926398, -8892, -602, -60, -384, -93 ],    // 844800 Hz
+            [ 970060, -10108, -614, -179, 1508, -13 ],    // 921600 Hz
+            [ 1060665, -16075, -497, -179, 3213, 9 ],    // 998400 Hz
+            [ 1061475, -12688, -648, 0, 1077, 40 ],    // 1075200 Hz
+            [ 1094475, -12688, -648, 0, 1077, 40 ],    // 1152000 Hz
+            [ 1124475, -12688, -648, 0, 1077, 40 ],    // 1228800 Hz
+            [ 1142060, -12688, -648, 0, 1077, 40 ],    // 1267200 Hz
+            [ 1163644, -12688, -648, 0, 1077, 40 ],    // 1305600 Hz
+            [ 1183644, -12688, -648, 0, 1077, 40 ],    // 1344000 Hz
+            [ 1201644, -12688, -648, 0, 1077, 40 ],    // 1382400 Hz
+            [ 1217644, -12688, -648, 0, 1077, 40 ],    // 1420800 Hz
+            [ 1231644, -12688, -648, 0, 1077, 40 ],    // 1459200 Hz
+            [ 1243644, -12688, -648, 0, 1077, 40 ],    // 1497600 Hz
+            [ 1253644, -12688, -648, 0, 1077, 40 ]     // 1536000 Hz
+        ];
+
+        const gpu_freq_table = [76800, 153600, 230400, 307200, 384000, 460800, 537600, 614400, 691200, 768000, 844800, 921600, 998400, 1075200, 1152000, 1228800, 1267200, 1305600, 1344000, 1382400, 1420800, 1459200, 1497600, 1536000];
+
+        // Helper functions - Exact match to Python implementation
+        function round_closest(value, scale) {
+            if (value > 0) {
+                return Math.floor((value + Math.floor(scale / 2)) / scale);
+            } else {
+                return Math.floor((value - Math.floor(scale / 2)) / scale);
+            }
+        }
+
+        function round5(number) {
+            return Math.ceil(number / 5.0) * 5;
+        }
+
+        // 根据用户需求实现GPU Vmin自动计算：按25位一档取整，以1600speedo+2400MHz内存时610mV为基准
+        // 从 new.html 转换而来的算法
+        const ramBrackets = [
+            [2133, 2200, 2266, 2300, 2366, 2400, 2433, 2466, 2533, 2566, 2600, 2633, 2700, 2733, 2766, 2833, 2866, 2900, 2933, 3033, 3066, 3100],
+            [2300, 2366, 2433, 2466, 2533, 2566, 2633, 2700, 2733, 2800, 2833, 2900, 2933, 2966, 3033, 3066, 3100, 3133, 3166, 3200, 3233, 3266],
+            [2433, 2466, 2533, 2600, 2666, 2733, 2766, 2800, 2833, 2866, 2933, 2966, 3033, 3066, 3100, 3133, 3166, 3200, 3233, 3300, 3333, 3366],
+            [2500, 2533, 2600, 2633, 2666, 2733, 2800, 2866, 2900, 2966, 3033, 3100, 3166, 3200, 3233, 3266, 3300, 3333, 3366, 3400, 3400, 3400]
+        ];
+
+        const gpuDvfsArray = [590, 600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730, 740, 750, 760, 770, 780, 790, 800];
+
+
+
+        function calculateAutoGpuVmin() {
+            // 获取内存频率
+            const mem_freq_mhz = parseInt(document.getElementById('mem_emcMaxClock').value) || 2133;
+            
+            // 获取GPU Speedo值
+            let speedo = parseInt(document.getElementById('speedo').value) || 1600;
+            
+            const voltage_offset = parseInt(document.getElementById('offset').value) || 0;
+            
+            // 计算bracket - 使用与vmin.html完全相同的逻辑
+            const bracket = getSpeedoBracket(speedo);
+            
+            // 获取对应的GPU电压 - 使用与vmin.html完全相同的逻辑
+            let vmin = getGpuVoltage(mem_freq_mhz, bracket);
+            
+            // 应用用户电压偏移
+            vmin += voltage_offset;
+            
+            // 确保结果是5的倍数
+            vmin = Math.ceil(vmin / 5) * 5;
+            
+            // 更新SOC最低电压卡片
+            updateSocVminCard(vmin, mem_freq_mhz, bracket);
+            
+            return vmin;
+        }
+
+        // 更新SOC最低电压显示卡片
+        function updateSocVminCard(vmin, mem_freq_mhz, bracket) {
+            // 使用计算出的内存电压值作为SOC电压
+            const soc_voltage = currentSocVoltage;
+            
+            // 更新电压值
+            document.getElementById('soc_vmin_value').textContent = soc_voltage;
+            
+            // 显示卡片
+            document.getElementById('soc_vmin_card').classList.remove('hidden');
+        }
+
+        // 从vmin.html复制的函数 - 确保完全相同的计算逻辑
+        function getSpeedoBracket(speedo) {
+            if (speedo <= 1625) return 0;
+            if (speedo <= 1690) return 1;
+            if (speedo <= 1754) return 2;
+            return 3;
+        }
+
+        function getGpuVoltage(freq, bracket) {
+            if (freq < 1601) {
+                return 0;
+            }
+
+            for (let i = 0; i < 22; i++) {
+                if (freq <= ramBrackets[bracket][i]) {
+                    return gpuDvfsArray[i];
+                }
+            }
+
+            return 800;
+        }
+
+        function calculateVoltages() {
+            // 清除之前的结果
+            document.getElementById('gpu_result').innerHTML = '';
+            
+            // Get input values with defaults
+            const speedo = parseInt(document.getElementById('speedo').value) || 1600;
+            const table = parseInt(document.getElementById('table').value) || 2;
+            const offset = parseInt(document.getElementById('offset').value) || 0;
+            
+            // 如果没有手动输入vmin值，则自动计算
+            let vmin = parseInt(document.getElementById('vmin').value);
+            if (isNaN(vmin)) {
+                vmin = calculateAutoGpuVmin();
+            } else {
+                // 获取内存频率和bracket信息
+                const mem_freq_mhz = parseInt(document.getElementById('mem_emcMaxClock').value) || 2133;
+                const bracket = getSpeedoBracket(speedo);
+                
+                // 更新SOC最低电压卡片
+                updateSocVminCard(vmin, mem_freq_mhz, bracket);
+            }
+
+            // Select the appropriate table
+            let gpu_dvfs_table;
+            if (table === 0) {
+                gpu_dvfs_table = JSON.parse(JSON.stringify(gpu_dvfs_table_0));
+            } else if (table === 1) {
+                gpu_dvfs_table = JSON.parse(JSON.stringify(gpu_dvfs_table_1));
+            } else {
+                gpu_dvfs_table = JSON.parse(JSON.stringify(gpu_dvfs_table_2));
+            }
+
+            // Determine the number of entries
+            const num_entries = (table === 2) ? 24 : 17;
+
+            // Apply offset
+            for (let i = 0; i < num_entries; i++) {
+                gpu_dvfs_table[i][0] -= offset * 1000;
+            }
+
+            // Calculate the split point for two columns
+            const split_point = Math.ceil(num_entries / 2);
+
+            // Calculate voltages for all entries first
+            const entries = [];
+            const temp = 60;
+            
+            for (let entry = 0; entry < num_entries; entry++) {
+                const freq = gpu_freq_table[entry] / 1000;
+                const c0 = gpu_dvfs_table[entry][0];
+                const c1 = gpu_dvfs_table[entry][1];
+                const c2 = gpu_dvfs_table[entry][2];
+                const c3 = gpu_dvfs_table[entry][3];
+                const c4 = gpu_dvfs_table[entry][4];
+                const c5 = gpu_dvfs_table[entry][5];
+                
+                let mv = round_closest(c2 * speedo, 100);
+                mv = round_closest((mv + c1) * speedo, 100);
+                mv += c0;
+                
+                let mvt = round_closest(c3 * speedo, 100);
+                mvt += c4;
+                mvt += round_closest(c5 * temp, 10);
+                mvt *= temp;
+                mvt = round_closest(mvt, 10);
+                
+                let final_volt = Math.ceil((mv + mvt) / 1000);
+                
+                // 对所有频率范围应用Vmin限制
+                final_volt = Math.max(final_volt, vmin);
+
+                // 补偿
+                if (entry == 11 && speedo >= 1775) { //921
+                    final_volt += 5;
+                }
+                if (entry == 12 && speedo >= 1775) { //998.4
+                    final_volt += 15;
+                }
+                if (entry == 13 && speedo >= 1775) { //1075.2
+                    final_volt += 5;
+                }
+                if (entry == 22 && speedo >= 1700) { //1497.6
+                    final_volt += 15;
+                }
+                if (entry == 23 && speedo >= 1700) { //1536.0
+                    final_volt += 50;
+                }
+                if (entry == 23 && speedo >= 1800) { //1536.0
+                    final_volt += 50;
+                }
+                
+                // 确保结果是5的倍数
+                final_volt = round5(final_volt);
+                
+                entries.push({ freq, final_volt });
+            }
+
+            // Create two-column layout for GPU results, using items-start to ensure top alignment
+            let result = '<div class="grid grid-cols-2 gap-2 items-start">';
+            
+            // First column
+            result += '<table class="w-full text-xs">';
+            result += '<thead>';
+            result += '<tr>';
+            result += '<th scope="col">GPU</th>';
+            result += '<th scope="col">mV</th>';
+            result += '</tr>';
+            result += '</thead>';
+            result += '<tbody>';
+            
+            for (let i = 0; i < split_point; i++) {
+                const entry = entries[i];
+                result += '<tr>';
+                result += `<td>${entry.freq.toFixed(1)}</td>`;
+                result += `<td>${entry.final_volt}</td>`;
+                result += '</tr>';
+            }
+            
+            result += '</tbody>';
+            result += '</table>';
+            
+            // Second column
+            result += '<table class="w-full text-xs">';
+            result += '<thead>';
+            result += '<tr>';
+            result += '<th scope="col">GPU</th>';
+            result += '<th scope="col">mV</th>';
+            result += '</tr>';
+            result += '</thead>';
+            result += '<tbody>';
+            
+            for (let i = split_point; i < entries.length; i++) {
+                const entry = entries[i];
+                result += '<tr>';
+                result += `<td>${entry.freq.toFixed(1)}</td>`;
+                result += `<td>${entry.final_volt}</td>`;
+                result += '</tr>';
+            }
+            
+            result += '</tbody>';
+            result += '</table>';
+            
+            result += '</div>';
+            
+            // Display GPU result with same style as SOC voltage card
+            document.getElementById('gpu_result').innerHTML = '<div class="w-full p-4 rounded-xl">' + result + '</div>';
+            // Action buttons section not needed for this implementation
+        }
+    </script>
+    
 </head>
-<body class="bg-gray-900 text-gray-300">
-    <div class="flex justify-center mt-4">
-        <img src="/img/aurora.svg" alt="Aurora Logo" class="h-12 w-auto">
-    </div>
+<body class="text-gray-300">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- 导航栏占位空间 -->
+    <div class="h-16" style="height: var(--size-64);"></div>
+    
     <!-- Main Container -->
-    <div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto px-4 py-4">
 
         <!-- Content Box -->
-        <div class="bg-gray-800/50 rounded-xl p-6 shadow-lg">
+        <div class="bg-gray-800/50 rounded-xl p-4 shadow-lg max-w-[26rem] mx-auto">
             <!-- Risk Disclaimer -->
             <div class="disclaimer">
                 <ol>
@@ -33,33 +1008,33 @@
             </div>
 
         <!-- 内存电压计算器 -->
-        <div class="input-section grid grid-cols-2 gap-3 mt-3 max-w-[24rem] mx-auto text-sm">
+        <div class="cal-input-section grid grid-cols-2 gap-3 mt-3 max-w-[24rem] mx-auto text-sm">
             <input type="number" id="mem_emcMaxClock" 
-                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cal-input" 
                 placeholder="RAM: 2133 MHz">
             
             <input type="number" id="mem_emcDvbShift" 
-                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cal-input" 
                 placeholder="DVB: 0">
             
             <input type="number" id="speedo" 
-                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cal-input" 
                 placeholder="GPU Speedo: 1600">
             
             <input type="number" id="table" min="0" max="2" 
-                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cal-input" 
                 placeholder="GPU UV: 2">
             
             <input type="number" id="vmin" 
-                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cal-input" 
                 placeholder="GPU Vmin: Auto">
             
             <input type="number" id="offset" 
-                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cal-input" 
                 placeholder="GPU Volt Offset: 0 mV">
             
             <input type="number" id="soc_speedo" 
-                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 input" 
+                class="w-full px-4 py-2 bg-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cal-input" 
                 placeholder="SOC Speedo: 1600">
             
             <!-- SOC 电压要求显示 -->
@@ -70,11 +1045,22 @@
             </div>
         </div>
 
-        <div class="result-section mt-2 max-w-[24rem] mx-auto hidden" id="result-section">
+        <div class="result-section mt-1 max-w-[24rem] mx-auto hidden" id="result-section">
             <div id="gpu_result"></div>
             <div id="mem_result"></div>
         </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
