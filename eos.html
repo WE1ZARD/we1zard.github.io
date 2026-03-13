@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NS极限超频 - 进阶教程</title>
+    <title>NS极限超频 - EOS</title>
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -43,20 +43,25 @@
     <div class="toc">
         <ul>
 <li><a href="#switch">Switch 超频是为了什么?</a></li>
-<li><a href="#_1">目录</a></li>
-<li><a href="#_2">注意事项</a></li>
-<li><a href="#_3">免责声明</a></li>
-<li><a href="#_4">准备工作</a></li>
-<li><a href="#_9">基础概念</a></li>
+<li><a href="#_1">注意事项</a></li>
+<li><a href="#_2">免责声明</a></li>
+<li><a href="#_3">准备工作</a><ul>
+<li><a href="#_4">查看体质</a></li>
+<li><a href="#_5">参考电压</a></li>
+<li><a href="#_6">超频作业</a></li>
+<li><a href="#_7">重置参数</a></ul>
+</li>
+<li><a href="#_8">基础概念</a><ul>
 <li><a href="#ram">RAM 内存篇</a></li>
 <li><a href="#timings">TIMINGS 时序篇</a></li>
 <li><a href="#gpu">GPU 篇</a></li>
-<li><a href="#cpu">CPU 篇</a></li>
-<li><a href="#_23">备份参数</a></li>
-<li><a href="#_24">导入参数</a></li>
-<li><a href="#_25">更换内存</a></li>
-<li><a href="#_26">视频演示</a></li>
-<li><a href="#_29">旧版教程</a></li>
+<li><a href="#cpu">CPU 篇</a></ul>
+</li>
+<li><a href="#_22">备份参数</a></li>
+<li><a href="#_23">导入参数</a></li>
+<li><a href="#_24">更换内存</a></li>
+<li><a href="#_25">视频演示</a></li>
+<li><a href="#_28">旧版教程</a></li>
 </ul>
 
     </div>
@@ -64,38 +69,14 @@
         <div class="header-space"></div>
         <div class="main-layout">
             <main class="content">
-                <h1 id="ns-">NS极限超频 - 进阶教程</h1>
+                <h1 id="ns-eos">NS极限超频 - EOS</h1>
 <h2 id="switch">Switch 超频是为了什么?</h2>
 <blockquote>
 <p>合理超频可以<code>提高游戏体验</code>, 达到60帧游戏所需的性能要求,<br />
 合理超频配置, 在正常游玩的前提下, 有效<code>提升续航能力</code>.<br />
 不要再花冤枉钱找人超频, 按照这个教程, 无论新手老手都可以找到属于自己的最佳超频配置.  </p>
 </blockquote>
-<h2 id="_1">目录</h2>
-<ul>
-<li><a href="#注意事项">注意事项</a></li>
-<li><a href="#免责声明">免责声明</a></li>
-<li><a href="#准备工作">准备工作</a><ul>
-<li><a href="#查看体质">查看体质</a></li>
-<li><a href="#参考电压">参考电压</a></li>
-<li><a href="#超频作业">超频作业</a></li>
-<li><a href="#重置参数">重置参数</a></li>
-</ul>
-</li>
-<li><a href="#基础概念">基础概念</a><ul>
-<li><a href="#ram-内存篇">RAM 内存篇</a></li>
-<li><a href="#timings-时序篇">TIMINGS 时序篇</a></li>
-<li><a href="#gpu-篇">GPU 篇</a></li>
-<li><a href="#cpu-篇">CPU 篇</a></li>
-</ul>
-</li>
-<li><a href="#备份参数">备份参数</a></li>
-<li><a href="#导入参数">导入参数</a></li>
-<li><a href="#更换内存">更换内存</a></li>
-<li><a href="#视频演示">视频演示</a></li>
-<li><a href="#旧版教程">旧版教程</a></li>
-</ul>
-<h2 id="_2">注意事项</h2>
+<h2 id="_1">注意事项</h2>
 <ul>
 <li>请使用 <strong>FAT32</strong> 格式SD卡折腾, <code>避免使用 exFAT</code> 格式.</li>
 <li>建议<code>只在虚拟系统使用</code>, 并且折腾前<code>做好备份</code>, 以免造成不可挽回的损失.</li>
@@ -104,22 +85,19 @@
 <li>原装电池非充电状态, 尽量控制在 <code>6w&lt;</code> 内续航会比较好, <code>&gt;8w</code> 不要长期使用, 会导致电池寿命快速衰减. (已经改装大容量电池的, 无视这一条)</li>
 <li>教程基于EOS 1.6.7+</li>
 </ul>
-<h2 id="_3">免责声明</h2>
+<h2 id="_2">免责声明</h2>
 <ul>
 <li>使用者<code>自行承担超频可能的存在的风险和后果, 本人概不负责</code>.</li>
 </ul>
-<h2 id="_4">准备工作</h2>
+<h2 id="_3">准备工作</h2>
 <p><strong><code>注意</code></strong>:
 - 建议新手严格按照教程的顺序折腾, 少走弯路, 节省时间
 - 第一次折腾的时候, 不建议直接使用极限值, 建议退一档使用, 后续再这个基础上再进行优化, 不要一步到位
 - 测试稳定性的时候, 记得接电源, 以免高功耗使用导致电池容量不准
 - 请严格按照<code>内存</code> &gt; <code>时序</code> &gt; <code>GPU</code> &gt; <code>CPU</code> 顺序折腾
 - 当环境温度过低时, 电压会自动升高, 直到核心温度等于或者大于室温时候恢复设定值</p>
-<div class="btn-container">
-<a href="https://www.cnblogs.com/we1zard/p/18848165"><button>查看整合包</button></a>
-</div>
-<p><br><br></p>
-<h5 id="_5">查看体质</h5>
+<p><a href="https://gitea.com/we1zard/OTA/releases/download/latest/AIO-pre.zip" class="button" target="_blank">直接下载</a> <a href="https://www.jianguoyun.com/p/Da5-YN0Q2s_tDBiW5OoFIAA" class="button" target="_blank">网盘下载</a></p>
+<h3 id="_4">查看体质</h3>
 <blockquote>
 <p><strong>Speedo越高同电压可以跑越高的频率, 初代没有参考价值</strong><br />
 CPU Val: 影响 <code>CPU的电压</code>, 可用 <code>频率上限</code><br />
@@ -129,18 +107,13 @@ DRAM ID: <a href="#超频作业">内存颗粒型号</a>  </p>
 </blockquote>
 <p><code>sys-clk-oc 1.2.0+ 查看方法</code></p>
 <blockquote>
-<p><code>L+加号</code> 呼出菜单 &gt; 打开 <code>sys-clk-oc &gt; Speedo</code>
-<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202506/3533742-20250615131608647-902415634.jpg" />
-<img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202506/3533742-20250615131619607-2138085159.jpg" /></p>
+<p><code>L+加号</code> 呼出菜单 &gt; 打开 <code>sys-clk-oc &gt; Speedo</code></p>
 </blockquote>
 <p><code>Hekate 查看方法</code></p>
 <blockquote>
-<p><code>Hekate &gt; Console Info &gt; HW &amp; Fuses Info</code>
-<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212174104157-1530832639.png" />
-<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212174115448-1305087726.png" />
-<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212174120680-1611669540.png" /></p>
+<p><code>Hekate &gt; Console Info &gt; HW &amp; Fuses Info</code></p>
 </blockquote>
-<h5 id="_6">参考电压</h5>
+<h3 id="_5">参考电压</h3>
 <p><strong><code>默认电压</code></strong>
 - VDD2 (mV): <code>1100 mV</code>
 - VDDQ (mV): <code>600 mV</code></p>
@@ -188,7 +161,7 @@ DRAM ID: <a href="#超频作业">内存颗粒型号</a>  </p>
 </div>
 <p><br><br></p>
 <hr />
-<h5 id="_7">超频作业</h5>
+<h3 id="_6">超频作业</h3>
 <table>
 <thead>
 <tr>
@@ -279,17 +252,15 @@ DRAM ID: <a href="#超频作业">内存颗粒型号</a>  </p>
 <blockquote>
 <p>以上参数仅供参考, 可能因个体差异而导致无法使用 (资料来源 <a href="https://rentry.co/mariko#ram-configuration-based-on-tier">Mariko OC Guide</a>)</p>
 </blockquote>
-<h5 id="_8">重置参数</h5>
+<h3 id="_7">重置参数</h3>
 <blockquote>
 <p>如果你是在真实系统折腾, 崩了真实系统就没办法用这个方法了, 这个是给虚拟系统用的.
 重新启动NS并按住 <code>音量 ▬</code> 直至启动Hekate, 从 <code>Hekate &gt; Launch &gt; Restore</code> 进入恢复系统, 降低当前参数.<br />
 按<code>L + ✚</code>呼出菜单工具<br />
 按 <code>方向键 ▶</code> 打开工具包 <code>Magic</code>
-按 <code>A</code> 打开 <code>Preferences &gt; Restore Preset</code> 将所有参数全部恢复默认
-<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241212173830096-929548955.png" />
-<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202412/3533742-20241216155850614-1531012340.png" /></p>
+按 <code>A</code> 打开 <code>Preferences &gt; Restore Preset</code> 将所有参数全部恢复默认</p>
 </blockquote>
-<h2 id="_9">基础概念</h2>
+<h2 id="_8">基础概念</h2>
 <div class="codehilite"><pre><span></span><code><span class="o">**</span><span class="k">CPU</span><span class="o">**</span><span class="w">  </span>
 <span class="n">├</span><span class="n n-Quoted">`Boost Clock`</span><span class="w">       </span><span class="n">CPU睿频的频率</span><span class="p">,</span><span class="w"> </span><span class="n">主要用于加快读档速度</span><span class="w">  </span>
 <span class="n">├</span><span class="n n-Quoted">`UV Level`</span><span class="w">          </span><span class="n">降压等级</span><span class="p">,</span><span class="w"> </span><span class="n">影响所有频率的电压及频率上限</span><span class="p">,</span><span class="w"> </span><span class="n">体质支持的情况下</span><span class="p">,</span><span class="w"> </span><span class="n">越高电压越低</span><span class="p">,</span><span class="w"> </span><span class="n">频率上限越高</span><span class="w">  </span>
@@ -355,8 +326,8 @@ DRAM ID: <a href="#超频作业">内存颗粒型号</a>  </p>
 <span class="n">└</span><span class="n n-Quoted">`Presets`</span><span class="w">          </span><span class="n">预设时序</span><span class="p">,</span><span class="w"> </span><span class="n">可以直接配置超频作业里的预设时序</span>
 </code></pre></div>
 
-<h2 id="ram">RAM 内存篇</h2>
-<h5 id="_10">超频设置</h5>
+<h3 id="ram">RAM 内存篇</h3>
+<h4 id="_9">超频设置</h4>
 <ul>
 <li><code>Magic &gt; Configure &gt; RAM &gt; Max Clock</code><ul>
 <li>初代: 2133, </li>
@@ -372,22 +343,21 @@ DRAM ID: <a href="#超频作业">内存颗粒型号</a>  </p>
 </ul>
 </li>
 </ul>
-<h5 id="_11">测试条件</h5>
+<h4 id="_10">测试条件</h4>
 <ul>
 <li>能使用底座的机型, 直接在底座上做测试</li>
 <li>无底座的用ReverseNX插件切换成底座模式</li>
 <li>测试压力: 真实底座模式 &gt; 虚拟底座模式</li>
-<li>解锁60FPS帧数 (<a href="https://www.cnblogs.com/we1zard/p/18848910">使用方法</a>)  </li>
+<li>解锁60FPS帧数 (<a href="/fpslocker.html">使用方法</a>)  </li>
 </ul>
-<h5 id="_12">测试游戏</h5>
+<h4 id="_11">测试游戏</h4>
 <ul>
 <li>名称: 异度神剑X 终极版 (Xenoblade Chronicles X Definitive Edition)</li>
 <li>大小: 15GB</li>
 <li>时长: 15-30分钟</li>
-<li>测点: 游戏主菜单页面
-  <img alt="img" src="https://img2023.cnblogs.com/blog/3533742/202506/3533742-20250616091040599-1814347922.jpg" />  </li>
+<li>测点: 游戏主菜单页面</li>
 </ul>
-<h5 id="_13">报错处理</h5>
+<h4 id="_12">报错处理</h4>
 <ul>
 <li>当出现 <code>报错</code>, <code>崩溃</code>, <code>橙屏</code>, <code>花屏</code>, <code>进不去系统</code> 等</li>
 <li>还可以操作的时候<ul>
@@ -406,8 +376,8 @@ DRAM ID: <a href="#超频作业">内存颗粒型号</a>  </p>
 </ul>
 </li>
 </ul>
-<h2 id="timings">TIMINGS 时序篇</h2>
-<h5 id="_14">确定时序范围</h5>
+<h3 id="timings">TIMINGS 时序篇</h3>
+<h4 id="_13">确定时序范围</h4>
 <ul>
 <li>请确保内存频率稳定再进行以下操作, 否则返回 <a href="ram-内存篇">内存篇</a></li>
 <li>以下操作顺序是为了最快速度找出极限时序, 请勿自行发挥, 浪费无谓的时间</li>
@@ -447,24 +417,27 @@ DRAM ID: <a href="#超频作业">内存颗粒型号</a>  </p>
 </ol>
 </li>
 </ul>
-<h5 id="_15">测试游戏</h5>
+<h5 id="_14">测试游戏</h5>
 <ul>
 <li>名称: 塞尔达传说: 王国之泪 (The Legend Of Zelda: Tears Of The Kingdom)</li>
 <li>版本: 1.2.1</li>
 <li>大小: 16GB</li>
 <li>时长: 15-30分钟</li>
-<li>测点: 克洛格森林: 姆萨诺奇拉神庙 (<code>需要解锁进度存档</code>, 并在底座模式下完成测试)
-  <img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241010185944015-473468897.jpg" /></li>
+<li>测点: 克洛格森林: 姆萨诺奇拉神庙 (<code>需要解锁进度存档</code>, 并在底座模式下完成测试)</li>
 </ul>
-<h5 id="_16">测试工具</h5>
+<h5 id="_15">测试工具</h5>
 <ul>
-<li>安装和使用 <code>Ultracam Benchmark</code><ul>
+<li>
+<p>安装和使用 <code>Ultracam Benchmark</code></p>
+<ul>
 <li><code>Updater &gt; HomeBrew Apps &gt; OC-Suite &gt; OC Tester &gt; Install</code> (<a href="https://www.cnblogs.com/we1zard/p/18856925">详细使用说明</a>)</li>
 <li>安装完成之后, 进入游戏传送<code>克洛格森林: 姆萨诺奇拉神庙</code></li>
-<li>传送后按<code>✚</code>打开菜单<code>解除弓</code>或者(按下<code>左摇杆</code>让人物<code>蹲下</code>)
-<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011214246149-1812848629.jpg" />
-<img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241011214254633-700087339.jpg" /></li>
-<li>按<code>L+✚</code>打开金手指, <code>锁定天气: 晴天</code>, <code>锁定时间: 上午9点</code>, 然后保存存档进度, 这样后续测试的时候就可以直接读测试档.</li>
+<li>
+<p>传送后按<code>✚</code>打开菜单<code>解除弓</code>或者(按下<code>左摇杆</code>让人物<code>蹲下</code>)</p>
+</li>
+<li>
+<p>按<code>L+✚</code>打开金手指, <code>锁定天气: 晴天</code>, <code>锁定时间: 上午9点</code>, 然后保存存档进度, 这样后续测试的时候就可以直接读测试档.</p>
+</li>
 <li>按<code>ZL+ZR+▼</code>启动跑分测试, 跑分动画持续1分钟左右.</li>
 <li>动画完成之后, 打开 <code>Magic &gt; UltraCam Log</code> 或者 <code>DBI</code> 查看SD卡根目录下 <code>sdmc:/TOTKBenchmark.txt</code><ul>
 <li>Total frames: 总帧数</li>
@@ -480,14 +453,14 @@ DRAM ID: <a href="#超频作业">内存颗粒型号</a>  </p>
 <span class="nv">Total</span><span class="w"> </span><span class="nv">frames</span>:<span class="w"> </span><span class="mi">2604</span>,<span class="w"> </span><span class="nv">Average</span><span class="w"> </span><span class="nv">FPS</span>:<span class="w"> </span><span class="mi">43</span>,<span class="w"> </span><span class="mi">1</span><span class="o">%</span><span class="w"> </span><span class="nv">FPS</span>:<span class="w"> </span><span class="mi">38</span>,<span class="w"> </span><span class="mi">0</span>.<span class="mi">1</span><span class="o">%</span><span class="w"> </span><span class="nv">FPS</span>:<span class="w"> </span><span class="mi">38</span>
 </code></pre></div>
 
-<h5 id="_17">优化思路</h5>
+<h5 id="_16">优化思路</h5>
 <ul>
 <li>放松 <code>主时序 Primary</code> 同时收紧 <code>次时序 Secondary</code></li>
 <li>在稳定的前提下, 记录保存好相关测试数据, 以便对比TOTKBenchmark测试结果</li>
 <li>这是一个漫长枯燥的过程, 不建议新手尝试</li>
 </ul>
-<h2 id="gpu">GPU 篇</h2>
-<h5 id="_18">超频设置</h5>
+<h3 id="gpu">GPU 篇</h3>
+<h5 id="_17">超频设置</h5>
 <div class="codehilite"><pre><span></span><code>Speedo              填写[查看体质]中的GPU Speedo的数值
 UV Level            参考[基础概念]中的说明, 结合自己的情况进行设置
 Volt Offset         默认
@@ -506,7 +479,7 @@ GPU Unlock          开启
 <li>打开 sys-clk-oc 的 <code>Temporary Overrides</code> 设置需要测试的目标GPU频率</li>
 <li>测试条件和测试游戏同 <a href="#ram-内存篇">RAM 内存篇</a></li>
 </ul>
-<h5 id="_19">报错处理</h5>
+<h5 id="_18">报错处理</h5>
 <ul>
 <li>UV3的用户<ul>
 <li>调整当前测试异常的GPU频率电压, 每次加10mV</li>
@@ -529,8 +502,8 @@ GPU Unlock          开启
 <a href="https://gitea.com/we1zard/OTA/releases/download/latest/uv3_calculator.html"><button>GPU UV3 电压估算器</button></a>
 </div>
 <p><br><br></p>
-<h2 id="cpu">CPU 篇</h2>
-<h5 id="_20">超频设置</h5>
+<h3 id="cpu">CPU 篇</h3>
+<h5 id="_19">超频设置</h5>
 <div class="codehilite"><pre><span></span><code><span class="n">Boost</span><span class="w"> </span><span class="n">Clock</span><span class="w">     </span><span class="n">推荐</span><span class="w"> </span><span class="n n-Quoted">`2397 Mhz`</span><span class="w"> </span><span class="n">或者</span><span class="w"> </span><span class="n n-Quoted">`2296 Mhz`</span><span class="w"> </span><span class="p">(</span><span class="n">初代</span><span class="o">:</span><span class="w"> </span><span class="mi">2091</span><span class="w"> </span><span class="n">Mhz</span><span class="p">)</span>
 <span class="n">UV</span><span class="w"> </span><span class="k">Level</span><span class="w">        </span><span class="n">推荐</span><span class="w"> </span><span class="n n-Quoted">`UV8`</span><span class="p">,</span><span class="w"> </span><span class="n">通常情况下</span><span class="p">,</span><span class="w"> </span><span class="n">降压等级越高</span><span class="p">,</span><span class="w"> </span><span class="n">电压越低</span>
 <span class="n">High</span><span class="w"> </span><span class="n">UV</span><span class="w"> </span><span class="k">Level</span><span class="w">   </span><span class="n">默认</span><span class="w"> </span><span class="n">同上</span><span class="p">,</span><span class="w"> </span><span class="n">仅针对1581</span><span class="o">+</span><span class="n">Mhz</span>
@@ -545,16 +518,19 @@ GPU Unlock          开启
 <li>打开 sys-clk-oc 的 <code>Temporary Overrides</code> 设置需要测试的目标CPU频率</li>
 <li>测试条件同 <a href="#ram-内存篇">RAM 内存篇</a></li>
 </ul>
-<h5 id="_21">测试游戏</h5>
+<h5 id="_20">测试游戏</h5>
 <ul>
 <li>名称: 极品飞车14: 热力迸发 (Need For Speed: Hot Pursuit Remastered)</li>
 <li>大小: 9GB</li>
-<li>测点: 地图菜单
-  <img alt="image" src="https://img2024.cnblogs.com/blog/3533742/202410/3533742-20241010183059639-949362895.jpg" /></li>
-<li>极品飞车对CPU UV比较敏感, 有问题很快就会出错, 通常不需要挂很长时间测试.</li>
+<li>
+<p>测点: 地图菜单</p>
+</li>
+<li>
+<p>极品飞车对CPU UV比较敏感, 有问题很快就会出错, 通常不需要挂很长时间测试.</p>
+</li>
 <li>如果UV测试都ok之后, 可以直接玩有压力的游戏, 测试CPU的稳定性.</li>
 </ul>
-<h5 id="_22">报错处理</h5>
+<h5 id="_21">报错处理</h5>
 <ul>
 <li>测试过程死机或者报错<ul>
 <li>按住关机键重启之后, 降低UV档位</li>
@@ -567,7 +543,7 @@ GPU Unlock          开启
 </ul>
 </li>
 </ul>
-<h2 id="_23">备份参数</h2>
+<h2 id="_22">备份参数</h2>
 <blockquote>
 <p>多用于小版本升级跨版本导入</p>
 </blockquote>
@@ -576,7 +552,7 @@ GPU Unlock          开启
 <li>保存路径在 <code>atmosphere/kips/presets/*.json</code></li>
 <li>可在 <code>Magic &gt; Preferences &gt; Manage Presets</code> 中进行导入切换</li>
 </ul>
-<h2 id="_24">导入参数</h2>
+<h2 id="_23">导入参数</h2>
 <blockquote>
 <p>需要提前<a href="#备份参数">备份参数</a><br />
 通常用于非新增参数的版本之间的跨版本导入<br />
@@ -593,38 +569,38 @@ GPU Unlock          开启
 </li>
 <li><a href="#导入参数演示">视频演示</a></li>
 </ul>
-<h2 id="_25">更换内存</h2>
+<h2 id="_24">更换内存</h2>
 <blockquote>
 <p>请根据自己的需求选择合适的内存颗粒, 
 目标是2400内存频率的朋友, 没必要换, 各方面的差距非常小, 不值得.</p>
 <p>如果希望超频到2800+内存频率, 推荐<code>海力士 Hynix 4G</code>, 型号 <code>H9HCNNNCPUMLXR-NEI</code>
-有安卓及L4T应用需求的可以考虑8G型号, 只在NS系统使用的用户, 不推荐更换 <code>8G</code> 内存颗粒.
-只建议1700+并且有特定需求的朋友考虑, 如果机器的Speedo是低于1650的朋友, 不推荐做任何内存颗粒的更换.</p>
+有安卓及 L4T 应用需求的可以考虑8G型号, 只在NS系统使用的用户, 不推荐更换 <code>8G</code> 内存颗粒.
+只建议 1700+ 并且有特定需求的朋友考虑, 如果机器的Speedo是低于1650的朋友, 不推荐做任何内存颗粒的更换.</p>
 </blockquote>
-<h2 id="_26">视频演示</h2>
+<h2 id="_25">视频演示</h2>
 <!--
 <iframe width="1920" height="1080" frameborder="0" src="https://open.douyin.com/player/video?vid=7461959453294742820&autoplay=0" referrerpolicy="unsafe-url" allowfullscreen>
 </iframe>
 -->
 
-<h4 id="_27">导入参数演示</h4>
+<h4 id="_26">导入参数演示</h4>
 <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114986374532521&bvid=BV1UwtBzCErd&cid=31541953896&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
-<h4 id="_28">功能操作演示</h4>
+<h4 id="_27">功能操作演示</h4>
 <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113886728555257&bvid=BV1DdfRYFEwg&cid=28066254789&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 <h4 id="ultracam">UltraCam 演示</h4>
 <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=112861523216773&bvid=BV1g4vHetEpw&cid=500001629791902&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
-<h2 id="_29">旧版教程</h2>
+<h2 id="_28">旧版教程</h2>
 <ul>
-<li><a href="https://www.cnblogs.com/we1zard/p/18847015">入门教程</a></li>
+<li><a href="/ocs.html">入门教程</a></li>
 <li><a href="https://www.jianguoyun.com/p/DTpB-JAQgcS1DBjY7dsFIAA">内存篇</a></li>
 <li><a href="https://www.jianguoyun.com/p/DScWazoQgcS1DBjf7dsFIAA">时序篇</a></li>
 <li><a href="https://www.jianguoyun.com/p/Db25EZYQgcS1DBji7dsFIAA">GPU篇</a></li>
 <li><a href="https://www.jianguoyun.com/p/DWP4jmsQgcS1DBjg7dsFIAA">CPU篇</a></li>
 </ul>
-                <div class="update-time">2026-03-13 16:12:46</div>
+                <div class="update-time">2026-03-13 20:19:08</div>
             </main>
         </div>
     </div>

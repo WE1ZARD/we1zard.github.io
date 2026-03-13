@@ -111,7 +111,7 @@ body {
   font-size: var(--font-size-12) !important;
   font-family: var(--font-family-mono) !important;
   text-align: right;
-  margin: var(--size-48) 0 0 0; /* 上边距，右对齐 */
+  margin: var(--size-48) 0 var(--size-64) 0; /* 上边距和下边距，右对齐 */
 }
 
 /* Main Layout with Sidebar */
@@ -445,7 +445,7 @@ body {
 
 @media (max-width: 768px) {
   .footer-content {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: var(--size-16);
     text-align: center;
   }

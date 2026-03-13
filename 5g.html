@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5gwifi</title>
+    <title>修改 NS 5g WiFi 信道</title>
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -41,14 +41,47 @@
         </div>
     </nav>
     <div class="toc">
-        
+        <ul>
+<li><a href="#_1">免责声明</a></li>
+<li><a href="#_2">用途</a></li>
+<li><a href="#_3">下载安装</a></li>
+<li><a href="#_4">操作步骤</a></li>
+<li><a href="#_5">保存路径</a></li>
+</ul>
+
     </div>
     <div class="container">
         <div class="header-space"></div>
         <div class="main-layout">
             <main class="content">
-                
-                <div class="update-time">2026-03-13 17:36:28</div>
+                <h1 id="ns-5g-wifi">修改 NS 5g WiFi 信道</h1>
+<h2 id="_1">免责声明</h2>
+<div class="alert alert-note"><p>仅用于个人学习, 非商用, 侵删.</p></div>
+
+<h2 id="_2">用途</h2>
+<ul>
+<li>适用于日版 switch 无法正常连接国内 WiFi 5G 信号</li>
+<li>不支持修改 WiFi 信道的路由器</li>
+</ul>
+<h2 id="_3">下载安装</h2>
+<p><a href="https://gitea.com/we1zard/OTA/releases/download/latest/lockpick.zip" class="button" target="_blank">直接下载</a></p>
+<p>下载解压, 复制到 bootloader 到 <code>sdmc:/</code> 内存卡根目录</p>
+<h2 id="_4">操作步骤</h2>
+<ol>
+<li>重启 <strong>按住 音量键 减号</strong> 进入 hekate 主菜单</li>
+<li>打开 <code>Payloads &gt; Lockpick_RCM.bin</code> 进入工具菜单</li>
+<li><strong>音量键 移动</strong>, <strong>电源键 打开</strong></li>
+<li>完成后, 打开 <code>Reboot to hekate</code> 重启</li>
+</ol>
+<ul>
+<li>提取真实系统密钥: Dump from SysNAND</li>
+<li>提取虚拟系统密钥: Dump from EmuNAND</li>
+</ul>
+<h2 id="_5">保存路径</h2>
+<p>系统密钥: <code>sdmc:/switch/prod.keys</code>
+标题密钥: <code>sdmc:/title.keys</code>
+PRODINFO: <code>sdmc:/backup/*</code></p>
+                <div class="update-time">2026-03-13 19:47:49</div>
             </main>
         </div>
     </div>

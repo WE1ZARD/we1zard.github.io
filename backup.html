@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>系统备份</title>
+    <title>Backup - 系统备份</title>
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -42,18 +42,18 @@
     </nav>
     <div class="toc">
         <ul>
-<li><a href="#_2">免责声明</a></li>
-<li><a href="#_3">注意事项</a></li>
-<li><a href="#_4">备份</a><ul>
-<li><a href="#_5">真实系统</a></li>
-<li><a href="#_6">虚拟系统</a></li>
-<li><a href="#_7">保存路径</a></ul>
+<li><a href="#_1">免责声明</a></li>
+<li><a href="#_2">注意事项</a></li>
+<li><a href="#_3">备份</a><ul>
+<li><a href="#_4">真实系统</a></li>
+<li><a href="#_5">虚拟系统</a></li>
+<li><a href="#_6">保存路径</a></ul>
 </li>
-<li><a href="#_8">恢复</a><ul>
-<li><a href="#_9">真实系统</a></li>
-<li><a href="#_10">虚拟系统</a></ul>
+<li><a href="#_7">恢复</a><ul>
+<li><a href="#_8">真实系统</a></li>
+<li><a href="#_9">虚拟系统</a></ul>
 </li>
-<li><a href="#_11">空间不足</a></li>
+<li><a href="#_10">空间不足</a></li>
 </ul>
 
     </div>
@@ -61,52 +61,52 @@
         <div class="header-space"></div>
         <div class="main-layout">
             <main class="content">
-                <h1 id="_1">系统备份</h1>
-<h2 id="_2">免责声明</h2>
+                <h1 id="backup-">Backup - 系统备份</h1>
+<h2 id="_1">免责声明</h2>
 <div class="alert alert-note"><p>仅用于个人学习, 非商用, 侵删.</p></div>
 
-<h2 id="_3">注意事项</h2>
+<h2 id="_2">注意事项</h2>
 <div class="alert alert-note"><p>避免电量不足导致操作中断<br></p></div>
 
-<h2 id="_4">备份</h2>
+<h2 id="_3">备份</h2>
 <p><strong>按住 音量键减号</strong> 开机进入 hekate 主菜单
 打开 <code>Tools &gt; Backup eMMC</code> 备份工具</p>
 <blockquote>
 <p>空间要求: OLED &gt; 64 G,  其他 &gt; 32 G.</p>
 </blockquote>
-<h3 id="_5">真实系统</h3>
+<h3 id="_4">真实系统</h3>
 <ul>
 <li>打开 <code>eMMC BOOT0 &amp; BOOT1</code>, 完成后, 点右上角 <code>Close</code> 返回</li>
 <li>打开 <code>eMMC RAW GPP</code>, 完成后, 点右上角 <code>Close</code> 返回</li>
 </ul>
-<h3 id="_6">虚拟系统</h3>
+<h3 id="_5">虚拟系统</h3>
 <ul>
 <li>打开 <code>SD emuMMC RAW Partition</code> ON (默认: OFF)</li>
 <li>打开 <code>eMMC BOOT0 &amp; BOOT1</code>, 完成后, 点右上角 <code>Close</code> 返回</li>
 <li>打开 <code>eMMC RAW GPP</code>, 完成后, 点右上角 <code>Close</code> 返回</li>
 </ul>
-<h3 id="_7">保存路径</h3>
+<h3 id="_6">保存路径</h3>
 <ul>
 <li><code>sdmc:/backup/设备id/</code></li>
 </ul>
-<h2 id="_8">恢复</h2>
+<h2 id="_7">恢复</h2>
 <p><strong>按住 音量键减号</strong> 开机进入 hekate 主菜单
 打开 <code>Tools &gt; Restore eMMC</code> 备份工具</p>
 <blockquote>
 <p>提前将 <code>sdmc:/backup/设备id/</code> 中的 <code>BOOT0</code>, <code>BOOT1</code>, <code>rawnand.bin</code> 放在 <code>sdmc:/backup/设备id/restore</code>中</p>
 </blockquote>
-<h3 id="_9">真实系统</h3>
+<h3 id="_8">真实系统</h3>
 <ul>
 <li>打开 <code>eMMC BOOT0 &amp; BOOT1</code>, 完成后, 点右上角 <code>Close</code> 返回</li>
 <li>打开 <code>eMMC RAW GPP</code>, 完成后, 点右上角 <code>Close</code> 返回</li>
 </ul>
-<h3 id="_10">虚拟系统</h3>
+<h3 id="_9">虚拟系统</h3>
 <ul>
 <li>打开 <code>SD emuMMC RAW Partition</code> ON (默认: OFF)</li>
 <li>打开 <code>eMMC BOOT0 &amp; BOOT1</code>, 完成后, 点右上角 <code>Close</code> 返回</li>
 <li>打开 <code>eMMC RAW GPP</code>, 完成后, 点右上角 <code>Close</code> 返回</li>
 </ul>
-<h2 id="_11">空间不足</h2>
+<h2 id="_10">空间不足</h2>
 <blockquote>
 <p>内存卡空间不足, 将自动转为分批备份, 无法一次性完整备份!<br>
 操作比较繁琐, 强烈建议大家在根据自己型号, 在备份前预留充足的空间.</p>
@@ -117,7 +117,7 @@
 <li>成功连接电脑后, 将 <code>sdmc:/backup/</code> 中的内容转移到电脑上, 备份进度识别 <code>partial.idx</code> 文件不能一起转移</li>
 <li>完成后, 再次打开 <code>Close &gt; Backup eMMC &gt; eMMC RAW GPP</code> 继续备份. </li>
 </ul>
-                <div class="update-time">2026-03-13 16:25:00</div>
+                <div class="update-time">2026-03-13 19:33:02</div>
             </main>
         </div>
     </div>
