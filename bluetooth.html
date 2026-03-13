@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Picofly 升降级固件</title>
+    <title>提取蓝牙手柄数据</title>
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -42,12 +42,8 @@
     </nav>
     <div class="toc">
         <ul>
-<li><a href="#_1">下载安装</a></li>
-<li><a href="#_2">操作步骤</a><ul>
-<li><a href="#_3">升级</a></li>
-<li><a href="#_4">降级</a></li>
-</ul>
-</li>
+<li><a href="#_2">操作方法</a></li>
+<li><a href="#_3">保存路径</a></li>
 </ul>
 
     </div>
@@ -55,30 +51,17 @@
         <div class="header-space"></div>
         <div class="main-layout">
             <main class="content">
-                <h1 id="picofly">Picofly 升降级固件</h1>
-<h2 id="_1">下载安装</h2>
-<p><a href="https://a.7u9.cn/s/O4Ys5P0L" class="button" target="_blank">夸克网盘</a></p>
-<p>下载解压到 <code>sdmc:/</code> 内存卡根目录</p>
-<h2 id="_2">操作步骤</h2>
+                <h1 id="_1">提取蓝牙手柄数据</h1>
+<h2 id="_2">操作方法</h2>
 <ol>
-<li>重启, <strong>按住 音量键 减号</strong> 进入 hekate 主菜单</li>
-<li>打开 <code>Payloads &gt; picofly_toolbox_0.2.bin</code> 进入工具箱</li>
-<li><strong>音量键 移动</strong>, <strong>电源键 打开选中项</strong></li>
-<li>按照自己需求进行升级或者降级</li>
-<li>完成后, 打开 <code>Back to hekate</code> 重启系统</li>
-<li><code>sdmc:/update.bin</code> 文件在确认没问题之后, 可以删掉. </li>
+<li><strong>按住 音量键减号</strong> 重启进入 hekate 主菜单</li>
+<li>打开左下角 <code>Nyx Settings &gt; Dump Joy-Con BT</code></li>
+<li>完成后按 <code>OK &gt; Close</code> 返回 Hekate 主菜单</li>
 </ol>
-<h3 id="_3">升级</h3>
-<ul>
-<li>打开 <code>Firmware &gt; Update</code></li>
-<li>完成后 <strong>按任意键 返回</strong></li>
-</ul>
-<h3 id="_4">降级</h3>
-<ul>
-<li>打开 <code>Firmware &gt; Rollback</code></li>
-<li>完成后 <strong>按任意键 返回</strong></li>
-</ul>
-                <div class="update-time">2026-03-13 18:04:42</div>
+<h2 id="_3">保存路径</h2>
+<p><code>sdmc:/switchroot/joycon_mac.bin</code></p>
+<p><code>sdmc:/switchroot/joycon_mac.ini</code></p>
+                <div class="update-time">2026-03-13 18:05:21</div>
             </main>
         </div>
     </div>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分区教程</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: var(--color-bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="/about.html" target="_blank">
+                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="toc">
+        <ul>
+<li><a href="#_2">用途</a></li>
+<li><a href="#_3">注意事项</a></li>
+<li><a href="#_4">内存卡分区</a></li>
+<li><a href="#emmc">eMMC 分区</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="_1">分区教程</h1>
+<h2 id="_2">用途</h2>
+<blockquote>
+<p>转换内存卡格式: exFAT -&gt; FAT32
+创建系统分区</p>
+</blockquote>
+<h2 id="_3">注意事项</h2>
+<blockquote>
+<p>重新分区会格式化, 导致资料丢失
+ 请提前做好资料备份!!!</p>
+</blockquote>
+<h2 id="_4">内存卡分区</h2>
+<blockquote>
+<p>此操作会导致内存卡格式化
+总文件大小 <code>100 mb 以内</code> 会自动备份
+超过的需要手动备份!!!</p>
+</blockquote>
+<ol>
+<li>重启, <strong>按住 音量键减号</strong> 进入 hekate 主菜单</li>
+<li>打开 <code>hekate &gt; Tools &gt; Partition SD Card</code></li>
+<li>点击后, 进入设置界面</li>
+<li>设置好之后, 点 <code>Next Step</code> 重新分区<blockquote>
+<p>初次转换格式需要先拉满绿条, 格式化之后, 退出页面再重新进, 才可以设置.</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>emuMMC (RAW)</strong></p>
+<ul>
+<li>虚拟系统分区大小, 系统固定占用 3g</li>
+<li>其他空间可用于安装游戏或者游戏存档</li>
+<li>请确保分区大于官方系统已用的机身内存</li>
+</ul>
+<p><strong>Linux (EXT4)</strong></p>
+<ul>
+<li>Linux 系统分区</li>
+<li>最低要求: 12g</li>
+</ul>
+<p><strong>Android (USER)</strong></p>
+<ul>
+<li>安卓系统分区</li>
+<li>最低要求: 8g</li>
+<li>分区格式:<ul>
+<li>Legacy 传统分区: 适用 android 10-11</li>
+<li>Dynamic 动态分区: 适用 android 13+</li>
+</ul>
+</li>
+</ul>
+<h2 id="emmc">eMMC 分区</h2>
+<blockquote>
+<p>此操作会导致机身内存的用户资料丢失
+请提前备份, 避免丢失重要资料!!!
+空间大小: OLED 56g, 其他 32g</p>
+</blockquote>
+<ol>
+<li>重启, <strong>按住 音量键减号</strong> 进入 hekate 主菜单</li>
+<li>按住 <code>hekate &gt; Tools &gt; Partition SD Card</code> 直到跳转 <code>eMMC Partition Manager</code></li>
+<li>设置好之后, 点 <code>Next Step</code> 重新分区</li>
+</ol>
+<p><strong>eMMC (USER)</strong></p>
+<ul>
+<li>除系统外的机身内存空间</li>
+<li>可用于安装游戏和存档</li>
+<li>最低要求: 2g</li>
+</ul>
+<p><strong>Linux (EXT4)</strong></p>
+<ul>
+<li>Linux 系统分区</li>
+<li>最低要求: 12g</li>
+</ul>
+<p><strong>Android (USER)</strong></p>
+<ul>
+<li>安卓系统分区</li>
+<li>最低要求: 8g<ul>
+<li>Legacy 传统分区: 适用 android 10-11</li>
+<li>Dynamic 动态分区: 适用 android 13+</li>
+</ul>
+</li>
+</ul>
+                <div class="update-time">2026-03-13 17:54:33</div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
