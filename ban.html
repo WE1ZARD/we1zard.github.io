@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 BAN 机</title>
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: var(--color-bg-primary);
+        }
+    </style>
+</head>
+<body>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="feedback.html" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="toc">
+        <ul>
+<li><a href="#3">[3] 任天堂如何发现违规行为?</a></li>
+<li><a href="#7-ftp">[7] 想使用 FTP 等在线自制工具怎么办?</a></li>
+<li><a href="#8-incognitoincognito-rcm">[8] Incognito/Incognito RCM 可靠吗?</a></li>
+<li><a href="#10-sysnand">[10] 离线 sysNAND 违规后想联网怎么办?</a></li>
+<li><a href="#11-nand">[11] 未备份或丢失 NAND 数据怎么办?</a></li>
+<li><a href="#12">[12] 遵循指南就绝对安全吗?</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="ban">关于 BAN 机</h1>
+<blockquote>
+<p><code>90DNS Tester</code> 只能匹配他预设的网址, 不要理会.</p>
+</blockquote>
+<h2 id="1-ban">[1] 什么是 <code>BAN</code>  它如何发生?</h2>
+<p>简而言之  <code>BAN</code> 是指任天堂禁止特定主机或任天堂账户使用其在线服务</p>
+<p>多数与破解相关的 <code>BAN</code> 属于 <code>BAN</code> 机  即被 <code>BAN</code> 的主机将无法使用 eShop, 游戏更新, 在线游玩等任天堂在线服务
+任天堂依据用户协议保留拒绝提供服务的权利</p>
+<h2 id="2-ban">[2] 任天堂因何 <code>BAN</code> 主机?</h2>
+<p><strong>会导致立即 <code>BAN</code> 的行为</strong></p>
+<ul>
+<li>任何形式的盗版行为</li>
+<li>安装至主菜单的自制 NSP 文件</li>
+<li>通过自制系统修改用户头像</li>
+<li>可疑的 eShop 操作行为</li>
+</ul>
+<p><strong>非立即但最终会导致 <code>BAN</code> 的行为</strong></p>
+<ul>
+<li>修改在线游戏</li>
+<li>在线游戏中作弊</li>
+<li>MIG烧录卡</li>
+<li>上传错误日志至任天堂后清除日志 (因日志不匹配 可能也适用于同时在线使用 <code>虚拟系统</code> 和 <code>真实系统</code> 的情况）</li>
+</ul>
+<p><strong>目前尚未导致 <code>BAN</code> 的行为</strong></p>
+<ul>
+<li>Atmosphere 系统本身</li>
+<li>使用自制菜单 (通过相册或游戏卡带/已安装游戏启动接管）</li>
+<li>自定义主题</li>
+<li>自定义系统模块</li>
+<li>离线游戏内的修改/作弊行为</li>
+<li>使用 sys-clk 超频</li>
+<li><code>虚拟系统</code></li>
+</ul>
+<h2 id="3">[3] 任天堂如何发现违规行为?</h2>
+<p>任天堂已大幅升级遥测系统该系统会监控用户在主机上的操作 包括安装的游戏, 游玩记录等大量数据</p>
+<p>Switch 会持续存储这些数据 (即使离线) 一旦连接互联网并访问任天堂服务器 就会立即发送数据日志</p>
+<p>这意味着: 即使在离线状态下执行违规操作 只要主机后续联网 (哪怕短暂连接) 任天堂就会收到遥测日志并实施 <code>BAN</code> </p>
+<h2 id="4-ban">[4] 如何避免被 <code>BAN</code> ?</h2>
+<p>主要有两种方法:</p>
+<ul>
+<li>避免在主机上执行任何任天堂禁止的行为；  </li>
+<li>保持主机永久离线 即使执行违规操作 任天堂也无法收到遥测日志</li>
+</ul>
+<h2 id="5-emunand-ban">[5] 什么是 emuNAND/<code>虚拟系统</code>? 能否防 <code>BAN</code> ?</h2>
+<p>NAND 是电子设备常用的数据存储类型 eMMC 是 Switch 内置的 NAND 存储 所有系统数据均存储于此 (又称 sysNAND/<code>真实系统</code>）emuNAND/<code>虚拟系统</code> (模拟 NAND/模拟 eMMC）是存储在 SD 卡上的 SysNAND 副本  </p>
+<p>由于遥测日志存储在 NAND 中 emuNAND 的价值在于实现双存储隔离: sysNAND 用于在线游戏和 eShop 购买 emuNAND 用于 CFW 破解并保持离线若按任天堂自制系统指南推荐的 CFW 流程设置 应已完成 emuNAND 配置</p>
+<h2 id="6-emunand-ban">[6] 用 emuNAND 就不会被 <code>BAN</code> ?</h2>
+<p><strong>错误</strong></p>
+<p>emuNAND 是辅助防 <code>BAN</code> 的工具, 而非万无一失的方案必须确保 emuNAND 永久离线, 否则效果甚微需注意: 
+尽管 sysNAND 与 emuNAND 存储独立, 但二者是同一系统的副本, 具有相同唯一标识符——若其中一个被 <code>BAN</code>, 另一个也会被连带 <code>BAN</code> </p>
+<h2 id="7-ftp">[7] 想使用 FTP 等在线自制工具怎么办?</h2>
+<p>若需在离线主机 (或 emuNAND）上使用网络, 需确保主机仅连接互联网但无法访问任天堂服务器 (避免发送遥测日志)  </p>
+<p>推荐方案: </p>
+<ul>
+<li>使用 dns-mitm (主机端自定义 DNS 屏蔽) 可阻断任天堂服务器并允许其他网络连接<blockquote>
+<p>本包默认包含此设置</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="8-incognitoincognito-rcm">[8] Incognito/Incognito RCM 可靠吗?</h2>
+<p>不推荐使用 原因如下:</p>
+<ul>
+<li>其原理是清空主机启动必需的 PRODINFO 数据若操作失误, 功能故障或丢失备份, 可能导致主机功能损坏甚至变砖, 永久失去联网能力  </li>
+<li>工作时强制主机向任天堂服务器发送 "无效数据" (当前会被服务器拒绝) 但任天堂可随时修改服务器规则接收此类数据, 导致所有依赖 Incognito 的主机瞬间暴露遥测日志  </li>
+<li>其删除的数据远不足以实现宣称的功能——类似向警方出示驾照时只遮挡地址却保留全名  </li>
+</ul>
+<p>Atmosphere 0.12.0 及以上版本内置虚拟 PRODINFO 屏蔽功能 (重定向数据而非删除 安全性更高) 但仍无法替代 90DNS 作为可靠防护方案  </p>
+<blockquote>
+<p>本包默认包含90DNS设置</p>
+</blockquote>
+<h2 id="9-ban">[9] 主机被 <code>BAN</code> 后能否解封?</h2>
+<ul>
+<li>无法通过有效手段解封</li>
+</ul>
+<h2 id="10-sysnand">[10] 离线 sysNAND 违规后想联网怎么办?</h2>
+<ul>
+<li>需恢复执行违规操作前的 "干净" NAND 备份</li>
+<li>避免使用 <code>Haku33</code> 洗白工具, 不能有效避免, 会因为删不干净导致直接 <code>BAN</code></li>
+</ul>
+<blockquote>
+<p>注意: 使用 Switch 原生 <code>恢复出厂设置</code> 功能无法清除遥测日志, 无法避免 <code>BAN</code></p>
+</blockquote>
+<h2 id="11-nand">[11] 未备份或丢失 NAND 数据怎么办?</h2>
+<ul>
+<li>此为操作失误, 务必养成未来备份 NAND 的习惯  </li>
+<li>虽存在手动重置 NAND 数据的方法, 但可靠性低于直接恢复备份, 非首选方案</li>
+</ul>
+<h2 id="12">[12] 遵循指南就绝对安全吗?</h2>
+<ul>
+<li>无绝对保障本文信息基于大量实践经验</li>
+<li>破解主机需自行承担风险并对操作负责</li>
+<li>但任天堂可能随时调整 <code>BAN</code> 规则或升级遥测技术</li>
+</ul>
+<blockquote>
+<p>资料来源: <a href="https://nx.eiphax.tech/ban.html">eipHax</a>  </p>
+</blockquote>
+                <div class="update-time">2026-03-14 22:46:35</div>
+            </main>
+        </div>
+    </div>
+<!-- 统一Footer组件 -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

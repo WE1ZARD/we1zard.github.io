@@ -43,32 +43,15 @@
 
     <div class="toc">
         <ul>
-<li><a href="#_2">升级</a><ul>
-<li><a href="#1">问题 1</a></li>
-<li><a href="#2">问题 2</a></li>
-<li><a href="#3">问题 3</a></ul>
+<li><a href="#_2">开机报错</a><ul>
+<li><a href="#1">类型 1</a></li>
+<li><a href="#2">类型 2</a></li>
+<li><a href="#3">类型 3</a></ul>
 </li>
-<li><a href="#_3">降级</a><ul>
-<li><a href="#1_1">问题 1</a></li>
-<li><a href="#2_1">问题 2</a></li>
-<li><a href="#3_1">问题 3</a></ul>
+<li><a href="#_3">异常问题</a><ul>
+<li><a href="#1_1">类型 1</a></ul>
 </li>
-<li><a href="#_4">超频</a><ul>
-<li><a href="#1_2">问题 1</a></li>
-<li><a href="#2_2">问题 2</a></li>
-<li><a href="#3_2">问题 3</a></ul>
-</li>
-<li><a href="#_5">安卓</a><ul>
-<li><a href="#1_3">问题 1</a></li>
-<li><a href="#2_3">问题 2</a></li>
-<li><a href="#3_3">问题 3</a></ul>
-</li>
-<li><a href="#_6">模拟器</a><ul>
-<li><a href="#1_4">问题 1</a></li>
-<li><a href="#2_4">问题 2</a></li>
-<li><a href="#3_4">问题 3</a></li>
-</ul>
-</li>
+<li><a href="#2_1">类型 2</a></li>
 </ul>
 
     </div>
@@ -77,27 +60,93 @@
         <div class="main-layout">
             <main class="content">
                 <h1 id="_1">常见问题</h1>
-<h2 id="_2">升级</h2>
-<h3 id="1">问题 1</h3>
-<h3 id="2">问题 2</h3>
-<h3 id="3">问题 3</h3>
-<h2 id="_3">降级</h2>
-<h3 id="1_1">问题 1</h3>
-<h3 id="2_1">问题 2</h3>
-<h3 id="3_1">问题 3</h3>
-<h2 id="_4">超频</h2>
-<h3 id="1_2">问题 1</h3>
-<h3 id="2_2">问题 2</h3>
-<h3 id="3_2">问题 3</h3>
-<h2 id="_5">安卓</h2>
-<h3 id="1_3">问题 1</h3>
-<h3 id="2_3">问题 2</h3>
-<h3 id="3_3">问题 3</h3>
-<h2 id="_6">模拟器</h2>
-<h3 id="1_4">问题 1</h3>
-<h3 id="2_4">问题 2</h3>
-<h3 id="3_4">问题 3</h3>
-                <div class="update-time">2026-03-14 17:21:46</div>
+<h2 id="_2">开机报错</h2>
+<h3 id="1">类型 1</h3>
+<p><strong>报错信息</strong></p>
+<p class="red-bold">
+Failed to match warm boot with fuses!<br>
+if you continue, sleep won't work!
+</p>
+<p class="white-normal">
+Press POWER to continue.<br>
+Press VOL to go to the menu.
+</p>
+
+<p><strong>解决方法 1</strong></p>
+<ul>
+<li>在这个界面按<code>音量键</code>返回Hekate引导菜单</li>
+<li>选择<code>Lanuch &gt; SysMMC</code>, 进入系统, 再关机重启即可 (不要更新, 不要升级, 不要联网)</li>
+</ul>
+<p><strong>解决方法 2</strong></p>
+<ul>
+<li>启动到<code>Hekate &gt; Tools &gt; Arch bit RCM TOUCH PKG1/2 &gt; DUMP PACKAGE</code></li>
+<li>稍等片刻之后, 重启switch, 即可解决</li>
+</ul>
+<p><strong>原因分析</strong></p>
+<ul>
+<li>这是因为系统的fuses(熔丝)没有匹配, 导致无法正常启动.</li>
+<li>通常是因为hekate版本未适配的时候, 升级了官方系统</li>
+<li>原hekate使用忽略熔断, 导致不匹配</li>
+</ul>
+<h3 id="2">类型 2</h3>
+<p><strong>报错代码: <code>010041544d530000</code> 或者 <code>游戏提示损坏</code></strong></p>
+<p class="white-normal">
+A fatal error occurred when running Atmosphére.<br>
+Title ID: 010041544d530000<br>
+Error Desc: std::abort() called (0xffe)
+</p>
+
+<p><strong>解决方法 1</strong></p>
+<ul>
+<li>关机后按住<code>音量键-减号</code>进入hekate  <ol>
+<li>点击顶部的<code>Tools</code>  </li>
+<li>点击底部的<code>Arch Bit</code>  </li>
+<li>点击左上角<code>Fix Archive Bit</code>开始修复  </li>
+<li>修复完成之后就可以正常从<code>Launch</code>里引导了  </li>
+</ol>
+</li>
+</ul>
+<p><strong>解决方法 2</strong></p>
+<ul>
+<li>你下错了整合包, 当前的包不支持你的固件系统, 重新下<a href="index.html">整合包</a></li>
+</ul>
+<h3 id="3">类型 3</h3>
+<p><strong>报错信息</strong></p>
+<p class="red-bold">
+Error while loading fss0:<br>
+atmosphere/package3<br>
+Wrong ini cfg or missing/corrupt files!<br><br>
+
+Failed to launch HOS!
+</p>
+<p class="white-normal">
+Press any key...
+</p>
+
+<p><strong>解决方法</strong>
+- 检查SD卡内容, 缺少的部分重新放包</p>
+<p><strong>原因分析</strong>
+- 通常是分区格式化的时候超过sd卡内容超过1g</p>
+<h2 id="_3">异常问题</h2>
+<h3 id="1_1">类型 1</h3>
+<p><strong>待机异常掉电</strong></p>
+<ul>
+<li>呼出菜单: <strong><code>L</code></strong> + <strong><code>✚</code></strong></li>
+<li>菜单中按<code>▶</code>打开工具包</li>
+<li><code>Settings &gt; General &gt; Services</code> 设置成 <code>Off</code>, 然后重启switch</li>
+<li>注意: 此设置仅限无官方联网需求的玩家, 会导致任天堂相关联网服务停止工作</li>
+</ul>
+<h2 id="2_1">类型 2</h2>
+<p><strong>WiFi信号异常</strong></p>
+<ul>
+<li>无法正常连接 2G/5G</li>
+</ul>
+<p><strong>解决方法</strong></p>
+<ol>
+<li>有可能天线没插好, 需要开后盖重新插</li>
+<li>可能无线模块坏, 或者接触不良, 需要更换或者重新连接</li>
+</ol>
+                <div class="update-time">2026-03-14 19:51:05</div>
             </main>
         </div>
     </div>
