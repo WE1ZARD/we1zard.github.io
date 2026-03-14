@@ -47,7 +47,25 @@
 <li><a href="#_2">注意事项</a></li>
 <li><a href="#_3">下载文件</a></li>
 <li><a href="#_4">准备工作</a></li>
-<li><a href="#_5">刷入引导</a></li>
+<li><a href="#_5">刷入引导</a><ul>
+<li><a href="#_6">刷入内存卡分区</a></li>
+<li><a href="#emmc">刷入 eMMC 分区</a></ul>
+</li>
+<li><a href="#_7">初始化系统</a><ul>
+<li><a href="#_8">恢复模式</a></li>
+<li><a href="#_9">初始化数据</a></ul>
+</li>
+<li><a href="#_10">安装系统</a><ul>
+<li><a href="#_11">选择安装文件</a></li>
+<li><a href="#_12">跳过验证</a></li>
+<li><a href="#adb">开启 ADB</a></ul>
+</li>
+<li><a href="#_13">解锁网络</a><ul>
+<li><a href="#usb">开启USB调试模式</a></li>
+<li><a href="#wifi">开启WiFi调试模式</a></li>
+<li><a href="#_14">解锁网络限制</a></ul>
+</li>
+<li><a href="#_15">操作说明</a></li>
 </ul>
 
     </div>
@@ -82,8 +100,95 @@
 <li>打算刷入 内存卡分区, 请确保 <code>bootloader/ini/andorid.ini</code> 中有 <code>emmc=1</code>, 且前面 <strong>有</strong> <code>;</code></li>
 </ul>
 <h2 id="_5">刷入引导</h2>
-<p>待完善...</p>
-                <div class="update-time">2026-03-14 17:21:46</div>
+<h3 id="_6">刷入内存卡分区</h3>
+<ul>
+<li><code>Hekate &gt; Tools &gt; (直接打开) Partition SD Card &gt; SD Partition Manager</code></li>
+</ul>
+<h3 id="emmc">刷入 eMMC 分区</h3>
+<ul>
+<li><code>Hekate &gt; Tools &gt; (按住跳转) Partition SD Card &gt; eMMC Partition Manager</code></li>
+</ul>
+<ol>
+<li>确认操作</li>
+<li>点击底下的 <code>Flash Android</code> 开始刷入安卓系统引导</li>
+<li>两次弹窗提示都选 <code>Continue</code>, 有要求 Power 确认的都按 <strong>电源键 确认</strong>开始</li>
+<li>完成后自动进入安卓的 <code>Recovery 恢复模式</code></li>
+</ol>
+<h2 id="_7">初始化系统</h2>
+<h3 id="_8">恢复模式</h3>
+<ol>
+<li>如果上一步你没有自动进入恢复模式</li>
+<li>返回 hekate 主菜单打开 <code>More Configs</code></li>
+<li>按住 <strong>音量键 加号</strong> 同时打开 LineageOS, 手动进入恢复模式.</li>
+</ol>
+<h3 id="_9">初始化数据</h3>
+<ol>
+<li>点击 Factory reset 进入重置菜单</li>
+<li><code>Format data/factory reset &gt; format data</code></li>
+<li><code>Format system partition &gt; Yes</code></li>
+<li>完成之后点 <code>&lt;-</code> 返回首页</li>
+</ol>
+<h2 id="_10">安装系统</h2>
+<h3 id="_11">选择安装文件</h3>
+<ol>
+<li><code>Apply update &gt; choose from SWTICH SD</code></li>
+<li>选择前面复制到内存卡的zip文件</li>
+</ol>
+<h3 id="_12">跳过验证</h3>
+<ol>
+<li>当你使用的是非官方前面的安装包, 安装过程出现签名验证失败
+   <code>Signature verification failed</code>
+   <code>Install anyway?</code></li>
+<li>点击 <code>yes</code></li>
+<li>完成之后点 <code>&lt;-</code> 返回首页</li>
+</ol>
+<h3 id="adb">开启 ADB</h3>
+<ol>
+<li><code>Advanced &gt; Enable ADB</code></li>
+<li>完成之后点 <code>&lt;-</code> 返回首页</li>
+<li>点击 <code>Reboot system now</code> 重启进入安卓系统</li>
+</ol>
+<h2 id="_13">解锁网络</h2>
+<ol>
+<li><code>Settings &gt; About tablet &gt; Build number</code></li>
+<li>连点 7次 本机版本号 <code>Build number</code> 激活 开发模式</li>
+<li>在手机或者电脑上安装 ADB 工具, 比如安卓手机的甲壳虫ADB助手</li>
+<li>也可以通过刷root的方式直接获得完全权限.</li>
+</ol>
+<h3 id="usb">开启USB调试模式</h3>
+<ol>
+<li><code>System &gt; Developer Options &gt; USB debugging</code></li>
+<li>打开并点 OK 同意, 开启 USB调试模式</li>
+<li>打开 <code>Rooted debugging</code></li>
+<li>用 USB 线连接可以进行 ADB 操作的设备</li>
+<li>从屏幕上方下滑打开通知中心</li>
+<li>打开 <code>Charging this device via USB</code></li>
+<li>选择 File Transfer</li>
+</ol>
+<h3 id="wifi">开启WiFi调试模式</h3>
+<ol>
+<li><code>System &gt; Developer Options &gt; Wireless debugging</code></li>
+<li>打开并点 OK 同意, 开启WiFi调试模式</li>
+</ol>
+<h3 id="_14">解锁网络限制</h3>
+<ol>
+<li>在安装了 ADB 工具的设备上输入以下命令: </li>
+<li><code>sudo adb shell settings delete global captive_portal_https_url</code></li>
+<li><code>sudo adb shell settings delete global captive_portal_http_url</code></li>
+<li><code>sudo adb shell settings put global captive_portal_https_url https://connect.rom.miui.com/generate_204</code></li>
+<li><code>sudo adb shell settings put global captive_portal_http_url http://connect.rom.miui.com/generate_204</code></li>
+<li><code>sudo adb shell settings put global time_zone Asia/Shanghai</code></li>
+<li><code>sudo adb shell settings put global ntp_server ntp1.aliyun.com</code><blockquote>
+<p>最前面的 <code>sudo</code> 和 <code>adb shell</code> 因为权限和应用的不同可以省略
+比如: <code>settings delete global captive_portal_https_url</code></p>
+</blockquote>
+</li>
+</ol>
+<h2 id="_15">操作说明</h2>
+<ul>
+<li><strong>按截图键</strong>: 切换摇杆模式 / 鼠标模式</li>
+</ul>
+                <div class="update-time">2026-03-14 17:54:16</div>
             </main>
         </div>
     </div>
