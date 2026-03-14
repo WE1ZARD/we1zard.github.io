@@ -24,6 +24,7 @@
   --color-text-tertiary: #6b7280;
   --color-text-link: #93c5fd;
   --color-text-inverse: #ffffff;
+  --color-text-hero: #1e3a8a;
   --color-code-text: #93c5fd;
   --color-code-bg: #1e293b;
   --color-highlight: #93c5fd;
@@ -218,7 +219,7 @@ body {
 
 /* Header区域 - 为导航栏预留空间 */
 .header-space {
-  height: var(--size-48); /* 进一步减少到3rem，避免过于空旷 */
+  height: var(--size-64); /* 与navbar高度一致，防止内容被挡住 */
   background-color: var(--color-bg-primary);
   margin-bottom: var(--size-8); /* 进一步减少间距 */
 }

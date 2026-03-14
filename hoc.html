@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>超频教程 - HOC</title>
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
@@ -23,34 +23,35 @@
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">WE1ZARD</a>
-            <div class="nav-menu">
-                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
-                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
-                <a href="/update.html" target="_blank" class="nav-link">更新</a>
-                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
-                <div class="nav-avatar">
-                    <a href="/about.html" target="_blank">
-                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
-                    </a>
-                </div>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
+
     <div class="toc">
         <ul>
 <li><a href="#_1">免责声明</a></li>
 <li><a href="#_2">注意事项</a></li>
-<li><a href="#_3">参考参数</a></li>
-<li><a href="#_4">查看硬件</a></li>
-<li><a href="#_5">调试顺序</a><ul>
-<li><a href="#mem">MEM 内存</a></li>
-<li><a href="#timings">TIMINGS 时序</a></li>
-<li><a href="#gpu">GPU</a></li>
-<li><a href="#cpu">CPU</a></ul>
+<li><a href="#_3">查看硬件</a></li>
+<li><a href="#_4">调试顺序</a><ul>
+<li><a href="#mem">MEM 内存参数</a></li>
+<li><a href="#timings">TIMINGS 时序参数</a></li>
+<li><a href="#gpu">GPU 参数</a></li>
+<li><a href="#cpu">CPU 参数</a></li>
+<li><a href="#_5">测试方法</a></ul>
 </li>
 <li><a href="#_6">特别感谢</a></li>
 </ul>
@@ -69,12 +70,38 @@
 <div class="alert alert-note"><p>请先行做好备份, 避免重要资料丢失.<br>
     尽量避免 使用 exFAT格式的内存卡 进行折腾, 可以参考 教程<br>
     尽量避免 SysMMC真实系统 折腾!!!<br><br>
-    暂时不支持 8G 内存.<br>
+    支持 4G/8G 内存, 8G 性能相对较弱.<br>
     跨版本使用不对应版本的 kip 会导致无法进入系统.<br>
     跨版本导入旧超频配置可能导致 kip 文件污染, 系统崩溃等问题.<br><br>
     有条件情况下, 使用副卡折腾测试, 再将稳定参数应用到主卡.</p></div>
 
-<h2 id="_3">参考参数</h2>
+<h2 id="_3">查看硬件</h2>
+<p>重启按住 &lt;音量键减号&gt; 进入 hekate 主菜单<br>
+打开顶部第三个 <code>Console Info &gt; HW &amp; Fuses</code><br>
+记录以下信息:</p>
+<ul>
+<li><strong>DRAM ID</strong>: 内存型号</li>
+<li><strong>CPU/GPU/SOC Speedo</strong>: 体质值</li>
+</ul>
+<h2 id="_4">调试顺序</h2>
+<ol>
+<li>MEM 内存参数</li>
+<li>TIMINGS 时序参数</li>
+<li>GPU 参数</li>
+<li>CPU 参数</li>
+</ol>
+<blockquote>
+<p>未完全确定参数稳定之前, 不要开始下一步的操作.
+新手每一次只动一个参数, 测试没问题之后开始再下一个参数.</p>
+</blockquote>
+<h3 id="mem">MEM 内存参数</h3>
+<p><strong>DVB 核心电压</strong>: 0-10 档</p>
+<blockquote>
+<p>内存频率越高, Soc 电压要求越高<br>
+25 mV 每档, 新手根据自己目标频率, 先参考 <a href="/cal.html"><strong>电压计算器</strong></a> 的估算结果<br>
+同参数因 Speedo 差异, 会出现 Soc 电压差异, 请以 Sys-clk 实时 Soc 实际电压为主</p>
+</blockquote>
+<p><strong>VDD2/VDDQ 内存电压</strong>: 提高适当电压可以提高稳定性, 可能达到更高的内存频率, 但不是突破频率上限的因素.</p>
 <p>2133/1866 基础延迟 (推荐底座)<br><br></p>
 <table>
 <thead>
@@ -154,9 +181,6 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>使用 <code>1866BL</code> 可以提升性能, 但是可能会降低内存频率上限, 可能需要额外加压.</p>
-</blockquote>
 <p><br><br></p>
 <p>1600 基础延迟 (推荐掌机)<br><br></p>
 <table>
@@ -238,46 +262,55 @@
 </tbody>
 </table>
 <blockquote>
-<p><code>1333BL</code> 会明显降低内存频率上限, 且 t2 &lt;=2, 整体电压要求较高, 理论上性能最好.</p>
+<p><code>1866BL</code> 可以提升性能, 但是可能会降低内存频率上限, 可能需要额外加压.<br>
+<code>1333BL</code> 会明显降低内存频率上限(300-500MHz), 且 t2 &lt;=2, 整体电压要求较高, 理论上性能最好.<br>
+<code>2533</code> 内存频率相比其他频率, 需要更宽松的时序.</p>
 </blockquote>
-<h2 id="_4">查看硬件</h2>
-<p>重启按住 &lt;音量键减号&gt; 进入 hekate 主菜单<br>
-打开顶部第三个 <code>Console Info &gt; HW &amp; Fuses</code><br>
-记录以下信息:</p>
-<ul>
-<li><strong>DRAM ID</strong>: 内存型号</li>
-<li><strong>CPU/GPU/SOC Speedo</strong>: 体质值</li>
-</ul>
-<h2 id="_5">调试顺序</h2>
-<ol>
-<li>MEM 内存</li>
-<li>TIMINGS 时序</li>
-<li>GPU</li>
-<li>CPU</li>
-</ol>
+<h3 id="timings">TIMINGS 时序参数</h3>
 <blockquote>
-<p>未完全确定参数稳定之前, 不要开始下一步的操作.
-新手每一次只动一个参数, 测试没问题之后开始再下一个参数.</p>
+<p><strong>核心时序</strong>: t1 tRCD, t2 tRP, t3 tRAS, t8 tREFpb</p>
 </blockquote>
-<h3 id="mem">MEM 内存</h3>
+<ul>
+<li>核心时序决定内存表现基础</li>
+<li>降低核心时序会降低性能, 降低可能跑到更高内存频率</li>
+</ul>
+<blockquote>
+<p><strong>极限时序</strong>: 通常能获得比通用时序更好的性能, 但可能需要更好的体质, 或者更高的电压</p>
+<p>建议在开始调整测试时序之前, 先找出可用的最大内存频率, 可以降低后续排查的难度</p>
+</blockquote>
+<ul>
+<li>初次摸索极限时序, 建议 DVB 10, 排除 Soc 电压不足的问题</li>
+<li>先测试预设的极限时序<ul>
+<li>如果无法正常进入系统, 重启按住 <strong>音量键 减号</strong> 进入 hekate 主菜单</li>
+<li><code>hekate &gt; Launch &gt; Restore</code> 启动到恢复模式, 调整参数.</li>
+<li>推荐降低时序顺序: t1 → t2 → t3 → t6 → t7 → t4 → t5</li>
+<li>切记不要一次性调整多个参数, 导致无法排查问题点</li>
+</ul>
+</li>
+<li>参数初步稳定后, 建议参考 <a href="#测试方法">测试方法</a> , 进行相关的测试以确认参数稳定性.</li>
+</ul>
+<h3 id="gpu">GPU 参数</h3>
+<p><strong>Speedo 体质值</strong>: 填写 Sys-clk Speedo 显示的第二项向下取整值<br>
+<strong>UV Level 降压等级</strong>: 0-2</p>
+<ul>
+<li>等级越高, 降压越多, 可安全使用频率越多</li>
+<li>Speedo &lt; 1650 UV 1</li>
+<li>Speedo &gt; 1650 UV 2</li>
+<li>自定义电压设定值会覆盖 UV 的默认电压值, 可以允许更多的操作空间, 尤其 Speedo &gt; 1700 的机器</li>
+</ul>
 <ol>
 <li>待完善...</li>
 <li>待完善...</li>
 <li>待完善...</li>
 </ol>
-<h3 id="timings">TIMINGS 时序</h3>
+<h3 id="cpu">CPU 参数</h3>
 <ol>
 <li>待完善...</li>
 <li>待完善...</li>
 <li>待完善...</li>
 </ol>
-<h3 id="gpu">GPU</h3>
-<ol>
-<li>待完善...</li>
-<li>待完善...</li>
-<li>待完善...</li>
-</ol>
-<h3 id="cpu">CPU</h3>
+<h3 id="_5">测试方法</h3>
+<p>使用真实底座进行游戏压力测试, 加快测试效率, 而非内存跑分测试工具</p>
 <ol>
 <li>待完善...</li>
 <li>待完善...</li>
@@ -287,20 +320,22 @@
 <div class="alert alert-info"><p>非常感谢 <strong>Horizon-OC</strong> 开发团队为 NS 超频圈带来第二春<br>
     为超频开发测试提供数据的所有人.<br><br>
     开源地址: https://github.com/Horizon-OC/Horizon-OC.git</p></div>
-                <div class="update-time">2026-03-13 16:21:37</div>
+                <div class="update-time">2026-03-13 22:17:34</div>
             </main>
         </div>
     </div>
-    <footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
-        <div class="footer-content">
-            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
-                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
-                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
-            </div>
+<!-- 统一Footer组件 -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
         </div>
-    </footer>
+    </div>
+</footer>
+
 </body>
 </html>

@@ -6,8 +6,8 @@
     <title>L4S 超频设置</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
     
     <style>
         /* 本地样式替代Tailwind CSS */
@@ -218,18 +218,37 @@
     </style>
 </head>
 <body>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo">WE1ZARD</a>
+            <a href="../index.html" class="nav-logo">WE1ZARD</a>
             <div class="nav-menu">
-                <a href="/blog.html" target="_blank" class="nav-link">教程</a>
-                <a href="/tool.html" target="_blank" class="nav-link">工具</a>
-                <a href="/update.html" target="_blank" class="nav-link">更新</a>
+                <a href="../blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="../tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="../update.html" target="_blank" class="nav-link">更新</a>
                 <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
                 <div class="nav-avatar">
-                    <a href="/about.html" target="_blank">
-                        <img src="/img/avatar.png" class="avatar-icon" alt="Avatar">
+                    <a href="../about.html" target="_blank">
+                        <img src="../img/avatar.png" class="avatar-icon" alt="Avatar">
                     </a>
                 </div>
             </div>
@@ -660,5 +679,18 @@ ram_oc_opt=0</pre>
             </div>
         </div>
     </footer>
-    </body>
+    <!-- 统一Footer组件 -->
+<footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
 </html>

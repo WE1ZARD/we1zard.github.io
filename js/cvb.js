@@ -11,7 +11,7 @@ let frequencies = [];
 async function loadCVBData() {
     try {
         // 使用绝对路径，确保从正确的位置加载数据
-        const dataUrl = '/tool/cvb_data.json';
+        const dataUrl = '/data/cvb_data.json';
         const response = await fetch(dataUrl);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
