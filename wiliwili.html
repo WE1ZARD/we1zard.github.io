@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>修改 NS 5g WiFi 信道</title>
+    <title>Wiliwili - 第三方B站客户端</title>
     <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -44,11 +44,13 @@
     <div class="toc">
         <ul>
 <li><a href="#_1">免责声明</a></li>
-<li><a href="#_2">用途</a></li>
-<li><a href="#_3">下载安装</a></li>
-<li><a href="#_4">操作步骤</a></li>
-<li><a href="#_5">保存路径</a></li>
-<li><a href="#_6">视频教程</a></li>
+<li><a href="#_2">介绍</a></li>
+<li><a href="#_3">下载</a></li>
+<li><a href="#_4">版本区别</a><ul>
+<li><a href="#deko3d">deko3d</a></li>
+<li><a href="#opengl">opengl</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -56,40 +58,30 @@
         <div class="header-space"></div>
         <div class="main-layout">
             <main class="content">
-                <h1 id="ns-5g-wifi">修改 NS 5g WiFi 信道</h1>
+                <h1 id="wiliwili-b">Wiliwili - 第三方B站客户端</h1>
 <h2 id="_1">免责声明</h2>
 <div class="alert alert-note"><p>仅用于个人学习, 非商用, 侵删.</p></div>
 
-<h2 id="_2">用途</h2>
+<h2 id="_2">介绍</h2>
+<blockquote>
+<p>这是一个屏蔽广告的 wiliwili 魔改版本, 其他和官方版本一样.
+原作者 <a href="https://github.com/xfangfang">xfangfang</a> 的开源项目: https://github.com/xfangfang/wiliwili</p>
+</blockquote>
+<h2 id="_3">下载</h2>
+<p><a href="https://gitea.com/we1zard/OTA/releases/download/latest/wiliwili-deko3d.zip" class="button" target="_blank">deko3d 版本</a> <a href="https://gitea.com/we1zard/OTA/releases/download/latest/wiliwili-opengl.zip" class="button" target="_blank">opengl 版本</a></p>
+<h2 id="_4">版本区别</h2>
+<h3 id="deko3d">deko3d</h3>
 <ul>
-<li>适用于日版 switch 无法正常连接国内 WiFi 5G 信号</li>
-<li>不支持修改 WiFi 信道的路由器</li>
+<li>NVIDIA 为 Switch 定制的底层图形接口</li>
+<li>性能最好</li>
+<li>支持4k/60fps</li>
 </ul>
-<h2 id="_3">下载安装</h2>
-<p><a href="https://gitea.com/we1zard/OTA/releases/download/latest/lockpick.zip" class="button" target="_blank">直接下载</a></p>
-<p>下载解压, 复制到 bootloader 到 <code>sdmc:/</code> 内存卡根目录</p>
-<h2 id="_4">操作步骤</h2>
-<ol>
-<li>重启 <strong>按住 音量键 减号</strong> 进入 hekate 主菜单</li>
-<li>打开 <code>Payloads &gt; Lockpick_RCM.bin</code> 进入工具菜单</li>
-<li><strong>音量键 移动</strong>, <strong>电源键 打开</strong></li>
-<li>提取密钥和区域文件<ul>
-<li>提取真实系统密钥: <code>Dump from SysNAND</code></li>
-<li>提取虚拟系统密钥: <code>Dump from EmuNAND</code></li>
+<h3 id="opengl">opengl</h3>
+<ul>
+<li>通用图形标准，不是为 Switch 设计</li>
+<li>兼容性最好</li>
+<li>高码率掉帧</li>
 </ul>
-</li>
-<li>如果你没有进行过修改的话, 本质上真实和虚拟提取到的是同样的文件, 只要能正常提取到就可以用</li>
-<li>完成后, 按 <strong>减号键 返回</strong> 返回主菜单, 打开 <code>WiFi Region &gt; CN</code></li>
-<li>完成后, 按 <strong>减号键 返回</strong> 主菜单, 打开 <code>Restore PRODINFO</code></li>
-<li>按 <strong>加号键 开始</strong>, 完成后按 <strong>减号键 返回</strong> 主菜单, 打开 <code>Reboot to hekate</code></li>
-<li>重启进入系统后, 重新连接 5G 信号就可以连上了</li>
-</ol>
-<h2 id="_5">保存路径</h2>
-<p>系统密钥: <code>sdmc:/switch/prod.keys</code>
-标题密钥: <code>sdmc:/title.keys</code>
-PRODINFO: <code>sdmc:/backup/*</code></p>
-<h2 id="_6">视频教程</h2>
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116034195489304&bvid=BV1y4cFzZE4X&cid=35909665659&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
                 <div class="update-time">2026-03-15 11:14:26</div>
             </main>
         </div>
