@@ -749,40 +749,76 @@ img {
 
 /* Alert/Notice Boxes */
 .alert {
-  padding: var(--size-16);
+  padding: 1.25rem;
   margin-bottom: var(--size-16);
-  border-radius: var(--size-8);
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 2rem;
+  line-height: 1.6;
 }
 
-.alert-note {
-  background-color: rgba(108, 117, 125, 0.2);
-  color: rgba(108, 117, 125, 0.7);
+.alert:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
 }
 
-.alert-info {
-  background-color: rgba(9, 105, 218, 0.2);
-  color: rgba(9, 105, 218, 0.7);
+.alert::before {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 1.2rem;
+  width: 1.5rem;
+  text-align: center;
+  margin-right: 1rem;
 }
 
-.alert-suggestion {
-  background-color: rgba(45, 164, 78, 0.2);
-  color: rgba(45, 164, 78, 0.7);
+.alert-blue {
+  background-color: rgba(147, 197, 253, 0.1);
+  color: #93c5fd;
+  border-left-color: #93c5fd;
 }
 
-.alert-disclaim {
-  background-color: rgba(154, 103, 0, 0.2);
-  color: rgba(154, 103, 0, 0.7);
+.alert-blue::before {
+  color: #93c5fd;
 }
 
-.alert-danger {
-  background-color: rgba(207, 34, 46, 0.2);
-  color: rgba(207, 34, 46, 0.7);
+.alert-green {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border-left-color: #34d399;
 }
 
-/* 确保Alert元素缩进 */
-.content .alert {
-  margin-left: 20px !important;
-  padding-left: 24px;
+.alert-green::before {
+  color: #34d399;
+}
+
+.alert-yellow {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+  border-left-color: #fbbf24;
+}
+
+.alert-yellow::before {
+  color: #fbbf24;
+}
+
+.alert-red {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border-left-color: #f87171;
+}
+
+.alert-red::before {
+  color: #f87171;
+}
+
+.alert * {
+  color: inherit !important;
 }
 
 /* Component: Card */

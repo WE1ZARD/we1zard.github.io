@@ -43,12 +43,18 @@
 
     <div class="toc">
         <ul>
-<li><a href="#3">[3] 任天堂如何发现违规行为?</a></li>
-<li><a href="#7-ftp">[7] 想使用 FTP 等在线自制工具怎么办?</a></li>
-<li><a href="#8-incognitoincognito-rcm">[8] Incognito/Incognito RCM 可靠吗?</a></li>
-<li><a href="#10-sysnand">[10] 离线 sysNAND 违规后想联网怎么办?</a></li>
-<li><a href="#11-nand">[11] 未备份或丢失 NAND 数据怎么办?</a></li>
-<li><a href="#12">[12] 遵循指南就绝对安全吗?</a></li>
+<li><a href="#1-ban">1 什么是 BAN 它如何发生?</a></li>
+<li><a href="#2-ban">2 任天堂因何 BAN 主机?</a></li>
+<li><a href="#3">3 任天堂如何发现违规行为?</a></li>
+<li><a href="#4-ban">4 如何避免被 BAN?</a></li>
+<li><a href="#5-emunand-ban">5 什么是 emuNAND/虚拟系统? 能否防BAN?</a></li>
+<li><a href="#6-emunand-ban">6 用 emuNAND 就不会被 BAN?</a></li>
+<li><a href="#7-ftp">7 想使用 FTP 等在线自制工具怎么办?</a></li>
+<li><a href="#8-incognitoincognito-rcm">8 Incognito/Incognito RCM 可靠吗?</a></li>
+<li><a href="#9-ban">9 主机被 BAN 后能否解封?</a></li>
+<li><a href="#10-sysnand">10 离线 sysNAND 违规后想联网怎么办?</a></li>
+<li><a href="#11-nand">11 未备份或丢失 NAND 数据怎么办?</a></li>
+<li><a href="#12">12 遵循指南就绝对安全吗?</a></li>
 </ul>
 
     </div>
@@ -57,14 +63,13 @@
         <div class="main-layout">
             <main class="content">
                 <h1 id="ban">关于 BAN 机</h1>
-<blockquote>
-<p><code>90DNS Tester</code> 只能匹配他预设的网址, 不要理会.</p>
-</blockquote>
-<h2 id="1-ban">[1] 什么是 <code>BAN</code>  它如何发生?</h2>
+<div class="alert alert-red"><p>90DNS Tester 只能匹配他预设的网址, 不用理会.</p></div>
+
+<h2 id="1-ban">1 什么是 BAN 它如何发生?</h2>
 <p>简而言之  <code>BAN</code> 是指任天堂禁止特定主机或任天堂账户使用其在线服务</p>
 <p>多数与破解相关的 <code>BAN</code> 属于 <code>BAN</code> 机  即被 <code>BAN</code> 的主机将无法使用 eShop, 游戏更新, 在线游玩等任天堂在线服务
 任天堂依据用户协议保留拒绝提供服务的权利</p>
-<h2 id="2-ban">[2] 任天堂因何 <code>BAN</code> 主机?</h2>
+<h2 id="2-ban">2 任天堂因何 BAN 主机?</h2>
 <p><strong>会导致立即 <code>BAN</code> 的行为</strong></p>
 <ul>
 <li>任何形式的盗版行为</li>
@@ -89,24 +94,24 @@
 <li>使用 sys-clk 超频</li>
 <li><code>虚拟系统</code></li>
 </ul>
-<h2 id="3">[3] 任天堂如何发现违规行为?</h2>
+<h2 id="3">3 任天堂如何发现违规行为?</h2>
 <p>任天堂已大幅升级遥测系统该系统会监控用户在主机上的操作 包括安装的游戏, 游玩记录等大量数据</p>
 <p>Switch 会持续存储这些数据 (即使离线) 一旦连接互联网并访问任天堂服务器 就会立即发送数据日志</p>
 <p>这意味着: 即使在离线状态下执行违规操作 只要主机后续联网 (哪怕短暂连接) 任天堂就会收到遥测日志并实施 <code>BAN</code> </p>
-<h2 id="4-ban">[4] 如何避免被 <code>BAN</code> ?</h2>
+<h2 id="4-ban">4 如何避免被 BAN?</h2>
 <p>主要有两种方法:</p>
 <ul>
 <li>避免在主机上执行任何任天堂禁止的行为；  </li>
 <li>保持主机永久离线 即使执行违规操作 任天堂也无法收到遥测日志</li>
 </ul>
-<h2 id="5-emunand-ban">[5] 什么是 emuNAND/<code>虚拟系统</code>? 能否防 <code>BAN</code> ?</h2>
+<h2 id="5-emunand-ban">5 什么是 emuNAND/虚拟系统? 能否防BAN?</h2>
 <p>NAND 是电子设备常用的数据存储类型 eMMC 是 Switch 内置的 NAND 存储 所有系统数据均存储于此 (又称 sysNAND/<code>真实系统</code>）emuNAND/<code>虚拟系统</code> (模拟 NAND/模拟 eMMC）是存储在 SD 卡上的 SysNAND 副本  </p>
 <p>由于遥测日志存储在 NAND 中 emuNAND 的价值在于实现双存储隔离: sysNAND 用于在线游戏和 eShop 购买 emuNAND 用于 CFW 破解并保持离线若按任天堂自制系统指南推荐的 CFW 流程设置 应已完成 emuNAND 配置</p>
-<h2 id="6-emunand-ban">[6] 用 emuNAND 就不会被 <code>BAN</code> ?</h2>
+<h2 id="6-emunand-ban">6 用 emuNAND 就不会被 BAN?</h2>
 <p><strong>错误</strong></p>
 <p>emuNAND 是辅助防 <code>BAN</code> 的工具, 而非万无一失的方案必须确保 emuNAND 永久离线, 否则效果甚微需注意: 
 尽管 sysNAND 与 emuNAND 存储独立, 但二者是同一系统的副本, 具有相同唯一标识符——若其中一个被 <code>BAN</code>, 另一个也会被连带 <code>BAN</code> </p>
-<h2 id="7-ftp">[7] 想使用 FTP 等在线自制工具怎么办?</h2>
+<h2 id="7-ftp">7 想使用 FTP 等在线自制工具怎么办?</h2>
 <p>若需在离线主机 (或 emuNAND）上使用网络, 需确保主机仅连接互联网但无法访问任天堂服务器 (避免发送遥测日志)  </p>
 <p>推荐方案: </p>
 <ul>
@@ -115,7 +120,7 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="8-incognitoincognito-rcm">[8] Incognito/Incognito RCM 可靠吗?</h2>
+<h2 id="8-incognitoincognito-rcm">8 Incognito/Incognito RCM 可靠吗?</h2>
 <p>不推荐使用 原因如下:</p>
 <ul>
 <li>其原理是清空主机启动必需的 PRODINFO 数据若操作失误, 功能故障或丢失备份, 可能导致主机功能损坏甚至变砖, 永久失去联网能力  </li>
@@ -126,11 +131,11 @@
 <blockquote>
 <p>本包默认包含90DNS设置</p>
 </blockquote>
-<h2 id="9-ban">[9] 主机被 <code>BAN</code> 后能否解封?</h2>
+<h2 id="9-ban">9 主机被 BAN 后能否解封?</h2>
 <ul>
 <li>无法通过有效手段解封</li>
 </ul>
-<h2 id="10-sysnand">[10] 离线 sysNAND 违规后想联网怎么办?</h2>
+<h2 id="10-sysnand">10 离线 sysNAND 违规后想联网怎么办?</h2>
 <ul>
 <li>需恢复执行违规操作前的 "干净" NAND 备份</li>
 <li>避免使用 <code>Haku33</code> 洗白工具, 不能有效避免, 会因为删不干净导致直接 <code>BAN</code></li>
@@ -138,12 +143,12 @@
 <blockquote>
 <p>注意: 使用 Switch 原生 <code>恢复出厂设置</code> 功能无法清除遥测日志, 无法避免 <code>BAN</code></p>
 </blockquote>
-<h2 id="11-nand">[11] 未备份或丢失 NAND 数据怎么办?</h2>
+<h2 id="11-nand">11 未备份或丢失 NAND 数据怎么办?</h2>
 <ul>
 <li>此为操作失误, 务必养成未来备份 NAND 的习惯  </li>
 <li>虽存在手动重置 NAND 数据的方法, 但可靠性低于直接恢复备份, 非首选方案</li>
 </ul>
-<h2 id="12">[12] 遵循指南就绝对安全吗?</h2>
+<h2 id="12">12 遵循指南就绝对安全吗?</h2>
 <ul>
 <li>无绝对保障本文信息基于大量实践经验</li>
 <li>破解主机需自行承担风险并对操作负责</li>
@@ -152,7 +157,7 @@
 <blockquote>
 <p>资料来源: <a href="https://nx.eiphax.tech/ban.html">eipHax</a>  </p>
 </blockquote>
-                <div class="update-time">2026-03-15 11:14:26</div>
+                <div class="update-time">2026-03-15 18:00:30</div>
             </main>
         </div>
     </div>
