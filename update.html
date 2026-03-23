@@ -43,6 +43,7 @@
 
     <div class="toc">
         <ul>
+<li><a href="#aio-10219">10.2.19</a></li>
 <li><a href="#aio-10218">10.2.18</a></li>
 <li><a href="#aio-10217">10.2.17</a></li>
 <li><a href="#aio-10216">10.2.16</a></li>
@@ -62,7 +63,6 @@
 <li><a href="#aio-1022">10.2.2</a></li>
 <li><a href="#aio-1021">10.2.1</a></li>
 <li><a href="#aio-1020">10.2.0</a></li>
-<li><a href="#aio-10112">10.1.12</a></li>
 </ul>
 
     </div>
@@ -70,7 +70,62 @@
         <div class="header-space"></div>
         <div class="main-layout">
             <main class="content">
-                <h1 id="aio-10218">AIO 10.2.18</h1>
+                <h1 id="aio-10219">AIO 10.2.19</h1>
+<h2 id="hekate-652">hekate 6.5.2</h2>
+<ul>
+<li>HOS 22.0.0 support</li>
+<li>HOS Auto Memory Size support<ul>
+<li>A control of max memory size limit was added when booting HOS. Set memmode=1 to enable it.</li>
+<li>8GB ram configs will be able to use 8GB inside HOS with it, otherwise it will be limited to 4GB.</li>
+<li>This needs an updated Exosphere or Atmosphere with the relevant change which also includes auto ram config.</li>
+<li>PR: Atmosphere-NX/Atmosphere#2748.</li>
+</ul>
+</li>
+<li>Lots of improvements and fixes under the hood</li>
+<li>Disclaimer: In order to boot HOS 22.0.0 via hekate, you will need to wait for updated Atmosphere.</li>
+</ul>
+<h2 id="nyx-192">Nyx 1.9.2</h2>
+<ul>
+<li>HOS 22.0.0 support</li>
+<li>Full Color Theme support<ul>
+<li>Completing Black Theme had the side-effect of supporting almost any color. This was supported before but now it's complete</li>
+<li>Because of that new sliders can be found that control that inside Nyx Settings -&gt; Color Theme</li>
+<li>Additionally, a new special neutral accent color was added.</li>
+</ul>
+</li>
+<li>Forced 8GB variants now show an asterisk (*) near hekate version<ul>
+<li>To distinguish correct launching at first glance</li>
+</ul>
+</li>
+<li>Easter Egg updated</li>
+<li>Improved eMMC info and added Maintenance OPs (BKOPS) info</li>
+<li>Added info for OEM LCD 7" Display and Touch panel for OLED</li>
+<li>Fixed an off-by-one issue with the result buttons in eMMC partitioning</li>
+<li>Seems that 16nm wafer max Y size is 28 instead of 27</li>
+<li>An issue was fixed that didn't allow big boot entry names to roll</li>
+<li>Lots of improvements and fixes</li>
+</ul>
+<h2 id="sys-clk-232">sys-clk 2.3.2</h2>
+<ul>
+<li>修复错字</li>
+</ul>
+<h2 id="updater-562">Updater 5.6.2</h2>
+<ul>
+<li>修复 旧版相册工具 的错误地址</li>
+</ul>
+<h2 id="updater-563">Updater 5.6.3</h2>
+<ul>
+<li>新增 <code>AIO &gt; hekate</code> 引导菜单语言包安装, 支持中英文, 汉化界面来自 <a href="https://github.com/easyworld/hekate">easyworld</a> 维护的分支</li>
+</ul>
+<h2 id="status-monitor-overlay-150">Status-Monitor-Overlay 1.5.0</h2>
+<ul>
+<li>增加 <code>中英语言切换</code>, 可从 <code>Settings &gt; Languages</code> 进行切换 </li>
+</ul>
+<h2 id="arcane-317">Arcane 3.1.7</h2>
+<ul>
+<li>完善菜单中英文切换, 现在底部提示文字也支持中英切换</li>
+</ul>
+<h1 id="aio-10218">AIO 10.2.18</h1>
 <ul>
 <li>修复自动换包程序, 会导致后台服务全部关闭的问题</li>
 </ul>
@@ -3543,7 +3598,7 @@ Update SaltyNX to 1.7.4 or newer!</li>
 <li>修复自定义tRAS和tRFC偏移量的错误</li>
 <li>Y帮助文件已更新对应版本</li>
 </ul>
-                <div class="update-time">2026-03-21 14:13:14</div>
+                <div class="update-time">2026-03-23 14:23:25</div>
             </main>
         </div>
     </div>
