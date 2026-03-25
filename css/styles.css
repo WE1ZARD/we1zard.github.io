@@ -130,8 +130,8 @@ body {
   top: var(--size-128); /* 在导航栏下方 */
   max-height: calc(100vh - var(--size-64)); /* 限制最大高度 */
   padding: var(--size-16);
-  background: var(--color-bg-primary);
-
+  background: transparent;
+  border: none;
   overflow-y: auto;
   z-index: 900;
 }
@@ -358,20 +358,13 @@ body {
 }
 
 /* 响应式导航栏 */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .toc {
-    position: relative;
-    width: 100%;
-    top: 0;
-    max-height: none;
-    border-right: none;
-    border-bottom: 1px solid var(--color-border-primary);
-    margin-bottom: var(--size-32);
-    z-index: 1;
+    display: none; /* 当宽度不足时直接隐藏目录 */
   }
   
   .main-layout {
-    flex-direction: column;
+    flex-direction: row; /* 保持水平布局 */
   }
 }
 
@@ -939,14 +932,10 @@ img {
   }
 }
 
-/* Responsive: TOC hidden on mobile */
-@media (max-width: 900px) {
-  .main-layout {
-    flex-direction: column;
-  }
-  
+/* Responsive: TOC hidden on smaller screens */
+@media (max-width: 1200px) {
   .toc {
-    display: none; /* 在移动端完全隐藏目录 */
+    display: none; /* 在小屏幕上完全隐藏目录 */
   }
 }
 
