@@ -43,6 +43,250 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
             color: #fff;
         }
+        .comments-section {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--color-border-primary);
+        }
+        .comments-title {
+            text-align: center;
+            color: var(--color-highlight);
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+        .comments-intro {
+            text-align: center;
+            color: var(--color-text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #disqus_thread {
+            margin: 40px 0;
+        }
+        /* Disqus 暗色主题适配 */
+        #disqus_thread iframe {
+            background-color: transparent !important;
+        }
+        
+        /* Disqus 自定义样式 */
+        #disqus_thread {
+            background-color: transparent !important;
+            border-radius: 12px !important;
+            padding: 20px !important;
+            border: none !important;
+        }
+        
+        /* Disqus 评论框样式 */
+        #disqus_thread .textarea {
+            background-color: rgba(12, 33, 64, 0.8) !important;
+            border: 1px solid rgba(96, 165, 250, 0.3) !important;
+            color: var(--color-text-primary) !important;
+            border-radius: 8px !important;
+        }
+        
+        /* Disqus 评论框聚焦样式 */
+        #disqus_thread .textarea:focus {
+            border-color: var(--color-highlight) !important;
+            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2) !important;
+        }
+        
+        /* Disqus 发送按钮样式 */
+        #disqus_thread .btn {
+            background-color: var(--color-highlight) !important;
+            color: var(--color-bg-primary) !important;
+            border: none !important;
+            border-radius: 6px !important;
+            font-weight: bold !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        #disqus_thread .btn:hover {
+            background-color: var(--color-primary-dark) !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 8px rgba(96, 165, 250, 0.3) !important;
+        }
+        
+        /* Disqus 评论卡片样式 */
+        #disqus_thread .post {
+            background-color: rgba(12, 33, 64, 0.6) !important;
+            border: 1px solid rgba(96, 165, 250, 0.2) !important;
+            border-radius: 8px !important;
+            margin-bottom: 16px !important;
+        }
+        
+        /* Disqus 用户名样式 */
+        #disqus_thread .author {
+            color: var(--color-highlight) !important;
+            font-weight: bold !important;
+        }
+        
+        /* Disqus 时间戳样式 */
+        #disqus_thread .time {
+            color: var(--color-text-tertiary) !important;
+        }
+        
+        /* Disqus 评论内容样式 */
+        #disqus_thread .post-message {
+            color: var(--color-text-primary) !important;
+            line-height: 1.6 !important;
+        }
+        
+        /* Disqus 链接样式 */
+        #disqus_thread .post-message a,
+        #disqus_thread .comment a {
+            color: var(--color-highlight) !important;
+            text-decoration: none !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        #disqus_thread .post-message a:hover,
+        #disqus_thread .comment a:hover {
+            color: var(--color-primary-light) !important;
+            text-decoration: underline !important;
+        }
+        
+        /* Disqus 加载提示样式 */
+        #disqus_thread .loading {
+            background-color: transparent !important;
+            color: var(--color-text-secondary) !important;
+            border-radius: 8px !important;
+            padding: 20px !important;
+            text-align: center !important;
+        }
+        
+        /* 完全隔离 TOC 样式，防止任何干扰 */
+        .toc {
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            /* 保持原有的固定定位 */
+            width: 200px;
+            position: fixed;
+            left: 0;
+            top: var(--size-128);
+            max-height: calc(100vh - var(--size-64));
+            padding: var(--size-16);
+            overflow-y: auto;
+            z-index: 900;
+        }
+        
+        .toc * {
+            text-shadow: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            border: none !important;
+        }
+        
+        .toc a {
+            color: var(--color-text-secondary) !important;
+            text-decoration: none !important;
+            font-size: var(--font-size-12) !important;
+            display: block !important;
+            padding: var(--size-4) var(--size-8) !important;
+            border-radius: var(--size-4) !important;
+            transition: color 0.2s ease !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            transform: none !important;
+        }
+        
+        .toc a:hover {
+            color: var(--color-highlight) !important;
+            text-decoration: none !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            transform: none !important;
+        }
+        
+        /* 确保没有伪元素干扰 */
+        .toc a::before,
+        .toc a::after,
+        .toc *::before,
+        .toc *::after {
+            display: none !important;
+            content: none !important;
+        }
+        
+        /* 反馈要求框样式 */
+        .requirements-box {
+            background-color: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 12px;
+            color: var(--color-text-primary);
+            text-align: center;
+            max-width: 400px; /* 限制最大宽度，与介绍文字保持一致 */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .requirements-box strong {
+            color: var(--color-highlight);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+            text-align: center; /* 标题居中 */
+        }
+        
+        .requirements-box ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: disc;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .requirements-box li {
+            margin-bottom: 4px;
+            color: var(--color-text-secondary);
+            text-align: left;
+        }
+        
+        /* Disqus 容器内部的所有元素 */
+        #disqus_thread .container,
+        #disqus_thread .content,
+        #disqus_thread .wrapper {
+            background-color: transparent !important;
+        }
+        
+        /* Disqus 嵌入式元素 */
+        #disqus_thread embed,
+        #disqus_thread object {
+            background-color: transparent !important;
+        }
+        
+        /* 自定义中文提示文字 */
+        #disqus_thread .textarea::placeholder {
+            color: var(--color-text-tertiary) !important;
+            font-family: var(--font-family-sans) !important;
+        }
+        
+        /* Disqus 按钮文字 */
+        #disqus_thread .btn {
+            font-family: var(--font-family-sans) !important;
+        }
+        
+        /* Disqus 标签文字 */
+        #disqus_thread label,
+        #disqus_thread .form-label {
+            font-family: var(--font-family-sans) !important;
+            color: var(--color-text-primary) !important;
+        }
+        
+        /* Disqus 帮助文字 */
+        #disqus_thread .help-text,
+        #disqus_thread .helper-text {
+            font-family: var(--font-family-sans) !important;
+            color: var(--color-text-secondary) !important;
+        }
     </style>
 </head>
 <body>
@@ -64,13 +308,370 @@
     </div>
 </nav>
 
-<iframe
-  src="https://tally.so/r/0Q7qYj"
-  loading="lazy"
-  allowtransparency="true"
-  width="100%"
-  height="800"
-  frameborder="0"></iframe>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="feedback.html" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="header-space"></div>
+    <div class="main-layout">
+        <div class="toc">
+            <ul>
+<li><a href="#_2">开机相关</a><ul>
+<li><a href="#_3">问题 1</a></li>
+<li><a href="#_4">问题 2</a></li>
+<li><a href="#_5">问题 3</a></li>
+<li><a href="#_6">问题 4</a></li>
+<li><a href="#_7">问题 5</a></li>
+<li><a href="#_8">问题 6</a></ul>
+</li>
+<li><a href="#_9">异常相关</a><ul>
+<li><a href="#_10">问题 7</a></li>
+<li><a href="#_11">问题 8</a></li>
+<li><a href="#_12">问题 9</a></ul>
+</li>
+<li><a href="#_13">蓝屏相关</a><ul>
+<li><a href="#_14">问题 10</a></li>
+<li><a href="#_15">问题 11</a></li>
+<li><a href="#_16">问题 12</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+        <main class="content">
+            <!-- 评论区域 -->
+            <div class="comments-section">
+                <h2 class="comments-title">💬 评论区</h2>
+                <div class="comments-intro">
+                    <p>欢迎在评论区反馈你的问题，提交前请先查看下方的常见问题。</p>
+                    <div class="requirements-box">
+                        <strong>反馈要求：</strong>
+                        <ul>
+                            <li>系统版本、整合包版本、插件版本等</li>
+                            <li>出现问题前进行过的操作</li>
+                            <li>其他整合包问题一律不解决</li>
+                        </ul>
+                    </div>
+                </div>
+            <div id="disqus_thread">
+                <!-- Disqus 评论组件将在这里加载 -->
+            </div>
+</div>
+
+            <h1 id="_1">常见问题</h1>
+<h2 id="_2">开机相关</h2>
+<h3 id="_3">问题 1</h3>
+<div class="console">
+<p style="color: red; font-weight: bold;">
+Error while loading fss0:<br>
+atmosphere/package3<br>
+Wrong ini cfg or missing/corrupt files!<br><br>
+
+Failed to launch HOS!
+</p>
+<p style="color: white; font-weight: bold;">
+Press any key...
+</p>
+</div>
+
+<p><strong>解决方法</strong></p>
+<ul>
+<li>检查SD卡内容, 缺少的部分重新放包</li>
+</ul>
+<p><strong>原因分析</strong></p>
+<ul>
+<li>通常是分区格式化的时候没点备份</li>
+<li>sd卡内容超过100m, 没触发自动备份</li>
+</ul>
+<h3 id="_4">问题 2</h3>
+<div class="console">
+<p style="color: white; font-weight: bold;">
+A fatal error occurred when running Atmosphére.<br>
+Title ID: 010041544d530000<br>
+Error Desc: std::abort() called (0xffe)
+</p>
+</div>
+
+<p><strong>解决方法 1</strong></p>
+<ul>
+<li>关机后按住<code>音量键-减号</code>进入hekate  <ol>
+<li>点击顶部的<code>Tools</code>  </li>
+<li>点击底部的<code>Arch Bit</code>  </li>
+<li>点击左上角<code>Fix Archive Bit</code>开始修复  </li>
+<li>修复完成之后就可以正常从<code>Launch</code>里引导了  </li>
+</ol>
+</li>
+</ul>
+<p><strong>解决方法 2</strong></p>
+<ul>
+<li>你下错了整合包, 当前的包不支持你的固件系统, 重新下<a href="aio.html">整合包</a></li>
+</ul>
+<h3 id="_5">问题 3</h3>
+<div class="console">
+<p style="color: red; font-weight: bold;">
+Failed to match warm boot with fuses!<br>
+if you continue, sleep won't work!
+</p>
+<p style="color: white; font-weight: bold;">
+Press POWER to continue.<br>
+Press VOL to go to the menu.
+</p>
+</div>
+
+<p><strong>解决方法 1</strong></p>
+<ul>
+<li>在这个界面按<code>音量键</code>返回Hekate引导菜单</li>
+<li>选择<code>Lanuch &gt; SysMMC</code>, 进入系统, 再关机重启即可 (不要更新, 不要升级, 不要联网)</li>
+</ul>
+<p><strong>解决方法 2</strong></p>
+<ul>
+<li>启动到<code>Hekate &gt; Tools &gt; Arch bit RCM TOUCH PKG1/2 &gt; DUMP PACKAGE</code></li>
+<li>稍等片刻之后, 重启switch, 即可解决</li>
+</ul>
+<p><strong>原因分析</strong></p>
+<ul>
+<li>这是因为系统的fuses(熔丝)没有匹配, 导致无法正常启动.</li>
+<li>通常是因为hekate版本未适配的时候, 升级了官方系统</li>
+<li>原hekate使用忽略熔断, 导致不匹配</li>
+</ul>
+<h3 id="_6">问题 4</h3>
+<div class="console">
+<p style="color: white; font-weight: bold;">
+Board was not initialized properly!<br>
+Hang prevented.<br>
+Board will reboot in 10s...
+</p>
+</div>
+
+<p><strong>解决方法</strong></p>
+<ul>
+<li>可升级固件系统的芯片, 可以尝试升级</li>
+<li>刷固件系统有一定的风险性</li>
+</ul>
+<p><strong>原因分析</strong>
+- 芯片系统不支持</p>
+<h3 id="_7">问题 5</h3>
+<div class="console">
+<p style="color: white; font-weight: bold;">
+A fatal error occurred when running Atmosphere.<br>
+Program ID: 524850534f53454d<br>
+Error Desc: Kernel Panic (0xf00)<br><br>
+
+Failed to save report to the SD card! (00000202)<br>
+Please contact ScriresM#0524 on Discord, or create an issue on the Atmosphere<br>
+Github issue tracker. Thank you very much for helping to test mesosphere.<br><br>
+
+Press POWER to reboot.
+</p>
+</div>
+
+<p><strong>原因分析</strong></p>
+<ul>
+<li>超频参数问题</li>
+</ul>
+<p><strong>解决方法</strong></p>
+<ul>
+<li>重新调整参数, 缩小排查范围</li>
+</ul>
+<h3 id="_8">问题 6</h3>
+<div class="console">
+<p style="color: red; font-weight: bold;">
+Error while loading pkg3:<br>
+atmosphere/package3<br>
+Wrong ini cfg or missing/corrupt files!<br><br>
+
+Failed to launch HOS!
+</p>
+<p style="color: white; font-weight: bold;">
+Press any key...
+</p>
+</div>
+
+<p><strong>原因分析</strong></p>
+<ul>
+<li>换包操作有问题</li>
+</ul>
+<p><strong>解决方法</strong></p>
+<ul>
+<li>严格按照教程步骤换包(<a href="aio.html">查看详情</a>)</li>
+</ul>
+<h2 id="_9">异常相关</h2>
+<h3 id="_10">问题 7</h3>
+<p><strong>待机异常掉电</strong></p>
+<ul>
+<li>呼出菜单: <strong><code>L</code></strong> + <strong><code>✚</code></strong></li>
+<li>菜单中按<code>▶</code>打开工具包</li>
+<li><code>Settings &gt; General &gt; Services</code> 设置成 <code>Off</code>, 然后重启switch</li>
+<li>注意: 此设置仅限无官方联网需求的玩家, 会导致任天堂相关联网服务停止工作</li>
+</ul>
+<h3 id="_11">问题 8</h3>
+<p><strong>WiFi信号异常</strong></p>
+<ul>
+<li>无法正常连接 2G/5G</li>
+</ul>
+<p><strong>原因分析</strong></p>
+<ol>
+<li>有可能天线没插好</li>
+<li>可能无线模块坏, 或者接触不良</li>
+</ol>
+<p><strong>解决方法</strong></p>
+<ol>
+<li>开后盖重新插天线</li>
+<li>重新连接无线模块, 或者更换</li>
+</ol>
+<h3 id="_12">问题 9</h3>
+<p><strong>所有游戏打不开</strong></p>
+<ul>
+<li>仅限真实系统</li>
+</ul>
+<p><strong>原因分析</strong></p>
+<ol>
+<li>Sigpatch 默认关闭 SysMMC</li>
+</ol>
+<p><strong>解决方法</strong></p>
+<p>中: 打开 <code>快捷设置 &gt; 自制应用 &gt; 系统补丁 &gt; 真实系统补丁</code> On 开启
+英: 打开 <code>Settings &gt; HB Apps &gt; Sys-Patch &gt; Patch SysMMC</code> On 开启
+- 重启生效</p>
+<h2 id="_13">蓝屏相关</h2>
+<h3 id="_14">问题 10</h3>
+<div class="error">
+<p style="color: white; font-weight: bold;">
+Error Code: 2144-0001 (0x290)<br>
+Program ID: 0100000000001000<br>
+Firmware: xx.x.x (Atmosphere xxxx)<br><br>
+
+An error has occurred.<br>
+</p>
+</div>
+
+<p><strong>原因分析</strong></p>
+<ol>
+<li>残留就主题文件</li>
+</ol>
+<p><strong>解决方法</strong></p>
+<ol>
+<li>手动删除所有主题相关文件</li>
+<li>使用自动换包的方式自动清理</li>
+</ol>
+<h3 id="_15">问题 11</h3>
+<div class="error">
+<p style="color: white; font-weight: bold;">
+Error Code: 2168-0002 (0x4a8)<br>
+Program ID: 420000000007E51A<br>
+Firmware: xx.x.x (Atmosphere xxxx)<br><br>
+
+An error has occurred.<br>
+</p>
+</div>
+
+<p><strong>原因分析</strong></p>
+<ol>
+<li>特斯拉插件崩溃</li>
+<li>爆内存</li>
+</ol>
+<p><strong>解决方法</strong></p>
+<ol>
+<li>看看是否能够复现, 找出对应的插件, 将他删除</li>
+<li>关闭不必要的后台程序, 避免系统内存占用过多</li>
+</ol>
+<h3 id="_16">问题 12</h3>
+<div class="error">
+<p style="color: white; font-weight: bold;">
+Error Code: 2168-0002(0x4a8)<br>
+Programe: 010000000000100D<br>
+Firmware: xx.x.x (Atmosphere xxxx)<br><br>
+
+An error has occurred.<br>
+</p>
+</div>
+
+<p><strong>原因分析 1</strong></p>
+<ul>
+<li>超频参数问题</li>
+<li>通常是 sys-clk 没有开启 GPU DVFS Hijack 模式, 然后又设置了很低的GPU Vmin 比如 500mv</li>
+<li>相册菜单又设置了超频参数, 导致电压不够直接黑屏或者死机, 甚至可能在后面出现橙屏</li>
+</ul>
+<p><strong>解决方法</strong></p>
+<ul>
+<li>sys-clk 开启 GPU DVFS Hijack 模式, 设置合理的GPU Vmin, 这里是指 1600 内存频率的电压</li>
+</ul>
+<p><strong>原因分析 2</strong></p>
+<ul>
+<li>使用了旧版 ABI 的应用, 不兼容</li>
+</ul>
+<p><strong>解决方法</strong></p>
+<ul>
+<li>更新成最新版相册菜单工具, 比如 sphaira 或者 hbmenu.</li>
+</ul>
+
+            <div class="update-time">2026-03-25 10:41:38</div>
+        </main>
+    </div>
+</div>
+
+<!-- Disqus 配置 -->
+<script>
+    // Disqus 配置
+    var disqus_config = function () {
+        this.page.url = window.location.href;  // 当前页面 URL
+        this.page.identifier = window.location.pathname;  // 页面唯一标识
+        this.page.title = document.title;  // 页面标题
+        this.language = 'zh-CN';  // 语言设置（使用标准格式）
+        this.remote_auth_s3 = null;  // 禁用远程认证
+        this.api_key = null;  // 不使用 API key
+        this.sso = null;  // 不使用 SSO
+    };
+
+    // 加载 Disqus
+    function loadDisqus() {
+        // 创建 Disqus 脚本
+        var d = document, s = d.createElement('script');
+        s.src = 'https://we1zard.disqus.com/embed.js';  // 你的 Disqus shortname
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    }
+
+    // 页面加载完成后加载 Disqus
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadDisqus);
+    } else {
+        loadDisqus();
+    }
+</script>
+<noscript>
+    <p style="text-align: center; color: var(--color-text-secondary); padding: 40px;">
+        请启用 JavaScript 来查看 <a href="https://disqus.com/?ref_noscript" rel="nofollow">Disqus 评论</a>
+    </p>
+</noscript>
+
+<!-- 统一Footer组件 -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
 <div class="faq-section">
 <!-- 统一导航栏组件 -->
 <nav class="navbar">
@@ -363,7 +964,7 @@ An error has occurred.<br>
 <ul>
 <li>更新成最新版相册菜单工具, 比如 sphaira 或者 hbmenu.</li>
 </ul>
-                <div class="update-time">2026-03-25 10:41:38</div>
+                <div class="update-time">2026-03-25 15:49:33</div>
             </main>
         </div>
     </div>
