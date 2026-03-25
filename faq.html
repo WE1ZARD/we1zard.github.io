@@ -59,6 +59,7 @@
 <li><a href="#_13">蓝屏相关</a><ul>
 <li><a href="#_14">问题</a></li>
 <li><a href="#_15">问题</a></li>
+<li><a href="#_16">问题</a></li>
 </ul>
 </li>
 </ul>
@@ -177,7 +178,7 @@ Press POWER to reboot.
 
 <p><strong>原因分析</strong></p>
 <ul>
-<li>超频导致的报错</li>
+<li>超频参数问题</li>
 </ul>
 <p><strong>解决方法</strong></p>
 <ul>
@@ -284,7 +285,36 @@ An error has occurred.<br>
 <li>看看是否能够复现, 找出对应的插件, 将他删除</li>
 <li>关闭不必要的后台程序, 避免系统内存占用过多</li>
 </ol>
-                <div class="update-time">2026-03-17 21:31:32</div>
+<h3 _="%#%" id="_16">问题</h3>
+<div class="error">
+<p style="color: white; font-weight: bold;">
+Error Code: 2168-0002(0x4a8)<br>
+Programe: 010000000000100D<br>
+Firmware: xx.x.x (Atmosphere xxxx)<br><br>
+
+An error has occurred.<br>
+</p>
+</div>
+
+<p><strong>原因分析 1</strong></p>
+<ul>
+<li>超频参数问题</li>
+<li>通常是 sys-clk 没有开启 GPU DVFS Hijack 模式, 然后又设置了很低的GPU Vmin 比如 500mv</li>
+<li>相册菜单又设置了超频参数, 导致电压不够直接黑屏或者死机, 甚至可能在后面出现橙屏</li>
+</ul>
+<p><strong>解决方法</strong></p>
+<ul>
+<li>sys-clk 开启 GPU DVFS Hijack 模式, 设置合理的GPU Vmin, 这里是指 1600 内存频率的电压</li>
+</ul>
+<p><strong>原因分析 2</strong></p>
+<ul>
+<li>使用了旧版 ABI 的应用, 不兼容</li>
+</ul>
+<p><strong>解决方法</strong></p>
+<ul>
+<li>更新成最新版相册菜单工具, 比如 sphaira 或者 hbmenu.</li>
+</ul>
+                <div class="update-time">2026-03-25 10:41:38</div>
             </main>
         </div>
     </div>
