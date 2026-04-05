@@ -43,6 +43,7 @@
 
     <div class="toc">
         <ul>
+<li><a href="#aio-1100">11.0.0</a></li>
 <li><a href="#aio-10225">10.2.25</a></li>
 <li><a href="#aio-10224">10.2.24</a></li>
 <li><a href="#aio-10223">10.2.23</a></li>
@@ -62,7 +63,6 @@
 <li><a href="#aio-1029">10.2.9</a></li>
 <li><a href="#aio-1028">10.2.8</a></li>
 <li><a href="#aio-1027">10.2.7</a></li>
-<li><a href="#aio-1026">10.2.6</a></li>
 </ul>
 
     </div>
@@ -70,7 +70,64 @@
         <div class="header-space"></div>
         <div class="main-layout">
             <main class="content">
-                <h1 id="aio-10225">AIO 10.2.25</h1>
+                <h1 id="aio-1100">AIO 11.0.0</h1>
+<h2 id="atmosphere-1110">atmosphere 1.11.0</h2>
+<ul>
+<li>Support was added for 22.0.0.</li>
+<li>Special thanks to @alula for handling a large chunk of the necessary kernel, loader and erpt changes.</li>
+<li>The console should boot and atmosphère should be fully functional.</li>
+<li><strong>Please note</strong>: A change in how applications/applets' lifespan is managed broke the homebrew ecosystem.<ul>
+<li>All applications and applets are expected to perform a clean exit by calling the relevant IPC commands.</li>
+<li>Homebrew compiled with libnx and hbmenu itself explicitly avoid exiting so it can keep using the same process.</li>
+<li>Properly fixing this would require a re-design of how homebrew is launched and terminated.</li>
+<li>As a temporary solution, patches to the <code>am</code> sysmodule are now included which allow restoring the previous behavior and regain homebrew compatibility without any further changes.</li>
+<li>Nonetheless, please report any issues you may face when testing homebrew to ensure no edge cases have been missed.    </li>
+</ul>
+</li>
+<li><code>exosphère</code> was updated to reflect the latest official secure monitor behavior.</li>
+<li><code>mesosphère</code> was updated to reflect the latest official kernel behavior.</li>
+<li><code>loader</code> was updated to reflect the latest official behavior.</li>
+<li><code>erpt</code> was updated to reflect the latest official behavior.</li>
+<li><code>pgl</code> was updated to fix a few issues.</li>
+<li>Support was added for memory modes above 4GB (thanks @CTCaer).</li>
+<li>A build time option to configure Joy-Con rails as UART for debugging was added (thanks @alula).</li>
+<li>General system stability improvements to enhance the user's experience.</li>
+</ul>
+<h2 id="settings-345">Settings 3.4.5</h2>
+<ul>
+<li><code>General</code> 通用设置调整</li>
+<li><code>虚拟系统内存增强补丁</code>, 默认不开启</li>
+<li>解锁 8G 上限, 仅对 8G 内存有效</li>
+<li>要求: 大气层 1.11.0+</li>
+</ul>
+<h2 id="aurora-110r120">Aurora 11.0.r120</h2>
+<ul>
+<li>recompiled against atmosphere 1.11.0</li>
+<li>loader based auto vmin from eos was removed as it was incorrectly implemented and missunderstood by me</li>
+<li>the proper implementation is inferior to pcv hijack anyway</li>
+<li>支持 22 系统</li>
+<li>合并 <code>TIMINGS</code> 时序中的8G模式到 <code>Settings</code> 设置助手</li>
+<li>移除 <code>Speedo</code> 体质值设置, 转为sysclk控制</li>
+</ul>
+<h2 id="saltynx-175">SaltyNX 1.7.5</h2>
+<ul>
+<li>Remove most of repetetive code from NX-FPS part of Cores</li>
+<li>Cache more frequently values returned by weakly linked function calls in NX-FPS part of Cores</li>
+<li>Avoid using float divisions in functions that are called multiple times in one frame</li>
+<li>Apply proper fix instead of workaround for SM in sysmodule</li>
+<li>Fix an overflow in internal display pixel clock calculation which resulted in wrong reported refresh rate for overclocked displays (was not an issue in stock SaltyNX because overclocking internal displays is unsupported)</li>
+<li>32-bit Core now has properly implemented support for generating Armv8-a 32-bit code instead of being forced to armv6k, thanks to that we can use less instructions to achieve the same thing</li>
+<li>32-bit Core now properly recognizes alignment of SharedMemory so now it properly optimizes instructions accessing it instead of taking worst case approach</li>
+</ul>
+<h2 id="updater-566">Updater 5.6.6</h2>
+<ul>
+<li>新增 <code>Sysmodule &gt; sys-ticon</code> 标题图标替换</li>
+</ul>
+<h2 id="r2config-225">R2Config 2.2.5</h2>
+<ul>
+<li>优化双虚拟系统设置</li>
+</ul>
+<h1 id="aio-10225">AIO 10.2.25</h1>
 <h2 id="status-monitor-overlay-158">Status-Monitor-Overlay 1.5.8</h2>
 <ul>
 <li>修复 sysclk 被退出的问题</li>
@@ -79,6 +136,10 @@
 <ul>
 <li>修复后台异常退出的问题</li>
 <li>修复1600内存频率GPU电压异常的问题</li>
+</ul>
+<h2 id="aurora-102r110">Aurora 10.2.r110</h2>
+<ul>
+<li>调整预设时序</li>
 </ul>
 <h1 id="aio-10224">AIO 10.2.24</h1>
 <ul>
@@ -3726,7 +3787,7 @@ Update SaltyNX to 1.7.4 or newer!</li>
 <li>修复自定义tRAS和tRFC偏移量的错误</li>
 <li>Y帮助文件已更新对应版本</li>
 </ul>
-                <div class="update-time">2026-04-01 22:23:55</div>
+                <div class="update-time">2026-04-05 21:07:52</div>
             </main>
         </div>
     </div>
