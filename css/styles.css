@@ -1031,9 +1031,9 @@ img {
   margin: 4rem auto;
   max-width: 1000px;
   padding: 2rem;
-  background-color: var(--color-bg-secondary);
+  background-color: transparent;
   border-radius: var(--size-16);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
 }
 
 .folder {
