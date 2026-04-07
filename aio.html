@@ -21,6 +21,7 @@
             background-color: transparent;
         }
     </style>
+    <script src="js/common.js"></script>
 </head>
 <body>
 <!-- 统一导航栏组件 -->
@@ -84,21 +85,256 @@
 <h2 id="_3">下载安装</h2>
 <p><a href="https://gitea.com/we1zard/OTA/releases/download/latest/AIO-pre.zip" class="button" target="_blank">直接下载</a> <a href="https://www.jianguoyun.com/p/Da5-YN0Q2s_tDBiW5OoFIAA" class="button" target="_blank">网盘下载</a></p>
 <h3 id="_4">升级</h3>
+<div class="alert alert-blue"><p>假如虚拟系统不存在, 重启后会报错, 按照 <a href="#制作虚拟系统"><strong>制作虚拟系统教程</strong></a> 操作即可</p></div>
+
 <ol>
 <li>下载解压后, 复制 <strong>bootloader</strong>, <strong>Magic-Suite</strong> 2个文件夹</li>
 <li>覆盖到 <code>sdmc:/</code> 内存卡根目录</li>
 <li>Switch 插入内存卡</li>
-<li>开机后进入程序自动换包, 稍等片刻之后自动进入虚拟系统<blockquote>
-<p>假如虚拟系统不存在, 重启后会报错, 按照 <a href="#制作虚拟系统"><strong>制作虚拟系统教程</strong></a> 操作即可</p>
-</blockquote>
-</li>
+<li>开机后进入程序自动换包, 稍等片刻之后自动进入虚拟系统</li>
 </ol>
+<div class="copy-paste-container-header collapsible">
+    <h4>升级演示</h4>
+    <i class="fas fa-chevron-down toggle-icon"></i>
+</div>
+<div class="copy-paste-container collapsed">
+    <!-- 左侧文件夹 -->
+    <div class="folder">
+        <div class="folder-header">
+            <i class="fas fa-folder folder-icon"></i>
+            <span class="folder-name">AIO-pre.zip</span>
+        </div>
+        <div class="folder-content">
+            <div class="file-item selected">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">bootloader</span>
+            </div>
+            <div class="file-item selected">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">Magic-Suite</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 箭头 -->
+    <div class="arrow-container">
+        <i class="fas fa-arrow-right arrow"></i>
+    </div>
+
+    <!-- 右侧文件夹 -->
+    <div class="folder">
+        <div class="folder-header">
+            <i class="fas fa-folder folder-icon"></i>
+            <span class="folder-name">SWITCH SD</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="folder-content">
+            <!-- 文件夹按a-z顺序 -->
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">atmosphere</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">backup</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">bootloader</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">config</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">emuMMC</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">JKVS</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">Nintendo</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">retroarch</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">SaltySD</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">switch</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">switchroot</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">System Volume Information</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">warmboot_mariko</span>
+            </div>
+            <!-- 文件按a-z顺序 -->
+            <div class="file-item">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">boot.dat</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">boot.ini</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">exosphere.ini</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">hbmenu.nro</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">payload.bin</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <h3 id="_5">换卡</h3>
+<div class="alert alert-blue"><p>适用: <code>干净升级</code>, <code>干净换包</code></p></div>
+
 <ol>
 <li>下载解压后, 进入 <strong>Magic-Suite</strong> 文件夹, 复制里面所有文件到 <code>sdmc:/</code> 内存卡根目录</li>
-<li><strong>不要管外面单个的 bootloade` 文件夹!!!</strong></li>
+<li><strong>不要管外面单个的 <code>bootloade</code> 文件夹!!!</strong></li>
 <li>复制完成之后, 开始 <a href="#制作虚拟系统"><strong>制作虚拟系统</strong></a></li>
+<li>已有虚拟系统 <code>emuMMC</code>的, 不需要重新制作虚拟系统</li>
 </ol>
+<div class="copy-paste-container-header collapsible">
+    <h4>换卡演示</h4>
+    <i class="fas fa-chevron-down toggle-icon"></i>
+</div>
+<div class="copy-paste-container collapsed">
+    <!-- 左侧文件夹 -->
+    <div class="folder">
+        <div class="folder-header">
+            <i class="fas fa-folder folder-icon"></i>
+            <span class="folder-name">AIO-pre.zip</span>
+        </div>
+        <div class="folder-content">
+            <!-- 文件夹按a-z顺序 -->
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">bootloader</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">Magic-Suite</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <!-- Magic-Suite 子内容 -->
+            <!-- 文件夹按a-z顺序 -->
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">atmosphere</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">bootloader</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">config</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">SaltySD</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">switch</span>
+            </div>
+            <!-- 文件按a-z顺序 -->
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">boot.dat</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">boot.ini</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">exosphere.ini</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">hbmenu.nro</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">payload.bin</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 箭头 -->
+    <div class="arrow-container">
+        <i class="fas fa-arrow-right arrow"></i>
+    </div>
+
+    <!-- 右侧文件夹 -->
+    <div class="folder">
+        <div class="folder-header">
+            <i class="fas fa-folder folder-icon"></i>
+            <span class="folder-name">SWITCH SD</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="folder-content">
+            <!-- 文件夹按a-z顺序 -->
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">backup</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">emuMMC</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">JKVS</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">Nintendo</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">retroarch</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">switchroot</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">System Volume Information</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">warmboot_mariko</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <h2 id="_6">制作虚拟系统</h2>
 <ul>
 <li>分区系统: 速度快, 折腾不容易出问题 (推荐)</li>
@@ -224,7 +460,7 @@
 <li>WerWolv</li>
 <li>吥走尋常路</li>
 </ul></div></div>
-                <div class="update-time">2026-04-07 10:54:16</div>
+                <div class="update-time">2026-04-07 13:33:56</div>
             </main>
         </div>
     </div>

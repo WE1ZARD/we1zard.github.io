@@ -1021,3 +1021,183 @@ img {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+/* 复制粘贴演示样式 */
+.copy-paste-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 4rem auto;
+  max-width: 1000px;
+  padding: 2rem;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--size-16);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.folder {
+  flex: 1;
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--size-8);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.folder:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.folder-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border-primary);
+}
+
+.folder-icon {
+  font-size: 1.5rem;
+  color: var(--color-highlight);
+}
+
+.folder-name {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.folder-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: var(--size-4);
+  transition: all 0.2s ease;
+}
+
+.file-item:hover {
+  background-color: rgba(147, 197, 253, 0.1);
+}
+
+.file-item.selected {
+  background-color: rgba(147, 197, 253, 0.1);
+  border-radius: var(--size-4);
+}
+
+.file-icon {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.file-icon.fa-folder {
+  color: var(--color-highlight);
+}
+
+.file-name {
+  font-size: var(--font-size-medium);
+  color: var(--color-text-primary);
+}
+
+/* 折叠功能样式 */
+.copy-paste-container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--size-8) var(--size-8) 0 0;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copy-paste-container-header:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+.copy-paste-container-header h2 {
+  margin: 0;
+  font-size: var(--font-size-large);
+  color: var(--color-text-primary);
+}
+
+.toggle-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+  color: var(--color-highlight);
+}
+
+.copy-paste-container {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  border-radius: 0 0 var(--size-8) var(--size-8);
+}
+
+.copy-paste-container.collapsed {
+  max-height: 0;
+  padding: 0;
+  border: none;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  transition: none;
+}
+
+.arrow-container:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: var(--color-highlight);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .copy-paste-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .folder {
+    width: 100%;
+  }
+  
+  .arrow-container {
+    transform: rotate(90deg);
+    margin: 1rem 0;
+  }
+}

@@ -116,3 +116,28 @@ window.addEventListener('load', function() {
         });
     });
 })();
+
+// 折叠功能实现
+(function() {
+    // 等待DOM加载完成
+    document.addEventListener('DOMContentLoaded', function() {
+        const collapsibleHeaders = document.querySelectorAll('.collapsible');
+        
+        collapsibleHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const toggleIcon = this.querySelector('.toggle-icon');
+                
+                content.classList.toggle('collapsed');
+                
+                if (content.classList.contains('collapsed')) {
+                    toggleIcon.classList.remove('fa-chevron-up');
+                    toggleIcon.classList.add('fa-chevron-down');
+                } else {
+                    toggleIcon.classList.remove('fa-chevron-down');
+                    toggleIcon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+    });
+})();
