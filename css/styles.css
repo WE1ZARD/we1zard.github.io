@@ -1167,7 +1167,7 @@ img {
   transform: none;
 }
 
-.arrow {
+.copy-paste-container .arrow {
   font-size: 2rem;
   color: var(--color-highlight);
   animation: pulse 2s infinite;
