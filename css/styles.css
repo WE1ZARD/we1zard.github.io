@@ -1137,9 +1137,9 @@ img {
 }
 
 .copy-paste-container {
-  max-height: 1000px;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  max-height: none;
+  overflow: visible;
+  transition: padding 0.3s ease;
   border-radius: 0 0 var(--size-8) var(--size-8);
 }
 
@@ -1147,6 +1147,7 @@ img {
   max-height: 0;
   padding: 0;
   border: none;
+  overflow: hidden;
 }
 
 .arrow-container {
