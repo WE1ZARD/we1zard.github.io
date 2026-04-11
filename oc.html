@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超频总览</title>
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="feedback.html" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="toc">
+        
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="_1">超频总览</h1>
+<div class="oc-tree-container">
+    <!-- 三栏主布局 -->
+    <div class="oc-main-layout">
+        <!-- 第一列：插件层 -->
+        <div class="oc-column oc-column-1">
+            <!-- 超频插件 -->
+            <div class="oc-folder-card oc-level-1">
+                <div class="oc-folder-header">
+                    <i class="fas fa-folder"></i>
+                    <span class="oc-folder-name">系统超频</span>
+                </div>
+                <div class="oc-folder-content">
+                    <div class="oc-item-row">
+                        <i class="fas fa-file-alt"></i>
+                        <span>sys-clk-overlay.ovl</span>
+                        <div class="oc-tooltip">系统超频管理工具</div>
+                    </div>
+                    <div class="oc-item-row">
+                        <i class="fas fa-file-alt"></i>
+                        <span>loader.kip</span>
+                        <div class="oc-tooltip">底层加载模块</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 游戏增强插件 -->
+            <div class="oc-folder-card oc-level-1">
+                <div class="oc-folder-header">
+                    <i class="fas fa-folder"></i>
+                    <span class="oc-folder-name">游戏增强</span>
+                </div>
+                <div class="oc-folder-content">
+                    <div class="oc-item-row">
+                        <i class="fas fa-file-alt"></i>
+                        <span>FPSLocker.ovl</span>
+                        <div class="oc-tooltip">帧数锁定与解锁工具</div>
+                    </div>
+                    <div class="oc-item-row">
+                        <i class="fas fa-file-alt"></i>
+                        <span>ReverseNX-RT-ovl.ovl</span>
+                        <div class="oc-tooltip">掌机/底座模式切换</div>
+                    </div>
+                    <div class="oc-item-row">
+                        <i class="fas fa-file-alt"></i>
+                        <span>画质MOD</span>
+                        <div class="oc-tooltip">画面质量增强补丁</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 监控插件 -->
+            <div class="oc-folder-card oc-level-1">
+                <div class="oc-folder-header">
+                    <i class="fas fa-folder"></i>
+                    <span class="oc-folder-name">状态监控</span>
+                </div>
+                <div class="oc-folder-content">
+                    <div class="oc-item-row">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Status-Monitor-Overlay.ovl</span>
+                        <div class="oc-tooltip">实时性能监控插件</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第一列到第二列的箭头 -->
+        <div class="oc-arrow-column">
+            <div class="oc-arrow-box">
+                <i class="fas fa-arrow-right oc-arrow-right"></i>
+            </div>
+            <div class="oc-arrow-box">
+                <i class="fas fa-arrow-right oc-arrow-right"></i>
+            </div>
+            <div class="oc-arrow-box">
+                <i class="fas fa-arrow-right oc-arrow-right"></i>
+            </div>
+        </div>
+
+        <!-- 第二列：功能层 -->
+        <div class="oc-column oc-column-2">
+            <!-- 系统性能 -->
+            <div class="oc-folder-card oc-level-2">
+                <div class="oc-folder-header">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="oc-folder-name">提供系统性能支持</span>
+                </div>
+                <div class="oc-folder-content">
+                    <div class="oc-item-row">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>管理超频设置</span>
+                        <div class="oc-tooltip">每个程序独立设置CPU,GPU,内存频率</div>
+                    </div>
+                    <div class="oc-item-row">
+                        <i class="fas fa-unlock-alt"></i>
+                        <span>解锁系统性能</span>
+                        <div class="oc-tooltip">允许使用系统默认外的配置</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 游戏帧数画质 -->
+            <div class="oc-folder-card oc-level-2">
+                <div class="oc-folder-header">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="oc-folder-name">解锁游戏帧数画质</span>
+                </div>
+                <div class="oc-folder-content">
+                    <div class="oc-item-row">
+                        <i class="fas fa-unlock-alt"></i>
+                        <span>60FPS 解锁</span>
+                        <div class="oc-tooltip">突破游戏默认帧数限制</div>
+                    </div>
+                    <div class="oc-item-row">
+                        <i class="fas fa-expand"></i>
+                        <span>分辨率增强</span>
+                        <div class="oc-tooltip">提升渲染分辨率</div>
+                    </div>
+                    <div class="oc-item-row">
+                        <i class="fas fa-palette"></i>
+                        <span>画质补丁</span>
+                        <div class="oc-tooltip">对游戏显示效果进行微调整</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 监控状态 -->
+            <div class="oc-folder-card oc-level-2">
+                <div class="oc-folder-header">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="oc-folder-name">掌控运行状态</span>
+                </div>
+                <div class="oc-folder-content">
+                    <div class="oc-item-row">
+                        <i class="fas fa-eye"></i>
+                        <span>帧数/分辨率/温度/频率/电压/功耗</span>
+                        <div class="oc-tooltip">实时监控游戏性能数据</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第二列到第三列的汇聚箭头 -->
+        <div class="oc-converge-arrows">
+            <div class="oc-converge-arrow-box" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-arrow-right oc-arrow-converge" style="display: none;"></i>
+            </div>
+            <div class="oc-converge-arrow-box" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-arrow-right oc-arrow-converge"></i>
+            </div>
+            <div class="oc-converge-arrow-box" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-arrow-right oc-arrow-converge" style="display: none;"></i>
+            </div>
+        </div>
+
+        <!-- 第三列：游戏体验 -->
+        <div class="oc-column oc-column-3">
+            <div class="oc-folder-card oc-level-3">
+                <div class="oc-folder-header">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <span class="oc-folder-name">游戏体验</span>
+                <div class="oc-folder-content">
+                    <div class="oc-item-row" style="justify-content: center; pointer-events: none;">
+                        <span>流畅 + 高清 + 可控</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                <div class="update-time">2026-04-10 13:56:41</div>
+            </main>
+        </div>
+    </div>
+    <script src="js/common.js"></script>
+<!-- 统一Footer组件 -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
