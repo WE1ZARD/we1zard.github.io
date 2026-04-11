@@ -699,17 +699,18 @@ An error has occurred.<br>
 <li><a href="#_5">问题 3</a></li>
 <li><a href="#_6">问题 4</a></li>
 <li><a href="#_7">问题 5</a></li>
-<li><a href="#_8">问题 6</a></ul>
+<li><a href="#_8">问题 6</a></li>
+<li><a href="#_9">问题 7</a></ul>
 </li>
-<li><a href="#_9">异常相关</a><ul>
-<li><a href="#_10">问题 7</a></li>
+<li><a href="#_10">异常相关</a><ul>
 <li><a href="#_11">问题 8</a></li>
-<li><a href="#_12">问题 9</a></ul>
+<li><a href="#_12">问题 9</a></li>
+<li><a href="#_13">问题 10</a></ul>
 </li>
-<li><a href="#_13">蓝屏相关</a><ul>
-<li><a href="#_14">问题 10</a></li>
+<li><a href="#_14">蓝屏相关</a><ul>
 <li><a href="#_15">问题 11</a></li>
 <li><a href="#_16">问题 12</a></li>
+<li><a href="#_17">问题 13</a></li>
 </ul>
 </li>
 </ul>
@@ -856,8 +857,31 @@ Press any key...
 <ul>
 <li>严格按照教程步骤换包(<a href="aio.html">查看详情</a>)</li>
 </ul>
-<h2 id="_9">异常相关</h2>
-<h3 问题 7 id="_10">问题 7</h3>
+<h3 问题 7 id="_9">问题 7</h3>
+<div class="error">
+<p style="color: white; font-weight: bold;">
+Firmware: xx.x.x (Atmosphere xxxx)<br><br>
+Dumping PRODINFO partition...<br><br>
+Device ID: xxxxxxxx<br>
+</p>
+<p style="color: red; font-weight: bold;">
+Failed to open emuMMC image.<br>
+</p>
+<p style="color: white; font-weight: bold;">
+PRODINFO not found!<br>
+</p>
+</div>
+
+<p><strong>原因分析 1</strong></p>
+<ul>
+<li>不支持从文件式虚拟提取PRODINFO备份</li>
+</ul>
+<p><strong>解决方法</strong></p>
+<ul>
+<li>从 SysNAND 提取.</li>
+</ul>
+<h2 id="_10">异常相关</h2>
+<h3 问题 8 id="_11">问题 8</h3>
 <p><strong>待机异常掉电</strong></p>
 <ul>
 <li>呼出菜单: <strong><code>L</code></strong> + <strong><code>✚</code></strong></li>
@@ -866,7 +890,7 @@ Press any key...
 <li><code>设置助手 &gt; 通用 &gt; 待机后台服务</code> 设置成 <code>Off</code>, 然后重启switch</li>
 <li>注意: 此设置仅限无官方联网需求的玩家, 会导致任天堂相关联网服务停止工作</li>
 </ul>
-<h3 问题 8 id="_11">问题 8</h3>
+<h3 问题 9 id="_12">问题 9</h3>
 <p><strong>WiFi信号异常</strong></p>
 <ul>
 <li>无法正常连接 2G/5G</li>
@@ -881,7 +905,7 @@ Press any key...
 <li>开后盖重新插天线</li>
 <li>重新连接无线模块, 或者更换</li>
 </ol>
-<h3 问题 9 id="_12">问题 9</h3>
+<h3 问题 10 id="_13">问题 10</h3>
 <p><strong>所有游戏打不开</strong></p>
 <ul>
 <li>仅限真实系统</li>
@@ -894,8 +918,8 @@ Press any key...
 <p>中: 打开 <code>设置助手 &gt; 自制应用 &gt; 系统补丁 &gt; 真实系统补丁</code> On 开启
 英: 打开 <code>Settings &gt; HB Apps &gt; Sys-Patch &gt; Patch SysMMC</code> On 开启
 - 重启生效</p>
-<h2 id="_13">蓝屏相关</h2>
-<h3 问题 10 id="_14">问题 10</h3>
+<h2 id="_14">蓝屏相关</h2>
+<h3 问题 11 id="_15">问题 11</h3>
 <div class="error">
 <p style="color: white; font-weight: bold;">
 Error Code: 2144-0001 (0x290)<br>
@@ -915,7 +939,7 @@ An error has occurred.<br>
 <li>手动删除所有主题相关文件</li>
 <li>使用自动换包的方式自动清理</li>
 </ol>
-<h3 问题 11 id="_15">问题 11</h3>
+<h3 问题 12 id="_16">问题 12</h3>
 <div class="error">
 <p style="color: white; font-weight: bold;">
 Error Code: 2168-0002 (0x4a8)<br>
@@ -936,7 +960,7 @@ An error has occurred.<br>
 <li>看看是否能够复现, 找出对应的插件, 将他删除</li>
 <li>关闭不必要的后台程序, 避免系统内存占用过多</li>
 </ol>
-<h3 问题 12 id="_16">问题 12</h3>
+<h3 问题 13 id="_17">问题 13</h3>
 <div class="error">
 <p style="color: white; font-weight: bold;">
 Error Code: 2168-0002(0x4a8)<br>
@@ -965,7 +989,7 @@ An error has occurred.<br>
 <ul>
 <li>更新成最新版相册菜单工具, 比如 sphaira 或者 hbmenu.</li>
 </ul>
-                <div class="update-time">2026-04-08 15:48:08</div>
+                <div class="update-time">2026-04-11 14:02:42</div>
             </main>
         </div>
     </div>
