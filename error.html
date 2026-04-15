@@ -1,96 +1,259 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>报错查询</title>
-    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
-    
-    <!-- 使用与其他页面相同的依赖 -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* 错误代码查询页面专用样式 */
-        .main-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            padding-bottom: 120px !important; /* 覆盖全局样式中的padding-bottom */
-            min-height: 100vh;
-        }
-        .search-container {
-            width: 100%;
-            max-width: 600px;
-            text-align: center;
-            padding: 20px;
-            background: rgba(5, 20, 39, 0.95) !important;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2), 0 0 10px rgba(59, 130, 246, 0.15);
-            margin: 0 !important;
-            flex-shrink: 0;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            backdrop-filter: blur(20px);
-            z-index: 100;
-            border-radius: 16px;
-            border: 1px solid rgba(59, 130, 246, 0.25);
-            transition: all 0.3s ease;
-        }
-        .search-container.has-content {
-            top: 80px;
-            transform: translate(-50%, 0);
-            padding: 15px 20px;
-        }
-        #search-input {
-            width: 100%;
-            max-width: 500px;
-            padding: 14px 20px;
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            border-radius: 14px;
-            background-color: var(--color-bg-secondary);
-            color: #e5e7eb;
-            font-size: 16px;
-            font-weight: 400;
-            transition: all 0.2s ease;
-            outline: none;
-            backdrop-filter: blur(10px);
-        }
-        #search-input:focus {
-            border-color: var(--color-highlight);
-            background-color: var(--color-bg-tertiary);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-            transform: translateY(-1px);
-        }
-        #search-input::placeholder {
-            color: rgba(229, 231, 235, 0.5);
-            font-style: normal;
-            font-weight: 300;
-        }
-        .results-container {
-            width: 100%;
-            max-width: 800px;
-            flex-shrink: 0;
-            padding: 0 20px;
-        }
-        .centered-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            width: 100%;
-            padding-top: 380px; /* 增加顶部内边距，避免搜索结果被遮挡 */
-            padding-bottom: 100px;
-            box-sizing: border-box;
-        }
-    </style>
-    <script src="../js/common.js"></script>
-    <script src="../js/error.js"></script>
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>错误代码查询 - WE1ZARD</title>
+<link rel="icon" href="../img/favicon.ico?v=1" type="image/x-icon">
+<link rel="stylesheet" href="../css/styles.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<style>
+body {
+  background-color: var(--color-bg-primary);
+  min-height: 100vh;
+}
 
+.nav-search-container {
+  flex: 1;
+  max-width: 380px;
+  margin: 0 16px;
+  position: relative;
+}
+
+.nav-search-input {
+  width: 100%;
+  height: 36px;
+  padding: 0 36px 0 16px;
+  background-color: rgba(10, 30, 55, 0.95);
+  border: none;
+  border-radius: 18px;
+  color: var(--color-text-primary);
+  font-size: 14px;
+  text-align: left;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.nav-search-input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.nav-search-input:focus {
+  outline: none;
+  background-color: rgba(15, 40, 70, 0.98);
+}
+
+.nav-search-action {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+  font-size: 13px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.nav-search-action:hover {
+  color: var(--color-highlight);
+  background-color: rgba(147, 197, 253, 0.1);
+}
+
+.nav-search-action i {
+  transition: transform 0.2s ease;
+}
+
+.main-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 0 24px;
+}
+
+/* 初始提示区域 */
+.initial-hint {
+  text-align: center;
+  padding: 120px 24px;
+}
+
+.initial-hint-icon {
+  font-size: 64px;
+  color: var(--color-highlight);
+  margin-bottom: 24px;
+  opacity: 0.8;
+}
+
+.initial-hint-title {
+  font-size: 28px;
+  color: var(--color-highlight);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.initial-hint-desc {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.error-results {
+  margin-top: 16px;
+}
+
+.results-stats {
+  text-align: center;
+  color: var(--color-text-tertiary);
+  font-size: 13px;
+  margin-bottom: 16px;
+  padding: 8px 0;
+}
+
+.results-stats span {
+  color: var(--color-highlight);
+  font-weight: 600;
+}
+
+.error-result-card {
+  background-color: rgba(12, 33, 64, 0.6);
+  border: 1px solid rgba(100, 130, 170, 0.2);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.error-result-card:hover {
+  border-color: rgba(147, 197, 253, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.error-code {
+  color: var(--color-highlight);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-family-mono);
+}
+
+.error-section-tag {
+  color: var(--color-text-tertiary);
+  font-size: 12px;
+  background-color: rgba(100, 130, 170, 0.15);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.error-subsection {
+  color: var(--color-text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.error-description {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.error-description:empty::before {
+  content: "暂无描述";
+  color: var(--color-text-tertiary);
+  font-style: italic;
+}
+
+.no-results {
+  text-align: center;
+  padding: 64px 24px;
+  color: var(--color-text-tertiary);
+}
+
+.no-results-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.error-state {
+  text-align: center;
+  padding: 64px 24px;
+  color: var(--color-text-tertiary);
+}
+
+.error-state-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: var(--color-danger);
+  opacity: 0.7;
+}
+
+.footer-space {
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  .nav-search-container {
+    max-width: 160px;
+    margin: 0 8px;
+  }
+
+  .nav-search-input {
+    height: 32px;
+    font-size: 13px;
+    padding-right: 32px;
+  }
+
+  .nav-search-action {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .initial-hint {
+    padding: 80px 20px;
+  }
+
+  .initial-hint-icon {
+    font-size: 48px;
+  }
+
+  .initial-hint-title {
+    font-size: 22px;
+  }
+
+  .error-result-card {
+    padding: 12px 16px;
+  }
+
+  .error-code {
+    font-size: 14px;
+  }
+}
+</style>
+</head>
 <body>
 <!-- 统一导航栏组件 -->
 <nav class="navbar">
@@ -110,40 +273,268 @@
     </div>
 </nav>
 
-    <div class="main-container">
-        <!-- 垂直居中容器 -->
-        <div class="centered-container">
-            <!-- 搜索区域 -->
-            <div class="search-container">
-                <h1 class="text-3xl font-bold text-blue-500 mb-8 text-center">报错查询</h1>
-                
-                <!-- 使用Tailwind类实现搜索区域 -->
-                <div class="mb-6">
-                    <input type="text" id="search-input" 
-                           placeholder="输入 <错误码> 或 <关键词>" 
-                           class="w-full max-w-2xl px-6 py-4 rounded-full border-2 border-blue-500 bg-[#051427] text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg mx-auto block transition-none relative z-10">
-                </div>
-                
-                <!-- 结果统计 -->
-                <div class="text-center text-gray-500 mb-4">
-                    <span>共 <span id="total-count" class="text-blue-400">0</span> 条记录</span>
-                    <span>，当前显示 <span id="current-count" class="text-blue-400">0</span> 条结果</span>
-                </div>
-            </div>
-            
-            <!-- 结果区域 -->
-            <div class="results-container">
-                <!-- 无结果提示 -->
-                <div id="no-results" class="text-center text-gray-500 p-8 text-lg" style="display: none;">
-                    <i class="fas fa-search text-4xl mb-4 text-blue-500"></i>
-                    <p>未找到相关错误代码</p>
-                </div>
-                
-                <!-- 错误代码列表 -->
-                <div class="error-code-list" id="error-code-list"></div>
-            </div>
-        </div>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../../index.html" class="nav-logo">WE1ZARD</a>
+
+    <div class="nav-search-container">
+      <input type="text" class="nav-search-input" id="errorSearchInput" placeholder="搜索错误代码..." autocomplete="off">
+      <button class="nav-search-action" id="searchActionBtn" title="搜索">
+        <i class="fas fa-search"></i>
+      </button>
     </div>
+
+    <div class="nav-menu">
+      <a href="../../blog.html" target="_blank" class="nav-link">教程</a>
+      <a href="../../tool.html" target="_blank" class="nav-link">工具</a>
+      <a href="../../update.html" target="_blank" class="nav-link">更新</a>
+      <a href="../../feedback.html" target="_blank" class="nav-link">反馈</a>
+      <div class="nav-avatar">
+        <a href="../../about.html" target="_blank">
+          <img src="../../img/avatar.png" class="avatar-icon" alt="Avatar">
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="header-space"></div>
+
+<div class="main-container">
+  <div class="content-container">
+    <div class="initial-hint" id="initialHint">
+      <div class="initial-hint-icon">
+        <i class="fas fa-bug"></i>
+      </div>
+      <div class="initial-hint-title">错误代码查询</div>
+      <div class="initial-hint-desc">在上方导航栏输入错误代码，快速查找 Switch 相关错误信息</div>
+    </div>
+    <div class="error-results" id="errorResults" style="display: none;"></div>
+  </div>
+</div>
+
+<div class="footer-space"></div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+      <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+      <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const STORAGE_KEY = 'we1zard_error_codes_cache';
+const CACHE_TIMESTAMP_KEY = 'we1zard_error_codes_timestamp';
+const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000;
+
+let errorDatabase = [];
+let isDataLoaded = false;
+
+const searchInput = document.getElementById('errorSearchInput');
+const searchActionBtn = document.getElementById('searchActionBtn');
+const initialHint = document.getElementById('initialHint');
+const resultsContainer = document.getElementById('errorResults');
+
+function loadFromCache() {
+  try {
+    const timestamp = localStorage.getItem(CACHE_TIMESTAMP_KEY);
+    if (!timestamp) return false;
+    
+    const age = Date.now() - parseInt(timestamp, 10);
+    if (age > CACHE_DURATION) {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(CACHE_TIMESTAMP_KEY);
+      return false;
+    }
+    
+    const cached = localStorage.getItem(STORAGE_KEY);
+    if (cached) {
+      errorDatabase = JSON.parse(cached);
+      isDataLoaded = true;
+      return true;
+    }
+  } catch (e) {
+    console.error('Cache read error:', e);
+  }
+  return false;
+}
+
+function saveToCache(data) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    localStorage.setItem(CACHE_TIMESTAMP_KEY, Date.now().toString());
+  } catch (e) {
+    console.error('Cache write error:', e);
+  }
+}
+
+async function loadErrorData() {
+  const hasCache = loadFromCache();
+  
+  if (hasCache) {
+    refreshDataInBackground();
+    return;
+  }
+  
+  try {
+    const response = await fetch('../data/error_codes.json');
+    if (!response.ok) throw new Error('Failed to load');
+    errorDatabase = await response.json();
+    isDataLoaded = true;
+    saveToCache(errorDatabase);
+  } catch (error) {
+    console.error('Data load error:', error);
+  }
+}
+
+async function refreshDataInBackground() {
+  try {
+    const response = await fetch('../data/error_codes.json');
+    if (!response.ok) return;
+    const newData = await response.json();
+    
+    if (JSON.stringify(newData) !== JSON.stringify(errorDatabase)) {
+      errorDatabase = newData;
+      saveToCache(errorDatabase);
+      console.log('Data refreshed');
+    }
+  } catch (e) {
+    // 后台刷新失败不影响使用
+  }
+}
+
+function updateSearchIcon(hasContent) {
+  const icon = searchActionBtn.querySelector('i');
+  if (hasContent) {
+    icon.className = 'fas fa-times';
+    searchActionBtn.title = '清除';
+  } else {
+    icon.className = 'fas fa-search';
+    searchActionBtn.title = '搜索';
+  }
+}
+
+function showInitialState() {
+  initialHint.style.display = 'block';
+  resultsContainer.style.display = 'none';
+  resultsContainer.innerHTML = '';
+}
+
+function showResults() {
+  initialHint.style.display = 'none';
+  resultsContainer.style.display = 'block';
+}
+
+function searchError(query) {
+  if (!query.trim()) {
+    showInitialState();
+    return;
+  }
+
+  if (!isDataLoaded) {
+    resultsContainer.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-icon"><i class="fas fa-spinner fa-spin"></i></div>
+        <p>数据加载中...</p>
+      </div>
+    `;
+    showResults();
+    return;
+  }
+
+  const lowerQuery = query.toLowerCase();
+  const results = errorDatabase.filter(error => {
+    const codeMatch = error.code && error.code.toLowerCase().includes(lowerQuery);
+    const descMatch = error.description && error.description.toLowerCase().includes(lowerQuery);
+    const sectionMatch = error.section && error.section.toLowerCase().includes(lowerQuery);
+    const subsectionMatch = error.subsection && error.subsection.toLowerCase().includes(lowerQuery);
+    return codeMatch || descMatch || sectionMatch || subsectionMatch;
+  });
+
+  if (results.length === 0) {
+    showNoResults();
+  } else {
+    displayResults(results);
+  }
+}
+
+function displayResults(results) {
+  let html = `<div class="results-stats">找到 <span>${results.length}</span> 个结果</div>`;
+
+  results.forEach(error => {
+    const description = error.description || '';
+    const section = error.section || '未知';
+    const subsection = error.subsection || '';
+
+    html += `
+      <div class="error-result-card">
+        <div class="error-code-header">
+          <span class="error-code">${escapeHtml(error.code)}</span>
+          <span class="error-section-tag">${escapeHtml(section)}</span>
+        </div>
+        ${subsection ? `<div class="error-subsection">${escapeHtml(subsection)}</div>` : ''}
+        ${description ? `<div class="error-description">${escapeHtml(description)}</div>` : ''}
+      </div>
+    `;
+  });
+
+  resultsContainer.innerHTML = html;
+  showResults();
+}
+
+function showNoResults() {
+  resultsContainer.innerHTML = `
+    <div class="no-results">
+      <div class="no-results-icon"><i class="fas fa-search"></i></div>
+      <p>未找到相关错误代码</p>
+    </div>
+  `;
+  showResults();
+}
+
+function showErrorState() {
+  resultsContainer.innerHTML = `
+    <div class="error-state">
+      <div class="error-state-icon"><i class="fas fa-exclamation-triangle"></i></div>
+      <p>数据加载失败，请刷新页面重试</p>
+    </div>
+  `;
+  showResults();
+}
+
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+searchInput.addEventListener('input', (e) => {
+  const query = e.target.value;
+  updateSearchIcon(query.length > 0);
+  searchError(query);
+});
+
+searchActionBtn.addEventListener('click', () => {
+  const hasContent = searchInput.value.length > 0;
+  if (hasContent) {
+    searchInput.value = '';
+    updateSearchIcon(false);
+    searchInput.focus();
+    showInitialState();
+  }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  searchInput.focus();
+  loadErrorData();
+});
+</script>
 <!-- 统一Footer组件 -->
 <footer class="footer">
     <div class="footer-content">
