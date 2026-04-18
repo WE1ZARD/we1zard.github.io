@@ -46,14 +46,15 @@
 <li><a href="#_1">免责声明</a></li>
 <li><a href="#_2">注意事项</a></li>
 <li><a href="#_3">查看硬件</a></li>
-<li><a href="#_4">调试顺序</a><ul>
+<li><a href="#_4">预设配置</a></li>
+<li><a href="#_5">调试顺序</a><ul>
 <li><a href="#mem">MEM 内存参数</a></li>
 <li><a href="#timings">TIMINGS 时序参数</a></li>
 <li><a href="#gpu">GPU 参数</a></li>
 <li><a href="#cpu">CPU 参数</a></li>
-<li><a href="#_5">测试方法</a></ul>
+<li><a href="#_6">测试方法</a></ul>
 </li>
-<li><a href="#_6">特别感谢</a></li>
+<li><a href="#_7">特别感谢</a></li>
 </ul>
 
     </div>
@@ -83,7 +84,12 @@
 <li><strong>DRAM ID</strong>: 内存型号</li>
 <li><strong>CPU/GPU/SOC Speedo</strong>: 体质值</li>
 </ul>
-<h2 id="_4">调试顺序</h2>
+<h2 id="_4">预设配置</h2>
+<ul>
+<li>预设 G2400, G2666 两个通用配置</li>
+<li>可通过 <code>Preferences 参数 &gt; Manage Presets 管理参数 &gt; ...</code> 导入配置, 重启后生效</li>
+</ul>
+<h2 id="_5">调试顺序</h2>
 <ol>
 <li>MEM 内存参数</li>
 <li>TIMINGS 时序参数</li>
@@ -110,8 +116,8 @@
 <th>内存频率</th>
 <th>VDD2</th>
 <th>VDDQ</th>
-<th>通用时序</th>
-<th>极限时序</th>
+<th>CT 通用时序</th>
+<th>ST 极限时序</th>
 </tr>
 </thead>
 <tbody>
@@ -190,8 +196,8 @@
 <th>内存频率</th>
 <th>VDD2</th>
 <th>VDDQ</th>
-<th>通用时序</th>
-<th>极限时序</th>
+<th>CT 通用时序</th>
+<th>ST 极限时序</th>
 </tr>
 </thead>
 <tbody>
@@ -289,38 +295,118 @@
 </li>
 <li>参数初步稳定后, 建议参考 <a href="#测试方法">测试方法</a> , 进行相关的测试以确认参数稳定性.</li>
 </ul>
-<h3 id="gpu">GPU 参数</h3>
-<p><strong>Speedo 体质值</strong>: 填写 Sys-clk Speedo 显示的第二项向下取整值<br>
-<strong>UV Level 降压等级</strong>: 0-2</p>
+<p><strong>HP Mode 高性能模式</strong></p>
 <ul>
+<li>默认: 关闭</li>
+<li>开启一定程度上可以提高游戏表现, 极限状态可能需要额外的电压</li>
+</ul>
+<p><strong>Presets 预设时序</strong></p>
+<ul>
+<li>包含 <code>CT 通用时序</code>, <code>ST 极限时序</code></li>
+<li>不推荐直接使用 <code>ST 极限时序</code>, 仅作为参考范围</li>
+<li>使用前一定要确认好自己的内存颗粒, 不支持跨型号使用</li>
+</ul>
+<h3 id="gpu">GPU 参数</h3>
+<p><strong>UV Level 降压等级</strong>:</p>
+<ul>
+<li>范围:  0-2</li>
 <li>等级越高, 降压越多, 可安全使用频率越多</li>
 <li>Speedo &lt; 1650 UV 1</li>
 <li>Speedo &gt; 1650 UV 2</li>
 <li>自定义电压设定值会覆盖 UV 的默认电压值, 可以允许更多的操作空间, 尤其 Speedo &gt; 1700 的机器</li>
 </ul>
-<ol>
-<li>待完善...</li>
-<li>待完善...</li>
-<li>待完善...</li>
-</ol>
+<p><strong>Volt Offset 电压偏移值</strong></p>
+<ul>
+<li>影响 <code>Auto 自动</code> 的自定义整体电压</li>
+</ul>
+<p><strong>Vmin 最小电压</strong></p>
+<ul>
+<li>最低 450mV</li>
+<li>影响 <code>DVFS 模式</code> 的电压</li>
+<li><code>Hijack 操控模式</code> <ul>
+<li>开启: 影响 <code>最小</code> 内存频率的GPU电压</li>
+<li>禁用: 影响 <code>最大</code> 内存频率的GPU电压</li>
+</ul>
+</li>
+</ul>
+<p><strong>Vmax 最大电压</strong></p>
+<ul>
+<li>影响可用频率范围</li>
+<li>超过最大电压的频率会被隐藏</li>
+<li>安全范围 &lt;= 800mV</li>
+</ul>
+<p><strong>GPU Boost 提高GPU占用率上限</strong></p>
+<ul>
+<li>最多可以 99.6% -&gt; 99.9%</li>
+</ul>
+<p><strong>Custom Table 自定义电压</strong></p>
+<ul>
+<li><code>Disabled 禁用</code> 被禁用频率以上的都会隐藏</li>
+</ul>
 <h3 id="cpu">CPU 参数</h3>
+<p><strong>Boost CPU 睿频频率</strong></p>
+<ul>
+<li>不等同于 Sysclk 中设定的目标频率</li>
+<li>仅控制系统调用加载模式的工作频率</li>
+<li>频率越高, 性能越强, 功耗也越高</li>
+<li>默认: 1963 MHz (建议: 2397 Mhz)</li>
+</ul>
+<p><strong>UV Level 降压等级</strong></p>
+<ul>
+<li>控制所有频率的电压偏移值</li>
+<li>选项越高, 降压幅度越大(建议: 先后尝试 4, 8 两档)</li>
+</ul>
+<p><strong>High UV Level 高频降压</strong></p>
+<ul>
+<li>控制 <strong>Table Mode 控压模式</strong> 起始频率以上的电压偏移值</li>
+<li>选项越高, 降压幅度越大, 覆盖 <strong>UV Level 降压等级</strong> 的高频电压偏移值</li>
+<li>至少需要 1 档才能解锁的最高的睿频上限(建议先后尝试 4, 8 两档)</li>
+</ul>
+<p><strong>Low Vmin 低频最小电压</strong></p>
+<ul>
+<li>最小电压: 550mV</li>
+<li>受体质影响, 过低的电压会导致无法正常进入系统</li>
+</ul>
+<p><strong>High Vmin 高频最小电压</strong></p>
+<ul>
+<li>影响 <strong>Table Mode 控压模式</strong> 的起始电压计算</li>
+<li>过低的电压会导致死机, 软件报错</li>
+</ul>
+<p><strong>Vmax 最大电压</strong></p>
+<ul>
+<li>默认: 1120 mV</li>
+<li>影响所有频率的电压计算</li>
+<li>过低过高的电压会导致硬件损坏, 不建议任何人使用默认值以外的设置</li>
+</ul>
+<p><strong>Table Mode 控压模式</strong></p>
+<ul>
+<li>默认: 1683 MHz</li>
+<li>控制额外加压的起始频率</li>
+<li>如果遇到 UV 不能正常使用的情况, 可以尝试 1581 MHz 档位</li>
+<li>受 <strong>High Vmin 高频最小电压</strong> 影响</li>
+</ul>
+<p><strong>CPU Unlock  解锁频率</strong></p>
+<ul>
+<li>解锁额外的可用频率 (仅限初代)</li>
+</ul>
+<p><strong>Max Clock  最大可用频率</strong></p>
+<ul>
+<li>解锁额外的可用频率</li>
+<li>可选范围: 1963~3009MHz</li>
+<li>默认: 1963MHz</li>
+</ul>
+<h3 id="_6">测试方法</h3>
+<p>使用底座模式进行游戏压力测试, 加快测试效率, 不要使用内存跑分测试工具 (如: Memtoolkit)</p>
 <ol>
 <li>待完善...</li>
 <li>待完善...</li>
 <li>待完善...</li>
 </ol>
-<h3 id="_5">测试方法</h3>
-<p>使用真实底座进行游戏压力测试, 加快测试效率, 而非内存跑分测试工具</p>
-<ol>
-<li>待完善...</li>
-<li>待完善...</li>
-<li>待完善...</li>
-</ol>
-<h2 id="_6">特别感谢</h2>
+<h2 id="_7">特别感谢</h2>
 <div class="alert alert-blue"><p>非常感谢 <strong>Horizon-OC</strong> 开发团队为 NS 超频圈带来第二春<br>
     为超频开发测试提供数据的所有人.<br><br>
     开源地址: https://github.com/Horizon-OC/Horizon-OC.git</p></div>
-                <div class="update-time">2026-04-11 14:50:10</div>
+                <div class="update-time">2026-04-16 17:46:33</div>
             </main>
         </div>
     </div>
