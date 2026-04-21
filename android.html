@@ -113,6 +113,9 @@
 <li>打算刷入 eMMC, 请确保 <code>bootloader/ini/andorid.ini</code> 中有 <code>emmc=1</code>, 且前面 <strong>没有</strong> <code>;</code></li>
 <li>打算刷入 内存卡分区, 请确保 <code>bootloader/ini/andorid.ini</code> 中有 <code>emmc=1</code>, 且前面 <strong>有</strong> <code>;</code></li>
 </ul>
+<blockquote>
+<p>如果想要安卓重启进入 hekate 主菜单, 可以修改 <code>bootloader/ini/andorid.ini</code> 中的 <code>r2p_action=self</code> 为 <code>r2p_action=bootloader</code></p>
+</blockquote>
 <h2 id="_5">刷入引导</h2>
 <h3 id="_6">刷入内存卡分区</h3>
 <ul>
@@ -341,7 +344,7 @@ You should be able to extract the file you need from official firmware packages 
 <blockquote>
 <p>Warning: the <code>sepolicy.rule</code> file of modules may be stored in the <code>cache</code> partition. DO NOT WIPE THE <code>CACHE</code> PARTITION.</p>
 </blockquote>
-                <div class="update-time">2026-04-21 14:45:27</div>
+                <div class="update-time">2026-04-21 22:05:43</div>
             </main>
         </div>
     </div>

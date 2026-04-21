@@ -43,6 +43,7 @@
 
     <div class="toc">
         <ul>
+<li><a href="#aio-11110">11.1.10</a></li>
 <li><a href="#aio-1119">11.1.9</a></li>
 <li><a href="#aio-1118">11.1.8</a></li>
 <li><a href="#aio-1117">11.1.7</a></li>
@@ -62,7 +63,6 @@
 <li><a href="#aio-10220">10.2.20</a></li>
 <li><a href="#aio-10219">10.2.19</a></li>
 <li><a href="#aio-10218">10.2.18</a></li>
-<li><a href="#aio-10217">10.2.17</a></li>
 </ul>
 
     </div>
@@ -70,7 +70,33 @@
         <div class="header-space"></div>
         <div class="main-layout">
             <main class="content">
-                <h1 id="aio-1119">AIO 11.1.9</h1>
+                <h1 id="aio-11110">AIO 11.1.10</h1>
+<ul>
+<li>添加自动换包的自定义引导支持</li>
+</ul>
+<h2 id="aurora-111r200">Aurora 11.1.r200</h2>
+<ul>
+<li>!!!不支持导入旧参数!!! 变动比较大, 可能有bug, 追求稳定可以暂时不要升级</li>
+<li>新增: 显示扩展GPU频率 (默认: 隐藏)</li>
+<li>新增: 多频率支持 (仅限非初代)</li>
+<li>限制: CPU 最大电压 1200mV (仅限非初代)</li>
+<li>限制: GPU 最小电压 480mV (仅限非初代)</li>
+<li>Multiple ram frequencies were added to mariko!<ul>
+<li>This can be configured via step mode, latency max and other options</li>
+</ul>
+</li>
+<li>T2 cap was added for 1333WL</li>
+<li>Timing tbreak and low t7/t6 was added (useful for 1600 latency or 2533MHz for instance)</li>
+<li>An auto latency mode or the ability to deactivate certain latencies entirely is included</li>
+<li>For more details, give the updated guide a read: https://rentry.co/mariko</li>
+<li>Iram logging is now available on erista (not on mariko due to iram getting cleared) - this is mostly useful for debugging and probably not something the average user cares about</li>
+</ul>
+<h2 id="updater-580">Updater 5.8.0</h2>
+<ul>
+<li>新增: <code>AIO 整合包 &gt; Custom Bootloader 自定义引导</code></li>
+<li>在线升级可以保留自定义引导和快捷命令</li>
+</ul>
+<h1 id="aio-1119">AIO 11.1.9</h1>
 <ul>
 <li>更新安装说明</li>
 <li>修复真实系统联网服务报错</li>
@@ -3911,7 +3937,7 @@ Update SaltyNX to 1.7.4 or newer!</li>
 <li>修复自定义tRAS和tRFC偏移量的错误</li>
 <li>Y帮助文件已更新对应版本</li>
 </ul>
-                <div class="update-time">2026-04-18 20:49:19</div>
+                <div class="update-time">2026-04-21 21:52:44</div>
             </main>
         </div>
     </div>
