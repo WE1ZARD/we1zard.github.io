@@ -66,6 +66,20 @@
 <li><a href="#_14">解锁网络限制</a></ul>
 </li>
 <li><a href="#_15">操作说明</a></li>
+<li><a href="#_16">刷面具</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#patching-images">Patching Images</a></li>
+<li><a href="#uninstallation">Uninstallation</a></li>
+<li><a href="#magisk-in-recovery">Magisk in Recovery</a></li>
+<li><a href="#samsung-devices">Samsung Devices</a><ul>
+<li><a href="#flashing-tools">Flashing Tools</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#unlocking-the-bootloader">Unlocking the bootloader</a></li>
+<li><a href="#instructions">Instructions</a></li>
+<li><a href="#upgrading-the-os">Upgrading the OS</a></li>
+<li><a href="#important-notes">Important Notes</a></ul>
+</li>
+<li><a href="#custom-recovery">Custom Recovery</a></li>
 </ul>
 
     </div>
@@ -188,7 +202,146 @@
 <ul>
 <li><strong>按截图键</strong>: 切换摇杆模式 / 鼠标模式</li>
 </ul>
-                <div class="update-time">2026-03-17 23:47:03</div>
+<h2 id="_16">刷面具</h2>
+<p><a href="https://topjohnwu.github.io/Magisk/install.html">官方安装说明原地址</a></p>
+<h1 id="installation">Installation</h1>
+<p>If you already have Magisk installed, it is <strong>strongly recommended</strong> to upgrade directly via the Magisk app using its "Direct Install" method. The following tutorial is only for the initial installation.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Before you start:</p>
+<ul>
+<li>This tutorial assumes you understand how to use <code>adb</code> and <code>fastboot</code></li>
+<li>If you plan to also install custom kernels, install it after Magisk</li>
+<li>Your device's bootloader has to be unlocked</li>
+</ul>
+<hr />
+<p>Download and install the latest <a href="https://github.com/topjohnwu/Magisk/releases/latest">Magisk app</a>. In the home screen, you should see:</p>
+<p align="center"><img src="images/device_info.png" width="500"/></p>
+
+<p>The result of <strong>Ramdisk</strong> determines whether your device has ramdisk in the boot partition. If your device does not have boot ramdisk, read the <a href="#magisk-in-recovery">Magisk in Recovery</a> section before continuing.</p>
+<blockquote>
+<p><em>(Unfortunately, there are exceptions as some devices' bootloader accepts ramdisk even if it shouldn't. In this case, you will have to follow the instructions as if your device's boot partition <strong>does</strong> include ramdisk. There is no way to detect this, so the only way to know for sure is to actually try. Fortunately, as far as we know, only some Xiaomi devices are known to have this property, so most people can simply ignore this piece of information.)</em></p>
+</blockquote>
+<p>If you are using a Samsung device, you can now jump to <a href="#samsung-devices">its own section</a>.</p>
+<p>If your device has boot ramdisk, get a copy of the <code>boot.img</code> (or <code>init_boot.img</code> if exists).<br>
+If your device does <strong>NOT</strong> have boot ramdisk, get a copy of the <code>recovery.img</code>.<br>
+You should be able to extract the file you need from official firmware packages or your custom ROM zip.</p>
+<p>Quick recap, at this point, you should have known and prepared:</p>
+<ol>
+<li>Whether your device has boot ramdisk</li>
+<li>A <code>boot.img</code>, <code>init_boot.img</code> or <code>recovery.img</code> based on (1)</li>
+</ol>
+<p>Let's continue to <a href="#patching-images">Patching Images</a>.</p>
+<h2 id="patching-images">Patching Images</h2>
+<ul>
+<li>Copy the boot/init_boot/recovery image to your device</li>
+<li>Press the <strong>Install</strong> button in the Magisk card</li>
+<li>If you are patching a recovery image, check the <strong>"Recovery Mode"</strong> option</li>
+<li>Choose <strong>"Select and Patch a File"</strong> in method, and select the boot/init_boot/recovery image</li>
+<li>Start the installation, and copy the patched image to your PC using ADB:<br>
+  <code>adb pull /sdcard/Download/magisk_patched_[random_strings].img</code></li>
+<li>Flash the patched boot/init_boot/recovery image to your device;<br>
+  for most devices, reboot into fastboot mode and flash with command:<br>
+  <code>fastboot flash boot /path/to/magisk_patched_[random_strings].img</code> or <br>
+  <code>fastboot flash init_boot /path/to/magisk_patched_[random_strings].img</code> or <br>
+  <code>fastboot flash recovery /path/to/magisk_patched_[random_strings].img</code> <br></li>
+<li>(Optional) If your device has a separate <code>vbmeta</code> partition, you can patch the <code>vbmeta</code> partition with command:<br>
+  <code>fastboot flash vbmeta --disable-verity --disable-verification vbmeta.img</code> (note that it may <strong>wipe your data</strong>)</li>
+<li>Reboot and launch Magisk app (you will see a stub Magisk app if you have wiped your data; use it to bootstrap to a complete Magisk app), and you will see a prompt asking for environment fix; click and wait for the reboot</li>
+<li>Voila!</li>
+</ul>
+<blockquote>
+<p>Warning: <strong>NEVER</strong> flash patched image shared by others or patch image on another device even if they have the same device model! You may need to do a full data wipe to recover your device. <strong>ALWAYS</strong> patch boot image <strong>on the same device where you want to install Magisk</strong>.</p>
+</blockquote>
+<h2 id="uninstallation">Uninstallation</h2>
+<p>The easiest way to uninstall Magisk is directly through the Magisk app. If you insist on using custom recoveries, rename the Magisk APK to <code>uninstall.zip</code> and flash it like any other ordinary flashable zip.</p>
+<h2 id="magisk-in-recovery">Magisk in Recovery</h2>
+<p>In the case when your device does not have ramdisk in boot images, Magisk has no choice but to hijack the recovery partition. For these devices, you will have to <strong>reboot to recovery</strong> every time you want Magisk enabled.</p>
+<p>When Magisk hijacks the recovery, there is a special mechanism to allow you to <em>actually</em> boot into recovery mode. Each device model has its own key combo to boot into recovery, as an example for Galaxy S10 it is (Power + Bixby + Volume Up). A quick search online should easily get you this info. As soon as you press the key combo and the device vibrates with a splash screen, release all buttons to boot into Magisk. If you decide to boot into the actual recovery mode, <strong>long press volume up until you see the recovery screen</strong>.</p>
+<p>As a summary, after installing Magisk in recovery <strong>(starting from power off)</strong>:</p>
+<ul>
+<li><strong>(Power up normally) → (System with NO Magisk)</strong></li>
+<li><strong>(Recovery Key Combo) → (Splash screen) → (Release all buttons) → (System with Magisk)</strong></li>
+<li><strong>(Recovery Key Combo) → (Splash screen) → (Long press volume up) → (Recovery Mode)</strong></li>
+</ul>
+<p>(Note: You <strong>CANNOT</strong> use custom recoveries to install or upgrade Magisk in this case!!)</p>
+<h2 id="samsung-devices">Samsung Devices</h2>
+<p>Before proceeding, please acknowledge that:</p>
+<ul>
+<li>Installing Magisk <strong>WILL</strong> trip your Knox Warranty Bit, this action is not reversible in any way.</li>
+<li>Installing Magisk for the first time <strong>REQUIRES</strong> a full data wipe (this is <strong>NOT</strong> counting the data wipe when unlocking bootloader). Please make a backup of your data.</li>
+</ul>
+<h3 id="flashing-tools">Flashing Tools</h3>
+<ul>
+<li><a href="https://dl2018.sammobile.com/Odin.zip">Samsung Odin3</a> (Windows only) (requires <a href="https://developer.samsung.com/android-usb-driver">Samsung USB Drivers</a>)</li>
+<li><a href="https://forum.xda-developers.com/t/official-samsung-odin-v4-1-2-1-dc05e3ea-for-linux.4453423/">Samsung Odin4</a> (Linux only)</li>
+<li><a href="https://www.glassechidna.com.au/heimdall/">Heimdall</a> (or <a href="https://git.sr.ht/~grimler/Heimdall">Grimler's fork</a>)</li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<p>To verify whether or not Magisk can be installed in your Samsung device, you first must check the OEM Lock and KnoxGuard (RMM) status. To do so, go to <code>Settings</code> -&gt; <code>Device Care</code> -&gt; <code>Maintenance Mode</code> and enable it, then boot your device in Download mode with its key combo.</p>
+<p>Possible OEM Lock values are the following:
+- <strong>ON (L)</strong>: fully locked.
+- <strong>ON (U)</strong>: bootloader locked, OEM unlocking enabled.
+- <strong>OFF (U)</strong>: fully unlocked.</p>
+<p>To unlock your bootloader, follow the instructions below. If no OEM Lock value is shown in Download mode, your device is probably not unlockable due to market limitations (USA/Canada devices).</p>
+<p>Possible KnoxGuard values are the following:</p>
+<ul>
+<li><code>Active</code>, <code>Locked</code>: your device has been remotely locked by your telecom operator or your insurance company.</li>
+<li><code>Prenormal</code>: your device is temporarily locked, reaching 168h of uptime should trigger unlock.</li>
+<li><code>Checking</code>, <code>Completed</code>, <code>Broken</code>: your device is unlocked.</li>
+</ul>
+<p>Having KnoxGuard active will prevent you from installing/running Magisk regardless of your bootloader lock state.</p>
+<h3 id="unlocking-the-bootloader">Unlocking the bootloader</h3>
+<ul>
+<li>Allow bootloader unlocking in <strong>Developer options → OEM unlocking</strong></li>
+<li>Reboot to download mode: power off your device and press the download mode key combo for your device</li>
+<li>Long press volume up to unlock the bootloader. <strong>This will wipe your data and automatically reboot.</strong></li>
+<li>Go through the initial setup. Skip through all the steps since data will be wiped again in later steps. <strong>Connect the device to Internet during the setup.</strong></li>
+<li>Enable developer options, and <strong>confirm that the OEM unlocking option exists and is grayed out.</strong> This means KnoxGuard hasn't locked your device.</li>
+<li>Your bootloader now accepts unofficial images in download mode</li>
+</ul>
+<h3 id="instructions">Instructions</h3>
+<ul>
+<li>Download the latest firmware package for your device, you can use one of the tools below to download it directly from Samsung servers:</li>
+<li><a href="https://github.com/jesec/SamFirm.NET">SamFirm.NET</a>, <a href="https://github.com/jesec/samfirm.js">samfirm.js</a></li>
+<li><a href="https://forum.xda-developers.com/s10-plus/how-to/tool-frija-samsung-firmware-downloader-t3910594">Frija</a></li>
+<li><a href="https://forum.xda-developers.com/s10-plus/how-to/tool-samloader-samfirm-frija-replacement-t4105929">Samloader</a></li>
+<li><a href="https://forum.xda-developers.com/t/tool-samsung-samsung-firmware-downloader.4240719/">Bifrost</a></li>
+<li>Unzip the firmware and copy the <code>AP</code> tar file to your device. It is normally named as <code>AP_[device_model_sw_ver].tar.md5</code></li>
+<li>Press the <strong>Install</strong> button in the Magisk card</li>
+<li>If your device does <strong>NOT</strong> have boot ramdisk, check the <strong>"Recovery Mode"</strong> option</li>
+<li>Choose <strong>"Select and Patch a File"</strong> in method, and select the <code>AP</code> tar file</li>
+<li>Start the installation, and copy the patched tar file to your PC using ADB:<br>
+  <code>adb pull /sdcard/Download/magisk_patched_[random_strings].tar</code><br>
+  <strong>DO NOT USE MTP</strong> as it is known to corrupt large files.</li>
+<li>Reboot to download mode. Open Odin on your PC, and flash <code>magisk_patched.tar</code> as <code>AP</code>, together with <code>BL</code>, <code>CP</code>, and <code>CSC</code> (<strong>NOT</strong> <code>HOME_CSC</code> because we want to <strong>wipe data</strong>) from the original firmware.</li>
+<li>Your device should reboot automatically once Odin finished flashing. <strong>Agree to do a factory reset if asked.</strong></li>
+<li>If your device does <strong>NOT</strong> have boot ramdisk, reboot to recovery now to enable Magisk (reason stated in <a href="#magisk-in-recovery">Magisk in Recovery</a>).</li>
+<li>Install the Magisk app you've already downloaded and launch the app. It should show a dialog asking for additional setup.</li>
+<li>Let the app do its job and automatically reboot the device. Voila!</li>
+</ul>
+<h3 id="upgrading-the-os">Upgrading the OS</h3>
+<p>Once you have rooted your Samsung device, you can no longer upgrade your Android OS through OTA. To upgrade your device's OS, you have to manually download the new firmware zip file and go through the same <code>AP</code> patching process written in the previous section. <strong>The only difference here is in the Odin flashing step: do NOT use the <code>CSC</code> tar, but instead use the <code>HOME_CSC</code> tar as we are performing an upgrade, not the initial install</strong>.</p>
+<h3 id="important-notes">Important Notes</h3>
+<ul>
+<li><strong>Never, ever</strong> try to restore either <code>boot</code>, <code>init_boot</code>, <code>recovery</code>, or <code>vbmeta</code> partitions back to stock! You can brick your device by doing so, and the only way to recover from this is to do a full Odin restore with data wipe.</li>
+<li>To upgrade your device with a new firmware, <strong>NEVER</strong> directly use the stock <code>AP</code> tar file with reasons mentioned above. <strong>Always</strong> patch <code>AP</code> in the Magisk app and use that instead.</li>
+</ul>
+<h2 id="custom-recovery">Custom Recovery</h2>
+<blockquote>
+<p><strong>This installation method is deprecated and is maintained with minimum effort. YOU HAVE BEEN WARNED!</strong></p>
+</blockquote>
+<p>Installing using custom recoveries is only possible if your device has boot ramdisk. Installing Magisk through custom recoveries on modern devices is no longer recommended. If you face any issues, please use the <a href="#patching-images">Patch Image</a> method.</p>
+<ul>
+<li>Download the Magisk APK</li>
+<li>Rename the <code>.apk</code> file extension to <code>.zip</code>, for example: <code>Magisk-v24.0.apk</code> → <code>Magisk-v24.0.zip</code>. If you have trouble renaming the file extension (like on Windows), use a file manager on Android or the one included in the custom recovery to rename the file.</li>
+<li>Flash the zip just like any other ordinary flashable zip.</li>
+<li>Reboot and check whether the Magisk app is installed. If it isn't installed automatically, manually install the APK.</li>
+<li>Launch the Magisk app; it will show a dialog asking for reinstallation. Do the reinstallation <strong>directly within the app</strong> and reboot (if you are using MTK devices that lock the boot partition after boot, please <a href="#patching-images">patch the boot image</a> and flash it by custom recovery or fastboot).</li>
+</ul>
+<blockquote>
+<p>Warning: the <code>sepolicy.rule</code> file of modules may be stored in the <code>cache</code> partition. DO NOT WIPE THE <code>CACHE</code> PARTITION.</p>
+</blockquote>
+                <div class="update-time">2026-04-21 14:45:27</div>
             </main>
         </div>
     </div>
