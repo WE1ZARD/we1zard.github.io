@@ -66,7 +66,8 @@
 <li><a href="#_14">解锁网络限制</a></ul>
 </li>
 <li><a href="#_15">操作说明</a></li>
-<li><a href="#_16">刷面具</a></li>
+<li><a href="#_16">刷机异常</a></li>
+<li><a href="#_17">刷面具</a></li>
 <li><a href="#getting-started">Getting Started</a></li>
 <li><a href="#patching-images">Patching Images</a></li>
 <li><a href="#uninstallation">Uninstallation</a></li>
@@ -205,7 +206,15 @@
 <ul>
 <li><strong>按截图键</strong>: 切换摇杆模式 / 鼠标模式</li>
 </ul>
-<h2 id="_16">刷面具</h2>
+<h2 id="_16">刷机异常</h2>
+<ol>
+<li>刷完重启无法正常进入恢复模式
+  - 重新刷安卓引导, 弹窗UMS的时候确保 <code>sdmc:/switchroot/android/***</code>, <code>sdmc:/lineage-***.zip</code> 存在</li>
+<li>刷完恢复模式无法正常进入安卓
+  - 尝试更新 hekate 最新版英文原版
+  - 确认 <code>bootloader/ini/android.ini</code> 文件中的 <code>emmc=1</code>, 前面没有 <code>;</code></li>
+</ol>
+<h2 id="_17">刷面具</h2>
 <p><a href="https://topjohnwu.github.io/Magisk/install.html">官方安装说明原地址</a></p>
 <h1 id="installation">Installation</h1>
 <p>If you already have Magisk installed, it is <strong>strongly recommended</strong> to upgrade directly via the Magisk app using its "Direct Install" method. The following tutorial is only for the initial installation.</p>
@@ -344,7 +353,7 @@ You should be able to extract the file you need from official firmware packages 
 <blockquote>
 <p>Warning: the <code>sepolicy.rule</code> file of modules may be stored in the <code>cache</code> partition. DO NOT WIPE THE <code>CACHE</code> PARTITION.</p>
 </blockquote>
-                <div class="update-time">2026-04-21 22:05:43</div>
+                <div class="update-time">2026-04-23 09:57:49</div>
             </main>
         </div>
     </div>
