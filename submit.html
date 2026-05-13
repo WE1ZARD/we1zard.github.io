@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交成功 - WE1ZARD</title>
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+            max-width: 800px;
+            margin: auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+                min-height: calc(100vh - 80px); /* 减去导航栏高度 */
+            }
+            .success-title {
+                font-size: 2rem;
+            }
+            .success-message {
+                font-size: 1rem;
+            }
+            .success-actions {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+            }
+            .hero-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        .success-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+        .success-message {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        .success-actions {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            justify-content: center;
+        }
+        .hero-button {
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-button.primary {
+            background-color: var(--color-highlight);
+            color: #1e3a8a;
+            border: 1px solid var(--color-highlight);
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.25);
+        }
+        
+        .hero-button.primary:hover {
+            transform: translateY(-1px);
+        }
+        
+        .hero-button.primary:hover .arrow {
+            animation: arrow-shake 0.5s ease-in-out 1;
+        }
+        
+        @keyframes arrow-shake {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+        
+        .hero-button.secondary {
+            background-color: transparent;
+            color: var(--color-text-primary);
+            border: 1px solid #374151;
+        }
+        
+        .hero-button.secondary:hover {
+            background-color: #374151;
+            color: white;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="feedback.html" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="container">
+        <h1 class="success-title">提交成功！</h1>
+        <p class="success-message">
+            感谢您的反馈，我们已经收到了您的信息。<br>
+            我们会尽快处理您的反馈，并在必要时与您联系。<br>
+            您的反馈对我们改进服务非常重要！
+        </p>
+        <div class="success-actions">
+            <a href="index.html" class="hero-button primary">
+                返回首页<span class="arrow">➔</span>
+            </a>
+            <a href="https://space.bilibili.com/3595105" class="hero-button secondary">
+                关注B站
+            </a>
+        </div>
+    </div>
+<!-- 统一Footer组件 -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

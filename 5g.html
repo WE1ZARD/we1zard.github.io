@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改 NS 5g WiFi 信道</title>
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="feedback.html" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="toc">
+        <ul>
+<li><a href="#_1">免责声明</a></li>
+<li><a href="#_2">用途</a></li>
+<li><a href="#_3">下载安装</a></li>
+<li><a href="#_4">操作步骤</a></li>
+<li><a href="#_5">保存路径</a></li>
+<li><a href="#_6">视频教程</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="ns-5g-wifi">修改 NS 5g WiFi 信道</h1>
+<h2 id="_1">免责声明</h2>
+<div class="alert alert-blue"><p>仅用于个人学习, 非商用, 侵删.</p></div>
+
+<h2 id="_2">用途</h2>
+<ul>
+<li>适用于日版 switch 无法正常连接国内 WiFi 5G 信号</li>
+<li>不支持修改 WiFi 信道的路由器</li>
+</ul>
+<h2 id="_3">下载安装</h2>
+<p><a href="https://gitea.com/we1zard/OTA/releases/download/latest/lockpick.zip" class="button" target="_blank">直接下载</a></p>
+<p>下载解压, 复制到 bootloader 到 <code>sdmc:/</code> 内存卡根目录</p>
+<h2 id="_4">操作步骤</h2>
+<ol>
+<li>重启 <strong>按住 音量键 减号</strong> 进入 hekate 主菜单</li>
+<li>打开 <code>Payloads &gt; Lockpick_RCM.bin</code> 进入工具菜单</li>
+<li><strong>音量键 移动</strong>, <strong>电源键 打开</strong></li>
+<li>提取密钥和区域文件<ul>
+<li>提取真实系统密钥: <code>Dump from SysNAND</code></li>
+<li>提取虚拟系统密钥: <code>Dump from EmuNAND</code></li>
+</ul>
+</li>
+<li>如果你没有进行过修改的话, 本质上真实和虚拟提取到的是同样的文件, 只要能正常提取到就可以用</li>
+<li>完成后, 按 <strong>减号键 返回</strong> 返回主菜单, 打开 <code>WiFi Region &gt; CN</code></li>
+<li>完成后, 按 <strong>减号键 返回</strong> 主菜单, 打开 <code>Restore PRODINFO</code></li>
+<li>按 <strong>加号键 开始</strong>, 完成后按 <strong>减号键 返回</strong> 主菜单, 打开 <code>Reboot to hekate</code></li>
+<li>重启进入系统后, 重新连接 5G 信号就可以连上了</li>
+</ol>
+<h2 id="_5">保存路径</h2>
+<p>系统密钥: <code>sdmc:/switch/prod.keys</code>
+标题密钥: <code>sdmc:/title.keys</code>
+PRODINFO: <code>sdmc:/backup/*</code></p>
+<h2 id="_6">视频教程</h2>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116034195489304&bvid=BV1y4cFzZE4X&cid=35909665659&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                <div class="update-time">2026-03-15 18:00:11</div>
+            </main>
+        </div>
+    </div>
+    <script src="js/common.js"></script>
+<!-- 统一Footer组件 -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,4910 @@
+[
+    {
+        "title": "Downwell",
+        "release_date": "2019-01-31",
+        "metascore": "88",
+        "genre": "action"
+    },
+    {
+        "title": "Vitamin Connection",
+        "release_date": "2020-01-17",
+        "metascore": "80",
+        "genre": "action"
+    },
+    {
+        "title": "Joe Dever's Lone Wolf",
+        "release_date": "2018-02-16",
+        "metascore": "79",
+        "genre": "action"
+    },
+    {
+        "title": "TumbleSeed",
+        "release_date": "2017-05-02",
+        "metascore": "78",
+        "genre": "action"
+    },
+    {
+        "title": "Rock of Ages 2: Bigger & Boulder",
+        "release_date": "2019-05-14",
+        "metascore": "75",
+        "genre": "action"
+    },
+    {
+        "title": "The Stretchers",
+        "release_date": "2019-11-08",
+        "metascore": "75",
+        "genre": "action"
+    },
+    {
+        "title": "The Escapists 2",
+        "release_date": "2018-01-11",
+        "metascore": "73",
+        "genre": "action"
+    },
+    {
+        "title": "Nintendo Labo: Toycon 04 VR Kit",
+        "release_date": "2019-05-12",
+        "metascore": "71",
+        "genre": "action"
+    },
+    {
+        "title": "Ninjala",
+        "release_date": "2020-06-24",
+        "metascore": "68",
+        "genre": "action"
+    },
+    {
+        "title": "Heroki",
+        "release_date": "2018-07-20",
+        "metascore": "68",
+        "genre": "action"
+    },
+    {
+        "title": "SYNTHETIK: Ultimate",
+        "release_date": "2020-12-16",
+        "metascore": "67",
+        "genre": "action"
+    },
+    {
+        "title": "The Escapists: Complete Edition",
+        "release_date": "2018-09-25",
+        "metascore": "67",
+        "genre": "action"
+    },
+    {
+        "title": "Override: Mech City Brawl",
+        "release_date": "2019-10-15",
+        "metascore": "62",
+        "genre": "action"
+    },
+    {
+        "title": "Neva",
+        "release_date": "2024-10-15",
+        "metascore": "89",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Okami HD",
+        "release_date": "2018-08-09",
+        "metascore": "89",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Death's Door",
+        "release_date": "2021-11-23",
+        "metascore": "89",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Pipistrello and the Cursed Yoyo",
+        "release_date": "2025-05-28",
+        "metascore": "88",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "DAVE THE DIVER",
+        "release_date": "2023-10-26",
+        "metascore": "88",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Astral Chain",
+        "release_date": "2019-08-30",
+        "metascore": "87",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Katamari Damacy REROLL",
+        "release_date": "2018-12-07",
+        "metascore": "87",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Owlboy",
+        "release_date": "2018-02-13",
+        "metascore": "87",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Luigi's Mansion 3",
+        "release_date": "2019-10-31",
+        "metascore": "86",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "AI: The Somnium Files",
+        "release_date": "2019-09-17",
+        "metascore": "86",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Kingdom Two Crowns",
+        "release_date": "2018-12-11",
+        "metascore": "85",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Dungeons of Dreadrock 2 - The Dead King's Secret",
+        "release_date": "2024-11-28",
+        "metascore": "85",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "DREDGE",
+        "release_date": "2023-03-30",
+        "metascore": "84",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "We Love Katamari REROLL+ Royal Reverie",
+        "release_date": "2023-06-02",
+        "metascore": "84",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "AI: The Somnium Files - nirvanA Initiative",
+        "release_date": "2022-06-24",
+        "metascore": "83",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Knights and Bikes",
+        "release_date": "2020-02-06",
+        "metascore": "83",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "UnderMine",
+        "release_date": "2021-02-11",
+        "metascore": "83",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Flipping Death",
+        "release_date": "2018-08-07",
+        "metascore": "83",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "LEGO Star Wars: The Skywalker Saga",
+        "release_date": "2022-04-05",
+        "metascore": "82",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Endling - Extinction is Forever",
+        "release_date": "2022-07-19",
+        "metascore": "82",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Untitled Goose Game",
+        "release_date": "2019-09-20",
+        "metascore": "81",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Going Under",
+        "release_date": "2020-09-24",
+        "metascore": "81",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Rainbow Billy: The Curse of the Leviathan",
+        "release_date": "2021-10-05",
+        "metascore": "81",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Onimusha 2: Samurai's Destiny Remaster",
+        "release_date": "2025-05-23",
+        "metascore": "81",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Dungeons of Dreadrock",
+        "release_date": "2022-05-12",
+        "metascore": "80",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Stray",
+        "release_date": "2024-11-19",
+        "metascore": "80",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Blaster Master Zero III",
+        "release_date": "2021-07-29",
+        "metascore": "80",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Hellblade: Senua's Sacrifice",
+        "release_date": "2019-04-11",
+        "metascore": "80",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "The Touryst",
+        "release_date": "2019-11-21",
+        "metascore": "79",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Yomawari: Lost in the Dark",
+        "release_date": "2022-10-25",
+        "metascore": "79",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Hitman: Blood Money - Reprisal",
+        "release_date": "2024-01-25",
+        "metascore": "79",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Cult of the Lamb",
+        "release_date": "2022-08-11",
+        "metascore": "79",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Beyond Good & Evil 20th Anniversary Edition",
+        "release_date": "2024-06-25",
+        "metascore": "79",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "No Sleep for Kaname Date - From AI: The Somnium Files",
+        "release_date": "2025-07-25",
+        "metascore": "79",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Golf Story",
+        "release_date": "2017-09-28",
+        "metascore": "78",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Forager",
+        "release_date": "2019-07-30",
+        "metascore": "78",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Lost in Random",
+        "release_date": "2021-09-10",
+        "metascore": "78",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Luigi's Mansion 2 HD",
+        "release_date": "2024-06-27",
+        "metascore": "77",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Pinstripe",
+        "release_date": "2018-10-25",
+        "metascore": "77",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Master Detective Archives: RAIN CODE",
+        "release_date": "2023-06-30",
+        "metascore": "77",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Fading Afternoon",
+        "release_date": "2024-06-06",
+        "metascore": "77",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Ittle Dew 2",
+        "release_date": "2017-11-14",
+        "metascore": "77",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Creature in the Well",
+        "release_date": "2019-09-06",
+        "metascore": "76",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Embers of Mirrim",
+        "release_date": "2017-12-07",
+        "metascore": "76",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "ATONE: Heart of the Elder Tree",
+        "release_date": "2023-01-27",
+        "metascore": "76",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Sparklite",
+        "release_date": "2019-11-14",
+        "metascore": "75",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "LEGO DC Super-Villains",
+        "release_date": "2018-10-16",
+        "metascore": "75",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Manifold Garden",
+        "release_date": "2020-08-18",
+        "metascore": "75",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Figment",
+        "release_date": "2018-06-28",
+        "metascore": "75",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "City of Brass",
+        "release_date": "2019-02-08",
+        "metascore": "75",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Furi",
+        "release_date": "2018-01-11",
+        "metascore": "74",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Narita Boy",
+        "release_date": "2021-03-30",
+        "metascore": "74",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "ActRaiser Renaissance",
+        "release_date": "2021-09-23",
+        "metascore": "74",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "El Shaddai: Ascension of the Metatron HD Remaster",
+        "release_date": "2024-04-28",
+        "metascore": "74",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Monster Sanctuary",
+        "release_date": "2020-12-08",
+        "metascore": "74",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Jotun",
+        "release_date": "2018-04-27",
+        "metascore": "74",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Kamiko",
+        "release_date": "2017-04-27",
+        "metascore": "74",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Turnip Boy Commits Tax Evasion",
+        "release_date": "2021-04-22",
+        "metascore": "74",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Aragami: Shadow Edition",
+        "release_date": "2019-02-21",
+        "metascore": "73",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Max: The Curse of Brotherhood",
+        "release_date": "2017-12-21",
+        "metascore": "73",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Rusty Rabbit",
+        "release_date": "2025-04-17",
+        "metascore": "73",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Mulaka",
+        "release_date": "2018-03-01",
+        "metascore": "73",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Headland",
+        "release_date": "2022-01-13",
+        "metascore": "73",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Control: Ultimate Edition",
+        "release_date": "2020-10-28",
+        "metascore": "72",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Attack on Titan 2",
+        "release_date": "2018-03-20",
+        "metascore": "72",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "SILT",
+        "release_date": "2022-06-01",
+        "metascore": "72",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Oddworld: Stranger's Wrath HD",
+        "release_date": "2020-01-23",
+        "metascore": "72",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "The Count Lucanor",
+        "release_date": "2017-10-19",
+        "metascore": "72",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Smoke and Sacrifice",
+        "release_date": "2018-05-31",
+        "metascore": "72",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "The Liar Princess and the Blind Prince",
+        "release_date": "2019-02-12",
+        "metascore": "72",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Phoenotopia: Awakening",
+        "release_date": "2020-08-20",
+        "metascore": "72",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Pool Panic",
+        "release_date": "2018-07-19",
+        "metascore": "71",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Out of Line",
+        "release_date": "2021-08-18",
+        "metascore": "71",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Ultra Age",
+        "release_date": "2021-09-09",
+        "metascore": "71",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Never Stop Sneakin'",
+        "release_date": "2017-12-14",
+        "metascore": "71",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "LEGO Jurassic World",
+        "release_date": "2019-09-17",
+        "metascore": "71",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Lichtspeer",
+        "release_date": "2017-09-07",
+        "metascore": "71",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Onimusha: Warlords",
+        "release_date": "2019-01-15",
+        "metascore": "71",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "The Fall (2014)",
+        "release_date": "2018-05-10",
+        "metascore": "70",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "No Place for Bravery",
+        "release_date": "2022-09-22",
+        "metascore": "70",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Samurai Jack: Battle Through Time",
+        "release_date": "2020-08-21",
+        "metascore": "70",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "The Fall Part 2: Unbound",
+        "release_date": "2018-02-13",
+        "metascore": "70",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Super Dungeon Maker",
+        "release_date": "2023-05-03",
+        "metascore": "70",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Herdling",
+        "release_date": "2025-08-21",
+        "metascore": "69",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "SHUTEN ORDER",
+        "release_date": "2025-09-05",
+        "metascore": "69",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Raji: An Ancient Epic",
+        "release_date": "2020-08-18",
+        "metascore": "69",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Oddworld: Soulstorm - Oddtimized Edition",
+        "release_date": "2022-11-18",
+        "metascore": "69",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Arietta of Spirits",
+        "release_date": "2021-08-20",
+        "metascore": "68",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "One Piece: Unlimited World Red - Deluxe Edition",
+        "release_date": "2017-09-29",
+        "metascore": "68",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Rad",
+        "release_date": "2019-08-20",
+        "metascore": "68",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Infernium",
+        "release_date": "2018-04-05",
+        "metascore": "67",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Crossing Souls",
+        "release_date": "2018-07-26",
+        "metascore": "67",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Stonefly",
+        "release_date": "2021-06-01",
+        "metascore": "66",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Destroy All Humans!",
+        "release_date": "2021-06-29",
+        "metascore": "66",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Cyanide & Happiness - Freakpocalypse",
+        "release_date": "2021-03-11",
+        "metascore": "65",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "VESTA",
+        "release_date": "2018-01-19",
+        "metascore": "64",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "The World Next Door",
+        "release_date": "2019-03-27",
+        "metascore": "63",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "World's End Club",
+        "release_date": "2021-05-28",
+        "metascore": "62",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Sphinx and the Cursed Mummy",
+        "release_date": "2019-01-29",
+        "metascore": "61",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "RemiLore: Lost Girl in the Lands of Lore",
+        "release_date": "2019-02-26",
+        "metascore": "61",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Riverbond",
+        "release_date": "2019-12-10",
+        "metascore": "60",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Gigantosaurus: The Game",
+        "release_date": "2020-03-27",
+        "metascore": "60",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Oddworld: Munch's Oddysee HD",
+        "release_date": "2020-05-14",
+        "metascore": "58",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Ary and the Secret of Seasons",
+        "release_date": "2020-09-01",
+        "metascore": "58",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Sinner: Sacrifice for Redemption",
+        "release_date": "2018-10-18",
+        "metascore": "58",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Lila's Sky Ark",
+        "release_date": "2022-04-21",
+        "metascore": "57",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "The LEGO Movie 2 Videogame",
+        "release_date": "2019-02-26",
+        "metascore": "56",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Suicide Guy",
+        "release_date": "2018-05-10",
+        "metascore": "55",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Stubbs the Zombie in Rebel Without a Pulse",
+        "release_date": "2021-03-16",
+        "metascore": "54",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Stranger Things 3: The Game",
+        "release_date": "2019-07-04",
+        "metascore": "53",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Picklock",
+        "release_date": "2020-11-26",
+        "metascore": "50",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Ice Age: Scrat's Nutty Adventure",
+        "release_date": "2019-10-18",
+        "metascore": "49",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Fimbul",
+        "release_date": "2019-02-28",
+        "metascore": "44",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "AeternoBlade II",
+        "release_date": "2019-10-11",
+        "metascore": "44",
+        "genre": "action-adventure"
+    },
+    {
+        "title": "Keep Talking and Nobody Explodes",
+        "release_date": "2018-08-16",
+        "metascore": "84",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Toki Tori 2",
+        "release_date": "2018-02-23",
+        "metascore": "84",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Baba Is You",
+        "release_date": "2019-03-13",
+        "metascore": "84",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "World of Goo",
+        "release_date": "2017-03-16",
+        "metascore": "84",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Shovel Knight Pocket Dungeon",
+        "release_date": "2021-12-13",
+        "metascore": "83",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Overcooked! 2: Surf 'n' Turf",
+        "release_date": "2018-10-03",
+        "metascore": "83",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "The Last Campfire",
+        "release_date": "2020-08-27",
+        "metascore": "83",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Vectronom",
+        "release_date": "2019-05-29",
+        "metascore": "82",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Toki Tori",
+        "release_date": "2018-03-30",
+        "metascore": "82",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Captain Toad: Treasure Tracker",
+        "release_date": "2018-07-13",
+        "metascore": "82",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Overcooked! 2",
+        "release_date": "2018-08-07",
+        "metascore": "81",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Arranger: A Role-Puzzling Adventure",
+        "release_date": "2024-07-25",
+        "metascore": "81",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Captain Toad: Treasure Tracker - Special Episode",
+        "release_date": "2019-03-14",
+        "metascore": "81",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Railbound",
+        "release_date": "2022-12-01",
+        "metascore": "81",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Tin Hearts",
+        "release_date": "2023-04-20",
+        "metascore": "81",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Disc Room",
+        "release_date": "2020-10-22",
+        "metascore": "81",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "BoxBoy! + BoxGirl!",
+        "release_date": "2019-04-26",
+        "metascore": "81",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Mr. Driller: Drill Land",
+        "release_date": "2020-06-25",
+        "metascore": "80",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Slayaway Camp: Butcher's Cut",
+        "release_date": "2018-03-22",
+        "metascore": "79",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Ibb & Obb",
+        "release_date": "2020-03-05",
+        "metascore": "78",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Rain on Your Parade",
+        "release_date": "2021-04-15",
+        "metascore": "78",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Death Squared",
+        "release_date": "2017-07-13",
+        "metascore": "78",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Dandy Dungeon: Legend of Brave Yamada",
+        "release_date": "2019-06-27",
+        "metascore": "78",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Good Job!",
+        "release_date": "2020-03-26",
+        "metascore": "78",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Kombinera",
+        "release_date": "2022-04-07",
+        "metascore": "77",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Golf Club: Wasteland",
+        "release_date": "2021-09-03",
+        "metascore": "77",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Overcooked!",
+        "release_date": "2017-07-27",
+        "metascore": "77",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "She Remembered Caterpillars",
+        "release_date": "2019-03-28",
+        "metascore": "76",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "World of Goo 2",
+        "release_date": "2024-08-02",
+        "metascore": "76",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Friday the 13th: Killer Puzzle",
+        "release_date": "2018-10-25",
+        "metascore": "76",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Piczle Lines DX",
+        "release_date": "2017-08-24",
+        "metascore": "76",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Bombslinger",
+        "release_date": "2018-04-11",
+        "metascore": "76",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Peglin",
+        "release_date": "2024-08-27",
+        "metascore": "76",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Lode Runner Legacy",
+        "release_date": "2018-03-29",
+        "metascore": "74",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Worm Jazz",
+        "release_date": "2020-09-21",
+        "metascore": "73",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Hue",
+        "release_date": "2019-06-06",
+        "metascore": "73",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "NAIRI: Tower of Shirin",
+        "release_date": "2018-11-28",
+        "metascore": "72",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Semispheres",
+        "release_date": "2017-09-14",
+        "metascore": "72",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Ground Divers!",
+        "release_date": "2022-06-30",
+        "metascore": "72",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Snake Pass",
+        "release_date": "2017-03-28",
+        "metascore": "72",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Little Inferno",
+        "release_date": "2017-03-16",
+        "metascore": "71",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Bridge Constructor Portal",
+        "release_date": "2018-02-28",
+        "metascore": "71",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Run the Fan",
+        "release_date": "2019-07-23",
+        "metascore": "71",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Membrane (2018)",
+        "release_date": "2018-02-22",
+        "metascore": "71",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Q.U.B.E. 2",
+        "release_date": "2019-02-21",
+        "metascore": "69",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "ChromaGun",
+        "release_date": "2018-01-22",
+        "metascore": "69",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Kine",
+        "release_date": "2019-10-17",
+        "metascore": "69",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Bubble Bobble 4 Friends",
+        "release_date": "2020-03-31",
+        "metascore": "68",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Super Bomberman R 2",
+        "release_date": "2023-09-13",
+        "metascore": "68",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "King Oddball",
+        "release_date": "2017-10-30",
+        "metascore": "66",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Peaky Blinders: Mastermind",
+        "release_date": "2020-08-20",
+        "metascore": "66",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "PUSS!",
+        "release_date": "2021-02-19",
+        "metascore": "64",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Super Bomberman R",
+        "release_date": "2017-03-03",
+        "metascore": "62",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Pokemon Friends",
+        "release_date": "2025-07-22",
+        "metascore": "62",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "TurtlePop: Journey to Freedom",
+        "release_date": "2018-03-09",
+        "metascore": "62",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Solo: Islands of the Heart",
+        "release_date": "2019-08-01",
+        "metascore": "55",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Baseball Riot",
+        "release_date": "2018-01-19",
+        "metascore": "51",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Scribblenauts Showdown",
+        "release_date": "2018-03-06",
+        "metascore": "47",
+        "genre": "action-puzzle"
+    },
+    {
+        "title": "Hades",
+        "release_date": "2020-09-17",
+        "metascore": "93",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Xenoblade Chronicles 3: Expansion Pass Wave 4 - Future Redeemed",
+        "release_date": "2023-04-25",
+        "metascore": "92",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Bastion",
+        "release_date": "2018-09-13",
+        "metascore": "90",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Xenoblade Chronicles: Definitive Edition",
+        "release_date": "2020-05-29",
+        "metascore": "89",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Xenoblade Chronicles 3",
+        "release_date": "2022-07-29",
+        "metascore": "89",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "NieR: Automata - The End of YoRHa Edition",
+        "release_date": "2022-10-06",
+        "metascore": "89",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Hyper Light Drifter",
+        "release_date": "2018-09-06",
+        "metascore": "88",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Monster Hunter Rise",
+        "release_date": "2021-03-26",
+        "metascore": "88",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Diablo III: Eternal Collection",
+        "release_date": "2018-11-02",
+        "metascore": "88",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Xenoblade Chronicles X: Definitive Edition",
+        "release_date": "2025-03-20",
+        "metascore": "87",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Cat Quest III",
+        "release_date": "2024-08-08",
+        "metascore": "86",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Transistor",
+        "release_date": "2018-11-01",
+        "metascore": "86",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "The Witcher 3: Wild Hunt - Complete Edition",
+        "release_date": "2019-10-15",
+        "metascore": "85",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Monster Hunter Rise: Sunbreak",
+        "release_date": "2022-06-30",
+        "metascore": "85",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Heroes of Hammerwatch - Ultimate Edition",
+        "release_date": "2020-07-29",
+        "metascore": "85",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Tales of Vesperia: Definitive Edition",
+        "release_date": "2019-01-11",
+        "metascore": "83",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Nobody Saves the World",
+        "release_date": "2022-04-14",
+        "metascore": "83",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Moonlighter",
+        "release_date": "2018-11-05",
+        "metascore": "83",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Xenoblade Chronicles 2",
+        "release_date": "2017-12-01",
+        "metascore": "83",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Dark Souls Remastered",
+        "release_date": "2018-10-19",
+        "metascore": "83",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "The Legend of Nayuta: Boundless Trails",
+        "release_date": "2023-09-19",
+        "metascore": "83",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "CrossCode",
+        "release_date": "2020-07-09",
+        "metascore": "82",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Dreamscaper",
+        "release_date": "2021-08-05",
+        "metascore": "82",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "NEO: The World Ends with You",
+        "release_date": "2021-07-27",
+        "metascore": "82",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Ys VIII: Lacrimosa of DANA",
+        "release_date": "2018-06-26",
+        "metascore": "82",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Ys Origin",
+        "release_date": "2020-10-01",
+        "metascore": "82",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Victor Vran: Overkill Edition",
+        "release_date": "2018-08-28",
+        "metascore": "82",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Operencia: The Stolen Sun",
+        "release_date": "2020-03-31",
+        "metascore": "81",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Rune Factory 4 Special",
+        "release_date": "2020-02-25",
+        "metascore": "81",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Torchlight II",
+        "release_date": "2019-09-03",
+        "metascore": "81",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Rune Factory: Guardians of Azuma",
+        "release_date": "2025-06-05",
+        "metascore": "81",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Persona 5 Strikers",
+        "release_date": "2021-02-23",
+        "metascore": "81",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "The Mageseeker: A League of Legends Story",
+        "release_date": "2023-04-18",
+        "metascore": "81",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Children of Morta",
+        "release_date": "2019-11-20",
+        "metascore": "80",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Sakuna: Of Rice and Ruin",
+        "release_date": "2020-11-10",
+        "metascore": "80",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Xenoblade Chronicles 2: Torna ~ The Golden Country",
+        "release_date": "2018-09-14",
+        "metascore": "80",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Monster Hunter Generations Ultimate",
+        "release_date": "2018-08-28",
+        "metascore": "80",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Indivisible",
+        "release_date": "2020-04-28",
+        "metascore": "79",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "ASTLIBRA Revision",
+        "release_date": "2023-11-16",
+        "metascore": "79",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Ys Memoire: The Oath in Felghana",
+        "release_date": "2025-01-07",
+        "metascore": "79",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Curse of the Dead Gods",
+        "release_date": "2021-02-23",
+        "metascore": "78",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Dragon's Dogma: Dark Arisen",
+        "release_date": "2019-04-23",
+        "metascore": "78",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Dragon Ball Z: Kakarot + A New Power Awakens Set",
+        "release_date": "2021-09-24",
+        "metascore": "78",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Cat Quest II: The Lupus Empire",
+        "release_date": "2019-10-24",
+        "metascore": "77",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Crisis Core: Final Fantasy VII Reunion",
+        "release_date": "2022-12-13",
+        "metascore": "77",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Diablo II: Resurrected",
+        "release_date": "2021-09-23",
+        "metascore": "77",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Ys X: Nordics",
+        "release_date": "2024-10-25",
+        "metascore": "77",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Megaton Musashi W: Wired",
+        "release_date": "2024-04-25",
+        "metascore": "77",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "The World Ends with You: Final Remix",
+        "release_date": "2018-10-12",
+        "metascore": "77",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Wizard of Legend",
+        "release_date": "2018-05-15",
+        "metascore": "76",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "RAIDOU Remastered: The Mystery of the Soulless Army",
+        "release_date": "2025-06-19",
+        "metascore": "76",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Hero-U: Rogue to Redemption",
+        "release_date": "2021-02-09",
+        "metascore": "76",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "The Swords of Ditto: Mormo's Curse",
+        "release_date": "2019-05-02",
+        "metascore": "76",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Rune Factory 3 Special",
+        "release_date": "2023-09-05",
+        "metascore": "76",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Ys IX: Monstrum Nox",
+        "release_date": "2021-07-06",
+        "metascore": "76",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Cattails",
+        "release_date": "2018-11-29",
+        "metascore": "75",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Tokyo Xanadu eX+",
+        "release_date": "2024-07-25",
+        "metascore": "75",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Moero Crystal H",
+        "release_date": "2020-09-17",
+        "metascore": "75",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Aegis Defenders",
+        "release_date": "2018-02-08",
+        "metascore": "74",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "CRYMACHINA",
+        "release_date": "2023-10-24",
+        "metascore": "74",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Fate/Samurai Remnant",
+        "release_date": "2023-09-29",
+        "metascore": "74",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Portal Knights",
+        "release_date": "2017-11-23",
+        "metascore": "74",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Darksiders Genesis",
+        "release_date": "2020-02-14",
+        "metascore": "74",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Trials of Mana",
+        "release_date": "2020-04-24",
+        "metascore": "74",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "God Eater 3",
+        "release_date": "2019-07-12",
+        "metascore": "74",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Cat Quest",
+        "release_date": "2017-11-10",
+        "metascore": "74",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Silent Hope",
+        "release_date": "2023-10-03",
+        "metascore": "74",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Harvestella",
+        "release_date": "2022-11-04",
+        "metascore": "73",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Trinity Trigger",
+        "release_date": "2023-04-25",
+        "metascore": "73",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Dauntless",
+        "release_date": "2019-12-10",
+        "metascore": "73",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "SD Gundam Battle Alliance",
+        "release_date": "2022-08-25",
+        "metascore": "73",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Marvel Ultimate Alliance 3: The Black Order",
+        "release_date": "2019-07-19",
+        "metascore": "73",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Boyfriend Dungeon",
+        "release_date": "2021-08-11",
+        "metascore": "72",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Kingdoms of Amalur: Re-Reckoning",
+        "release_date": "2021-03-16",
+        "metascore": "72",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Super Daryl Deluxe",
+        "release_date": "2018-04-10",
+        "metascore": "72",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Dex",
+        "release_date": "2020-07-24",
+        "metascore": "72",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Minecraft Dungeons",
+        "release_date": "2020-05-26",
+        "metascore": "72",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Shining Resonance Refrain",
+        "release_date": "2018-07-10",
+        "metascore": "70",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Vampyr",
+        "release_date": "2019-10-29",
+        "metascore": "69",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Kingdom Come: Deliverance - Royal Edition",
+        "release_date": "2024-03-15",
+        "metascore": "69",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Kitaria Fables",
+        "release_date": "2021-09-02",
+        "metascore": "69",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Dragon Marked For Death",
+        "release_date": "2019-01-29",
+        "metascore": "69",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Rune Factory 5",
+        "release_date": "2022-03-22",
+        "metascore": "68",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Touken Ranbu Warriors",
+        "release_date": "2022-05-24",
+        "metascore": "68",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Snack World: The Dungeon Crawl Gold",
+        "release_date": "2020-02-14",
+        "metascore": "68",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Oninaki",
+        "release_date": "2019-08-22",
+        "metascore": "68",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Lapis x Labyrinth",
+        "release_date": "2019-05-28",
+        "metascore": "68",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Maglam Lord",
+        "release_date": "2022-02-04",
+        "metascore": "67",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Nine Parchments",
+        "release_date": "2017-12-05",
+        "metascore": "66",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Golem Gates",
+        "release_date": "2019-05-31",
+        "metascore": "66",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Baldur's Gate: Dark Alliance II",
+        "release_date": "2022-07-20",
+        "metascore": "66",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Crystar",
+        "release_date": "2022-03-29",
+        "metascore": "66",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Fallen Legion: Rise to Glory",
+        "release_date": "2018-05-29",
+        "metascore": "66",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Code of Princess EX",
+        "release_date": "2018-07-31",
+        "metascore": "66",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Towa and the Guardians of the Sacred Tree",
+        "release_date": "2025-09-19",
+        "metascore": "66",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Nights of Azure 2: Bride of the New Moon",
+        "release_date": "2017-10-24",
+        "metascore": "66",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Neptunia x Senran Kagura: Ninja Wars",
+        "release_date": "2022-04-19",
+        "metascore": "65",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Eiyuden Chronicle: Rising",
+        "release_date": "2022-05-10",
+        "metascore": "65",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Titan Quest",
+        "release_date": "2018-07-31",
+        "metascore": "65",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Dead or School",
+        "release_date": "2020-03-13",
+        "metascore": "65",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Pokemon Quest",
+        "release_date": "2018-05-29",
+        "metascore": "64",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Made in Abyss: Binary Star Falling into Darkness",
+        "release_date": "2022-09-02",
+        "metascore": "64",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Tales of Symphonia Remastered",
+        "release_date": "2023-02-17",
+        "metascore": "63",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Penny-Punching Princess",
+        "release_date": "2018-04-03",
+        "metascore": "63",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Torchlight III",
+        "release_date": "2020-10-22",
+        "metascore": "63",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Super Neptunia RPG",
+        "release_date": "2019-06-25",
+        "metascore": "62",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Poison Control",
+        "release_date": "2021-04-13",
+        "metascore": "61",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "REYNATIS",
+        "release_date": "2024-09-27",
+        "metascore": "61",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Super Cane Magic ZERO",
+        "release_date": "2019-05-30",
+        "metascore": "60",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Final Fantasy Crystal Chronicles: Remastered Edition",
+        "release_date": "2020-08-27",
+        "metascore": "60",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Biomutant",
+        "release_date": "2024-05-14",
+        "metascore": "59",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Gothic",
+        "release_date": "2023-09-28",
+        "metascore": "59",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Skellboy",
+        "release_date": "2020-01-30",
+        "metascore": "59",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Warlocks 2: God Slayers",
+        "release_date": "2019-06-07",
+        "metascore": "59",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Elrentaros Wanderings",
+        "release_date": "2024-08-16",
+        "metascore": "57",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Dungeon Munchies",
+        "release_date": "2022-07-28",
+        "metascore": "54",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Bakugan: Champions of Vestroia",
+        "release_date": "2020-11-03",
+        "metascore": "53",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Hellpoint",
+        "release_date": "2021-02-25",
+        "metascore": "52",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Arc of Alchemist",
+        "release_date": "2020-01-30",
+        "metascore": "36",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Fantasy Hero: Unsigned Legacy",
+        "release_date": "2018-01-25",
+        "metascore": "34",
+        "genre": "action-rpg"
+    },
+    {
+        "title": "Pentiment",
+        "release_date": "2024-02-22",
+        "metascore": "90",
+        "genre": "adventure"
+    },
+    {
+        "title": "Chicory: A Colorful Tale",
+        "release_date": "2021-12-15",
+        "metascore": "90",
+        "genre": "adventure"
+    },
+    {
+        "title": "A Short Hike",
+        "release_date": "2020-08-18",
+        "metascore": "88",
+        "genre": "adventure"
+    },
+    {
+        "title": "Lorelei and the Laser Eyes",
+        "release_date": "2024-05-16",
+        "metascore": "88",
+        "genre": "adventure"
+    },
+    {
+        "title": "13 Sentinels: Aegis Rim",
+        "release_date": "2022-04-12",
+        "metascore": "88",
+        "genre": "adventure"
+    },
+    {
+        "title": "Kentucky Route Zero: TV Edition",
+        "release_date": "2020-01-28",
+        "metascore": "87",
+        "genre": "adventure"
+    },
+    {
+        "title": "The Cosmic Wheel Sisterhood",
+        "release_date": "2023-08-16",
+        "metascore": "87",
+        "genre": "adventure"
+    },
+    {
+        "title": "Overboard!",
+        "release_date": "2021-06-02",
+        "metascore": "86",
+        "genre": "adventure"
+    },
+    {
+        "title": "Ghost Trick: Phantom Detective",
+        "release_date": "2023-06-30",
+        "metascore": "86",
+        "genre": "adventure"
+    },
+    {
+        "title": "Sumire",
+        "release_date": "2021-05-27",
+        "metascore": "86",
+        "genre": "adventure"
+    },
+    {
+        "title": "Night in the Woods",
+        "release_date": "2018-02-01",
+        "metascore": "85",
+        "genre": "adventure"
+    },
+    {
+        "title": "Lil' Guardsman",
+        "release_date": "2024-01-23",
+        "metascore": "85",
+        "genre": "adventure"
+    },
+    {
+        "title": "A Space For The Unbound",
+        "release_date": "2023-01-19",
+        "metascore": "85",
+        "genre": "adventure"
+    },
+    {
+        "title": "Tangle Tower",
+        "release_date": "2019-10-22",
+        "metascore": "85",
+        "genre": "adventure"
+    },
+    {
+        "title": "Beacon Pines",
+        "release_date": "2022-09-22",
+        "metascore": "84",
+        "genre": "adventure"
+    },
+    {
+        "title": "Chants of Sennaar",
+        "release_date": "2023-09-05",
+        "metascore": "84",
+        "genre": "adventure"
+    },
+    {
+        "title": "Thank Goodness You're Here!",
+        "release_date": "2024-08-01",
+        "metascore": "84",
+        "genre": "adventure"
+    },
+    {
+        "title": "Lost in Play",
+        "release_date": "2022-08-10",
+        "metascore": "84",
+        "genre": "adventure"
+    },
+    {
+        "title": "To the Moon",
+        "release_date": "2020-01-16",
+        "metascore": "84",
+        "genre": "adventure"
+    },
+    {
+        "title": "Wayward Strand",
+        "release_date": "2022-09-15",
+        "metascore": "83",
+        "genre": "adventure"
+    },
+    {
+        "title": "Paper Trail",
+        "release_date": "2024-05-21",
+        "metascore": "83",
+        "genre": "adventure"
+    },
+    {
+        "title": "Horace",
+        "release_date": "2020-10-21",
+        "metascore": "82",
+        "genre": "adventure"
+    },
+    {
+        "title": "Ib",
+        "release_date": "2023-03-09",
+        "metascore": "82",
+        "genre": "adventure"
+    },
+    {
+        "title": "The Kids We Were",
+        "release_date": "2021-12-02",
+        "metascore": "81",
+        "genre": "adventure"
+    },
+    {
+        "title": "Snufkin: Melody of Moominvalley",
+        "release_date": "2024-03-07",
+        "metascore": "81",
+        "genre": "adventure"
+    },
+    {
+        "title": "Venba",
+        "release_date": "2023-07-31",
+        "metascore": "81",
+        "genre": "adventure"
+    },
+    {
+        "title": "Littlewood",
+        "release_date": "2021-02-25",
+        "metascore": "81",
+        "genre": "adventure"
+    },
+    {
+        "title": "Alba: a Wildlife Adventure",
+        "release_date": "2021-06-09",
+        "metascore": "80",
+        "genre": "adventure"
+    },
+    {
+        "title": "Tales from the Borderlands: A Telltale Game Series",
+        "release_date": "2021-03-23",
+        "metascore": "80",
+        "genre": "adventure"
+    },
+    {
+        "title": "Time Flies",
+        "release_date": "2025-07-31",
+        "metascore": "80",
+        "genre": "adventure"
+    },
+    {
+        "title": "Card Shark",
+        "release_date": "2022-06-02",
+        "metascore": "80",
+        "genre": "adventure"
+    },
+    {
+        "title": "Minit",
+        "release_date": "2018-08-09",
+        "metascore": "80",
+        "genre": "adventure"
+    },
+    {
+        "title": "Spirit Hunter: Death Mark II",
+        "release_date": "2024-02-15",
+        "metascore": "80",
+        "genre": "adventure"
+    },
+    {
+        "title": "Detention",
+        "release_date": "2018-03-01",
+        "metascore": "79",
+        "genre": "adventure"
+    },
+    {
+        "title": "Carto",
+        "release_date": "2020-10-27",
+        "metascore": "79",
+        "genre": "adventure"
+    },
+    {
+        "title": "TOEM",
+        "release_date": "2021-09-17",
+        "metascore": "79",
+        "genre": "adventure"
+    },
+    {
+        "title": "I Am Dead",
+        "release_date": "2020-10-08",
+        "metascore": "79",
+        "genre": "adventure"
+    },
+    {
+        "title": "Shin-chan: Me and the Professor on Summer Vacation - The Endless Seven-Day Journey",
+        "release_date": "2022-08-11",
+        "metascore": "79",
+        "genre": "adventure"
+    },
+    {
+        "title": "Astrologaster",
+        "release_date": "2021-02-18",
+        "metascore": "79",
+        "genre": "adventure"
+    },
+    {
+        "title": "The Gardens Between",
+        "release_date": "2018-09-20",
+        "metascore": "79",
+        "genre": "adventure"
+    },
+    {
+        "title": "Shin-chan: Shiro and the Coal Town",
+        "release_date": "2024-10-24",
+        "metascore": "78",
+        "genre": "adventure"
+    },
+    {
+        "title": "In Other Waters",
+        "release_date": "2020-04-03",
+        "metascore": "78",
+        "genre": "adventure"
+    },
+    {
+        "title": "Afterlove EP",
+        "release_date": "2025-02-14",
+        "metascore": "78",
+        "genre": "adventure"
+    },
+    {
+        "title": "Once Upon a Jester",
+        "release_date": "2022-11-09",
+        "metascore": "78",
+        "genre": "adventure"
+    },
+    {
+        "title": "Haven",
+        "release_date": "2021-02-04",
+        "metascore": "78",
+        "genre": "adventure"
+    },
+    {
+        "title": "1979 Revolution: Black Friday",
+        "release_date": "2018-08-02",
+        "metascore": "77",
+        "genre": "adventure"
+    },
+    {
+        "title": "Heaven's Vault",
+        "release_date": "2021-01-28",
+        "metascore": "77",
+        "genre": "adventure"
+    },
+    {
+        "title": "The Centennial Case: A Shijima Story",
+        "release_date": "2022-05-12",
+        "metascore": "77",
+        "genre": "adventure"
+    },
+    {
+        "title": "Journey of the Broken Circle",
+        "release_date": "2020-09-18",
+        "metascore": "76",
+        "genre": "adventure"
+    },
+    {
+        "title": "Duck Detective: The Secret Salami",
+        "release_date": "2024-05-23",
+        "metascore": "76",
+        "genre": "adventure"
+    },
+    {
+        "title": "OPUS: Echo of Starsong",
+        "release_date": "2022-05-11",
+        "metascore": "75",
+        "genre": "adventure"
+    },
+    {
+        "title": "Silence: The Whispered World 2",
+        "release_date": "2019-04-10",
+        "metascore": "75",
+        "genre": "adventure"
+    },
+    {
+        "title": "Labyrinth City: Pierre the Maze Detective",
+        "release_date": "2021-07-15",
+        "metascore": "75",
+        "genre": "adventure"
+    },
+    {
+        "title": "We. The Revolution",
+        "release_date": "2019-06-25",
+        "metascore": "75",
+        "genre": "adventure"
+    },
+    {
+        "title": "Headliner: NoviNews",
+        "release_date": "2019-09-05",
+        "metascore": "75",
+        "genre": "adventure"
+    },
+    {
+        "title": "Death Come True",
+        "release_date": "2020-06-24",
+        "metascore": "75",
+        "genre": "adventure"
+    },
+    {
+        "title": "Neo Cab",
+        "release_date": "2019-10-03",
+        "metascore": "74",
+        "genre": "adventure"
+    },
+    {
+        "title": "The Star Named EOS",
+        "release_date": "2024-07-23",
+        "metascore": "74",
+        "genre": "adventure"
+    },
+    {
+        "title": "We Are OFK",
+        "release_date": "2022-08-18",
+        "metascore": "74",
+        "genre": "adventure"
+    },
+    {
+        "title": "Out There: Omega The Alliance",
+        "release_date": "2019-04-09",
+        "metascore": "74",
+        "genre": "adventure"
+    },
+    {
+        "title": "Afterparty",
+        "release_date": "2020-03-06",
+        "metascore": "74",
+        "genre": "adventure"
+    },
+    {
+        "title": "A Normal Lost Phone",
+        "release_date": "2018-03-01",
+        "metascore": "73",
+        "genre": "adventure"
+    },
+    {
+        "title": "Late Shift",
+        "release_date": "2018-04-26",
+        "metascore": "73",
+        "genre": "adventure"
+    },
+    {
+        "title": "The Almost Gone",
+        "release_date": "2020-06-25",
+        "metascore": "73",
+        "genre": "adventure"
+    },
+    {
+        "title": "Old Man's Journey",
+        "release_date": "2018-02-20",
+        "metascore": "73",
+        "genre": "adventure"
+    },
+    {
+        "title": "Monster Prom: XXL",
+        "release_date": "2020-05-21",
+        "metascore": "73",
+        "genre": "adventure"
+    },
+    {
+        "title": "The Eternal Castle Remastered",
+        "release_date": "2020-05-15",
+        "metascore": "73",
+        "genre": "adventure"
+    },
+    {
+        "title": "Flood of Light",
+        "release_date": "2018-08-23",
+        "metascore": "72",
+        "genre": "adventure"
+    },
+    {
+        "title": "Button City",
+        "release_date": "2021-08-10",
+        "metascore": "71",
+        "genre": "adventure"
+    },
+    {
+        "title": "The Sexy Brutale",
+        "release_date": "2017-12-07",
+        "metascore": "71",
+        "genre": "adventure"
+    },
+    {
+        "title": "Everything",
+        "release_date": "2019-01-10",
+        "metascore": "71",
+        "genre": "adventure"
+    },
+    {
+        "title": "A Fold Apart",
+        "release_date": "2020-04-17",
+        "metascore": "70",
+        "genre": "adventure"
+    },
+    {
+        "title": "The Mooseman",
+        "release_date": "2018-07-18",
+        "metascore": "70",
+        "genre": "adventure"
+    },
+    {
+        "title": "Beat Cop",
+        "release_date": "2019-03-05",
+        "metascore": "70",
+        "genre": "adventure"
+    },
+    {
+        "title": "Fire Tonight",
+        "release_date": "2021-08-12",
+        "metascore": "70",
+        "genre": "adventure"
+    },
+    {
+        "title": "Half Past Fate",
+        "release_date": "2020-03-12",
+        "metascore": "69",
+        "genre": "adventure"
+    },
+    {
+        "title": "Where the Water Tastes Like Wine",
+        "release_date": "2019-11-29",
+        "metascore": "69",
+        "genre": "adventure"
+    },
+    {
+        "title": "South of the Circle",
+        "release_date": "2022-08-03",
+        "metascore": "69",
+        "genre": "adventure"
+    },
+    {
+        "title": "Irony Curtain: From Matryoshka with Love",
+        "release_date": "2019-06-27",
+        "metascore": "69",
+        "genre": "adventure"
+    },
+    {
+        "title": "Curious Expedition",
+        "release_date": "2020-04-02",
+        "metascore": "68",
+        "genre": "adventure"
+    },
+    {
+        "title": "Lydia",
+        "release_date": "2020-01-17",
+        "metascore": "68",
+        "genre": "adventure"
+    },
+    {
+        "title": "Manual Samuel",
+        "release_date": "2018-08-16",
+        "metascore": "68",
+        "genre": "adventure"
+    },
+    {
+        "title": "Say No! More",
+        "release_date": "2021-04-09",
+        "metascore": "67",
+        "genre": "adventure"
+    },
+    {
+        "title": "Felix the Reaper",
+        "release_date": "2019-10-17",
+        "metascore": "67",
+        "genre": "adventure"
+    },
+    {
+        "title": "Night Call",
+        "release_date": "2020-06-24",
+        "metascore": "66",
+        "genre": "adventure"
+    },
+    {
+        "title": "Beautiful Desolation",
+        "release_date": "2021-05-28",
+        "metascore": "66",
+        "genre": "adventure"
+    },
+    {
+        "title": "Mosaic",
+        "release_date": "2020-01-23",
+        "metascore": "63",
+        "genre": "adventure"
+    },
+    {
+        "title": "Infini",
+        "release_date": "2020-07-03",
+        "metascore": "61",
+        "genre": "adventure"
+    },
+    {
+        "title": "Summer in Mara",
+        "release_date": "2020-06-16",
+        "metascore": "59",
+        "genre": "adventure"
+    },
+    {
+        "title": "Truberbrook",
+        "release_date": "2019-04-17",
+        "metascore": "58",
+        "genre": "adventure"
+    },
+    {
+        "title": "Viviette",
+        "release_date": "2018-12-20",
+        "metascore": "58",
+        "genre": "adventure"
+    },
+    {
+        "title": "Half Past Fate: Romantic Distancing",
+        "release_date": "2021-02-14",
+        "metascore": "55",
+        "genre": "adventure"
+    },
+    {
+        "title": "Creepy Tale",
+        "release_date": "2020-07-10",
+        "metascore": "54",
+        "genre": "adventure"
+    },
+    {
+        "title": "The Padre",
+        "release_date": "2019-04-18",
+        "metascore": "54",
+        "genre": "adventure"
+    },
+    {
+        "title": "Storm Boy",
+        "release_date": "2018-11-20",
+        "metascore": "48",
+        "genre": "adventure"
+    },
+    {
+        "title": "Thief of Thieves: Season One",
+        "release_date": "2019-11-12",
+        "metascore": "47",
+        "genre": "adventure"
+    },
+    {
+        "title": "Senran Kagura Reflexions",
+        "release_date": "2018-09-13",
+        "metascore": "39",
+        "genre": "adventure"
+    },
+    {
+        "title": "Game Builder Garage",
+        "release_date": "2021-06-11",
+        "metascore": "77",
+        "genre": "application"
+    },
+    {
+        "title": "Colors Live",
+        "release_date": "2021-09-14",
+        "metascore": "73",
+        "genre": "application"
+    },
+    {
+        "title": "RPG Maker MV",
+        "release_date": "2020-09-08",
+        "metascore": "59",
+        "genre": "application"
+    },
+    {
+        "title": "qomp2",
+        "release_date": "2024-02-20",
+        "metascore": "85",
+        "genre": "arcade"
+    },
+    {
+        "title": "Killer Queen Black",
+        "release_date": "2019-10-11",
+        "metascore": "83",
+        "genre": "arcade"
+    },
+    {
+        "title": "Pac-Man Championship Edition 2 Plus",
+        "release_date": "2018-02-22",
+        "metascore": "80",
+        "genre": "arcade"
+    },
+    {
+        "title": "Part Time UFO",
+        "release_date": "2020-10-28",
+        "metascore": "78",
+        "genre": "arcade"
+    },
+    {
+        "title": "Pac-Man 99",
+        "release_date": "2021-04-07",
+        "metascore": "76",
+        "genre": "arcade"
+    },
+    {
+        "title": "Centipede: Recharged",
+        "release_date": "2021-09-29",
+        "metascore": "74",
+        "genre": "arcade"
+    },
+    {
+        "title": "Akka Arrh",
+        "release_date": "2023-02-21",
+        "metascore": "72",
+        "genre": "arcade"
+    },
+    {
+        "title": "BurgerTime Party!",
+        "release_date": "2019-10-08",
+        "metascore": "70",
+        "genre": "arcade"
+    },
+    {
+        "title": "Gravitar: Recharged",
+        "release_date": "2022-06-02",
+        "metascore": "70",
+        "genre": "arcade"
+    },
+    {
+        "title": "Stikbold! A Dodgeball Adventure",
+        "release_date": "2018-01-04",
+        "metascore": "70",
+        "genre": "arcade"
+    },
+    {
+        "title": "The VideoKid",
+        "release_date": "2018-08-30",
+        "metascore": "65",
+        "genre": "arcade"
+    },
+    {
+        "title": "Breakout: Recharged",
+        "release_date": "2022-02-10",
+        "metascore": "65",
+        "genre": "arcade"
+    },
+    {
+        "title": "BRAWL",
+        "release_date": "2018-01-12",
+        "metascore": "60",
+        "genre": "arcade"
+    },
+    {
+        "title": "PONG Quest",
+        "release_date": "2020-05-07",
+        "metascore": "47",
+        "genre": "arcade"
+    },
+    {
+        "title": "Balatro",
+        "release_date": "2024-02-20",
+        "metascore": "90",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Inscryption",
+        "release_date": "2022-12-01",
+        "metascore": "87",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Slay the Spire",
+        "release_date": "2019-06-06",
+        "metascore": "85",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Thronebreaker: The Witcher Tales",
+        "release_date": "2020-01-28",
+        "metascore": "84",
+        "genre": "card-battle"
+    },
+    {
+        "title": "SNK vs. Capcom: Card Fighters' Clash",
+        "release_date": "2022-01-12",
+        "metascore": "84",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Shadowverse: Champion's Battle",
+        "release_date": "2021-08-10",
+        "metascore": "82",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Nowhere Prophet",
+        "release_date": "2020-07-30",
+        "metascore": "81",
+        "genre": "card-battle"
+    },
+    {
+        "title": "SteamWorld Quest: Hand of Gilgamech",
+        "release_date": "2019-04-25",
+        "metascore": "81",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Faeria",
+        "release_date": "2020-08-13",
+        "metascore": "80",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Signs of the Sojourner",
+        "release_date": "2021-03-18",
+        "metascore": "80",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Voice of Cards: The Forsaken Maiden",
+        "release_date": "2022-02-17",
+        "metascore": "79",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Yu-Gi-Oh! Legacy of the Duelist: Link Evolution",
+        "release_date": "2019-08-20",
+        "metascore": "79",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Voice of Cards: The Isle Dragon Roars",
+        "release_date": "2021-10-28",
+        "metascore": "76",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Voice of Cards: The Beasts of Burden",
+        "release_date": "2022-09-13",
+        "metascore": "76",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Super Dragon Ball Heroes: World Mission",
+        "release_date": "2019-04-05",
+        "metascore": "69",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Roguebook",
+        "release_date": "2022-04-21",
+        "metascore": "66",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Cultist Simulator",
+        "release_date": "2021-02-02",
+        "metascore": "64",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Yu-Gi-Oh! RUSH DUEL: Dawn of the Battle Royale!!",
+        "release_date": "2021-12-07",
+        "metascore": "62",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Nadir: A Grimdark Deck Builder",
+        "release_date": "2023-02-07",
+        "metascore": "55",
+        "genre": "card-battle"
+    },
+    {
+        "title": "Portal: Companion Collection",
+        "release_date": "2022-06-28",
+        "metascore": "95",
+        "genre": "compilation"
+    },
+    {
+        "title": "Castlevania Dominus Collection",
+        "release_date": "2024-08-27",
+        "metascore": "92",
+        "genre": "compilation"
+    },
+    {
+        "title": "Bayonetta + Bayonetta 2",
+        "release_date": "2018-02-16",
+        "metascore": "90",
+        "genre": "compilation"
+    },
+    {
+        "title": "Atari 50: The Anniversary Celebration",
+        "release_date": "2022-11-11",
+        "metascore": "89",
+        "genre": "compilation"
+    },
+    {
+        "title": "Super Mario Galaxy + Super Mario Galaxy 2",
+        "release_date": "2025-10-02",
+        "metascore": "87",
+        "genre": "compilation"
+    },
+    {
+        "title": "Overcooked! All You Can Eat",
+        "release_date": "2021-03-23",
+        "metascore": "87",
+        "genre": "compilation"
+    },
+    {
+        "title": "The Great Ace Attorney Chronicles",
+        "release_date": "2021-07-27",
+        "metascore": "86",
+        "genre": "compilation"
+    },
+    {
+        "title": "Heretic + Hexen",
+        "release_date": "2025-08-07",
+        "metascore": "86",
+        "genre": "compilation"
+    },
+    {
+        "title": "Marvel vs. Capcom Fighting Collection: Arcade Classics",
+        "release_date": "2024-09-12",
+        "metascore": "86",
+        "genre": "compilation"
+    },
+    {
+        "title": "Mutant Mudds Collection",
+        "release_date": "2017-12-14",
+        "metascore": "85",
+        "genre": "compilation"
+    },
+    {
+        "title": "Ace Attorney Investigations Collection",
+        "release_date": "2024-09-06",
+        "metascore": "85",
+        "genre": "compilation"
+    },
+    {
+        "title": "Apollo Justice: Ace Attorney Trilogy",
+        "release_date": "2024-01-25",
+        "metascore": "85",
+        "genre": "compilation"
+    },
+    {
+        "title": "Tetris Forever",
+        "release_date": "2024-11-12",
+        "metascore": "85",
+        "genre": "compilation"
+    },
+    {
+        "title": "Final Fantasy X / X-2 HD Remaster",
+        "release_date": "2019-04-16",
+        "metascore": "85",
+        "genre": "compilation"
+    },
+    {
+        "title": "Mega Man X Legacy Collection",
+        "release_date": "2018-07-24",
+        "metascore": "84",
+        "genre": "compilation"
+    },
+    {
+        "title": "BioShock: The Collection",
+        "release_date": "2020-05-29",
+        "metascore": "84",
+        "genre": "compilation"
+    },
+    {
+        "title": "Final Fantasy Pixel Remaster: FF35th Anniversary Edition",
+        "release_date": "2023-04-21",
+        "metascore": "84",
+        "genre": "compilation"
+    },
+    {
+        "title": "Castlevania Advance Collection",
+        "release_date": "2021-09-23",
+        "metascore": "83",
+        "genre": "compilation"
+    },
+    {
+        "title": "Capcom Fighting Collection 2",
+        "release_date": "2025-05-16",
+        "metascore": "83",
+        "genre": "compilation"
+    },
+    {
+        "title": "Mega Man Legacy Collection",
+        "release_date": "2018-05-22",
+        "metascore": "83",
+        "genre": "compilation"
+    },
+    {
+        "title": "Gradius Origins",
+        "release_date": "2025-08-07",
+        "metascore": "83",
+        "genre": "compilation"
+    },
+    {
+        "title": "Danganronpa Decadence",
+        "release_date": "2021-12-03",
+        "metascore": "83",
+        "genre": "compilation"
+    },
+    {
+        "title": "Teenage Mutant Ninja Turtles: The Cowabunga Collection",
+        "release_date": "2022-08-30",
+        "metascore": "83",
+        "genre": "compilation"
+    },
+    {
+        "title": "Mega Man Zero / ZX Legacy Collection",
+        "release_date": "2020-02-25",
+        "metascore": "83",
+        "genre": "compilation"
+    },
+    {
+        "title": "OlliOlli: Switch Stance",
+        "release_date": "2019-02-14",
+        "metascore": "83",
+        "genre": "compilation"
+    },
+    {
+        "title": "Collection of Mana",
+        "release_date": "2019-06-11",
+        "metascore": "83",
+        "genre": "compilation"
+    },
+    {
+        "title": "Atelier Mysterious Trilogy Deluxe Pack",
+        "release_date": "2021-04-22",
+        "metascore": "82",
+        "genre": "compilation"
+    },
+    {
+        "title": "Hotline Miami Collection",
+        "release_date": "2019-08-19",
+        "metascore": "82",
+        "genre": "compilation"
+    },
+    {
+        "title": "Super Mario 3D All-Stars",
+        "release_date": "2020-09-18",
+        "metascore": "82",
+        "genre": "compilation"
+    },
+    {
+        "title": "Borderlands Legendary Collection",
+        "release_date": "2020-05-29",
+        "metascore": "82",
+        "genre": "compilation"
+    },
+    {
+        "title": "Suikoden I & II HD Remaster: Gate Rune and Dunan Unification Wars",
+        "release_date": "2025-03-06",
+        "metascore": "82",
+        "genre": "compilation"
+    },
+    {
+        "title": "Azure Striker Gunvolt: Striker Pack",
+        "release_date": "2017-11-21",
+        "metascore": "82",
+        "genre": "compilation"
+    },
+    {
+        "title": "Contra Anniversary Collection",
+        "release_date": "2019-06-11",
+        "metascore": "81",
+        "genre": "compilation"
+    },
+    {
+        "title": "R-Type Dimensions",
+        "release_date": "2018-11-28",
+        "metascore": "81",
+        "genre": "compilation"
+    },
+    {
+        "title": "Castlevania Anniversary Collection",
+        "release_date": "2019-05-16",
+        "metascore": "81",
+        "genre": "compilation"
+    },
+    {
+        "title": "Street Fighter: 30th Anniversary Collection",
+        "release_date": "2018-05-29",
+        "metascore": "81",
+        "genre": "compilation"
+    },
+    {
+        "title": "Phoenix Wright: Ace Attorney Trilogy",
+        "release_date": "2019-04-09",
+        "metascore": "81",
+        "genre": "compilation"
+    },
+    {
+        "title": "Ray'z Arcade Chronology",
+        "release_date": "2023-06-30",
+        "metascore": "81",
+        "genre": "compilation"
+    },
+    {
+        "title": "Metro Redux",
+        "release_date": "2020-02-28",
+        "metascore": "80",
+        "genre": "compilation"
+    },
+    {
+        "title": "Assassin's Creed: The Rebel Collection",
+        "release_date": "2019-12-06",
+        "metascore": "80",
+        "genre": "compilation"
+    },
+    {
+        "title": "Lunar Remastered Collection",
+        "release_date": "2025-04-18",
+        "metascore": "80",
+        "genre": "compilation"
+    },
+    {
+        "title": "Saviors of Sapphire Wings & Stranger of Sword City Revisited",
+        "release_date": "2021-03-16",
+        "metascore": "80",
+        "genre": "compilation"
+    },
+    {
+        "title": "Mega Man X Legacy Collection 1 + 2",
+        "release_date": "2018-07-24",
+        "metascore": "80",
+        "genre": "compilation"
+    },
+    {
+        "title": "Capcom Arcade Stadium",
+        "release_date": "2021-02-17",
+        "metascore": "80",
+        "genre": "compilation"
+    },
+    {
+        "title": "Sega Genesis Classics",
+        "release_date": "2018-12-07",
+        "metascore": "80",
+        "genre": "compilation"
+    },
+    {
+        "title": "Pikmin 1 + 2",
+        "release_date": "2023-06-21",
+        "metascore": "79",
+        "genre": "compilation"
+    },
+    {
+        "title": "The Lara Croft Collection",
+        "release_date": "2023-06-29",
+        "metascore": "79",
+        "genre": "compilation"
+    },
+    {
+        "title": "Mega Man Legacy Collection + Mega Man Legacy Collection 2",
+        "release_date": "2018-05-22",
+        "metascore": "79",
+        "genre": "compilation"
+    },
+    {
+        "title": "Neo Geo Pocket Color Selection Vol. 1",
+        "release_date": "2021-03-17",
+        "metascore": "79",
+        "genre": "compilation"
+    },
+    {
+        "title": "Capcom Arcade 2nd Stadium",
+        "release_date": "2022-07-22",
+        "metascore": "79",
+        "genre": "compilation"
+    },
+    {
+        "title": "Spyro Reignited Trilogy",
+        "release_date": "2019-09-03",
+        "metascore": "79",
+        "genre": "compilation"
+    },
+    {
+        "title": "FRAMED Collection",
+        "release_date": "2018-05-17",
+        "metascore": "79",
+        "genre": "compilation"
+    },
+    {
+        "title": "Capcom Fighting Collection",
+        "release_date": "2022-06-24",
+        "metascore": "78",
+        "genre": "compilation"
+    },
+    {
+        "title": "Double Dragon & Kunio-kun Retro Brawler Bundle",
+        "release_date": "2020-02-20",
+        "metascore": "78",
+        "genre": "compilation"
+    },
+    {
+        "title": "Resident Evil: Revelations Collection",
+        "release_date": "2017-11-28",
+        "metascore": "78",
+        "genre": "compilation"
+    },
+    {
+        "title": "Capcom Beat 'Em Up Bundle",
+        "release_date": "2018-09-18",
+        "metascore": "78",
+        "genre": "compilation"
+    },
+    {
+        "title": "Klonoa Phantasy Reverie Series",
+        "release_date": "2022-07-08",
+        "metascore": "78",
+        "genre": "compilation"
+    },
+    {
+        "title": "SNK 40th Anniversary Collection",
+        "release_date": "2018-11-13",
+        "metascore": "78",
+        "genre": "compilation"
+    },
+    {
+        "title": "Crash Bandicoot N. Sane Trilogy",
+        "release_date": "2018-06-29",
+        "metascore": "78",
+        "genre": "compilation"
+    },
+    {
+        "title": "Mega Man Battle Network Legacy Collection",
+        "release_date": "2023-04-14",
+        "metascore": "77",
+        "genre": "compilation"
+    },
+    {
+        "title": "Etrian Odyssey Origins Collection",
+        "release_date": "2023-06-01",
+        "metascore": "77",
+        "genre": "compilation"
+    },
+    {
+        "title": "Baten Kaitos I & II HD Remaster",
+        "release_date": "2023-09-14",
+        "metascore": "77",
+        "genre": "compilation"
+    },
+    {
+        "title": "Mega Man Legacy Collection 2",
+        "release_date": "2018-05-22",
+        "metascore": "77",
+        "genre": "compilation"
+    },
+    {
+        "title": "Taito Milestones 3",
+        "release_date": "2024-12-10",
+        "metascore": "77",
+        "genre": "compilation"
+    },
+    {
+        "title": "Space Invaders: Invincible Collection",
+        "release_date": "2021-08-17",
+        "metascore": "77",
+        "genre": "compilation"
+    },
+    {
+        "title": "Sonic Origins Plus",
+        "release_date": "2023-06-23",
+        "metascore": "77",
+        "genre": "compilation"
+    },
+    {
+        "title": "Super Monkey Ball: Banana Mania",
+        "release_date": "2021-10-05",
+        "metascore": "76",
+        "genre": "compilation"
+    },
+    {
+        "title": "Patapon 1 + 2 Replay",
+        "release_date": "2025-07-11",
+        "metascore": "76",
+        "genre": "compilation"
+    },
+    {
+        "title": "Digimon Story Cyber Sleuth: Complete Edition",
+        "release_date": "2019-10-18",
+        "metascore": "76",
+        "genre": "compilation"
+    },
+    {
+        "title": "Darius Cozmic Collection: Arcade",
+        "release_date": "2020-06-16",
+        "metascore": "76",
+        "genre": "compilation"
+    },
+    {
+        "title": "Langrisser I & II",
+        "release_date": "2020-03-10",
+        "metascore": "76",
+        "genre": "compilation"
+    },
+    {
+        "title": "Amnesia Collection",
+        "release_date": "2019-09-12",
+        "metascore": "76",
+        "genre": "compilation"
+    },
+    {
+        "title": "Angry Video Game Nerd I & II Deluxe",
+        "release_date": "2020-10-30",
+        "metascore": "75",
+        "genre": "compilation"
+    },
+    {
+        "title": "Blizzard Arcade Collection",
+        "release_date": "2021-02-19",
+        "metascore": "75",
+        "genre": "compilation"
+    },
+    {
+        "title": "Crysis Remastered Trilogy",
+        "release_date": "2021-10-15",
+        "metascore": "75",
+        "genre": "compilation"
+    },
+    {
+        "title": "Assassin's Creed: The Ezio Collection",
+        "release_date": "2022-02-17",
+        "metascore": "75",
+        "genre": "compilation"
+    },
+    {
+        "title": ".hack//G.U. Last Recode",
+        "release_date": "2022-03-10",
+        "metascore": "75",
+        "genre": "compilation"
+    },
+    {
+        "title": "Chaos;Head Noah / Chaos;Child Double Pack",
+        "release_date": "2022-10-07",
+        "metascore": "75",
+        "genre": "compilation"
+    },
+    {
+        "title": "Disney Classic Games: Aladdin and the Lion King",
+        "release_date": "2019-10-29",
+        "metascore": "75",
+        "genre": "compilation"
+    },
+    {
+        "title": "Pac-Man Museum+",
+        "release_date": "2022-05-27",
+        "metascore": "75",
+        "genre": "compilation"
+    },
+    {
+        "title": "Prinny Presents NIS Classics Vol. 2",
+        "release_date": "2022-05-10",
+        "metascore": "74",
+        "genre": "compilation"
+    },
+    {
+        "title": "Vasara Collection",
+        "release_date": "2019-08-15",
+        "metascore": "74",
+        "genre": "compilation"
+    },
+    {
+        "title": "Sonic Origins",
+        "release_date": "2022-06-23",
+        "metascore": "74",
+        "genre": "compilation"
+    },
+    {
+        "title": "LEGO Harry Potter Collection",
+        "release_date": "2018-10-30",
+        "metascore": "73",
+        "genre": "compilation"
+    },
+    {
+        "title": "Another Code: Recollection",
+        "release_date": "2024-01-19",
+        "metascore": "73",
+        "genre": "compilation"
+    },
+    {
+        "title": "Yomawari: The Long Night Collection",
+        "release_date": "2018-10-30",
+        "metascore": "73",
+        "genre": "compilation"
+    },
+    {
+        "title": "Planescape: Torment: Enhanced Edition / Icewind Dale: Enhanced Edition",
+        "release_date": "2019-10-15",
+        "metascore": "73",
+        "genre": "compilation"
+    },
+    {
+        "title": "Baldur's Gate and Baldur's Gate II: Enhanced Editions",
+        "release_date": "2019-10-15",
+        "metascore": "72",
+        "genre": "compilation"
+    },
+    {
+        "title": "Wonder Boy Anniversary Collection",
+        "release_date": "2023-01-26",
+        "metascore": "72",
+        "genre": "compilation"
+    },
+    {
+        "title": "The Silver Case 2425",
+        "release_date": "2021-07-06",
+        "metascore": "72",
+        "genre": "compilation"
+    },
+    {
+        "title": "Namco Museum",
+        "release_date": "2017-07-28",
+        "metascore": "72",
+        "genre": "compilation"
+    },
+    {
+        "title": "Grandia HD Collection",
+        "release_date": "2019-08-16",
+        "metascore": "72",
+        "genre": "compilation"
+    },
+    {
+        "title": "Prinny Presents NIS Classics Volume 1",
+        "release_date": "2021-08-31",
+        "metascore": "72",
+        "genre": "compilation"
+    },
+    {
+        "title": "Taito Milestones 2",
+        "release_date": "2023-08-31",
+        "metascore": "72",
+        "genre": "compilation"
+    },
+    {
+        "title": "MySims: Cozy Bundle",
+        "release_date": "2024-11-19",
+        "metascore": "72",
+        "genre": "compilation"
+    },
+    {
+        "title": "Ninja Gaiden: Master Collection",
+        "release_date": "2021-06-10",
+        "metascore": "72",
+        "genre": "compilation"
+    },
+    {
+        "title": "Tomb Raider I-III Remastered Starring Lara Croft",
+        "release_date": "2024-02-14",
+        "metascore": "71",
+        "genre": "compilation"
+    },
+    {
+        "title": "Collection of SaGa: Final Fantasy Legend",
+        "release_date": "2020-12-15",
+        "metascore": "71",
+        "genre": "compilation"
+    },
+    {
+        "title": "Prinny Presents NIS Classics Volume 3 La Pucelle: Ragnarok / Rhapsody: A Musical Adventure",
+        "release_date": "2022-08-30",
+        "metascore": "71",
+        "genre": "compilation"
+    },
+    {
+        "title": "Monster Rancher 1 & 2 DX",
+        "release_date": "2021-12-09",
+        "metascore": "70",
+        "genre": "compilation"
+    },
+    {
+        "title": "Naruto Shippuden: Ultimate Ninja Storm Trilogy",
+        "release_date": "2018-04-26",
+        "metascore": "70",
+        "genre": "compilation"
+    },
+    {
+        "title": "Namco Museum Archives Vol. 1",
+        "release_date": "2020-06-18",
+        "metascore": "70",
+        "genre": "compilation"
+    },
+    {
+        "title": "Rhapsody: Marl Kingdom Chronicles",
+        "release_date": "2023-08-29",
+        "metascore": "70",
+        "genre": "compilation"
+    },
+    {
+        "title": "Turrican Flashback Collection",
+        "release_date": "2021-01-29",
+        "metascore": "70",
+        "genre": "compilation"
+    },
+    {
+        "title": "Irem Collection Volume 1",
+        "release_date": "2023-11-21",
+        "metascore": "69",
+        "genre": "compilation"
+    },
+    {
+        "title": "Prinny 1-2: Exploded and Reloaded",
+        "release_date": "2020-10-13",
+        "metascore": "69",
+        "genre": "compilation"
+    },
+    {
+        "title": "Psikyo Shooting Stars Alpha",
+        "release_date": "2020-01-21",
+        "metascore": "69",
+        "genre": "compilation"
+    },
+    {
+        "title": "Mercenaries Saga Chronicles",
+        "release_date": "2018-02-08",
+        "metascore": "68",
+        "genre": "compilation"
+    },
+    {
+        "title": "Yu-Gi-Oh! Early Days Collection",
+        "release_date": "2025-02-27",
+        "metascore": "68",
+        "genre": "compilation"
+    },
+    {
+        "title": "Citizens Unite!: Earth x Space",
+        "release_date": "2021-01-28",
+        "metascore": "68",
+        "genre": "compilation"
+    },
+    {
+        "title": "Atari Flashback Classics",
+        "release_date": "2018-12-13",
+        "metascore": "67",
+        "genre": "compilation"
+    },
+    {
+        "title": "Namco Museum Archives Vol. 2",
+        "release_date": "2020-06-18",
+        "metascore": "67",
+        "genre": "compilation"
+    },
+    {
+        "title": "Psikyo Shooting Stars Bravo",
+        "release_date": "2020-02-18",
+        "metascore": "67",
+        "genre": "compilation"
+    },
+    {
+        "title": "Wonder Boy Collection",
+        "release_date": "2022-06-03",
+        "metascore": "67",
+        "genre": "compilation"
+    },
+    {
+        "title": "Darius Cozmic Collection: Console",
+        "release_date": "2020-06-16",
+        "metascore": "66",
+        "genre": "compilation"
+    },
+    {
+        "title": "Life is Strange: Arcadia Bay Collection",
+        "release_date": "2022-09-27",
+        "metascore": "66",
+        "genre": "compilation"
+    },
+    {
+        "title": "Space Invaders Forever",
+        "release_date": "2020-12-11",
+        "metascore": "65",
+        "genre": "compilation"
+    },
+    {
+        "title": "NeoGeo Pocket Color Selection Vol. 2",
+        "release_date": "2022-11-09",
+        "metascore": "65",
+        "genre": "compilation"
+    },
+    {
+        "title": "Taito Milestones",
+        "release_date": "2022-04-15",
+        "metascore": "63",
+        "genre": "compilation"
+    },
+    {
+        "title": "Jurassic World Aftermath Collection",
+        "release_date": "2022-11-10",
+        "metascore": "62",
+        "genre": "compilation"
+    },
+    {
+        "title": "Arcade Classics Anniversary Collection",
+        "release_date": "2019-04-18",
+        "metascore": "61",
+        "genre": "compilation"
+    },
+    {
+        "title": "Shelter Generations",
+        "release_date": "2018-04-12",
+        "metascore": "60",
+        "genre": "compilation"
+    },
+    {
+        "title": "Rose & Camellia Collection",
+        "release_date": "2024-04-16",
+        "metascore": "60",
+        "genre": "compilation"
+    },
+    {
+        "title": "Mega Man X Legacy Collection 2",
+        "release_date": "2018-07-24",
+        "metascore": "60",
+        "genre": "compilation"
+    },
+    {
+        "title": "Kingdom Hearts Integrum Masterpiece for Cloud",
+        "release_date": "2022-02-10",
+        "metascore": "57",
+        "genre": "compilation"
+    },
+    {
+        "title": "Jurassic Park: Classic Games Collection",
+        "release_date": "2023-11-21",
+        "metascore": "50",
+        "genre": "compilation"
+    },
+    {
+        "title": "Grand Theft Auto: The Trilogy - The Definitive Edition",
+        "release_date": "2021-11-11",
+        "metascore": "46",
+        "genre": "compilation"
+    },
+    {
+        "title": "Dr Kawashima's Brain Training for Nintendo Switch",
+        "release_date": "2019-12-27",
+        "metascore": "64",
+        "genre": "edutainment"
+    },
+    {
+        "title": "The House in Fata Morgana - Dreams of the Revenants Edition -",
+        "release_date": "2021-04-09",
+        "metascore": "96",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Jack Jeanne",
+        "release_date": "2023-06-15",
+        "metascore": "90",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Tsukihime: A Piece of Blue Glass Moon",
+        "release_date": "2024-06-27",
+        "metascore": "90",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Bustafellows",
+        "release_date": "2021-07-30",
+        "metascore": "86",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Anonymous;Code",
+        "release_date": "2023-09-08",
+        "metascore": "86",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Paranormasight: The Seven Mysteries of Honjo",
+        "release_date": "2023-03-09",
+        "metascore": "85",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Doki Doki Literature Club Plus!",
+        "release_date": "2021-06-30",
+        "metascore": "85",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Steins;Gate Elite",
+        "release_date": "2019-02-19",
+        "metascore": "85",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "80 Days",
+        "release_date": "2019-10-01",
+        "metascore": "84",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Cupid Parasite",
+        "release_date": "2021-11-02",
+        "metascore": "83",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Chicken Police - Paint it RED!",
+        "release_date": "2020-11-05",
+        "metascore": "83",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Code:Realize - Guardian of Rebirth",
+        "release_date": "2020-02-06",
+        "metascore": "83",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Coffee Talk Episode 2: Hibiscus & Butterfly",
+        "release_date": "2023-04-20",
+        "metascore": "82",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Gnosia",
+        "release_date": "2021-03-04",
+        "metascore": "82",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Paradise Killer",
+        "release_date": "2020-09-04",
+        "metascore": "81",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Aviary Attorney",
+        "release_date": "2020-01-30",
+        "metascore": "81",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Winds of Change",
+        "release_date": "2021-06-03",
+        "metascore": "81",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Temirana: The Lucky Princess and the Tragic Knights",
+        "release_date": "2026-01-13",
+        "metascore": "81",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "The Red Strings Club",
+        "release_date": "2019-03-14",
+        "metascore": "80",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Olympia Soiree",
+        "release_date": "2021-09-09",
+        "metascore": "80",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Telling Lies",
+        "release_date": "2020-04-28",
+        "metascore": "80",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "If Found...",
+        "release_date": "2020-10-22",
+        "metascore": "80",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Variable Barricade",
+        "release_date": "2022-02-24",
+        "metascore": "79",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Cafe Enchante",
+        "release_date": "2020-11-05",
+        "metascore": "79",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Ken Follett's The Pillars of the Earth",
+        "release_date": "2023-03-01",
+        "metascore": "79",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Subsurface Circular",
+        "release_date": "2018-03-01",
+        "metascore": "79",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Steins;Gate 0",
+        "release_date": "2019-12-10",
+        "metascore": "79",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Birushana: Rising Flower of Genpei",
+        "release_date": "2022-06-28",
+        "metascore": "79",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "World End Syndrome",
+        "release_date": "2019-05-02",
+        "metascore": "79",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Aokana - Four Rhythms Across the Blue",
+        "release_date": "2020-08-21",
+        "metascore": "78",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Murder by Numbers",
+        "release_date": "2020-03-05",
+        "metascore": "78",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Root Double: Before Crime * After Days - Xtend Edition",
+        "release_date": "2020-11-26",
+        "metascore": "78",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Sympathy Kiss",
+        "release_date": "2024-02-27",
+        "metascore": "78",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Piofiore: Fated Memories",
+        "release_date": "2020-10-08",
+        "metascore": "78",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Lover Pretend",
+        "release_date": "2022-12-01",
+        "metascore": "77",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Battlefield Waltz",
+        "release_date": "2025-04-08",
+        "metascore": "77",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Re:ZERO - Starting Life in Another World: The Prophecy of the Throne",
+        "release_date": "2021-01-29",
+        "metascore": "76",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Necrobarista: Final Pour",
+        "release_date": "2021-08-11",
+        "metascore": "76",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Read Only Memories: NEURODIVER",
+        "release_date": "2024-05-16",
+        "metascore": "76",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Norn9: Last Era",
+        "release_date": "2023-08-31",
+        "metascore": "76",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Arcade Spirits",
+        "release_date": "2020-05-01",
+        "metascore": "75",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Cupid Parasite: Sweet and Spicy Darling",
+        "release_date": "2024-05-28",
+        "metascore": "75",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Emio - The Smiling Man: Famicom Detective Club",
+        "release_date": "2024-08-29",
+        "metascore": "74",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Famicom Detective Club: The Girl Who Stands Behind",
+        "release_date": "2021-05-14",
+        "metascore": "74",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Disney TRON: Identity",
+        "release_date": "2023-04-11",
+        "metascore": "74",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Winter's Wish: Spirits of Edo",
+        "release_date": "2023-05-18",
+        "metascore": "74",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Coffee Talk",
+        "release_date": "2020-01-29",
+        "metascore": "74",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Famicom Detective Club: The Missing Heir",
+        "release_date": "2021-05-14",
+        "metascore": "74",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Paradigm Paradox",
+        "release_date": "2022-10-27",
+        "metascore": "73",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Cinders",
+        "release_date": "2019-02-14",
+        "metascore": "73",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Bury me, my Love",
+        "release_date": "2019-01-10",
+        "metascore": "73",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Werewolf: The Apocalypse - Heart of the Forest",
+        "release_date": "2021-01-07",
+        "metascore": "73",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Burly Men at Sea",
+        "release_date": "2018-04-12",
+        "metascore": "72",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Amnesia: Memories",
+        "release_date": "2022-09-20",
+        "metascore": "71",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "One Night Stand",
+        "release_date": "2019-10-04",
+        "metascore": "71",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Harmony: The Fall of Reverie",
+        "release_date": "2023-06-08",
+        "metascore": "71",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Process of Elimination",
+        "release_date": "2023-04-11",
+        "metascore": "70",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Root Film",
+        "release_date": "2021-03-19",
+        "metascore": "70",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Chaos;Head Noah",
+        "release_date": "2022-10-07",
+        "metascore": "68",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Best Friend Forever",
+        "release_date": "2020-08-27",
+        "metascore": "60",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Our World Is Ended.",
+        "release_date": "2019-04-18",
+        "metascore": "59",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Sense: A Cyberpunk Ghost Story",
+        "release_date": "2021-01-07",
+        "metascore": "55",
+        "genre": "visual-novel"
+    },
+    {
+        "title": "Star Wars Pinball",
+        "release_date": "2019-09-13",
+        "metascore": "86",
+        "genre": "pinball"
+    },
+    {
+        "title": "Pinball FX3",
+        "release_date": "2017-12-12",
+        "metascore": "82",
+        "genre": "pinball"
+    },
+    {
+        "title": "Pinball FX3: Bethesda Pinball",
+        "release_date": "2018-04-04",
+        "metascore": "80",
+        "genre": "pinball"
+    },
+    {
+        "title": "Zombie Rollerz: Pinball Heroes",
+        "release_date": "2022-03-02",
+        "metascore": "74",
+        "genre": "pinball"
+    },
+    {
+        "title": "Senran Kagura: Peach Ball",
+        "release_date": "2019-07-09",
+        "metascore": "62",
+        "genre": "pinball"
+    },
+    {
+        "title": "Unpacking",
+        "release_date": "2021-11-02",
+        "metascore": "86",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Snipperclips Plus: Cut It Out, Together!",
+        "release_date": "2017-11-10",
+        "metascore": "84",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Gorogoa",
+        "release_date": "2017-12-14",
+        "metascore": "83",
+        "genre": "puzzle"
+    },
+    {
+        "title": "SOLAS 128",
+        "release_date": "2021-01-25",
+        "metascore": "82",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Snipperclips - Cut it out, together!",
+        "release_date": "2017-03-03",
+        "metascore": "80",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Deru - The Art of Cooperation",
+        "release_date": "2018-11-07",
+        "metascore": "79",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Agent A: A Puzzle In Disguise",
+        "release_date": "2019-08-29",
+        "metascore": "79",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Golf Peaks",
+        "release_date": "2019-03-14",
+        "metascore": "78",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Please, Touch The Artwork",
+        "release_date": "2022-09-03",
+        "metascore": "78",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Human Resource Machine",
+        "release_date": "2017-03-16",
+        "metascore": "77",
+        "genre": "puzzle"
+    },
+    {
+        "title": "LEGO Builder's Journey",
+        "release_date": "2021-06-22",
+        "metascore": "76",
+        "genre": "puzzle"
+    },
+    {
+        "title": "TENS!",
+        "release_date": "2020-11-05",
+        "metascore": "76",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Cloud Gardens",
+        "release_date": "2022-06-16",
+        "metascore": "75",
+        "genre": "puzzle"
+    },
+    {
+        "title": "A Little To The Left",
+        "release_date": "2022-11-09",
+        "metascore": "75",
+        "genre": "puzzle"
+    },
+    {
+        "title": "One Line Coloring",
+        "release_date": "2020-08-21",
+        "metascore": "74",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Storyteller",
+        "release_date": "2023-03-23",
+        "metascore": "73",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Layton's Mystery Journey: Katrielle and The Millionaires' Conspiracy - Deluxe Edition",
+        "release_date": "2019-11-08",
+        "metascore": "73",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Hexologic",
+        "release_date": "2018-06-11",
+        "metascore": "71",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Flip Wars",
+        "release_date": "2017-08-10",
+        "metascore": "53",
+        "genre": "puzzle"
+    },
+    {
+        "title": "Bug Fables: The Everlasting Sapling",
+        "release_date": "2020-05-28",
+        "metascore": "85",
+        "genre": "rpg"
+    },
+    {
+        "title": "West of Loathing",
+        "release_date": "2018-05-31",
+        "metascore": "85",
+        "genre": "rpg"
+    },
+    {
+        "title": "Darkest Dungeon",
+        "release_date": "2018-01-18",
+        "metascore": "85",
+        "genre": "rpg"
+    },
+    {
+        "title": "Child of Light",
+        "release_date": "2018-10-11",
+        "metascore": "84",
+        "genre": "rpg"
+    },
+    {
+        "title": "Loop Hero",
+        "release_date": "2021-12-09",
+        "metascore": "83",
+        "genre": "rpg"
+    },
+    {
+        "title": "LISA: Definitive Edition",
+        "release_date": "2023-07-18",
+        "metascore": "83",
+        "genre": "rpg"
+    },
+    {
+        "title": "Everhood",
+        "release_date": "2021-03-04",
+        "metascore": "81",
+        "genre": "rpg"
+    },
+    {
+        "title": "World of Horror",
+        "release_date": "2023-10-26",
+        "metascore": "81",
+        "genre": "rpg"
+    },
+    {
+        "title": "Ruined King: A League of Legends Story",
+        "release_date": "2021-11-16",
+        "metascore": "81",
+        "genre": "rpg"
+    },
+    {
+        "title": "South Park: The Fractured But Whole",
+        "release_date": "2018-04-24",
+        "metascore": "80",
+        "genre": "rpg"
+    },
+    {
+        "title": "Paper Mario: The Origami King",
+        "release_date": "2020-07-17",
+        "metascore": "80",
+        "genre": "rpg"
+    },
+    {
+        "title": "Eastward",
+        "release_date": "2021-09-16",
+        "metascore": "78",
+        "genre": "rpg"
+    },
+    {
+        "title": "Everhood 2",
+        "release_date": "2025-03-04",
+        "metascore": "78",
+        "genre": "rpg"
+    },
+    {
+        "title": "moon: Remix RPG Adventure",
+        "release_date": "2020-08-27",
+        "metascore": "77",
+        "genre": "rpg"
+    },
+    {
+        "title": "Bandle Tale: A League of Legends Story",
+        "release_date": "2024-02-21",
+        "metascore": "76",
+        "genre": "rpg"
+    },
+    {
+        "title": "Potion Permit",
+        "release_date": "2022-09-22",
+        "metascore": "74",
+        "genre": "rpg"
+    },
+    {
+        "title": "RPG Time: The Legend of Wright",
+        "release_date": "2022-08-18",
+        "metascore": "74",
+        "genre": "rpg"
+    },
+    {
+        "title": "RPGolf Legends",
+        "release_date": "2022-01-20",
+        "metascore": "71",
+        "genre": "rpg"
+    },
+    {
+        "title": "Metal Max Xeno Reborn",
+        "release_date": "2022-06-10",
+        "metascore": "71",
+        "genre": "rpg"
+    },
+    {
+        "title": "Miitopia",
+        "release_date": "2021-05-21",
+        "metascore": "71",
+        "genre": "rpg"
+    },
+    {
+        "title": "Nelke & the Legendary Alchemists: Ateliers of the New World",
+        "release_date": "2019-03-26",
+        "metascore": "70",
+        "genre": "rpg"
+    },
+    {
+        "title": "Born of Bread",
+        "release_date": "2023-12-05",
+        "metascore": "69",
+        "genre": "rpg"
+    },
+    {
+        "title": "Vagante",
+        "release_date": "2022-01-27",
+        "metascore": "69",
+        "genre": "rpg"
+    },
+    {
+        "title": "Fairy Tail",
+        "release_date": "2020-07-31",
+        "metascore": "69",
+        "genre": "rpg"
+    },
+    {
+        "title": "Bio Motor Unitron",
+        "release_date": "2022-05-26",
+        "metascore": "65",
+        "genre": "rpg"
+    },
+    {
+        "title": "My Time at Sandrock",
+        "release_date": "2023-11-02",
+        "metascore": "64",
+        "genre": "rpg"
+    },
+    {
+        "title": "Monark",
+        "release_date": "2022-02-22",
+        "metascore": "62",
+        "genre": "rpg"
+    },
+    {
+        "title": "Haunted Dungeons: Hyakki Castle",
+        "release_date": "2018-08-30",
+        "metascore": "62",
+        "genre": "rpg"
+    },
+    {
+        "title": "Seven Knights -Time Wanderer-",
+        "release_date": "2020-11-05",
+        "metascore": "61",
+        "genre": "rpg"
+    },
+    {
+        "title": "Destiny Connect: Tick-Tock Travelers",
+        "release_date": "2019-10-22",
+        "metascore": "57",
+        "genre": "rpg"
+    },
+    {
+        "title": "Soccer Story",
+        "release_date": "2022-11-29",
+        "metascore": "55",
+        "genre": "rpg"
+    },
+    {
+        "title": "Sports Story",
+        "release_date": "2022-12-23",
+        "metascore": "54",
+        "genre": "rpg"
+    },
+    {
+        "title": "The Good Life",
+        "release_date": "2021-10-15",
+        "metascore": "50",
+        "genre": "rpg"
+    },
+    {
+        "title": "Milanoir",
+        "release_date": "2018-05-31",
+        "metascore": "50",
+        "genre": "rpg"
+    },
+    {
+        "title": "Theatrhythm Final Bar Line",
+        "release_date": "2023-02-16",
+        "metascore": "87",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Crypt of the NecroDancer",
+        "release_date": "2018-02-01",
+        "metascore": "86",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Cadence of Hyrule: Crypt of the NecroDancer Featuring The Legend of Zelda",
+        "release_date": "2019-06-13",
+        "metascore": "85",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Thumper",
+        "release_date": "2017-05-18",
+        "metascore": "85",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Sayonara Wild Hearts",
+        "release_date": "2019-09-19",
+        "metascore": "84",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Just Shapes & Beats",
+        "release_date": "2018-05-31",
+        "metascore": "83",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Tadpole Treble Encore",
+        "release_date": "2021-01-21",
+        "metascore": "82",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Cytus Alpha",
+        "release_date": "2019-04-25",
+        "metascore": "81",
+        "genre": "rhythm"
+    },
+    {
+        "title": "VOEZ",
+        "release_date": "2017-03-09",
+        "metascore": "81",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Fuser",
+        "release_date": "2020-11-09",
+        "metascore": "80",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Taiko no Tatsujin: Rhythm Festival",
+        "release_date": "2022-09-23",
+        "metascore": "80",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Hatsune Miku: Project Diva MegaMix",
+        "release_date": "2020-05-15",
+        "metascore": "79",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Kingdom Hearts: Melody of Memory",
+        "release_date": "2020-11-13",
+        "metascore": "79",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Mad Rat Dead",
+        "release_date": "2020-10-30",
+        "metascore": "79",
+        "genre": "rhythm"
+    },
+    {
+        "title": "A Musical Story",
+        "release_date": "2022-03-03",
+        "metascore": "79",
+        "genre": "rhythm"
+    },
+    {
+        "title": "AVICII Invector Encore Edition",
+        "release_date": "2020-09-08",
+        "metascore": "78",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Musynx",
+        "release_date": "2018-06-19",
+        "metascore": "78",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Taiko no Tatsujin: Drum 'n' Fun!",
+        "release_date": "2018-11-02",
+        "metascore": "78",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Old School Musical",
+        "release_date": "2018-09-13",
+        "metascore": "76",
+        "genre": "rhythm"
+    },
+    {
+        "title": "SUPERBEAT: XONiC",
+        "release_date": "2017-11-21",
+        "metascore": "74",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Double Kick Heroes",
+        "release_date": "2020-08-13",
+        "metascore": "74",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Muse Dash",
+        "release_date": "2019-06-20",
+        "metascore": "73",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Rhythm Fighter",
+        "release_date": "2021-01-14",
+        "metascore": "72",
+        "genre": "rhythm"
+    },
+    {
+        "title": "LOUD",
+        "release_date": "2022-07-15",
+        "metascore": "72",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Samba de Amigo: Party Central",
+        "release_date": "2023-08-29",
+        "metascore": "71",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Taiko no Tatsujin: Rhythmic Adventure Pack",
+        "release_date": "2020-12-03",
+        "metascore": "70",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Super Beat Sports",
+        "release_date": "2017-11-02",
+        "metascore": "68",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Lost in Harmony",
+        "release_date": "2018-06-21",
+        "metascore": "63",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Gal Metal",
+        "release_date": "2018-10-30",
+        "metascore": "61",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Hello Kitty and Friends: Happiness Parade",
+        "release_date": "2023-10-26",
+        "metascore": "61",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Super Crazy Rhythm Castle",
+        "release_date": "2023-11-14",
+        "metascore": "60",
+        "genre": "rhythm"
+    },
+    {
+        "title": "Shiren the Wanderer: The Mystery Dungeon of Serpentcoil Island",
+        "release_date": "2024-02-27",
+        "metascore": "83",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Darkest Dungeon II",
+        "release_date": "2024-07-15",
+        "metascore": "81",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Rogue Legacy",
+        "release_date": "2018-11-06",
+        "metascore": "80",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Crown Trick",
+        "release_date": "2020-10-16",
+        "metascore": "80",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Tangledeep",
+        "release_date": "2019-01-31",
+        "metascore": "79",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Rogue Heroes: Ruins of Tasos",
+        "release_date": "2021-02-23",
+        "metascore": "78",
+        "genre": "roguelike"
+    },
+    {
+        "title": "For the King",
+        "release_date": "2019-05-09",
+        "metascore": "76",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Shiren the Wanderer: The Tower of Fortune and the Dice of Fate",
+        "release_date": "2020-12-02",
+        "metascore": "75",
+        "genre": "roguelike"
+    },
+    {
+        "title": "void tRrLM(); //Void Terrarium",
+        "release_date": "2020-07-14",
+        "metascore": "74",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Chocobo's Mystery Dungeon: Every Buddy!",
+        "release_date": "2019-03-20",
+        "metascore": "73",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Pokemon Mystery Dungeon: Rescue Team DX",
+        "release_date": "2020-03-06",
+        "metascore": "69",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Touhou Genso Wanderer Reloaded",
+        "release_date": "2018-07-17",
+        "metascore": "64",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Vambrace: Cold Soul",
+        "release_date": "2019-08-29",
+        "metascore": "59",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Sword of the Necromancer",
+        "release_date": "2021-01-28",
+        "metascore": "58",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Soulblight",
+        "release_date": "2018-10-04",
+        "metascore": "46",
+        "genre": "roguelike"
+    },
+    {
+        "title": "Minecraft",
+        "release_date": "2018-06-21",
+        "metascore": "86",
+        "genre": "sandbox"
+    },
+    {
+        "title": "Dragon Quest Builders 2",
+        "release_date": "2019-07-12",
+        "metascore": "85",
+        "genre": "sandbox"
+    },
+    {
+        "title": "Spiritfarer",
+        "release_date": "2020-08-18",
+        "metascore": "84",
+        "genre": "sandbox"
+    },
+    {
+        "title": "Terraria",
+        "release_date": "2019-06-27",
+        "metascore": "82",
+        "genre": "sandbox"
+    },
+    {
+        "title": "Dragon Quest Builders",
+        "release_date": "2018-02-09",
+        "metascore": "81",
+        "genre": "sandbox"
+    },
+    {
+        "title": "SteamWorld Build",
+        "release_date": "2023-12-01",
+        "metascore": "77",
+        "genre": "sandbox"
+    },
+    {
+        "title": "Grow: Song of the Evertree",
+        "release_date": "2021-11-16",
+        "metascore": "77",
+        "genre": "sandbox"
+    },
+    {
+        "title": "Subnautica: Below Zero",
+        "release_date": "2021-05-14",
+        "metascore": "76",
+        "genre": "sandbox"
+    },
+    {
+        "title": "Birthdays the Beginning",
+        "release_date": "2018-06-05",
+        "metascore": "71",
+        "genre": "sandbox"
+    },
+    {
+        "title": "LEGO Bricktales",
+        "release_date": "2022-10-12",
+        "metascore": "68",
+        "genre": "sandbox"
+    },
+    {
+        "title": "Deiland",
+        "release_date": "2021-04-15",
+        "metascore": "61",
+        "genre": "sandbox"
+    },
+    {
+        "title": "LEGO Worlds",
+        "release_date": "2017-09-05",
+        "metascore": "59",
+        "genre": "sandbox"
+    },
+    {
+        "title": "Drawn to Life: Two Realms",
+        "release_date": "2020-12-07",
+        "metascore": "50",
+        "genre": "sandbox"
+    },
+    {
+        "title": "ARK: Survival Evolved",
+        "release_date": "2018-11-30",
+        "metascore": "29",
+        "genre": "sandbox"
+    },
+    {
+        "title": "VA-11 Hall-A: Cyberpunk Bartender Action",
+        "release_date": "2019-05-02",
+        "metascore": "83",
+        "genre": "simulation"
+    },
+    {
+        "title": "Do Not Feed the Monkeys",
+        "release_date": "2020-06-01",
+        "metascore": "77",
+        "genre": "simulation"
+    },
+    {
+        "title": "Swords & Soldiers II",
+        "release_date": "2019-03-01",
+        "metascore": "82",
+        "genre": "strategy"
+    },
+    {
+        "title": "SteamWorld Heist II",
+        "release_date": "2024-08-08",
+        "metascore": "79",
+        "genre": "strategy"
+    },
+    {
+        "title": "ISLANDERS: Console Edition",
+        "release_date": "2021-08-11",
+        "metascore": "75",
+        "genre": "strategy"
+    },
+    {
+        "title": "Dice Legacy",
+        "release_date": "2021-09-09",
+        "metascore": "74",
+        "genre": "strategy"
+    },
+    {
+        "title": "Swim Out",
+        "release_date": "2018-03-20",
+        "metascore": "71",
+        "genre": "strategy"
+    },
+    {
+        "title": "This Is the Police",
+        "release_date": "2017-10-24",
+        "metascore": "66",
+        "genre": "strategy"
+    },
+    {
+        "title": "911 Operator",
+        "release_date": "2018-10-26",
+        "metascore": "65",
+        "genre": "strategy"
+    },
+    {
+        "title": "Townscaper",
+        "release_date": "2021-08-26",
+        "metascore": "63",
+        "genre": "strategy"
+    },
+    {
+        "title": "The Princess Guide",
+        "release_date": "2019-03-26",
+        "metascore": "57",
+        "genre": "strategy"
+    },
+    {
+        "title": "Alien: Isolation",
+        "release_date": "2019-12-05",
+        "metascore": "83",
+        "genre": "survival"
+    },
+    {
+        "title": "Catherine: Full Body",
+        "release_date": "2020-07-07",
+        "metascore": "80",
+        "genre": "survival"
+    },
+    {
+        "title": "Resident Evil 4 HD",
+        "release_date": "2019-05-21",
+        "metascore": "80",
+        "genre": "survival"
+    },
+    {
+        "title": "Resident Evil HD Remaster",
+        "release_date": "2019-05-21",
+        "metascore": "80",
+        "genre": "survival"
+    },
+    {
+        "title": "This War of Mine: Complete Edition",
+        "release_date": "2018-11-27",
+        "metascore": "80",
+        "genre": "survival"
+    },
+    {
+        "title": "Layers of Fear: Legacy",
+        "release_date": "2018-02-21",
+        "metascore": "80",
+        "genre": "survival"
+    },
+    {
+        "title": "Among Us",
+        "release_date": "2020-12-15",
+        "metascore": "79",
+        "genre": "survival"
+    },
+    {
+        "title": "Outlast 2",
+        "release_date": "2018-03-27",
+        "metascore": "79",
+        "genre": "survival"
+    },
+    {
+        "title": "Tormented Souls",
+        "release_date": "2022-04-14",
+        "metascore": "78",
+        "genre": "survival"
+    },
+    {
+        "title": "Dying Light: Platinum Edition",
+        "release_date": "2021-10-19",
+        "metascore": "78",
+        "genre": "survival"
+    },
+    {
+        "title": "Resident Evil: Revelations",
+        "release_date": "2017-11-28",
+        "metascore": "78",
+        "genre": "survival"
+    },
+    {
+        "title": "Outlast: Bundle of Terror",
+        "release_date": "2018-02-27",
+        "metascore": "77",
+        "genre": "survival"
+    },
+    {
+        "title": "The Long Dark",
+        "release_date": "2020-09-17",
+        "metascore": "76",
+        "genre": "survival"
+    },
+    {
+        "title": "DEADCRAFT",
+        "release_date": "2022-05-19",
+        "metascore": "76",
+        "genre": "survival"
+    },
+    {
+        "title": "Fear the Spotlight",
+        "release_date": "2024-10-22",
+        "metascore": "75",
+        "genre": "survival"
+    },
+    {
+        "title": "The Flame in the Flood",
+        "release_date": "2017-10-12",
+        "metascore": "75",
+        "genre": "survival"
+    },
+    {
+        "title": "The Coma 2: Vicious Sisters",
+        "release_date": "2020-06-19",
+        "metascore": "74",
+        "genre": "survival"
+    },
+    {
+        "title": "Darkwood",
+        "release_date": "2019-05-16",
+        "metascore": "74",
+        "genre": "survival"
+    },
+    {
+        "title": "Resident Evil: Revelations 2",
+        "release_date": "2017-11-28",
+        "metascore": "73",
+        "genre": "survival"
+    },
+    {
+        "title": "Fatal Frame: Maiden of Black Water",
+        "release_date": "2021-10-28",
+        "metascore": "73",
+        "genre": "survival"
+    },
+    {
+        "title": "Fatal Frame: Mask of the Lunar Eclipse",
+        "release_date": "2023-03-09",
+        "metascore": "73",
+        "genre": "survival"
+    },
+    {
+        "title": "Layers of Fear 2",
+        "release_date": "2021-05-20",
+        "metascore": "72",
+        "genre": "survival"
+    },
+    {
+        "title": "Resident Evil 5",
+        "release_date": "2019-10-29",
+        "metascore": "72",
+        "genre": "survival"
+    },
+    {
+        "title": "Clea 2",
+        "release_date": "2021-03-25",
+        "metascore": "71",
+        "genre": "survival"
+    },
+    {
+        "title": "Resident Evil 0: HD Remaster",
+        "release_date": "2019-05-21",
+        "metascore": "70",
+        "genre": "survival"
+    },
+    {
+        "title": "Decarnation",
+        "release_date": "2023-05-31",
+        "metascore": "70",
+        "genre": "survival"
+    },
+    {
+        "title": "The Survivalists",
+        "release_date": "2020-10-09",
+        "metascore": "70",
+        "genre": "survival"
+    },
+    {
+        "title": "Friday The 13th: The Game - Ultimate Slasher Switch Edition",
+        "release_date": "2019-08-13",
+        "metascore": "69",
+        "genre": "survival"
+    },
+    {
+        "title": "Call of Cthulhu: The Official Video Game",
+        "release_date": "2019-10-08",
+        "metascore": "68",
+        "genre": "survival"
+    },
+    {
+        "title": "Resident Evil 6",
+        "release_date": "2019-10-29",
+        "metascore": "68",
+        "genre": "survival"
+    },
+    {
+        "title": "The Red Lantern",
+        "release_date": "2020-10-22",
+        "metascore": "65",
+        "genre": "survival"
+    },
+    {
+        "title": "Windbound",
+        "release_date": "2020-08-28",
+        "metascore": "63",
+        "genre": "survival"
+    },
+    {
+        "title": "Garage",
+        "release_date": "2018-05-10",
+        "metascore": "63",
+        "genre": "survival"
+    },
+    {
+        "title": "The Coma: Recut",
+        "release_date": "2017-12-21",
+        "metascore": "62",
+        "genre": "survival"
+    },
+    {
+        "title": "The Sinking City",
+        "release_date": "2019-09-12",
+        "metascore": "61",
+        "genre": "survival"
+    },
+    {
+        "title": "Dead by Daylight",
+        "release_date": "2019-09-24",
+        "metascore": "61",
+        "genre": "survival"
+    },
+    {
+        "title": "Shadow Corridor",
+        "release_date": "2021-10-26",
+        "metascore": "61",
+        "genre": "survival"
+    },
+    {
+        "title": "Blair Witch",
+        "release_date": "2020-06-25",
+        "metascore": "59",
+        "genre": "survival"
+    },
+    {
+        "title": "Disaster Report 4: Summer Memories",
+        "release_date": "2020-04-07",
+        "metascore": "59",
+        "genre": "survival"
+    },
+    {
+        "title": "The Long Reach",
+        "release_date": "2018-03-15",
+        "metascore": "58",
+        "genre": "survival"
+    },
+    {
+        "title": "Deadly Premonition 2: A Blessing in Disguise",
+        "release_date": "2020-07-10",
+        "metascore": "56",
+        "genre": "survival"
+    },
+    {
+        "title": "Radiation Island",
+        "release_date": "2018-02-22",
+        "metascore": "54",
+        "genre": "survival"
+    },
+    {
+        "title": "Five Nights at Freddy's: Help Wanted",
+        "release_date": "2020-05-21",
+        "metascore": "53",
+        "genre": "survival"
+    },
+    {
+        "title": "Vaccine (2017)",
+        "release_date": "2017-07-06",
+        "metascore": "44",
+        "genre": "survival"
+    },
+    {
+        "title": "Hollow (2017)",
+        "release_date": "2018-02-22",
+        "metascore": "36",
+        "genre": "survival"
+    },
+    {
+        "title": "Warframe",
+        "release_date": "2018-11-20",
+        "metascore": "86",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Splatoon 3",
+        "release_date": "2022-09-09",
+        "metascore": "83",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Splatoon 2",
+        "release_date": "2017-07-21",
+        "metascore": "83",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Ruiner",
+        "release_date": "2020-06-18",
+        "metascore": "82",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Splatoon 2: Octo Expansion",
+        "release_date": "2018-06-13",
+        "metascore": "82",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Zombie Army 4: Dead War",
+        "release_date": "2022-04-26",
+        "metascore": "80",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Splatoon 3: Expansion Pass Wave 2 - Side Order",
+        "release_date": "2024-02-22",
+        "metascore": "78",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Red Faction: Guerrilla Re-Mars-tered",
+        "release_date": "2019-07-02",
+        "metascore": "72",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Spellbreak",
+        "release_date": "2020-09-03",
+        "metascore": "71",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Zombie Army Trilogy",
+        "release_date": "2020-03-31",
+        "metascore": "70",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Star Wars: Bounty Hunter Remaster",
+        "release_date": "2024-08-01",
+        "metascore": "70",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Remnant: From the Ashes",
+        "release_date": "2023-03-21",
+        "metascore": "70",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Earth Defense Force: World Brothers",
+        "release_date": "2021-05-27",
+        "metascore": "69",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Project Nimbus: Complete Edition",
+        "release_date": "2019-05-16",
+        "metascore": "68",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Rogue Trooper Redux",
+        "release_date": "2017-10-17",
+        "metascore": "60",
+        "genre": "third-person-shooter"
+    },
+    {
+        "title": "Morphies Law",
+        "release_date": "2018-08-20",
+        "metascore": "48",
+        "genre": "third-person-shooter"
+    }
+]

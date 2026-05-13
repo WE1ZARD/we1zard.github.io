@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiliwili - 第三方B站客户端</title>
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="feedback.html" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="toc">
+        <ul>
+<li><a href="#_1">免责声明</a></li>
+<li><a href="#_2">介绍</a></li>
+<li><a href="#_3">下载</a></li>
+<li><a href="#_4">版本区别</a><ul>
+<li><a href="#deko3d">deko3d</a></li>
+<li><a href="#opengl">opengl</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="wiliwili-b">Wiliwili - 第三方B站客户端</h1>
+<h2 id="_1">免责声明</h2>
+<div class="alert alert-blue"><p>仅用于个人学习, 非商用, 侵删.</p></div>
+
+<h2 id="_2">介绍</h2>
+<blockquote>
+<p>这是一个屏蔽广告的 wiliwili 魔改版本, 其他和官方版本一样.
+原作者 <a href="https://github.com/xfangfang">xfangfang</a> 的开源项目: https://github.com/xfangfang/wiliwili</p>
+</blockquote>
+<h2 id="_3">下载</h2>
+<p><a href="https://gitea.com/we1zard/OTA/releases/download/latest/wiliwili-deko3d.zip" class="button" target="_blank">deko3d 版本</a> <a href="https://gitea.com/we1zard/OTA/releases/download/latest/wiliwili-opengl.zip" class="button" target="_blank">opengl 版本</a></p>
+<h2 id="_4">版本区别</h2>
+<h3 id="deko3d">deko3d</h3>
+<ul>
+<li>NVIDIA 为 Switch 定制的底层图形接口</li>
+<li>性能最好</li>
+<li>支持4k/60fps</li>
+</ul>
+<h3 id="opengl">opengl</h3>
+<ul>
+<li>通用图形标准，不是为 Switch 设计</li>
+<li>兼容性最好</li>
+<li>高码率掉帧</li>
+</ul>
+                <div class="update-time">2026-03-15 18:00:02</div>
+            </main>
+        </div>
+    </div>
+    <script src="js/common.js"></script>
+<!-- 统一Footer组件 -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

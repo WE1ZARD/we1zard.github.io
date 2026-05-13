@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>破解芯片 - 升降级固件</title>
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="feedback.html" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="toc">
+        <ul>
+<li><a href="#_1">下载安装</a></li>
+<li><a href="#_2">文件路径</a></li>
+<li><a href="#_3">操作步骤</a></li>
+<li><a href="#_4">型号选择</a><ul>
+<li><a href="#_5">升级</a></li>
+<li><a href="#_6">降级</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="-">破解芯片 - 升降级固件</h1>
+<h2 id="_1">下载安装</h2>
+<p><strong>方法 1</strong></p>
+<p><a href="https://gitea.com/we1zard/OTA/releases/download/latest/modchip_toolbox.bin" class="button" target="_blank">modchip_toolbox</a>
+<a href="https://gitea.com/we1zard/OTA/releases/download/latest/update.bin" class="button" target="_blank">update.bin</a></p>
+<p><strong>方法 2</strong></p>
+<p><code>Updater 更新助手 &gt; AIO 整合包 &gt; modchip 破解芯片&gt; Install 安装</code>
+<code>Updater 更新助手 &gt; AIO 整合包 &gt; modchip 破解芯片&gt; Download 下载固件</code></p>
+<h2 id="_2">文件路径</h2>
+<ul>
+<li><code>sdmc:/bootloader/payloads/modchip_toolbox.bin</code></li>
+<li><code>sdmc:/update.bin</code></li>
+</ul>
+<h2 id="_3">操作步骤</h2>
+<ol>
+<li>重启, <strong>按住 音量键 减号</strong> 进入 hekate 主菜单</li>
+<li>打开 <code>Payloads &gt; modchip_toolbox.bin</code> 进入工具箱</li>
+<li><strong>上下方向键 或 音量键 移动</strong>, <strong>A键 或 电源键 打开选中项</strong></li>
+</ol>
+<h2 id="_4">型号选择</h2>
+<ul>
+<li><code>Picofly</code>: 树莓派</li>
+<li><code>HWFLY</code>: 国产芯片</li>
+</ul>
+<h3 id="_5">升级</h3>
+<ul>
+<li>打开 <code>Firmware &gt; Update</code></li>
+<li>按 <code>电源键 / A / B</code> 继续, <code>方向键 / 音量键</code> 取消</li>
+<li>完成后 <strong>按任意键 返回</strong></li>
+</ul>
+<h3 id="_6">降级</h3>
+<ul>
+<li>打开 <code>Firmware &gt; Rollback</code></li>
+<li>
+<p>完成后 <strong>按任意键 返回</strong></p>
+</li>
+<li>
+<p>按照自己需求进行升级或者降级</p>
+</li>
+<li>完成后, 打开 <code>Back to hekate</code> 重启系统</li>
+<li><code>sdmc:/update.bin</code> 文件在确认没问题之后, 可以删掉. </li>
+</ul>
+                <div class="update-time">2026-04-23 09:50:39</div>
+            </main>
+        </div>
+    </div>
+    <script src="js/common.js"></script>
+<!-- 统一Footer组件 -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
