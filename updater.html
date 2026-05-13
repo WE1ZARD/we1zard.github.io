@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updater - 更新助手</title>
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="feedback.html" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="toc">
+        <ul>
+<li><a href="#_1">下载</a></li>
+<li><a href="#_2">使用须知</a></li>
+<li><a href="#_4">同步时间</a></li>
+<li><a href="#_5">升级安装</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="updater-">Updater - 更新助手</h1>
+<blockquote>
+<p><strong>Updater</strong> 是Magic Suite内置工具包之一,<br />
+基于Arcane命令开发的轻量在线更新工具,<br />
+支持一键更新安装卸载 <strong><code>整合包升级</code></strong> <strong><code>插件工具</code></strong> 等.</p>
+</blockquote>
+<h2 id="_1">下载</h2>
+<p><a href="https://gitea.com/we1zard/OTA/releases/download/latest/pkgs-Updater.zip" class="button" target="_blank">直接下载</a></p>
+<h2 id="_2">使用须知</h2>
+<blockquote>
+<p>注意: 
+    • 需要先安装 <strong><code>Arcane</code></strong> 才可以运行, 联网并<a href="#手动系统设置" title="立刻查看"><code>同步时间</code></a>, <a href="#同步服务器"><code>同步服务器</code></a>.
+    • 部分地区dns污染的, 还需要修改dns, 才可以正常下载
+    • 虚拟系统: 有联网保护, 无ban机风险
+    • 真实系统: <code>无联网保护</code>, <code>有ban机风险</code></p>
+</blockquote>
+<h3 id="_3"><a href="https://v.douyin.com/ir9ASyYW/">演示视频</a></h3>
+<h2 id="_4">同步时间</h2>
+<blockquote>
+<ol>
+<li>打开DBI</li>
+<li>进入工具菜单<br />
+     英文: <code>Tools &gt; NTP time sync</code><br />
+   俄语: <code>Инструменты &gt; Синхронизация времени по NTP</code>  </li>
+<li>打开NTP联网同步工具</li>
+<li>同步完成</li>
+</ol>
+</blockquote>
+<h2 id="_5">升级安装</h2>
+<ul>
+<li>按 <code>L + ✚</code> 打开 <code>Arcane</code></li>
+<li>按 <code>▶</code> 打开 <code>Update</code></li>
+<li>打开 <code>Proxy</code> 开启 <code>On</code> (<code>要求arcane 1.2.0+</code>)<ul>
+<li>在海外或者自己魔法的话, 请保持 <code>Off</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>一键更新</strong></p>
+<blockquote>
+<ul>
+<li><code>Packages &gt;Update All</code> : 更新所有Packages和支持</li>
+<li><code>AIO &gt;Release</code> : 升级 正式版整合包</li>
+<li><code>AIO &gt;Pre-Release</code> : 升级 先行版整合包</li>
+</ul>
+</blockquote>
+<p><strong>单独安装/更新</strong></p>
+<blockquote>
+<ul>
+<li><code>HomeBrew Apps &gt; ...</code> : 自制应用</li>
+<li><code>Overlays &gt; ...</code> : 菜单插件</li>
+<li><code>Packages &gt;...</code> : 工具包及系统</li>
+<li><code>Sys Modules &gt;...</code> : 系统模块</li>
+<li><code>AIO &gt;...</code> : 整合包</li>
+<li><code>Sync &gt;...</code> : 同步服务器<br />
+  • <code>Install: 安装</code><br />
+  • <code>Uninstall: 卸载</code></li>
+</ul>
+</blockquote>
+                <div class="update-time">2026-04-27 18:22:47</div>
+            </main>
+        </div>
+    </div>
+    <script src="js/common.js"></script>
+<!-- 统一Footer组件 -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://ifdian.net/order/create?user_id=0b0b9a96778d11ee91225254001e7c00" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
