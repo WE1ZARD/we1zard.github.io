@@ -1,0 +1,103 @@
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      aio_ref:
+        description: 'AIO'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout shell repo
+        uses: actions/checkout@v4
+
+      - name: Checkout private website source (WE1ZARD/website)
+        uses: actions/checkout@v4
+        with:
+          repository: WE1ZARD/website
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: site
+
+      - name: Checkout private AIO source (WE1ZARD/AIO)
+        uses: actions/checkout@v4
+        with:
+          repository: WE1ZARD/AIO
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: AIO
+          ref: ${{ inputs.aio_ref || 'pre' }}
+
+      - name: Checkout public store source (WE1ZARD/nxStore)
+        uses: actions/checkout@v4
+        with:
+          repository: WE1ZARD/nxStore
+          path: store
+
+      - name: Checkout private kip source (WE1ZARD/kips)
+        uses: actions/checkout@v4
+        with:
+          repository: WE1ZARD/kips
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: kips
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install build deps
+        run: pip install 'jinja2==3.1.*' 'Markdown==3.*' 'pygments==2.*' 'pypinyin==0.52.*'
+
+      - name: Build site
+        working-directory: site
+        run: bash run.sh batch
+
+      - name: Count updates
+        working-directory: site
+        run: python3 count_updates.py
+
+      - name: Assemble staging
+        run: |
+          set -euxo pipefail
+          mkdir -p staging
+          cp -r site/output/. staging/
+          mkdir -p staging/nxstore
+          cp -r store/repo.json    staging/nxstore/repo.json
+          cp -r store/zips         staging/nxstore/
+          cp -r store/packages     staging/nxstore/
+          cp -r store/categories   staging/nxstore/
+          mkdir -p staging/kips
+          for d in erista mariko presets; do
+            if [ -d "kips/$d" ]; then cp -r "kips/$d" staging/kips/; fi
+          done
+          cp CNAME staging/CNAME
+          ls -la staging | head -20
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: staging
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
