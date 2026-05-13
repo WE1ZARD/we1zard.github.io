@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L4S 超频设置</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
+    
+    <style>
+        /* 本地样式替代Tailwind CSS */
+        .max-w-md {
+            max-width: 28rem;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .mt-4 {
+            margin-top: 1rem;
+        }
+        .p-2 {
+            padding: 0.5rem;
+        }
+        .main-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+        .content-container {
+            max-width: 64rem;
+            margin: 0 auto;
+            padding: 1.5rem;
+            border-radius: 0.375rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            background-color: #051427;
+        }
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+        .relative {
+            position: relative;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .border {
+            border-width: 1px;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+        .whitespace-pre-wrap {
+            white-space: pre-wrap;
+        }
+        .text-\[\#9ca3af\] {
+            color: #9ca3af;
+        }
+        .font-mono {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        .max-h-60 {
+            max-height: 15rem;
+        }
+        .overflow-y-auto {
+            overflow-y: auto;
+        }
+        .p-4 {
+            padding: 1rem;
+        }
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        .duration-200 {
+            transition-duration: 200ms;
+        }
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+        .text-xs {
+            font-size: 0.75rem;
+            line-height: 1rem;
+        }
+        blockquote {
+            margin: 0;
+        }
+        bold {
+            font-weight: bold;
+        }
+        bl {
+            display: block;
+        }
+        block {
+            display: block;
+        }
+        label {
+            cursor: pointer;
+        }
+        /* 确保滑动条不影响页面宽度 */
+        html {
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        * {
+            box-sizing: inherit;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        /* 为导航栏添加占位空间 */
+        .navbar-space {
+            height: var(--size-64);
+        }
+        /* 为页脚添加占位空间 */
+        .footer-space {
+            height: 100px;
+        }
+        
+        /* 自定义滑动条样式 */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16%;
+            height: 4px;
+            background: #3b82f6;
+            border-radius: 2px;
+            outline: none;
+            margin: 0 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #3b82f6;
+            border: 2px solid #93c5fd;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #3b82f6;
+            border: 2px solid #93c5fd;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+        }
+        
+        /* 内容布局 */
+        .content-container {
+            position: relative;
+        }
+        
+        .content-container blockquote {
+            position: relative;
+        }
+        
+        /* 自定义开关样式 */
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 50px;
+            height: 24px;
+            background: #374151;
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        input[type="checkbox"]:checked {
+            background: #3b82f6;
+        }
+        
+        input[type="checkbox"]::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        
+        input[type="checkbox"]:checked::after {
+            transform: translateX(26px);
+        }
+        
+        /* 标题样式 */
+        h2 {
+            color: #93c5fd;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="../blog.html" target="_blank" class="nav-link">教程</a>
+                <a href="../tool.html" target="_blank" class="nav-link">工具</a>
+                <a href="../update.html" target="_blank" class="nav-link">更新</a>
+                <a href="https://tally.so/r/0Q7qYj" target="_blank" class="nav-link">反馈</a>
+                <div class="nav-avatar">
+                    <a href="../about.html" target="_blank">
+                        <img src="../img/avatar.png" class="avatar-icon" alt="Avatar">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 导航栏占位空间 -->
+    <div class="navbar-space"></div>
+    
+    <div id="banner" class="max-w-md mx-auto mt-4 p-2">
+    </div>
+    <div class="main-container">
+        <div class="content-container">
+        <!-- 页面标题和说明 -->
+        <div class="mb-6">
+            <!-- <h1>L4T 超频设置</h1> -->
+            <blockquote>适用于 <bold>Switch</bold> 上的 <bold>Linux</bold>, <bold>Lakka</bold> 和 <bold>Android</bold> 超频参数设置<br>
+                配置文件路径 <code>/bootloader/ini/*.ini</code>
+            </blockquote><br>
+        </div>
+
+        <!-- <div class="relative p-4 rounded-md shadow-md w-full"> -->
+            <h2 id="dvfs-setting">使用方法</h2>
+            <blockquote>
+                下框会自动根据设置生成的配置参数,<br>
+                请根据个人情况做相应的调整,<br>
+                完成后将参数添加进对应的配置文件,<br>
+                点击代码框复制到粘贴板.<br>
+            </blockquote><br>
+
+        
+        <!-- 代码复制框 -->
+
+            <!-- 为代码框添加相对定位的容器 -->
+            <div class="relative w-full">
+                <pre id="config-code" class="border border-[#93c5fd] hover:border-[#3b82f6] hover:shadow-[0_0_12px_rgba(96,165,250,0.6)] cursor-pointer whitespace-pre-wrap text-[#9ca3af] font-mono text-sm max-h-60 overflow-y-auto p-4 bg-[#051427] rounded-md transition-all duration-200">
+ram_oc=0000000
+ram_oc_opt=0</pre>
+                <p id="copy-status" class="text-xs text-[#9ca3af] mt-2"></p>
+            </div>
+
+            <h2 id="基础设置">基础设置</h2>
+            <blockquote>
+                <input id="ram_oc_vdd2" max="1237" min="1050" name="ram_oc_vdd2" step="5" type="range" value="1175" />
+                    <bold for="ram_oc_vdd2">Vdd2:</bold>
+                    <bold id="ram_oc_vdd2_txt">1175</bold> <bold>mV</bold><br>
+                <input id="ram_oc_vddq" max="650" min="550" name="ram_oc_vddq" step="5" type="range" value="600" />
+                    <bold for="ram_oc_vddq">Vddq:</bold>
+                    <bold id="ram_oc_vddq_txt">600</bold> <bold>mV</bold><br><br>
+                    <block><bold>初代</bold></block><br>
+                        <bl>Vdd2: 1050-1237 mV</bl><br>
+                    <block><bold>其他</bold></block><br>
+                        <bl>Vdd2 1050-1175 mV</bl><br>
+                        <bl>Vddq 550-650 mV</bl><br><br>
+
+                <input id="dvfsb" name="dvfsb" type="checkbox" checked />
+                    <label for="dvfsb"><bold>DVFS</bold> 启用可减少CPU/GPU/SOC功耗，可能支持更高频率</label><br>
+                <input id="gpu_dvfsc" name="gpu_dvfsc" type="checkbox" checked />
+                    <label for="gpu_dvfsc"><bold>GPU DVFS</bold> 启用可大幅降低GPU高频率下的功耗，支持更高频率</label><br>
+                <input id="limit_gpu_clk" name="limit_gpu_clk" type="checkbox" />
+                    <label for="limit_gpu_clk"><bold>限制频率</bold> 启用将GPU频率限制为1075 MHz，避免 dvfs 导致的稳定性问题</label>
+            </blockquote><br>
+
+            <!-- CPU/GPU 高级设置区域 -->
+            <h2 id="cpu-gpu-setting">高级设置</h2>
+            <blockquote>
+                <input id="max_cpu_freq" max="6" min="0" name="max_cpu_freq" step="1" type="range" value="0" />
+                    <bold for="max_cpu_freq">CPU最大频率:</bold>
+                    <bold id="max_cpu_freq_txt">0</bold> <bold>MHz</bold><br>
+                <input id="max_gpu_freq" max="7" min="0" name="max_gpu_freq" step="1" type="range" value="0" />
+                    <bold for="max_gpu_freq">GPU最大频率:</bold>
+                    <bold id="max_gpu_freq_txt">0</bold> <bold>MHz</bold><br>
+            </blockquote><br>
+
+            <!-- 设置区域 -->
+            <h2 id="dvfs-setting">DVFS 设置</h2>
+            <blockquote>
+                <input id="ram" max="3203" min="1966" name="ram" step="33.33" type="range" value="0" /> 
+                    <bold for="ram">内存频率:</bold>
+                    <bold id="ram_txt">0</bold><br>
+                <input id="lat" max="3" min="0" name="lat" step="1" type="range" value="0" /> 
+                    <bold for="lat" id="lat_label">tRL:</bold>
+                    <bold id="lat_txt">0</bold><br>
+                <input id="cor" max="9" min="0" name="cor" step="1" type="range" value="0" /> 
+                    <bold for="cor">核心时序:</bold>
+                    <bold id="cor_txt">0</bold>﹪<br>
+                <input id="ref" max="4" min="0" name="ref" step="1" type="range" value="0" /> 
+                    <bold for="ref">tREFI:</bold>
+                    <bold id="ref_txt">100</bold>﹪<br><br>
+                    <bold>tREFI</bold> 受温度影响! (初代机最多支持200%)<br>
+            </blockquote><br>
+
+            <h2 id="dvfs-advanced-setting">DVFS 高级设置</h2>
+            <blockquote>
+                <input id="wrl" max="4" min="0" name="wrl" step="1" type="range" value="0" /> 
+                    <bold for="wrl">tWL:</bold>
+                    <bold id="wrl_txt">0</bold><br>
+                <input id="trp" max="9" min="0" name="trp" step="1" type="range" value="0" /> 
+                    <bold for="trp">tRP: </bold>
+                    <bold id="trp_txt">0</bold>﹪<br>
+                <input id="tras" max="9" min="0" name="tras" step="1" type="range" value="0" /> 
+                    <bold for="tras">tRAS:</bold>
+                    <bold id="tras_txt">0</bold>﹪<br>
+                <input id="trcd" max="9" min="0" name="trcd" step="1" type="range" value="0" /> 
+                    <bold for="trcd">tRCD:</bold>
+                    <bold id="trcd_txt">0</bold>﹪<br>
+                <input id="trtw" max="9" min="0" name="trtw" step="1" type="range" value="0" /> 
+                    <bold for="trtw">tRTW:</bold>
+                <bold id="trtw_txt">0</bold>﹪<br>
+            <input id="twtr" max="9" min="0" name="twtr" step="1" type="range" value="0" /> 
+                <bold for="twtr">tWTR:</bold>
+                <bold id="twtr_txt">0</bold>﹪<br>
+            <input id="trfc" max="9" min="0" name="trfc" step="1" type="range" value="0" /> 
+                <bold for="trfc">tRFC:</bold>
+                <bold id="trfc_txt">0</bold>﹪<br>
+            <input id="trrd" max="9" min="0" name="trrd" step="1" type="range" value="0" /> 
+                <bold for="trrd">tRRD/tFAW:</bold>
+                <bold id="trrd_txt">0</bold>﹪<br><br>
+            <input id="lp" name="lp" type="checkbox" /> 
+                <label for="lp"><bold>高性能模式</bold> 开启提升性能和带宽的同时提高功耗及温度.</label><br>
+            <input id="ac" name="ac" type="checkbox" /> 
+                <label for="ac"><bold>加压模式</bold> 开启可以提升最高频率, 尤其是使用大于4G的颗粒.</label><br><br>
+
+                <bold>tRTW</bold> 和 <bold>tWTR</bold> 大多数时候取决于内存频率, 在低频上通常可以多拉紧一点.<br>
+                以上时序开启之后不再受 DVFS设置 中的核心时序影响, 以上未列出的时序仍受影响.
+            </blockquote><br>
+        </div>
+    </div>
+    
+    <!-- 页脚占位空间 -->
+    <div class="footer-space"></div>
+
+    <script>
+        // 获取DOM元素
+        // 注意：oc_txt和opt_txt被注释隐藏，我们将直接计算配置值
+        const lp = document.querySelector("#lp");
+        const ac = document.querySelector("#ac");
+        const dvfsb = document.querySelector("#dvfsb");
+        const gpu_dvfsc = document.querySelector("#gpu_dvfsc");
+        const limit_gpu_clk = document.querySelector("#limit_gpu_clk");
+        const max_cpu_freq = document.querySelector("#max_cpu_freq");
+        const max_gpu_freq = document.querySelector("#max_gpu_freq");
+        const configCode = document.querySelector("#config-code");
+        const copyStatus = document.querySelector("#copy-status");
+        
+        // 获取所有需要处理的输入元素
+        const inputs = {
+            ram: document.querySelector("#ram"),
+            ram_txt: document.querySelector("#ram_txt"),
+            lat: document.querySelector("#lat"),
+            lat_txt: document.querySelector("#lat_txt"),
+            cor: document.querySelector("#cor"),
+            cor_txt: document.querySelector("#cor_txt"),
+            ref: document.querySelector("#ref"),
+            ref_txt: document.querySelector("#ref_txt"),
+            wrl: document.querySelector("#wrl"),
+            wrl_txt: document.querySelector("#wrl_txt"),
+            trp: document.querySelector("#trp"),
+            trp_txt: document.querySelector("#trp_txt"),
+            tras: document.querySelector("#tras"),
+            tras_txt: document.querySelector("#tras_txt"),
+            trcd: document.querySelector("#trcd"),
+            trcd_txt: document.querySelector("#trcd_txt"),
+            trtw: document.querySelector("#trtw"),
+            trtw_txt: document.querySelector("#trtw_txt"),
+            twtr: document.querySelector("#twtr"),
+            twtr_txt: document.querySelector("#twtr_txt"),
+            trfc: document.querySelector("#trfc"),
+            trfc_txt: document.querySelector("#trfc_txt"),
+            trrd: document.querySelector("#trrd"),
+            trrd_txt: document.querySelector("#trrd_txt"),
+            ram_oc_vdd2: document.querySelector("#ram_oc_vdd2"),
+            ram_oc_vdd2_txt: document.querySelector("#ram_oc_vdd2_txt"),
+            ram_oc_vddq: document.querySelector("#ram_oc_vddq"),
+            ram_oc_vddq_txt: document.querySelector("#ram_oc_vddq_txt"),
+            max_cpu_freq: document.querySelector("#max_cpu_freq"),
+            max_cpu_freq_txt: document.querySelector("#max_cpu_freq_txt"),
+            max_gpu_freq: document.querySelector("#max_gpu_freq"),
+            max_gpu_freq_txt: document.querySelector("#max_gpu_freq_txt")
+        };
+
+        // CPU和GPU的指定频率值
+        const allowedCpuMaxFrequencies = [0, 1785000, 1887000, 1963500, 2091000, 2193000, 2295000];
+        const allowedGpuFrequencies = [0, 921600, 998400, 1075200, 1152000, 1228800, 1267200, 1305600];
+
+        // 数值处理函数
+        const eventValram = (event) => Math.ceil(event.target.value);
+
+        const eventVal1 = (event) => {
+            let val = Math.round(100 - (1 / (1 + (event.target.value != 0 ? (event.target.value * 0.05 + 0.10) : 0)) * 100));
+            return val != 0 ? -val : 0;
+        };
+
+        const eventVal2 = (event) => {
+            let val = Math.round(100 - (1 / (1 + (event.target.value != 0 ? (event.target.value * 0.10 + 0.10) : 0)) * 100));
+            return val != 0 ? -val : 0;
+        };
+
+        const eventValCor = (event) => {
+            let val = Math.round(100 - (1 / (1 + (event.target.value != 0 ? (event.target.value * 0.05) : 0)) * 100));
+            return val != 0 ? -val : 0;
+        };
+
+        const eventValRfr = (event) => {
+            const refValues = [100, 150, 200, 300, 400];
+            return refValues[event.target.value] || 0;
+        };
+
+        const eventValCpuFreq = (event) => {
+            const khzValue = allowedCpuMaxFrequencies[event.target.value] || 0;
+            return khzValue > 0 ? khzValue / 1000 : 0;
+        };
+
+        const eventValGpuFreq = (event) => {
+            const khzValue = allowedGpuFrequencies[event.target.value] || 0;
+            return khzValue > 0 ? khzValue / 1000 : 0;
+        };
+
+        // 配置更新函数
+        const updateOCConfig = () => {
+            return `ram_oc=${inputs.ram_txt.textContent}${inputs.ref.value}${inputs.cor.value}${inputs.lat.value}`;
+        };
+
+        const updateOptConfig = () => {
+            // 与1.html保持一致：AC和LP的值相加，结果作为一个单独的数字
+            let acLpValue = (ac.checked ? 2 : 0) + (lp.checked ? 1 : 0);
+            let opt = `${inputs.wrl.value}${acLpValue}${inputs.trp.value}${inputs.tras.value}${inputs.trcd.value}${inputs.trtw.value}${inputs.twtr.value}${inputs.trfc.value}${inputs.trrd.value}`;
+            // 直接使用字符串拼接，避免Number()可能导致的精度问题
+            return `ram_oc_opt=${opt}`;
+        };
+        
+        // 更新代码复制框内容
+        const updateConfigCode = () => {
+            const ocContent = updateOCConfig();
+            const optContent = updateOptConfig();
+            
+            // 收集所有参数并按照指定顺序排列
+            let params = [];
+            
+            // 1. 电压参数
+            if (inputs.ram_oc_vdd2.value != 0) {
+                params.push(`ram_oc_vdd2=${inputs.ram_oc_vdd2_txt.textContent}`);
+            }
+            if (inputs.ram_oc_vddq.value != 0) {
+                params.push(`ram_oc_vddq=${inputs.ram_oc_vddq_txt.textContent}`);
+            }
+            
+            // 2. 核心参数 - 分别根据不同的条件显示
+            // ram_oc根据DVFS设置区域的参数
+            const hasDvfsSettings = parseInt(inputs.ram_txt.textContent) !== 0 || 
+                                  parseInt(inputs.lat_txt.textContent) !== 0 || 
+                                  parseInt(inputs.cor_txt.textContent) !== 0 || 
+                                  parseInt(inputs.ref.value) !== 0;
+            if (hasDvfsSettings) {
+                params.push(ocContent);
+            }
+            
+            // ram_oc_opt根据DVFS高级设置区域的参数
+            const hasDvfsAdvancedSettings = parseInt(inputs.wrl.value) !== 0 || 
+                                          parseInt(inputs.trp.value) !== 0 || 
+                                          parseInt(inputs.tras.value) !== 0 || 
+                                          parseInt(inputs.trcd.value) !== 0 || 
+                                          parseInt(inputs.trtw.value) !== 0 || 
+                                          parseInt(inputs.twtr.value) !== 0 || 
+                                          parseInt(inputs.trfc.value) !== 0 || 
+                                          parseInt(inputs.trrd.value) !== 0 || 
+                                          lp.checked || ac.checked;
+            if (hasDvfsAdvancedSettings) {
+                params.push(optContent);
+            }
+            
+            // 3. OC参数
+            // 当CPU或GPU频率任一不为0时，自动添加oc=1
+            const cpuFreqIndex = parseInt(inputs.max_cpu_freq.value);
+            const gpuFreqIndex = parseInt(inputs.max_gpu_freq.value);
+            const cpuFreq = allowedCpuMaxFrequencies[cpuFreqIndex] || 0;
+            const gpuFreq = allowedGpuFrequencies[gpuFreqIndex] || 0;
+            if (cpuFreq !== 0 || gpuFreq !== 0) {
+                params.push(`oc=1`);
+            }
+            if (inputs.max_cpu_freq.value != 0) {
+                params.push(`max_cpu_freq=${cpuFreq}`);
+            }
+            if (inputs.max_gpu_freq.value != 0) {
+                params.push(`max_gpu_freq=${gpuFreq}`);
+            }
+            
+            // 4. 其他参数
+            params.push(`dvfsb=${dvfsb.checked ? 1 : 0}`);
+            params.push(`gpu_dvfsc=${gpu_dvfsc.checked ? 1 : 0}`);
+            params.push(`limit_gpu_clk=${limit_gpu_clk.checked ? 1 : 0}`);
+            
+            configCode.textContent = params.join('\n');
+        };
+
+        // 通用事件处理函数
+        const setupRangeInput = (inputName, valueHandler, configUpdater) => {
+            const input = inputs[inputName];
+            const output = inputs[`${inputName}_txt`];
+            
+            input.addEventListener("input", (event) => {
+                output.textContent = valueHandler(event);
+                configUpdater();
+            });
+        };
+
+        // 设置各种输入框的事件监听器
+        setupRangeInput("ram", eventValram, () => {
+            updateOCConfig();
+            updateConfigCode();
+        });
+        
+        inputs.lat.addEventListener("input", (event) => {
+            inputs.lat_txt.textContent = event.target.value != 0 ? -event.target.value : 0;
+            updateOCConfig();
+            updateConfigCode();
+        });
+        
+        setupRangeInput("cor", eventValCor, () => {
+            updateOCConfig();
+            updateConfigCode();
+        });
+        setupRangeInput("ref", eventValRfr, () => {
+            updateOCConfig();
+            updateConfigCode();
+        });
+        
+        // 设置wrl参数的事件监听器
+        inputs.wrl.addEventListener("input", (event) => {
+            inputs.wrl_txt.textContent = event.target.value != 0 ? (event.target.value != 1 ? -(event.target.value - 1) : 0) : "0";
+            // 更新延迟标签
+            const latLabel = document.querySelector("#lat_label");
+            latLabel.textContent = event.target.value == 0 ? "tRL:" : "tRL:";
+            updateOptConfig();
+            updateConfigCode();
+        });
+
+        // 设置使用eventVal1的输入框（trp, tras, trcd）
+        const val1Inputs = ["trp", "tras", "trcd"];
+        val1Inputs.forEach(inputName => {
+            setupRangeInput(inputName, eventVal1, () => {
+                updateOptConfig();
+                updateConfigCode();
+            });
+        });
+        
+        // 设置使用eventVal2的输入框（trtw, twtr, trfc, trrd）
+        const val2Inputs = ["trtw", "twtr", "trfc", "trrd"];
+        val2Inputs.forEach(inputName => {
+            setupRangeInput(inputName, eventVal2, () => {
+                updateOptConfig();
+                updateConfigCode();
+            });
+        });
+
+        // 设置复选框事件监听器
+        [lp, ac, dvfsb, gpu_dvfsc, limit_gpu_clk].forEach(checkbox => {
+            checkbox.addEventListener("change", () => {
+                updateOptConfig();
+                updateConfigCode();
+            });
+        });
+        
+        // 设置电压滑块事件监听器
+        const setupVoltageSlider = (inputName) => {
+            const input = inputs[inputName];
+            const output = inputs[`${inputName}_txt`];
+            
+            input.addEventListener("input", (event) => {
+                output.textContent = event.target.value;
+                updateConfigCode();
+            });
+        };
+        
+        setupVoltageSlider("ram_oc_vdd2");
+        setupVoltageSlider("ram_oc_vddq");
+        
+        // 设置CPU频率滑块事件监听器
+        inputs.max_cpu_freq.addEventListener("input", (event) => {
+            inputs.max_cpu_freq_txt.textContent = eventValCpuFreq(event);
+            updateConfigCode();
+        });
+        
+        // 设置GPU频率滑块事件监听器
+        inputs.max_gpu_freq.addEventListener("input", (event) => {
+            inputs.max_gpu_freq_txt.textContent = eventValGpuFreq(event);
+            updateConfigCode();
+        });
+        
+        // 初始化参数显示
+        inputs.ram_oc_vdd2_txt.textContent = inputs.ram_oc_vdd2.value;
+        inputs.ram_oc_vddq_txt.textContent = inputs.ram_oc_vddq.value;
+        const initialCpuFreq = allowedCpuMaxFrequencies[inputs.max_cpu_freq.value] || 0;
+        inputs.max_cpu_freq_txt.textContent = initialCpuFreq > 0 ? initialCpuFreq / 1000 : 0;
+        const initialGpuFreq = allowedGpuFrequencies[inputs.max_gpu_freq.value] || 0;
+        inputs.max_gpu_freq_txt.textContent = initialGpuFreq > 0 ? initialGpuFreq / 1000 : 0;
+        
+        // 复制功能实现
+        configCode.addEventListener("click", () => {
+            navigator.clipboard.writeText(configCode.textContent)
+                .then(() => {
+                    copyStatus.textContent = "已复制到剪贴板!";
+                    copyStatus.style.color = "#10b981";
+                    setTimeout(() => {
+                        copyStatus.textContent = "";
+                    }, 60000);
+                })
+                .catch(err => {
+                    copyStatus.textContent = "复制失败: " + err;
+                    copyStatus.style.color = "#ef4444";
+                });
+        });
+
+        // 初始化配置显示
+        updateOCConfig();
+        updateOptConfig();
+        updateConfigCode();
+    </script>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- 统一Footer组件 -->
+<footer class="footer" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
