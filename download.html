@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE1ZARD - 下载</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        :root {
+            --color-bg-primary: #051427;
+            --color-highlight: #93c5fd;
+            --color-text-primary: #9ca3af;
+            --color-text-secondary: #6b7280;
+        }
+        
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: var(--color-bg-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(5, 20, 39, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4rem;
+        }
+        
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--color-highlight);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-logo:hover {
+            filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.4));
+            transform: translateY(-1px) scale(1.02);
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--color-highlight);
+            filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.4));
+            transform: translateY(-1px) scale(1.02);
+        }
+        
+        .download-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, rgba(5, 20, 39, 1) 0%, rgba(10, 30, 54, 1) 100%);
+        }
+        
+        .download-content {
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        .download-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .download-title .highlight {
+            color: var(--color-highlight);
+        }
+        
+        .download-description {
+            font-size: 1.125rem;
+            color: var(--color-text-primary);
+            margin-bottom: 3rem;
+        }
+        
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .download-button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.125rem;
+            transition: all 0.2s ease;
+            min-width: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-button span {
+            margin: 0 auto;
+        }
+        
+        .download-button.primary {
+            background-color: var(--color-highlight);
+            color: #1e3a8a;
+            border: 1px solid var(--color-highlight);
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.25);
+        }
+        
+        .download-button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(96, 165, 250, 0.4);
+        }
+        
+        .download-button.secondary {
+            background-color: transparent;
+            color: var(--color-text-primary);
+            border: 1px solid #374151;
+        }
+        
+        .download-button.secondary:hover {
+            background: var(--color-highlight);
+            color: #1e3a8a;
+            border: 1px solid var(--color-highlight);
+            box-shadow: 0 0 12px rgba(96, 165, 250, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .download-button i {
+            font-size: 1.25rem;
+        }
+        
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--color-bg-primary);
+            padding: 0.75rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            color: var(--color-text-secondary);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .download-title {
+                font-size: 1.75rem;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+            }
+            
+            .nav-link {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">WE1ZARD</a>
+            <div class="nav-menu">
+                <a href="aio.html" class="nav-link">安装说明</a>
+                <a href="update.html" class="nav-link">更新日志</a>
+                <a href="blog.html" class="nav-link">教程</a>
+                <a href="feedback.html" class="nav-link">反馈</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 下载区域 -->
+    <section class="download-section">
+        <div class="download-content">
+            <h1 class="download-title">
+                下载 <span class="highlight">整合包</span>
+            </h1>
+            <p class="download-description">
+                如无法打开, 请尝试其他下载方式
+            </p>
+            <div class="download-buttons">
+                <a href="https://gitee.com/we1zard/OTA/releases/download/Latest/AIO-pre.zip" target="_blank" class="download-button primary">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Gitee</span>
+                </a>
+                <a id="github-download-btn" href="https://github.com/WE1ZARD/Magic-Suite/releases" target="_blank" class="download-button secondary">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://pan.quark.cn/s/6dede16564ba" target="_blank" class="download-button secondary">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span>夸克网盘</span>
+                </a>
+                <a href="https://www.jianguoyun.com/p/Da5-YN0Q2s_tDBiW5OoFIAA" target="_blank" class="download-button secondary">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span>坚果云</span>
+                </a>
+                <a href="https://pan.quark.cn/s/6460955adbc0" target="_blank" class="download-button secondary">
+                    <i class="fa-solid fa-code-merge"></i>
+                    <span>系统固件</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+                <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+                <a href="https://afdian.com/a/weizard/plan" target="_blank"><i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 从 GitHub API 获取最新 release 的下载链接
+        async function fetchLatestRelease() {
+            const githubBtn = document.getElementById('github-download-btn');
+            const originalText = githubBtn.innerHTML;
+            
+            try {
+                // 显示加载状态
+                githubBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>GitHub</span>';
+                
+                // 调用 GitHub API
+                const response = await fetch('https://api.github.com/repos/WE1ZARD/Magic-Suite/releases/latest');
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch release');
+                }
+                
+                const release = await response.json();
+                
+                // 查找包含 'AIO-pre' 的资产
+                const asset = release.assets.find(a => 
+                    a.name.includes('AIO-pre') && a.name.endsWith('.zip')
+                );
+                
+                if (asset) {
+                    // 更新为直接下载链接
+                    githubBtn.href = asset.browser_download_url;
+                    githubBtn.innerHTML = '<i class="fa-brands fa-github"></i><span>GitHub 下载</span>';
+                } else {
+                    // 未找到匹配的资产，保持原链接
+                    githubBtn.innerHTML = '<i class="fa-brands fa-github"></i><span>GitHub</span>';
+                }
+            } catch (error) {
+                // API 请求失败，保持原链接
+                console.error('Failed to fetch latest release:', error);
+                githubBtn.innerHTML = '<i class="fa-brands fa-github"></i><span>GitHub</span>';
+            }
+        }
+        
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', fetchLatestRelease);
+    </script>
+</body>
+</html>
