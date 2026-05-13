@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安装说明 - Magic Suite</title>
+    <link rel="icon" href="img/favicon.ico?v=1" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--color-bg-primary);
+        }
+        .container {
+            background-color: var(--color-bg-primary);
+        }
+        .header-space {
+            background-color: var(--color-bg-primary);
+        }
+        .toc {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<!-- 统一导航栏组件 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">WE1ZARD</a>
+        <div class="nav-menu">
+            <a href="blog.html" target="_blank" class="nav-link">教程</a>
+            <a href="tool.html" target="_blank" class="nav-link">工具</a>
+            <a href="update.html" target="_blank" class="nav-link">更新</a>
+            <a href="feedback.html" target="_blank" class="nav-link">反馈</a>
+            <div class="nav-avatar">
+                <a href="about.html" target="_blank">
+                    <img src="img/avatar.png" class="avatar-icon" alt="Avatar">
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="toc">
+        <ul>
+<li><a href="#_1">免责声明</a></li>
+<li><a href="#_2">注意事项</a></li>
+<li><a href="#_3">下载安装</a><ul>
+<li><a href="#_4">升级</a></li>
+<li><a href="#_5">换卡</a></ul>
+</li>
+<li><a href="#_6">制作虚拟系统</a><ul>
+<li><a href="#_7">制作分区系统</a></li>
+<li><a href="#_8">制作文件系统</a></ul>
+</li>
+<li><a href="#_9">离线升降级系统固件</a></li>
+<li><a href="#_10">语言切换</a></li>
+<li><a href="#_11">系统备份</a></li>
+<li><a href="#_12">快捷键</a></li>
+<li><a href="#_13">引导设置</a></li>
+<li><a href="#_14">系统支持</a></li>
+<li><a href="#_15">常见问题</a></li>
+<li><a href="#_16">包含内容</a></li>
+<li><a href="#_17">特别感谢</a></li>
+</ul>
+
+    </div>
+    <div class="container">
+        <div class="header-space"></div>
+        <div class="main-layout">
+            <main class="content">
+                <h1 id="-magic-suite">安装说明 - Magic Suite</h1>
+<h2 id="_1">免责声明</h2>
+<div class="alert alert-blue"><p>仅用于个人学习, 非商用, 侵删.</p></div>
+
+<h2 id="_2">注意事项</h2>
+<div class="alert alert-blue"><p>为免重要资料丢失, 请先行做好备份, 再开始以下操作.<br>
+    只使用真实系统需要 设置启动项<br></p></div>
+
+<div class="alert alert-yellow"><p>已支持 22.5.0<br>
+    最低系统要求: 17.0.0, 低于这个版本的, 需要从 Restore 模式升级系统固件, 否则无法使用超频. 开机蓝屏</p></div>
+
+<h2 id="_3">下载安装</h2>
+<p><a href="https://gitee.com/we1zard/OTA/releases/download/Latest/AIO-pre.zip" class="button" target="_blank">直接下载</a> <a href="https://pan.quark.cn/s/6dede16564ba" class="button" target="_blank">夸克</a></p>
+<h3 id="_4">升级</h3>
+<div class="alert alert-blue"><p>假如虚拟系统不存在, 重启后会报错, 按照 <a href="#制作虚拟系统"><strong>制作虚拟系统教程</strong></a> 操作即可<br>
+    <code>Atmosphère 1.10.1</code> 以下系统, 不要采用这个方法, 容易残留文件报错.</p></div>
+
+<h4 id="a">方法A</h4>
+<ol>
+<li>安装 <a href="https://pan.quark.cn/s/f08024013df2"><code>WIZBOX 魔盒助手</code></a> (整合包已内置)</li>
+<li>连上 wifi</li>
+<li>打开相册工具 <code>WIZBOX 魔盒助手 &gt; NTP Sync 同步联网时间</code></li>
+<li>切换到 <code>应用商店 &gt; AIO &gt; Magic-Suite</code></li>
+<li>按 A 开始更新, 完成后重启更新</li>
+</ol>
+<h4 id="b">方法B</h4>
+<ol>
+<li>下载解压后, 复制 <strong>bootloader</strong>, <strong>Magic-Suite</strong> 2个文件夹</li>
+<li>覆盖到 <code>sdmc:/</code> 内存卡根目录</li>
+<li>Switch 插入内存卡</li>
+<li>开机后选择 <code>Hekate &gt; Launch &gt; Initializing</code> 进行初始化操作</li>
+<li>完成后自动进入虚拟系统</li>
+</ol>
+<div class="copy-paste-container-header collapsible">
+    <h4>升级演示</h4>
+    <i class="fas fa-chevron-down toggle-icon"></i>
+</div>
+<div class="copy-paste-container collapsed">
+    <!-- 左侧文件夹 -->
+    <div class="folder">
+        <div class="folder-header">
+            <i class="fas fa-folder folder-icon"></i>
+            <span class="folder-name">AIO-pre.zip</span>
+        </div>
+        <div class="folder-content">
+            <div class="file-item selected">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">bootloader</span>
+            </div>
+            <div class="file-item selected">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">Magic-Suite</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 箭头 -->
+    <div class="arrow-container">
+        <i class="fas fa-arrow-right arrow"></i>
+    </div>
+
+    <!-- 右侧文件夹 -->
+    <div class="folder">
+        <div class="folder-header">
+            <i class="fas fa-folder folder-icon"></i>
+            <span class="folder-name">SWITCH SD</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="folder-content">
+            <!-- 文件夹按a-z顺序 -->
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">atmosphere</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">backup</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">bootloader</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">config</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">emuMMC</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">JKVS</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">Nintendo</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">retroarch</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">SaltySD</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">switch</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">switchroot</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">System Volume Information</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">mods2</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">warmboot_mariko</span>
+            </div>
+            <!-- 文件按a-z顺序 -->
+            <div class="file-item">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">boot.dat</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">boot.ini</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">exosphere.ini</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">hbmenu.nro</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">payload.bin</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 id="_5">换卡</h3>
+<div class="alert alert-blue"><p>适用: <code>干净升级</code>, <code>干净换包</code></p></div>
+
+<ol>
+<li>下载解压后, 进入 <strong>Magic-Suite</strong> 文件夹, 复制里面所有文件到 <code>sdmc:/</code> 内存卡根目录</li>
+<li><strong>不要管外面单个的 <code>bootloade</code> 文件夹!!!</strong></li>
+<li>复制完成之后, 开始 <a href="#制作虚拟系统"><strong>制作虚拟系统</strong></a></li>
+<li>已有虚拟系统 <code>emuMMC</code>的, 不需要重新制作虚拟系统</li>
+</ol>
+<div class="copy-paste-container-header collapsible">
+    <h4>换卡演示</h4>
+    <i class="fas fa-chevron-down toggle-icon"></i>
+</div>
+<div class="copy-paste-container collapsed">
+    <!-- 左侧文件夹 -->
+    <div class="folder">
+        <div class="folder-header">
+            <i class="fas fa-folder folder-icon"></i>
+            <span class="folder-name">AIO-pre.zip</span>
+        </div>
+        <div class="folder-content">
+            <!-- 文件夹按a-z顺序 -->
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">bootloader</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">Magic-Suite</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <!-- Magic-Suite 子内容 -->
+            <!-- 文件夹按a-z顺序 -->
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">atmosphere</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">bootloader</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">config</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">SaltySD</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">switch</span>
+            </div>
+            <!-- 文件按a-z顺序 -->
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">boot.dat</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">boot.ini</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">exosphere.ini</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">hbmenu.nro</span>
+            </div>
+            <div class="file-item selected" style="padding-left: 1.5rem;">
+                <i class="fas fa-file-alt file-icon"></i>
+                <span class="file-name">payload.bin</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 箭头 -->
+    <div class="arrow-container">
+        <i class="fas fa-arrow-right arrow"></i>
+    </div>
+
+    <!-- 右侧文件夹 -->
+    <div class="folder">
+        <div class="folder-header">
+            <i class="fas fa-folder folder-icon"></i>
+            <span class="folder-name">SWITCH SD</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="folder-content">
+            <!-- 文件夹按a-z顺序 -->
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">backup</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">emuMMC</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">JKVS</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">Nintendo</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">retroarch</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">switchroot</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">System Volume Information</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">mods2</span>
+            </div>
+            <div class="file-item">
+                <i class="fas fa-folder file-icon"></i>
+                <span class="file-name">warmboot_mariko</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 id="_6">制作虚拟系统</h2>
+<ul>
+<li>分区系统: 速度快, 折腾不容易出问题 (推荐)</li>
+<li>文件系统: 容易出问题, 部分游戏会卡顿 (不建议)</li>
+</ul>
+<h3 id="_7">制作分区系统</h3>
+<ol>
+<li>重启 <strong>按住 音量键减号</strong> 进入 hekate</li>
+<li>按照 <a href="partition.html"><strong>分区工具教程</strong></a> 创建分区</li>
+<li>完成后, 返回 hekate 主菜单</li>
+<li>打开右侧 <code>Create emuMMC &gt; SD Partition</code></li>
+<li>此操作创建系统镜像到隐藏分区</li>
+<li>内存卡中创建 <code>sdmc:/emuMMC</code> 文件夹, 未来安装的所有资料都存放在这里</li>
+<li>完成后, 返回 hekate 主菜单, 打开 <code>Launch &gt; Atmosphere</code> 进入虚拟系统</li>
+</ol>
+<h3 id="_8">制作文件系统</h3>
+<ol>
+<li>重启 <strong>按住 音量键减号</strong> 进入 hekate</li>
+<li>无需创建系统分区, 直接打开右侧 <code>Create emuMMC &gt; SD File</code></li>
+<li>此操作创建系统镜像到 <code>sdmc:/emuMMC</code> 文件夹, 未来安装的所有资料都存放在这里</li>
+<li>完成后, 返回 hekate 主菜单, 打开 <code>Launch &gt; Atmosphere</code> 进入虚拟系统</li>
+</ol>
+<h2 id="_9">离线升降级系统固件</h2>
+<ul>
+<li>推荐 19.0.1 版本</li>
+<li>非必要不要升级, 尤其不要升级到 20.0.0+</li>
+<li>会导致很多游戏模组无法正常加载</li>
+<li>系统可用内存严重缩水</li>
+<li>加载速度明显变慢</li>
+</ul>
+<p><a href="/fw.html" class="button" target="_blank">下载系统固件</a></p>
+<h2 id="_10">语言切换</h2>
+<p><strong>插件</strong></p>
+<ol>
+<li>按 <strong><code>L + 加号</code></strong> 打开特斯拉菜单</li>
+<li>按 <strong><code>方向右</code></strong> 打开 <code>Settings &gt; Languages</code> (设置助手 &gt; 语言 &gt; 中文)</li>
+</ol>
+<p><strong>引导菜单</strong></p>
+<ol>
+<li>打开 WIZBOX &gt; 应用商店 &gt; AIO &gt; Hekate</li>
+<li>安装完成之后, 重启即可</li>
+</ol>
+<h2 id="_11">系统备份</h2>
+<p><a href="/backup.html" class="button" target="_blank">系统备份教程</a></p>
+<h2 id="_12">快捷键</h2>
+<p>特斯拉菜单: </p>
+<ul>
+<li>呼出: L + 加号</li>
+<li>排序: 减号 / 加号</li>
+</ul>
+<p>系统监控:</p>
+<ul>
+<li>退出: LS + RS</li>
+<li>临时隐藏: L + LS</li>
+<li>重置FPS统计: L + ZL</li>
+</ul>
+<h2 id="_13">引导设置</h2>
+<p>编辑 <code>sdmc:/bootloader/hekate_ipl.ini</code></p>
+<ul>
+<li>autoboot=1: 自动引导<strong>Atmosphere 虚拟系统</strong></li>
+<li>autoboot=2: 自动引导<strong>SysMMC 真实系统</strong></li>
+<li>autoboot=3: 自动引导<strong>Restore 恢复模式</strong></li>
+<li>autoboot=4: 自动引导<strong>OFW 官方系统</strong></li>
+</ul>
+<h2 id="_14">系统支持</h2>
+<ul>
+<li>4G/8G 切换 (<a href="settings.html#切换内存模式">查看方法</a>)</li>
+<li>最新固件版本</li>
+<li>在线更新</li>
+<li>双虚拟系统引导</li>
+</ul>
+<h2 id="_15">常见问题</h2>
+<p><a href="feedback.html" class="button" target="_blank">查看详情</a></p>
+<h2 id="_16">包含内容</h2>
+<ul>
+<li>Atmosphere</li>
+<li>Daybreak</li>
+<li>DBI</li>
+<li>EdiZon</li>
+<li>EdiZon-Overlay</li>
+<li>FPSLocker</li>
+<li>hekate</li>
+<li>Horizon-OC</li>
+<li>Lockpick_RCM</li>
+<li>MasterVolume</li>
+<li>nx-hbloader</li>
+<li>ovlmenu</li>
+<li>ReShade</li>
+<li>ReverseNX-RT</li>
+<li>SaltyNX</li>
+<li>Sphaira</li>
+<li>Status-Monitor-Overlay</li>
+<li>Sys-clk</li>
+<li>sys-patch</li>
+<li>WIZBOX</li>
+</ul>
+<h2 id="_17">特别感谢</h2>
+<div class="columns-2"><div class="column"><ul>
+<li>averne</li>
+<li>B3711</li>
+<li>C.C.</li>
+<li>CTCaer</li>
+<li>easyworld</li>
+<li>efosamark</li>
+<li>impeeza</li>
+<li>Irene</li>
+<li>Lightos_</li>
+<li>lineon</li>
+<li>MasaGratoR</li>
+</ul></div><div class="column"><ul>
+<li>meha</li>
+<li>ppkantorski</li>
+<li>SciresM</li>
+<li>Soul</li>
+<li>THZoria</li>
+<li>TotalJustice</li>
+<li>WerWolv</li>
+<li>吥走尋常路</li>
+</ul></div></div>
+                <div class="update-time">2026-06-19 10:15:38</div>
+            </main>
+        </div>
+    </div>
+    <script src="js/common.js"></script>
+<!-- 统一Footer组件 -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 WE1ZARD. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://github.com/we1zard" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://space.bilibili.com/3595105" target="_blank"><i class="fab fa-bilibili"></i></a>
+            <a href="https://qm.qq.com/q/TzIMB20la2" target="_blank"><i class="fab fa-qq"></i></a>
+            <a href="https://ifdian.net/order/create?user_id=0b0b9a96778d11ee91225254001e7c00" target="_blank"><i class="fas fa-heart"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
